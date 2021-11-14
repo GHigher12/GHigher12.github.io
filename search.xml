@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Python的输入与输出</title>
+    <url>/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
+    <content><![CDATA[<p>相比于C语言，python的输入输出更加多样化。下面对python的输入输出进行简单的总结。</p>
+<span id="more"></span>
+
+
+        <h2 id="Input"   >
+          <a href="#Input" class="heading-link"><i class="fas fa-link"></i></a><a href="#Input" class="headerlink" title="Input"></a>Input</h2>
+      
+        <h3 id="单行的输入"   >
+          <a href="#单行的输入" class="heading-link"><i class="fas fa-link"></i></a><a href="#单行的输入" class="headerlink" title="单行的输入"></a>单行的输入</h3>
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="code"><pre><span class="line">a = <span class="built_in">input</span>()<span class="comment"># 字符串</span></span><br><span class="line">b = <span class="built_in">int</span>(<span class="built_in">input</span>())<span class="comment"># 将字符串强制转换为整型</span></span><br><span class="line">c = <span class="built_in">float</span>(<span class="built_in">input</span>())<span class="comment"># 将字符串强制转换为浮点型</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="连续输入指定数值并赋值"   >
+          <a href="#连续输入指定数值并赋值" class="heading-link"><i class="fas fa-link"></i></a><a href="#连续输入指定数值并赋值" class="headerlink" title="连续输入指定数值并赋值"></a>连续输入指定数值并赋值</h3>
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="code"><pre><span class="line">a, b = <span class="built_in">input</span>().split()<span class="comment"># 字符串</span></span><br><span class="line"><span class="built_in">print</span>(a, b)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">str</span>&#x27;&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">-------------------------------- </span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">a</span>, <span class="title">b</span> = <span class="title">map</span>(<span class="params"><span class="built_in">int</span>,<span class="built_in">input</span>(<span class="params"></span>).split(<span class="params"></span>)</span>)# 整型</span></span><br><span class="line"><span class="class"><span class="title">print</span>(<span class="params">a, b</span>)</span></span><br><span class="line"><span class="class"><span class="title">print</span>(<span class="params"><span class="built_in">type</span>(<span class="params">a</span>)</span>)</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"># 运行结果</span></span><br><span class="line"><span class="class">1 2</span></span><br><span class="line"><span class="class">1 2</span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> &#x27;<span class="title">int</span>&#x27;&gt;</span></span><br><span class="line"><span class="class"></span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="将输入的数据存为一个列表"   >
+          <a href="#将输入的数据存为一个列表" class="heading-link"><i class="fas fa-link"></i></a><a href="#将输入的数据存为一个列表" class="headerlink" title="将输入的数据存为一个列表"></a>将输入的数据存为一个列表</h3>
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="code"><pre><span class="line">a = <span class="built_in">input</span>().split()<span class="comment"># 列表数值为字符串</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> a</span><br><span class="line">[<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;a&#x27;</span>]</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">list</span>&#x27;&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">-------------------------------- </span></span><br><span class="line"><span class="class"># 列表数值为整型</span></span><br><span class="line"><span class="class"># 第一种</span></span><br><span class="line"><span class="class"><span class="title">a</span> = <span class="title">list</span>(<span class="params"><span class="built_in">map</span>(<span class="params"><span class="built_in">int</span>,<span class="built_in">input</span>(<span class="params"></span>).split(<span class="params"></span>)</span>)</span>)</span></span><br><span class="line"><span class="class"><span class="title">print</span>(<span class="params">a</span>)</span></span><br><span class="line"><span class="class"><span class="title">print</span>(<span class="params"><span class="built_in">type</span>(<span class="params">a</span>)</span>)</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"># 运行结果</span></span><br><span class="line"><span class="class">1 2 3 4 5</span></span><br><span class="line"><span class="class">[1, 2, 3, 4, 5]</span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> &#x27;<span class="title">list</span>&#x27;&gt;</span></span><br><span class="line"><span class="class"># 第二种</span></span><br><span class="line"><span class="class"><span class="title">a</span> = [<span class="title">int</span>(<span class="params">i</span>) <span class="title">for</span> <span class="title">i</span> <span class="title">in</span> <span class="title">input</span>().<span class="title">split</span>()]</span></span><br><span class="line"><span class="class"><span class="title">print</span>(<span class="params">a</span>)</span></span><br><span class="line"><span class="class"><span class="title">print</span>(<span class="params"><span class="built_in">type</span>(<span class="params">a</span>)</span>)</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">#运行结果</span></span><br><span class="line"><span class="class">1 2 3 4 5</span></span><br><span class="line"><span class="class">[1, 2, 3, 4, 5]</span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> &#x27;<span class="title">list</span>&#x27;&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="Output"   >
+          <a href="#Output" class="heading-link"><i class="fas fa-link"></i></a><a href="#Output" class="headerlink" title="Output"></a>Output</h2>
+      
+        <h3 id="直接输出"   >
+          <a href="#直接输出" class="heading-link"><i class="fas fa-link"></i></a><a href="#直接输出" class="headerlink" title="直接输出"></a>直接输出</h3>
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="code"><pre><span class="line">a = <span class="number">30</span></span><br><span class="line">b = <span class="string">&#x27;a&#x27;</span></span><br><span class="line">c = <span class="number">3.14</span></span><br><span class="line"><span class="built_in">print</span>(a, b, c)</span><br><span class="line"></span><br><span class="line"><span class="comment">#运行结果</span></span><br><span class="line"><span class="number">30</span> a <span class="number">3.14</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="占位符（格式化输出）"   >
+          <a href="#占位符（格式化输出）" class="heading-link"><i class="fas fa-link"></i></a><a href="#占位符（格式化输出）" class="headerlink" title="占位符（格式化输出）"></a>占位符（格式化输出）</h3>
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&#x27;Xiaoming&#x27;</span></span><br><span class="line">age = <span class="number">18</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;My name is %s, my age is %s&#x27;</span> % (name, age)) <span class="comment"># %s(针对所有数据类型)</span></span><br><span class="line"><span class="comment">#运行结果</span></span><br><span class="line">My name <span class="keyword">is</span> Xiaoming, my age <span class="keyword">is</span> <span class="number">18</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight python"><div class="table-container"><table><tr><td class="code"><pre><span class="line">age = <span class="number">18</span></span><br><span class="line">weight = <span class="number">50.2</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;my weight is %f kg&quot;</span> % weight)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;my weight is %5.2f kg&quot;</span> % weight)<span class="comment"># 占5个字符，保留2位小数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;my age is %d&#x27;</span> % age)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;my age is %5d&#x27;</span> % age)<span class="comment"># 占5个字符</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#运行结果</span></span><br><span class="line">my weight <span class="keyword">is</span> <span class="number">50.200000</span> kg</span><br><span class="line">my weight <span class="keyword">is</span> <span class="number">50.20</span> kg</span><br><span class="line">my age <span class="keyword">is</span> <span class="number">18</span></span><br><span class="line">my age <span class="keyword">is</span>    <span class="number">18</span></span><br><span class="line"> </span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="format格式化输出"   >
+          <a href="#format格式化输出" class="heading-link"><i class="fas fa-link"></i></a><a href="#format格式化输出" class="headerlink" title="format格式化输出"></a>format格式化输出</h3>
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&#x27;Xiaoming&#x27;</span></span><br><span class="line">age = <span class="number">18</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello,&#123;&#125;,you are &#123;&#125;&quot;</span>.<span class="built_in">format</span>(name,age))</span><br><span class="line"><span class="comment">#运行结果</span></span><br><span class="line">hello,Xiaoming,you are <span class="number">18</span></span><br><span class="line">----------------------------------------------</span><br><span class="line">name = <span class="string">&#x27;Xiaoming&#x27;</span></span><br><span class="line">age = <span class="number">18</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello,&#123;1&#125;,you are &#123;0&#125;-&#123;0&#125;&quot;</span>.<span class="built_in">format</span>(age,name))<span class="comment">#索引是根据format后的数据进行的哦</span></span><br><span class="line"><span class="comment">#输出：</span></span><br><span class="line">hello,Xiaoming,you are <span class="number">18</span>-<span class="number">18</span></span><br><span class="line">----------------------------------------------</span><br><span class="line">name = <span class="string">&#x27;Xiaoming&#x27;</span></span><br><span class="line">age = <span class="number">18</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello,&#123;name&#125;,you are &#123;age&#125;&quot;</span>.<span class="built_in">format</span>(age=age, name=name))</span><br><span class="line"><span class="comment">#输出：</span></span><br><span class="line">hello,Xiaoming,you are <span class="number">18</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="format把float、int等数字字符串化设置对齐方式、宽度、保留几位"   >
+          <a href="#format把float、int等数字字符串化设置对齐方式、宽度、保留几位" class="heading-link"><i class="fas fa-link"></i></a><a href="#format把float、int等数字字符串化设置对齐方式、宽度、保留几位" class="headerlink" title="format把float、int等数字字符串化设置对齐方式、宽度、保留几位"></a>format把float、int等数字字符串化设置对齐方式、宽度、保留几位</h4>
+      <p><span class="exturl"><a class="exturl__link"   href="https://blog.csdn.net/dugushangliang/article/details/89884591" >转载自独孤尚良dugushangliang</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;float占8位留2位小数：&#123;:8.2f&#125;——默认右对齐&quot;</span>.<span class="built_in">format</span>(<span class="number">1192.68123</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;float占18位留2位小数：&#123;:18.2f&#125;——默认右对齐&quot;</span>.<span class="built_in">format</span>(<span class="number">1192.68123</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;float占18位留2位小数：&#123;:&gt;18.2f&#125;——右对齐&quot;</span>.<span class="built_in">format</span>(<span class="number">1192.68123</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;float占18位留2位小数：&#123;:&lt;18.2f&#125;——左对齐&quot;</span>.<span class="built_in">format</span>(<span class="number">1192.68123</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;float占18位留2位小数：&#123;:^18.2f&#125;——居中对齐&quot;</span>.<span class="built_in">format</span>(<span class="number">1192.68123</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;float留2位小数：&#123;:.2f&#125;——默认右对齐&quot;</span>.<span class="built_in">format</span>(<span class="number">1192.68123</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;float留2位小数：&#123;:&gt;.2f&#125;——右对齐&quot;</span>.<span class="built_in">format</span>(<span class="number">1192.68123</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;float留2位小数：&#123;:&lt;.2f&#125;——左对齐&quot;</span>.<span class="built_in">format</span>(<span class="number">1192.68123</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;float留2位小数：&#123;:&lt;+.2f&#125;——左对齐带符号&quot;</span>.<span class="built_in">format</span>(<span class="number">1192.68123</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;float留2位小数：&#123;:&lt;.2%&#125;——左对齐百分比形式&quot;</span>.<span class="built_in">format</span>(<span class="number">0.6812345</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;int占8位：&#123;:&lt;8d&#125;——左对齐&quot;</span>.<span class="built_in">format</span>(<span class="number">1192</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;int占8位：&#123;:0&lt;8d&#125;——左对齐补0&quot;</span>.<span class="built_in">format</span>(<span class="number">1192</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;int占8位：&#123;:x&lt;8d&#125;——左对齐补x&quot;</span>.<span class="built_in">format</span>(<span class="number">1192</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;int占8位：&#123;:中&lt;8d&#125;——左对齐补中&quot;</span>.<span class="built_in">format</span>(<span class="number">1192</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;int占8位：&#123;:8d&#125;——默认右对齐&quot;</span>.<span class="built_in">format</span>(<span class="number">1192</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;int占8位：&#123;:8d&#125;——默认右对齐&quot;</span>.<span class="built_in">format</span>(<span class="number">1192</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;int占22位：&#123;:22e&#125;——默认右对齐科学计数法&quot;</span>.<span class="built_in">format</span>(<span class="number">1230000</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;int占22位：&#123;:22,&#125;——默认右对齐逗号分隔数字&quot;</span>.<span class="built_in">format</span>(<span class="number">1230000</span>))</span><br><span class="line">---------------------------------------------------------------</span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line"><span class="built_in">float</span>占<span class="number">8</span>位留<span class="number">2</span>位小数： <span class="number">1192.68</span>——默认右对齐</span><br><span class="line"><span class="built_in">float</span>占<span class="number">18</span>位留<span class="number">2</span>位小数：           <span class="number">1192.68</span>——默认右对齐</span><br><span class="line"><span class="built_in">float</span>占<span class="number">18</span>位留<span class="number">2</span>位小数：           <span class="number">1192.68</span>——右对齐</span><br><span class="line"><span class="built_in">float</span>占<span class="number">18</span>位留<span class="number">2</span>位小数：<span class="number">1192.68</span>           ——左对齐</span><br><span class="line"><span class="built_in">float</span>占<span class="number">18</span>位留<span class="number">2</span>位小数：     <span class="number">1192.68</span>      ——居中对齐</span><br><span class="line"><span class="built_in">float</span>留<span class="number">2</span>位小数：<span class="number">1192.68</span>——默认右对齐</span><br><span class="line"><span class="built_in">float</span>留<span class="number">2</span>位小数：<span class="number">1192.68</span>——右对齐</span><br><span class="line"><span class="built_in">float</span>留<span class="number">2</span>位小数：<span class="number">1192.68</span>——左对齐</span><br><span class="line"><span class="built_in">float</span>留<span class="number">2</span>位小数：+<span class="number">1192.68</span>——左对齐带符号</span><br><span class="line"><span class="built_in">float</span>留<span class="number">2</span>位小数：<span class="number">68.12</span>%——左对齐百分比形式</span><br><span class="line"><span class="built_in">int</span>占<span class="number">8</span>位：<span class="number">1192</span>    ——左对齐</span><br><span class="line"><span class="built_in">int</span>占<span class="number">8</span>位：<span class="number">11920000</span>——左对齐补<span class="number">0</span></span><br><span class="line"><span class="built_in">int</span>占<span class="number">8</span>位：1192xxxx——左对齐补x</span><br><span class="line"><span class="built_in">int</span>占<span class="number">8</span>位：<span class="number">1192</span>中中中中——左对齐补中</span><br><span class="line"><span class="built_in">int</span>占<span class="number">8</span>位：    <span class="number">1192</span>——默认右对齐</span><br><span class="line"><span class="built_in">int</span>占<span class="number">8</span>位：    <span class="number">1192</span>——默认右对齐</span><br><span class="line"><span class="built_in">int</span>占<span class="number">22</span>位：          <span class="number">1.230000e+06</span>——默认右对齐科学计数法</span><br><span class="line"><span class="built_in">int</span>占<span class="number">22</span>位：             <span class="number">1</span>,<span class="number">230</span>,<span class="number">000</span>——默认右对齐逗号分隔数字</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="f-String格式化（第三种格式化输出）"   >
+          <a href="#f-String格式化（第三种格式化输出）" class="heading-link"><i class="fas fa-link"></i></a><a href="#f-String格式化（第三种格式化输出）" class="headerlink" title="f-String格式化（第三种格式化输出）"></a>f-String格式化（第三种格式化输出）</h3>
+      <p>比较简单，实用，f 或者 F都可以哦 ，让字符和数字能够直接相加</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&#x27;python&#x27;</span></span><br><span class="line">age = <span class="number">30</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;hello,<span class="subst">&#123;name&#125;</span>,you are <span class="subst">&#123;age&#125;</span>&quot;</span>)</span><br><span class="line"><span class="comment">#输出：</span></span><br><span class="line">hello,python,you are <span class="number">30</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight python"><div class="table-container"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&#x27;python&#x27;</span></span><br><span class="line">age = <span class="number">30</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">F&quot;hello,<span class="subst">&#123;name&#125;</span>,you are <span class="subst">&#123;age&#125;</span>&quot;</span>)</span><br><span class="line">输出：</span><br><span class="line">hello,python,you are <span class="number">30</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight python"><div class="table-container"><table><tr><td class="code"><pre><span class="line">name = <span class="string">&#x27;python&#x27;</span></span><br><span class="line">age = <span class="number">30</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">F&quot;<span class="subst">&#123;age * <span class="number">2</span>&#125;</span>&quot;</span>)</span><br><span class="line">输出：</span><br><span class="line"><span class="number">60</span></span><br></pre></td></tr></table></div></figure>
+
+<p><span class="exturl"><a class="exturl__link"   href="https://www.cnblogs.com/SkyOceanchen/p/11276921.html" >转载于</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+]]></content>
+      <categories>
+        <category>程序设计</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32蓝牙小车一</title>
+    <url>/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%80/</url>
+    <content><![CDATA[
+        <h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（一）"   >
+          <a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（一）" class="heading-link"><i class="fas fa-link"></i></a><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（一）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（一）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（一）</h1>
+      <span id="more"></span>
+
+
+        <h3 id="元件准备"   >
+          <a href="#元件准备" class="heading-link"><i class="fas fa-link"></i></a><a href="#元件准备" class="headerlink" title="元件准备"></a>元件准备</h3>
+      <ol>
+<li>STM32F103C8T6核心板</li>
+</ol>
+<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008222750464.png" alt="STM32F103C8T6核心板" title="在这里输入图片标题" style="zoom: 67%;" />
+
+<ol start="2">
+<li>蓝牙串口模块 JDY-31</li>
+</ol>
+<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008222833390.png" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" />
+
+<ol start="3">
+<li><p>2WD智能小车底盘套件（包含小车底盘、两个直流电机和橡胶轮）</p>
+<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223222256.png" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" /></li>
+<li><p>L298N电机驱动板模块 </p>
+<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223358782.png" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" /></li>
+<li><p>12v锂电池18650锂电池</p>
+<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223801067.png" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" /></li>
+<li><p>LM2596S DC-DC可调降压模块</p>
+<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223947022.png" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" /></li>
+<li><p>若干杜邦线</p>
+</li>
+</ol>
+
+        <h3 id="模块的使用"   >
+          <a href="#模块的使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#模块的使用" class="headerlink" title="模块的使用"></a>模块的使用</h3>
+      
+        <h4 id="L298N的使用"   >
+          <a href="#L298N的使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#L298N的使用" class="headerlink" title="L298N的使用"></a>L298N的使用</h4>
+      <img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009104606216.png" alt="输入图片说明" title="在这里输入图片标题" style="zoom: 33%;" />
+
+<p>由于一般的控制芯片起到控制作用，但是驱动能力不强，而电机所需要的电流一般比较大，控制芯片的IO口不能提供大电流，所以一般不<br>能直接驱动电机。L298是驱动芯片，可以将控制芯片的输出转换成较高的电压和能够输出较大的电流，是比较常用的电机驱动芯片。</p>
+<p><strong>使用方法：</strong><br>输出A：通道A输出，连接直流电机<br>输出B:通道B输出，连接直流电机<br>12V供电：主电源正极输入<br>GND：主电源正负极输入<br>5V输出：5V电压输出端，可用于给STM32开发板进行供电<br>ENA:通道A使能<br>ENB:通道B使能<br>IN1—IN4：逻辑输入IN1-IN2接单片机IO口控制通道A，逻辑输入IN3-IN4接单片机IO口控制通道B<br>（靠近ENA的两个引脚为IN1，IN2；同理靠近ENB的两个引脚为IN3，IN4）</p>
+
+        <h4 id="LM2596S-DC-DC可调降压模块的使用"   >
+          <a href="#LM2596S-DC-DC可调降压模块的使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#LM2596S-DC-DC可调降压模块的使用" class="headerlink" title="LM2596S DC-DC可调降压模块的使用"></a>LM2596S DC-DC可调降压模块的使用</h4>
+      <img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009103358957.png" alt="![输入图片说明](https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009110653822.png &quot;在这里输入图片标题&quot;)" title="在这里输入图片标题" style="zoom: 33%;" />
+
+<p><strong>引脚定义</strong><br>IN+：输入正极，接12v锂电池电源正极<br>IN-:   输入负极，接12v锂电池电源负极<br>OUT+：输出正极，引出杜邦线接单片机Vcc<br>OUT-：输出负极，引出杜邦线接单片机GND<br><strong>使用说明：</strong></p>
+<p>①接入电源（3-40V），电源指示灯亮，模块正常工作<br>②调整蓝色电位器旋钮（一般顺时针旋转升压逆时针降压）并用万用表检测输出电压达到所需电压为止</p>
+
+        <h4 id="蓝牙模块的使用"   >
+          <a href="#蓝牙模块的使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#蓝牙模块的使用" class="headerlink" title="蓝牙模块的使用"></a>蓝牙模块的使用</h4>
+      <p>在蓝牙模块的使用时，我们需要用到USB转TTL模块</p>
+<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009110653822.png" alt="输入图片说明" title="在这里输入图片标题" style="zoom: 33%;" />
+
+
+
+<p><strong>连接方式</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">JDY-31</th>
+<th align="center">USB转TTL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">RXD</td>
+<td align="center">TXD</td>
+</tr>
+<tr>
+<td align="center">TXD</td>
+<td align="center">RXD</td>
+</tr>
+<tr>
+<td align="center">GND</td>
+<td align="center">GND</td>
+</tr>
+<tr>
+<td align="center">VCC</td>
+<td align="center">VCC</td>
+</tr>
+<tr>
+<td align="center">EN</td>
+<td align="center">3.3V或5V</td>
+</tr>
+</tbody></table></div>
+<p>(进入AT指令模式只需要将EN引脚拉高即可，所以接3.3v或5v都可）</p>
+<p><strong>串口配置</strong></p>
+<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009113221751.png" alt="输入图片说明" title="在这里输入图片标题" style="zoom:50%;" />初次连接波特率、停止位、数据位、校验位按图中配置，勾选发送新行</p>
+<p><strong>指令</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">操作</th>
+<th align="center">指令</th>
+<th align="center">响应</th>
+<th align="center">参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">版本号</td>
+<td align="center">AT+VERSION</td>
+<td align="center">+VERSION=JDY-31-V1.35,Bluetooth V3.0</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">复位</td>
+<td align="center">AT+RESET</td>
+<td align="center">+OK</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">断开连接</td>
+<td align="center">AT+DISC</td>
+<td align="center">+OK</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">MAC地址</td>
+<td align="center">AT+LADDR</td>
+<td align="center">+LADDR=<Param></td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">波特率查询</td>
+<td align="center">AT+BAUD</td>
+<td align="center">+BAUD=<Param></td>
+<td align="center">Param:(4到9) 4：9600; 5：19200; 6：38400; 7：57600; 8：115200; 9：128000</td>
+</tr>
+<tr>
+<td align="center">波特率设置</td>
+<td align="center">AT+BAUD<Param></td>
+<td align="center">+OK</td>
+<td align="center">Param同上一行</td>
+</tr>
+<tr>
+<td align="center">密码查询</td>
+<td align="center">AT+PIN</td>
+<td align="center">+PIN=<Param></td>
+<td align="center">Param：4位密码 默认PIN：1234</td>
+</tr>
+<tr>
+<td align="center">密码修改</td>
+<td align="center">AT+PIN<Param></td>
+<td align="center">+OK</td>
+<td align="center">Param同上一行</td>
+</tr>
+<tr>
+<td align="center">广播名查询</td>
+<td align="center">AT+NAME</td>
+<td align="center">+NAME=<Param></td>
+<td align="center">Param：BLE广播名; 最长：18字节; 默认广播名：JDY-31-SPP</td>
+</tr>
+<tr>
+<td align="center">广播名修改</td>
+<td align="center">AT+NAME<Param></td>
+<td align="center">+OK</td>
+<td align="center">Param同上一行</td>
+</tr>
+<tr>
+<td align="center">恢复出厂配置</td>
+<td align="center">AT+DEFAULT</td>
+<td align="center">OK</td>
+<td align="center">无</td>
+</tr>
+</tbody></table></div>
+<p><strong>执行指令</strong><br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009130057674.png" alt="输入图片说明" title="在这里输入图片标题" style="zoom:50%;" />下面只需要在串口助手发送窗口输入指定指令即可</p>
+]]></content>
+      <categories>
+        <category>单片机</category>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32蓝牙小车三</title>
+    <url>/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%89/</url>
+    <content><![CDATA[
+        <h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（三）"   >
+          <a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（三）" class="heading-link"><i class="fas fa-link"></i></a><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（三）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（三）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（三）</h1>
+      <span id="more"></span>
+
+
+        <h3 id="STM32通过串口实现蓝牙通信"   >
+          <a href="#STM32通过串口实现蓝牙通信" class="heading-link"><i class="fas fa-link"></i></a><a href="#STM32通过串口实现蓝牙通信" class="headerlink" title="STM32通过串口实现蓝牙通信"></a>STM32通过串口实现蓝牙通信</h3>
+      <p>我们这里仅使用蓝牙串口通信实现单字节数据的传输，这些就足以控制小车的运动了。我们这里用Usart1来实现蓝牙通信，然后通过检测蓝牙发送的单字节数来简单控制单片机led灯的亮灭。<br>stm32f103c8t6的led灯的引脚为PC13，所以对PC13进行配置。</p>
+<figure class="highlight c"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;led.h&quot;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line"> GPIO_InitTypeDef  GPIO_InitStructure;</span><br><span class="line"> 	</span><br><span class="line"> RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);	 <span class="comment">//使能GPIOC端口时钟</span></span><br><span class="line">	</span><br><span class="line"> GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;				 <span class="comment">//LED--&gt;PC.5 端口配置</span></span><br><span class="line"> GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 <span class="comment">//推挽输出</span></span><br><span class="line"> GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 <span class="comment">//IO口速度为50MHz</span></span><br><span class="line"> GPIO_Init(GPIOC, &amp;GPIO_InitStructure);					 <span class="comment">//根据设定参数初始化GPIOC.13</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>对Usart1进行配置</p>
+<figure class="highlight c"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Usart1_Init</span><span class="params">(u32 bound)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//GPIO端口设置</span></span><br><span class="line">  	GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">	USART_InitTypeDef USART_InitStructure;</span><br><span class="line">	NVIC_InitTypeDef NVIC_InitStructure;</span><br><span class="line">	 </span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1|RCC_APB2Periph_GPIOA, ENABLE);	<span class="comment">//使能USART1，GPIOA时钟</span></span><br><span class="line">	<span class="comment">//USART1_TX   GPIOA.9</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9; <span class="comment">//PA.9</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	<span class="comment">//复用推挽输出</span></span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStructure);<span class="comment">//初始化GPIOA.9</span></span><br><span class="line">  <span class="comment">//USART1_RX	  GPIOA.10初始化</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;<span class="comment">//PA10</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;<span class="comment">//浮空输入</span></span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStructure);<span class="comment">//初始化GPIOA.10  </span></span><br><span class="line">  <span class="comment">//Usart1 NVIC 配置</span></span><br><span class="line">    NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;</span><br><span class="line">	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority= <span class="number">3</span>;<span class="comment">//抢占优先级3</span></span><br><span class="line">	NVIC_InitStructure.NVIC_IRQChannelSubPriority = <span class="number">3</span>;		<span class="comment">//子优先级3</span></span><br><span class="line">	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			<span class="comment">//IRQ通道使能</span></span><br><span class="line">	NVIC_Init(&amp;NVIC_InitStructure);	<span class="comment">//根据指定的参数初始化VIC寄存器</span></span><br><span class="line">   <span class="comment">//USART 初始化设置</span></span><br><span class="line">	USART_InitStructure.USART_BaudRate = bound;<span class="comment">//串口波特率</span></span><br><span class="line">	USART_InitStructure.USART_WordLength = USART_WordLength_8b;<span class="comment">//字长为8位数据格式</span></span><br><span class="line">	USART_InitStructure.USART_StopBits = USART_StopBits_1;<span class="comment">//一个停止位</span></span><br><span class="line">	USART_InitStructure.USART_Parity = USART_Parity_No;<span class="comment">//无奇偶校验位</span></span><br><span class="line">	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;<span class="comment">//无硬件数据流控制</span></span><br><span class="line">	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;	<span class="comment">//收发模式</span></span><br><span class="line"></span><br><span class="line">    USART_Init(USART1, &amp;USART_InitStructure); <span class="comment">//初始化串口1</span></span><br><span class="line">    USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);<span class="comment">//开启串口接受中断</span></span><br><span class="line">    USART_Cmd(USART1, ENABLE);                    <span class="comment">//使能串口1 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<p><strong>连接</strong></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">JDY-31</th>
+<th align="center">stm32f103c8t6</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">RX</td>
+<td align="center">PA9</td>
+</tr>
+<tr>
+<td align="center">TX</td>
+<td align="center">PA10</td>
+</tr>
+<tr>
+<td align="center">VCC</td>
+<td align="center">VCC</td>
+</tr>
+<tr>
+<td align="center">GND</td>
+<td align="center">GND</td>
+</tr>
+</tbody></table></div>
+<p>我们这里设置当串口检测到蓝牙发送数字0，LED亮，发送数字1，LED灭。<br>首先对LED进行定义<br><code>#define LED PCout(13)</code><br>再写串口中断服务函数</p>
+<figure class="highlight c"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART1_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	u8 res;</span><br><span class="line">	<span class="keyword">if</span>(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) <span class="comment">//接收中断</span></span><br><span class="line">	&#123;</span><br><span class="line">	res = USART_ReceiveData(USART1);</span><br><span class="line">	<span class="keyword">if</span>(res == <span class="number">0</span>)</span><br><span class="line">		LED = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(res == <span class="number">1</span>)</span><br><span class="line">		LED = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="蓝牙APP制作"   >
+          <a href="#蓝牙APP制作" class="heading-link"><i class="fas fa-link"></i></a><a href="#蓝牙APP制作" class="headerlink" title="蓝牙APP制作"></a>蓝牙APP制作</h3>
+      <p>下面我们来用蓝牙app发送信号给串口，蓝牙APP制作网站：<span class="exturl"><a class="exturl__link"   href="http://app.gzjkw.net/login/" >http://app.gzjkw.net/login/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>登录后进入界面，先点击左上角的项目，然后新建项目，注意项目名称要以字母开头并且仅支持字母、数字及下划线。<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E8%93%9D%E7%89%99APP.png" alt="蓝牙app制作"></p>
+<p>各个组件的属性可根据自己的爱好配置。<br>组件设计完后，下面进入到蓝牙APP的逻辑设计，在网页右上角点击进入逻辑设计。<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1.png" alt="逻辑设计"></p>
+<p>点击相应的组件，可出现对应的逻辑板块，在进行选择与配置。<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E9%80%BB%E8%BE%91%E6%9D%BF%E5%9D%97.png" alt="逻辑板块" style="zoom: 50%;" /></p>
+<p>最后在菜单栏里找到打包apk选项，点击打包apk并显示二维码，手机扫描二维码下载，然后在手机设置中，找到蓝牙模块的广播名，输入PIN连接，打开app，点击蓝牙选择，找到蓝牙模块，连接即可。<br>这时你会看到，点击开灯按钮，LED亮；关灯按钮，LED灭。</p>
+]]></content>
+      <categories>
+        <category>单片机</category>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32蓝牙小车二</title>
+    <url>/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%BA%8C/</url>
+    <content><![CDATA[
+        <h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（二）"   >
+          <a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（二）" class="heading-link"><i class="fas fa-link"></i></a><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（二）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（二）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（二）</h1>
+      <span id="more"></span>
+
+
+        <h3 id="STM32控制电机的转动方向和速度"   >
+          <a href="#STM32控制电机的转动方向和速度" class="heading-link"><i class="fas fa-link"></i></a><a href="#STM32控制电机的转动方向和速度" class="headerlink" title="STM32控制电机的转动方向和速度"></a>STM32控制电机的转动方向和速度</h3>
+      
+        <h4 id="GPIO配置控制电机转向"   >
+          <a href="#GPIO配置控制电机转向" class="heading-link"><i class="fas fa-link"></i></a><a href="#GPIO配置控制电机转向" class="headerlink" title="GPIO配置控制电机转向"></a>GPIO配置控制电机转向</h4>
+      <p>首先我们知道在stm32控制led灯的时候，我们将led灯的引脚输出高电平就会亮，led灯引脚输出低电平是就会灭。同理我们在简单控制直流电机转动方向时，因为直流电机有两个引脚，所以我们需要用单片机的两个IO口来控制直流电机，例如当第一路输出高电平，第二路输出低电平，就可以使电机正转；反之第一路输出低电平，第二路输出高点平，就可以使电机反转。</p>
+<p><strong>程序实现</strong></p>
+<p>==motor.h==</p>
+<figure class="highlight c"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _MOTOR_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _MOTOR_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;sys.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Motor_1 PAout(5)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Motor_2 PAout(6)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Motor_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Turn_A</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Turn_B</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Turn_stop</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<p>==motor.c==</p>
+<figure class="highlight c"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;motor.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Motor_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	GPIO_InitTypeDef GPIO_InitStruct;</span><br><span class="line">	</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);<span class="comment">//开启GPIOA时钟</span></span><br><span class="line">	<span class="comment">//GPIO初始化配置</span></span><br><span class="line">	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;<span class="comment">//推挽输出</span></span><br><span class="line">	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_6;<span class="comment">//设置PA5、PA6控制电机IO口</span></span><br><span class="line">	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;<span class="comment">//IO口速度为50MHz</span></span><br><span class="line">	GPIO_Init(GPIOA, &amp;GPIO_InitStruct);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Turn_A</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//正转</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Motor_1 = <span class="number">1</span>;</span><br><span class="line">	Motor_2 = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Turn_B</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//反转</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Motor_1 = <span class="number">0</span>;</span><br><span class="line">	Motor_2 = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Turn_stop</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//停止</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Motor_1 = <span class="number">0</span>;</span><br><span class="line">	Motor_2 = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>接线图</strong></p>
+<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/L298n.bmp" alt="L298N接线图"></p>
+<p>L298N接STM32的PA5和PA6引脚</p>
+
+        <h4 id="PWM配置直流电机的速度与方向"   >
+          <a href="#PWM配置直流电机的速度与方向" class="heading-link"><i class="fas fa-link"></i></a><a href="#PWM配置直流电机的速度与方向" class="headerlink" title="PWM配置直流电机的速度与方向"></a>PWM配置直流电机的速度与方向</h4>
+      <p>由上面程序可看到只能实现对电机转动方向的控制，电机的速度一直是5v电源供给，速度保持恒定值，无法实现对电机速度的控制。下面我们就来使用PWM来调节直流电机的速度，PWM即脉冲宽度调制(PWM)，是利用微处理器的数字输出来对模拟电路进行控制的一种非常有效的技术。即对脉冲宽度的控制。在STM32例程中有通过PWM实现呼吸灯的实验，通过占空比的大小变化来使led灯的亮度变化。<br>通过PWM调速有两种方法：一种是拔掉跳线帽通道使能，在通道使能处输入一个pwm信号，在逻辑输入逻辑信号；一种是不拔掉跳线帽，在逻辑输入两个pwm信号来控制电机速度和转向。<br>我们这里使用不拔掉跳线帽，即第二种方法。<br><strong>原理</strong><br>占空比可以实现对电机转速的调节，我们知道，占空比是高电平在一个周期之中的比值，高电平的所占的比值越大，占空比就越大，对于直流电机来讲，电机输出端引脚是高电平电机就可以转动，当输出端高电平时，电机会转动，但是是一点一点的提速，在高电平突然转向低电平时，电机由于电感有防止电流突变的作用是不会停止的，会保持这原有的转速，以此往复，电机的转速就是周期内输出的平均电压值，所以实质上我们调速是将电机处于一种，似停非停，似全速转动又非全速转动的状态，那么在一个周期的平均速度就是我们占空比调出来的速度了。<br>总结： 在电机控制中，电压越大，电机转速越快，而通过PWM输出不同的模拟电压，便可以使电机达到不同的输出转速。<br><strong>程序实现</strong><br>==motor.h==</p>
+<figure class="highlight c"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _MOTOR_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _MOTOR_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;sys.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">My_TIM3_Init</span><span class="params">(u16 arr,u16 psc)</span></span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></div></figure>
+
+<p>==motor.c==</p>
+<figure class="highlight c"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="comment">//PA6,PA7 TIM3CH12</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">My_TIM3_Init</span><span class="params">(u16 arr,u16 psc)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	GPIO_InitTypeDef GPIO_InitStruct;</span><br><span class="line">	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStruct;</span><br><span class="line">	TIM_OCInitTypeDef TIM_OCInitStruct;</span><br><span class="line">	</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);<span class="comment">//开启GPIOA时钟</span></span><br><span class="line">	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);<span class="comment">//开启TIM3时钟</span></span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);<span class="comment">//开启端口复用功能</span></span><br><span class="line">	<span class="comment">//GPIOA初始化</span></span><br><span class="line">	GPIO_InitStruct.GPIO_Mode=GPIO_Mode_AF_PP;<span class="comment">//复用推挽</span></span><br><span class="line">	GPIO_InitStruct.GPIO_Pin=GPIO_Pin_6|GPIO_Pin_7;</span><br><span class="line">	GPIO_InitStruct.GPIO_Speed=GPIO_Speed_50MHz;</span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStruct);</span><br><span class="line">	<span class="comment">//定时器初始化</span></span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_ClockDivision=TIM_CKD_DIV1;<span class="comment">//分频因子</span></span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_CounterMode=TIM_CounterMode_Up;<span class="comment">//向上计数</span></span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_Period=arr;<span class="comment">//自动重装载值</span></span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_Prescaler=psc;<span class="comment">//预分频系数</span></span><br><span class="line">	<span class="comment">//输出比较初始化</span></span><br><span class="line">	TIM_OCInitStruct.TIM_OCMode=TIM_OCMode_PWM1;</span><br><span class="line">	TIM_OCInitStruct.TIM_OCNPolarity=TIM_OCPolarity_High;</span><br><span class="line">	TIM_OCInitStruct.TIM_OutputState=TIM_OutputState_Enable;</span><br><span class="line">	</span><br><span class="line">	TIM_TimeBaseInit(TIM3, &amp;TIM_TimeBaseInitStruct);</span><br><span class="line">	TIM_OC1Init(TIM3,&amp;TIM_OCInitStruct);<span class="comment">//通道1</span></span><br><span class="line">	TIM_OC2Init(TIM3,&amp;TIM_OCInitStruct);<span class="comment">//通道2</span></span><br><span class="line">	</span><br><span class="line">	TIM_OC1PreloadConfig(TIM3,TIM_OCPreload_Enable);<span class="comment">//使能预装载寄存器</span></span><br><span class="line">	TIM_OC2PreloadConfig(TIM3,TIM_OCPreload_Enable);</span><br><span class="line">  	TIM_Cmd(TIM3,ENABLE);        <span class="comment">//使能TIM3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>这里使用了TIM3的CH1和CH2，所以对PA6和PA7的引脚进行配置</p>
+<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/TIM3ch1ch2.png" alt="tim3ch1ch2"></p>
+<p>然后我们可以使用</p>
+<p><code>TIM_SetComparex(TIM3, PWM);</code>这个函数来对直流电机的控制</p>
+<p>==main.c==</p>
+<figure class="highlight c"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	delay_init(); <span class="comment">//延时函数初始化</span></span><br><span class="line">	My_TIM3_Init((<span class="number">20000</span><span class="number">-1</span>),(<span class="number">72</span><span class="number">-1</span>)); <span class="comment">//周期为20ms  （arr+1）(psc+1)/Tclk</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">2000</span>);<span class="comment">//正慢转2s</span></span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">0</span>);</span><br><span class="line">        delay_s(<span class="number">2</span>);</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">10000</span>);<span class="comment">//正快转2s</span></span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">0</span>); </span><br><span class="line">        delay_s(<span class="number">2</span>);</span><br><span class="line">        TIM_SetCompare1(TIM3, <span class="number">0</span>);<span class="comment">//反慢转2s</span></span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">2000</span>);</span><br><span class="line">        delay_s(<span class="number">2</span>);</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">0</span>);<span class="comment">//反快转2s</span></span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">10000</span>); </span><br><span class="line">        delay_s(<span class="number">2</span>);</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">0</span>);<span class="comment">//停止</span></span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+<p>由于stm32中自带的延时函数观察电机转动的现象不明显，所以我们可以自己写一段以秒为单位的延时，在==delay.c==中添加以下代码</p>
+<figure class="highlight c"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_s</span><span class="params">(u16 ns)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; ns; i++)</span><br><span class="line">	delay_ms(<span class="number">1000</span>);</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>将程序烧录到stm32中，我们就可以实现电机的速度和转向的调节了。</p>
+]]></content>
+      <categories>
+        <category>单片机</category>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32蓝牙小车四</title>
+    <url>/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/</url>
+    <content><![CDATA[
+        <h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（四）"   >
+          <a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（四）" class="heading-link"><i class="fas fa-link"></i></a><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（四）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（四）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（四）</h1>
+      <span id="more"></span>
+
+<p>接下来我们只需要简单的修改下程序及蓝牙app就完成蓝牙遥控小车的制作了。</p>
+
+        <h3 id="电机驱动"   >
+          <a href="#电机驱动" class="heading-link"><i class="fas fa-link"></i></a><a href="#电机驱动" class="headerlink" title="电机驱动"></a>电机驱动</h3>
+      <p>由于小车为二轮驱动，所以我们用TIM3的CH1~CH4,引脚为别为PA6、PA7、PB0、PB1。</p>
+
+        <h4 id="motor-c"   >
+          <a href="#motor-c" class="heading-link"><i class="fas fa-link"></i></a><a href="#motor-c" class="headerlink" title="motor.c"></a>motor.c</h4>
+      <figure class="highlight c"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">My_TIM3_Init</span><span class="params">(u16 arr,u16 psc)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	GPIO_InitTypeDef GPIO_InitStruct;</span><br><span class="line">	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStruct;</span><br><span class="line">	TIM_OCInitTypeDef TIM_OCInitStruct;</span><br><span class="line">	</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);</span><br><span class="line">	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB|RCC_APB2Periph_AFIO,ENABLE);</span><br><span class="line">	GPIO_InitStruct.GPIO_Mode=GPIO_Mode_AF_PP;<span class="comment">//复用推挽</span></span><br><span class="line">	GPIO_InitStruct.GPIO_Pin=GPIO_Pin_6|GPIO_Pin_7;</span><br><span class="line">	GPIO_InitStruct.GPIO_Speed=GPIO_Speed_50MHz;</span><br><span class="line">	</span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_ClockDivision=TIM_CKD_DIV1;<span class="comment">//分频因子</span></span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_CounterMode=TIM_CounterMode_Up;<span class="comment">//向上计数</span></span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_Period=arr;<span class="comment">//自动重装载值</span></span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_Prescaler=psc;<span class="comment">//预分频系数</span></span><br><span class="line">	</span><br><span class="line">	TIM_OCInitStruct.TIM_OCMode=TIM_OCMode_PWM1;</span><br><span class="line">	TIM_OCInitStruct.TIM_OCNPolarity=TIM_OCPolarity_High;</span><br><span class="line">	TIM_OCInitStruct.TIM_OutputState=TIM_OutputState_Enable;</span><br><span class="line">	GPIO_Init(GPIOA, &amp;GPIO_InitStruct);</span><br><span class="line">	GPIO_InitStruct.GPIO_Mode=GPIO_Mode_AF_PP;<span class="comment">//复用推挽</span></span><br><span class="line">	GPIO_InitStruct.GPIO_Pin=GPIO_Pin_0|GPIO_Pin_1;</span><br><span class="line">	GPIO_InitStruct.GPIO_Speed=GPIO_Speed_50MHz;</span><br><span class="line">	GPIO_Init(GPIOB, &amp;GPIO_InitStruct);</span><br><span class="line">	TIM_TimeBaseInit(TIM3, &amp;TIM_TimeBaseInitStruct);</span><br><span class="line">	TIM_OC1Init(TIM3,&amp;TIM_OCInitStruct);<span class="comment">//通道1</span></span><br><span class="line">	TIM_OC2Init(TIM3,&amp;TIM_OCInitStruct);<span class="comment">//通道2</span></span><br><span class="line">	</span><br><span class="line">	TIM_OC1PreloadConfig(TIM3,TIM_OCPreload_Enable);        <span class="comment">//使能预装载寄存器</span></span><br><span class="line">	TIM_OC2PreloadConfig(TIM3,TIM_OCPreload_Enable);</span><br><span class="line">	</span><br><span class="line">	TIM_OC3Init(TIM3,&amp;TIM_OCInitStruct);<span class="comment">//通道3</span></span><br><span class="line">	TIM_OC4Init(TIM3,&amp;TIM_OCInitStruct);<span class="comment">//通道4</span></span><br><span class="line">	</span><br><span class="line">	TIM_OC3PreloadConfig(TIM3,TIM_OCPreload_Enable);        <span class="comment">//使能预装载寄存器</span></span><br><span class="line">	TIM_OC4PreloadConfig(TIM3,TIM_OCPreload_Enable);</span><br><span class="line">  	TIM_Cmd(TIM3,ENABLE);        <span class="comment">//使能TIM3</span></span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_front</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//前进</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">6000</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">500</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">6000</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_back</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//后退</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">6000</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">6000</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">500</span>); </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_left</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//左转</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">500</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">4000</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_right</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//右转</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">4000</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">500</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">500</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_stop</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//停止</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">500</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">500</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="蓝牙控制"   >
+          <a href="#蓝牙控制" class="heading-link"><i class="fas fa-link"></i></a><a href="#蓝牙控制" class="headerlink" title="蓝牙控制"></a>蓝牙控制</h3>
+      
+        <h4 id="串口中断服务函数修改"   >
+          <a href="#串口中断服务函数修改" class="heading-link"><i class="fas fa-link"></i></a><a href="#串口中断服务函数修改" class="headerlink" title="串口中断服务函数修改"></a>串口中断服务函数修改</h4>
+      <figure class="highlight c"><div class="table-container"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART1_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	u8 res;</span><br><span class="line">	<span class="keyword">if</span>(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) <span class="comment">//接收中断</span></span><br><span class="line">	&#123;</span><br><span class="line">		res = USART_ReceiveData(USART1);</span><br><span class="line">		<span class="keyword">switch</span> (res)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x00</span>: motor_stop(); <span class="keyword">break</span>;<span class="comment">//停止</span></span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x01</span>: motor_front(); <span class="keyword">break</span>;<span class="comment">//前进</span></span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x02</span>: motor_back(); <span class="keyword">break</span>;<span class="comment">//后退</span></span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x03</span>: motor_left(); <span class="keyword">break</span>;<span class="comment">//左转</span></span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x04</span>: motor_right(); <span class="keyword">break</span>;<span class="comment">//右转</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="蓝牙APP修改"   >
+          <a href="#蓝牙APP修改" class="heading-link"><i class="fas fa-link"></i></a><a href="#蓝牙APP修改" class="headerlink" title="蓝牙APP修改"></a>蓝牙APP修改</h4>
+      <p><strong>组件修改</strong></p>
+<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6.png" alt="按钮组件" style="zoom:67%;" />
+
+<p><strong>逻辑修改</strong></p>
+<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E6%8C%89%E9%92%AE.png" alt="逻辑修改" style="zoom: 67%;" />
+
+<p>最后烧录程序，一个简单的蓝牙遥控小车就完成了。</p>
+<p>视频演示地址：<span class="exturl"><a class="exturl__link"   href="https://www.bilibili.com/video/BV1cq4y1Z72B?spm_id_from=333.999.0.0" >https://www.bilibili.com/video/BV1cq4y1Z72B?spm_id_from=333.999.0.0</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+]]></content>
+      <categories>
+        <category>单片机</category>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/11/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <span class="exturl"><a class="exturl__link"   href="https://hexo.io/" >Hexo</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>! This is your very first post. Check <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/" >documentation</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> or you can ask me on <span class="exturl"><a class="exturl__link"   href="https://github.com/hexojs/hexo/issues" >GitHub</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>.</p>
+
+        <h2 id="Quick-Start"   >
+          <a href="#Quick-Start" class="heading-link"><i class="fas fa-link"></i></a><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
+      
+        <h3 id="Create-a-new-post"   >
+          <a href="#Create-a-new-post" class="heading-link"><i class="fas fa-link"></i></a><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3>
+      <span id="more"></span>
+
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/writing.html" >Writing</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h3 id="Run-server"   >
+          <a href="#Run-server" class="heading-link"><i class="fas fa-link"></i></a><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/server.html" >Server</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h3 id="Generate-static-files"   >
+          <a href="#Generate-static-files" class="heading-link"><i class="fas fa-link"></i></a><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/generating.html" >Generating</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h3 id="Deploy-to-remote-sites"   >
+          <a href="#Deploy-to-remote-sites" class="heading-link"><i class="fas fa-link"></i></a><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+]]></content>
+  </entry>
+</search>
