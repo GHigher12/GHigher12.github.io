@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>GHigher-Blog</title>
+  <icon>https://ghigher12.github.io/icon.png</icon>
+  <subtitle>write code and love life</subtitle>
+  <link href="https://ghigher12.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://ghigher12.github.io/"/>
+  <updated>2021-11-14T14:32:25.252Z</updated>
+  <id>https://ghigher12.github.io/</id>
+  
+  <author>
+    <name>GHigher</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python的输入与输出</title>
+    <link href="https://ghigher12.github.io/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/"/>
+    <id>https://ghigher12.github.io/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</id>
+    <published>2021-11-14T14:25:11.000Z</published>
+    <updated>2021-11-14T14:32:25.252Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;相比于C语言，python的输入输出更加多样化。下面对python的输入输出进行简单的总结。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="程序设计" scheme="https://ghigher12.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="Python" scheme="https://ghigher12.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Python/"/>
+    
+    
+    <category term="Python" scheme="https://ghigher12.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STM32蓝牙小车四</title>
+    <link href="https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/"/>
+    <id>https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/</id>
+    <published>2021-11-14T14:20:21.000Z</published>
+    <updated>2021-11-14T14:31:42.603Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（四）&quot;   &gt;
+          &lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（四）&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（四）&quot; class=&quot;headerlink&quot; title=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（四）&quot;&gt;&lt;/a&gt;STM32基础项目：基于stm32f1的蓝牙遥控小车（四）&lt;/h1&gt;</summary>
+    
+    
+    
+    <category term="单片机" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="STM32" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    
+    
+    <category term="STM32" scheme="https://ghigher12.github.io/tags/STM32/"/>
+    
+    <category term="C语言" scheme="https://ghigher12.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STM32蓝牙小车三</title>
+    <link href="https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%89/"/>
+    <id>https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%89/</id>
+    <published>2021-11-14T14:20:11.000Z</published>
+    <updated>2021-11-14T14:31:35.977Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（三）&quot;   &gt;
+          &lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（三）&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（三）&quot; class=&quot;headerlink&quot; title=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（三）&quot;&gt;&lt;/a&gt;STM32基础项目：基于stm32f1的蓝牙遥控小车（三）&lt;/h1&gt;</summary>
+    
+    
+    
+    <category term="单片机" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="STM32" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    
+    
+    <category term="STM32" scheme="https://ghigher12.github.io/tags/STM32/"/>
+    
+    <category term="C语言" scheme="https://ghigher12.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STM32蓝牙小车二</title>
+    <link href="https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%BA%8C/"/>
+    <id>https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%BA%8C/</id>
+    <published>2021-11-14T14:20:04.000Z</published>
+    <updated>2021-11-14T14:30:35.464Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（二）&quot;   &gt;
+          &lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（二）&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（二）&quot; class=&quot;headerlink&quot; title=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（二）&quot;&gt;&lt;/a&gt;STM32基础项目：基于stm32f1的蓝牙遥控小车（二）&lt;/h1&gt;</summary>
+    
+    
+    
+    <category term="单片机" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="STM32" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    
+    
+    <category term="STM32" scheme="https://ghigher12.github.io/tags/STM32/"/>
+    
+    <category term="C语言" scheme="https://ghigher12.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STM32蓝牙小车一</title>
+    <link href="https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%80/"/>
+    <id>https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%80/</id>
+    <published>2021-11-14T14:17:13.000Z</published>
+    <updated>2021-11-14T14:31:49.986Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（一）&quot;   &gt;
+          &lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（一）&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（一）&quot; class=&quot;headerlink&quot; title=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（一）&quot;&gt;&lt;/a&gt;STM32基础项目：基于stm32f1的蓝牙遥控小车（一）&lt;/h1&gt;</summary>
+    
+    
+    
+    <category term="单片机" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="STM32" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    
+    
+    <category term="STM32" scheme="https://ghigher12.github.io/tags/STM32/"/>
+    
+    <category term="C语言" scheme="https://ghigher12.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://ghigher12.github.io/2021/11/14/hello-world/"/>
+    <id>https://ghigher12.github.io/2021/11/14/hello-world/</id>
+    <published>2021-11-14T03:06:51.958Z</published>
+    <updated>2021-11-14T15:56:47.408Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Welcome to &lt;span class=&quot;exturl&quot;&gt;&lt;a class=&quot;exturl__link&quot;   href=&quot;https://hexo.io/&quot; &gt;Hexo&lt;/a&gt;&lt;span class=&quot;exturl__icon&quot;&gt;&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;! This is your very first post. Check &lt;span class=&quot;exturl&quot;&gt;&lt;a class=&quot;exturl__link&quot;   href=&quot;https://hexo.io/docs/&quot; &gt;documentation&lt;/a&gt;&lt;span class=&quot;exturl__icon&quot;&gt;&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;span class=&quot;exturl&quot;&gt;&lt;a class=&quot;exturl__link&quot;   href=&quot;https://hexo.io/docs/troubleshooting.html&quot; &gt;troubleshooting&lt;/a&gt;&lt;span class=&quot;exturl__icon&quot;&gt;&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt; or you can ask me on &lt;span class=&quot;exturl&quot;&gt;&lt;a class=&quot;exturl__link&quot;   href=&quot;https://github.com/hexojs/hexo/issues&quot; &gt;GitHub&lt;/a&gt;&lt;span class=&quot;exturl__icon&quot;&gt;&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;.&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+</feed>
