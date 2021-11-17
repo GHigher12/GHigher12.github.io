@@ -447,4 +447,39 @@
 <p>More info: <span class="exturl"><a class="exturl__link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>Ubuntu18.04遇到的问题</title>
+    <url>/2021/11/17/Ubuntu18-04%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>
+        <h2 id="Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题"   >
+          <a href="#Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题" class="headerlink" title="Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题"></a>Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题</h2>
+      <p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu_sougou.png" alt="Sougou输入法乱码"></p>
+<p><strong>解决方法</strong></p>
+<p>1.在Ubuntu中打开 系统设置–&gt;区域和语言–&gt;管理已安装语言，将键盘输入法系统设置为fcitx.</p>
+<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu.png" alt="setting" style="zoom: 80%;" />
+
+<p>2.打开终端，输入fcitx-configtool</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="code"><pre><span class="line">fcitx-configtool</span><br></pre></td></tr></table></div></figure>
+
+<p>3.不要把搜狗拼音放在第一位，如果放在第一位就会出现选词板乱码现象；通过上下箭头把Sogou Pinyin放在第二位，乱码现象自然消失，问题解决。（如果没有搜狗拼音，通过“+” 添加搜狗拼音）<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/configtool.png"></p>
+
+        <h2 id="Ubuntu18-04-鼠标箭头频闪问题"   >
+          <a href="#Ubuntu18-04-鼠标箭头频闪问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#Ubuntu18-04-鼠标箭头频闪问题" class="headerlink" title="Ubuntu18.04 鼠标箭头频闪问题"></a>Ubuntu18.04 鼠标箭头频闪问题</h2>
+      <img src="https://wx4.sinaimg.cn/large/006eTO58ly1gwhw69lubmg30bj0944qr.gif" alt="show" /> 
+
+<p><strong>解决方法</strong></p>
+<p>在windows界面打开设置–&gt;设备–&gt;鼠标–&gt;其他鼠标选项–&gt;指针选项</p>
+<p>打勾显示指针轨迹，并改为短<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/mouse.png" style="zoom:80%;" /></p>
+<p>问题解决</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>VMware</tag>
+      </tags>
+  </entry>
 </search>
