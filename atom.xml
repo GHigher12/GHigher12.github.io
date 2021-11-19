@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>GHigher-Blog</title>
-  <icon>https://ghigher12.github.io/icon.png</icon>
+  <title>GHigher&#39;s Blog</title>
+  
   <subtitle>write code and love life</subtitle>
   <link href="https://ghigher12.github.io/atom.xml" rel="self"/>
   
@@ -24,8 +24,7 @@
     <updated>2021-11-17T01:50:33.484Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题&quot;   &gt;
-          &lt;a href=&quot;#Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题&quot;&gt;&lt;/a&gt;Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题&lt;/h2&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题&quot;&gt;&lt;a href=&quot;#Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题&quot;&gt;&lt;/a&gt;Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题&lt;/h2&gt;</summary>
     
     
     
@@ -71,8 +70,7 @@
     <updated>2021-11-14T14:31:42.603Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（四）&quot;   &gt;
-          &lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（四）&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（四）&quot; class=&quot;headerlink&quot; title=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（四）&quot;&gt;&lt;/a&gt;STM32基础项目：基于stm32f1的蓝牙遥控小车（四）&lt;/h1&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（四）&quot;&gt;&lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（四）&quot; class=&quot;headerlink&quot; title=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（四）&quot;&gt;&lt;/a&gt;STM32基础项目：基于stm32f1的蓝牙遥控小车（四）&lt;/h1&gt;</summary>
     
     
     
@@ -95,8 +93,7 @@
     <updated>2021-11-14T14:31:35.977Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（三）&quot;   &gt;
-          &lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（三）&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（三）&quot; class=&quot;headerlink&quot; title=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（三）&quot;&gt;&lt;/a&gt;STM32基础项目：基于stm32f1的蓝牙遥控小车（三）&lt;/h1&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（三）&quot;&gt;&lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（三）&quot; class=&quot;headerlink&quot; title=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（三）&quot;&gt;&lt;/a&gt;STM32基础项目：基于stm32f1的蓝牙遥控小车（三）&lt;/h1&gt;</summary>
     
     
     
@@ -119,8 +116,7 @@
     <updated>2021-11-14T14:30:35.464Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（二）&quot;   &gt;
-          &lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（二）&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（二）&quot; class=&quot;headerlink&quot; title=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（二）&quot;&gt;&lt;/a&gt;STM32基础项目：基于stm32f1的蓝牙遥控小车（二）&lt;/h1&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（二）&quot;&gt;&lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（二）&quot; class=&quot;headerlink&quot; title=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（二）&quot;&gt;&lt;/a&gt;STM32基础项目：基于stm32f1的蓝牙遥控小车（二）&lt;/h1&gt;</summary>
     
     
     
@@ -143,8 +139,7 @@
     <updated>2021-11-14T14:31:49.986Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（一）&quot;   &gt;
-          &lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（一）&quot; class=&quot;heading-link&quot;&gt;&lt;i class=&quot;fas fa-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（一）&quot; class=&quot;headerlink&quot; title=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（一）&quot;&gt;&lt;/a&gt;STM32基础项目：基于stm32f1的蓝牙遥控小车（一）&lt;/h1&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（一）&quot;&gt;&lt;a href=&quot;#STM32基础项目：基于stm32f1的蓝牙遥控小车（一）&quot; class=&quot;headerlink&quot; title=&quot;STM32基础项目：基于stm32f1的蓝牙遥控小车（一）&quot;&gt;&lt;/a&gt;STM32基础项目：基于stm32f1的蓝牙遥控小车（一）&lt;/h1&gt;</summary>
     
     
     
@@ -164,10 +159,10 @@
     <link href="https://ghigher12.github.io/2021/11/14/hello-world/"/>
     <id>https://ghigher12.github.io/2021/11/14/hello-world/</id>
     <published>2021-11-14T03:06:51.958Z</published>
-    <updated>2021-11-14T15:56:47.408Z</updated>
+    <updated>2021-11-19T14:23:30.228Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Welcome to &lt;span class=&quot;exturl&quot;&gt;&lt;a class=&quot;exturl__link&quot;   href=&quot;https://hexo.io/&quot; &gt;Hexo&lt;/a&gt;&lt;span class=&quot;exturl__icon&quot;&gt;&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;! This is your very first post. Check &lt;span class=&quot;exturl&quot;&gt;&lt;a class=&quot;exturl__link&quot;   href=&quot;https://hexo.io/docs/&quot; &gt;documentation&lt;/a&gt;&lt;span class=&quot;exturl__icon&quot;&gt;&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;span class=&quot;exturl&quot;&gt;&lt;a class=&quot;exturl__link&quot;   href=&quot;https://hexo.io/docs/troubleshooting.html&quot; &gt;troubleshooting&lt;/a&gt;&lt;span class=&quot;exturl__icon&quot;&gt;&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt; or you can ask me on &lt;span class=&quot;exturl&quot;&gt;&lt;a class=&quot;exturl__link&quot;   href=&quot;https://github.com/hexojs/hexo/issues&quot; &gt;GitHub&lt;/a&gt;&lt;span class=&quot;exturl__icon&quot;&gt;&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
     
     
     
