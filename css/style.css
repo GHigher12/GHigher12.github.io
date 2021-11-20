@@ -299,7 +299,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   flex-direction: column;
   align-items: stretch;
   border-radius: 10px;
-  background: ;
+  background: #fff;
 }
 #l_side .side_blogger .content >.avatar {
   align-self: center;
@@ -1791,7 +1791,6 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   width: 100%;
   height: 50vh;
   height: 60vh;
-  height: 100vh;
   overflow: hidden;
   background-size: cover;
   background-position: center center;
