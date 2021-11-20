@@ -558,7 +558,7 @@
 
 <div class="about-video">
 	<video class="full-video" autoplay loop muted>
-		<source style="width: 100%;height: 100vh;" src="https://assets.mixkit.co/videos/preview/mixkit-flying-into-a-black-hole-in-the-starry-universe-31549-large.mp4">
+		<source style="width: 100%;height: 100vh;" src="https://assets.mixkit.co/videos/preview/mixkit-waves-coming-to-the-beach-5016-large.mp4">
 	</video>
 	<div class="video-header-title">
 		关于我
@@ -593,15 +593,6 @@
 	</div>
 	
 	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-bicycle" aria-hidden="true"></i>&nbsp;&nbsp;技能
-		</div>
-		<div class="skill">
-			
-		</div>
-	</div>
-	
 	
 	<div class="basic-info reveal">
 		<div class="subtitle">
@@ -609,28 +600,30 @@
 		</div>
 		<div class="socialAccounts">
 			
-		</div>
-	</div>
-	
-	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;游戏
-		</div>
-		<div class="games">
+				<div class="account">
+					<i class="fas fa-qq" aria-hidden="true"></i> QQ：<a target="_blank" rel="noopener" href="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/1.png">2535410943</a> 
+				</div>
+			
+				<div class="account">
+					<i class="fas fa-weixin" aria-hidden="true"></i> 微信：<a target="_blank" rel="noopener" href="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/2.png">Super_boy_ych666</a> 
+				</div>
+			
+				<div class="account">
+					<i class="fas fa-github" aria-hidden="true"></i> Github：<a target="_blank" rel="noopener" href="https://github.com/GHigher12">Github</a> 
+				</div>
+			
+				<div class="account">
+					<i class="origin:B站" aria-hidden="true"></i> Bilibili：<a target="_blank" rel="noopener" href="https://space.bilibili.com/697921567">Bilibili</a> 
+				</div>
+			
+				<div class="account">
+					<i class="origin:CSDN" aria-hidden="true"></i> CSDN：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_51002159?spm=1000.2115.3001.5343">CSDN</a> 
+				</div>
 			
 		</div>
 	</div>
 	
 	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-book" aria-hidden="true"></i>&nbsp;&nbsp;书籍
-		</div>
-		<div class="books">
-			
-		</div>
-	</div>
 	
 </div>
       </main>
@@ -650,7 +643,7 @@
       
         
           <div class="footer-copyright">
-            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/yuang01">yuang01</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a> </p>
+            <p>Copyright © 2019 - 2020 <a target="_blank" rel="noopener" href="https://github.com/GHIgher12">GHIgher12</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/GHIgher12/theme">Bamboo</a> </p>
 
           </div>
         
@@ -1129,6 +1122,10 @@
   
     <!-- 弹幕所需的css和js -->
     
+  <!-- 弹幕插件 -->
+  <link href="/js/danmu/barrager.css" rel="stylesheet">
+  <script src="/js/danmu/jquery.barrager.js"></script>
+
 <!-- 具体js，请前往valine/script.ejs查看 -->
 
     <script>
@@ -1167,7 +1164,7 @@
         }
       }
       //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
-      var themeDanmu = eval('false');
+      var themeDanmu = eval('true');
       var themeLoop = eval('false');
       var themeLooperTime = '5000' || 5000;
       var speed = '40' || 20;
@@ -1247,6 +1244,10 @@
   };
   $(document).ready(load_valine);
   document.addEventListener('pjax:send', function (e) {
+    
+      $('.danmuBox').length > 0 && $('.danmuBox').remove()
+      looperValine && clearInterval(looperValine);
+      $.fn.barrager.removeAll();
     
   })
   document.addEventListener('pjax:complete', function () {
@@ -1358,5 +1359,5 @@
 
 
 
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
