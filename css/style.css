@@ -175,7 +175,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   color: #fff;
 }
 .bg-floor {
-  background: url("https://img1.baidu.com/it/u=2559018527,2484468422&fm=26&fmt=auto");
+  background: #fff;
   background-size: cover;
   transition: all 0.3s;
 }

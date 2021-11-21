@@ -3,11 +3,11 @@
   <title>GHigher&#39;s Blog</title>
   
   <subtitle>write code and love life</subtitle>
-  <link href="https://ghigher12.github.io/atom.xml" rel="self"/>
+  <link href="https://www.yuchanghui.top/atom.xml" rel="self"/>
   
-  <link href="https://ghigher12.github.io/"/>
+  <link href="https://www.yuchanghui.top/"/>
   <updated>2021-11-20T16:07:08.961Z</updated>
-  <id>https://ghigher12.github.io/</id>
+  <id>https://www.yuchanghui.top/</id>
   
   <author>
     <name>GHigher</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>VSCode在Ubuntu18.04空格长度减小问题</title>
-    <link href="https://ghigher12.github.io/2021/11/20/VSCode%E5%9C%A8Ubuntu18-04%E7%A9%BA%E6%A0%BC%E9%95%BF%E5%BA%A6%E5%87%8F%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
-    <id>https://ghigher12.github.io/2021/11/20/VSCode%E5%9C%A8Ubuntu18-04%E7%A9%BA%E6%A0%BC%E9%95%BF%E5%BA%A6%E5%87%8F%E5%B0%8F%E9%97%AE%E9%A2%98/</id>
+    <link href="https://www.yuchanghui.top/2021/11/20/VSCode%E5%9C%A8Ubuntu18-04%E7%A9%BA%E6%A0%BC%E9%95%BF%E5%BA%A6%E5%87%8F%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    <id>https://www.yuchanghui.top/2021/11/20/VSCode%E5%9C%A8Ubuntu18-04%E7%A9%BA%E6%A0%BC%E9%95%BF%E5%BA%A6%E5%87%8F%E5%B0%8F%E9%97%AE%E9%A2%98/</id>
     <published>2021-11-20T15:20:46.000Z</published>
     <updated>2021-11-20T16:07:08.961Z</updated>
     
@@ -28,23 +28,23 @@
     
     
     
-    <category term="Linux" scheme="https://ghigher12.github.io/categories/Linux/"/>
+    <category term="Linux" scheme="https://www.yuchanghui.top/categories/Linux/"/>
     
-    <category term="Ubuntu" scheme="https://ghigher12.github.io/categories/Linux/Ubuntu/"/>
+    <category term="Ubuntu" scheme="https://www.yuchanghui.top/categories/Linux/Ubuntu/"/>
     
     
-    <category term="Linux" scheme="https://ghigher12.github.io/tags/Linux/"/>
+    <category term="Linux" scheme="https://www.yuchanghui.top/tags/Linux/"/>
     
-    <category term="Ubuntu" scheme="https://ghigher12.github.io/tags/Ubuntu/"/>
+    <category term="Ubuntu" scheme="https://www.yuchanghui.top/tags/Ubuntu/"/>
     
-    <category term="VSCode" scheme="https://ghigher12.github.io/tags/VSCode/"/>
+    <category term="VSCode" scheme="https://www.yuchanghui.top/tags/VSCode/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu18.04遇到的问题</title>
-    <link href="https://ghigher12.github.io/2021/11/17/Ubuntu18-04%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>https://ghigher12.github.io/2021/11/17/Ubuntu18-04%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <link href="https://www.yuchanghui.top/2021/11/17/Ubuntu18-04%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://www.yuchanghui.top/2021/11/17/Ubuntu18-04%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</id>
     <published>2021-11-17T01:37:58.000Z</published>
     <updated>2021-11-21T02:44:20.566Z</updated>
     
@@ -53,23 +53,23 @@
     
     
     
-    <category term="Linux" scheme="https://ghigher12.github.io/categories/Linux/"/>
+    <category term="Linux" scheme="https://www.yuchanghui.top/categories/Linux/"/>
     
-    <category term="Ubuntu" scheme="https://ghigher12.github.io/categories/Linux/Ubuntu/"/>
+    <category term="Ubuntu" scheme="https://www.yuchanghui.top/categories/Linux/Ubuntu/"/>
     
     
-    <category term="Linux" scheme="https://ghigher12.github.io/tags/Linux/"/>
+    <category term="Linux" scheme="https://www.yuchanghui.top/tags/Linux/"/>
     
-    <category term="Ubuntu" scheme="https://ghigher12.github.io/tags/Ubuntu/"/>
+    <category term="Ubuntu" scheme="https://www.yuchanghui.top/tags/Ubuntu/"/>
     
-    <category term="VMware" scheme="https://ghigher12.github.io/tags/VMware/"/>
+    <category term="VMware" scheme="https://www.yuchanghui.top/tags/VMware/"/>
     
   </entry>
   
   <entry>
     <title>Python的输入与输出</title>
-    <link href="https://ghigher12.github.io/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/"/>
-    <id>https://ghigher12.github.io/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</id>
+    <link href="https://www.yuchanghui.top/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/"/>
+    <id>https://www.yuchanghui.top/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</id>
     <published>2021-11-14T14:25:11.000Z</published>
     <updated>2021-11-14T14:32:25.252Z</updated>
     
@@ -78,19 +78,19 @@
     
     
     
-    <category term="程序设计" scheme="https://ghigher12.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    <category term="程序设计" scheme="https://www.yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
     
-    <category term="Python" scheme="https://ghigher12.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Python/"/>
+    <category term="Python" scheme="https://www.yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Python/"/>
     
     
-    <category term="Python" scheme="https://ghigher12.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://www.yuchanghui.top/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>STM32蓝牙小车四</title>
-    <link href="https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/"/>
-    <id>https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/</id>
+    <link href="https://www.yuchanghui.top/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/"/>
+    <id>https://www.yuchanghui.top/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/</id>
     <published>2021-11-14T14:20:21.000Z</published>
     <updated>2021-11-14T14:31:42.603Z</updated>
     
@@ -99,21 +99,21 @@
     
     
     
-    <category term="单片机" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="单片机" scheme="https://www.yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
-    <category term="STM32" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    <category term="STM32" scheme="https://www.yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://ghigher12.github.io/tags/STM32/"/>
+    <category term="STM32" scheme="https://www.yuchanghui.top/tags/STM32/"/>
     
-    <category term="C语言" scheme="https://ghigher12.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    <category term="C语言" scheme="https://www.yuchanghui.top/tags/C%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
   <entry>
     <title>STM32蓝牙小车三</title>
-    <link href="https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%89/"/>
-    <id>https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%89/</id>
+    <link href="https://www.yuchanghui.top/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%89/"/>
+    <id>https://www.yuchanghui.top/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%89/</id>
     <published>2021-11-14T14:20:11.000Z</published>
     <updated>2021-11-14T14:31:35.977Z</updated>
     
@@ -122,21 +122,21 @@
     
     
     
-    <category term="单片机" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="单片机" scheme="https://www.yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
-    <category term="STM32" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    <category term="STM32" scheme="https://www.yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://ghigher12.github.io/tags/STM32/"/>
+    <category term="STM32" scheme="https://www.yuchanghui.top/tags/STM32/"/>
     
-    <category term="C语言" scheme="https://ghigher12.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    <category term="C语言" scheme="https://www.yuchanghui.top/tags/C%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
   <entry>
     <title>STM32蓝牙小车二</title>
-    <link href="https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%BA%8C/"/>
-    <id>https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%BA%8C/</id>
+    <link href="https://www.yuchanghui.top/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%BA%8C/"/>
+    <id>https://www.yuchanghui.top/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%BA%8C/</id>
     <published>2021-11-14T14:20:04.000Z</published>
     <updated>2021-11-14T14:30:35.464Z</updated>
     
@@ -145,21 +145,21 @@
     
     
     
-    <category term="单片机" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="单片机" scheme="https://www.yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
-    <category term="STM32" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    <category term="STM32" scheme="https://www.yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://ghigher12.github.io/tags/STM32/"/>
+    <category term="STM32" scheme="https://www.yuchanghui.top/tags/STM32/"/>
     
-    <category term="C语言" scheme="https://ghigher12.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    <category term="C语言" scheme="https://www.yuchanghui.top/tags/C%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
   <entry>
     <title>STM32蓝牙小车一</title>
-    <link href="https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%80/"/>
-    <id>https://ghigher12.github.io/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%80/</id>
+    <link href="https://www.yuchanghui.top/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%80/"/>
+    <id>https://www.yuchanghui.top/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%80/</id>
     <published>2021-11-14T14:17:13.000Z</published>
     <updated>2021-11-14T14:31:49.986Z</updated>
     
@@ -168,21 +168,21 @@
     
     
     
-    <category term="单片机" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    <category term="单片机" scheme="https://www.yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
     
-    <category term="STM32" scheme="https://ghigher12.github.io/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    <category term="STM32" scheme="https://www.yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://ghigher12.github.io/tags/STM32/"/>
+    <category term="STM32" scheme="https://www.yuchanghui.top/tags/STM32/"/>
     
-    <category term="C语言" scheme="https://ghigher12.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    <category term="C语言" scheme="https://www.yuchanghui.top/tags/C%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://ghigher12.github.io/2021/11/14/hello-world/"/>
-    <id>https://ghigher12.github.io/2021/11/14/hello-world/</id>
+    <link href="https://www.yuchanghui.top/2021/11/14/hello-world/"/>
+    <id>https://www.yuchanghui.top/2021/11/14/hello-world/</id>
     <published>2021-11-14T03:06:51.958Z</published>
     <updated>2021-11-19T14:23:30.228Z</updated>
     
