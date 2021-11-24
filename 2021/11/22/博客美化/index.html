@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>hexo博客美化 | GHigher&#39;s Blog</title>
+  <title>博客美化 | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -537,14 +537,14 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/9.png')">
+  background-position: center center;position: relative;background-image:url('/medias/6.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        hexo博客美化
+        博客美化
       </span>
     </div>
     
@@ -584,7 +584,9 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="hexo博客添加live2d小人"><a href="#hexo博客添加live2d小人" class="headerlink" title="hexo博客添加live2d小人"></a>hexo博客添加live2d小人</h2><h3 id="1-安装模块"><a href="#1-安装模块" class="headerlink" title="1.安装模块"></a>1.安装模块</h3><p>在hexo博客根目录下，打开Git，输入下面命令：</p>
+        <h2 id="博客添加live2d小人"><a href="#博客添加live2d小人" class="headerlink" title="博客添加live2d小人"></a>博客添加live2d小人</h2><h3 id="1-安装模块"><a href="#1-安装模块" class="headerlink" title="1.安装模块"></a>1.安装模块</h3><p>在hexo博客根目录下，打开Git，输入下面命令：</p>
+<span id="more"></span>
+
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d  </span><br></pre></td></tr></table></figure>
 
 <h3 id="2-下载live2d模型"><a href="#2-下载live2d模型" class="headerlink" title="2.下载live2d模型"></a>2.下载live2d模型</h3><p>模型选择<a target="_blank" rel="noopener" href="https://gitcode.net/mirrors/xiazeyu/live2d-widget-models?utm_source=csdn_github_accelerator">点击此处</a>，模型预览<a target="_blank" rel="noopener" href="https://huaji8.top/post/live2d-plugin-2.0/">点击此处</a>，这里我用的是<code>live2d-widget-model-hijiki</code>，输入以下命令下载：</p>
@@ -595,7 +597,7 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">live2d:</span></span><br><span class="line">	<span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">	<span class="attr">scriptFrom:</span> <span class="string">local</span></span><br><span class="line">	<span class="attr">model:</span> </span><br><span class="line">		<span class="attr">use:</span> <span class="string">live2d-widget-model-hijiki</span> <span class="comment">#模型选择</span></span><br><span class="line">	<span class="attr">display:</span> </span><br><span class="line">		<span class="attr">position:</span> <span class="string">left</span>  <span class="comment">#模型位置</span></span><br><span class="line">		<span class="attr">width:</span> <span class="number">150</span>       <span class="comment">#模型宽度</span></span><br><span class="line">		<span class="attr">height:</span> <span class="number">300</span>      <span class="comment">#模型高度</span></span><br><span class="line">	<span class="attr">mobile:</span> </span><br><span class="line">		<span class="attr">show:</span> <span class="literal">true</span>      <span class="comment">#是否在手机端显示</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="4-效果图"><a href="#4-效果图" class="headerlink" title="4.效果图"></a>4.效果图</h3><p><img src="hijiki.gif" class="lazyload placeholder" data-srcset="hijiki.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="hijiki"></p>
-<h2 id="hexo博客添加canvas-nest背景特效"><a href="#hexo博客添加canvas-nest背景特效" class="headerlink" title="hexo博客添加canvas-nest背景特效"></a>hexo博客添加canvas-nest背景特效</h2><p>Bamboo主题自带的只有ribbon一种背景特效，nest需要手动添加。</p>
+<h2 id="博客添加canvas-nest背景特效"><a href="#博客添加canvas-nest背景特效" class="headerlink" title="博客添加canvas-nest背景特效"></a>博客添加canvas-nest背景特效</h2><p>Bamboo主题自带的只有ribbon一种背景特效，nest需要手动添加。</p>
 <h3 id="1-修改主题下的layout-ejs文件"><a href="#1-修改主题下的layout-ejs文件" class="headerlink" title="1. 修改主题下的layout.ejs文件"></a>1. 修改主题下的<code>layout.ejs</code>文件</h3><p>仿照ribbon部分的代码</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	...</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	...</span><br><span class="line">	...</span><br><span class="line">	&lt;% if(theme.nest.on === true ) &#123; %&gt;</span><br><span class="line">      &lt;script type=&quot;text/javascript&quot; color=&quot;0,0,0&quot; opacity=&#x27;0.6&#x27; zIndex=&quot;-1&quot; count=&quot;99&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
@@ -630,7 +632,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2021/11/22/hexo博客美化/" target="_blank" title="hexo博客美化">https://yuchanghui.top/2021/11/22/hexo博客美化/</a>
+    <a href="/2021/11/22/博客美化/" target="_blank" title="博客美化">https://yuchanghui.top/2021/11/22/博客美化/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -647,6 +649,24 @@
 <div class="post-nav">
 
 
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+    </div>
+    <a href="/2021/11/24/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0gif%E5%8A%A8%E5%9B%BE/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">hexo博客添加gif动图</div>
+      </div>
+      
+      <!-- <div class="content">
+        坑——写在前面在网上搜过很多添加gif动图的方法，但都不尽人意，其问题都出在hexo s后可以正常显示，但hexo d上
+      </div> -->
+    </a>
+  </div>
 
 
 

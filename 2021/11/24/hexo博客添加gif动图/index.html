@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>VSCode在Ubuntu18.04空格长度减小问题 | GHigher&#39;s Blog</title>
+  <title>hexo博客添加gif动图 | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -537,21 +537,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/13.png')">
+  background-position: center center;position: relative;background-image:url('/medias/1.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        VSCode在Ubuntu18.04空格长度减小问题
+        hexo博客添加gif动图
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-11-20 |
+          <i class="fas fa-calendar"></i> 发表于：2021-11-24 |
         </span>
       
 
@@ -559,12 +559,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/Linux/" class="post-detail-header_category">
-              Linux
-            </a>
-          
-            <a href="/categories/Linux/Ubuntu/" class="post-detail-header_category">
-              Ubuntu
+            <a href="/categories/HEXO/" class="post-detail-header_category">
+              HEXO
             </a>
           
         </span>
@@ -588,35 +584,33 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <p>在Ubuntu18.04空格长度太小，难以辨识。</p>
+        <h2 id="坑——写在前面"><a href="#坑——写在前面" class="headerlink" title="坑——写在前面"></a>坑——写在前面</h2><p>在网上搜过很多添加gif动图的方法，但都不尽人意，其问题都出在<code>hexo s</code>后可以正常显示，但<code>hexo d</code>上传后就无法查看。</p>
 <span id="more"></span>
-<p>在网上找到两种方法。</p>
-<h3 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h3><p>1.<code>firacode</code>字体安装<br>在终端输入以下命令下载字体</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install fonts-firacode</span><br></pre></td></tr></table></figure>
 
-<p>2.打开VSCode，按键<code>ctrl+p</code>输入<code>settings.json</code>找到文件</p>
-<p>在文件配置中加入以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;editor.fontFamily&quot;: &quot;Fira Code&quot;,</span><br><span class="line">   &quot;editor.fontLigatures&quot;: true,</span><br></pre></td></tr></table></figure>
+<p>eg:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">height</span>=<span class="string">100</span> <span class="attr">width</span>=<span class="string">100</span> <span class="attr">src</span>=<span class="string">&quot;gif 图片地址&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h3><p>打开VSCode的设置选项，直接在搜索设置项中输入<code>font</code><br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/vscode_font.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/vscode_font.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<p>选中字体，然后再字体系列框中输入<code>monospace</code></p>
-<p>对比两种方法之后，采用第二种更加简单容易。</p>
+<p>这是html直接插入gif图片地址，在上传之后gif无法显示。</p>
+<p>下面直入正题：</p>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><h3 id="1-gif录取软件"><a href="#1-gif录取软件" class="headerlink" title="1.gif录取软件"></a>1.gif录取软件</h3><p>GifCam 是用于创建动画图像或 GIF 的免费软件。Windows工具的工作原理类似于相机或屏幕录像机，可为所需区域拍摄一系列照片。它稍后将它们保存为易于共享和播放的<strong>动画图像</strong>或<strong>AVI 文件</strong>。虽然该工具具有<strong>多种用途</strong>且易于操作，但它仅适用于 Windows。<br><a target="_blank" rel="noopener" href="http://blog.bahraniapps.com/gifcam/#download">官网下载地址 </a>或者 百度网盘下载链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1W_wNTVyw8UJWO2Ahgi4Q8g">下载地址</a>  提取码：19c3</p>
+<h3 id="2-更改配置"><a href="#2-更改配置" class="headerlink" title="2.更改配置"></a>2.更改配置</h3><p>打开hexo博客根目录下的<code>_config.yml</code>文件，更改以下配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+
+<p>将<code>_config.yml</code>文件中的配置项<code>post_asset_folder</code>设为true后，执行命令<code>$ hexo new post_name</code>，在<code>source/_posts</code>中会生成文章<code>post_name.md</code>和同名文件夹<code>post_name</code>。将图片资源放在<code>post_name</code>中，文章就可以使用相对路径引用图片及gif资源了。</p>
+<h3 id="3-将录制好的gif文件保存在同名文件夹下"><a href="#3-将录制好的gif文件保存在同名文件夹下" class="headerlink" title="3.将录制好的gif文件保存在同名文件夹下"></a>3.将录制好的gif文件保存在同名文件夹下</h3><p>用Typora软件设置好图像根目录为自己的同名文件夹，格式–&gt;图像–&gt;设置图片根目录</p>
+<p>写文章是直接引用就可以了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](image.jpg)</span><br></pre></td></tr></table></figure>
+
+<p><img src="gif.png" class="lazyload placeholder" data-srcset="gif.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="使用方法"></p>
+<p>这样上传之后gif图片就可以正常显示了。。</p>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/tags/Linux/" class="">
-              Linux
-            </a>
-          
-            <a href="/tags/Ubuntu/" class="">
-              Ubuntu
-            </a>
-          
-            <a href="/tags/VSCode/" class="">
-              VSCode
+            <a href="/tags/hexo/" class="">
+              hexo
             </a>
           
         </div>
@@ -630,7 +624,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2021/11/20/VSCode在Ubuntu18-04空格长度减小问题/" target="_blank" title="VSCode在Ubuntu18.04空格长度减小问题">https://yuchanghui.top/2021/11/20/VSCode在Ubuntu18-04空格长度减小问题/</a>
+    <a href="/2021/11/24/hexo博客添加gif动图/" target="_blank" title="hexo博客添加gif动图">https://yuchanghui.top/2021/11/24/hexo博客添加gif动图/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -648,46 +642,24 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/2021/11/22/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">博客美化</div>
-      </div>
-      
-      <!-- <div class="content">
-        博客添加live2d小人1.安装模块在hexo博客根目录下，打开Git，输入下面命令：
-
-
-1npm install -
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/2021/11/17/Ubuntu18-04%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-nav-link">
+    <a href="/2021/11/22/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Ubuntu18.04遇到的问题</div>
+        <div class="title-text">博客美化</div>
       </div>
       <!-- <div class="content">
-        Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题
+        博客添加live2d小人1.安装模块在hexo博客根目录下，打开Git，输入下面命令：
 
 
-解决方法
-1.在Ubuntu中打开 系统设置–&
+1npm install -
       </div> -->
     </a>
   </div>
