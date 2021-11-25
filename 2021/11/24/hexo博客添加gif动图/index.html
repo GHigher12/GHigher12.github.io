@@ -594,15 +594,15 @@
 <p>下面直入正题：</p>
 <h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><h3 id="1-gif录取软件"><a href="#1-gif录取软件" class="headerlink" title="1.gif录取软件"></a>1.gif录取软件</h3><p>GifCam 是用于创建动画图像或 GIF 的免费软件。Windows工具的工作原理类似于相机或屏幕录像机，可为所需区域拍摄一系列照片。它稍后将它们保存为易于共享和播放的<strong>动画图像</strong>或<strong>AVI 文件</strong>。虽然该工具具有<strong>多种用途</strong>且易于操作，但它仅适用于 Windows。<br><a target="_blank" rel="noopener" href="http://blog.bahraniapps.com/gifcam/#download">官网下载地址 </a>或者 百度网盘下载链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1W_wNTVyw8UJWO2Ahgi4Q8g">下载地址</a>  提取码：19c3</p>
 <h3 id="2-更改配置"><a href="#2-更改配置" class="headerlink" title="2.更改配置"></a>2.更改配置</h3><p>打开hexo博客根目录下的<code>_config.yml</code>文件，更改以下配置</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <p>将<code>_config.yml</code>文件中的配置项<code>post_asset_folder</code>设为true后，执行命令<code>$ hexo new post_name</code>，在<code>source/_posts</code>中会生成文章<code>post_name.md</code>和同名文件夹<code>post_name</code>。将图片资源放在<code>post_name</code>中，文章就可以使用相对路径引用图片及gif资源了。</p>
-<h3 id="3-将录制好的gif文件保存在同名文件夹下"><a href="#3-将录制好的gif文件保存在同名文件夹下" class="headerlink" title="3.将录制好的gif文件保存在同名文件夹下"></a>3.将录制好的gif文件保存在同名文件夹下</h3><p>用Typora软件设置好图像根目录为自己的同名文件夹，格式–&gt;图像–&gt;设置图片根目录</p>
+<h3 id="3-设置路径并引用"><a href="#3-设置路径并引用" class="headerlink" title="3.设置路径并引用"></a>3.设置路径并引用</h3><p>用Typora软件设置好图像根目录为自己的同名文件夹，格式–&gt;图像–&gt;设置图片根目录</p>
 <p>写文章是直接引用就可以了</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](image.jpg)</span><br></pre></td></tr></table></figure>
 
 <p><img src="gif.png" class="lazyload placeholder" data-srcset="gif.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="使用方法"></p>
-<p>这样上传之后gif图片就可以正常显示了。。</p>
+<p>这样上传之后gif图片就可以正常显示了。。。</p>
 
       </div>
       <div class="post-tags-categories">
@@ -642,6 +642,27 @@
 
 
 
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+    </div>
+    <a href="/2021/11/25/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">hexo博客绑定域名的问题</div>
+      </div>
+      
+      <!-- <div class="content">
+        绑定域名，参照学长的文章【地址】
+1.ipv6解析地址我的博客地址并非ipv4地址，而是ipv6地址
+
+阿里云解析地址的
+      </div> -->
+    </a>
+  </div>
+
 
 
   
@@ -650,7 +671,7 @@
       background-position: center center;">
       <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/2021/11/22/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/" class="post-nav-link">
+    <a href="/2021/11/22/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
         <div class="title-text">博客美化</div>

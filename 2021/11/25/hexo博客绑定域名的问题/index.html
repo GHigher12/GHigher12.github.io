@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>博客美化 | GHigher&#39;s Blog</title>
+  <title>hexo博客绑定域名的问题 | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -544,14 +544,14 @@
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        博客美化
+        hexo博客绑定域名的问题
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-11-22 |
+          <i class="fas fa-calendar"></i> 发表于：2021-11-25 |
         </span>
       
 
@@ -584,33 +584,21 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="博客添加live2d小人"><a href="#博客添加live2d小人" class="headerlink" title="博客添加live2d小人"></a>博客添加live2d小人</h2><h3 id="1-安装模块"><a href="#1-安装模块" class="headerlink" title="1.安装模块"></a>1.安装模块</h3><p>在hexo博客根目录下，打开Git，输入下面命令：</p>
-<span id="more"></span>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d  </span><br></pre></td></tr></table></figure>
-
-<h3 id="2-下载live2d模型"><a href="#2-下载live2d模型" class="headerlink" title="2.下载live2d模型"></a>2.下载live2d模型</h3><p>模型选择<a target="_blank" rel="noopener" href="https://gitcode.net/mirrors/xiazeyu/live2d-widget-models?utm_source=csdn_github_accelerator">点击此处</a>，模型预览<a target="_blank" rel="noopener" href="https://huaji8.top/post/live2d-plugin-2.0/">点击此处</a>，这里我用的是<code>live2d-widget-model-hijiki</code>，输入以下命令下载：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install live2d-widget-model-hijiki</span><br></pre></td></tr></table></figure>
-
-<p>根据自己的喜好选择相应模型，修改即可。</p>
-<h3 id="3-配置-config-yml文件"><a href="#3-配置-config-yml文件" class="headerlink" title="3.配置_config.yml文件"></a>3.配置<code>_config.yml</code>文件</h3><p>打开hexo根目录下的<code>_config.yml</code>文件，添加如下代码：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">live2d:</span></span><br><span class="line">	<span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">	<span class="attr">scriptFrom:</span> <span class="string">local</span></span><br><span class="line">	<span class="attr">model:</span> </span><br><span class="line">		<span class="attr">use:</span> <span class="string">live2d-widget-model-hijiki</span> <span class="comment">#模型选择</span></span><br><span class="line">	<span class="attr">display:</span> </span><br><span class="line">		<span class="attr">position:</span> <span class="string">left</span>  <span class="comment">#模型位置</span></span><br><span class="line">		<span class="attr">width:</span> <span class="number">150</span>       <span class="comment">#模型宽度</span></span><br><span class="line">		<span class="attr">height:</span> <span class="number">300</span>      <span class="comment">#模型高度</span></span><br><span class="line">	<span class="attr">mobile:</span> </span><br><span class="line">		<span class="attr">show:</span> <span class="literal">true</span>      <span class="comment">#是否在手机端显示</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-效果图"><a href="#4-效果图" class="headerlink" title="4.效果图"></a>4.效果图</h3><p><img src="hijiki.gif" class="lazyload placeholder" data-srcset="hijiki.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="hijiki"></p>
-<h2 id="博客添加canvas-nest背景特效"><a href="#博客添加canvas-nest背景特效" class="headerlink" title="博客添加canvas-nest背景特效"></a>博客添加canvas-nest背景特效</h2><p>Bamboo主题自带的只有ribbon一种背景特效，nest需要手动添加。</p>
-<h3 id="1-修改主题下的layout-ejs文件"><a href="#1-修改主题下的layout-ejs文件" class="headerlink" title="1. 修改主题下的layout.ejs文件"></a>1. 修改主题下的<code>layout.ejs</code>文件</h3><p>仿照ribbon部分的代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	...</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	...</span><br><span class="line">	...</span><br><span class="line">	&lt;% if(theme.nest.on === true ) &#123; %&gt;</span><br><span class="line">      &lt;script type=&quot;text/javascript&quot; color=&quot;0,0,0&quot; opacity=&#x27;0.6&#x27; zIndex=&quot;-1&quot; count=&quot;99&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-参数修改"><a href="#2-参数修改" class="headerlink" title="2.参数修改"></a>2.参数修改</h3><ul>
-<li><strong><code>color</code></strong>: 线条颜色, 默认: <code>&#39;0,0,0&#39;</code> ；三个数字分别为(R,G,B)，注意用,分割</li>
-<li><strong><code>opacity</code></strong>: 线条透明度（0~1）, 默认: <code>0.5</code></li>
-<li><strong><code>count</code></strong>: 线条的总数量, 默认: <code>150</code></li>
-<li><strong><code>zIndex</code></strong>: 背景的z-index属性，css属性用于控制所在层的位置, 默认: <code>-1</code></li>
-</ul>
-<h3 id="3-修改主题下的-config-yml文件"><a href="#3-修改主题下的-config-yml文件" class="headerlink" title="3.修改主题下的_config.yml文件"></a>3.修改主题下的<code>_config.yml</code>文件</h3><p>同样仿照ribbon代码</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ribbon:</span></span><br><span class="line">  <span class="attr">on:</span> <span class="literal">false</span> <span class="comment"># 关闭ribbon背景特效</span></span><br><span class="line"></span><br><span class="line"><span class="attr">nest:</span></span><br><span class="line">  <span class="attr">on:</span> <span class="literal">true</span> <span class="comment"># 开启nest背景特效</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-效果图-1"><a href="#4-效果图-1" class="headerlink" title="4.效果图"></a>4.效果图</h3><p><img src="nest.gif" class="lazyload placeholder" data-srcset="nest.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="nest"></p>
+        <p>绑定域名，参照学长的文章<a target="_blank" rel="noopener" href="http://zhangguixin.top/2021/11/06/hexo/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">【地址】</a></p>
+<h2 id="1-ipv6解析地址"><a href="#1-ipv6解析地址" class="headerlink" title="1.ipv6解析地址"></a>1.ipv6解析地址</h2><p>我的博客地址并非ipv4地址，而是ipv6地址</p>
+<p><img src="ipv6.png" class="lazyload placeholder" data-srcset="ipv6.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p>阿里云解析地址的新手引导只针对为ipv4地址，因此ipv6地址需要自己手动添加。</p>
+<p><img src="ipv4.png" class="lazyload placeholder" data-srcset="ipv4.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p>手动添加配置如下：</p>
+<p><img src="ipv6%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0.png" class="lazyload placeholder" data-srcset="ipv6%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h2 id="2-加速方法"><a href="#2-加速方法" class="headerlink" title="2.加速方法"></a>2.加速方法</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/i_do_not_know_you/article/details/105594269">参考文章</a></p>
+<p>但说实话我感觉不到什么区别，借鉴以下还是不错的</p>
+<h2 id="3-解决上传后需重新绑定域名的问题"><a href="#3-解决上传后需重新绑定域名的问题" class="headerlink" title="3.解决上传后需重新绑定域名的问题"></a>3.解决上传后需重新绑定域名的问题</h2><p>绑定域名后，每次<code>hexo d</code>，网页就会出现404，然后再需要重新再绑定域名，非常麻烦</p>
+<p>解决方法：</p>
+<p>在hexo博客目录下<code>source</code>创建一个<code>CNAME</code>文件，在里面添加上你的新域名，例如我的就是: <code>yuchanghui.top</code></p>
+<p>⚠：注意没有后缀！！！</p>
+<p>然后<code>hexo g</code>重新生成</p>
+<p><code>hexo d</code>重新上传就好了。。。</p>
 
       </div>
       <div class="post-tags-categories">
@@ -632,7 +620,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2021/11/22/博客美化/" target="_blank" title="博客美化">https://yuchanghui.top/2021/11/22/博客美化/</a>
+    <a href="/2021/11/25/hexo博客绑定域名的问题/" target="_blank" title="hexo博客绑定域名的问题">https://yuchanghui.top/2021/11/25/hexo博客绑定域名的问题/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -650,42 +638,21 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/2021/11/24/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0gif%E5%8A%A8%E5%9B%BE/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">hexo博客添加gif动图</div>
-      </div>
-      
-      <!-- <div class="content">
-        坑——写在前面在网上搜过很多添加gif动图的方法，但都不尽人意，其问题都出在hexo s后可以正常显示，但hexo d上
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/13.png" class="lazyload placeholder" data-srcset="/medias/13.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/2021/11/20/VSCode%E5%9C%A8Ubuntu18-04%E7%A9%BA%E6%A0%BC%E9%95%BF%E5%BA%A6%E5%87%8F%E5%B0%8F%E9%97%AE%E9%A2%98/" class="post-nav-link">
+    <a href="/2021/11/24/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0gif%E5%8A%A8%E5%9B%BE/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">VSCode在Ubuntu18.04空格长度减小问题</div>
+        <div class="title-text">hexo博客添加gif动图</div>
       </div>
       <!-- <div class="content">
-        在Ubuntu18.04空格长度太小，难以辨识。
-
-在网上找到两种方法。
-第一种1.firacode字体安装在终端输入以
+        坑——写在前面在网上搜过很多添加gif动图的方法，但都不尽人意，其问题都出在hexo s后可以正常显示，但hexo d上
       </div> -->
     </a>
   </div>
