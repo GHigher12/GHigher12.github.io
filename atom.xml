@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2021-11-25T16:08:36.286Z</updated>
+  <updated>2021-11-29T16:21:54.733Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Ubuntu18.04连接摄像头蓝屏</title>
+    <link href="https://yuchanghui.top/2021/11/28/Ubuntu18-04%E8%BF%9E%E6%8E%A5%E6%91%84%E5%83%8F%E5%A4%B4%E8%93%9D%E5%B1%8F/"/>
+    <id>https://yuchanghui.top/2021/11/28/Ubuntu18-04%E8%BF%9E%E6%8E%A5%E6%91%84%E5%83%8F%E5%A4%B4%E8%93%9D%E5%B1%8F/</id>
+    <published>2021-11-28T12:01:43.000Z</published>
+    <updated>2021-11-29T16:21:54.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;问题：&quot;&gt;&lt;a href=&quot;#问题：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/categories/Linux/Ubuntu/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="VMware" scheme="https://yuchanghui.top/tags/VMware/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hexo博客绑定域名的问题</title>
     <link href="https://yuchanghui.top/2021/11/25/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>https://yuchanghui.top/2021/11/25/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E9%97%AE%E9%A2%98/</id>
     <published>2021-11-25T15:18:46.000Z</published>
-    <updated>2021-11-25T16:08:36.286Z</updated>
+    <updated>2021-11-25T16:10:31.764Z</updated>
     
     
       
@@ -61,11 +92,11 @@
   </entry>
   
   <entry>
-    <title>博客美化</title>
+    <title>hexo博客美化</title>
     <link href="https://yuchanghui.top/2021/11/22/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/"/>
     <id>https://yuchanghui.top/2021/11/22/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/</id>
     <published>2021-11-22T15:20:21.000Z</published>
-    <updated>2021-11-25T16:02:43.825Z</updated>
+    <updated>2021-11-25T16:10:02.740Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;博客添加live2d小人&quot;&gt;&lt;a href=&quot;#博客添加live2d小人&quot; class=&quot;headerlink&quot; title=&quot;博客添加live2d小人&quot;&gt;&lt;/a&gt;博客添加live2d小人&lt;/h2&gt;&lt;h3 id=&quot;1-安装模块&quot;&gt;&lt;a href=&quot;#1-安装模块&quot; class=&quot;headerlink&quot; title=&quot;1.安装模块&quot;&gt;&lt;/a&gt;1.安装模块&lt;/h3&gt;&lt;p&gt;在hexo博客根目录下，打开Git，输入下面命令：&lt;/p&gt;</summary>

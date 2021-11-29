@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>hexo博客绑定域名的问题 | GHigher&#39;s Blog</title>
+  <title>Ubuntu18.04连接摄像头蓝屏 | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -537,21 +537,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/6.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/14.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        hexo博客绑定域名的问题
+        Ubuntu18.04连接摄像头蓝屏
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-11-25 |
+          <i class="fas fa-calendar"></i> 发表于：2021-11-28 |
         </span>
       
 
@@ -559,8 +559,12 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/HEXO/" class="post-detail-header_category">
-              HEXO
+            <a href="/categories/Linux/" class="post-detail-header_category">
+              Linux
+            </a>
+          
+            <a href="/categories/Linux/Ubuntu/" class="post-detail-header_category">
+              Ubuntu
             </a>
           
         </span>
@@ -584,29 +588,26 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <p>绑定域名，参照学长的文章<a target="_blank" rel="noopener" href="http://zhangguixin.top/2021/11/06/hexo/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">【地址】</a></p>
-<h2 id="1-ipv6解析地址"><a href="#1-ipv6解析地址" class="headerlink" title="1.ipv6解析地址"></a>1.ipv6解析地址</h2><p>我的博客地址并非ipv4地址，而是ipv6地址</p>
-<p><img src="ipv6.png" class="lazyload placeholder" data-srcset="ipv6.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<p>阿里云解析地址的新手引导只针对为ipv4地址，因此ipv6地址需要自己手动添加。</p>
-<p><img src="ipv4.png" class="lazyload placeholder" data-srcset="ipv4.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<p>手动添加配置如下：</p>
-<p><img src="ipv6%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0.png" class="lazyload placeholder" data-srcset="ipv6%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h2 id="2-加速方法"><a href="#2-加速方法" class="headerlink" title="2.加速方法"></a>2.加速方法</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/i_do_not_know_you/article/details/105594269">参考文章</a></p>
-<p>但说实话我感觉不到什么区别，借鉴以下还是不错的</p>
-<h2 id="3-解决上传后需重新绑定域名的问题"><a href="#3-解决上传后需重新绑定域名的问题" class="headerlink" title="3.解决上传后需重新绑定域名的问题"></a>3.解决上传后需重新绑定域名的问题</h2><p>绑定域名后，每次<code>hexo d</code>，网页就会出现404，然后再需要重新再绑定域名，非常麻烦</p>
-<p>解决方法：</p>
-<p>在hexo博客目录下<code>source</code>创建一个<code>CNAME</code>文件，在里面添加上你的新域名，例如我的就是: <code>yuchanghui.top</code></p>
-<p>⚠：注意没有后缀！！！</p>
-<p>然后<code>hexo g</code>重新生成</p>
-<p><code>hexo d</code>重新上传就好了。。。</p>
+        <h4 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h4><p>最近在使用Ubuntu18.04时，尝试用<code>cheese</code>命令打开摄像头,一开始发现虚拟机设置选项中没有USB控制器，于是手动添加了USB控制器，当开启虚拟机后，连接摄像头时电脑出现蓝屏重启问题。</p>
+<p><img src="%E9%97%AE%E9%A2%98.png" class="lazyload placeholder" data-srcset="%E9%97%AE%E9%A2%98.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h4 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h4><p>我使用的是VMware15，可能存在版本兼容问题，下载VMware16问题就解决了。</p>
+<p><img src="%E8%A7%A3%E5%86%B3.png" class="lazyload placeholder" data-srcset="%E8%A7%A3%E5%86%B3.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="成功连接"></p>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/tags/hexo/" class="">
-              hexo
+            <a href="/tags/Linux/" class="">
+              Linux
+            </a>
+          
+            <a href="/tags/Ubuntu/" class="">
+              Ubuntu
+            </a>
+          
+            <a href="/tags/VMware/" class="">
+              VMware
             </a>
           
         </div>
@@ -620,7 +621,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2021/11/25/hexo博客绑定域名的问题/" target="_blank" title="hexo博客绑定域名的问题">https://yuchanghui.top/2021/11/25/hexo博客绑定域名的问题/</a>
+    <a href="/2021/11/28/Ubuntu18-04连接摄像头蓝屏/" target="_blank" title="Ubuntu18.04连接摄像头蓝屏">https://yuchanghui.top/2021/11/28/Ubuntu18-04连接摄像头蓝屏/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -638,39 +639,24 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/2021/11/28/Ubuntu18-04%E8%BF%9E%E6%8E%A5%E6%91%84%E5%83%8F%E5%A4%B4%E8%93%9D%E5%B1%8F/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Ubuntu18.04连接摄像头蓝屏</div>
-      </div>
-      
-      <!-- <div class="content">
-        问题：最近在使用Ubuntu18.04时，尝试用cheese命令打开摄像头,一开始发现虚拟机设置选项中没有USB控制器，
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/2021/11/24/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0gif%E5%8A%A8%E5%9B%BE/" class="post-nav-link">
+    <a href="/2021/11/25/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">hexo博客添加gif动图</div>
+        <div class="title-text">hexo博客绑定域名的问题</div>
       </div>
       <!-- <div class="content">
-        坑——写在前面在网上搜过很多添加gif动图的方法，但都不尽人意，其问题都出在hexo s后可以正常显示，但hexo d上
+        绑定域名，参照学长的文章【地址】
+1.ipv6解析地址我的博客地址并非ipv4地址，而是ipv6地址
+
+阿里云解析地址的
       </div> -->
     </a>
   </div>
