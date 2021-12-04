@@ -41,6 +41,59 @@
       </tags>
   </entry>
   <entry>
+    <title>ROS安装:rosdep初始化失败</title>
+    <url>/2021/12/04/ROS%E5%AE%89%E8%A3%85-rosdep%E5%88%9D%E5%A7%8B%E5%8C%96%E5%A4%B1%E8%B4%A5/</url>
+    <content><![CDATA[<p>ROS版本: Melodic</p>
+<p><a href="https://blog.csdn.net/weixin_38650871/article/details/120781651">解决方法</a></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>VMware</tag>
+        <tag>ROS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ROS运行Gazebo遇到的问题</title>
+    <url>/2021/12/04/ROS%E8%BF%90%E8%A1%8CGazebo%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>运行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ rosrun gazebo_ros gazebo</span><br></pre></td></tr></table></figure>
+
+<p>遇到下列错误</p>
+<h2 id="错误：-Err-REST-cc-205-Error-in-REST-request"><a href="#错误：-Err-REST-cc-205-Error-in-REST-request" class="headerlink" title="错误：[Err] [REST.cc:205] Error in REST request"></a>错误：[Err] [REST.cc:205] Error in REST request</h2><p><img src="REST.png" class="lazyload placeholder" data-srcset="REST.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p>1.修改<code>~/.ignition/fuel/config.yaml</code>文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ sudo gedit ~/.ignition/fuel/config.yaml</span><br></pre></td></tr></table></figure>
+
+<p>2.</p>
+<p>注释 <code>url : https://api.ignitionfuel.org</code><br>添加 <code>url: https://api.ignitionrobotics.org</code></p>
+<p><img src="config_yml.png" class="lazyload placeholder" data-srcset="config_yml.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p>再重新启动Gazebo即可。</p>
+<h2 id="错误：VMware-vmw-ioctl-command-error-无效的参数"><a href="#错误：VMware-vmw-ioctl-command-error-无效的参数" class="headerlink" title="错误：VMware: vmw_ioctl_command error 无效的参数"></a>错误：VMware: vmw_ioctl_command error 无效的参数</h2><p><img src="%E6%97%A0%E6%95%88%E5%8F%82%E6%95%B0.png" class="lazyload placeholder" data-srcset="%E6%97%A0%E6%95%88%E5%8F%82%E6%95%B0.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在终端设置环境变量为0:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ export SVGA_VGPU10=0</span><br></pre></td></tr></table></figure>
+
+<p>长久方法：</p>
+<p>在~/.bashrc文件写入<code>export SVGA_VGPU10=0</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ echo &quot;export SVGA_VGPU10=0&quot; &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>再重新启动Gazebo即可。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>VMware</tag>
+        <tag>ROS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>STM32蓝牙小车三</title>
     <url>/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%89/</url>
     <content><![CDATA[<h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（三）"><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（三）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（三）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（三）</h1><span id="more"></span>

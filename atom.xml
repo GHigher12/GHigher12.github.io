@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2021-11-29T16:21:54.733Z</updated>
+  <updated>2021-12-04T10:17:08.800Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,74 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ROS运行Gazebo遇到的问题</title>
+    <link href="https://yuchanghui.top/2021/12/04/ROS%E8%BF%90%E8%A1%8CGazebo%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://yuchanghui.top/2021/12/04/ROS%E8%BF%90%E8%A1%8CGazebo%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <published>2021-12-04T09:59:32.000Z</published>
+    <updated>2021-12-04T10:17:08.800Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;运行&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="VMware" scheme="https://yuchanghui.top/tags/VMware/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ROS安装:rosdep初始化失败</title>
+    <link href="https://yuchanghui.top/2021/12/04/ROS%E5%AE%89%E8%A3%85-rosdep%E5%88%9D%E5%A7%8B%E5%8C%96%E5%A4%B1%E8%B4%A5/"/>
+    <id>https://yuchanghui.top/2021/12/04/ROS%E5%AE%89%E8%A3%85-rosdep%E5%88%9D%E5%A7%8B%E5%8C%96%E5%A4%B1%E8%B4%A5/</id>
+    <published>2021-12-04T09:53:10.000Z</published>
+    <updated>2021-12-04T09:55:01.630Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ROS版本: Melodic&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="VMware" scheme="https://yuchanghui.top/tags/VMware/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu18.04连接摄像头蓝屏</title>
