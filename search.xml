@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>ROS安装:rosdep初始化失败</title>
-    <url>/2021/12/04/ROS%E5%AE%89%E8%A3%85-rosdep%E5%88%9D%E5%A7%8B%E5%8C%96%E5%A4%B1%E8%B4%A5/</url>
-    <content><![CDATA[<p>ROS版本: Melodic</p>
-<p><a href="https://blog.csdn.net/weixin_38650871/article/details/120781651">解决方法</a></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ROS</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
-        <tag>VMware</tag>
-        <tag>ROS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python的输入与输出</title>
     <url>/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</url>
     <content><![CDATA[<p>相比于C语言，python的输入输出更加多样化。下面对python的输入输出进行简单的总结。</p>
@@ -55,6 +38,113 @@
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PIL库的使用</title>
+    <url>/2021/12/12/PIL%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="打开、显示、保存图片"><a href="#打开、显示、保存图片" class="headerlink" title="打开、显示、保存图片"></a>打开、显示、保存图片</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 调用模块</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment"># 打开图片</span></span><br><span class="line">image = Image.<span class="built_in">open</span>(<span class="string">&#x27;cat.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 显示图片</span></span><br><span class="line">image.show()</span><br><span class="line"><span class="comment"># 保存图片</span></span><br><span class="line">image.save(<span class="string">&#x27;C:/Users/25354/Desktop/orange_cat.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 保存不同格式</span></span><br><span class="line">image.save(<span class="string">&#x27;C:/Users/25354/Desktop/cat.bmp&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="cat.png" class="lazyload placeholder" data-srcset="cat.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h3 id="图片增加文字"><a href="#图片增加文字" class="headerlink" title="图片增加文字"></a>图片增加文字</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw, ImageFont</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;cat.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 调用画图模块</span></span><br><span class="line">draw = ImageDraw.Draw(img)</span><br><span class="line"><span class="comment"># 调用字体模块</span></span><br><span class="line">font = ImageFont.truetype(<span class="string">&#x27;C:/Windows/Fonts/Arial.ttf&#x27;</span>, <span class="number">24</span>)</span><br><span class="line"><span class="comment"># 增加文字</span></span><br><span class="line">draw.text((<span class="number">30</span>, <span class="number">50</span>), <span class="string">&quot;Orange_Cat&quot;</span>, fill=<span class="string">&quot;white&quot;</span>, font=font)</span><br><span class="line">img.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="orange_cat.png" class="lazyload placeholder" data-srcset="orange_cat.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h3 id="滤镜功能"><a href="#滤镜功能" class="headerlink" title="滤镜功能"></a>滤镜功能</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageFilter</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;car.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 轮廓滤波</span></span><br><span class="line">img_contour = img.<span class="built_in">filter</span>(ImageFilter.CONTOUR)</span><br><span class="line"><span class="comment"># 浮雕滤波</span></span><br><span class="line">img_emboss = img.<span class="built_in">filter</span>(ImageFilter.EMBOSS)</span><br><span class="line">img_contour.show()</span><br><span class="line">img_emboss.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="car%E6%BB%A4%E6%B3%A2.png" class="lazyload placeholder" data-srcset="car%E6%BB%A4%E6%B3%A2.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h5 id="ImageFilter类中预定义了如下滤波方法："><a href="#ImageFilter类中预定义了如下滤波方法：" class="headerlink" title="ImageFilter类中预定义了如下滤波方法："></a><code>ImageFilter</code>类中预定义了如下滤波方法：</h5><table>
+<thead>
+<tr>
+<th align="center">定义</th>
+<th align="center">滤波</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">BLUR</td>
+<td align="center">模糊滤波</td>
+</tr>
+<tr>
+<td align="center">CONTOUR</td>
+<td align="center">轮廓滤波</td>
+</tr>
+<tr>
+<td align="center">DETAIL</td>
+<td align="center">细节滤波</td>
+</tr>
+<tr>
+<td align="center">EDGE_ENHANCE</td>
+<td align="center">边界增强滤波</td>
+</tr>
+<tr>
+<td align="center">EDGE_ENHANCE_MORE</td>
+<td align="center">边界增强滤波（程度更深）</td>
+</tr>
+<tr>
+<td align="center">EMBOSS</td>
+<td align="center">浮雕滤波</td>
+</tr>
+<tr>
+<td align="center">FIND_EDGES</td>
+<td align="center">寻找边界滤波</td>
+</tr>
+<tr>
+<td align="center">SMOOTH</td>
+<td align="center">平滑滤波</td>
+</tr>
+<tr>
+<td align="center">SMOOTH_MORE</td>
+<td align="center">平滑滤波（程度更深）</td>
+</tr>
+<tr>
+<td align="center">SHARPEN</td>
+<td align="center">锐化滤波</td>
+</tr>
+<tr>
+<td align="center">GaussianBlur(radius=2)</td>
+<td align="center">高斯模糊</td>
+</tr>
+</tbody></table>
+<h3 id="镜像功能"><a href="#镜像功能" class="headerlink" title="镜像功能"></a>镜像功能</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包.jpg&#x27;</span>)</span><br><span class="line">img.show()</span><br><span class="line"><span class="comment"># 左右镜像</span></span><br><span class="line">img_lr = img.transpose(Image.FLIP_LEFT_RIGHT)</span><br><span class="line">img_lr.show()</span><br><span class="line"><span class="comment"># 上下镜像</span></span><br><span class="line">img_tb = img.transpose(Image.FLIP_TOP_BOTTOM)</span><br><span class="line">img_tb.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="%E8%A1%A8%E6%83%85%E5%8C%85_lr_tb.png" class="lazyload placeholder" data-srcset="%E8%A1%A8%E6%83%85%E5%8C%85_lr_tb.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h3 id="拼接功能"><a href="#拼接功能" class="headerlink" title="拼接功能"></a>拼接功能</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包.jpg&#x27;</span>)</span><br><span class="line">img_lr = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包lr.jpg&#x27;</span>)</span><br><span class="line"><span class="comment"># 打印尺寸</span></span><br><span class="line"><span class="built_in">print</span>(img.size)</span><br><span class="line"><span class="comment"># 创建白布</span></span><br><span class="line"><span class="comment"># Image.new(&#x27;RGB&#x27;、&#x27;RGB2&#x27;, size, color)</span></span><br><span class="line">img_new = Image.new(<span class="string">&#x27;RGB&#x27;</span>, (<span class="number">584</span>, <span class="number">300</span>), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line"><span class="comment"># 拼接</span></span><br><span class="line">img_new.paste(img, (<span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line">img_new.paste(img_lr, (<span class="number">292</span>, <span class="number">0</span>))</span><br><span class="line">img_new.show()</span><br><span class="line">img_new.save(<span class="string">&#x27;表情包paste.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="%E8%A1%A8%E6%83%85%E5%8C%85paste.jpg" class="lazyload placeholder" data-srcset="%E8%A1%A8%E6%83%85%E5%8C%85paste.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h3 id="裁剪功能"><a href="#裁剪功能" class="headerlink" title="裁剪功能"></a>裁剪功能</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包.jpg&#x27;</span>)</span><br><span class="line"><span class="comment"># 裁剪</span></span><br><span class="line"><span class="comment"># 传递参数box(left, upper, right, lower)</span></span><br><span class="line">img_crop = img.crop((<span class="number">100</span>, <span class="number">100</span>, <span class="number">200</span>, <span class="number">200</span>))</span><br><span class="line">img_crop.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="crop.png" class="lazyload placeholder" data-srcset="crop.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p><img src="%E8%A1%A8%E6%83%85%E5%8C%85_crop.png" class="lazyload placeholder" data-srcset="%E8%A1%A8%E6%83%85%E5%8C%85_crop.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h3 id="色点和色块"><a href="#色点和色块" class="headerlink" title="色点和色块"></a>色点和色块</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw</span><br><span class="line">img = Image.new(<span class="string">&#x27;RGBA&#x27;</span>, (<span class="number">300</span>, <span class="number">300</span>), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">draw = ImageDraw.Draw(img)</span><br><span class="line"><span class="comment"># 色点</span></span><br><span class="line">draw.point((<span class="number">10</span>, <span class="number">10</span>), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>))</span><br><span class="line"><span class="comment"># 色线</span></span><br><span class="line"><span class="keyword">for</span> l <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">20</span>, <span class="number">100</span>):</span><br><span class="line">    draw.point((l, <span class="number">20</span>), (<span class="number">0</span>, <span class="number">250</span>, <span class="number">0</span>))</span><br><span class="line"><span class="comment"># 色块</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">230</span>, <span class="number">280</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">230</span>, <span class="number">280</span>):</span><br><span class="line">        draw.point((i, j), (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line"><span class="comment"># 渐变色</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>, <span class="number">200</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>, <span class="number">200</span>):</span><br><span class="line">        draw.point((i, j), (i, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">img.show()</span><br><span class="line">img.save(<span class="string">&#x27;color.png&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="color.png" class="lazyload placeholder" data-srcset="color.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h3 id="图片缩放"><a href="#图片缩放" class="headerlink" title="图片缩放"></a>图片缩放</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包.jpg&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(img.size)</span><br><span class="line">img.show()</span><br><span class="line"><span class="comment"># 等比例缩放，缩放程度较大的自动调整</span></span><br><span class="line">img.thumbnail((<span class="number">100</span>, <span class="number">100</span>))</span><br><span class="line"><span class="built_in">print</span>(img.size)</span><br><span class="line">img.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="%E8%A1%A8%E6%83%85%E5%8C%85%E7%BC%A9%E6%94%BE.png" class="lazyload placeholder" data-srcset="%E8%A1%A8%E6%83%85%E5%8C%85%E7%BC%A9%E6%94%BE.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+]]></content>
+      <categories>
+        <category>视觉处理</category>
+        <category>Opencv</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>Opencv</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ROS安装:rosdep初始化失败</title>
+    <url>/2021/12/04/ROS%E5%AE%89%E8%A3%85-rosdep%E5%88%9D%E5%A7%8B%E5%8C%96%E5%A4%B1%E8%B4%A5/</url>
+    <content><![CDATA[<p>ROS版本: Melodic</p>
+<p><a href="https://blog.csdn.net/weixin_38650871/article/details/120781651">解决方法</a></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>VMware</tag>
+        <tag>ROS</tag>
       </tags>
   </entry>
   <entry>
@@ -307,35 +397,6 @@
       </tags>
   </entry>
   <entry>
-    <title>STM32蓝牙小车四</title>
-    <url>/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/</url>
-    <content><![CDATA[<h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（四）"><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（四）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（四）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（四）</h1><span id="more"></span>
-
-<p>接下来我们只需要简单的修改下程序及蓝牙app就完成蓝牙遥控小车的制作了。</p>
-<h3 id="电机驱动"><a href="#电机驱动" class="headerlink" title="电机驱动"></a>电机驱动</h3><p>由于小车为二轮驱动，所以我们用TIM3的CH1~CH4,引脚为别为PA6、PA7、PB0、PB1。</p>
-<h4 id="motor-c"><a href="#motor-c" class="headerlink" title="motor.c"></a>motor.c</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">My_TIM3_Init</span><span class="params">(u16 arr,u16 psc)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	GPIO_InitTypeDef GPIO_InitStruct;</span><br><span class="line">	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStruct;</span><br><span class="line">	TIM_OCInitTypeDef TIM_OCInitStruct;</span><br><span class="line">	</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);</span><br><span class="line">	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB|RCC_APB2Periph_AFIO,ENABLE);</span><br><span class="line">	GPIO_InitStruct.GPIO_Mode=GPIO_Mode_AF_PP;<span class="comment">//复用推挽</span></span><br><span class="line">	GPIO_InitStruct.GPIO_Pin=GPIO_Pin_6|GPIO_Pin_7;</span><br><span class="line">	GPIO_InitStruct.GPIO_Speed=GPIO_Speed_50MHz;</span><br><span class="line">	</span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_ClockDivision=TIM_CKD_DIV1;<span class="comment">//分频因子</span></span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_CounterMode=TIM_CounterMode_Up;<span class="comment">//向上计数</span></span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_Period=arr;<span class="comment">//自动重装载值</span></span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_Prescaler=psc;<span class="comment">//预分频系数</span></span><br><span class="line">	</span><br><span class="line">	TIM_OCInitStruct.TIM_OCMode=TIM_OCMode_PWM1;</span><br><span class="line">	TIM_OCInitStruct.TIM_OCNPolarity=TIM_OCPolarity_High;</span><br><span class="line">	TIM_OCInitStruct.TIM_OutputState=TIM_OutputState_Enable;</span><br><span class="line">	GPIO_Init(GPIOA, &amp;GPIO_InitStruct);</span><br><span class="line">	GPIO_InitStruct.GPIO_Mode=GPIO_Mode_AF_PP;<span class="comment">//复用推挽</span></span><br><span class="line">	GPIO_InitStruct.GPIO_Pin=GPIO_Pin_0|GPIO_Pin_1;</span><br><span class="line">	GPIO_InitStruct.GPIO_Speed=GPIO_Speed_50MHz;</span><br><span class="line">	GPIO_Init(GPIOB, &amp;GPIO_InitStruct);</span><br><span class="line">	TIM_TimeBaseInit(TIM3, &amp;TIM_TimeBaseInitStruct);</span><br><span class="line">	TIM_OC1Init(TIM3,&amp;TIM_OCInitStruct);<span class="comment">//通道1</span></span><br><span class="line">	TIM_OC2Init(TIM3,&amp;TIM_OCInitStruct);<span class="comment">//通道2</span></span><br><span class="line">	</span><br><span class="line">	TIM_OC1PreloadConfig(TIM3,TIM_OCPreload_Enable);        <span class="comment">//使能预装载寄存器</span></span><br><span class="line">	TIM_OC2PreloadConfig(TIM3,TIM_OCPreload_Enable);</span><br><span class="line">	</span><br><span class="line">	TIM_OC3Init(TIM3,&amp;TIM_OCInitStruct);<span class="comment">//通道3</span></span><br><span class="line">	TIM_OC4Init(TIM3,&amp;TIM_OCInitStruct);<span class="comment">//通道4</span></span><br><span class="line">	</span><br><span class="line">	TIM_OC3PreloadConfig(TIM3,TIM_OCPreload_Enable);        <span class="comment">//使能预装载寄存器</span></span><br><span class="line">	TIM_OC4PreloadConfig(TIM3,TIM_OCPreload_Enable);</span><br><span class="line">  	TIM_Cmd(TIM3,ENABLE);        <span class="comment">//使能TIM3</span></span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_front</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//前进</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">6000</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">500</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">6000</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_back</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//后退</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">6000</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">6000</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">500</span>); </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_left</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//左转</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">500</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">4000</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_right</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//右转</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">4000</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">500</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">500</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_stop</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//停止</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">500</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">500</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="蓝牙控制"><a href="#蓝牙控制" class="headerlink" title="蓝牙控制"></a>蓝牙控制</h3><h4 id="串口中断服务函数修改"><a href="#串口中断服务函数修改" class="headerlink" title="串口中断服务函数修改"></a>串口中断服务函数修改</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART1_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	u8 res;</span><br><span class="line">	<span class="keyword">if</span>(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) <span class="comment">//接收中断</span></span><br><span class="line">	&#123;</span><br><span class="line">		res = USART_ReceiveData(USART1);</span><br><span class="line">		<span class="keyword">switch</span> (res)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x00</span>: motor_stop(); <span class="keyword">break</span>;<span class="comment">//停止</span></span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x01</span>: motor_front(); <span class="keyword">break</span>;<span class="comment">//前进</span></span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x02</span>: motor_back(); <span class="keyword">break</span>;<span class="comment">//后退</span></span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x03</span>: motor_left(); <span class="keyword">break</span>;<span class="comment">//左转</span></span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x04</span>: motor_right(); <span class="keyword">break</span>;<span class="comment">//右转</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="蓝牙APP修改"><a href="#蓝牙APP修改" class="headerlink" title="蓝牙APP修改"></a>蓝牙APP修改</h4><p><strong>组件修改</strong></p>
-<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="按钮组件" style="zoom:67%;" />
-
-<p><strong>逻辑修改</strong></p>
-<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E6%8C%89%E9%92%AE.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E6%8C%89%E9%92%AE.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="逻辑修改" style="zoom: 67%;" />
-
-<p>最后烧录程序，一个简单的蓝牙遥控小车就完成了。</p>
-<p>视频演示地址：<a href="https://www.bilibili.com/video/BV1cq4y1Z72B?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1cq4y1Z72B?spm_id_from=333.999.0.0</a></p>
-]]></content>
-      <categories>
-        <category>单片机</category>
-        <category>STM32</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>STM32蓝牙小车二</title>
     <url>/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%BA%8C/</url>
     <content><![CDATA[<h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（二）"><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（二）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（二）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（二）</h1><span id="more"></span>
@@ -379,6 +440,53 @@
       </tags>
   </entry>
   <entry>
+    <title>STM32蓝牙小车四</title>
+    <url>/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/</url>
+    <content><![CDATA[<h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（四）"><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（四）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（四）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（四）</h1><span id="more"></span>
+
+<p>接下来我们只需要简单的修改下程序及蓝牙app就完成蓝牙遥控小车的制作了。</p>
+<h3 id="电机驱动"><a href="#电机驱动" class="headerlink" title="电机驱动"></a>电机驱动</h3><p>由于小车为二轮驱动，所以我们用TIM3的CH1~CH4,引脚为别为PA6、PA7、PB0、PB1。</p>
+<h4 id="motor-c"><a href="#motor-c" class="headerlink" title="motor.c"></a>motor.c</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">My_TIM3_Init</span><span class="params">(u16 arr,u16 psc)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	GPIO_InitTypeDef GPIO_InitStruct;</span><br><span class="line">	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStruct;</span><br><span class="line">	TIM_OCInitTypeDef TIM_OCInitStruct;</span><br><span class="line">	</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);</span><br><span class="line">	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB|RCC_APB2Periph_AFIO,ENABLE);</span><br><span class="line">	GPIO_InitStruct.GPIO_Mode=GPIO_Mode_AF_PP;<span class="comment">//复用推挽</span></span><br><span class="line">	GPIO_InitStruct.GPIO_Pin=GPIO_Pin_6|GPIO_Pin_7;</span><br><span class="line">	GPIO_InitStruct.GPIO_Speed=GPIO_Speed_50MHz;</span><br><span class="line">	</span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_ClockDivision=TIM_CKD_DIV1;<span class="comment">//分频因子</span></span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_CounterMode=TIM_CounterMode_Up;<span class="comment">//向上计数</span></span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_Period=arr;<span class="comment">//自动重装载值</span></span><br><span class="line">	TIM_TimeBaseInitStruct.TIM_Prescaler=psc;<span class="comment">//预分频系数</span></span><br><span class="line">	</span><br><span class="line">	TIM_OCInitStruct.TIM_OCMode=TIM_OCMode_PWM1;</span><br><span class="line">	TIM_OCInitStruct.TIM_OCNPolarity=TIM_OCPolarity_High;</span><br><span class="line">	TIM_OCInitStruct.TIM_OutputState=TIM_OutputState_Enable;</span><br><span class="line">	GPIO_Init(GPIOA, &amp;GPIO_InitStruct);</span><br><span class="line">	GPIO_InitStruct.GPIO_Mode=GPIO_Mode_AF_PP;<span class="comment">//复用推挽</span></span><br><span class="line">	GPIO_InitStruct.GPIO_Pin=GPIO_Pin_0|GPIO_Pin_1;</span><br><span class="line">	GPIO_InitStruct.GPIO_Speed=GPIO_Speed_50MHz;</span><br><span class="line">	GPIO_Init(GPIOB, &amp;GPIO_InitStruct);</span><br><span class="line">	TIM_TimeBaseInit(TIM3, &amp;TIM_TimeBaseInitStruct);</span><br><span class="line">	TIM_OC1Init(TIM3,&amp;TIM_OCInitStruct);<span class="comment">//通道1</span></span><br><span class="line">	TIM_OC2Init(TIM3,&amp;TIM_OCInitStruct);<span class="comment">//通道2</span></span><br><span class="line">	</span><br><span class="line">	TIM_OC1PreloadConfig(TIM3,TIM_OCPreload_Enable);        <span class="comment">//使能预装载寄存器</span></span><br><span class="line">	TIM_OC2PreloadConfig(TIM3,TIM_OCPreload_Enable);</span><br><span class="line">	</span><br><span class="line">	TIM_OC3Init(TIM3,&amp;TIM_OCInitStruct);<span class="comment">//通道3</span></span><br><span class="line">	TIM_OC4Init(TIM3,&amp;TIM_OCInitStruct);<span class="comment">//通道4</span></span><br><span class="line">	</span><br><span class="line">	TIM_OC3PreloadConfig(TIM3,TIM_OCPreload_Enable);        <span class="comment">//使能预装载寄存器</span></span><br><span class="line">	TIM_OC4PreloadConfig(TIM3,TIM_OCPreload_Enable);</span><br><span class="line">  	TIM_Cmd(TIM3,ENABLE);        <span class="comment">//使能TIM3</span></span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_front</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//前进</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">6000</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">500</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">6000</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_back</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//后退</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">6000</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">6000</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">500</span>); </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_left</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//左转</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">500</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">4000</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_right</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//右转</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">4000</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">500</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">500</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">motor_stop</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">//停止</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		TIM_SetCompare1(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare2(TIM3, <span class="number">500</span>); </span><br><span class="line">		TIM_SetCompare3(TIM3, <span class="number">500</span>);</span><br><span class="line">		TIM_SetCompare4(TIM3, <span class="number">500</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="蓝牙控制"><a href="#蓝牙控制" class="headerlink" title="蓝牙控制"></a>蓝牙控制</h3><h4 id="串口中断服务函数修改"><a href="#串口中断服务函数修改" class="headerlink" title="串口中断服务函数修改"></a>串口中断服务函数修改</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART1_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	u8 res;</span><br><span class="line">	<span class="keyword">if</span>(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) <span class="comment">//接收中断</span></span><br><span class="line">	&#123;</span><br><span class="line">		res = USART_ReceiveData(USART1);</span><br><span class="line">		<span class="keyword">switch</span> (res)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x00</span>: motor_stop(); <span class="keyword">break</span>;<span class="comment">//停止</span></span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x01</span>: motor_front(); <span class="keyword">break</span>;<span class="comment">//前进</span></span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x02</span>: motor_back(); <span class="keyword">break</span>;<span class="comment">//后退</span></span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x03</span>: motor_left(); <span class="keyword">break</span>;<span class="comment">//左转</span></span><br><span class="line">			<span class="keyword">case</span> <span class="number">0x04</span>: motor_right(); <span class="keyword">break</span>;<span class="comment">//右转</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="蓝牙APP修改"><a href="#蓝牙APP修改" class="headerlink" title="蓝牙APP修改"></a>蓝牙APP修改</h4><p><strong>组件修改</strong></p>
+<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="按钮组件" style="zoom:67%;" />
+
+<p><strong>逻辑修改</strong></p>
+<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E6%8C%89%E9%92%AE.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E6%8C%89%E9%92%AE.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="逻辑修改" style="zoom: 67%;" />
+
+<p>最后烧录程序，一个简单的蓝牙遥控小车就完成了。</p>
+<p>视频演示地址：<a href="https://www.bilibili.com/video/BV1cq4y1Z72B?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1cq4y1Z72B?spm_id_from=333.999.0.0</a></p>
+]]></content>
+      <categories>
+        <category>单片机</category>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu18.04连接摄像头蓝屏</title>
+    <url>/2021/11/28/Ubuntu18-04%E8%BF%9E%E6%8E%A5%E6%91%84%E5%83%8F%E5%A4%B4%E8%93%9D%E5%B1%8F/</url>
+    <content><![CDATA[<h4 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h4><p>最近在使用Ubuntu18.04时，尝试用<code>cheese</code>命令打开摄像头,一开始发现虚拟机设置选项中没有USB控制器，于是手动添加了USB控制器，当开启虚拟机后，连接摄像头时电脑出现蓝屏重启问题。</p>
+<p><img src="%E9%97%AE%E9%A2%98.png" class="lazyload placeholder" data-srcset="%E9%97%AE%E9%A2%98.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h4 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h4><p>我使用的是VMware15，可能存在版本兼容问题，下载VMware16问题就解决了。</p>
+<p><img src="%E8%A7%A3%E5%86%B3.png" class="lazyload placeholder" data-srcset="%E8%A7%A3%E5%86%B3.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="成功连接"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>VMware</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ubuntu18.04遇到的问题</title>
     <url>/2021/11/17/Ubuntu18-04%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题"><a href="#Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题" class="headerlink" title="Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题"></a>Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题</h2><span id="more"></span>
@@ -409,12 +517,21 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu18.04连接摄像头蓝屏</title>
-    <url>/2021/11/28/Ubuntu18-04%E8%BF%9E%E6%8E%A5%E6%91%84%E5%83%8F%E5%A4%B4%E8%93%9D%E5%B1%8F/</url>
-    <content><![CDATA[<h4 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h4><p>最近在使用Ubuntu18.04时，尝试用<code>cheese</code>命令打开摄像头,一开始发现虚拟机设置选项中没有USB控制器，于是手动添加了USB控制器，当开启虚拟机后，连接摄像头时电脑出现蓝屏重启问题。</p>
-<p><img src="%E9%97%AE%E9%A2%98.png" class="lazyload placeholder" data-srcset="%E9%97%AE%E9%A2%98.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h4 id="问题解决："><a href="#问题解决：" class="headerlink" title="问题解决："></a>问题解决：</h4><p>我使用的是VMware15，可能存在版本兼容问题，下载VMware16问题就解决了。</p>
-<p><img src="%E8%A7%A3%E5%86%B3.png" class="lazyload placeholder" data-srcset="%E8%A7%A3%E5%86%B3.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="成功连接"></p>
+    <title>VSCode在Ubuntu18.04空格长度减小问题</title>
+    <url>/2021/11/20/VSCode%E5%9C%A8Ubuntu18-04%E7%A9%BA%E6%A0%BC%E9%95%BF%E5%BA%A6%E5%87%8F%E5%B0%8F%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>在Ubuntu18.04空格长度太小，难以辨识。</p>
+<span id="more"></span>
+<p>在网上找到两种方法。</p>
+<h3 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h3><p>1.<code>firacode</code>字体安装<br>在终端输入以下命令下载字体</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install fonts-firacode</span><br></pre></td></tr></table></figure>
+
+<p>2.打开VSCode，按键<code>ctrl+p</code>输入<code>settings.json</code>找到文件</p>
+<p>在文件配置中加入以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;editor.fontFamily&quot;: &quot;Fira Code&quot;,</span><br><span class="line">   &quot;editor.fontLigatures&quot;: true,</span><br></pre></td></tr></table></figure>
+
+<h3 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h3><p>打开VSCode的设置选项，直接在搜索设置项中输入<code>font</code><br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/vscode_font.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/vscode_font.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p>选中字体，然后再字体系列框中输入<code>monospace</code></p>
+<p>对比两种方法之后，采用第二种更加简单容易。</p>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -423,7 +540,7 @@
       <tags>
         <tag>Linux</tag>
         <tag>Ubuntu</tag>
-        <tag>VMware</tag>
+        <tag>VSCode</tag>
       </tags>
   </entry>
   <entry>
@@ -454,33 +571,6 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VSCode在Ubuntu18.04空格长度减小问题</title>
-    <url>/2021/11/20/VSCode%E5%9C%A8Ubuntu18-04%E7%A9%BA%E6%A0%BC%E9%95%BF%E5%BA%A6%E5%87%8F%E5%B0%8F%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>在Ubuntu18.04空格长度太小，难以辨识。</p>
-<span id="more"></span>
-<p>在网上找到两种方法。</p>
-<h3 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h3><p>1.<code>firacode</code>字体安装<br>在终端输入以下命令下载字体</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install fonts-firacode</span><br></pre></td></tr></table></figure>
-
-<p>2.打开VSCode，按键<code>ctrl+p</code>输入<code>settings.json</code>找到文件</p>
-<p>在文件配置中加入以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;editor.fontFamily&quot;: &quot;Fira Code&quot;,</span><br><span class="line">   &quot;editor.fontLigatures&quot;: true,</span><br></pre></td></tr></table></figure>
-
-<h3 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h3><p>打开VSCode的设置选项，直接在搜索设置项中输入<code>font</code><br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/vscode_font.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/vscode_font.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<p>选中字体，然后再字体系列框中输入<code>monospace</code></p>
-<p>对比两种方法之后，采用第二种更加简单容易。</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
-        <tag>VSCode</tag>
       </tags>
   </entry>
   <entry>
@@ -545,178 +635,6 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Opencv-PIL库的使用</title>
-    <url>/2021/12/12/opencv-PIL%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="打开、显示、保存图片"><a href="#打开、显示、保存图片" class="headerlink" title="打开、显示、保存图片"></a>打开、显示、保存图片</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 调用模块</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment"># 打开图片</span></span><br><span class="line">image = Image.<span class="built_in">open</span>(<span class="string">&#x27;cat.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 显示图片</span></span><br><span class="line">image.show()</span><br><span class="line"><span class="comment"># 保存图片</span></span><br><span class="line">image.save(<span class="string">&#x27;C:/Users/25354/Desktop/orange_cat.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 保存不同格式</span></span><br><span class="line">image.save(<span class="string">&#x27;C:/Users/25354/Desktop/cat.bmp&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><img src="cat.png" class="lazyload placeholder" data-srcset="cat.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h3 id="图片增加文字"><a href="#图片增加文字" class="headerlink" title="图片增加文字"></a>图片增加文字</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw, ImageFont</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;cat.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 调用画图模块</span></span><br><span class="line">draw = ImageDraw.Draw(img)</span><br><span class="line"><span class="comment"># 调用字体模块</span></span><br><span class="line">font = ImageFont.truetype(<span class="string">&#x27;C:/Windows/Fonts/Arial.ttf&#x27;</span>, <span class="number">24</span>)</span><br><span class="line"><span class="comment"># 增加文字</span></span><br><span class="line">draw.text((<span class="number">30</span>, <span class="number">50</span>), <span class="string">&quot;Orange_Cat&quot;</span>, fill=<span class="string">&quot;white&quot;</span>, font=font)</span><br><span class="line">img.show()</span><br></pre></td></tr></table></figure>
-
-<p><img src="orange_cat.png" class="lazyload placeholder" data-srcset="orange_cat.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h3 id="滤镜功能"><a href="#滤镜功能" class="headerlink" title="滤镜功能"></a>滤镜功能</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageFilter</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;car.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 轮廓滤波</span></span><br><span class="line">img_contour = img.<span class="built_in">filter</span>(ImageFilter.CONTOUR)</span><br><span class="line"><span class="comment"># 浮雕滤波</span></span><br><span class="line">img_emboss = img.<span class="built_in">filter</span>(ImageFilter.EMBOSS)</span><br><span class="line">img_contour.show()</span><br><span class="line">img_emboss.show()</span><br></pre></td></tr></table></figure>
-
-<p><img src="car%E6%BB%A4%E6%B3%A2.png" class="lazyload placeholder" data-srcset="car%E6%BB%A4%E6%B3%A2.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h5 id="ImageFilter类中预定义了如下滤波方法："><a href="#ImageFilter类中预定义了如下滤波方法：" class="headerlink" title="ImageFilter类中预定义了如下滤波方法："></a><code>ImageFilter</code>类中预定义了如下滤波方法：</h5><table>
-<thead>
-<tr>
-<th align="center">定义</th>
-<th align="center">滤波</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">BLUR</td>
-<td align="center">模糊滤波</td>
-</tr>
-<tr>
-<td align="center">CONTOUR</td>
-<td align="center">轮廓滤波</td>
-</tr>
-<tr>
-<td align="center">DETAIL</td>
-<td align="center">细节滤波</td>
-</tr>
-<tr>
-<td align="center">EDGE_ENHANCE</td>
-<td align="center">边界增强滤波</td>
-</tr>
-<tr>
-<td align="center">EDGE_ENHANCE_MORE</td>
-<td align="center">边界增强滤波（程度更深）</td>
-</tr>
-<tr>
-<td align="center">EMBOSS</td>
-<td align="center">浮雕滤波</td>
-</tr>
-<tr>
-<td align="center">FIND_EDGES</td>
-<td align="center">寻找边界滤波</td>
-</tr>
-<tr>
-<td align="center">SMOOTH</td>
-<td align="center">平滑滤波</td>
-</tr>
-<tr>
-<td align="center">SMOOTH_MORE</td>
-<td align="center">平滑滤波（程度更深）</td>
-</tr>
-<tr>
-<td align="center">SHARPEN</td>
-<td align="center">锐化滤波</td>
-</tr>
-<tr>
-<td align="center">GaussianBlur(radius=2)</td>
-<td align="center">高斯模糊</td>
-</tr>
-</tbody></table>
-<h3 id="镜像功能"><a href="#镜像功能" class="headerlink" title="镜像功能"></a>镜像功能</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包.jpg&#x27;</span>)</span><br><span class="line">img.show()</span><br><span class="line"><span class="comment"># 左右镜像</span></span><br><span class="line">img_lr = img.transpose(Image.FLIP_LEFT_RIGHT)</span><br><span class="line">img_lr.show()</span><br><span class="line"><span class="comment"># 上下镜像</span></span><br><span class="line">img_tb = img.transpose(Image.FLIP_TOP_BOTTOM)</span><br><span class="line">img_tb.show()</span><br></pre></td></tr></table></figure>
-
-<p><img src="%E8%A1%A8%E6%83%85%E5%8C%85_lr_tb.png" class="lazyload placeholder" data-srcset="%E8%A1%A8%E6%83%85%E5%8C%85_lr_tb.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h3 id="拼接功能"><a href="#拼接功能" class="headerlink" title="拼接功能"></a>拼接功能</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包.jpg&#x27;</span>)</span><br><span class="line">img_lr = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包lr.jpg&#x27;</span>)</span><br><span class="line"><span class="comment"># 打印尺寸</span></span><br><span class="line"><span class="built_in">print</span>(img.size)</span><br><span class="line"><span class="comment"># 创建白布</span></span><br><span class="line"><span class="comment"># Image.new(&#x27;RGB&#x27;、&#x27;RGB2&#x27;, size, color)</span></span><br><span class="line">img_new = Image.new(<span class="string">&#x27;RGB&#x27;</span>, (<span class="number">584</span>, <span class="number">300</span>), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line"><span class="comment"># 拼接</span></span><br><span class="line">img_new.paste(img, (<span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line">img_new.paste(img_lr, (<span class="number">292</span>, <span class="number">0</span>))</span><br><span class="line">img_new.show()</span><br><span class="line">img_new.save(<span class="string">&#x27;表情包paste.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><img src="%E8%A1%A8%E6%83%85%E5%8C%85paste.jpg" class="lazyload placeholder" data-srcset="%E8%A1%A8%E6%83%85%E5%8C%85paste.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h3 id="裁剪功能"><a href="#裁剪功能" class="headerlink" title="裁剪功能"></a>裁剪功能</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包.jpg&#x27;</span>)</span><br><span class="line"><span class="comment"># 裁剪</span></span><br><span class="line"><span class="comment"># 传递参数box(left, upper, right, lower)</span></span><br><span class="line">img_crop = img.crop((<span class="number">100</span>, <span class="number">100</span>, <span class="number">200</span>, <span class="number">200</span>))</span><br><span class="line">img_crop.show()</span><br></pre></td></tr></table></figure>
-
-<p><img src="crop.png" class="lazyload placeholder" data-srcset="crop.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<p><img src="%E8%A1%A8%E6%83%85%E5%8C%85_crop.png" class="lazyload placeholder" data-srcset="%E8%A1%A8%E6%83%85%E5%8C%85_crop.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h3 id="色点和色块"><a href="#色点和色块" class="headerlink" title="色点和色块"></a>色点和色块</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw</span><br><span class="line">img = Image.new(<span class="string">&#x27;RGBA&#x27;</span>, (<span class="number">300</span>, <span class="number">300</span>), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">draw = ImageDraw.Draw(img)</span><br><span class="line"><span class="comment"># 色点</span></span><br><span class="line">draw.point((<span class="number">10</span>, <span class="number">10</span>), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>))</span><br><span class="line"><span class="comment"># 色线</span></span><br><span class="line"><span class="keyword">for</span> l <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">20</span>, <span class="number">100</span>):</span><br><span class="line">    draw.point((l, <span class="number">20</span>), (<span class="number">0</span>, <span class="number">250</span>, <span class="number">0</span>))</span><br><span class="line"><span class="comment"># 色块</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">230</span>, <span class="number">280</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">230</span>, <span class="number">280</span>):</span><br><span class="line">        draw.point((i, j), (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line"><span class="comment"># 渐变色</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>, <span class="number">200</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>, <span class="number">200</span>):</span><br><span class="line">        draw.point((i, j), (i, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">img.show()</span><br><span class="line">img.save(<span class="string">&#x27;color.png&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><img src="color.png" class="lazyload placeholder" data-srcset="color.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h3 id="图片缩放"><a href="#图片缩放" class="headerlink" title="图片缩放"></a>图片缩放</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包.jpg&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(img.size)</span><br><span class="line">img.show()</span><br><span class="line"><span class="comment"># 等比例缩放，缩放程度较大的自动调整</span></span><br><span class="line">img.thumbnail((<span class="number">100</span>, <span class="number">100</span>))</span><br><span class="line"><span class="built_in">print</span>(img.size)</span><br><span class="line">img.show()</span><br></pre></td></tr></table></figure>
-
-<p><img src="%E8%A1%A8%E6%83%85%E5%8C%85%E7%BC%A9%E6%94%BE.png" class="lazyload placeholder" data-srcset="%E8%A1%A8%E6%83%85%E5%8C%85%E7%BC%A9%E6%94%BE.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>PIL库的使用</title>
-    <url>/2021/12/12/PIL%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="打开、显示、保存图片"><a href="#打开、显示、保存图片" class="headerlink" title="打开、显示、保存图片"></a>打开、显示、保存图片</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 调用模块</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment"># 打开图片</span></span><br><span class="line">image = Image.<span class="built_in">open</span>(<span class="string">&#x27;cat.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 显示图片</span></span><br><span class="line">image.show()</span><br><span class="line"><span class="comment"># 保存图片</span></span><br><span class="line">image.save(<span class="string">&#x27;C:/Users/25354/Desktop/orange_cat.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 保存不同格式</span></span><br><span class="line">image.save(<span class="string">&#x27;C:/Users/25354/Desktop/cat.bmp&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><img src="cat.png" class="lazyload placeholder" data-srcset="cat.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h3 id="图片增加文字"><a href="#图片增加文字" class="headerlink" title="图片增加文字"></a>图片增加文字</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw, ImageFont</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;cat.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 调用画图模块</span></span><br><span class="line">draw = ImageDraw.Draw(img)</span><br><span class="line"><span class="comment"># 调用字体模块</span></span><br><span class="line">font = ImageFont.truetype(<span class="string">&#x27;C:/Windows/Fonts/Arial.ttf&#x27;</span>, <span class="number">24</span>)</span><br><span class="line"><span class="comment"># 增加文字</span></span><br><span class="line">draw.text((<span class="number">30</span>, <span class="number">50</span>), <span class="string">&quot;Orange_Cat&quot;</span>, fill=<span class="string">&quot;white&quot;</span>, font=font)</span><br><span class="line">img.show()</span><br></pre></td></tr></table></figure>
-
-<p><img src="orange_cat.png" class="lazyload placeholder" data-srcset="orange_cat.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h3 id="滤镜功能"><a href="#滤镜功能" class="headerlink" title="滤镜功能"></a>滤镜功能</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageFilter</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;car.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 轮廓滤波</span></span><br><span class="line">img_contour = img.<span class="built_in">filter</span>(ImageFilter.CONTOUR)</span><br><span class="line"><span class="comment"># 浮雕滤波</span></span><br><span class="line">img_emboss = img.<span class="built_in">filter</span>(ImageFilter.EMBOSS)</span><br><span class="line">img_contour.show()</span><br><span class="line">img_emboss.show()</span><br></pre></td></tr></table></figure>
-
-<p><img src="car%E6%BB%A4%E6%B3%A2.png" class="lazyload placeholder" data-srcset="car%E6%BB%A4%E6%B3%A2.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h5 id="ImageFilter类中预定义了如下滤波方法："><a href="#ImageFilter类中预定义了如下滤波方法：" class="headerlink" title="ImageFilter类中预定义了如下滤波方法："></a><code>ImageFilter</code>类中预定义了如下滤波方法：</h5><table>
-<thead>
-<tr>
-<th align="center">定义</th>
-<th align="center">滤波</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">BLUR</td>
-<td align="center">模糊滤波</td>
-</tr>
-<tr>
-<td align="center">CONTOUR</td>
-<td align="center">轮廓滤波</td>
-</tr>
-<tr>
-<td align="center">DETAIL</td>
-<td align="center">细节滤波</td>
-</tr>
-<tr>
-<td align="center">EDGE_ENHANCE</td>
-<td align="center">边界增强滤波</td>
-</tr>
-<tr>
-<td align="center">EDGE_ENHANCE_MORE</td>
-<td align="center">边界增强滤波（程度更深）</td>
-</tr>
-<tr>
-<td align="center">EMBOSS</td>
-<td align="center">浮雕滤波</td>
-</tr>
-<tr>
-<td align="center">FIND_EDGES</td>
-<td align="center">寻找边界滤波</td>
-</tr>
-<tr>
-<td align="center">SMOOTH</td>
-<td align="center">平滑滤波</td>
-</tr>
-<tr>
-<td align="center">SMOOTH_MORE</td>
-<td align="center">平滑滤波（程度更深）</td>
-</tr>
-<tr>
-<td align="center">SHARPEN</td>
-<td align="center">锐化滤波</td>
-</tr>
-<tr>
-<td align="center">GaussianBlur(radius=2)</td>
-<td align="center">高斯模糊</td>
-</tr>
-</tbody></table>
-<h3 id="镜像功能"><a href="#镜像功能" class="headerlink" title="镜像功能"></a>镜像功能</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包.jpg&#x27;</span>)</span><br><span class="line">img.show()</span><br><span class="line"><span class="comment"># 左右镜像</span></span><br><span class="line">img_lr = img.transpose(Image.FLIP_LEFT_RIGHT)</span><br><span class="line">img_lr.show()</span><br><span class="line"><span class="comment"># 上下镜像</span></span><br><span class="line">img_tb = img.transpose(Image.FLIP_TOP_BOTTOM)</span><br><span class="line">img_tb.show()</span><br></pre></td></tr></table></figure>
-
-<p><img src="%E8%A1%A8%E6%83%85%E5%8C%85_lr_tb.png" class="lazyload placeholder" data-srcset="%E8%A1%A8%E6%83%85%E5%8C%85_lr_tb.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h3 id="拼接功能"><a href="#拼接功能" class="headerlink" title="拼接功能"></a>拼接功能</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包.jpg&#x27;</span>)</span><br><span class="line">img_lr = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包lr.jpg&#x27;</span>)</span><br><span class="line"><span class="comment"># 打印尺寸</span></span><br><span class="line"><span class="built_in">print</span>(img.size)</span><br><span class="line"><span class="comment"># 创建白布</span></span><br><span class="line"><span class="comment"># Image.new(&#x27;RGB&#x27;、&#x27;RGB2&#x27;, size, color)</span></span><br><span class="line">img_new = Image.new(<span class="string">&#x27;RGB&#x27;</span>, (<span class="number">584</span>, <span class="number">300</span>), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line"><span class="comment"># 拼接</span></span><br><span class="line">img_new.paste(img, (<span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line">img_new.paste(img_lr, (<span class="number">292</span>, <span class="number">0</span>))</span><br><span class="line">img_new.show()</span><br><span class="line">img_new.save(<span class="string">&#x27;表情包paste.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><img src="%E8%A1%A8%E6%83%85%E5%8C%85paste.jpg" class="lazyload placeholder" data-srcset="%E8%A1%A8%E6%83%85%E5%8C%85paste.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h3 id="裁剪功能"><a href="#裁剪功能" class="headerlink" title="裁剪功能"></a>裁剪功能</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包.jpg&#x27;</span>)</span><br><span class="line"><span class="comment"># 裁剪</span></span><br><span class="line"><span class="comment"># 传递参数box(left, upper, right, lower)</span></span><br><span class="line">img_crop = img.crop((<span class="number">100</span>, <span class="number">100</span>, <span class="number">200</span>, <span class="number">200</span>))</span><br><span class="line">img_crop.show()</span><br></pre></td></tr></table></figure>
-
-<p><img src="crop.png" class="lazyload placeholder" data-srcset="crop.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<p><img src="%E8%A1%A8%E6%83%85%E5%8C%85_crop.png" class="lazyload placeholder" data-srcset="%E8%A1%A8%E6%83%85%E5%8C%85_crop.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h3 id="色点和色块"><a href="#色点和色块" class="headerlink" title="色点和色块"></a>色点和色块</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageDraw</span><br><span class="line">img = Image.new(<span class="string">&#x27;RGBA&#x27;</span>, (<span class="number">300</span>, <span class="number">300</span>), (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">draw = ImageDraw.Draw(img)</span><br><span class="line"><span class="comment"># 色点</span></span><br><span class="line">draw.point((<span class="number">10</span>, <span class="number">10</span>), (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>))</span><br><span class="line"><span class="comment"># 色线</span></span><br><span class="line"><span class="keyword">for</span> l <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">20</span>, <span class="number">100</span>):</span><br><span class="line">    draw.point((l, <span class="number">20</span>), (<span class="number">0</span>, <span class="number">250</span>, <span class="number">0</span>))</span><br><span class="line"><span class="comment"># 色块</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">230</span>, <span class="number">280</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">230</span>, <span class="number">280</span>):</span><br><span class="line">        draw.point((i, j), (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line"><span class="comment"># 渐变色</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>, <span class="number">200</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>, <span class="number">200</span>):</span><br><span class="line">        draw.point((i, j), (i, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">img.show()</span><br><span class="line">img.save(<span class="string">&#x27;color.png&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><img src="color.png" class="lazyload placeholder" data-srcset="color.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h3 id="图片缩放"><a href="#图片缩放" class="headerlink" title="图片缩放"></a>图片缩放</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&#x27;表情包.jpg&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(img.size)</span><br><span class="line">img.show()</span><br><span class="line"><span class="comment"># 等比例缩放，缩放程度较大的自动调整</span></span><br><span class="line">img.thumbnail((<span class="number">100</span>, <span class="number">100</span>))</span><br><span class="line"><span class="built_in">print</span>(img.size)</span><br><span class="line">img.show()</span><br></pre></td></tr></table></figure>
-
-<p><img src="%E8%A1%A8%E6%83%85%E5%8C%85%E7%BC%A9%E6%94%BE.png" class="lazyload placeholder" data-srcset="%E8%A1%A8%E6%83%85%E5%8C%85%E7%BC%A9%E6%94%BE.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-]]></content>
-      <categories>
-        <category>视觉处理</category>
-        <category>Opencv</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>Opencv</tag>
       </tags>
   </entry>
 </search>
