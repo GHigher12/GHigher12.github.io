@@ -548,7 +548,7 @@
       </tags>
   </entry>
   <entry>
-    <title>opencv-PIL库的使用</title>
+    <title>Opencv-PIL库的使用</title>
     <url>/2021/12/12/opencv-PIL%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h3 id="打开、显示、保存图片"><a href="#打开、显示、保存图片" class="headerlink" title="打开、显示、保存图片"></a>打开、显示、保存图片</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 调用模块</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment"># 打开图片</span></span><br><span class="line">image = Image.<span class="built_in">open</span>(<span class="string">&#x27;cat.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 显示图片</span></span><br><span class="line">image.show()</span><br><span class="line"><span class="comment"># 保存图片</span></span><br><span class="line">image.save(<span class="string">&#x27;C:/Users/25354/Desktop/orange_cat.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 保存不同格式</span></span><br><span class="line">image.save(<span class="string">&#x27;C:/Users/25354/Desktop/cat.bmp&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
