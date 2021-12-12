@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2021-12-04T10:17:08.800Z</updated>
+  <updated>2021-12-12T03:50:28.864Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>opencv-PIL库的使用</title>
+    <link href="https://yuchanghui.top/2021/12/12/opencv-PIL%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://yuchanghui.top/2021/12/12/opencv-PIL%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+    <published>2021-12-12T03:33:53.000Z</published>
+    <updated>2021-12-12T03:50:28.864Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;打开、显示、保存图片&quot;&gt;&lt;a href=&quot;#打开、显示、保存图片&quot; class=&quot;headerlink&quot; title=&quot;打开、显示、保存图片&quot;&gt;&lt;/a&gt;打开、显示、保存图片&lt;/h3&gt;&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="视觉处理" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/"/>
+    
+    <category term="Opencv" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/"/>
+    
+    
+    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
+    
+    <category term="Opencv" scheme="https://yuchanghui.top/tags/Opencv/"/>
+    
+  </entry>
   
   <entry>
     <title>ROS运行Gazebo遇到的问题</title>
