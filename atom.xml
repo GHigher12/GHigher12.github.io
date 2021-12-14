@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2021-12-12T13:32:26.427Z</updated>
+  <updated>2021-12-14T15:23:40.271Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Opencv学习01</title>
+    <link href="https://yuchanghui.top/2021/12/14/Opencv%E5%AD%A6%E4%B9%A001/"/>
+    <id>https://yuchanghui.top/2021/12/14/Opencv%E5%AD%A6%E4%B9%A001/</id>
+    <published>2021-12-14T15:18:24.000Z</published>
+    <updated>2021-12-14T15:23:40.271Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;读取、显示、保存图片-输出图片像素值、尺寸&quot;&gt;&lt;a href=&quot;#读取、显示、保存图片-输出图片像素值、尺寸&quot; class=&quot;headerlink&quot; title=&quot;读取、显示、保存图片, 输出图片像素值、尺寸&quot;&gt;&lt;/a&gt;读取、显示、保存图片,</summary>
+        
+      
+    
+    
+    
+    <category term="视觉处理" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/"/>
+    
+    <category term="Opencv" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/"/>
+    
+    
+    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
+    
+    <category term="Opencv" scheme="https://yuchanghui.top/tags/Opencv/"/>
+    
+  </entry>
   
   <entry>
     <title>PIL库的使用</title>
