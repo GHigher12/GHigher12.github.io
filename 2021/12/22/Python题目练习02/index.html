@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>music | GHigher&#39;s Blog</title>
+  <title>Python题目练习02 | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -47,6 +47,9 @@
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
+    
+        <script src="/js/valine/av-min@3.0.4.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
     
 
     <!-- import link -->
@@ -584,24 +587,37 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/6.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/12.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        music
+        Python题目练习02
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-11-15 |
+          <i class="fas fa-calendar"></i> 发表于：2021-12-22 |
         </span>
       
 
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="post-detail-header_category">
+              程序设计
+            </a>
+          
+            <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Python/" class="post-detail-header_category">
+              Python
+            </a>
+          
+        </span>
       
 
       
@@ -622,14 +638,89 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
-    <div id="aplayer-msAbUKkb" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#3F51B5"
-    ></div>
+        <h3 id="递归求斐波那契数列"><a href="#递归求斐波那契数列" class="headerlink" title="递归求斐波那契数列"></a>递归求斐波那契数列</h3><p><strong>题目：斐波那契数列的排列是：0，1，1，2，3，5，8，13，21，34，55，89，144……，即从第三个数开始，每个数等于前面两个数的和。</strong></p>
+<p><em>Input</em></p>
+<p><strong>输入一个正整数n（n代表斐波那契数列中的第n个位置）。</strong></p>
+<blockquote>
+<p>4</p>
+</blockquote>
+<p><em>Output</em></p>
+<p><strong>输出斐波那契数列第n个位置的值。</strong></p>
+<blockquote>
+<p>2</p>
+</blockquote>
+<p><em>Code</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 递归</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibonacci</span>(<span class="params">i</span>):</span></span><br><span class="line">    num_list = [<span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line">    <span class="keyword">if</span> i &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> num_list[i]</span><br><span class="line">    <span class="keyword">elif</span> i &gt;= <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> fibonacci(i - <span class="number">2</span>) + fibonacci(i - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">num = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="built_in">print</span>(fibonacci(num-<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="用递归求最大公约数"><a href="#用递归求最大公约数" class="headerlink" title="用递归求最大公约数"></a>用递归求最大公约数</h3><p><strong>题目：计算两个正整数的最大公约数。提示：如果p&gt;q，则p和q的最大公约数等于q和p%q的最大公约数。</strong></p>
+<p><img src="%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E7%AE%97%E6%B3%95.png" class="lazyload placeholder" data-srcset="%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E7%AE%97%E6%B3%95.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p><em>Input</em></p>
+<p><strong>输入一行，由两个正整数组成，中间用一个空格间隔。</strong></p>
+<blockquote>
+<p>6 8</p>
+</blockquote>
+<p><em>Output</em></p>
+<p><strong>输出最大公约数。</strong></p>
+<blockquote>
+<p>2</p>
+</blockquote>
+<p><em>Code</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">divisor</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    <span class="keyword">if</span> b != <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">if</span> a &gt; b:</span><br><span class="line">            big, small = b, a % b</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            big, small = a, b % a</span><br><span class="line">        <span class="keyword">return</span> divisor(big, small)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">num1, num2 = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line"><span class="built_in">print</span>(divisor(num1, num2))</span><br></pre></td></tr></table></figure>
+
+<h3 id="搬运工问题"><a href="#搬运工问题" class="headerlink" title="搬运工问题"></a>搬运工问题</h3><p><strong>题目：一位搬运工需要搬运m件家具，第一天搬运的家具是m件家具的一半多1件，第二天搬运的家具是第一天剩余家具的一半多1件，以后每天都是搬运剩余家具的一半多1件，第n天早上剩余的家具只有1件，求m。</strong></p>
+<p><em>Input</em></p>
+<p><strong>输入天数n</strong></p>
+<blockquote>
+<p>7</p>
+</blockquote>
+<p><em>Output</em></p>
+<p><strong>输出m</strong></p>
+<blockquote>
+<p>190</p>
+</blockquote>
+<p><em>Code</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">num_all</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        num = num_all(n - <span class="number">1</span>)</span><br><span class="line">        m = (num + <span class="number">1</span>) * <span class="number">2</span></span><br><span class="line">        <span class="keyword">return</span> m</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="built_in">print</span>(num_all(a - <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="计算单利和复利"><a href="#计算单利和复利" class="headerlink" title="计算单利和复利"></a><strong>计算单利和复利</strong></h3><p><strong>题目：根据本金a、年利率b、存款年限c，按单利和复利两种方式分别计算存款到期后应得到的利息（四舍五入，保留1位小数）。 提示：单利计算方式为：a * b * c 复利计算方式为：a * (1 + b)<em>c</em> - a 要求：设计单利计算函数，复利计算函数。</strong></p>
+<p><em>Input</em></p>
+<p><strong>一行输入a，b，c三个值，两两之间用一个空格间隔。</strong></p>
+<blockquote>
+<p>1000 0.06 3</p>
+</blockquote>
+<p><em>Output</em></p>
+<p><strong>输出单利利息 输出复利利息</strong></p>
+<blockquote>
+<p>180.0</p>
+<p>191.0</p>
+</blockquote>
+<p><em>Code</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = <span class="built_in">map</span>(<span class="built_in">float</span>, <span class="built_in">input</span>().split())</span><br><span class="line">s1 = <span class="built_in">round</span>(a * b * c, <span class="number">1</span>)</span><br><span class="line">s2 = <span class="built_in">round</span>(a * (<span class="number">1</span> + b) ** c - a, <span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br><span class="line"><span class="built_in">print</span>(s2)</span><br></pre></td></tr></table></figure>
+
+<h3 id="递归求n项分数和"><a href="#递归求n项分数和" class="headerlink" title="递归求n项分数和"></a><strong>递归求n项分数和</strong></h3><p><strong>题目: 1/(1x2)-1/(2x3)+1/(3x4)-1/(4x5)+……</strong></p>
+<p><em>Input</em></p>
+<p><strong>用户输入n值（n是大于0的自然数）</strong></p>
+<blockquote>
+<p>2</p>
+</blockquote>
+<p><em>Output</em></p>
+<p><strong>显示累加和</strong></p>
+<blockquote>
+<p>0.33333333333333337</p>
+</blockquote>
+<p><em>Code</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">n_sum</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0.5</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> (-<span class="number">1</span>) ** (n + <span class="number">1</span>)/(n * (n + <span class="number">1</span>)) + n_sum(n - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">c = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="built_in">print</span>(n_sum(c))</span><br></pre></td></tr></table></figure>
 
 
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/Python/" class="">
+              Python
+            </a>
+          
+        </div>
         
       </div>
       
@@ -640,7 +731,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/music/index.html" target="_blank" title="music">https://yuchanghui.top/music/index.html</a>
+    <a href="/2021/12/22/Python题目练习02/" target="_blank" title="Python题目练习02">https://yuchanghui.top/2021/12/22/Python题目练习02/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -659,6 +750,23 @@
 
 
 
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/13.png" class="lazyload placeholder" data-srcset="/medias/13.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/2021/12/18/Python%E9%A2%98%E7%9B%AE%E7%BB%83%E4%B9%A001/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">Python题目练习01</div>
+      </div>
+      <!-- <div class="content">
+        删除用户输入数字序列中的素数题目： 用户输入多个正整数（两个数之间用一个空格间隔），请将其保存到一个列表中，删除其中的素
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -771,6 +879,107 @@
     
     <!-- 评论 -->
     <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em; margin: 15px auto;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/mmexport1637310928932.jpg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
 
 <!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
 
@@ -1495,6 +1704,144 @@
    
 
 <!-- 评论所需js -->
+
+  
+    <!-- 弹幕所需的css和js -->
+    
+  <!-- 弹幕插件 -->
+  <link href="/js/danmu/barrager.css" rel="stylesheet">
+  <script src="/js/danmu/jquery.barrager.js"></script>
+
+<!-- 具体js，请前往valine/script.ejs查看 -->
+
+    <script>
+  var requiredFields = '';
+  requiredFields = requiredFields.split(',');
+  comment_el = '.comment';
+  let looperValine = null;
+  load_valine = function () {
+    if ($(comment_el).length) {
+      var valine = new Valine({
+        el: '#vcomment',
+        path: window.location.pathname,
+        notify: false,
+        verify: false,
+        app_id: "2PVPHuivtIxkhlA1Kv1quvq2-gzGzoHsz",
+        app_key: "7EDHPdniI5WQBAkU96Yxy9bG",
+        placeholder: "说点什么吧",
+        avatar: "",
+        master: "9b1cd4514cf4b7b3747b9aaa3b78397f",   //博主邮箱md5
+        tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+        friends: "",
+        metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱" },
+        requiredFields: requiredFields,
+        enableQQ: true,
+      });
+      function debounce(fn) {
+        var timerID = null
+        return function () {
+          var arg = arguments[0]   //获取事件
+          if (timerID) {
+            clearTimeout(timerID)
+          }
+          timerID = setTimeout(function () {
+            fn(arg)              //事件传入函数
+          }, 200)
+        }
+      }
+      //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
+      var themeDanmu = eval('true');
+      var themeLoop = eval('false');
+      var themeLooperTime = '5000' || 5000;
+      var speed = '40' || 20;
+      var isBarrager = true;
+      if (themeDanmu == true) {
+        do_barrager();
+        if ($('.danmuBox').length <= 0) {
+          $('.navbar').append('<div class="danmuBox"><div class="danmuBtn open"><span class="danmuCircle"></span><span class="danmuText">弹幕</span></div></div>');
+        }
+        $('.danmuBtn').on('click', debounce(
+          function () {
+            if ($('.danmuBtn').hasClass('open')) {
+              $('.danmuBtn').removeClass('open')
+              clearInterval(looperValine);
+              $.fn.barrager.removeAll();
+            } else {
+              $('.danmuBtn').addClass("open");
+              do_barrager();
+            }
+          }
+        ))
+      }
+      function do_barrager() {
+        isBarrager && valine.Q(window.location.pathname).find().then(function (comments) {
+          // var num = 0; // 可以记录条数，循环调用的时候只取最新的评论放入弹幕中
+          var run_once = true;
+          var looper_time = themeLooperTime;
+          var total = comments.length;
+          // var looper = null;
+          var index = 0;
+          if (total > 0) {
+            barrager();
+          } else {
+            // 当评论数为0的时候，自动关闭弹幕
+            // $('.danmuBtn').removeClass('open');
+          }
+          function barrager() {
+            if (run_once) {
+              //如果是首次执行,则设置一个定时器,并且把首次执行置为false
+              looperValine = setInterval(barrager, looper_time);
+              run_once = false;
+            }
+            var content = comments[index]._serverData.comment;
+            var email = comments[index]._serverData.mail;
+            var link = comments[index]._serverData.link;
+            var newcontent = content.substring(0, 50).replace(/<[^>]+>/g, "");
+            //发布一个弹幕
+            const item = {
+              img: `https://q1.qlogo.cn/g?b=qq&nk=${email}&s=640`, //图片 
+              info: newcontent, //文字 
+              href: link, //链接 
+              close: true, //显示关闭按钮 
+              speed: speed, //延迟,单位秒,默认6 
+              color: '#fff', //颜色,默认白色 
+              old_ie_color: '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
+            }
+            $('body').barrager(item);
+            //索引自增
+            index++;
+            //所有弹幕发布完毕，清除计时器。
+            if (index == total) {
+              clearInterval(looperValine);
+              if (themeLoop === true) {
+                setTimeout(function () {
+                  do_barrager();
+                }, 5000);
+              } else {
+                $('.danmuBtn').removeClass('open');
+              }
+              return false;
+            }
+
+          }
+        })
+      }
+    }
+  };
+  $(document).ready(load_valine);
+  document.addEventListener('pjax:send', function (e) {
+    
+      $('.danmuBox').length > 0 && $('.danmuBox').remove()
+      looperValine && clearInterval(looperValine);
+      $.fn.barrager.removeAll();
+    
+  })
+  document.addEventListener('pjax:complete', function () {
+    load_valine();
+  });
+</script>
+
+  
 
 
 <!-- 鼠标点击特效 -->
