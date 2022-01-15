@@ -639,12 +639,12 @@
     <article class="post post-detail">
       <div class="post-content">
         <p>运行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rosrun gazebo_ros gazebo</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rosrun gazebo_ros gazebo</span><br></pre></td></tr></table></figure></div>
 
 <p>遇到下列错误</p>
 <h2 id="错误：-Err-REST-cc-205-Error-in-REST-request"><a href="#错误：-Err-REST-cc-205-Error-in-REST-request" class="headerlink" title="错误：[Err] [REST.cc:205] Error in REST request"></a>错误：[Err] [REST.cc:205] Error in REST request</h2><p><img src="REST.png" class="lazyload placeholder" data-srcset="REST.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
 <h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p>1.修改<code>~/.ignition/fuel/config.yaml</code>文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gedit ~/.ignition/fuel/config.yaml</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gedit ~/.ignition/fuel/config.yaml</span><br></pre></td></tr></table></figure></div>
 
 <p>2.</p>
 <p>注释 <code>url : https://api.ignitionfuel.org</code><br>添加 <code>url: https://api.ignitionrobotics.org</code></p>
@@ -652,11 +652,11 @@
 <p>再重新启动Gazebo即可。</p>
 <h2 id="错误：VMware-vmw-ioctl-command-error-无效的参数"><a href="#错误：VMware-vmw-ioctl-command-error-无效的参数" class="headerlink" title="错误：VMware: vmw_ioctl_command error 无效的参数"></a>错误：VMware: vmw_ioctl_command error 无效的参数</h2><p><img src="%E6%97%A0%E6%95%88%E5%8F%82%E6%95%B0.png" class="lazyload placeholder" data-srcset="%E6%97%A0%E6%95%88%E5%8F%82%E6%95%B0.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
 <h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在终端设置环境变量为0:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export SVGA_VGPU10=0</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export SVGA_VGPU10=0</span><br></pre></td></tr></table></figure></div>
 
 <p>长久方法：</p>
 <p>在~/.bashrc文件写入<code>export SVGA_VGPU10=0</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;export SVGA_VGPU10=0&quot; &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;export SVGA_VGPU10=0&quot; &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure></div>
 
 <p>再重新启动Gazebo即可。</p>
 

@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>hexo博客添加gif动图 | GHigher&#39;s Blog</title>
+  <title>Opencv学习02 | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -587,21 +587,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/1.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/9.png')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        hexo博客添加gif动图
+        Opencv学习02
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-11-24 |
+          <i class="fas fa-calendar"></i> 发表于：2022-01-15 |
         </span>
       
 
@@ -609,8 +609,12 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/HEXO/" class="post-detail-header_category">
-              HEXO
+            <a href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/" class="post-detail-header_category">
+              视觉处理
+            </a>
+          
+            <a href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/" class="post-detail-header_category">
+              Opencv
             </a>
           
         </span>
@@ -634,33 +638,43 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="坑——写在前面"><a href="#坑——写在前面" class="headerlink" title="坑——写在前面"></a>坑——写在前面</h2><p>在网上搜过很多添加gif动图的方法，但都不尽人意，其问题都出在<code>hexo s</code>后可以正常显示，但<code>hexo d</code>上传后就无法查看。</p>
-<span id="more"></span>
+        <h2 id="图像梯度处理"><a href="#图像梯度处理" class="headerlink" title="图像梯度处理"></a>图像梯度处理</h2><p>图像计算的是图像的边缘信息，它能反映图像像素的变化。如灰度值变化较大的地方，梯度值也较大；灰度值较小的地方，相应的梯度值较小。图像梯度就是指像素的已接到是。图像的边缘是指灰度值发生急剧变化的地方，边缘检测目的就是在不破坏图像信息的条件下，减少图像的数据量，绘制其边缘线图。</p>
+<h3 id="Sobel算子"><a href="#Sobel算子" class="headerlink" title="Sobel算子"></a>Sobel算子</h3><h5 id="Opencv中提供l了cv2-Sobel-函数"><a href="#Opencv中提供l了cv2-Sobel-函数" class="headerlink" title="Opencv中提供l了cv2.Sobel()函数"></a><strong>Opencv中提供l了<code>cv2.Sobel()</code>函数</strong></h5><div class="highlight-wrap" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dst = cv2.Sobel(src, ddepth, dx, dy[, dst[, ksize[, scale[, delta[, borderType]]]]])</span><br></pre></td></tr></table></figure></div>
 
-<p>eg:</p>
-<div class="highlight-wrap" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">height</span>=<span class="string">100</span> <span class="attr">width</span>=<span class="string">100</span> <span class="attr">src</span>=<span class="string">&quot;gif 图片地址&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>前四个是必须的参数：<br>src：需要处理的图像；<br>ddpteh：是图像的深度，-1表示采用的是与原图像相同的深度。目标图像的深度 必须大于等于原图像的深度；<br>dx和dy表示的是求导的阶数，0表示这个方向上没有求导，一般为0、1、2。<br>可选的参数：<br>dst：目标图像<br>ksize：Sobel算子的大小，必须为1、3、5、7。<br>scale：是缩放导数的比例常数，默认情况下没有伸缩系数；<br>delta：是一个可选的增量，将会加到最终的dst中，同样，默认情况下没有额外的值加到dst中；<br>borderType：判断图像边界的模式。这个参数默认值cv2.BORDER_DEFAULT。</p>
+<h5 id="图像深度参数"><a href="#图像深度参数" class="headerlink" title="图像深度参数"></a>图像深度参数</h5><p>ddpteh这个参数代表dst图像的深度，可选的参数如CV_16S、CV_32F、CV_64F等。<br>由于Sobel算子计算的是差分，有正有负，并且可能存在超过255的数，因此如果采用8为深度的话，显示图像会有问题。</p>
+<h5 id="计算水平方向偏导数的近似值"><a href="#计算水平方向偏导数的近似值" class="headerlink" title="计算水平方向偏导数的近似值"></a>计算水平方向偏导数的近似值</h5><p><img src="Sobelx.png" class="lazyload placeholder" data-srcset="Sobelx.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="sobelx"></p>
+<div class="highlight-wrap" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">image_show</span>(<span class="params">name, img</span>):</span></span><br><span class="line">    cv2.imshow(name, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 图像梯度-Sobel算子 右-左</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;./images/cyclie.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 白：255 黑: 0 </span></span><br><span class="line"><span class="comment"># 从右向左白-黑为白 黑-白=-255 为负数则会截断取0</span></span><br><span class="line">img_sobelx = cv2.Sobel(img, cv2.CV_64F, <span class="number">1</span>, <span class="number">0</span>, ksize=<span class="number">3</span>)</span><br><span class="line"><span class="comment"># 取绝对值后，-255处为白</span></span><br><span class="line">img_sobel = cv2.convertScaleAbs(img_sobelx)</span><br><span class="line"><span class="comment"># 水平方向合并</span></span><br><span class="line">img_all = np.hstack((img, img_sobelx, img_sobel))</span><br><span class="line">image_show(<span class="string">&#x27;img_all&#x27;</span>, img_all)</span><br></pre></td></tr></table></figure></div>
 
-<p>这是html直接插入gif图片地址，在上传之后gif无法显示。</p>
-<p>下面直入正题：</p>
-<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><h3 id="1-gif录取软件"><a href="#1-gif录取软件" class="headerlink" title="1.gif录取软件"></a>1.gif录取软件</h3><p>GifCam 是用于创建动画图像或 GIF 的免费软件。Windows工具的工作原理类似于相机或屏幕录像机，可为所需区域拍摄一系列照片。它稍后将它们保存为易于共享和播放的<strong>动画图像</strong>或<strong>AVI 文件</strong>。虽然该工具具有<strong>多种用途</strong>且易于操作，但它仅适用于 Windows。<br><a target="_blank" rel="noopener" href="http://blog.bahraniapps.com/gifcam/#download">官网下载地址 </a>或者 百度网盘下载链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1W_wNTVyw8UJWO2Ahgi4Q8g">下载地址</a>  提取码：19c3</p>
-<h3 id="2-更改配置"><a href="#2-更改配置" class="headerlink" title="2.更改配置"></a>2.更改配置</h3><p>打开hexo博客根目录下的<code>_config.yml</code>文件，更改以下配置</p>
-<div class="highlight-wrap" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></div>
+<p><img src="sol_x.png" class="lazyload placeholder" data-srcset="sol_x.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h5 id="计算垂直方向偏导数的近似值"><a href="#计算垂直方向偏导数的近似值" class="headerlink" title="计算垂直方向偏导数的近似值"></a>计算垂直方向偏导数的近似值</h5><p><img src="Sobely.png" class="lazyload placeholder" data-srcset="Sobely.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="sobely"></p>
+<div class="highlight-wrap" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 图像梯度-Sobel算子 下-上</span></span><br><span class="line">img_sobely = cv2.Sobel(img, cv2.CV_64F, <span class="number">0</span>, <span class="number">1</span>, ksize=<span class="number">3</span>)</span><br><span class="line">img_sobel = cv2.convertScaleAbs(img_sobely)</span><br><span class="line">img_all = np.hstack((img, img_sobely, img_sobel))</span><br><span class="line">image_show(<span class="string">&#x27;img_all&#x27;</span>, img_all)</span><br></pre></td></tr></table></figure></div>
 
-<p>将<code>_config.yml</code>文件中的配置项<code>post_asset_folder</code>设为true后，执行命令<code>$ hexo new post_name</code>，在<code>source/_posts</code>中会生成文章<code>post_name.md</code>和同名文件夹<code>post_name</code>。将图片资源放在<code>post_name</code>中，文章就可以使用相对路径引用图片及gif资源了。</p>
-<h3 id="3-设置路径并引用"><a href="#3-设置路径并引用" class="headerlink" title="3.设置路径并引用"></a>3.设置路径并引用</h3><p>用Typora软件设置好图像根目录为自己的同名文件夹，格式–&gt;图像–&gt;设置图片根目录</p>
-<p>写文章是直接引用就可以了</p>
-<div class="highlight-wrap" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](image.jpg)</span><br></pre></td></tr></table></figure></div>
+<p><img src="sob_y.png" class="lazyload placeholder" data-srcset="sob_y.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<h4 id="Scharr算子"><a href="#Scharr算子" class="headerlink" title="Scharr算子"></a>Scharr算子</h4><p>Scharr算子可被视为Sobel算子的改进，具有Sobel算子相同的计算速度，但是其精度更高。</p>
+<p><strong>水平X:</strong></p>
+<p><img src="Scharrx.png" class="lazyload placeholder" data-srcset="Scharrx.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p><strong>数值Y:</strong></p>
+<p><img src="Scharry.png" class="lazyload placeholder" data-srcset="Scharry.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p><strong>使用</strong></p>
+<div class="highlight-wrap" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">panda_scharrx = cv2.Scharr(panda, cv2.CV_64F, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">panda_scharry = cv2.Scharr(panda, cv2.CV_64F, <span class="number">0</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure></div>
 
-<p><img src="gif.png" class="lazyload placeholder" data-srcset="gif.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="使用方法"></p>
-<p>这样上传之后gif图片就可以正常显示了。。。</p>
+<h4 id="Laplacian算子"><a href="#Laplacian算子" class="headerlink" title="Laplacian算子"></a>Laplacian算子</h4><p>Laplacian算子是一种二姐导数算子，具有旋转不变性，可以满足不同方向上的边缘检测要求。<br><strong>使用</strong></p>
+<div class="highlight-wrap" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">car = cv2.imread(<span class="string">&#x27;./images/car.png&#x27;</span>)</span><br><span class="line">car_Lap = cv2.Laplacian(car, cv2.CV_64F)</span><br><span class="line"><span class="comment"># 取绝对值</span></span><br><span class="line">car_Lap = cv2.convertScaleAbs(car_Lap)</span><br><span class="line"><span class="comment"># 合并</span></span><br><span class="line">car_all = np.hstack((car, car_Lap))</span><br><span class="line">image_show(<span class="string">&#x27;car_all&#x27;</span>, car_all)</span><br></pre></td></tr></table></figure></div>
+
+<p><img src="car_lap.png" class="lazyload placeholder" data-srcset="car_lap.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/tags/hexo/" class="">
-              hexo
+            <a href="/tags/python/" class="">
+              python
+            </a>
+          
+            <a href="/tags/Opencv/" class="">
+              Opencv
             </a>
           
         </div>
@@ -674,7 +688,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2021/11/24/hexo博客添加gif动图/" target="_blank" title="hexo博客添加gif动图">https://yuchanghui.top/2021/11/24/hexo博客添加gif动图/</a>
+    <a href="/2022/01/15/Opencv学习02/" target="_blank" title="Opencv学习02">https://yuchanghui.top/2022/01/15/Opencv学习02/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -692,45 +706,21 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/2021/11/25/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">hexo博客绑定域名的问题</div>
-      </div>
-      
-      <!-- <div class="content">
-        绑定域名，参照学长的文章【地址】
-1.ipv6解析地址我的博客地址并非ipv4地址，而是ipv6地址
-
-阿里云解析地址的
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/9.png" class="lazyload placeholder" data-srcset="/medias/9.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/2021/11/22/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/" class="post-nav-link">
+    <a href="/2021/12/22/Python%E9%A2%98%E7%9B%AE%E7%BB%83%E4%B9%A002/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">hexo博客美化</div>
+        <div class="title-text">Python题目练习02</div>
       </div>
       <!-- <div class="content">
-        博客添加live2d小人1.安装模块在hexo博客根目录下，打开Git，输入下面命令：
-
-
-1npm install -
+        递归求斐波那契数列题目：斐波那契数列的排列是：0，1，1，2，3，5，8，13，21，34，55，89，144……，即从
       </div> -->
     </a>
   </div>
