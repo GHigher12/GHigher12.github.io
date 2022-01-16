@@ -651,7 +651,7 @@
 <div class="highlight-wrap" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 图像梯度-Sobel算子 下-上</span></span><br><span class="line">img_sobely = cv2.Sobel(img, cv2.CV_64F, <span class="number">0</span>, <span class="number">1</span>, ksize=<span class="number">3</span>)</span><br><span class="line">img_sobel = cv2.convertScaleAbs(img_sobely)</span><br><span class="line">img_all = np.hstack((img, img_sobely, img_sobel))</span><br><span class="line">image_show(<span class="string">&#x27;img_all&#x27;</span>, img_all)</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="sob_y.png" class="lazyload placeholder" data-srcset="sob_y.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
-<h4 id="Scharr算子"><a href="#Scharr算子" class="headerlink" title="Scharr算子"></a>Scharr算子</h4><p>Scharr算子可被视为Sobel算子的改进，具有Sobel算子相同的计算速度，但是其精度更高。</p>
+<h3 id="Scharr算子"><a href="#Scharr算子" class="headerlink" title="Scharr算子"></a>Scharr算子</h3><p>Scharr算子可被视为Sobel算子的改进，具有Sobel算子相同的计算速度，但是其精度更高。</p>
 <p><strong>水平X:</strong></p>
 <p><img src="Scharrx.png" class="lazyload placeholder" data-srcset="Scharrx.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
 <p><strong>数值Y:</strong></p>
@@ -659,7 +659,7 @@
 <p><strong>使用</strong></p>
 <div class="highlight-wrap" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">panda_scharrx = cv2.Scharr(panda, cv2.CV_64F, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">panda_scharry = cv2.Scharr(panda, cv2.CV_64F, <span class="number">0</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure></div>
 
-<h4 id="Laplacian算子"><a href="#Laplacian算子" class="headerlink" title="Laplacian算子"></a>Laplacian算子</h4><p>Laplacian算子是一种二姐导数算子，具有旋转不变性，可以满足不同方向上的边缘检测要求。<br><strong>使用</strong></p>
+<h3 id="Laplacian算子"><a href="#Laplacian算子" class="headerlink" title="Laplacian算子"></a>Laplacian算子</h3><p>Laplacian算子是一种二姐导数算子，具有旋转不变性，可以满足不同方向上的边缘检测要求。<br><strong>使用</strong></p>
 <div class="highlight-wrap" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">car = cv2.imread(<span class="string">&#x27;./images/car.png&#x27;</span>)</span><br><span class="line">car_Lap = cv2.Laplacian(car, cv2.CV_64F)</span><br><span class="line"><span class="comment"># 取绝对值</span></span><br><span class="line">car_Lap = cv2.convertScaleAbs(car_Lap)</span><br><span class="line"><span class="comment"># 合并</span></span><br><span class="line">car_all = np.hstack((car, car_Lap))</span><br><span class="line">image_show(<span class="string">&#x27;car_all&#x27;</span>, car_all)</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="car_lap.png" class="lazyload placeholder" data-srcset="car_lap.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
@@ -705,6 +705,26 @@
 <div class="post-nav">
 
 
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/8.jpg" class="lazyload placeholder" data-srcset="/medias/8.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+    </div>
+    <a href="/2022/01/16/Opencv%E5%AD%A6%E4%B9%A003/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">Opencv学习03</div>
+      </div>
+      
+      <!-- <div class="content">
+        Canny边缘检测1）使用高斯滤波，平滑图像，滤除噪声
+2）计算图像中每个像素点的梯度强度和方向
+3）应用非极大值抑制，
+      </div> -->
+    </a>
+  </div>
 
 
 

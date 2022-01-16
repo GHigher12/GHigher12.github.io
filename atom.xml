@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2022-01-15T14:54:07.564Z</updated>
+  <updated>2022-01-16T08:49:37.068Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Opencv学习03</title>
+    <link href="https://yuchanghui.top/2022/01/16/Opencv%E5%AD%A6%E4%B9%A003/"/>
+    <id>https://yuchanghui.top/2022/01/16/Opencv%E5%AD%A6%E4%B9%A003/</id>
+    <published>2022-01-16T08:45:31.000Z</published>
+    <updated>2022-01-16T08:49:37.068Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Canny边缘检测&quot;&gt;&lt;a href=&quot;#Canny边缘检测&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="视觉处理" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/"/>
+    
+    <category term="Opencv" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Opencv学习02</title>
     <link href="https://yuchanghui.top/2022/01/15/Opencv%E5%AD%A6%E4%B9%A002/"/>
     <id>https://yuchanghui.top/2022/01/15/Opencv%E5%AD%A6%E4%B9%A002/</id>
     <published>2022-01-15T14:44:10.000Z</published>
-    <updated>2022-01-15T14:54:07.564Z</updated>
+    <updated>2022-01-16T08:47:17.751Z</updated>
     
     
       
@@ -374,7 +399,7 @@
     <link href="https://yuchanghui.top/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/"/>
     <id>https://yuchanghui.top/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</id>
     <published>2021-11-14T14:25:11.000Z</published>
-    <updated>2021-11-14T14:32:25.252Z</updated>
+    <updated>2022-01-16T08:49:54.252Z</updated>
     
     
     <summary type="html">&lt;p&gt;相比于C语言，python的输入输出更加多样化。下面对python的输入输出进行简单的总结。&lt;/p&gt;</summary>
@@ -386,7 +411,7 @@
     <category term="Python" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Python/"/>
     
     
-    <category term="Python" scheme="https://yuchanghui.top/tags/Python/"/>
+    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
     
   </entry>
   
