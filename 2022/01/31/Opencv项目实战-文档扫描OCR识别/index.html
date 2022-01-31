@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>标签: python | GHigher&#39;s Blog</title>
+  <title>Opencv项目实战:文档扫描OCR识别 | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -574,556 +574,593 @@
 </header>
         <!-- 内容区域 -->
         
+ <!-- prismjs 代码高亮 -->
+ 
 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-tagDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
 
-<div class="tag-header" style="background-image: url('/medias/13.png');">
-  <div class="tag-header-title">
-    标签详情
-  </div>
-  <div class="tag-header-desc">
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/medias/14.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
-    <span class="title" id="tag-header-desc"></span>
-    <script>
-  function typedFn() {
-    const el = '#tag-header-desc';
-    const type = 'tagDetail';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        Opencv项目实战:文档扫描OCR识别
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2022-01-31 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/" class="post-detail-header_category">
+              视觉处理
+            </a>
+          
+            <a href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/" class="post-detail-header_category">
+              Opencv
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="row justify-position" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1 id="Opencv项目实战-文档扫描OCR识别"><a href="#Opencv项目实战-文档扫描OCR识别" class="headerlink" title="Opencv项目实战:文档扫描OCR识别"></a>Opencv项目实战:文档扫描OCR识别</h1><p>边缘检测</p>
+<p>轮廓检测</p>
+<p>透视变换</p>
+<p>OCR</p>
+<h3 id="图像预处理"><a href="#图像预处理" class="headerlink" title="图像预处理"></a>图像预处理</h3><p>导入图像，对图像进行调整尺寸、滤波、边缘检测，得到更加明显的分界。</p>
+<div class="highlight-wrap" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">img_show</span>(<span class="params">name, img</span>):</span></span><br><span class="line">    cv2.imshow(name, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">resize</span>(<span class="params">image, width=<span class="literal">None</span>, height=<span class="literal">None</span>, inter=cv2.INTER_AREA</span>):</span></span><br><span class="line">    dim = <span class="literal">None</span></span><br><span class="line">    h, w = image.shape[:<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">if</span> width <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> height <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> image</span><br><span class="line">    <span class="keyword">if</span> width <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        r = height / <span class="built_in">float</span>(h)</span><br><span class="line">        dim = (<span class="built_in">int</span>(w * r), height)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        r = width / <span class="built_in">float</span>(w)</span><br><span class="line">        dim = (width, <span class="built_in">int</span>(h * r))</span><br><span class="line">    resized = cv2.resize(image, dim, interpolation=inter)</span><br><span class="line">    <span class="keyword">return</span> resized</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;./images/page.jpg&#x27;</span>)</span><br><span class="line">ratio = img.shape[<span class="number">0</span>] / <span class="number">500.0</span></span><br><span class="line">orig = img.copy()</span><br><span class="line"><span class="comment"># 调整尺寸</span></span><br><span class="line">img = resize(orig, height = <span class="number">500</span>)</span><br><span class="line"><span class="comment"># 灰度处理</span></span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line"><span class="comment"># 高斯滤波去除噪音点</span></span><br><span class="line">gray = cv2.GaussianBlur(gray, (<span class="number">5</span>, <span class="number">5</span>), <span class="number">0</span>)</span><br><span class="line"><span class="comment"># 边缘检测</span></span><br><span class="line">edged = cv2.Canny(gray, <span class="number">75</span>, <span class="number">200</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><img src="doc.png" class="lazyload placeholder" data-srcset="doc.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图像预处理"></p>
+<h3 id="轮廓检测"><a href="#轮廓检测" class="headerlink" title="轮廓检测"></a>轮廓检测</h3><p>对轮廓进行排序， 通过切片操作去除前5个较大轮廓，再通过对5个轮廓遍历，通过轮廓近似找出外边界(即最大轮廓)</p>
+<div class="highlight-wrap" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 轮廓检测</span></span><br><span class="line">cnts = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)[<span class="number">0</span>]</span><br><span class="line"><span class="comment"># cv2.drawContours(img, cnts, -1, (0, 255, 0), 2)</span></span><br><span class="line"><span class="comment"># img_show(&#x27;img&#x27;, img)</span></span><br><span class="line"><span class="comment"># 利用轮廓面积,降序找出前5个最大的轮廓</span></span><br><span class="line">cnts = <span class="built_in">sorted</span>(cnts, key=cv2.contourArea, reverse=<span class="literal">True</span>)[:<span class="number">5</span>]</span><br><span class="line"><span class="comment"># print(type(cnts))</span></span><br><span class="line"><span class="comment"># 遍历每一个轮廓</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> cnts:</span><br><span class="line">    <span class="comment"># 计算轮廓长度</span></span><br><span class="line">    peri = cv2.arcLength(c, <span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># 轮廓近似 参数: 轮廓，周长百分比(值越小越近似) True为闭合 False为断开</span></span><br><span class="line">    approx = cv2.approxPolyDP(c, <span class="number">0.02</span>*peri, <span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># approx &lt;class&#x27;numpy.ndarray&#x27;&gt;</span></span><br><span class="line">    <span class="comment"># 用于存放同类型的一个多维数组对象,包含4个点</span></span><br><span class="line">    <span class="comment"># print(approx)</span></span><br><span class="line">    <span class="comment"># 最大边框</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(approx) == <span class="number">4</span>:</span><br><span class="line">        <span class="comment"># print(approx)</span></span><br><span class="line">        screenCnts = approx</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv2.drawContours(img, [screenCnts], -<span class="number">1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><img src="doc_Con.png" class="lazyload placeholder" data-srcset="doc_Con.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="lunkuojianc"></p>
+<h3 id="透视变换"><a href="#透视变换" class="headerlink" title="透视变换"></a>透视变换</h3><div class="highlight-wrap" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">order_points</span>(<span class="params">pts</span>):</span></span><br><span class="line">    <span class="comment"># 一共4个坐标点</span></span><br><span class="line">    <span class="comment"># np.zeros()函数返回一个元素全为0且给定形状和类型的矩阵</span></span><br><span class="line">    <span class="comment"># 4行2列全为0的矩阵</span></span><br><span class="line">    rect = np.zeros((<span class="number">4</span>, <span class="number">2</span>), dtype=<span class="string">&quot;float32&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 按顺序找到对应坐标0123分别是 左上，右上，右下，左下</span></span><br><span class="line">    <span class="comment"># 计算左上，右下</span></span><br><span class="line">    <span class="comment"># axis＝1表示按照行的方向相加</span></span><br><span class="line">    s = pts.<span class="built_in">sum</span>(axis=<span class="number">1</span>)</span><br><span class="line">    rect[<span class="number">0</span>] = pts[np.argmin(s)]</span><br><span class="line">    rect[<span class="number">2</span>] = pts[np.argmax(s)]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算右上和左下</span></span><br><span class="line">    <span class="comment"># np.diff a[n]-a[n-1]</span></span><br><span class="line">    diff = np.diff(pts, axis=<span class="number">1</span>)</span><br><span class="line">    rect[<span class="number">1</span>] = pts[np.argmin(diff)]</span><br><span class="line">    rect[<span class="number">3</span>] = pts[np.argmax(diff)]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> rect</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">four_point_transform</span>(<span class="params">image, pts</span>):</span></span><br><span class="line">    <span class="comment"># 获取输入坐标点</span></span><br><span class="line">    rect = order_points(pts)</span><br><span class="line">    <span class="comment"># 四个点，每个点包含(x, y)</span></span><br><span class="line">    (tl, tr, br, bl) = rect</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算输入的w和h值</span></span><br><span class="line">    <span class="comment"># 0: x 1: y</span></span><br><span class="line">    widthA = np.sqrt(((br[<span class="number">0</span>] - bl[<span class="number">0</span>]) ** <span class="number">2</span>) + ((br[<span class="number">1</span>] - bl[<span class="number">1</span>]) ** <span class="number">2</span>))</span><br><span class="line">    widthB = np.sqrt(((tr[<span class="number">0</span>] - tl[<span class="number">0</span>]) ** <span class="number">2</span>) + ((tr[<span class="number">1</span>] - tl[<span class="number">1</span>]) ** <span class="number">2</span>))</span><br><span class="line">    maxWidth = <span class="built_in">max</span>(<span class="built_in">int</span>(widthA), <span class="built_in">int</span>(widthB))</span><br><span class="line"></span><br><span class="line">    heightA = np.sqrt(((tr[<span class="number">0</span>] - br[<span class="number">0</span>]) ** <span class="number">2</span>) + ((tr[<span class="number">1</span>] - br[<span class="number">1</span>]) ** <span class="number">2</span>))</span><br><span class="line">    heightB = np.sqrt(((tl[<span class="number">0</span>] - bl[<span class="number">0</span>]) ** <span class="number">2</span>) + ((tl[<span class="number">1</span>] - bl[<span class="number">1</span>]) ** <span class="number">2</span>))</span><br><span class="line">    maxHeight = <span class="built_in">max</span>(<span class="built_in">int</span>(heightA), <span class="built_in">int</span>(heightB))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 变换后对应坐标位置</span></span><br><span class="line">    dst = np.array([</span><br><span class="line">        [<span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">        [maxWidth - <span class="number">1</span>, <span class="number">0</span>],</span><br><span class="line">        [maxWidth - <span class="number">1</span>, maxHeight - <span class="number">1</span>],</span><br><span class="line">        [<span class="number">0</span>, maxHeight - <span class="number">1</span>]], dtype=<span class="string">&quot;float32&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算变换矩阵， rect：原始图像 dst：目标图像</span></span><br><span class="line">    M = cv2.getPerspectiveTransform(rect, dst)</span><br><span class="line">    <span class="comment"># 投影变换</span></span><br><span class="line">    warped = cv2.warpPerspective(image, M, (maxWidth, maxHeight))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 返回变换后结果</span></span><br><span class="line">    <span class="keyword">return</span> warped</span><br><span class="line"></span><br><span class="line">wraped = four_point_transform(orig, screenCnts.reshape(<span class="number">4</span>, <span class="number">2</span>) * ratio)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h3><p>最后调整大小输出结果</p>
+<div class="highlight-wrap" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">w, h = wraped.shape[:<span class="number">2</span>]</span><br><span class="line">wraped = cv2.resize(wraped, dsize=(<span class="built_in">int</span>(h/<span class="number">4</span>), <span class="built_in">int</span>(w/<span class="number">4</span>)))</span><br><span class="line"><span class="comment"># print(wraped.shape)</span></span><br><span class="line">img_show(<span class="string">&#x27;wraped&#x27;</span>, wraped)</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;./images/wraped.jpg&#x27;</span>, wraped)</span><br></pre></td></tr></table></figure></div>
+
+<p><img src="result.png" class="lazyload placeholder" data-srcset="result.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p>others:</p>
+<p><img src="receipt.png" class="lazyload placeholder" data-srcset="receipt.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="receipt"></p>
+<p><img src="receipt_wraped.png" class="lazyload placeholder" data-srcset="receipt_wraped.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/python/" class="">
+              python
+            </a>
+          
+            <a href="/tags/Opencv/" class="">
+              Opencv
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>GHigher</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2022/01/31/Opencv项目实战-文档扫描OCR识别/" target="_blank" title="Opencv项目实战:文档扫描OCR识别">https://yuchanghui.top/2022/01/31/Opencv项目实战-文档扫描OCR识别/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/8.jpg" class="lazyload placeholder" data-srcset="/medias/8.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/2022/01/30/Opencv%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E4%BF%A1%E7%94%A8%E5%8D%A1%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">Opencv项目实战:信用卡数字识别</div>
+      </div>
+      <!-- <div class="content">
+        Opencv项目实战：信用卡数字识别导入库，定义展示函数12345678910import cv2import nump
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
 </script>
     
-  </div>
-  <div class="mask-box"></div>
-</div>
 
-
-
-<div class="tag">
-  <div class="tag-name">
-    <div class="name" style="background-color: #F8C471;">python 分类</div>
-  </div>
-  <!-- 每一篇文章卡片 -->
-  <!-- hash算法 -->
-
-<section class="posts">
-  
+    <!-- 分享 -->
     
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2022-01-31</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2022/01/31/Opencv%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E6%96%87%E6%A1%A3%E6%89%AB%E6%8F%8FOCR%E8%AF%86%E5%88%AB/">Opencv项目实战:文档扫描OCR识别</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Opencv/" rel="tag">Opencv</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
 
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/">视觉处理</a> <a class="article-category-link" href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/">Opencv</a>
-</div>
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
 
 
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2022/01/31/Opencv%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E6%96%87%E6%A1%A3%E6%89%AB%E6%8F%8FOCR%E8%AF%86%E5%88%AB/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            Opencv项目实战:文档扫描OCR识别边缘检测
-轮廓检测
-透视变换
-OCR
-图像预处理导入图像，对图像进行调整尺寸、滤波、边缘检测，得到更加明显的分界。
-123456789101112131415161718192021222324252
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2022/01/31/Opencv%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E6%96%87%E6%A1%A3%E6%89%AB%E6%8F%8FOCR%E8%AF%86%E5%88%AB/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2022/01/31/Opencv%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E6%96%87%E6%A1%A3%E6%89%AB%E6%8F%8FOCR%E8%AF%86%E5%88%AB/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
     
-    <article class="post reveal" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2022-01-30</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2022/01/30/Opencv%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E4%BF%A1%E7%94%A8%E5%8D%A1%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/">Opencv项目实战:信用卡数字识别</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Opencv/" rel="tag">Opencv</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/">视觉处理</a> <a class="article-category-link" href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/">Opencv</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2022/01/30/Opencv%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E4%BF%A1%E7%94%A8%E5%8D%A1%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/8.jpg" class="lazyload placeholder" data-srcset="/medias/8.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            Opencv项目实战：信用卡数字识别导入库，定义展示函数12345678910import cv2import numpy as npfrom imutils import contoursimport myutils # 自定义的库def
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2022/01/30/Opencv%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E4%BF%A1%E7%94%A8%E5%8D%A1%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/">
-            <i class="iconfont iconmore" pointer style="  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2022/01/30/Opencv%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E4%BF%A1%E7%94%A8%E5%8D%A1%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/8.jpg" class="lazyload placeholder" data-srcset="/medias/8.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
     
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2022-01-19</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2022/01/19/python%E4%B8%8Estm32%E9%80%9A%E4%BF%A1/">python与stm32通信</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
+    <!-- 评论 -->
+    <!-- 评论 -->
 
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STM32/" rel="tag">STM32</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a> <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/">STM32</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2022/01/19/python%E4%B8%8Estm32%E9%80%9A%E4%BF%A1/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            python与stm32通信学习了python也学习了stm32，而如何将他们结合起来呢，于是我上网寻找资料，终于发现python早已给我们提供了优质的串口函数库——pyserial。
-下载可以直接在cmd输入命令
-1pip install
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2022/01/19/python%E4%B8%8Estm32%E9%80%9A%E4%BF%A1/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2022/01/19/python%E4%B8%8Estm32%E9%80%9A%E4%BF%A1/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
+  <div id="myComment">
     
-    <article class="post reveal" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2022-01-15</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2022/01/15/Opencv%E5%AD%A6%E4%B9%A002/">Opencv学习02</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Opencv/" rel="tag">Opencv</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/">视觉处理</a> <a class="article-category-link" href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/">Opencv</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2022/01/15/Opencv%E5%AD%A6%E4%B9%A002/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/9.png" class="lazyload placeholder" data-srcset="/medias/9.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            图像梯度处理图像计算的是图像的边缘信息，它能反映图像像素的变化。如灰度值变化较大的地方，梯度值也较大；灰度值较小的地方，相应的梯度值较小。图像梯度就是指像素的已接到是。图像的边缘是指灰度值发生急剧变化的地方，边缘检测目的就是在不破坏图像信息
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2022/01/15/Opencv%E5%AD%A6%E4%B9%A002/">
-            <i class="iconfont iconmore" pointer style="  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2022/01/15/Opencv%E5%AD%A6%E4%B9%A002/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/9.png" class="lazyload placeholder" data-srcset="/medias/9.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-12-22</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/12/22/Python%E9%A2%98%E7%9B%AE%E7%BB%83%E4%B9%A002/">Python题目练习02</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">程序设计</a> <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Python/">Python</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2021/12/22/Python%E9%A2%98%E7%9B%AE%E7%BB%83%E4%B9%A002/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            递归求斐波那契数列题目：斐波那契数列的排列是：0，1，1，2，3，5，8，13，21，34，55，89，144……，即从第三个数开始，每个数等于前面两个数的和。
-Input
-输入一个正整数n（n代表斐波那契数列中的第n个位置）。
-
-4
-
-O
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/12/22/Python%E9%A2%98%E7%9B%AE%E7%BB%83%E4%B9%A002/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2021/12/22/Python%E9%A2%98%E7%9B%AE%E7%BB%83%E4%B9%A002/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-12-18</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/12/18/Python%E9%A2%98%E7%9B%AE%E7%BB%83%E4%B9%A001/">Python题目练习01</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">程序设计</a> <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Python/">Python</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2021/12/18/Python%E9%A2%98%E7%9B%AE%E7%BB%83%E4%B9%A001/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/13.png" class="lazyload placeholder" data-srcset="/medias/13.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            删除用户输入数字序列中的素数题目： 用户输入多个正整数（两个数之间用一个空格间隔），请将其保存到一个列表中，删除其中的素数后按用户的输入顺序输出剩余正整数（两个数之间用一个空格间隔）。
-Input
-用户输入多个正整数（两个数之间用一个空格间
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/12/18/Python%E9%A2%98%E7%9B%AE%E7%BB%83%E4%B9%A001/">
-            <i class="iconfont iconmore" pointer style="  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2021/12/18/Python%E9%A2%98%E7%9B%AE%E7%BB%83%E4%B9%A001/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/13.png" class="lazyload placeholder" data-srcset="/medias/13.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-12-14</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/12/14/Opencv%E5%AD%A6%E4%B9%A001/">Opencv学习01</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Opencv/" rel="tag">Opencv</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/">视觉处理</a> <a class="article-category-link" href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/">Opencv</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2021/12/14/Opencv%E5%AD%A6%E4%B9%A001/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/10.png" class="lazyload placeholder" data-srcset="/medias/10.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            读取、显示、保存图片, 输出图片像素值、尺寸123456789101112131415161718192021222324import cv2def image_show(name, img):    # 显示图像    cv2.imsho
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/12/14/Opencv%E5%AD%A6%E4%B9%A001/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2021/12/14/Opencv%E5%AD%A6%E4%B9%A001/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/10.png" class="lazyload placeholder" data-srcset="/medias/10.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-12-12</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/12/12/PIL%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">PIL库的使用</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Opencv/" rel="tag">Opencv</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/">视觉处理</a> <a class="article-category-link" href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/">Opencv</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2021/12/12/PIL%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/2.jpg" class="lazyload placeholder" data-srcset="/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            打开、显示、保存图片12345678910# 调用模块from PIL import Image# 打开图片image = Image.open(&#x27;cat.png&#x27;)# 显示图片image.show()# 保存图片ima
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/12/12/PIL%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">
-            <i class="iconfont iconmore" pointer style="  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2021/12/12/PIL%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/2.jpg" class="lazyload placeholder" data-srcset="/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-11-14</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/">Python的输入与输出</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">程序设计</a> <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Python/">Python</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/13.png" class="lazyload placeholder" data-srcset="/medias/13.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            <p>相比于C语言，python的输入输出更加多样化。下面对python的输入输出进行简单的总结。</p>
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/13.png" class="lazyload placeholder" data-srcset="/medias/13.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
+      
+<section id="comments" style="padding: 1em; margin: 15px auto;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
 </section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/mmexport1637310928932.jpg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+
+
+<script>
+  function closeToc(init) {
+    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
+    $(".toc-content").css({'width': 0});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+  };
+  function openToc() {
+    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
+    $(".toc-content").css({'width': '300px'});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+  }
+  function openBtnClickFn () {
+    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+    let open = eval('' || 'true');
+    openOrCloseBtn.click(function() {
+      if (open) {
+        closeToc();
+        open = false;
+      } else {
+        openToc();
+        open = true;
+      }
+    });
+  };
+  openBtnClickFn();
+  initCloseTocWidth(true);
+
+  function initCloseTocWidth(init) {
+    if (window.innerWidth >= 992) {
+      let isClose = false;
+      isClose && closeToc(init)
+    }
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    $(".toc-aside").css({'transition': 'no'});
+  })
+  document.addEventListener('pjax:complete', function () {
+    openBtnClickFn();
+  })
+  
+</script>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
 </div>
 
-<div class="w-70">
-  
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
 </div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
 
       </main>
     </div>
