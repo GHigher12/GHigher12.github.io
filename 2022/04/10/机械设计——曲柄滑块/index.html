@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Matlab学习01 | GHigher&#39;s Blog</title>
+  <title>机械设计——曲柄滑块 | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -587,21 +587,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/6.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/3.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        Matlab学习01
+        机械设计——曲柄滑块
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2022-03-23 |
+          <i class="fas fa-calendar"></i> 发表于：2022-04-10 |
         </span>
       
 
@@ -609,12 +609,12 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="post-detail-header_category">
-              程序设计
+            <a href="/categories/%E6%9C%BA%E6%A2%B0%E8%AE%BE%E8%AE%A1/" class="post-detail-header_category">
+              机械设计
             </a>
           
-            <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Matlab/" class="post-detail-header_category">
-              Matlab
+            <a href="/categories/%E6%9C%BA%E6%A2%B0%E8%AE%BE%E8%AE%A1/Solidworks/" class="post-detail-header_category">
+              Solidworks
             </a>
           
         </span>
@@ -638,28 +638,66 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="MATLAB学习01"><a href="#MATLAB学习01" class="headerlink" title="MATLAB学习01"></a>MATLAB学习01</h1><h3 id="input请求用户输入"><a href="#input请求用户输入" class="headerlink" title="input请求用户输入"></a>input请求用户输入</h3><div class="highlight-wrap" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = input(prompt)</span><br><span class="line">str = input(prompt,<span class="string">&#x27;s&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+        <h1 id="机械设计——曲柄滑块"><a href="#机械设计——曲柄滑块" class="headerlink" title="机械设计——曲柄滑块"></a>机械设计——曲柄滑块</h1><h2 id="一、零件"><a href="#一、零件" class="headerlink" title="一、零件"></a>一、零件</h2><h3 id="1、主动杆"><a href="#1、主动杆" class="headerlink" title="1、主动杆"></a>1、主动杆</h3><p><img src="%E4%B8%BB%E5%8A%A8%E6%9D%86.jpg" class="lazyload placeholder" data-srcset="%E4%B8%BB%E5%8A%A8%E6%9D%86.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<h4 id="草图："><a href="#草图：" class="headerlink" title="草图："></a>草图：</h4><p>草图1：大圆直径20mm，两圆圆心之距60mm，连接线50mm，一边绘制小圆直径8mm。</p>
+<p>草图2：在凸台面上无圆孔一端绘制小圆直径8mm。</p>
+<h4 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h4><p>凸台拉伸3：拉伸草图1，给定深度3mm。（圆孔用于配合圆盘）</p>
+<p>凸台拉伸4：拉伸草图2，等距1.5mm，两侧堆成9mm。（用于配合连杆和圆盘）</p>
+<h3 id="2、连杆"><a href="#2、连杆" class="headerlink" title="2、连杆"></a>2、连杆</h3><p><img src="%E8%BF%9E%E6%9D%86.jpg" class="lazyload placeholder" data-srcset="%E8%BF%9E%E6%9D%86.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<h4 id="草图：-1"><a href="#草图：-1" class="headerlink" title="草图："></a>草图：</h4><p>草图1：大圆直径20mm，两圆圆心之距300mm，连接线290mm，一边绘制小圆直径8mm。</p>
+<p>草图2：在凸台面上无圆孔一端绘制小圆直径8mm。</p>
+<h4 id="特征：-1"><a href="#特征：-1" class="headerlink" title="特征："></a>特征：</h4><p>凸台拉伸3：拉伸草图1，一定深度3mm。（圆孔用于配合主动杆）</p>
+<p>凸台拉伸4：拉伸草图2，给定深度10mm（用于配合滑块）</p>
+<h3 id="3、圆盘"><a href="#3、圆盘" class="headerlink" title="3、圆盘"></a>3、圆盘</h3><p><img src="%E5%9C%86%E7%9B%98.jpg" class="lazyload placeholder" data-srcset="%E5%9C%86%E7%9B%98.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<h4 id="草图"><a href="#草图" class="headerlink" title="草图"></a>草图</h4><p>草图1：大圆直径150mm，圆弧槽口宽度12mm，弧度60度，圆弧半径59—61mm，圆周阵列3个。</p>
+<p>草图2：圆盘中心圆直径8mm。</p>
+<p>草图3：圆孔直径8mm。</p>
+<h4 id="特征：-2"><a href="#特征：-2" class="headerlink" title="特征："></a>特征：</h4><p>凸台拉伸1：拉伸草图1，给定深度10mm。</p>
+<p>凸台拉伸2：拉伸草图2，给定深度3mm。（配合主动杆）</p>
+<p>切除拉伸1：切除草图3，完全贯穿。（配合主动杆）</p>
+<h3 id="4、滑块"><a href="#4、滑块" class="headerlink" title="4、滑块"></a>4、滑块</h3><p><img src="%E6%BB%91%E5%9D%97.jpg" class="lazyload placeholder" data-srcset="%E6%BB%91%E5%9D%97.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<h4 id="草图-1"><a href="#草图-1" class="headerlink" title="草图"></a>草图</h4><p>草图1：长为100mm，宽为50mm的矩形。</p>
+<p>草图2：滑块中心位置圆，直径8mm。</p>
+<h4 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h4><p>凸台拉伸1：拉伸草图1，给定深度50mm。</p>
+<p>切除拉伸1：切除草图2，完全贯穿。</p>
+<h3 id="5、轨道"><a href="#5、轨道" class="headerlink" title="5、轨道"></a>5、轨道</h3><p><img src="%E8%BD%A8%E9%81%93.jpg" class="lazyload placeholder" data-srcset="%E8%BD%A8%E9%81%93.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<h4 id="草图-2"><a href="#草图-2" class="headerlink" title="草图"></a>草图</h4><p>草图1：长为300mm，宽为60mm的矩形。</p>
+<p>草图2：绘制与长方体上、下、左三个方向相距20mm的矩形。</p>
+<p>在轨道高度1/2处建立基准面1，并绘制与原点水平方向相距360mm的轴线。（配合圆盘）</p>
+<h4 id="特征-1"><a href="#特征-1" class="headerlink" title="特征"></a>特征</h4><p>凸台拉伸1：拉伸草图1，给定深度90mm。</p>
+<p>切除拉伸1：切除草图2，完全贯穿。</p>
+<h2 id="二、装配体"><a href="#二、装配体" class="headerlink" title="二、装配体"></a>二、装配体</h2><p><img src="%E6%9B%B2%E6%9F%84%E6%BB%91%E5%9D%97.jpg" class="lazyload placeholder" data-srcset="%E6%9B%B2%E6%9F%84%E6%BB%91%E5%9D%97.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<p>先导入轨道，固定轨道在原点，再依次导入其他零件。</p>
+<h3 id="配合"><a href="#配合" class="headerlink" title="配合"></a>配合</h3><p>重合1：连杆与滑块面重合；</p>
+<p>同心1：连杆凸台与滑块圆孔同心；</p>
+<p>同心2：圆盘圆孔与主动杆凸台同心；</p>
+<p>重合2：主动杆与圆盘面重合；</p>
+<p>同心4：主动杆圆孔与圆盘凸台同心；          </p>
+<p>同心5：主动杆凸台与连杆圆孔同心；</p>
+<p>重合3：连杆与主动杆面重合；</p>
+<p>重合4：滑块与轨道侧面重合；</p>
+<p>重合5：滑块与轨道地面重合；</p>
+<p>重合6：圆盘原点与轴线重合。</p>
+<h2 id="三、动画及Motion分析"><a href="#三、动画及Motion分析" class="headerlink" title="三、动画及Motion分析"></a>三、动画及Motion分析</h2><h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><p>0s时间线将相机视图调整到前视，放置旋转马达在圆盘上，方向逆时针，速度20 rad/s = 20*30/pi RPM，然后计算运动算例。（视频在文件中）</p>
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 15%;">
+<iframe src="//player.bilibili.com/player.html?aid=468119641&bvid=BV1y5411U72G&cid=572371472&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div>
 
-<p><code>x = input(prompt)</code> 显示 <code>prompt</code> 中的文本并等待用户输入值后按 <strong>Return</strong> 键。用户可以输入 <code>pi/4</code> 或 <code>rand(3)</code> 之类的表达式，并可以使用工作区中的变量。</p>
-<ul>
-<li>如果用户不输入任何内容直接按下 <strong>Return</strong> 键，则 <code>input</code> 会返回空矩阵。</li>
-<li>如果用户在提示下输入无效的表达式，则 MATLAB® 会显示相关的错误消息，然后重新显示提示。</li>
-</ul>
-<p><code>str = input(prompt,&#39;s&#39;)</code> 返回输入的文本，而不会将输入作为表达式来计算。</p>
-<h3 id="disp显示变量的值"><a href="#disp显示变量的值" class="headerlink" title="disp显示变量的值"></a>disp显示变量的值</h3><p><code>disp(x)</code>  </p>
-<p><code>disp(X)</code> 显示变量 <code>X</code> 的值，而不打印变量名称。显示变量的另一种方法是键入它的名称，这种方法会在值前面显示一个前导“<code>X =</code>”。</p>
-<p>如果变量包含空数组，则会返回 <code>disp</code>，但不显示任何内容。</p>
-<p>eg:</p>
-<div class="highlight-wrap" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">disp</span>([‘my test=’,num2str(test)])</span><br><span class="line"><span class="comment">% num2str()函数将数字转换为字符串</span></span><br><span class="line"><span class="comment">% -----------------------------</span></span><br><span class="line">my test=<span class="number">3</span></span><br></pre></td></tr></table></figure></div>
 
-<h3 id="isempty确定数组是否为空"><a href="#isempty确定数组是否为空" class="headerlink" title="isempty确定数组是否为空"></a>isempty确定数组是否为空</h3><p><code>TF = isempty(A)</code></p>
-<p>如果 <code>A</code> 为空，<code>TF = isempty(A)</code> 返回逻辑值 <code>1</code> (<code>true</code>)，否则返回逻辑值 <code>0</code> (<code>false</code>)。</p>
-<h3 id="应用F2C函数"><a href="#应用F2C函数" class="headerlink" title="应用F2C函数"></a>应用F2C函数</h3><p>创建F2C函数，输入华氏温度，输出摄氏温度，当输入值为空是，退出函数。</p>
-<div class="highlight-wrap" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">C</span>=<span class="title">F2C</span><span class="params">()</span></span></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">true</span></span><br><span class="line">    f=input(<span class="string">&#x27;请输入华氏温度:&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isempty</span>(f)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        C=(f<span class="number">-32</span>)*<span class="number">5</span>/<span class="number">9</span>;</span><br><span class="line">        <span class="built_in">disp</span>([<span class="string">&#x27;摄氏温度是&#x27;</span>,num2str(C)]);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></div>
 
-<p><strong>测试</strong></p>
-<div class="highlight-wrap" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; F2C</span><br><span class="line">请输入华氏温度:<span class="number">80</span></span><br><span class="line">摄氏温度是<span class="number">26.6667</span></span><br><span class="line">请输入华氏温度:<span class="number">45</span></span><br><span class="line">摄氏温度是<span class="number">7.2222</span></span><br><span class="line">请输入华氏温度:<span class="number">50</span></span><br><span class="line">摄氏温度是<span class="number">10</span></span><br><span class="line">请输入华氏温度:</span><br><span class="line"></span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line"></span><br><span class="line">    <span class="number">10</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="Motion分析"><a href="#Motion分析" class="headerlink" title="Motion分析"></a>Motion分析</h3><p>选择结果与图解，类别-位移/速度/加速度，子类别-分别选取线性位移、线性速度、线性加速度，结果分量为X分量，选取滑块某一面，然后生成图解。</p>
+<p><strong>线性位移</strong></p>
+<p><img src="%E7%BA%BF%E6%80%A7%E4%BD%8D%E7%A7%BB.jpg" class="lazyload placeholder" data-srcset="%E7%BA%BF%E6%80%A7%E4%BD%8D%E7%A7%BB.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<p><strong>线性速度</strong></p>
+<p><img src="%E7%BA%BF%E6%80%A7%E9%80%9F%E5%BA%A6.jpg" class="lazyload placeholder" data-srcset="%E7%BA%BF%E6%80%A7%E9%80%9F%E5%BA%A6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<p><strong>线性加速度</strong></p>
+<p><img src="%E7%BA%BF%E6%80%A7%E5%8A%A0%E9%80%9F%E5%BA%A6.jpg" class="lazyload placeholder" data-srcset="%E7%BA%BF%E6%80%A7%E5%8A%A0%E9%80%9F%E5%BA%A6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<h2 id="四、编程计算绘图"><a href="#四、编程计算绘图" class="headerlink" title="四、编程计算绘图"></a>四、编程计算绘图</h2><p>将solidwork生成的图解导出csv文件，用matlab读取csv文件，将数据取出，用plot函数绘制滑块的实际参数曲线。根据课本给出的公式，绘制滑块的理论参数曲线。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><div class="highlight-wrap" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line">r = <span class="number">60</span>; <span class="comment">% 主动件杆长</span></span><br><span class="line"></span><br><span class="line">l = <span class="number">300</span>; <span class="comment">% 连杆长度</span></span><br><span class="line"></span><br><span class="line">w = <span class="number">20</span>; <span class="comment">% 角速度</span></span><br><span class="line"></span><br><span class="line">theta = <span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">100</span>:<span class="number">4</span>*<span class="built_in">pi</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">size</span> = [<span class="number">100</span>, <span class="number">200</span>, <span class="number">1400</span>, <span class="number">400</span>];</span><br><span class="line"></span><br><span class="line">s1 = r*<span class="built_in">cos</span>(theta)+l*(<span class="number">1</span>-(r*<span class="built_in">sin</span>(theta)/l).^<span class="number">2</span>).^<span class="number">0.5</span>;</span><br><span class="line"></span><br><span class="line">v1 = -r*w*(<span class="built_in">sin</span>(theta)+<span class="number">0.5</span>*(r/l)*<span class="built_in">sin</span>(<span class="number">2</span>*theta)/(l-(r*<span class="built_in">sin</span>(theta)/l).^<span class="number">2</span>).^<span class="number">0.5</span>);</span><br><span class="line"></span><br><span class="line">a1 = -r*w.^<span class="number">2</span>*(<span class="built_in">cos</span>(theta)+r*(l.^<span class="number">2</span>*(<span class="number">1</span><span class="number">-2</span>*<span class="built_in">cos</span>(theta))-r.^<span class="number">2</span>*<span class="built_in">sin</span>(theta).^<span class="number">4</span>)/(l.^<span class="number">2</span>-(r*<span class="built_in">sin</span>(theta)).^<span class="number">2</span>).^<span class="number">1.5</span>);</span><br><span class="line"></span><br><span class="line">s2 = csvread(<span class="string">&#x27;滑块位移曲线.csv&#x27;</span>, <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">v2 = csvread(<span class="string">&#x27;滑块速度曲线.csv&#x27;</span>,<span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">a2 = csvread(<span class="string">&#x27;滑块加速度曲线.csv&#x27;</span>, <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;滑块参数曲线&#x27;</span>);</span><br><span class="line"></span><br><span class="line">set(<span class="built_in">figure</span>(<span class="number">1</span>),<span class="string">&#x27;position&#x27;</span>,<span class="built_in">size</span>);</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">subplot(<span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">yyaxis left;</span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(theta/<span class="built_in">pi</span>*<span class="number">180</span>, s1, <span class="string">&#x27;--r&#x27;</span>);</span><br><span class="line"></span><br><span class="line">ylabel(<span class="string">&#x27;理论位移s/mm&#x27;</span>);</span><br><span class="line"></span><br><span class="line">yyaxis right;</span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(s2(:, <span class="number">1</span>)*<span class="number">20</span>/<span class="built_in">pi</span>*<span class="number">180</span>, s2(:, <span class="number">2</span>), <span class="string">&#x27;-b&#x27;</span>);</span><br><span class="line"></span><br><span class="line">ylim([<span class="number">140</span>, <span class="number">260</span>]);</span><br><span class="line"></span><br><span class="line">xlabel(<span class="string">&#x27;曲柄转角\theta/(°)&#x27;</span>);</span><br><span class="line"></span><br><span class="line">ylabel(<span class="string">&#x27;实际位移s/mm&#x27;</span>);</span><br><span class="line"></span><br><span class="line">xlim([<span class="number">0</span>, <span class="number">720</span>]);</span><br><span class="line"></span><br><span class="line">x_new = <span class="built_in">linspace</span>(<span class="number">0</span>, <span class="number">720</span>, <span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">xticks(x_new);</span><br><span class="line"></span><br><span class="line">title(<span class="string">&#x27;滑块位移曲线&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">legend</span>(<span class="string">&#x27;理论滑块位移&#x27;</span>,<span class="string">&#x27;实际滑块位移&#x27;</span>);</span><br><span class="line"></span><br><span class="line">grid on;</span><br><span class="line"></span><br><span class="line"><span class="comment">% figure(2);</span></span><br><span class="line"></span><br><span class="line">subplot(<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(theta/<span class="built_in">pi</span>*<span class="number">180</span>, v1/<span class="number">1000</span>, <span class="string">&#x27;--r&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(v2(:, <span class="number">1</span>)*<span class="number">20</span>/<span class="built_in">pi</span>*<span class="number">180</span>,v2(:, <span class="number">2</span>)/<span class="number">1000</span>, <span class="string">&#x27;-b&#x27;</span>);</span><br><span class="line"></span><br><span class="line">xlabel(<span class="string">&#x27;曲柄转角\theta/(°)&#x27;</span>);</span><br><span class="line"></span><br><span class="line">ylabel(<span class="string">&#x27;滑块速度v/(m/s)&#x27;</span>);</span><br><span class="line"></span><br><span class="line">xlim([<span class="number">0</span>, <span class="number">720</span>]);</span><br><span class="line"></span><br><span class="line">x_new = <span class="built_in">linspace</span>(<span class="number">0</span>, <span class="number">720</span>, <span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">xticks(x_new);</span><br><span class="line"></span><br><span class="line">title(<span class="string">&#x27;滑块的速度曲线&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">legend</span>(<span class="string">&#x27;理论滑块速度&#x27;</span>,<span class="string">&#x27;实际滑块速度&#x27;</span>);</span><br><span class="line"></span><br><span class="line">grid on;</span><br><span class="line"></span><br><span class="line"><span class="comment">% figure(3);</span></span><br><span class="line"></span><br><span class="line">subplot(<span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(theta/<span class="built_in">pi</span>*<span class="number">180</span>, a1/<span class="number">1e6</span>, <span class="string">&#x27;--r&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(a2(:, <span class="number">1</span>)*<span class="number">20</span>/<span class="built_in">pi</span>*<span class="number">180</span>, a2(:, <span class="number">2</span>)/<span class="number">1e6</span>, <span class="string">&#x27;-b&#x27;</span>);</span><br><span class="line"></span><br><span class="line">xlabel(<span class="string">&#x27;曲柄转角\theta/(°)&#x27;</span>);</span><br><span class="line"></span><br><span class="line">ylabel(<span class="string">&#x27;滑块加速度a/(m/s^2)&#x27;</span>);</span><br><span class="line"></span><br><span class="line">xlim([<span class="number">0</span>, <span class="number">720</span>]);</span><br><span class="line"></span><br><span class="line">x_new = <span class="built_in">linspace</span>(<span class="number">0</span>, <span class="number">720</span>, <span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">xticks(x_new);</span><br><span class="line"></span><br><span class="line">title(<span class="string">&#x27;滑块的加速度曲线&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">legend</span>(<span class="string">&#x27;理论滑块加速度&#x27;</span>,<span class="string">&#x27;实际滑块加速度&#x27;</span>);</span><br><span class="line"></span><br><span class="line">grid on;</span><br></pre></td></tr></table></figure></div>
 
+
+
+<p>(其中速度公式与课本不同，取了相反数，因为绘制后的理论图与课本的图正好曲线相反，所以猜测课本的速度公式少了个负号)</p>
+<h3 id="曲线图"><a href="#曲线图" class="headerlink" title="曲线图"></a>曲线图</h3><p><img src="matlab%E6%9B%B2%E7%BA%BF%E5%9B%BE.jpg" class="lazyload placeholder" data-srcset="matlab%E6%9B%B2%E7%BA%BF%E5%9B%BE.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
 
       </div>
       <div class="post-tags-categories">
@@ -668,6 +706,10 @@
           
             <a href="/tags/Matlab/" class="">
               Matlab
+            </a>
+          
+            <a href="/tags/Soildworks/" class="">
+              Soildworks
             </a>
           
         </div>
@@ -681,7 +723,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2022/03/23/Matlab学习01/" target="_blank" title="Matlab学习01">https://yuchanghui.top/2022/03/23/Matlab学习01/</a>
+    <a href="/2022/04/10/机械设计——曲柄滑块/" target="_blank" title="机械设计——曲柄滑块">https://yuchanghui.top/2022/04/10/机械设计——曲柄滑块/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -699,44 +741,21 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/2022/04/10/%E6%9C%BA%E6%A2%B0%E8%AE%BE%E8%AE%A1%E2%80%94%E2%80%94%E6%9B%B2%E6%9F%84%E6%BB%91%E5%9D%97/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">机械设计——曲柄滑块</div>
-      </div>
-      
-      <!-- <div class="content">
-        机械设计——曲柄滑块一、零件1、主动杆
-草图：草图1：大圆直径20mm，两圆圆心之距60mm，连接线50mm，一边绘制小
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/2022/01/31/Opencv%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E6%96%87%E6%A1%A3%E6%89%AB%E6%8F%8FOCR%E8%AF%86%E5%88%AB/" class="post-nav-link">
+    <a href="/2022/03/23/Matlab%E5%AD%A6%E4%B9%A001/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Opencv项目实战:文档扫描OCR识别</div>
+        <div class="title-text">Matlab学习01</div>
       </div>
       <!-- <div class="content">
-        Opencv项目实战:文档扫描OCR识别边缘检测
-轮廓检测
-透视变换
-OCR
-图像预处理导入图像，对图像进行调整尺寸、滤
+        MATLAB学习01input请求用户输入12x = input(prompt)str = input(prompt,&
       </div> -->
     </a>
   </div>
