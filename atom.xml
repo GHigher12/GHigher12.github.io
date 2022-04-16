@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2022-04-10T08:55:05.607Z</updated>
+  <updated>2022-04-16T13:54:30.779Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,67 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Matlab学习——滑块曲线生成APP设计</title>
+    <link href="https://yuchanghui.top/2022/04/16/Matlab%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%BB%91%E5%9D%97%E6%9B%B2%E7%BA%BF%E7%94%9F%E6%88%90APP%E8%AE%BE%E8%AE%A1/"/>
+    <id>https://yuchanghui.top/2022/04/16/Matlab%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%BB%91%E5%9D%97%E6%9B%B2%E7%BA%BF%E7%94%9F%E6%88%90APP%E8%AE%BE%E8%AE%A1/</id>
+    <published>2022-04-16T12:51:49.000Z</published>
+    <updated>2022-04-16T13:54:30.779Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;因为在以后的版本中将会删除GUIDE，&lt;br&gt;在删除GUIDE后，App可以继续运行，&lt;br&gt;但不能在GUIDE中对其进行编辑。所&lt;br&gt;以本文使用App设计工具创建新App。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;演示&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="程序设计" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="Matlab" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Matlab/"/>
+    
+    
+    <category term="Matlab" scheme="https://yuchanghui.top/tags/Matlab/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows下安装WSL2</title>
+    <link href="https://yuchanghui.top/2022/04/14/windows%E4%B8%8B%E5%AE%89%E8%A3%85WSL2/"/>
+    <id>https://yuchanghui.top/2022/04/14/windows%E4%B8%8B%E5%AE%89%E8%A3%85WSL2/</id>
+    <published>2022-04-14T11:32:26.000Z</published>
+    <updated>2022-04-14T14:06:23.276Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;windows下安装WSL2&quot;&gt;&lt;a href=&quot;#windows下安装WSL2&quot; class=&quot;headerlink&quot; title=&quot;windows下安装WSL2&quot;&gt;&lt;/a&gt;windows下安装WSL2&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="WSL" scheme="https://yuchanghui.top/categories/Linux/WSL/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="WSL" scheme="https://yuchanghui.top/tags/WSL/"/>
+    
+  </entry>
   
   <entry>
     <title>机械设计——曲柄滑块</title>
@@ -509,52 +570,6 @@
     <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
     
     <category term="VSCode" scheme="https://yuchanghui.top/tags/VSCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu18.04遇到的问题</title>
-    <link href="https://yuchanghui.top/2021/11/17/Ubuntu18-04%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>https://yuchanghui.top/2021/11/17/Ubuntu18-04%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</id>
-    <published>2021-11-17T01:37:58.000Z</published>
-    <updated>2021-11-25T16:04:02.297Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题&quot;&gt;&lt;a href=&quot;#Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题&quot;&gt;&lt;/a&gt;Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题&lt;/h2&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/categories/Linux/Ubuntu/"/>
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
-    
-    <category term="VMware" scheme="https://yuchanghui.top/tags/VMware/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python的输入与输出</title>
-    <link href="https://yuchanghui.top/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/"/>
-    <id>https://yuchanghui.top/2021/11/14/Python%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/</id>
-    <published>2021-11-14T14:25:11.000Z</published>
-    <updated>2022-01-16T08:49:54.252Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;相比于C语言，python的输入输出更加多样化。下面对python的输入输出进行简单的总结。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="程序设计" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
-    
-    <category term="Python" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Python/"/>
-    
-    
-    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
     
   </entry>
   
