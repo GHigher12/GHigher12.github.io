@@ -642,11 +642,10 @@
 <p>2）计算图像中每个像素点的梯度强度和方向</p>
 <p>3）应用非极大值抑制，以消除边缘检测带来的杂散响应</p>
 <p>4）应用双阈值检测来确定真实和潜在的边缘</p>
-<p><img src="%E5%8F%8C%E9%98%88%E5%80%BC%E6%A3%80%E6%B5%8B.png" class="lazyload placeholder" data-srcset="%E5%8F%8C%E9%98%88%E5%80%BC%E6%A3%80%E6%B5%8B.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p><img src="双阈值检测.png" class="lazyload placeholder" data-srcset="双阈值检测.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
 <p>5）通过抑制孤立的边缘最终完成边缘检测</p>
 <p><code>cv2.Canny</code>函数：</p>
 <div class="highlight-wrap" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.Canny(image, threshold1, threshold2[, edges[, apertureSize[, L2gradient ]]]) </span><br></pre></td></tr></table></figure></div>
-
 <ul>
 <li>第一个参数是需要处理的原图像，该图像必须为单通道的灰度图；</li>
 <li>第二个参数是阈值1，即minVal;</li>
@@ -655,8 +654,7 @@
 <li>L2gradient参数是一个布尔值，如果为真，则使用更精确的L2范数进行计算（即两个方向的倒数的平方和再开放），否则使用L1范数（直接将两个方向导数的绝对值相加）。</li>
 </ul>
 <div class="highlight-wrap" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Canny边缘检测</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;./images/car.png&#x27;</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line"><span class="comment"># h, w = img.shape[:2]</span></span><br><span class="line"><span class="comment"># M = np.float32([[0.5, 0, 0], [0, 0.5, 0]])</span></span><br><span class="line"><span class="comment"># minVal：20 maxVal：100</span></span><br><span class="line">img_canny1 = cv2.Canny(img, <span class="number">20</span>, <span class="number">100</span>)</span><br><span class="line"><span class="comment"># minVal：50 maxVal：100</span></span><br><span class="line">img_canny2 = cv2.Canny(img, <span class="number">50</span>, <span class="number">100</span>)</span><br><span class="line"><span class="comment"># minVal：80 maxVal：100</span></span><br><span class="line">img_canny3 = cv2.Canny(img, <span class="number">80</span>, <span class="number">100</span>)</span><br><span class="line">img_canny = np.hstack((img_canny1, img_canny2, img_canny3))</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;./images/car_canny.png&#x27;</span>, img_canny)</span><br><span class="line">image_show(<span class="string">&#x27;img_canny&#x27;</span>, img_canny)</span><br></pre></td></tr></table></figure></div>
-
-<p><img src="car_canny.png" class="lazyload placeholder" data-srcset="car_canny.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p><img src="car_canny.png" class="lazyload placeholder" data-srcset="car_canny.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
 
       </div>
       <div class="post-tags-categories">
@@ -1903,5 +1901,20 @@
 
 
   
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

@@ -640,7 +640,6 @@
       <div class="post-content">
         <h1 id="windows下安装WSL2"><a href="#windows下安装WSL2" class="headerlink" title="windows下安装WSL2"></a>windows下安装WSL2</h1><h2 id="为Linux启用Windows子系统"><a href="#为Linux启用Windows子系统" class="headerlink" title="为Linux启用Windows子系统"></a>为Linux启用Windows子系统</h2><p>以管理员身份打开powershell</p>
 <div class="highlight-wrap" data-rel="Powershell"><figure class="iseeu highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows</span><span class="literal">-Subsystem</span><span class="literal">-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure></div>
-
 <h2 id="运行WSL2要求"><a href="#运行WSL2要求" class="headerlink" title="运行WSL2要求"></a>运行WSL2要求</h2><p>要更新到 WSL 2，您必须运行 Windows 10。</p>
 <ul>
 <li>对于 x64 系统：<strong>版本 1903</strong>或更高版本，带有<strong>Build 18362</strong>或更高版本。</li>
@@ -650,14 +649,12 @@
 <h2 id="启用虚拟机功能"><a href="#启用虚拟机功能" class="headerlink" title="启用虚拟机功能"></a>启用虚拟机功能</h2><p>在安装 WSL 2 之前，您必须启用<strong>虚拟机平台</strong>可选功能。您的机器将需要<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/wsl/troubleshooting#error-0x80370102-the-virtual-machine-could-not-be-started-because-a-required-feature-is-not-installed">虚拟化功能</a>才能使用此功能。</p>
 <p>管理员身份打开powershell</p>
 <div class="highlight-wrap" data-rel="Powershell"><figure class="iseeu highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure></div>
-
 <h2 id="下载Linux内核更新"><a href="#下载Linux内核更新" class="headerlink" title="下载Linux内核更新"></a>下载Linux内核更新</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">适用于 x64 机器的 WSL2 Linux 内核更新包</a></li>
 </ul>
 <h2 id="设置WSL2为默认版本"><a href="#设置WSL2为默认版本" class="headerlink" title="设置WSL2为默认版本"></a>设置WSL2为默认版本</h2><div class="highlight-wrap" data-rel="Powershell"><figure class="iseeu highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl -<span class="literal">-set</span><span class="literal">-default</span><span class="literal">-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></div>
-
 <p>请启用虚拟机平台 Windows 功能并确保在 BIOS 中启用虚拟化。<br>有关信息，请访问 <a target="_blank" rel="noopener" href="https://aka.ms/wsl2-install">https://aka.ms/wsl2-install</a></p>
-<p><em><strong>出现Error：</strong></em></p>
+<p><strong><em>出现Error：</em></strong></p>
 <p>回溯开启VMware兼容步骤，解决问题：</p>
 <p>开启vmware需要关闭hyper-v<br>所以我们如果重新开启wsl2时要：</p>
 <p>在windows功能中重新勾选hyper-v</p>
@@ -1936,5 +1933,20 @@
 
 
   
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

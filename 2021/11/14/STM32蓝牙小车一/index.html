@@ -639,151 +639,155 @@
     <article class="post post-detail">
       <div class="post-content">
         <h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（一）"><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（一）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（一）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（一）</h1><span id="more"></span>
-
 <h3 id="元件准备"><a href="#元件准备" class="headerlink" title="元件准备"></a>元件准备</h3><ol>
 <li>STM32F103C8T6核心板</li>
 </ol>
-<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008222750464.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008222750464.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="STM32F103C8T6核心板" title="在这里输入图片标题" style="zoom: 67%;" />
-
-<ol start="2">
+<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008222750464.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008222750464.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="STM32F103C8T6核心板" title="在这里输入图片标题" style="zoom: 67%;" /></p>
+<ol>
 <li>蓝牙串口模块 JDY-31</li>
 </ol>
-<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008222833390.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008222833390.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" />
-
-<ol start="3">
+<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008222833390.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008222833390.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" /></p>
+<ol>
 <li><p>2WD智能小车底盘套件（包含小车底盘、两个直流电机和橡胶轮）</p>
-<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223222256.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223222256.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" /></li>
+<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223222256.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223222256.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" /></p>
+</li>
 <li><p>L298N电机驱动板模块 </p>
-<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223358782.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223358782.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" /></li>
+<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223358782.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223358782.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" /></p>
+</li>
 <li><p>12v锂电池18650锂电池</p>
-<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223801067.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223801067.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" /></li>
+<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223801067.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223801067.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" /></p>
+</li>
 <li><p>LM2596S DC-DC可调降压模块</p>
-<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223947022.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223947022.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" /></li>
+<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223947022.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211008223947022.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom:67%;" /></p>
+</li>
 <li><p>若干杜邦线</p>
 </li>
 </ol>
-<h3 id="模块的使用"><a href="#模块的使用" class="headerlink" title="模块的使用"></a>模块的使用</h3><h4 id="L298N的使用"><a href="#L298N的使用" class="headerlink" title="L298N的使用"></a>L298N的使用</h4><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009104606216.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009104606216.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom: 33%;" />
-
+<h3 id="模块的使用"><a href="#模块的使用" class="headerlink" title="模块的使用"></a>模块的使用</h3><h4 id="L298N的使用"><a href="#L298N的使用" class="headerlink" title="L298N的使用"></a>L298N的使用</h4><p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009104606216.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009104606216.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom: 33%;" /></p>
 <p>由于一般的控制芯片起到控制作用，但是驱动能力不强，而电机所需要的电流一般比较大，控制芯片的IO口不能提供大电流，所以一般不<br>能直接驱动电机。L298是驱动芯片，可以将控制芯片的输出转换成较高的电压和能够输出较大的电流，是比较常用的电机驱动芯片。</p>
 <p><strong>使用方法：</strong><br>输出A：通道A输出，连接直流电机<br>输出B:通道B输出，连接直流电机<br>12V供电：主电源正极输入<br>GND：主电源正负极输入<br>5V输出：5V电压输出端，可用于给STM32开发板进行供电<br>ENA:通道A使能<br>ENB:通道B使能<br>IN1—IN4：逻辑输入IN1-IN2接单片机IO口控制通道A，逻辑输入IN3-IN4接单片机IO口控制通道B<br>（靠近ENA的两个引脚为IN1，IN2；同理靠近ENB的两个引脚为IN3，IN4）</p>
-<h4 id="LM2596S-DC-DC可调降压模块的使用"><a href="#LM2596S-DC-DC可调降压模块的使用" class="headerlink" title="LM2596S DC-DC可调降压模块的使用"></a>LM2596S DC-DC可调降压模块的使用</h4><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009103358957.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009103358957.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="![输入图片说明](https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009110653822.png &quot;在这里输入图片标题&quot;)" title="在这里输入图片标题" style="zoom: 33%;" />
-
+<h4 id="LM2596S-DC-DC可调降压模块的使用"><a href="#LM2596S-DC-DC可调降压模块的使用" class="headerlink" title="LM2596S DC-DC可调降压模块的使用"></a>LM2596S DC-DC可调降压模块的使用</h4><p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009103358957.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009103358957.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="![输入图片说明](https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009110653822.png &quot;在这里输入图片标题&quot;)" title="在这里输入图片标题" style="zoom: 33%;" /></p>
 <p><strong>引脚定义</strong><br>IN+：输入正极，接12v锂电池电源正极<br>IN-:   输入负极，接12v锂电池电源负极<br>OUT+：输出正极，引出杜邦线接单片机Vcc<br>OUT-：输出负极，引出杜邦线接单片机GND<br><strong>使用说明：</strong></p>
 <p>①接入电源（3-40V），电源指示灯亮，模块正常工作<br>②调整蓝色电位器旋钮（一般顺时针旋转升压逆时针降压）并用万用表检测输出电压达到所需电压为止</p>
 <h4 id="蓝牙模块的使用"><a href="#蓝牙模块的使用" class="headerlink" title="蓝牙模块的使用"></a>蓝牙模块的使用</h4><p>在蓝牙模块的使用时，我们需要用到USB转TTL模块</p>
-<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009110653822.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009110653822.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom: 33%;" />
-
-
-
+<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009110653822.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009110653822.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom: 33%;" /></p>
 <p><strong>连接方式</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">JDY-31</th>
-<th align="center">USB转TTL</th>
+<th style="text-align:center">JDY-31</th>
+<th style="text-align:center">USB转TTL</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">RXD</td>
-<td align="center">TXD</td>
+<tbody>
+<tr>
+<td style="text-align:center">RXD</td>
+<td style="text-align:center">TXD</td>
 </tr>
 <tr>
-<td align="center">TXD</td>
-<td align="center">RXD</td>
+<td style="text-align:center">TXD</td>
+<td style="text-align:center">RXD</td>
 </tr>
 <tr>
-<td align="center">GND</td>
-<td align="center">GND</td>
+<td style="text-align:center">GND</td>
+<td style="text-align:center">GND</td>
 </tr>
 <tr>
-<td align="center">VCC</td>
-<td align="center">VCC</td>
+<td style="text-align:center">VCC</td>
+<td style="text-align:center">VCC</td>
 </tr>
 <tr>
-<td align="center">EN</td>
-<td align="center">3.3V或5V</td>
+<td style="text-align:center">EN</td>
+<td style="text-align:center">3.3V或5V</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>(进入AT指令模式只需要将EN引脚拉高即可，所以接3.3v或5v都可）</p>
 <p><strong>串口配置</strong></p>
 <p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009113221751.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009113221751.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom:50%;" />初次连接波特率、停止位、数据位、校验位按图中配置，勾选发送新行</p>
 <p><strong>指令</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">操作</th>
-<th align="center">指令</th>
-<th align="center">响应</th>
-<th align="center">参数</th>
+<th style="text-align:center">操作</th>
+<th style="text-align:center">指令</th>
+<th style="text-align:center">响应</th>
+<th style="text-align:center">参数</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">版本号</td>
-<td align="center">AT+VERSION</td>
-<td align="center">+VERSION=JDY-31-V1.35,Bluetooth V3.0</td>
-<td align="center">无</td>
+<tbody>
+<tr>
+<td style="text-align:center">版本号</td>
+<td style="text-align:center">AT+VERSION</td>
+<td style="text-align:center">+VERSION=JDY-31-V1.35,Bluetooth V3.0</td>
+<td style="text-align:center">无</td>
 </tr>
 <tr>
-<td align="center">复位</td>
-<td align="center">AT+RESET</td>
-<td align="center">+OK</td>
-<td align="center">无</td>
+<td style="text-align:center">复位</td>
+<td style="text-align:center">AT+RESET</td>
+<td style="text-align:center">+OK</td>
+<td style="text-align:center">无</td>
 </tr>
 <tr>
-<td align="center">断开连接</td>
-<td align="center">AT+DISC</td>
-<td align="center">+OK</td>
-<td align="center">无</td>
+<td style="text-align:center">断开连接</td>
+<td style="text-align:center">AT+DISC</td>
+<td style="text-align:center">+OK</td>
+<td style="text-align:center">无</td>
 </tr>
 <tr>
-<td align="center">MAC地址</td>
-<td align="center">AT+LADDR</td>
-<td align="center">+LADDR=<Param></td>
-<td align="center">无</td>
+<td style="text-align:center">MAC地址</td>
+<td style="text-align:center">AT+LADDR</td>
+<td style="text-align:center">+LADDR=<Param></td>
+<td style="text-align:center">无</td>
 </tr>
 <tr>
-<td align="center">波特率查询</td>
-<td align="center">AT+BAUD</td>
-<td align="center">+BAUD=<Param></td>
-<td align="center">Param:(4到9) 4：9600; 5：19200; 6：38400; 7：57600; 8：115200; 9：128000</td>
+<td style="text-align:center">波特率查询</td>
+<td style="text-align:center">AT+BAUD</td>
+<td style="text-align:center">+BAUD=<Param></td>
+<td style="text-align:center">Param:(4到9) 4：9600; 5：19200; 6：38400; 7：57600; 8：115200; 9：128000</td>
 </tr>
 <tr>
-<td align="center">波特率设置</td>
-<td align="center">AT+BAUD<Param></td>
-<td align="center">+OK</td>
-<td align="center">Param同上一行</td>
+<td style="text-align:center">波特率设置</td>
+<td style="text-align:center">AT+BAUD<Param></td>
+<td style="text-align:center">+OK</td>
+<td style="text-align:center">Param同上一行</td>
 </tr>
 <tr>
-<td align="center">密码查询</td>
-<td align="center">AT+PIN</td>
-<td align="center">+PIN=<Param></td>
-<td align="center">Param：4位密码 默认PIN：1234</td>
+<td style="text-align:center">密码查询</td>
+<td style="text-align:center">AT+PIN</td>
+<td style="text-align:center">+PIN=<Param></td>
+<td style="text-align:center">Param：4位密码 默认PIN：1234</td>
 </tr>
 <tr>
-<td align="center">密码修改</td>
-<td align="center">AT+PIN<Param></td>
-<td align="center">+OK</td>
-<td align="center">Param同上一行</td>
+<td style="text-align:center">密码修改</td>
+<td style="text-align:center">AT+PIN<Param></td>
+<td style="text-align:center">+OK</td>
+<td style="text-align:center">Param同上一行</td>
 </tr>
 <tr>
-<td align="center">广播名查询</td>
-<td align="center">AT+NAME</td>
-<td align="center">+NAME=<Param></td>
-<td align="center">Param：BLE广播名; 最长：18字节; 默认广播名：JDY-31-SPP</td>
+<td style="text-align:center">广播名查询</td>
+<td style="text-align:center">AT+NAME</td>
+<td style="text-align:center">+NAME=<Param></td>
+<td style="text-align:center">Param：BLE广播名; 最长：18字节; 默认广播名：JDY-31-SPP</td>
 </tr>
 <tr>
-<td align="center">广播名修改</td>
-<td align="center">AT+NAME<Param></td>
-<td align="center">+OK</td>
-<td align="center">Param同上一行</td>
+<td style="text-align:center">广播名修改</td>
+<td style="text-align:center">AT+NAME<Param></td>
+<td style="text-align:center">+OK</td>
+<td style="text-align:center">Param同上一行</td>
 </tr>
 <tr>
-<td align="center">恢复出厂配置</td>
-<td align="center">AT+DEFAULT</td>
-<td align="center">OK</td>
-<td align="center">无</td>
+<td style="text-align:center">恢复出厂配置</td>
+<td style="text-align:center">AT+DEFAULT</td>
+<td style="text-align:center">OK</td>
+<td style="text-align:center">无</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>执行指令</strong><br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009130057674.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/image-20211009130057674.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="输入图片说明" title="在这里输入图片标题" style="zoom:50%;" />下面只需要在串口助手发送窗口输入指定指令即可</p>
 
       </div>
@@ -842,8 +846,7 @@
       
       <!-- <div class="content">
         STM32基础项目：基于stm32f1的蓝牙遥控小车（二）
-
-STM32控制电机的转动方向和速度GPIO配置控制电机转向
+STM32控制电机的转动方向和速度GPIO配置控制电机转向首
       </div> -->
     </a>
   </div>
@@ -2028,5 +2031,20 @@ STM32控制电机的转动方向和速度GPIO配置控制电机转向
 
 
   
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

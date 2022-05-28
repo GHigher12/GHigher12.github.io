@@ -639,41 +639,41 @@
     <article class="post post-detail">
       <div class="post-content">
         <h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（三）"><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（三）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（三）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（三）</h1><span id="more"></span>
-
 <h3 id="STM32通过串口实现蓝牙通信"><a href="#STM32通过串口实现蓝牙通信" class="headerlink" title="STM32通过串口实现蓝牙通信"></a>STM32通过串口实现蓝牙通信</h3><p>我们这里仅使用蓝牙串口通信实现单字节数据的传输，这些就足以控制小车的运动了。我们这里用Usart1来实现蓝牙通信，然后通过检测蓝牙发送的单字节数来简单控制单片机led灯的亮灭。<br>stm32f103c8t6的led灯的引脚为PC13，所以对PC13进行配置。</p>
 <div class="highlight-wrap" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;led.h&quot;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line"> GPIO_InitTypeDef  GPIO_InitStructure;</span><br><span class="line"> 	</span><br><span class="line"> RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);	 <span class="comment">//使能GPIOC端口时钟</span></span><br><span class="line">	</span><br><span class="line"> GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;				 <span class="comment">//LED--&gt;PC.5 端口配置</span></span><br><span class="line"> GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 <span class="comment">//推挽输出</span></span><br><span class="line"> GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 <span class="comment">//IO口速度为50MHz</span></span><br><span class="line"> GPIO_Init(GPIOC, &amp;GPIO_InitStructure);					 <span class="comment">//根据设定参数初始化GPIOC.13</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
 <p>对Usart1进行配置</p>
 <div class="highlight-wrap" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Usart1_Init</span><span class="params">(u32 bound)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//GPIO端口设置</span></span><br><span class="line">  	GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">	USART_InitTypeDef USART_InitStructure;</span><br><span class="line">	NVIC_InitTypeDef NVIC_InitStructure;</span><br><span class="line">	 </span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1|RCC_APB2Periph_GPIOA, ENABLE);	<span class="comment">//使能USART1，GPIOA时钟</span></span><br><span class="line">	<span class="comment">//USART1_TX   GPIOA.9</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9; <span class="comment">//PA.9</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	<span class="comment">//复用推挽输出</span></span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStructure);<span class="comment">//初始化GPIOA.9</span></span><br><span class="line">  <span class="comment">//USART1_RX	  GPIOA.10初始化</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;<span class="comment">//PA10</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;<span class="comment">//浮空输入</span></span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStructure);<span class="comment">//初始化GPIOA.10  </span></span><br><span class="line">  <span class="comment">//Usart1 NVIC 配置</span></span><br><span class="line">    NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;</span><br><span class="line">	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority= <span class="number">3</span>;<span class="comment">//抢占优先级3</span></span><br><span class="line">	NVIC_InitStructure.NVIC_IRQChannelSubPriority = <span class="number">3</span>;		<span class="comment">//子优先级3</span></span><br><span class="line">	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			<span class="comment">//IRQ通道使能</span></span><br><span class="line">	NVIC_Init(&amp;NVIC_InitStructure);	<span class="comment">//根据指定的参数初始化VIC寄存器</span></span><br><span class="line">   <span class="comment">//USART 初始化设置</span></span><br><span class="line">	USART_InitStructure.USART_BaudRate = bound;<span class="comment">//串口波特率</span></span><br><span class="line">	USART_InitStructure.USART_WordLength = USART_WordLength_8b;<span class="comment">//字长为8位数据格式</span></span><br><span class="line">	USART_InitStructure.USART_StopBits = USART_StopBits_1;<span class="comment">//一个停止位</span></span><br><span class="line">	USART_InitStructure.USART_Parity = USART_Parity_No;<span class="comment">//无奇偶校验位</span></span><br><span class="line">	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;<span class="comment">//无硬件数据流控制</span></span><br><span class="line">	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;	<span class="comment">//收发模式</span></span><br><span class="line"></span><br><span class="line">    USART_Init(USART1, &amp;USART_InitStructure); <span class="comment">//初始化串口1</span></span><br><span class="line">    USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);<span class="comment">//开启串口接受中断</span></span><br><span class="line">    USART_Cmd(USART1, ENABLE);                    <span class="comment">//使能串口1 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-
 <p><strong>连接</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">JDY-31</th>
-<th align="center">stm32f103c8t6</th>
+<th style="text-align:center">JDY-31</th>
+<th style="text-align:center">stm32f103c8t6</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">RX</td>
-<td align="center">PA9</td>
+<tbody>
+<tr>
+<td style="text-align:center">RX</td>
+<td style="text-align:center">PA9</td>
 </tr>
 <tr>
-<td align="center">TX</td>
-<td align="center">PA10</td>
+<td style="text-align:center">TX</td>
+<td style="text-align:center">PA10</td>
 </tr>
 <tr>
-<td align="center">VCC</td>
-<td align="center">VCC</td>
+<td style="text-align:center">VCC</td>
+<td style="text-align:center">VCC</td>
 </tr>
 <tr>
-<td align="center">GND</td>
-<td align="center">GND</td>
+<td style="text-align:center">GND</td>
+<td style="text-align:center">GND</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>我们这里设置当串口检测到蓝牙发送数字0，LED亮，发送数字1，LED灭。<br>首先对LED进行定义<br><code>#define LED PCout(13)</code><br>再写串口中断服务函数</p>
 <div class="highlight-wrap" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART1_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	u8 res;</span><br><span class="line">	<span class="keyword">if</span>(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) <span class="comment">//接收中断</span></span><br><span class="line">	&#123;</span><br><span class="line">	res = USART_ReceiveData(USART1);</span><br><span class="line">	<span class="keyword">if</span>(res == <span class="number">0</span>)</span><br><span class="line">		LED = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(res == <span class="number">1</span>)</span><br><span class="line">		LED = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
 <h3 id="蓝牙APP制作"><a href="#蓝牙APP制作" class="headerlink" title="蓝牙APP制作"></a>蓝牙APP制作</h3><p>下面我们来用蓝牙app发送信号给串口，蓝牙APP制作网站：<a target="_blank" rel="noopener" href="http://app.gzjkw.net/login/">http://app.gzjkw.net/login/</a><br>登录后进入界面，先点击左上角的项目，然后新建项目，注意项目名称要以字母开头并且仅支持字母、数字及下划线。<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E8%93%9D%E7%89%99APP.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E8%93%9D%E7%89%99APP.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="蓝牙app制作"></p>
 <p>各个组件的属性可根据自己的爱好配置。<br>组件设计完后，下面进入到蓝牙APP的逻辑设计，在网页右上角点击进入逻辑设计。<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="逻辑设计"></p>
 <p>点击相应的组件，可出现对应的逻辑板块，在进行选择与配置。<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E9%80%BB%E8%BE%91%E6%9D%BF%E5%9D%97.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E9%80%BB%E8%BE%91%E6%9D%BF%E5%9D%97.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="逻辑板块" style="zoom: 50%;" /></p>
@@ -735,8 +735,7 @@
       
       <!-- <div class="content">
         STM32基础项目：基于stm32f1的蓝牙遥控小车（四）
-
-接下来我们只需要简单的修改下程序及蓝牙app就完成蓝牙遥控
+接下来我们只需要简单的修改下程序及蓝牙app就完成蓝牙遥控小
       </div> -->
     </a>
   </div>
@@ -756,8 +755,7 @@
       </div>
       <!-- <div class="content">
         STM32基础项目：基于stm32f1的蓝牙遥控小车（二）
-
-STM32控制电机的转动方向和速度GPIO配置控制电机转向
+STM32控制电机的转动方向和速度GPIO配置控制电机转向首
       </div> -->
     </a>
   </div>
@@ -1940,5 +1938,20 @@ STM32控制电机的转动方向和速度GPIO配置控制电机转向
 
 
   
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

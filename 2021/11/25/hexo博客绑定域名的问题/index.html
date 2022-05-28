@@ -636,11 +636,11 @@
       <div class="post-content">
         <p>绑定域名，参照学长的文章<a target="_blank" rel="noopener" href="http://zhangguixin.top/2021/11/06/hexo/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">【地址】</a></p>
 <h2 id="1-ipv6解析地址"><a href="#1-ipv6解析地址" class="headerlink" title="1.ipv6解析地址"></a>1.ipv6解析地址</h2><p>我的博客地址并非ipv4地址，而是ipv6地址</p>
-<p><img src="ipv6.png" class="lazyload placeholder" data-srcset="ipv6.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p><img src="ipv6.png" class="lazyload placeholder" data-srcset="ipv6.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
 <p>阿里云解析地址的新手引导只针对为ipv4地址，因此ipv6地址需要自己手动添加。</p>
-<p><img src="ipv4.png" class="lazyload placeholder" data-srcset="ipv4.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p><img src="ipv4.png" class="lazyload placeholder" data-srcset="ipv4.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
 <p>手动添加配置如下：</p>
-<p><img src="ipv6%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0.png" class="lazyload placeholder" data-srcset="ipv6%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p><img src="ipv6手动添加.png" class="lazyload placeholder" data-srcset="ipv6手动添加.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
 <h2 id="2-加速方法"><a href="#2-加速方法" class="headerlink" title="2.加速方法"></a>2.加速方法</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/i_do_not_know_you/article/details/105594269">参考文章</a></p>
 <p>但说实话我感觉不到什么区别，借鉴以下还是不错的</p>
 <h2 id="3-解决上传后需重新绑定域名的问题"><a href="#3-解决上传后需重新绑定域名的问题" class="headerlink" title="3.解决上传后需重新绑定域名的问题"></a>3.解决上传后需重新绑定域名的问题</h2><p>绑定域名后，每次<code>hexo d</code>，网页就会出现404，然后再需要重新再绑定域名，非常麻烦</p>
@@ -1903,5 +1903,20 @@
 
 
   
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

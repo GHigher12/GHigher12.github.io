@@ -639,19 +639,16 @@
     <article class="post post-detail">
       <div class="post-content">
         <h2 id="Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题"><a href="#Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题" class="headerlink" title="Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题"></a>Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题</h2><span id="more"></span>
-
 <p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu_sougou.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu_sougou.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Sougou输入法乱码"></p>
 <p><strong>解决方法</strong></p>
-<p>1.在Ubuntu中打开 系统设置–&gt;区域和语言–&gt;管理已安装语言，将键盘输入法系统设置为fcitx.</p>
-<img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="setting" style="zoom: 80%;" />
-
+<p>1.在Ubuntu中打开 系统设置—&gt;区域和语言—&gt;管理已安装语言，将键盘输入法系统设置为fcitx.</p>
+<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="setting" style="zoom: 80%;" /></p>
 <p>2.打开终端，输入fcitx-configtool</p>
 <div class="highlight-wrap" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fcitx-configtool</span><br></pre></td></tr></table></figure></div>
-
-<p>3.不要把搜狗拼音放在第一位，如果放在第一位就会出现选词板乱码现象；通过上下箭头把Sogou Pinyin放在第二位，乱码现象自然消失，问题解决。（如果没有搜狗拼音，通过“+” 添加搜狗拼音）<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/configtool.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/configtool.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg"></p>
+<p>3.不要把搜狗拼音放在第一位，如果放在第一位就会出现选词板乱码现象；通过上下箭头把Sogou Pinyin放在第二位，乱码现象自然消失，问题解决。（如果没有搜狗拼音，通过“+” 添加搜狗拼音）<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/configtool.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/configtool.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
 <h2 id="Ubuntu18-04-鼠标箭头频闪问题"><a href="#Ubuntu18-04-鼠标箭头频闪问题" class="headerlink" title="Ubuntu18.04 鼠标箭头频闪问题"></a>Ubuntu18.04 鼠标箭头频闪问题</h2><p><img src="mouse_shake.gif" class="lazyload placeholder" data-srcset="mouse_shake.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="mouse_shake"></p>
 <p><strong>解决方法</strong></p>
-<p>在windows界面打开设置–&gt;设备–&gt;鼠标–&gt;其他鼠标选项–&gt;指针选项</p>
+<p>在windows界面打开设置—&gt;设备—&gt;鼠标—&gt;其他鼠标选项—&gt;指针选项</p>
 <p>打勾显示指针轨迹，并改为短<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/mouse.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/mouse.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" style="zoom:80%;" /></p>
 <p>问题解决</p>
 
@@ -714,10 +711,8 @@
       </div>
       
       <!-- <div class="content">
-        在Ubuntu18.04空格长度太小，难以辨识。
-
-在网上找到两种方法。
-第一种1.firacode字体安装在终端输入以
+        在Ubuntu18.04空格长度太小，难以辨识。在网上找到两种方法。
+第一种1.firacode字体安装在终端输入以下命
       </div> -->
     </a>
   </div>
@@ -737,9 +732,7 @@
       </div>
       <!-- <div class="content">
         相比于C语言，python的输入输出更加多样化。下面对python的输入输出进行简单的总结。
-
-
-Input单行的输入1
+Input单行的输入123
       </div> -->
     </a>
   </div>
@@ -1922,5 +1915,20 @@ Input单行的输入1
 
 
   
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
