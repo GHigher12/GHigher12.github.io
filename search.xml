@@ -113,6 +113,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Opencv学习03</title>
+    <url>/2022/01/16/Opencv%E5%AD%A6%E4%B9%A003/</url>
+    <content><![CDATA[<h3 id="Canny边缘检测"><a href="#Canny边缘检测" class="headerlink" title="Canny边缘检测"></a>Canny边缘检测</h3><p>1）使用高斯滤波，平滑图像，滤除噪声</p>
+<p>2）计算图像中每个像素点的梯度强度和方向</p>
+<p>3）应用非极大值抑制，以消除边缘检测带来的杂散响应</p>
+<p>4）应用双阈值检测来确定真实和潜在的边缘</p>
+<p><img src="双阈值检测.png" class="lazyload placeholder" data-srcset="双阈值检测.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
+<p>5）通过抑制孤立的边缘最终完成边缘检测</p>
+<p><code>cv2.Canny</code>函数：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.Canny(image, threshold1, threshold2[, edges[, apertureSize[, L2gradient ]]]) </span><br></pre></td></tr></table></figure>
+<ul>
+<li>第一个参数是需要处理的原图像，该图像必须为单通道的灰度图；</li>
+<li>第二个参数是阈值1，即minVal;</li>
+<li>第三个参数是阈值2 ，即maxVal;</li>
+<li>选参数中apertureSize就是Sobel算子的大小;</li>
+<li>L2gradient参数是一个布尔值，如果为真，则使用更精确的L2范数进行计算（即两个方向的倒数的平方和再开放），否则使用L1范数（直接将两个方向导数的绝对值相加）。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Canny边缘检测</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;./images/car.png&#x27;</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line"><span class="comment"># h, w = img.shape[:2]</span></span><br><span class="line"><span class="comment"># M = np.float32([[0.5, 0, 0], [0, 0.5, 0]])</span></span><br><span class="line"><span class="comment"># minVal：20 maxVal：100</span></span><br><span class="line">img_canny1 = cv2.Canny(img, <span class="number">20</span>, <span class="number">100</span>)</span><br><span class="line"><span class="comment"># minVal：50 maxVal：100</span></span><br><span class="line">img_canny2 = cv2.Canny(img, <span class="number">50</span>, <span class="number">100</span>)</span><br><span class="line"><span class="comment"># minVal：80 maxVal：100</span></span><br><span class="line">img_canny3 = cv2.Canny(img, <span class="number">80</span>, <span class="number">100</span>)</span><br><span class="line">img_canny = np.hstack((img_canny1, img_canny2, img_canny3))</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;./images/car_canny.png&#x27;</span>, img_canny)</span><br><span class="line">image_show(<span class="string">&#x27;img_canny&#x27;</span>, img_canny)</span><br></pre></td></tr></table></figure>
+<p><img src="car_canny.png" class="lazyload placeholder" data-srcset="car_canny.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
+]]></content>
+      <categories>
+        <category>视觉处理</category>
+        <category>Opencv</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Opencv学习02</title>
     <url>/2022/01/15/Opencv%E5%AD%A6%E4%B9%A002/</url>
     <content><![CDATA[<h2 id="图像梯度处理"><a href="#图像梯度处理" class="headerlink" title="图像梯度处理"></a>图像梯度处理</h2><p>图像计算的是图像的边缘信息，它能反映图像像素的变化。如灰度值变化较大的地方，梯度值也较大；灰度值较小的地方，相应的梯度值较小。图像梯度就是指像素的已接到是。图像的边缘是指灰度值发生急剧变化的地方，边缘检测目的就是在不破坏图像信息的条件下，减少图像的数据量，绘制其边缘线图。</p>
@@ -144,32 +170,6 @@
         <tag>python</tag>
         <tag>Opencv</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Opencv学习03</title>
-    <url>/2022/01/16/Opencv%E5%AD%A6%E4%B9%A003/</url>
-    <content><![CDATA[<h3 id="Canny边缘检测"><a href="#Canny边缘检测" class="headerlink" title="Canny边缘检测"></a>Canny边缘检测</h3><p>1）使用高斯滤波，平滑图像，滤除噪声</p>
-<p>2）计算图像中每个像素点的梯度强度和方向</p>
-<p>3）应用非极大值抑制，以消除边缘检测带来的杂散响应</p>
-<p>4）应用双阈值检测来确定真实和潜在的边缘</p>
-<p><img src="双阈值检测.png" class="lazyload placeholder" data-srcset="双阈值检测.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
-<p>5）通过抑制孤立的边缘最终完成边缘检测</p>
-<p><code>cv2.Canny</code>函数：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.Canny(image, threshold1, threshold2[, edges[, apertureSize[, L2gradient ]]]) </span><br></pre></td></tr></table></figure>
-<ul>
-<li>第一个参数是需要处理的原图像，该图像必须为单通道的灰度图；</li>
-<li>第二个参数是阈值1，即minVal;</li>
-<li>第三个参数是阈值2 ，即maxVal;</li>
-<li>选参数中apertureSize就是Sobel算子的大小;</li>
-<li>L2gradient参数是一个布尔值，如果为真，则使用更精确的L2范数进行计算（即两个方向的倒数的平方和再开放），否则使用L1范数（直接将两个方向导数的绝对值相加）。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Canny边缘检测</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;./images/car.png&#x27;</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line"><span class="comment"># h, w = img.shape[:2]</span></span><br><span class="line"><span class="comment"># M = np.float32([[0.5, 0, 0], [0, 0.5, 0]])</span></span><br><span class="line"><span class="comment"># minVal：20 maxVal：100</span></span><br><span class="line">img_canny1 = cv2.Canny(img, <span class="number">20</span>, <span class="number">100</span>)</span><br><span class="line"><span class="comment"># minVal：50 maxVal：100</span></span><br><span class="line">img_canny2 = cv2.Canny(img, <span class="number">50</span>, <span class="number">100</span>)</span><br><span class="line"><span class="comment"># minVal：80 maxVal：100</span></span><br><span class="line">img_canny3 = cv2.Canny(img, <span class="number">80</span>, <span class="number">100</span>)</span><br><span class="line">img_canny = np.hstack((img_canny1, img_canny2, img_canny3))</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;./images/car_canny.png&#x27;</span>, img_canny)</span><br><span class="line">image_show(<span class="string">&#x27;img_canny&#x27;</span>, img_canny)</span><br></pre></td></tr></table></figure>
-<p><img src="car_canny.png" class="lazyload placeholder" data-srcset="car_canny.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
-]]></content>
-      <categories>
-        <category>视觉处理</category>
-        <category>Opencv</category>
-      </categories>
   </entry>
   <entry>
     <title>Opencv项目实战:信用卡数字识别</title>
@@ -227,6 +227,36 @@
 <p><img src="card_01_succes.png" class="lazyload placeholder" data-srcset="card_01_succes.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="result"><code>输出: Card number :4000123456789010</code></p>
 <p>others：</p>
 <p><img src="card_02.png" class="lazyload placeholder" data-srcset="card_02.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="card_02"><img src="card_03.png" class="lazyload placeholder" data-srcset="card_03.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="card_03"><img src="card_04.png" class="lazyload placeholder" data-srcset="card_04.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="card_04"></p>
+]]></content>
+      <categories>
+        <category>视觉处理</category>
+        <category>Opencv</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>Opencv</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Opencv项目实战:文档扫描OCR识别</title>
+    <url>/2022/01/31/Opencv%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E6%96%87%E6%A1%A3%E6%89%AB%E6%8F%8FOCR%E8%AF%86%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="Opencv项目实战-文档扫描OCR识别"><a href="#Opencv项目实战-文档扫描OCR识别" class="headerlink" title="Opencv项目实战:文档扫描OCR识别"></a>Opencv项目实战:文档扫描OCR识别</h1><p>边缘检测</p>
+<p>轮廓检测</p>
+<p>透视变换</p>
+<p>OCR</p>
+<h3 id="图像预处理"><a href="#图像预处理" class="headerlink" title="图像预处理"></a>图像预处理</h3><p>导入图像，对图像进行调整尺寸、滤波、边缘检测，得到更加明显的分界。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">img_show</span>(<span class="params">name, img</span>):</span></span><br><span class="line">    cv2.imshow(name, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">resize</span>(<span class="params">image, width=<span class="literal">None</span>, height=<span class="literal">None</span>, inter=cv2.INTER_AREA</span>):</span></span><br><span class="line">    dim = <span class="literal">None</span></span><br><span class="line">    h, w = image.shape[:<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">if</span> width <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> height <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> image</span><br><span class="line">    <span class="keyword">if</span> width <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        r = height / <span class="built_in">float</span>(h)</span><br><span class="line">        dim = (<span class="built_in">int</span>(w * r), height)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        r = width / <span class="built_in">float</span>(w)</span><br><span class="line">        dim = (width, <span class="built_in">int</span>(h * r))</span><br><span class="line">    resized = cv2.resize(image, dim, interpolation=inter)</span><br><span class="line">    <span class="keyword">return</span> resized</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;./images/page.jpg&#x27;</span>)</span><br><span class="line">ratio = img.shape[<span class="number">0</span>] / <span class="number">500.0</span></span><br><span class="line">orig = img.copy()</span><br><span class="line"><span class="comment"># 调整尺寸</span></span><br><span class="line">img = resize(orig, height = <span class="number">500</span>)</span><br><span class="line"><span class="comment"># 灰度处理</span></span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line"><span class="comment"># 高斯滤波去除噪音点</span></span><br><span class="line">gray = cv2.GaussianBlur(gray, (<span class="number">5</span>, <span class="number">5</span>), <span class="number">0</span>)</span><br><span class="line"><span class="comment"># 边缘检测</span></span><br><span class="line">edged = cv2.Canny(gray, <span class="number">75</span>, <span class="number">200</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="doc.png" class="lazyload placeholder" data-srcset="doc.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图像预处理"></p>
+<h3 id="轮廓检测"><a href="#轮廓检测" class="headerlink" title="轮廓检测"></a>轮廓检测</h3><p>对轮廓进行排序， 通过切片操作去除前5个较大轮廓，再通过对5个轮廓遍历，通过轮廓近似找出外边界(即最大轮廓)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 轮廓检测</span></span><br><span class="line">cnts = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)[<span class="number">0</span>]</span><br><span class="line"><span class="comment"># cv2.drawContours(img, cnts, -1, (0, 255, 0), 2)</span></span><br><span class="line"><span class="comment"># img_show(&#x27;img&#x27;, img)</span></span><br><span class="line"><span class="comment"># 利用轮廓面积,降序找出前5个最大的轮廓</span></span><br><span class="line">cnts = <span class="built_in">sorted</span>(cnts, key=cv2.contourArea, reverse=<span class="literal">True</span>)[:<span class="number">5</span>]</span><br><span class="line"><span class="comment"># print(type(cnts))</span></span><br><span class="line"><span class="comment"># 遍历每一个轮廓</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> cnts:</span><br><span class="line">    <span class="comment"># 计算轮廓长度</span></span><br><span class="line">    peri = cv2.arcLength(c, <span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># 轮廓近似 参数: 轮廓，周长百分比(值越小越近似) True为闭合 False为断开</span></span><br><span class="line">    approx = cv2.approxPolyDP(c, <span class="number">0.02</span>*peri, <span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># approx &lt;class&#x27;numpy.ndarray&#x27;&gt;</span></span><br><span class="line">    <span class="comment"># 用于存放同类型的一个多维数组对象,包含4个点</span></span><br><span class="line">    <span class="comment"># print(approx)</span></span><br><span class="line">    <span class="comment"># 最大边框</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(approx) == <span class="number">4</span>:</span><br><span class="line">        <span class="comment"># print(approx)</span></span><br><span class="line">        screenCnts = approx</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv2.drawContours(img, [screenCnts], -<span class="number">1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="doc_Con.png" class="lazyload placeholder" data-srcset="doc_Con.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="lunkuojianc"></p>
+<h3 id="透视变换"><a href="#透视变换" class="headerlink" title="透视变换"></a>透视变换</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">order_points</span>(<span class="params">pts</span>):</span></span><br><span class="line">    <span class="comment"># 一共4个坐标点</span></span><br><span class="line">    <span class="comment"># np.zeros()函数返回一个元素全为0且给定形状和类型的矩阵</span></span><br><span class="line">    <span class="comment"># 4行2列全为0的矩阵</span></span><br><span class="line">    rect = np.zeros((<span class="number">4</span>, <span class="number">2</span>), dtype=<span class="string">&quot;float32&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 按顺序找到对应坐标0123分别是 左上，右上，右下，左下</span></span><br><span class="line">    <span class="comment"># 计算左上，右下</span></span><br><span class="line">    <span class="comment"># axis＝1表示按照行的方向相加</span></span><br><span class="line">    s = pts.<span class="built_in">sum</span>(axis=<span class="number">1</span>)</span><br><span class="line">    rect[<span class="number">0</span>] = pts[np.argmin(s)]</span><br><span class="line">    rect[<span class="number">2</span>] = pts[np.argmax(s)]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算右上和左下</span></span><br><span class="line">    <span class="comment"># np.diff a[n]-a[n-1]</span></span><br><span class="line">    diff = np.diff(pts, axis=<span class="number">1</span>)</span><br><span class="line">    rect[<span class="number">1</span>] = pts[np.argmin(diff)]</span><br><span class="line">    rect[<span class="number">3</span>] = pts[np.argmax(diff)]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> rect</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">four_point_transform</span>(<span class="params">image, pts</span>):</span></span><br><span class="line">    <span class="comment"># 获取输入坐标点</span></span><br><span class="line">    rect = order_points(pts)</span><br><span class="line">    <span class="comment"># 四个点，每个点包含(x, y)</span></span><br><span class="line">    (tl, tr, br, bl) = rect</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算输入的w和h值</span></span><br><span class="line">    <span class="comment"># 0: x 1: y</span></span><br><span class="line">    widthA = np.sqrt(((br[<span class="number">0</span>] - bl[<span class="number">0</span>]) ** <span class="number">2</span>) + ((br[<span class="number">1</span>] - bl[<span class="number">1</span>]) ** <span class="number">2</span>))</span><br><span class="line">    widthB = np.sqrt(((tr[<span class="number">0</span>] - tl[<span class="number">0</span>]) ** <span class="number">2</span>) + ((tr[<span class="number">1</span>] - tl[<span class="number">1</span>]) ** <span class="number">2</span>))</span><br><span class="line">    maxWidth = <span class="built_in">max</span>(<span class="built_in">int</span>(widthA), <span class="built_in">int</span>(widthB))</span><br><span class="line"></span><br><span class="line">    heightA = np.sqrt(((tr[<span class="number">0</span>] - br[<span class="number">0</span>]) ** <span class="number">2</span>) + ((tr[<span class="number">1</span>] - br[<span class="number">1</span>]) ** <span class="number">2</span>))</span><br><span class="line">    heightB = np.sqrt(((tl[<span class="number">0</span>] - bl[<span class="number">0</span>]) ** <span class="number">2</span>) + ((tl[<span class="number">1</span>] - bl[<span class="number">1</span>]) ** <span class="number">2</span>))</span><br><span class="line">    maxHeight = <span class="built_in">max</span>(<span class="built_in">int</span>(heightA), <span class="built_in">int</span>(heightB))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 变换后对应坐标位置</span></span><br><span class="line">    dst = np.array([</span><br><span class="line">        [<span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">        [maxWidth - <span class="number">1</span>, <span class="number">0</span>],</span><br><span class="line">        [maxWidth - <span class="number">1</span>, maxHeight - <span class="number">1</span>],</span><br><span class="line">        [<span class="number">0</span>, maxHeight - <span class="number">1</span>]], dtype=<span class="string">&quot;float32&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算变换矩阵， rect：原始图像 dst：目标图像</span></span><br><span class="line">    M = cv2.getPerspectiveTransform(rect, dst)</span><br><span class="line">    <span class="comment"># 投影变换</span></span><br><span class="line">    warped = cv2.warpPerspective(image, M, (maxWidth, maxHeight))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 返回变换后结果</span></span><br><span class="line">    <span class="keyword">return</span> warped</span><br><span class="line"></span><br><span class="line">wraped = four_point_transform(orig, screenCnts.reshape(<span class="number">4</span>, <span class="number">2</span>) * ratio)</span><br></pre></td></tr></table></figure>
+<h3 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h3><p>最后调整大小输出结果</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">w, h = wraped.shape[:<span class="number">2</span>]</span><br><span class="line">wraped = cv2.resize(wraped, dsize=(<span class="built_in">int</span>(h/<span class="number">4</span>), <span class="built_in">int</span>(w/<span class="number">4</span>)))</span><br><span class="line"><span class="comment"># print(wraped.shape)</span></span><br><span class="line">img_show(<span class="string">&#x27;wraped&#x27;</span>, wraped)</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;./images/wraped.jpg&#x27;</span>, wraped)</span><br></pre></td></tr></table></figure>
+<p><img src="result.png" class="lazyload placeholder" data-srcset="result.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
+<p>others:</p>
+<p><img src="receipt.png" class="lazyload placeholder" data-srcset="receipt.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="receipt"></p>
+<p><img src="receipt_wraped.png" class="lazyload placeholder" data-srcset="receipt_wraped.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
 ]]></content>
       <categories>
         <category>视觉处理</category>
@@ -348,36 +378,6 @@
       </categories>
       <tags>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Opencv项目实战:文档扫描OCR识别</title>
-    <url>/2022/01/31/Opencv%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E6%96%87%E6%A1%A3%E6%89%AB%E6%8F%8FOCR%E8%AF%86%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="Opencv项目实战-文档扫描OCR识别"><a href="#Opencv项目实战-文档扫描OCR识别" class="headerlink" title="Opencv项目实战:文档扫描OCR识别"></a>Opencv项目实战:文档扫描OCR识别</h1><p>边缘检测</p>
-<p>轮廓检测</p>
-<p>透视变换</p>
-<p>OCR</p>
-<h3 id="图像预处理"><a href="#图像预处理" class="headerlink" title="图像预处理"></a>图像预处理</h3><p>导入图像，对图像进行调整尺寸、滤波、边缘检测，得到更加明显的分界。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">img_show</span>(<span class="params">name, img</span>):</span></span><br><span class="line">    cv2.imshow(name, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">resize</span>(<span class="params">image, width=<span class="literal">None</span>, height=<span class="literal">None</span>, inter=cv2.INTER_AREA</span>):</span></span><br><span class="line">    dim = <span class="literal">None</span></span><br><span class="line">    h, w = image.shape[:<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">if</span> width <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> height <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> image</span><br><span class="line">    <span class="keyword">if</span> width <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        r = height / <span class="built_in">float</span>(h)</span><br><span class="line">        dim = (<span class="built_in">int</span>(w * r), height)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        r = width / <span class="built_in">float</span>(w)</span><br><span class="line">        dim = (width, <span class="built_in">int</span>(h * r))</span><br><span class="line">    resized = cv2.resize(image, dim, interpolation=inter)</span><br><span class="line">    <span class="keyword">return</span> resized</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;./images/page.jpg&#x27;</span>)</span><br><span class="line">ratio = img.shape[<span class="number">0</span>] / <span class="number">500.0</span></span><br><span class="line">orig = img.copy()</span><br><span class="line"><span class="comment"># 调整尺寸</span></span><br><span class="line">img = resize(orig, height = <span class="number">500</span>)</span><br><span class="line"><span class="comment"># 灰度处理</span></span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line"><span class="comment"># 高斯滤波去除噪音点</span></span><br><span class="line">gray = cv2.GaussianBlur(gray, (<span class="number">5</span>, <span class="number">5</span>), <span class="number">0</span>)</span><br><span class="line"><span class="comment"># 边缘检测</span></span><br><span class="line">edged = cv2.Canny(gray, <span class="number">75</span>, <span class="number">200</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="doc.png" class="lazyload placeholder" data-srcset="doc.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="图像预处理"></p>
-<h3 id="轮廓检测"><a href="#轮廓检测" class="headerlink" title="轮廓检测"></a>轮廓检测</h3><p>对轮廓进行排序， 通过切片操作去除前5个较大轮廓，再通过对5个轮廓遍历，通过轮廓近似找出外边界(即最大轮廓)</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 轮廓检测</span></span><br><span class="line">cnts = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)[<span class="number">0</span>]</span><br><span class="line"><span class="comment"># cv2.drawContours(img, cnts, -1, (0, 255, 0), 2)</span></span><br><span class="line"><span class="comment"># img_show(&#x27;img&#x27;, img)</span></span><br><span class="line"><span class="comment"># 利用轮廓面积,降序找出前5个最大的轮廓</span></span><br><span class="line">cnts = <span class="built_in">sorted</span>(cnts, key=cv2.contourArea, reverse=<span class="literal">True</span>)[:<span class="number">5</span>]</span><br><span class="line"><span class="comment"># print(type(cnts))</span></span><br><span class="line"><span class="comment"># 遍历每一个轮廓</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> cnts:</span><br><span class="line">    <span class="comment"># 计算轮廓长度</span></span><br><span class="line">    peri = cv2.arcLength(c, <span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># 轮廓近似 参数: 轮廓，周长百分比(值越小越近似) True为闭合 False为断开</span></span><br><span class="line">    approx = cv2.approxPolyDP(c, <span class="number">0.02</span>*peri, <span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># approx &lt;class&#x27;numpy.ndarray&#x27;&gt;</span></span><br><span class="line">    <span class="comment"># 用于存放同类型的一个多维数组对象,包含4个点</span></span><br><span class="line">    <span class="comment"># print(approx)</span></span><br><span class="line">    <span class="comment"># 最大边框</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(approx) == <span class="number">4</span>:</span><br><span class="line">        <span class="comment"># print(approx)</span></span><br><span class="line">        screenCnts = approx</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv2.drawContours(img, [screenCnts], -<span class="number">1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="doc_Con.png" class="lazyload placeholder" data-srcset="doc_Con.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="lunkuojianc"></p>
-<h3 id="透视变换"><a href="#透视变换" class="headerlink" title="透视变换"></a>透视变换</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">order_points</span>(<span class="params">pts</span>):</span></span><br><span class="line">    <span class="comment"># 一共4个坐标点</span></span><br><span class="line">    <span class="comment"># np.zeros()函数返回一个元素全为0且给定形状和类型的矩阵</span></span><br><span class="line">    <span class="comment"># 4行2列全为0的矩阵</span></span><br><span class="line">    rect = np.zeros((<span class="number">4</span>, <span class="number">2</span>), dtype=<span class="string">&quot;float32&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 按顺序找到对应坐标0123分别是 左上，右上，右下，左下</span></span><br><span class="line">    <span class="comment"># 计算左上，右下</span></span><br><span class="line">    <span class="comment"># axis＝1表示按照行的方向相加</span></span><br><span class="line">    s = pts.<span class="built_in">sum</span>(axis=<span class="number">1</span>)</span><br><span class="line">    rect[<span class="number">0</span>] = pts[np.argmin(s)]</span><br><span class="line">    rect[<span class="number">2</span>] = pts[np.argmax(s)]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算右上和左下</span></span><br><span class="line">    <span class="comment"># np.diff a[n]-a[n-1]</span></span><br><span class="line">    diff = np.diff(pts, axis=<span class="number">1</span>)</span><br><span class="line">    rect[<span class="number">1</span>] = pts[np.argmin(diff)]</span><br><span class="line">    rect[<span class="number">3</span>] = pts[np.argmax(diff)]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> rect</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">four_point_transform</span>(<span class="params">image, pts</span>):</span></span><br><span class="line">    <span class="comment"># 获取输入坐标点</span></span><br><span class="line">    rect = order_points(pts)</span><br><span class="line">    <span class="comment"># 四个点，每个点包含(x, y)</span></span><br><span class="line">    (tl, tr, br, bl) = rect</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算输入的w和h值</span></span><br><span class="line">    <span class="comment"># 0: x 1: y</span></span><br><span class="line">    widthA = np.sqrt(((br[<span class="number">0</span>] - bl[<span class="number">0</span>]) ** <span class="number">2</span>) + ((br[<span class="number">1</span>] - bl[<span class="number">1</span>]) ** <span class="number">2</span>))</span><br><span class="line">    widthB = np.sqrt(((tr[<span class="number">0</span>] - tl[<span class="number">0</span>]) ** <span class="number">2</span>) + ((tr[<span class="number">1</span>] - tl[<span class="number">1</span>]) ** <span class="number">2</span>))</span><br><span class="line">    maxWidth = <span class="built_in">max</span>(<span class="built_in">int</span>(widthA), <span class="built_in">int</span>(widthB))</span><br><span class="line"></span><br><span class="line">    heightA = np.sqrt(((tr[<span class="number">0</span>] - br[<span class="number">0</span>]) ** <span class="number">2</span>) + ((tr[<span class="number">1</span>] - br[<span class="number">1</span>]) ** <span class="number">2</span>))</span><br><span class="line">    heightB = np.sqrt(((tl[<span class="number">0</span>] - bl[<span class="number">0</span>]) ** <span class="number">2</span>) + ((tl[<span class="number">1</span>] - bl[<span class="number">1</span>]) ** <span class="number">2</span>))</span><br><span class="line">    maxHeight = <span class="built_in">max</span>(<span class="built_in">int</span>(heightA), <span class="built_in">int</span>(heightB))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 变换后对应坐标位置</span></span><br><span class="line">    dst = np.array([</span><br><span class="line">        [<span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">        [maxWidth - <span class="number">1</span>, <span class="number">0</span>],</span><br><span class="line">        [maxWidth - <span class="number">1</span>, maxHeight - <span class="number">1</span>],</span><br><span class="line">        [<span class="number">0</span>, maxHeight - <span class="number">1</span>]], dtype=<span class="string">&quot;float32&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算变换矩阵， rect：原始图像 dst：目标图像</span></span><br><span class="line">    M = cv2.getPerspectiveTransform(rect, dst)</span><br><span class="line">    <span class="comment"># 投影变换</span></span><br><span class="line">    warped = cv2.warpPerspective(image, M, (maxWidth, maxHeight))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 返回变换后结果</span></span><br><span class="line">    <span class="keyword">return</span> warped</span><br><span class="line"></span><br><span class="line">wraped = four_point_transform(orig, screenCnts.reshape(<span class="number">4</span>, <span class="number">2</span>) * ratio)</span><br></pre></td></tr></table></figure>
-<h3 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h3><p>最后调整大小输出结果</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">w, h = wraped.shape[:<span class="number">2</span>]</span><br><span class="line">wraped = cv2.resize(wraped, dsize=(<span class="built_in">int</span>(h/<span class="number">4</span>), <span class="built_in">int</span>(w/<span class="number">4</span>)))</span><br><span class="line"><span class="comment"># print(wraped.shape)</span></span><br><span class="line">img_show(<span class="string">&#x27;wraped&#x27;</span>, wraped)</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;./images/wraped.jpg&#x27;</span>, wraped)</span><br></pre></td></tr></table></figure>
-<p><img src="result.png" class="lazyload placeholder" data-srcset="result.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
-<p>others:</p>
-<p><img src="receipt.png" class="lazyload placeholder" data-srcset="receipt.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="receipt"></p>
-<p><img src="receipt_wraped.png" class="lazyload placeholder" data-srcset="receipt_wraped.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
-]]></content>
-      <categories>
-        <category>视觉处理</category>
-        <category>Opencv</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>Opencv</tag>
       </tags>
   </entry>
   <entry>
@@ -539,38 +539,6 @@
     <url>/2021/12/04/ROS%E5%AE%89%E8%A3%85-rosdep%E5%88%9D%E5%A7%8B%E5%8C%96%E5%A4%B1%E8%B4%A5/</url>
     <content><![CDATA[<p>ROS版本: Melodic</p>
 <p><a href="https://blog.csdn.net/weixin_38650871/article/details/120781651">解决方法</a></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>ROS</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
-        <tag>VMware</tag>
-        <tag>ROS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ROS运行Gazebo遇到的问题</title>
-    <url>/2021/12/04/ROS%E8%BF%90%E8%A1%8CGazebo%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>运行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ rosrun gazebo_ros gazebo</span><br></pre></td></tr></table></figure>
-<p>遇到下列错误</p>
-<h2 id="错误：-Err-REST-cc-205-Error-in-REST-request"><a href="#错误：-Err-REST-cc-205-Error-in-REST-request" class="headerlink" title="错误：[Err] [REST.cc:205] Error in REST request"></a>错误：[Err] [REST.cc:205] Error in REST request</h2><p><img src="REST.png" class="lazyload placeholder" data-srcset="REST.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
-<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p>1.修改<code>~/.ignition/fuel/config.yaml</code>文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ sudo gedit ~/.ignition/fuel/config.yaml</span><br></pre></td></tr></table></figure>
-<p>2.</p>
-<p>注释 <code>url : https://api.ignitionfuel.org</code><br>添加 <code>url: https://api.ignitionrobotics.org</code></p>
-<p><img src="config_yml.png" class="lazyload placeholder" data-srcset="config_yml.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
-<p>再重新启动Gazebo即可。</p>
-<h2 id="错误：VMware-vmw-ioctl-command-error-无效的参数"><a href="#错误：VMware-vmw-ioctl-command-error-无效的参数" class="headerlink" title="错误：VMware: vmw_ioctl_command error 无效的参数"></a>错误：VMware: vmw_ioctl_command error 无效的参数</h2><p><img src="无效参数.png" class="lazyload placeholder" data-srcset="无效参数.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在终端设置环境变量为0:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ export SVGA_VGPU10=0</span><br></pre></td></tr></table></figure>
-<p>长久方法：</p>
-<p>在~/.bashrc文件写入<code>export SVGA_VGPU10=0</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ echo &quot;export SVGA_VGPU10=0&quot; &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
-<p>再重新启动Gazebo即可。</p>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -748,6 +716,91 @@
       </tags>
   </entry>
   <entry>
+    <title>ROS运行Gazebo遇到的问题</title>
+    <url>/2021/12/04/ROS%E8%BF%90%E8%A1%8CGazebo%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>运行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ rosrun gazebo_ros gazebo</span><br></pre></td></tr></table></figure>
+<p>遇到下列错误</p>
+<h2 id="错误：-Err-REST-cc-205-Error-in-REST-request"><a href="#错误：-Err-REST-cc-205-Error-in-REST-request" class="headerlink" title="错误：[Err] [REST.cc:205] Error in REST request"></a>错误：[Err] [REST.cc:205] Error in REST request</h2><p><img src="REST.png" class="lazyload placeholder" data-srcset="REST.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
+<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p>1.修改<code>~/.ignition/fuel/config.yaml</code>文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ sudo gedit ~/.ignition/fuel/config.yaml</span><br></pre></td></tr></table></figure>
+<p>2.</p>
+<p>注释 <code>url : https://api.ignitionfuel.org</code><br>添加 <code>url: https://api.ignitionrobotics.org</code></p>
+<p><img src="config_yml.png" class="lazyload placeholder" data-srcset="config_yml.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
+<p>再重新启动Gazebo即可。</p>
+<h2 id="错误：VMware-vmw-ioctl-command-error-无效的参数"><a href="#错误：VMware-vmw-ioctl-command-error-无效的参数" class="headerlink" title="错误：VMware: vmw_ioctl_command error 无效的参数"></a>错误：VMware: vmw_ioctl_command error 无效的参数</h2><p><img src="无效参数.png" class="lazyload placeholder" data-srcset="无效参数.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在终端设置环境变量为0:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ export SVGA_VGPU10=0</span><br></pre></td></tr></table></figure>
+<p>长久方法：</p>
+<p>在~/.bashrc文件写入<code>export SVGA_VGPU10=0</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ echo &quot;export SVGA_VGPU10=0&quot; &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>再重新启动Gazebo即可。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>VMware</tag>
+        <tag>ROS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STM32蓝牙小车三</title>
+    <url>/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%89/</url>
+    <content><![CDATA[<h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（三）"><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（三）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（三）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（三）</h1><span id="more"></span>
+<h3 id="STM32通过串口实现蓝牙通信"><a href="#STM32通过串口实现蓝牙通信" class="headerlink" title="STM32通过串口实现蓝牙通信"></a>STM32通过串口实现蓝牙通信</h3><p>我们这里仅使用蓝牙串口通信实现单字节数据的传输，这些就足以控制小车的运动了。我们这里用Usart1来实现蓝牙通信，然后通过检测蓝牙发送的单字节数来简单控制单片机led灯的亮灭。<br>stm32f103c8t6的led灯的引脚为PC13，所以对PC13进行配置。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;led.h&quot;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line"> GPIO_InitTypeDef  GPIO_InitStructure;</span><br><span class="line"> 	</span><br><span class="line"> RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);	 <span class="comment">//使能GPIOC端口时钟</span></span><br><span class="line">	</span><br><span class="line"> GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;				 <span class="comment">//LED--&gt;PC.5 端口配置</span></span><br><span class="line"> GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 <span class="comment">//推挽输出</span></span><br><span class="line"> GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 <span class="comment">//IO口速度为50MHz</span></span><br><span class="line"> GPIO_Init(GPIOC, &amp;GPIO_InitStructure);					 <span class="comment">//根据设定参数初始化GPIOC.13</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对Usart1进行配置</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Usart1_Init</span><span class="params">(u32 bound)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//GPIO端口设置</span></span><br><span class="line">  	GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">	USART_InitTypeDef USART_InitStructure;</span><br><span class="line">	NVIC_InitTypeDef NVIC_InitStructure;</span><br><span class="line">	 </span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1|RCC_APB2Periph_GPIOA, ENABLE);	<span class="comment">//使能USART1，GPIOA时钟</span></span><br><span class="line">	<span class="comment">//USART1_TX   GPIOA.9</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9; <span class="comment">//PA.9</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	<span class="comment">//复用推挽输出</span></span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStructure);<span class="comment">//初始化GPIOA.9</span></span><br><span class="line">  <span class="comment">//USART1_RX	  GPIOA.10初始化</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;<span class="comment">//PA10</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;<span class="comment">//浮空输入</span></span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStructure);<span class="comment">//初始化GPIOA.10  </span></span><br><span class="line">  <span class="comment">//Usart1 NVIC 配置</span></span><br><span class="line">    NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;</span><br><span class="line">	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority= <span class="number">3</span>;<span class="comment">//抢占优先级3</span></span><br><span class="line">	NVIC_InitStructure.NVIC_IRQChannelSubPriority = <span class="number">3</span>;		<span class="comment">//子优先级3</span></span><br><span class="line">	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			<span class="comment">//IRQ通道使能</span></span><br><span class="line">	NVIC_Init(&amp;NVIC_InitStructure);	<span class="comment">//根据指定的参数初始化VIC寄存器</span></span><br><span class="line">   <span class="comment">//USART 初始化设置</span></span><br><span class="line">	USART_InitStructure.USART_BaudRate = bound;<span class="comment">//串口波特率</span></span><br><span class="line">	USART_InitStructure.USART_WordLength = USART_WordLength_8b;<span class="comment">//字长为8位数据格式</span></span><br><span class="line">	USART_InitStructure.USART_StopBits = USART_StopBits_1;<span class="comment">//一个停止位</span></span><br><span class="line">	USART_InitStructure.USART_Parity = USART_Parity_No;<span class="comment">//无奇偶校验位</span></span><br><span class="line">	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;<span class="comment">//无硬件数据流控制</span></span><br><span class="line">	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;	<span class="comment">//收发模式</span></span><br><span class="line"></span><br><span class="line">    USART_Init(USART1, &amp;USART_InitStructure); <span class="comment">//初始化串口1</span></span><br><span class="line">    USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);<span class="comment">//开启串口接受中断</span></span><br><span class="line">    USART_Cmd(USART1, ENABLE);                    <span class="comment">//使能串口1 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>连接</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">JDY-31</th>
+<th style="text-align:center">stm32f103c8t6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">RX</td>
+<td style="text-align:center">PA9</td>
+</tr>
+<tr>
+<td style="text-align:center">TX</td>
+<td style="text-align:center">PA10</td>
+</tr>
+<tr>
+<td style="text-align:center">VCC</td>
+<td style="text-align:center">VCC</td>
+</tr>
+<tr>
+<td style="text-align:center">GND</td>
+<td style="text-align:center">GND</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>我们这里设置当串口检测到蓝牙发送数字0，LED亮，发送数字1，LED灭。<br>首先对LED进行定义<br><code>#define LED PCout(13)</code><br>再写串口中断服务函数</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART1_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	u8 res;</span><br><span class="line">	<span class="keyword">if</span>(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) <span class="comment">//接收中断</span></span><br><span class="line">	&#123;</span><br><span class="line">	res = USART_ReceiveData(USART1);</span><br><span class="line">	<span class="keyword">if</span>(res == <span class="number">0</span>)</span><br><span class="line">		LED = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(res == <span class="number">1</span>)</span><br><span class="line">		LED = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="蓝牙APP制作"><a href="#蓝牙APP制作" class="headerlink" title="蓝牙APP制作"></a>蓝牙APP制作</h3><p>下面我们来用蓝牙app发送信号给串口，蓝牙APP制作网站：<a href="http://app.gzjkw.net/login/">http://app.gzjkw.net/login/</a><br>登录后进入界面，先点击左上角的项目，然后新建项目，注意项目名称要以字母开头并且仅支持字母、数字及下划线。<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E8%93%9D%E7%89%99APP.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E8%93%9D%E7%89%99APP.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="蓝牙app制作"></p>
+<p>各个组件的属性可根据自己的爱好配置。<br>组件设计完后，下面进入到蓝牙APP的逻辑设计，在网页右上角点击进入逻辑设计。<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="逻辑设计"></p>
+<p>点击相应的组件，可出现对应的逻辑板块，在进行选择与配置。<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E9%80%BB%E8%BE%91%E6%9D%BF%E5%9D%97.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E9%80%BB%E8%BE%91%E6%9D%BF%E5%9D%97.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="逻辑板块" style="zoom: 50%;" /></p>
+<p>最后在菜单栏里找到打包apk选项，点击打包apk并显示二维码，手机扫描二维码下载，然后在手机设置中，找到蓝牙模块的广播名，输入PIN连接，打开app，点击蓝牙选择，找到蓝牙模块，连接即可。<br>这时你会看到，点击开灯按钮，LED亮；关灯按钮，LED灭。</p>
+]]></content>
+      <categories>
+        <category>单片机</category>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>STM32蓝牙小车二</title>
     <url>/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%BA%8C/</url>
     <content><![CDATA[<h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（二）"><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（二）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（二）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（二）</h1><span id="more"></span>
@@ -808,86 +861,6 @@
       </tags>
   </entry>
   <entry>
-    <title>STM32蓝牙小车三</title>
-    <url>/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%89/</url>
-    <content><![CDATA[<h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（三）"><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（三）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（三）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（三）</h1><span id="more"></span>
-<h3 id="STM32通过串口实现蓝牙通信"><a href="#STM32通过串口实现蓝牙通信" class="headerlink" title="STM32通过串口实现蓝牙通信"></a>STM32通过串口实现蓝牙通信</h3><p>我们这里仅使用蓝牙串口通信实现单字节数据的传输，这些就足以控制小车的运动了。我们这里用Usart1来实现蓝牙通信，然后通过检测蓝牙发送的单字节数来简单控制单片机led灯的亮灭。<br>stm32f103c8t6的led灯的引脚为PC13，所以对PC13进行配置。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;led.h&quot;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line"> GPIO_InitTypeDef  GPIO_InitStructure;</span><br><span class="line"> 	</span><br><span class="line"> RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);	 <span class="comment">//使能GPIOC端口时钟</span></span><br><span class="line">	</span><br><span class="line"> GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;				 <span class="comment">//LED--&gt;PC.5 端口配置</span></span><br><span class="line"> GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 <span class="comment">//推挽输出</span></span><br><span class="line"> GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 <span class="comment">//IO口速度为50MHz</span></span><br><span class="line"> GPIO_Init(GPIOC, &amp;GPIO_InitStructure);					 <span class="comment">//根据设定参数初始化GPIOC.13</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对Usart1进行配置</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Usart1_Init</span><span class="params">(u32 bound)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//GPIO端口设置</span></span><br><span class="line">  	GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">	USART_InitTypeDef USART_InitStructure;</span><br><span class="line">	NVIC_InitTypeDef NVIC_InitStructure;</span><br><span class="line">	 </span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1|RCC_APB2Periph_GPIOA, ENABLE);	<span class="comment">//使能USART1，GPIOA时钟</span></span><br><span class="line">	<span class="comment">//USART1_TX   GPIOA.9</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9; <span class="comment">//PA.9</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	<span class="comment">//复用推挽输出</span></span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStructure);<span class="comment">//初始化GPIOA.9</span></span><br><span class="line">  <span class="comment">//USART1_RX	  GPIOA.10初始化</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;<span class="comment">//PA10</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;<span class="comment">//浮空输入</span></span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStructure);<span class="comment">//初始化GPIOA.10  </span></span><br><span class="line">  <span class="comment">//Usart1 NVIC 配置</span></span><br><span class="line">    NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;</span><br><span class="line">	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority= <span class="number">3</span>;<span class="comment">//抢占优先级3</span></span><br><span class="line">	NVIC_InitStructure.NVIC_IRQChannelSubPriority = <span class="number">3</span>;		<span class="comment">//子优先级3</span></span><br><span class="line">	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			<span class="comment">//IRQ通道使能</span></span><br><span class="line">	NVIC_Init(&amp;NVIC_InitStructure);	<span class="comment">//根据指定的参数初始化VIC寄存器</span></span><br><span class="line">   <span class="comment">//USART 初始化设置</span></span><br><span class="line">	USART_InitStructure.USART_BaudRate = bound;<span class="comment">//串口波特率</span></span><br><span class="line">	USART_InitStructure.USART_WordLength = USART_WordLength_8b;<span class="comment">//字长为8位数据格式</span></span><br><span class="line">	USART_InitStructure.USART_StopBits = USART_StopBits_1;<span class="comment">//一个停止位</span></span><br><span class="line">	USART_InitStructure.USART_Parity = USART_Parity_No;<span class="comment">//无奇偶校验位</span></span><br><span class="line">	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;<span class="comment">//无硬件数据流控制</span></span><br><span class="line">	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;	<span class="comment">//收发模式</span></span><br><span class="line"></span><br><span class="line">    USART_Init(USART1, &amp;USART_InitStructure); <span class="comment">//初始化串口1</span></span><br><span class="line">    USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);<span class="comment">//开启串口接受中断</span></span><br><span class="line">    USART_Cmd(USART1, ENABLE);                    <span class="comment">//使能串口1 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>连接</strong></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">JDY-31</th>
-<th style="text-align:center">stm32f103c8t6</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">RX</td>
-<td style="text-align:center">PA9</td>
-</tr>
-<tr>
-<td style="text-align:center">TX</td>
-<td style="text-align:center">PA10</td>
-</tr>
-<tr>
-<td style="text-align:center">VCC</td>
-<td style="text-align:center">VCC</td>
-</tr>
-<tr>
-<td style="text-align:center">GND</td>
-<td style="text-align:center">GND</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>我们这里设置当串口检测到蓝牙发送数字0，LED亮，发送数字1，LED灭。<br>首先对LED进行定义<br><code>#define LED PCout(13)</code><br>再写串口中断服务函数</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART1_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	u8 res;</span><br><span class="line">	<span class="keyword">if</span>(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET) <span class="comment">//接收中断</span></span><br><span class="line">	&#123;</span><br><span class="line">	res = USART_ReceiveData(USART1);</span><br><span class="line">	<span class="keyword">if</span>(res == <span class="number">0</span>)</span><br><span class="line">		LED = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(res == <span class="number">1</span>)</span><br><span class="line">		LED = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="蓝牙APP制作"><a href="#蓝牙APP制作" class="headerlink" title="蓝牙APP制作"></a>蓝牙APP制作</h3><p>下面我们来用蓝牙app发送信号给串口，蓝牙APP制作网站：<a href="http://app.gzjkw.net/login/">http://app.gzjkw.net/login/</a><br>登录后进入界面，先点击左上角的项目，然后新建项目，注意项目名称要以字母开头并且仅支持字母、数字及下划线。<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E8%93%9D%E7%89%99APP.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E8%93%9D%E7%89%99APP.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="蓝牙app制作"></p>
-<p>各个组件的属性可根据自己的爱好配置。<br>组件设计完后，下面进入到蓝牙APP的逻辑设计，在网页右上角点击进入逻辑设计。<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="逻辑设计"></p>
-<p>点击相应的组件，可出现对应的逻辑板块，在进行选择与配置。<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E9%80%BB%E8%BE%91%E6%9D%BF%E5%9D%97.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/%E9%80%BB%E8%BE%91%E6%9D%BF%E5%9D%97.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="逻辑板块" style="zoom: 50%;" /></p>
-<p>最后在菜单栏里找到打包apk选项，点击打包apk并显示二维码，手机扫描二维码下载，然后在手机设置中，找到蓝牙模块的广播名，输入PIN连接，打开app，点击蓝牙选择，找到蓝牙模块，连接即可。<br>这时你会看到，点击开灯按钮，LED亮；关灯按钮，LED灭。</p>
-]]></content>
-      <categories>
-        <category>单片机</category>
-        <category>STM32</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu18.04遇到的问题</title>
-    <url>/2021/11/17/Ubuntu18-04%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题"><a href="#Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题" class="headerlink" title="Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题"></a>Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题</h2><span id="more"></span>
-<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu_sougou.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu_sougou.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Sougou输入法乱码"></p>
-<p><strong>解决方法</strong></p>
-<p>1.在Ubuntu中打开 系统设置—&gt;区域和语言—&gt;管理已安装语言，将键盘输入法系统设置为fcitx.</p>
-<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="setting" style="zoom: 80%;" /></p>
-<p>2.打开终端，输入fcitx-configtool</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fcitx-configtool</span><br></pre></td></tr></table></figure>
-<p>3.不要把搜狗拼音放在第一位，如果放在第一位就会出现选词板乱码现象；通过上下箭头把Sogou Pinyin放在第二位，乱码现象自然消失，问题解决。（如果没有搜狗拼音，通过“+” 添加搜狗拼音）<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/configtool.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/configtool.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
-<h2 id="Ubuntu18-04-鼠标箭头频闪问题"><a href="#Ubuntu18-04-鼠标箭头频闪问题" class="headerlink" title="Ubuntu18.04 鼠标箭头频闪问题"></a>Ubuntu18.04 鼠标箭头频闪问题</h2><p><img src="mouse_shake.gif" class="lazyload placeholder" data-srcset="mouse_shake.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="mouse_shake"></p>
-<p><strong>解决方法</strong></p>
-<p>在windows界面打开设置—&gt;设备—&gt;鼠标—&gt;其他鼠标选项—&gt;指针选项</p>
-<p>打勾显示指针轨迹，并改为短<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/mouse.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/mouse.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" style="zoom:80%;" /></p>
-<p>问题解决</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
-        <tag>VMware</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Ubuntu18.04连接摄像头蓝屏</title>
     <url>/2021/11/28/Ubuntu18-04%E8%BF%9E%E6%8E%A5%E6%91%84%E5%83%8F%E5%A4%B4%E8%93%9D%E5%B1%8F/</url>
     <content><![CDATA[<h4 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h4><p>最近在使用Ubuntu18.04时，尝试用<code>cheese</code>命令打开摄像头,一开始发现虚拟机设置选项中没有USB控制器，于是手动添加了USB控制器，当开启虚拟机后，连接摄像头时电脑出现蓝屏重启问题。</p>
@@ -926,6 +899,85 @@
         <tag>Linux</tag>
         <tag>Ubuntu</tag>
         <tag>VSCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu18.04遇到的问题</title>
+    <url>/2021/11/17/Ubuntu18-04%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题"><a href="#Ubuntu18-04-Sogou搜狗输入法选词面板在终端乱码问题" class="headerlink" title="Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题"></a>Ubuntu18.04 Sogou搜狗输入法选词面板在终端乱码问题</h2><span id="more"></span>
+<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu_sougou.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu_sougou.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="Sougou输入法乱码"></p>
+<p><strong>解决方法</strong></p>
+<p>1.在Ubuntu中打开 系统设置—&gt;区域和语言—&gt;管理已安装语言，将键盘输入法系统设置为fcitx.</p>
+<p><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/ubuntu.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="setting" style="zoom: 80%;" /></p>
+<p>2.打开终端，输入fcitx-configtool</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fcitx-configtool</span><br></pre></td></tr></table></figure>
+<p>3.不要把搜狗拼音放在第一位，如果放在第一位就会出现选词板乱码现象；通过上下箭头把Sogou Pinyin放在第二位，乱码现象自然消失，问题解决。（如果没有搜狗拼音，通过“+” 添加搜狗拼音）<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/configtool.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/configtool.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
+<h2 id="Ubuntu18-04-鼠标箭头频闪问题"><a href="#Ubuntu18-04-鼠标箭头频闪问题" class="headerlink" title="Ubuntu18.04 鼠标箭头频闪问题"></a>Ubuntu18.04 鼠标箭头频闪问题</h2><p><img src="mouse_shake.gif" class="lazyload placeholder" data-srcset="mouse_shake.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="mouse_shake"></p>
+<p><strong>解决方法</strong></p>
+<p>在windows界面打开设置—&gt;设备—&gt;鼠标—&gt;其他鼠标选项—&gt;指针选项</p>
+<p>打勾显示指针轨迹，并改为短<br><img src="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/mouse.png" class="lazyload placeholder" data-srcset="https://gitee.com/GHigher1026/ghigher/raw/master/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/STM32%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9F%BA%E4%BA%8Estm32f1%E7%9A%84%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6/mouse.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" style="zoom:80%;" /></p>
+<p>问题解决</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>VMware</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客添加gif动图</title>
+    <url>/2021/11/24/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0gif%E5%8A%A8%E5%9B%BE/</url>
+    <content><![CDATA[<h2 id="坑——写在前面"><a href="#坑——写在前面" class="headerlink" title="坑——写在前面"></a>坑——写在前面</h2><p>在网上搜过很多添加gif动图的方法，但都不尽人意，其问题都出在<code>hexo s</code>后可以正常显示，但<code>hexo d</code>上传后就无法查看。</p>
+<span id="more"></span>
+<p>eg:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">height</span>=<span class="string">100</span> <span class="attr">width</span>=<span class="string">100</span> <span class="attr">src</span>=<span class="string">&quot;gif 图片地址&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这是html直接插入gif图片地址，在上传之后gif无法显示。</p>
+<p>下面直入正题：</p>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><h3 id="1-gif录取软件"><a href="#1-gif录取软件" class="headerlink" title="1.gif录取软件"></a>1.gif录取软件</h3><p>GifCam 是用于创建动画图像或 GIF 的免费软件。Windows工具的工作原理类似于相机或屏幕录像机，可为所需区域拍摄一系列照片。它稍后将它们保存为易于共享和播放的<strong>动画图像</strong>或<strong>AVI 文件</strong>。虽然该工具具有<strong>多种用途</strong>且易于操作，但它仅适用于 Windows。<br><a href="http://blog.bahraniapps.com/gifcam/#download">官网下载地址 </a>或者 百度网盘下载链接：<a href="https://pan.baidu.com/s/1W_wNTVyw8UJWO2Ahgi4Q8g">下载地址</a>  提取码：19c3</p>
+<h3 id="2-更改配置"><a href="#2-更改配置" class="headerlink" title="2.更改配置"></a>2.更改配置</h3><p>打开hexo博客根目录下的<code>_config.yml</code>文件，更改以下配置</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>将<code>_config.yml</code>文件中的配置项<code>post_asset_folder</code>设为true后，执行命令<code>$ hexo new post_name</code>，在<code>source/_posts</code>中会生成文章<code>post_name.md</code>和同名文件夹<code>post_name</code>。将图片资源放在<code>post_name</code>中，文章就可以使用相对路径引用图片及gif资源了。</p>
+<h3 id="3-设置路径并引用"><a href="#3-设置路径并引用" class="headerlink" title="3.设置路径并引用"></a>3.设置路径并引用</h3><p>用Typora软件设置好图像根目录为自己的同名文件夹，格式–&gt;图像–&gt;设置图片根目录</p>
+<p>写文章是直接引用就可以了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![](image.jpg)</span><br></pre></td></tr></table></figure>
+<p><img src="gif.png" class="lazyload placeholder" data-srcset="gif.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="使用方法"></p>
+<p>这样上传之后gif图片就可以正常显示了。。。</p>
+]]></content>
+      <categories>
+        <category>HEXO</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客绑定域名的问题</title>
+    <url>/2021/11/25/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>绑定域名，参照学长的文章<a href="http://zhangguixin.top/2021/11/06/hexo/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">【地址】</a></p>
+<h2 id="1-ipv6解析地址"><a href="#1-ipv6解析地址" class="headerlink" title="1.ipv6解析地址"></a>1.ipv6解析地址</h2><p>我的博客地址并非ipv4地址，而是ipv6地址</p>
+<p><img src="ipv6.png" class="lazyload placeholder" data-srcset="ipv6.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
+<p>阿里云解析地址的新手引导只针对为ipv4地址，因此ipv6地址需要自己手动添加。</p>
+<p><img src="ipv4.png" class="lazyload placeholder" data-srcset="ipv4.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
+<p>手动添加配置如下：</p>
+<p><img src="ipv6手动添加.png" class="lazyload placeholder" data-srcset="ipv6手动添加.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
+<h2 id="2-加速方法"><a href="#2-加速方法" class="headerlink" title="2.加速方法"></a>2.加速方法</h2><p><a href="https://blog.csdn.net/i_do_not_know_you/article/details/105594269">参考文章</a></p>
+<p>但说实话我感觉不到什么区别，借鉴以下还是不错的</p>
+<h2 id="3-解决上传后需重新绑定域名的问题"><a href="#3-解决上传后需重新绑定域名的问题" class="headerlink" title="3.解决上传后需重新绑定域名的问题"></a>3.解决上传后需重新绑定域名的问题</h2><p>绑定域名后，每次<code>hexo d</code>，网页就会出现404，然后再需要重新再绑定域名，非常麻烦</p>
+<p>解决方法：</p>
+<p>在hexo博客目录下<code>source</code>创建一个<code>CNAME</code>文件，在里面添加上你的新域名，例如我的就是: <code>yuchanghui.top</code></p>
+<p>⚠：注意没有后缀！！！</p>
+<p>然后<code>hexo g</code>重新生成</p>
+<p><code>hexo d</code>重新上传就好了。。。</p>
+]]></content>
+      <categories>
+        <category>HEXO</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -981,6 +1033,51 @@
       <tags>
         <tag>python</tag>
         <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>windows下安装WSL2</title>
+    <url>/2022/04/14/windows%E4%B8%8B%E5%AE%89%E8%A3%85WSL2/</url>
+    <content><![CDATA[<h1 id="windows下安装WSL2"><a href="#windows下安装WSL2" class="headerlink" title="windows下安装WSL2"></a>windows下安装WSL2</h1><h2 id="为Linux启用Windows子系统"><a href="#为Linux启用Windows子系统" class="headerlink" title="为Linux启用Windows子系统"></a>为Linux启用Windows子系统</h2><p>以管理员身份打开powershell</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows</span><span class="literal">-Subsystem</span><span class="literal">-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure>
+<h2 id="运行WSL2要求"><a href="#运行WSL2要求" class="headerlink" title="运行WSL2要求"></a>运行WSL2要求</h2><p>要更新到 WSL 2，您必须运行 Windows 10。</p>
+<ul>
+<li>对于 x64 系统：<strong>版本 1903</strong>或更高版本，带有<strong>Build 18362</strong>或更高版本。</li>
+<li>对于 ARM64 系统：<strong>版本 2004</strong>或更高版本，带有<strong>Build 19041</strong>或更高版本。</li>
+<li>低于 18362 的内部版本不支持 WSL 2。使用<a href="https://www.microsoft.com/software-download/windows10">Windows 更新助手</a>更新您的 Windows 版本。</li>
+</ul>
+<h2 id="启用虚拟机功能"><a href="#启用虚拟机功能" class="headerlink" title="启用虚拟机功能"></a>启用虚拟机功能</h2><p>在安装 WSL 2 之前，您必须启用<strong>虚拟机平台</strong>可选功能。您的机器将需要<a href="https://docs.microsoft.com/en-us/windows/wsl/troubleshooting#error-0x80370102-the-virtual-machine-could-not-be-started-because-a-required-feature-is-not-installed">虚拟化功能</a>才能使用此功能。</p>
+<p>管理员身份打开powershell</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
+<h2 id="下载Linux内核更新"><a href="#下载Linux内核更新" class="headerlink" title="下载Linux内核更新"></a>下载Linux内核更新</h2><ul>
+<li><a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">适用于 x64 机器的 WSL2 Linux 内核更新包</a></li>
+</ul>
+<h2 id="设置WSL2为默认版本"><a href="#设置WSL2为默认版本" class="headerlink" title="设置WSL2为默认版本"></a>设置WSL2为默认版本</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-set</span><span class="literal">-default</span><span class="literal">-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>请启用虚拟机平台 Windows 功能并确保在 BIOS 中启用虚拟化。<br>有关信息，请访问 <a href="https://aka.ms/wsl2-install">https://aka.ms/wsl2-install</a></p>
+<p><strong><em>出现Error：</em></strong></p>
+<p>回溯开启VMware兼容步骤，解决问题：</p>
+<p>开启vmware需要关闭hyper-v<br>所以我们如果重新开启wsl2时要：</p>
+<p>在windows功能中重新勾选hyper-v</p>
+<p><a href="https://blog.csdn.net/zerostruggle/article/details/117608185">https://blog.csdn.net/zerostruggle/article/details/117608185</a></p>
+<p>又发现win10没有Hyper-V功能</p>
+<p><a href="https://blog.csdn.net/qq_39496303/article/details/109378350">https://blog.csdn.net/qq_39496303/article/details/109378350</a></p>
+<p><img src="01.png" class="lazyload placeholder" data-srcset="01.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220414210957957"></p>
+<p>okk</p>
+<h2 id="下载Ubuntu"><a href="#下载Ubuntu" class="headerlink" title="下载Ubuntu"></a>下载Ubuntu</h2><p>在Microsoft Store搜索WSL，找到并下载Ubuntu</p>
+<p><img src="02.png" class="lazyload placeholder" data-srcset="02.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220414213024040"></p>
+<p>打开ubuntu输入用户名时，显示参考的对象不支持尝试的操作</p>
+<p><a href="https://blog.csdn.net/weixin_43347283/article/details/107006275">https://blog.csdn.net/weixin_43347283/article/details/107006275</a></p>
+<p><img src="03.png" class="lazyload placeholder" data-srcset="03.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220414212620280"></p>
+<p>Sucesss！！！</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>WSL</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>WSL</tag>
       </tags>
   </entry>
   <entry>
@@ -1051,103 +1148,6 @@
       <tags>
         <tag>Matlab</tag>
         <tag>Soildworks</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>windows下安装WSL2</title>
-    <url>/2022/04/14/windows%E4%B8%8B%E5%AE%89%E8%A3%85WSL2/</url>
-    <content><![CDATA[<h1 id="windows下安装WSL2"><a href="#windows下安装WSL2" class="headerlink" title="windows下安装WSL2"></a>windows下安装WSL2</h1><h2 id="为Linux启用Windows子系统"><a href="#为Linux启用Windows子系统" class="headerlink" title="为Linux启用Windows子系统"></a>为Linux启用Windows子系统</h2><p>以管理员身份打开powershell</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows</span><span class="literal">-Subsystem</span><span class="literal">-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure>
-<h2 id="运行WSL2要求"><a href="#运行WSL2要求" class="headerlink" title="运行WSL2要求"></a>运行WSL2要求</h2><p>要更新到 WSL 2，您必须运行 Windows 10。</p>
-<ul>
-<li>对于 x64 系统：<strong>版本 1903</strong>或更高版本，带有<strong>Build 18362</strong>或更高版本。</li>
-<li>对于 ARM64 系统：<strong>版本 2004</strong>或更高版本，带有<strong>Build 19041</strong>或更高版本。</li>
-<li>低于 18362 的内部版本不支持 WSL 2。使用<a href="https://www.microsoft.com/software-download/windows10">Windows 更新助手</a>更新您的 Windows 版本。</li>
-</ul>
-<h2 id="启用虚拟机功能"><a href="#启用虚拟机功能" class="headerlink" title="启用虚拟机功能"></a>启用虚拟机功能</h2><p>在安装 WSL 2 之前，您必须启用<strong>虚拟机平台</strong>可选功能。您的机器将需要<a href="https://docs.microsoft.com/en-us/windows/wsl/troubleshooting#error-0x80370102-the-virtual-machine-could-not-be-started-because-a-required-feature-is-not-installed">虚拟化功能</a>才能使用此功能。</p>
-<p>管理员身份打开powershell</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
-<h2 id="下载Linux内核更新"><a href="#下载Linux内核更新" class="headerlink" title="下载Linux内核更新"></a>下载Linux内核更新</h2><ul>
-<li><a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">适用于 x64 机器的 WSL2 Linux 内核更新包</a></li>
-</ul>
-<h2 id="设置WSL2为默认版本"><a href="#设置WSL2为默认版本" class="headerlink" title="设置WSL2为默认版本"></a>设置WSL2为默认版本</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-set</span><span class="literal">-default</span><span class="literal">-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>请启用虚拟机平台 Windows 功能并确保在 BIOS 中启用虚拟化。<br>有关信息，请访问 <a href="https://aka.ms/wsl2-install">https://aka.ms/wsl2-install</a></p>
-<p><strong><em>出现Error：</em></strong></p>
-<p>回溯开启VMware兼容步骤，解决问题：</p>
-<p>开启vmware需要关闭hyper-v<br>所以我们如果重新开启wsl2时要：</p>
-<p>在windows功能中重新勾选hyper-v</p>
-<p><a href="https://blog.csdn.net/zerostruggle/article/details/117608185">https://blog.csdn.net/zerostruggle/article/details/117608185</a></p>
-<p>又发现win10没有Hyper-V功能</p>
-<p><a href="https://blog.csdn.net/qq_39496303/article/details/109378350">https://blog.csdn.net/qq_39496303/article/details/109378350</a></p>
-<p><img src="01.png" class="lazyload placeholder" data-srcset="01.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220414210957957"></p>
-<p>okk</p>
-<h2 id="下载Ubuntu"><a href="#下载Ubuntu" class="headerlink" title="下载Ubuntu"></a>下载Ubuntu</h2><p>在Microsoft Store搜索WSL，找到并下载Ubuntu</p>
-<p><img src="02.png" class="lazyload placeholder" data-srcset="02.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220414213024040"></p>
-<p>打开ubuntu输入用户名时，显示参考的对象不支持尝试的操作</p>
-<p><a href="https://blog.csdn.net/weixin_43347283/article/details/107006275">https://blog.csdn.net/weixin_43347283/article/details/107006275</a></p>
-<p><img src="03.png" class="lazyload placeholder" data-srcset="03.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220414212620280"></p>
-<p>Sucesss！！！</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>WSL</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
-        <tag>WSL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客添加gif动图</title>
-    <url>/2021/11/24/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0gif%E5%8A%A8%E5%9B%BE/</url>
-    <content><![CDATA[<h2 id="坑——写在前面"><a href="#坑——写在前面" class="headerlink" title="坑——写在前面"></a>坑——写在前面</h2><p>在网上搜过很多添加gif动图的方法，但都不尽人意，其问题都出在<code>hexo s</code>后可以正常显示，但<code>hexo d</code>上传后就无法查看。</p>
-<span id="more"></span>
-<p>eg:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">height</span>=<span class="string">100</span> <span class="attr">width</span>=<span class="string">100</span> <span class="attr">src</span>=<span class="string">&quot;gif 图片地址&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这是html直接插入gif图片地址，在上传之后gif无法显示。</p>
-<p>下面直入正题：</p>
-<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><h3 id="1-gif录取软件"><a href="#1-gif录取软件" class="headerlink" title="1.gif录取软件"></a>1.gif录取软件</h3><p>GifCam 是用于创建动画图像或 GIF 的免费软件。Windows工具的工作原理类似于相机或屏幕录像机，可为所需区域拍摄一系列照片。它稍后将它们保存为易于共享和播放的<strong>动画图像</strong>或<strong>AVI 文件</strong>。虽然该工具具有<strong>多种用途</strong>且易于操作，但它仅适用于 Windows。<br><a href="http://blog.bahraniapps.com/gifcam/#download">官网下载地址 </a>或者 百度网盘下载链接：<a href="https://pan.baidu.com/s/1W_wNTVyw8UJWO2Ahgi4Q8g">下载地址</a>  提取码：19c3</p>
-<h3 id="2-更改配置"><a href="#2-更改配置" class="headerlink" title="2.更改配置"></a>2.更改配置</h3><p>打开hexo博客根目录下的<code>_config.yml</code>文件，更改以下配置</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>将<code>_config.yml</code>文件中的配置项<code>post_asset_folder</code>设为true后，执行命令<code>$ hexo new post_name</code>，在<code>source/_posts</code>中会生成文章<code>post_name.md</code>和同名文件夹<code>post_name</code>。将图片资源放在<code>post_name</code>中，文章就可以使用相对路径引用图片及gif资源了。</p>
-<h3 id="3-设置路径并引用"><a href="#3-设置路径并引用" class="headerlink" title="3.设置路径并引用"></a>3.设置路径并引用</h3><p>用Typora软件设置好图像根目录为自己的同名文件夹，格式–&gt;图像–&gt;设置图片根目录</p>
-<p>写文章是直接引用就可以了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![](image.jpg)</span><br></pre></td></tr></table></figure>
-<p><img src="gif.png" class="lazyload placeholder" data-srcset="gif.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="使用方法"></p>
-<p>这样上传之后gif图片就可以正常显示了。。。</p>
-]]></content>
-      <categories>
-        <category>HEXO</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客绑定域名的问题</title>
-    <url>/2021/11/25/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>绑定域名，参照学长的文章<a href="http://zhangguixin.top/2021/11/06/hexo/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">【地址】</a></p>
-<h2 id="1-ipv6解析地址"><a href="#1-ipv6解析地址" class="headerlink" title="1.ipv6解析地址"></a>1.ipv6解析地址</h2><p>我的博客地址并非ipv4地址，而是ipv6地址</p>
-<p><img src="ipv6.png" class="lazyload placeholder" data-srcset="ipv6.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
-<p>阿里云解析地址的新手引导只针对为ipv4地址，因此ipv6地址需要自己手动添加。</p>
-<p><img src="ipv4.png" class="lazyload placeholder" data-srcset="ipv4.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
-<p>手动添加配置如下：</p>
-<p><img src="ipv6手动添加.png" class="lazyload placeholder" data-srcset="ipv6手动添加.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
-<h2 id="2-加速方法"><a href="#2-加速方法" class="headerlink" title="2.加速方法"></a>2.加速方法</h2><p><a href="https://blog.csdn.net/i_do_not_know_you/article/details/105594269">参考文章</a></p>
-<p>但说实话我感觉不到什么区别，借鉴以下还是不错的</p>
-<h2 id="3-解决上传后需重新绑定域名的问题"><a href="#3-解决上传后需重新绑定域名的问题" class="headerlink" title="3.解决上传后需重新绑定域名的问题"></a>3.解决上传后需重新绑定域名的问题</h2><p>绑定域名后，每次<code>hexo d</code>，网页就会出现404，然后再需要重新再绑定域名，非常麻烦</p>
-<p>解决方法：</p>
-<p>在hexo博客目录下<code>source</code>创建一个<code>CNAME</code>文件，在里面添加上你的新域名，例如我的就是: <code>yuchanghui.top</code></p>
-<p>⚠：注意没有后缀！！！</p>
-<p>然后<code>hexo g</code>重新生成</p>
-<p><code>hexo d</code>重新上传就好了。。。</p>
-]]></content>
-      <categories>
-        <category>HEXO</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
