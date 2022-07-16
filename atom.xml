@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2022-06-05T14:03:04.490Z</updated>
+  <updated>2022-07-16T15:51:17.302Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,92 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>STM32CubeMx配置HAL库流水灯</title>
+    <link href="https://yuchanghui.top/2022/07/16/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%B5%81%E6%B0%B4%E7%81%AF/"/>
+    <id>https://yuchanghui.top/2022/07/16/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%B5%81%E6%B0%B4%E7%81%AF/</id>
+    <published>2022-07-16T15:50:43.000Z</published>
+    <updated>2022-07-16T15:51:17.302Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;STM32CubeMx配置HAL库流水灯&quot;&gt;&lt;a href=&quot;#STM32CubeMx配置HAL库流水灯&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
+    
+    <category term="C语言" scheme="https://yuchanghui.top/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CLion开发STM32</title>
+    <link href="https://yuchanghui.top/2022/07/16/CLion%E5%BC%80%E5%8F%91STM32/"/>
+    <id>https://yuchanghui.top/2022/07/16/CLion%E5%BC%80%E5%8F%91STM32/</id>
+    <published>2022-07-16T15:47:44.000Z</published>
+    <updated>2022-07-16T15:48:38.331Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;CLion开发STM32&quot;&gt;&lt;a href=&quot;#CLion开发STM32&quot; class=&quot;headerlink&quot; title=&quot;CLion开发STM32&quot;&gt;&lt;/a&gt;CLion开发STM32&lt;/h1&gt;&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;环境准备&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
+    
+    <category term="CLion" scheme="https://yuchanghui.top/tags/CLion/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Typora+PicGo+阿里云OSS服务配置图床</title>
+    <link href="https://yuchanghui.top/2022/07/16/Typora-PicGo-%E9%98%BF%E9%87%8C%E4%BA%91OSS%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/"/>
+    <id>https://yuchanghui.top/2022/07/16/Typora-PicGo-%E9%98%BF%E9%87%8C%E4%BA%91OSS%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/</id>
+    <published>2022-07-16T14:09:42.000Z</published>
+    <updated>2022-07-16T15:46:30.404Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Typora下载&quot;&gt;&lt;a href=&quot;#Typora下载&quot; class=&quot;headerlink&quot; title=&quot;Typora下载&quot;&gt;&lt;/a&gt;Typora下载&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://typoraio.cn/&quot;&gt;Typora</summary>
+        
+      
+    
+    
+    
+    <category term="HEXO" scheme="https://yuchanghui.top/categories/HEXO/"/>
+    
+    
+    <category term="hexo" scheme="https://yuchanghui.top/tags/hexo/"/>
+    
+    <category term="PicGo" scheme="https://yuchanghui.top/tags/PicGo/"/>
+    
+  </entry>
   
   <entry>
     <title>Matlab学习——曲柄滑块的运动仿真</title>
@@ -267,9 +353,9 @@
     <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
-    
     <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
+    
+    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
     
   </entry>
   
@@ -278,7 +364,7 @@
     <link href="https://yuchanghui.top/2022/01/16/Opencv%E5%AD%A6%E4%B9%A003/"/>
     <id>https://yuchanghui.top/2022/01/16/Opencv%E5%AD%A6%E4%B9%A003/</id>
     <published>2022-01-16T08:45:31.000Z</published>
-    <updated>2022-01-16T08:49:37.068Z</updated>
+    <updated>2022-07-16T14:12:21.754Z</updated>
     
     
       
@@ -295,6 +381,10 @@
     
     <category term="Opencv" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/"/>
     
+    
+    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
+    
+    <category term="Opencv" scheme="https://yuchanghui.top/tags/Opencv/"/>
     
   </entry>
   
@@ -504,81 +594,6 @@
     <category term="VMware" scheme="https://yuchanghui.top/tags/VMware/"/>
     
     <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu18.04连接摄像头蓝屏</title>
-    <link href="https://yuchanghui.top/2021/11/28/Ubuntu18-04%E8%BF%9E%E6%8E%A5%E6%91%84%E5%83%8F%E5%A4%B4%E8%93%9D%E5%B1%8F/"/>
-    <id>https://yuchanghui.top/2021/11/28/Ubuntu18-04%E8%BF%9E%E6%8E%A5%E6%91%84%E5%83%8F%E5%A4%B4%E8%93%9D%E5%B1%8F/</id>
-    <published>2021-11-28T12:01:43.000Z</published>
-    <updated>2021-11-29T16:21:54.733Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;问题：&quot;&gt;&lt;a href=&quot;#问题：&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/categories/Linux/Ubuntu/"/>
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
-    
-    <category term="VMware" scheme="https://yuchanghui.top/tags/VMware/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo博客绑定域名的问题</title>
-    <link href="https://yuchanghui.top/2021/11/25/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>https://yuchanghui.top/2021/11/25/hexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E7%9A%84%E9%97%AE%E9%A2%98/</id>
-    <published>2021-11-25T15:18:46.000Z</published>
-    <updated>2021-11-25T16:10:31.764Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;绑定域名，参照学长的文章&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="HEXO" scheme="https://yuchanghui.top/categories/HEXO/"/>
-    
-    
-    <category term="hexo" scheme="https://yuchanghui.top/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo博客添加gif动图</title>
-    <link href="https://yuchanghui.top/2021/11/24/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0gif%E5%8A%A8%E5%9B%BE/"/>
-    <id>https://yuchanghui.top/2021/11/24/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0gif%E5%8A%A8%E5%9B%BE/</id>
-    <published>2021-11-24T15:30:39.000Z</published>
-    <updated>2021-11-25T16:07:38.887Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;坑——写在前面&quot;&gt;&lt;a href=&quot;#坑——写在前面&quot; class=&quot;headerlink&quot; title=&quot;坑——写在前面&quot;&gt;&lt;/a&gt;坑——写在前面&lt;/h2&gt;&lt;p&gt;在网上搜过很多添加gif动图的方法，但都不尽人意，其问题都出在&lt;code&gt;hexo s&lt;/code&gt;后可以正常显示，但&lt;code&gt;hexo d&lt;/code&gt;上传后就无法查看。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="HEXO" scheme="https://yuchanghui.top/categories/HEXO/"/>
-    
-    
-    <category term="hexo" scheme="https://yuchanghui.top/tags/hexo/"/>
     
   </entry>
   
