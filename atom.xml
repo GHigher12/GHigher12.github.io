@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2022-07-16T15:51:17.302Z</updated>
+  <updated>2022-07-17T15:08:50.475Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>STM32CubeMx配置HAL库按键</title>
+    <link href="https://yuchanghui.top/2022/07/17/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%8C%89%E9%94%AE/"/>
+    <id>https://yuchanghui.top/2022/07/17/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%8C%89%E9%94%AE/</id>
+    <published>2022-07-17T14:36:24.000Z</published>
+    <updated>2022-07-17T15:08:50.475Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;STM32CubeMx配置HAL库按键&quot;&gt;&lt;a href=&quot;#STM32CubeMx配置HAL库按键&quot; class=&quot;headerlink&quot; title=&quot;STM32CubeMx配置HAL库按键&quot;&gt;&lt;/a&gt;STM32CubeMx配置HAL库按键&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
+    
+    <category term="C语言" scheme="https://yuchanghui.top/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
   
   <entry>
     <title>STM32CubeMx配置HAL库流水灯</title>
@@ -543,40 +572,6 @@
         
     <summary type="html">&lt;p&gt;运行&lt;/p&gt;
 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
-    
-    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
-    
-    <category term="VMware" scheme="https://yuchanghui.top/tags/VMware/"/>
-    
-    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ROS安装:rosdep初始化失败</title>
-    <link href="https://yuchanghui.top/2021/12/04/ROS%E5%AE%89%E8%A3%85-rosdep%E5%88%9D%E5%A7%8B%E5%8C%96%E5%A4%B1%E8%B4%A5/"/>
-    <id>https://yuchanghui.top/2021/12/04/ROS%E5%AE%89%E8%A3%85-rosdep%E5%88%9D%E5%A7%8B%E5%8C%96%E5%A4%B1%E8%B4%A5/</id>
-    <published>2021-12-04T09:53:10.000Z</published>
-    <updated>2021-12-04T09:55:01.630Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;ROS版本: Melodic&lt;/p&gt;
-&lt;p&gt;&lt;a</summary>
         
       
     
