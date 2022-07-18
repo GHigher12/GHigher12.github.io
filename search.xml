@@ -724,7 +724,7 @@
 </tbody>
 </table>
 </div>
-<p>根据stm32f103c8t6的原理图</p>
+<p>根据stm32f103rct6的原理图</p>
 <p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207172258824.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207172258824.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220717225538637"></p>
 <p>按以下表格设置</p>
 <div class="table-container">
@@ -1072,6 +1072,12 @@
 <li>Keep User Code when re-generating<br>重新生成时保留用户代码</li>
 <li>Delete previously generated files when not re-generated<br>当未重新生成时删除以前生成的文件。</li>
 </ul>
+<h2 id="GENERATE-CODE"><a href="#GENERATE-CODE" class="headerlink" title="GENERATE CODE"></a>GENERATE CODE</h2><p>宏定义文件在<code>main.h</code>中</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LED_Pin_Pin GPIO_PIN_13</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LED_Pin_GPIO_Port GPIOC</span></span><br></pre></td></tr></table></figure>
+<p><code>gpio.c</code>文件为生成的IO配置</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MX_GPIO_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">  GPIO_InitTypeDef GPIO_InitStruct = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* GPIO Ports Clock Enable */</span></span><br><span class="line">  __HAL_RCC_GPIOC_CLK_ENABLE();</span><br><span class="line">  __HAL_RCC_GPIOD_CLK_ENABLE();</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin Output Level */</span></span><br><span class="line">  HAL_GPIO_WritePin(LED_Pin_GPIO_Port, LED_Pin_Pin, GPIO_PIN_RESET);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin : PtPin */</span></span><br><span class="line">  GPIO_InitStruct.Pin = LED_Pin_Pin;</span><br><span class="line">  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;</span><br><span class="line">  GPIO_InitStruct.Pull = GPIO_NOPULL;</span><br><span class="line">  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;</span><br><span class="line">  HAL_GPIO_Init(LED_Pin_GPIO_Port, &amp;GPIO_InitStruct);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h2><p><code>main.c</code>中<code>while</code>循环</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line"></span><br><span class="line">    HAL_GPIO_WritePin(LED_Pin_GPIO_Port,LED_Pin_Pin, GPIO_PIN_RESET);</span><br><span class="line">    HAL_Delay(<span class="number">300</span>);</span><br><span class="line">    HAL_GPIO_WritePin(LED_Pin_GPIO_Port,LED_Pin_Pin, GPIO_PIN_SET);</span><br><span class="line">    HAL_Delay(<span class="number">300</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>在已经勾选Keep User Code when re-generating时，生成的代码添加内容需填写在</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* USER CODE BEGIN */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* USER CODE END*/</span></span><br></pre></td></tr></table></figure>
 <p>否则在重新生成后，所编写的代码会删除</p>
@@ -1421,6 +1427,28 @@
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>typora中PicGo-Core插件的使用</title>
+    <url>/2022/07/18/typora%E4%B8%ADPicGo-Core%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>在使用PicGo(APP)时第一天还可以好好的上传成功，但是第二天就出现了问题：</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718102426012.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718102426012.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220718102426012"></p>
+<p>可以上传成功，但是在typora里会一直Uploading，所以会一直上传。</p>
+<p>于是改用PicGo-Core (command line)插件，效果挺好。</p>
+<p>打开<strong>typora文件-&gt;偏好设置-&gt;图像</strong></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718102702539.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718102702539.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220718102702539"></p>
+<p>将上传服务选用PicGo-Core (command line)，然后点击<strong>下载或更新</strong></p>
+<p>下载完成后，<strong>打开配置文件</strong></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;picBed&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;uploader&quot;</span>: <span class="string">&quot;aliyun&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;aliyun&quot;</span>: &#123;</span><br><span class="line">            <span class="attr">&quot;accessKeyId&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;accessKeySecret&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;bucket&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;area&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;path&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;customUrl&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;options&quot;</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;picgoPlugins&quot;</span>: &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>只需修改这几项即可<code>accessKeyId</code>、<code>accessKeySecre</code>、<code>bucket</code>、 <code>area</code>、<code>path</code>，配置参考上篇文章<a href="https://blog.csdn.net/weixin_51002159/article/details/125828097?spm=1001.2014.3001.5501">Typora-PicGo-阿里云OSS服务配置图床</a>。</p>
+]]></content>
+      <categories>
+        <category>HEXO</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>PicGo</tag>
       </tags>
   </entry>
 </search>
