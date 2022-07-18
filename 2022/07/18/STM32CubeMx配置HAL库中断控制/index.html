@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>CLion开发STM32 | GHigher&#39;s Blog</title>
+  <title>STM32CubeMx配置HAL库中断控制 | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -558,21 +558,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/5.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/7.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        CLion开发STM32
+        STM32CubeMx配置HAL库中断控制
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2022-07-16 |
+          <i class="fas fa-calendar"></i> 发表于：2022-07-18 |
         </span>
       
 
@@ -609,103 +609,54 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="CLion开发STM32"><a href="#CLion开发STM32" class="headerlink" title="CLion开发STM32"></a>CLion开发STM32</h1><p>[TOC]</p>
-<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="软件准备"><a href="#软件准备" class="headerlink" title="软件准备"></a>软件准备</h3><ul>
-<li>Windows10</li>
-<li><a target="_blank" rel="noopener" href="https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-configurators-and-code-generators/stm32cubemx.html">STM32CubeMx</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jetbrains.com/clion/">CLion</a></li>
-<li><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/sjlj/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0.7z/download?use_mirror=udomain">MinGW</a></li>
-<li><a target="_blank" rel="noopener" href="https://gnutoolchains.com/arm-eabi/openocd/">OpenOCD</a></li>
-<li><a target="_blank" rel="noopener" href="https://developer.arm.com/downloads/-/gnu-rm">arm-none-eabi-gcc</a></li>
-</ul>
-<h3 id="硬件准备"><a href="#硬件准备" class="headerlink" title="硬件准备"></a>硬件准备</h3><ul>
-<li>STM32F103RCT6</li>
-<li>ST-LINK V2</li>
-</ul>
-<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><p><strong><em>注意安装路径尽量不要出现中文！！！</em></strong></p>
-<h3 id="MIninGW"><a href="#MIninGW" class="headerlink" title="MIninGW"></a>MIninGW</h3><p>mingw，是Minimalist GNU on Windows 的缩写。它实际上是将经典的开源 C语言 编译器 GCC 移植到了 Windows 下，并且包含了 Win32API ，因此可以将源代码编译生成 Windows 下的可执行程序。</p>
-<p>下载完成之后找到<code>bin</code>目录，添加到系统环境变量Path中</p>
-<p><code>系统属性-&gt;高级-&gt;环境变量</code><br><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348835.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348835.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716153406866"></p>
-<p><code>系统变量-&gt;Path-&gt;新建</code></p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348839.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348839.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716153648820"></p>
-<h3 id="OpenOCD"><a href="#OpenOCD" class="headerlink" title="OpenOCD"></a>OpenOCD</h3><p>OpenOCD（Open On-Chip Debugger）是一个开源的片上调试器，旨在提供针对嵌入式设备的调试、系统编程和边界扫描功能。OpenOCD的功能需要调试仿真器来辅助完成，调试仿真器是一个提供调试目标电信号的小型硬件单元。常用的有JLink、STLink等，一些开发板直接集成了调试仿真器。</p>
-<p>下载完之后将<code>bin</code>或<code>bin-x64</code>目录（两者都可）加到环境变量中去，方法同上。</p>
-<h3 id="arm-none-eabi-gcc"><a href="#arm-none-eabi-gcc" class="headerlink" title="arm-none-eabi-gcc"></a>arm-none-eabi-gcc</h3><p>编译软件，或是准确点叫⼯具链。ARM框架、无供应商、无系统、嵌入式二进制接口，一般适合ARM7、Cortex-M、Cortex-R内核的芯片使用，所以不支持跟操作系统密切相关的函数。</p>
-<p>同理将安装目录下的<code>bin</code>目录添加到系统环境变量中去。</p>
-<h2 id="STM32CubeMx新建工程及配置"><a href="#STM32CubeMx新建工程及配置" class="headerlink" title="STM32CubeMx新建工程及配置"></a>STM32CubeMx新建工程及配置</h2><p><code>File-&gt;New Project-&gt;Part Number</code></p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348842.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348842.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716090923564"></p>
-<p>System Core-&gt;SYS-&gt;Debug设置调试器类型</p>
-<div class="table-container">
+        <h1 id="STM32CubeMx配置HAL库EXTI"><a href="#STM32CubeMx配置HAL库EXTI" class="headerlink" title="STM32CubeMx配置HAL库EXTI"></a>STM32CubeMx配置HAL库EXTI</h1><p><strong>本节以按键外部中断为例</strong></p>
+<h2 id="GPIO配置"><a href="#GPIO配置" class="headerlink" title="GPIO配置"></a>GPIO配置</h2><div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center">Debug</th>
-<th style="text-align:center">调试器类型</th>
+<th style="text-align:center">Pin</th>
+<th style="text-align:center">State</th>
+<th style="text-align:center">Mode</th>
+<th style="text-align:center">GPIO Pull-up/Pull-down</th>
+<th style="text-align:center">User Label</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">No Debug</td>
-<td style="text-align:center">无调试器</td>
+<td style="text-align:center">PA0</td>
+<td style="text-align:center">GPIO_EXTI0</td>
+<td style="text-align:center">上升沿触发</td>
+<td style="text-align:center">Pull-down</td>
+<td style="text-align:center">WK_UP_EXTI</td>
 </tr>
 <tr>
-<td style="text-align:center">Serial Wrie</td>
-<td style="text-align:center">SWD调试器</td>
-</tr>
-<tr>
-<td style="text-align:center">JTAG（4pins）</td>
-<td style="text-align:center">4线JTAG调试器</td>
-</tr>
-<tr>
-<td style="text-align:center">JTAG（5pins）</td>
-<td style="text-align:center">5线JTAG调试器</td>
-</tr>
-<tr>
-<td style="text-align:center">Trace Asynchroous Sw</td>
-<td style="text-align:center">带异步Trace的调试器</td>
+<td style="text-align:center">PC5</td>
+<td style="text-align:center">GPIO_EXTI5</td>
+<td style="text-align:center">下降沿触发</td>
+<td style="text-align:center">Pull-up</td>
+<td style="text-align:center">KEY0_EXTI</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>本次硬件使用的是SWD调试器，所以Debug为<code>Serial Wrie</code></p>
-<p>设置时钟RCC-&gt;High Speed Clock(HSE)-&gt; Crystal/Ceramic Resonator</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348866.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348866.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716161025499"></p>
-<p>设置PD2为GPIO_Output</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348871.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348871.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716150433102"></p>
-<p>更改Clock Configuration，HCLK设置为72MHz</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348881.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348881.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716161111038"></p>
-<p>Project Manager-&gt;Project-&gt;Toolchain/IDE-&gt;SW4STM32</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348445.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348445.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716151548301"></p>
-<p>Code Generator配置<img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348449.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348449.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716154840694"></p>
-<p>最后GENERATE CODE生成代码</p>
-<h2 id="CLion配置"><a href="#CLion配置" class="headerlink" title="CLion配置"></a>CLion配置</h2><h3 id="工具链"><a href="#工具链" class="headerlink" title="工具链"></a>工具链</h3><p><code>设置-&gt;构件、执行、部署-&gt;工具链</code></p>
-<p>配置如下</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348490.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348490.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716155402481"></p>
-<h3 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h3><p>配置如下</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348516.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348516.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716155605976"></p>
-<p>可勾选<code>在编辑CMakeLists.txt或其他 CMake配置文件时重新加载 CMake项目</code>自动重装置CMakeLists.txt</p>
-<h3 id="嵌入式开发"><a href="#嵌入式开发" class="headerlink" title="嵌入式开发"></a>嵌入式开发</h3><p>配置如下</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348510.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348510.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716155917803"></p>
-<p>点击一旁的<code>Test</code>按键，确认一下路径是否正确。<br>如果出现绿色的提示框，则说明路径正确。</p>
-<h2 id="程序编写及烧录"><a href="#程序编写及烧录" class="headerlink" title="程序编写及烧录"></a>程序编写及烧录</h2><p>在STM32CubeMx生成的文件目录，右击在CLion中打开。</p>
-<p>在工程主目录下建立新文件夹config，在config中新建<code>stlink.cfg</code></p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348513.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348513.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716160348617"></p>
-<p>stlink.cfg文件内容为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">source [find interface/stlink-v2.cfg]</span><br><span class="line"></span><br><span class="line">transport select hla_swd</span><br><span class="line"></span><br><span class="line">source [find target/stm32f1x.cfg]</span><br><span class="line"></span><br><span class="line">reset_config none</span><br></pre></td></tr></table></figure>
-<p>其他的芯片或者下载器的配置，可以参考<code>OpenOCD</code>自带的一系列配置文件，路径在<code>OpenOCD</code>安装目录的<code>share\openocd\scripts</code>下。</p>
-<p>在小锤子旁边下拉，点击编辑配置</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348113.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348113.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716151441227"></p>
-<p>将刚才创建的<code>stlink.cfg</code>文件添加到<code>面板配置文件</code></p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348117.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348117.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716160739274"></p>
-<p>在<code>main.c</code>中编写流水灯程序测试</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line">    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_RESET);</span><br><span class="line">    HAL_Delay(<span class="number">500</span>);</span><br><span class="line">    HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);</span><br><span class="line">    HAL_Delay(<span class="number">500</span>);</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348140.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348140.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716161303580"></p>
-<p>三个符号分别表示编译、烧录和调试。</p>
-<p>编译文件生成相应的<code>hex</code>和<code>bin</code>文件，则表示编译成功</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348154.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348154.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716161448534"></p>
-<p>烧录程序，连接好下载器，点击运行按钮</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348171.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/202207162348171.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220716161623984"></p>
-<p>如图提示已下载固件，则表示烧录成功。</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718180730151.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718180730151.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220718180730151"></p>
+<h2 id="NVIC配置"><a href="#NVIC配置" class="headerlink" title="NVIC配置"></a>NVIC配置</h2><p>设置优先级组<code>NVIC_PRIORITYGROUP_2</code></p>
+<p>设置中断<code>EXTI line0 interrupt</code>和<code>EXTI line[9:5] interrupt</code></p>
+<p>启动中断<code>Enabel</code></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718165640952.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718165640952.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220718165640952"></p>
+<h2 id="GENERATE-CODE"><a href="#GENERATE-CODE" class="headerlink" title="GENERATE CODE"></a>GENERATE CODE</h2><p><code>gpio.c</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MX_GPIO_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">  GPIO_InitTypeDef GPIO_InitStruct = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* GPIO Ports Clock Enable */</span></span><br><span class="line">  __HAL_RCC_GPIOD_CLK_ENABLE();</span><br><span class="line">  __HAL_RCC_GPIOA_CLK_ENABLE();</span><br><span class="line">  __HAL_RCC_GPIOC_CLK_ENABLE();</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin Output Level */</span></span><br><span class="line">  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin Output Level */</span></span><br><span class="line">  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin : PtPin */</span></span><br><span class="line">  GPIO_InitStruct.Pin = WK_UP_EXTI_Pin;</span><br><span class="line">  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;</span><br><span class="line">  GPIO_InitStruct.Pull = GPIO_PULLDOWN;</span><br><span class="line">  HAL_GPIO_Init(WK_UP_EXTI_GPIO_Port, &amp;GPIO_InitStruct);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin : PtPin */</span></span><br><span class="line">  GPIO_InitStruct.Pin = KEY0_EXTI_Pin;</span><br><span class="line">  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;</span><br><span class="line">  GPIO_InitStruct.Pull = GPIO_NOPULL;</span><br><span class="line">  HAL_GPIO_Init(KEY0_EXTI_GPIO_Port, &amp;GPIO_InitStruct);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin : PtPin */</span></span><br><span class="line">  GPIO_InitStruct.Pin = LED0_Pin;</span><br><span class="line">  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;</span><br><span class="line">  GPIO_InitStruct.Pull = GPIO_NOPULL;</span><br><span class="line">  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;</span><br><span class="line">  HAL_GPIO_Init(LED0_GPIO_Port, &amp;GPIO_InitStruct);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin : PtPin */</span></span><br><span class="line">  GPIO_InitStruct.Pin = KEY1_Pin;</span><br><span class="line">  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;</span><br><span class="line">  GPIO_InitStruct.Pull = GPIO_NOPULL;</span><br><span class="line">  HAL_GPIO_Init(KEY1_GPIO_Port, &amp;GPIO_InitStruct);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin : PtPin */</span></span><br><span class="line">  GPIO_InitStruct.Pin = LED1_Pin;</span><br><span class="line">  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;</span><br><span class="line">  GPIO_InitStruct.Pull = GPIO_NOPULL;</span><br><span class="line">  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;</span><br><span class="line">  HAL_GPIO_Init(LED1_GPIO_Port, &amp;GPIO_InitStruct);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* EXTI interrupt init*/</span></span><br><span class="line">  HAL_NVIC_SetPriority(EXTI0_IRQn, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  HAL_NVIC_EnableIRQ(EXTI0_IRQn);</span><br><span class="line"></span><br><span class="line">  HAL_NVIC_SetPriority(EXTI9_5_IRQn, <span class="number">2</span>, <span class="number">2</span>);</span><br><span class="line">  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>stm32f1xx_hal_msp.c</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HAL_MspInit</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN MspInit 0 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END MspInit 0 */</span></span><br><span class="line"></span><br><span class="line">  __HAL_RCC_AFIO_CLK_ENABLE();</span><br><span class="line">  __HAL_RCC_PWR_CLK_ENABLE();</span><br><span class="line"></span><br><span class="line">  HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_2);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* System interrupt init*/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/** NOJTAG: JTAG-DP Disabled and SW-DP Enabled</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  __HAL_AFIO_REMAP_SWJ_NOJTAG();</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN MspInit 1 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END MspInit 1 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>stm32f1xx_it.c</code>文件中，有两个中断服务函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI0_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN EXTI0_IRQn 0 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END EXTI0_IRQn 0 */</span></span><br><span class="line">  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN EXTI0_IRQn 1 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END EXTI0_IRQn 1 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * @brief This function handles EXTI line[9:5] interrupts.</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI9_5_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN EXTI9_5_IRQn 0 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END EXTI9_5_IRQn 0 */</span></span><br><span class="line">  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_5);</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN EXTI9_5_IRQn 1 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END EXTI9_5_IRQn 1 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="编写中断回调函数"><a href="#编写中断回调函数" class="headerlink" title="编写中断回调函数"></a>编写中断回调函数</h2><p>找到中断服务函数，按住<code>ctrl+鼠标左键</code>点击<code>HAL_GPIO_EXTI_IRQHandler</code>,找到函数定义</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718181838325.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718181838325.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220718181838325"></p>
+<p><code>HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)</code>即为中断回调函数</p>
+<p>在<code>stm32f1xx_it.c</code>文件中编写</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HAL_GPIO_EXTI_Callback</span><span class="params">(<span class="keyword">uint16_t</span> GPIO_Pin)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    HAL_Delay(<span class="number">10</span>);</span><br><span class="line">    <span class="keyword">switch</span>(GPIO_Pin)&#123;</span><br><span class="line">        <span class="keyword">case</span> GPIO_PIN_0:</span><br><span class="line">            HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> KEY0_EXTI_Pin:</span><br><span class="line">            HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HAL_GPIO_EXTI_Callback</span><span class="params">(<span class="keyword">uint16_t</span> GPIO_Pin)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(GPIO_Pin==WK_UP_EXTI_Pin)</span><br><span class="line">    &#123;</span><br><span class="line">        HAL_Delay(<span class="number">10</span>);</span><br><span class="line">        <span class="keyword">if</span>(HAL_GPIO_ReadPin(WK_UP_EXTI_GPIO_Port, WK_UP_EXTI_Pin) == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);</span><br><span class="line">        &#125;</span><br><span class="line">        __HAL_GPIO_EXTI_CLEAR_IT(WK_UP_EXTI_Pin);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(GPIO_Pin==KEY0_EXTI_Pin)</span><br><span class="line">    &#123;</span><br><span class="line">        HAL_Delay(<span class="number">10</span>);</span><br><span class="line">        <span class="keyword">if</span>(HAL_GPIO_ReadPin(KEY0_EXTI_GPIO_Port, KEY0_EXTI_Pin) == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);</span><br><span class="line">        &#125;</span><br><span class="line">        __HAL_GPIO_EXTI_CLEAR_IT(KEY0_EXTI_Pin);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       </div>
       <div class="post-tags-categories">
@@ -716,8 +667,8 @@
               STM32
             </a>
           
-            <a href="/tags/CLion/" class="">
-              CLion
+            <a href="/tags/C%E8%AF%AD%E8%A8%80/" class="">
+              C语言
             </a>
           
         </div>
@@ -731,7 +682,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2022/07/16/CLion开发STM32/" target="_blank" title="CLion开发STM32">https://yuchanghui.top/2022/07/16/CLion开发STM32/</a>
+    <a href="/2022/07/18/STM32CubeMx配置HAL库中断控制/" target="_blank" title="STM32CubeMx配置HAL库中断控制">https://yuchanghui.top/2022/07/18/STM32CubeMx配置HAL库中断控制/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -749,39 +700,23 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/2022/07/16/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%B5%81%E6%B0%B4%E7%81%AF/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">STM32CubeMx配置HAL库流水灯</div>
-      </div>
-      
-      <!-- <div class="content">
-        STM32CubeMx配置HAL库流水灯RCCRCC-&gt;High Speed Clock (HSE)-&gt; C
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/2022/07/16/Typora-PicGo-%E9%98%BF%E9%87%8C%E4%BA%91OSS%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/" class="post-nav-link">
+    <a href="/2022/07/18/typora%E4%B8%ADPicGo-Core%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Typora+PicGo+阿里云OSS服务配置图床</div>
+        <div class="title-text">typora中PicGo-Core插件的使用</div>
       </div>
       <!-- <div class="content">
-        Typora下载Typora 是一款非常受欢迎且功能强大的Markdown编辑器，具有功能之强大、设计之冷静、体验之美妙
+        在使用PicGo(APP)时第一天还可以好好的上传成功，但是第二天就出现了问题：
+
+可以上传成功，但是在typora里会
       </div> -->
     </a>
   </div>
