@@ -1664,4 +1664,28 @@
         <tag>Soildworks</tag>
       </tags>
   </entry>
+  <entry>
+    <title>STM32串口通信DMA方式</title>
+    <url>/2022/07/19/STM32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1DMA%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="DMA概述"><a href="#DMA概述" class="headerlink" title="DMA概述"></a>DMA概述</h2><p>CPU将需要发送的数据从内存中取出写入串口的发送寄存器，串口再将自己寄存器里的数据发送出去，数据的传输工作有CPU完成，串口的接收过程也类似，全程需要CPU搬运数据，如果传输的数据过大，势必会影响CPU的工作效率。</p>
+<p>而DMA的任务就是减轻CPU的负担，承担原本由CPU完成的数据搬运工作。DMA的工作过程，一般是CPU开启DMA传输，DMA按配置好的方式开始传输数据并计数，达到设置的数量DMA产生中断通知CPU传输完成，开启DMA传输后，由DMA将内存中的数据传输至串口寄存器，或者将串口寄存器数据写入内存，CPU只需要控制传输的开始和处理传输结束后的事情。DMA的传输路径除了内存到外设和外设到内存，还有内存到内存， 这在处理图像显示的时候尤其有用,使用DMA搬移图像的大量数据可以大大减轻CPU压力。</p>
+<p>定时器，包括串口在内的各种连接功能的外设，ADC和DAC等都可以使用DMA，与DMA配合实现很多适用功能。</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220719224659377.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220719224659377.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220719224659377"></p>
+<h2 id="配置DMA"><a href="#配置DMA" class="headerlink" title="配置DMA"></a>配置DMA</h2><p>在配置DMA时，我们会接触到通道这个概念，通道其实就是对DMA内部资源的分组，使DMA可以同时完成多项传输任务，通道的分配用STM32CubeMx即可。</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220719225432009.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220719225432009.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220719225432009"></p>
+<h2 id="程序修改"><a href="#程序修改" class="headerlink" title="程序修改"></a>程序修改</h2><p>将串口中断函数后缀修改为DMA的方式通信</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* USER CODE BEGIN 2 */</span></span><br><span class="line">  HAL_UART_Receive_DMA(&amp;huart1, RxBuff,<span class="number">1</span>);</span><br><span class="line"><span class="comment">/* USER CODE END 2 */</span></span><br></pre></td></tr></table></figure>
+<p>回调函数</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HAL_UART_RxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(huart-&gt;Instance==USART1)</span><br><span class="line">    &#123;</span><br><span class="line">        HAL_UART_Transmit_DMA(&amp;huart1,RxBuff,<span class="number">5</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HAL_UART_TxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(huart-&gt;Instance==USART1)</span><br><span class="line">    &#123;</span><br><span class="line">        HAL_UART_Receive_DMA(&amp;huart1,RxBuff,<span class="number">5</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220719230030652.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220719230030652.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220719230030652"></p>
+]]></content>
+      <categories>
+        <category>单片机</category>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
 </search>

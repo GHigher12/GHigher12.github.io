@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2022-07-19T12:27:38.618Z</updated>
+  <updated>2022-07-19T15:36:34.828Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>STM32串口通信DMA方式</title>
+    <link href="https://yuchanghui.top/2022/07/19/STM32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1DMA%E6%96%B9%E5%BC%8F/"/>
+    <id>https://yuchanghui.top/2022/07/19/STM32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1DMA%E6%96%B9%E5%BC%8F/</id>
+    <published>2022-07-19T15:35:21.000Z</published>
+    <updated>2022-07-19T15:36:34.828Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;DMA概述&quot;&gt;&lt;a href=&quot;#DMA概述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
+    
+    <category term="C语言" scheme="https://yuchanghui.top/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
   
   <entry>
     <title>STM32Cubemx配置虚拟串口</title>
@@ -558,33 +587,6 @@
     <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
     
     <category term="Opencv" scheme="https://yuchanghui.top/tags/Opencv/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python题目练习02</title>
-    <link href="https://yuchanghui.top/2021/12/22/Python%E9%A2%98%E7%9B%AE%E7%BB%83%E4%B9%A002/"/>
-    <id>https://yuchanghui.top/2021/12/22/Python%E9%A2%98%E7%9B%AE%E7%BB%83%E4%B9%A002/</id>
-    <published>2021-12-22T15:21:08.000Z</published>
-    <updated>2022-01-15T14:45:57.601Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;递归求斐波那契数列&quot;&gt;&lt;a href=&quot;#递归求斐波那契数列&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="程序设计" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
-    
-    <category term="Python" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Python/"/>
-    
-    
-    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
     
   </entry>
   
