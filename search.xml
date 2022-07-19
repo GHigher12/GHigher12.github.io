@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Markdown中添加数学公式</title>
-    <url>/2022/05/24/Markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
-    <content><![CDATA[<p>超链接：</p>
-<p><a href="https://blog.csdn.net/weixin_51002159/article/details/124783998"> Markdown中添加数学公式</a></p>
-]]></content>
-      <categories>
-        <category>HEXO</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CLion开发STM32</title>
     <url>/2022/07/16/CLion%E5%BC%80%E5%8F%91STM32/</url>
     <content><![CDATA[<h1 id="CLion开发STM32"><a href="#CLion开发STM32" class="headerlink" title="CLion开发STM32"></a>CLion开发STM32</h1><p>[TOC]</p>
@@ -121,6 +108,19 @@
       <tags>
         <tag>STM32</tag>
         <tag>CLion</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown中添加数学公式</title>
+    <url>/2022/05/24/Markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
+    <content><![CDATA[<p>超链接：</p>
+<p><a href="https://blog.csdn.net/weixin_51002159/article/details/124783998"> Markdown中添加数学公式</a></p>
+]]></content>
+      <categories>
+        <category>HEXO</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -1550,6 +1550,51 @@
       </tags>
   </entry>
   <entry>
+    <title>windows下安装WSL2</title>
+    <url>/2022/04/14/windows%E4%B8%8B%E5%AE%89%E8%A3%85WSL2/</url>
+    <content><![CDATA[<h1 id="windows下安装WSL2"><a href="#windows下安装WSL2" class="headerlink" title="windows下安装WSL2"></a>windows下安装WSL2</h1><h2 id="为Linux启用Windows子系统"><a href="#为Linux启用Windows子系统" class="headerlink" title="为Linux启用Windows子系统"></a>为Linux启用Windows子系统</h2><p>以管理员身份打开powershell</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows</span><span class="literal">-Subsystem</span><span class="literal">-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure>
+<h2 id="运行WSL2要求"><a href="#运行WSL2要求" class="headerlink" title="运行WSL2要求"></a>运行WSL2要求</h2><p>要更新到 WSL 2，您必须运行 Windows 10。</p>
+<ul>
+<li>对于 x64 系统：<strong>版本 1903</strong>或更高版本，带有<strong>Build 18362</strong>或更高版本。</li>
+<li>对于 ARM64 系统：<strong>版本 2004</strong>或更高版本，带有<strong>Build 19041</strong>或更高版本。</li>
+<li>低于 18362 的内部版本不支持 WSL 2。使用<a href="https://www.microsoft.com/software-download/windows10">Windows 更新助手</a>更新您的 Windows 版本。</li>
+</ul>
+<h2 id="启用虚拟机功能"><a href="#启用虚拟机功能" class="headerlink" title="启用虚拟机功能"></a>启用虚拟机功能</h2><p>在安装 WSL 2 之前，您必须启用<strong>虚拟机平台</strong>可选功能。您的机器将需要<a href="https://docs.microsoft.com/en-us/windows/wsl/troubleshooting#error-0x80370102-the-virtual-machine-could-not-be-started-because-a-required-feature-is-not-installed">虚拟化功能</a>才能使用此功能。</p>
+<p>管理员身份打开powershell</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
+<h2 id="下载Linux内核更新"><a href="#下载Linux内核更新" class="headerlink" title="下载Linux内核更新"></a>下载Linux内核更新</h2><ul>
+<li><a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">适用于 x64 机器的 WSL2 Linux 内核更新包</a></li>
+</ul>
+<h2 id="设置WSL2为默认版本"><a href="#设置WSL2为默认版本" class="headerlink" title="设置WSL2为默认版本"></a>设置WSL2为默认版本</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-set</span><span class="literal">-default</span><span class="literal">-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>请启用虚拟机平台 Windows 功能并确保在 BIOS 中启用虚拟化。<br>有关信息，请访问 <a href="https://aka.ms/wsl2-install">https://aka.ms/wsl2-install</a></p>
+<p><strong><em>出现Error：</em></strong></p>
+<p>回溯开启VMware兼容步骤，解决问题：</p>
+<p>开启vmware需要关闭hyper-v<br>所以我们如果重新开启wsl2时要：</p>
+<p>在windows功能中重新勾选hyper-v</p>
+<p><a href="https://blog.csdn.net/zerostruggle/article/details/117608185">https://blog.csdn.net/zerostruggle/article/details/117608185</a></p>
+<p>又发现win10没有Hyper-V功能</p>
+<p><a href="https://blog.csdn.net/qq_39496303/article/details/109378350">https://blog.csdn.net/qq_39496303/article/details/109378350</a></p>
+<p><img src="01.png" class="lazyload placeholder" data-srcset="01.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220414210957957"></p>
+<p>okk</p>
+<h2 id="下载Ubuntu"><a href="#下载Ubuntu" class="headerlink" title="下载Ubuntu"></a>下载Ubuntu</h2><p>在Microsoft Store搜索WSL，找到并下载Ubuntu</p>
+<p><img src="02.png" class="lazyload placeholder" data-srcset="02.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220414213024040"></p>
+<p>打开ubuntu输入用户名时，显示参考的对象不支持尝试的操作</p>
+<p><a href="https://blog.csdn.net/weixin_43347283/article/details/107006275">https://blog.csdn.net/weixin_43347283/article/details/107006275</a></p>
+<p><img src="03.png" class="lazyload placeholder" data-srcset="03.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220414212620280"></p>
+<p>Sucesss！！！</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>WSL</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>WSL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机械设计——曲柄滑块</title>
     <url>/2022/04/10/%E6%9C%BA%E6%A2%B0%E8%AE%BE%E8%AE%A1%E2%80%94%E2%80%94%E6%9B%B2%E6%9F%84%E6%BB%91%E5%9D%97/</url>
     <content><![CDATA[<h1 id="机械设计——曲柄滑块"><a href="#机械设计——曲柄滑块" class="headerlink" title="机械设计——曲柄滑块"></a>机械设计——曲柄滑块</h1><h2 id="一、零件"><a href="#一、零件" class="headerlink" title="一、零件"></a>一、零件</h2><h3 id="1、主动杆"><a href="#1、主动杆" class="headerlink" title="1、主动杆"></a>1、主动杆</h3><p><img src="主动杆.jpg" class="lazyload placeholder" data-srcset="主动杆.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
@@ -1617,51 +1662,6 @@
       <tags>
         <tag>Matlab</tag>
         <tag>Soildworks</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>windows下安装WSL2</title>
-    <url>/2022/04/14/windows%E4%B8%8B%E5%AE%89%E8%A3%85WSL2/</url>
-    <content><![CDATA[<h1 id="windows下安装WSL2"><a href="#windows下安装WSL2" class="headerlink" title="windows下安装WSL2"></a>windows下安装WSL2</h1><h2 id="为Linux启用Windows子系统"><a href="#为Linux启用Windows子系统" class="headerlink" title="为Linux启用Windows子系统"></a>为Linux启用Windows子系统</h2><p>以管理员身份打开powershell</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:Microsoft<span class="literal">-Windows</span><span class="literal">-Subsystem</span><span class="literal">-Linux</span> /all /norestart</span><br></pre></td></tr></table></figure>
-<h2 id="运行WSL2要求"><a href="#运行WSL2要求" class="headerlink" title="运行WSL2要求"></a>运行WSL2要求</h2><p>要更新到 WSL 2，您必须运行 Windows 10。</p>
-<ul>
-<li>对于 x64 系统：<strong>版本 1903</strong>或更高版本，带有<strong>Build 18362</strong>或更高版本。</li>
-<li>对于 ARM64 系统：<strong>版本 2004</strong>或更高版本，带有<strong>Build 19041</strong>或更高版本。</li>
-<li>低于 18362 的内部版本不支持 WSL 2。使用<a href="https://www.microsoft.com/software-download/windows10">Windows 更新助手</a>更新您的 Windows 版本。</li>
-</ul>
-<h2 id="启用虚拟机功能"><a href="#启用虚拟机功能" class="headerlink" title="启用虚拟机功能"></a>启用虚拟机功能</h2><p>在安装 WSL 2 之前，您必须启用<strong>虚拟机平台</strong>可选功能。您的机器将需要<a href="https://docs.microsoft.com/en-us/windows/wsl/troubleshooting#error-0x80370102-the-virtual-machine-could-not-be-started-because-a-required-feature-is-not-installed">虚拟化功能</a>才能使用此功能。</p>
-<p>管理员身份打开powershell</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">dism.exe /online /<span class="built_in">enable-feature</span> /featurename:VirtualMachinePlatform /all /norestart</span><br></pre></td></tr></table></figure>
-<h2 id="下载Linux内核更新"><a href="#下载Linux内核更新" class="headerlink" title="下载Linux内核更新"></a>下载Linux内核更新</h2><ul>
-<li><a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">适用于 x64 机器的 WSL2 Linux 内核更新包</a></li>
-</ul>
-<h2 id="设置WSL2为默认版本"><a href="#设置WSL2为默认版本" class="headerlink" title="设置WSL2为默认版本"></a>设置WSL2为默认版本</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl -<span class="literal">-set</span><span class="literal">-default</span><span class="literal">-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>请启用虚拟机平台 Windows 功能并确保在 BIOS 中启用虚拟化。<br>有关信息，请访问 <a href="https://aka.ms/wsl2-install">https://aka.ms/wsl2-install</a></p>
-<p><strong><em>出现Error：</em></strong></p>
-<p>回溯开启VMware兼容步骤，解决问题：</p>
-<p>开启vmware需要关闭hyper-v<br>所以我们如果重新开启wsl2时要：</p>
-<p>在windows功能中重新勾选hyper-v</p>
-<p><a href="https://blog.csdn.net/zerostruggle/article/details/117608185">https://blog.csdn.net/zerostruggle/article/details/117608185</a></p>
-<p>又发现win10没有Hyper-V功能</p>
-<p><a href="https://blog.csdn.net/qq_39496303/article/details/109378350">https://blog.csdn.net/qq_39496303/article/details/109378350</a></p>
-<p><img src="01.png" class="lazyload placeholder" data-srcset="01.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220414210957957"></p>
-<p>okk</p>
-<h2 id="下载Ubuntu"><a href="#下载Ubuntu" class="headerlink" title="下载Ubuntu"></a>下载Ubuntu</h2><p>在Microsoft Store搜索WSL，找到并下载Ubuntu</p>
-<p><img src="02.png" class="lazyload placeholder" data-srcset="02.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220414213024040"></p>
-<p>打开ubuntu输入用户名时，显示参考的对象不支持尝试的操作</p>
-<p><a href="https://blog.csdn.net/weixin_43347283/article/details/107006275">https://blog.csdn.net/weixin_43347283/article/details/107006275</a></p>
-<p><img src="03.png" class="lazyload placeholder" data-srcset="03.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220414212620280"></p>
-<p>Sucesss！！！</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>WSL</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>Ubuntu</tag>
-        <tag>WSL</tag>
       </tags>
   </entry>
 </search>
