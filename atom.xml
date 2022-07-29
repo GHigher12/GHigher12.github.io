@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2022-07-26T13:37:21.301Z</updated>
+  <updated>2022-07-29T03:25:42.805Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++基础学习一</title>
+    <link href="https://yuchanghui.top/2022/07/29/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%B8%80/"/>
+    <id>https://yuchanghui.top/2022/07/29/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%B8%80/</id>
+    <published>2022-07-29T03:24:40.000Z</published>
+    <updated>2022-07-29T03:25:42.805Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;C-基础入门&quot;&gt;&lt;a href=&quot;#C-基础入门&quot; class=&quot;headerlink&quot; title=&quot;C++基础入门&quot;&gt;&lt;/a&gt;C++基础入门&lt;/h1&gt;&lt;h2 id=&quot;输出&quot;&gt;&lt;a href=&quot;#输出&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="程序设计" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="C/C++" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/C-C/"/>
+    
+    
+    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ESP32和Micropython点亮LED</title>
+    <link href="https://yuchanghui.top/2022/07/27/ESP32%E5%92%8CMicropython%E7%82%B9%E4%BA%AELED/"/>
+    <id>https://yuchanghui.top/2022/07/27/ESP32%E5%92%8CMicropython%E7%82%B9%E4%BA%AELED/</id>
+    <published>2022-07-27T15:21:49.000Z</published>
+    <updated>2022-07-28T12:54:37.640Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;环境搭建&quot;&gt;&lt;a href=&quot;#环境搭建&quot; class=&quot;headerlink&quot; title=&quot;环境搭建&quot;&gt;&lt;/a&gt;环境搭建&lt;/h2&gt;&lt;p&gt;Thonny下载地址 官网 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="ESP32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/ESP32/"/>
+    
+    
+    <category term="ESP32" scheme="https://yuchanghui.top/tags/ESP32/"/>
+    
+    <category term="Micropython" scheme="https://yuchanghui.top/tags/Micropython/"/>
+    
+  </entry>
   
   <entry>
     <title>STM32+esp8266+MQTT服务器通信</title>
@@ -528,62 +584,6 @@
         
         
     <summary type="html">&lt;p&gt;链接：&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="程序设计" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
-    
-    <category term="Matlab" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Matlab/"/>
-    
-    
-    <category term="Matlab" scheme="https://yuchanghui.top/tags/Matlab/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown中添加数学公式</title>
-    <link href="https://yuchanghui.top/2022/05/24/Markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
-    <id>https://yuchanghui.top/2022/05/24/Markdown%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</id>
-    <published>2022-05-24T11:31:49.000Z</published>
-    <updated>2022-06-05T14:06:50.001Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;超链接：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/weixin_51002159/article/details/124783998&quot;&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="HEXO" scheme="https://yuchanghui.top/categories/HEXO/"/>
-    
-    
-    <category term="Markdown" scheme="https://yuchanghui.top/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Matlab学习——滑块曲线生成APP设计</title>
-    <link href="https://yuchanghui.top/2022/04/16/Matlab%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%BB%91%E5%9D%97%E6%9B%B2%E7%BA%BF%E7%94%9F%E6%88%90APP%E8%AE%BE%E8%AE%A1/"/>
-    <id>https://yuchanghui.top/2022/04/16/Matlab%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E6%BB%91%E5%9D%97%E6%9B%B2%E7%BA%BF%E7%94%9F%E6%88%90APP%E8%AE%BE%E8%AE%A1/</id>
-    <published>2022-04-16T12:51:49.000Z</published>
-    <updated>2022-04-16T13:54:30.779Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;因为在以后的版本中将会删除GUIDE，&lt;br&gt;在删除GUIDE后，App可以继续运行，&lt;br&gt;但不能在GUIDE中对其进行编辑。所&lt;br&gt;以本文使用App设计工具创建新App。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;演示&quot;&gt;&lt;a</summary>
         
       
     
