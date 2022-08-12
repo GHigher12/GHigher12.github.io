@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2022-07-31T15:45:21.714Z</updated>
+  <updated>2022-08-12T05:15:08.282Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,63 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Matlab学习02</title>
+    <link href="https://yuchanghui.top/2022/08/12/Matlab%E5%AD%A6%E4%B9%A002/"/>
+    <id>https://yuchanghui.top/2022/08/12/Matlab%E5%AD%A6%E4%B9%A002/</id>
+    <published>2022-08-12T05:14:16.000Z</published>
+    <updated>2022-08-12T05:15:08.282Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;管理会话的命令&quot;&gt;&lt;a href=&quot;#管理会话的命令&quot; class=&quot;headerlink&quot; title=&quot;管理会话的命令&quot;&gt;&lt;/a&gt;管理会话的命令&lt;/h2&gt;&lt;p&gt;MATLAB提供了各种用于管理会话的命令。下表提供了所有这些命令 -&lt;/p&gt;
+&lt;div</summary>
+        
+      
+    
+    
+    
+    <category term="程序设计" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="Matlab" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Matlab/"/>
+    
+    
+    <category term="Matlab" scheme="https://yuchanghui.top/tags/Matlab/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>神经网络-搭建小实战</title>
+    <link href="https://yuchanghui.top/2022/08/11/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%90%AD%E5%BB%BA%E5%B0%8F%E5%AE%9E%E6%88%98/"/>
+    <id>https://yuchanghui.top/2022/08/11/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%90%AD%E5%BB%BA%E5%B0%8F%E5%AE%9E%E6%88%98/</id>
+    <published>2022-08-11T13:20:02.000Z</published>
+    <updated>2022-08-11T13:21:11.975Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;神经网络搭建CIFAR10&quot;&gt;&lt;a href=&quot;#神经网络搭建CIFAR10&quot; class=&quot;headerlink&quot; title=&quot;神经网络搭建CIFAR10&quot;&gt;&lt;/a&gt;神经网络搭建CIFAR10&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="视觉处理" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/"/>
+    
+    <category term="Pytorch" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Pytorch/"/>
+    
+    
+    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
+    
+    <category term="Pytorch" scheme="https://yuchanghui.top/tags/Pytorch/"/>
+    
+  </entry>
   
   <entry>
     <title>torchvision中的数据集使用</title>
@@ -183,9 +240,9 @@
     <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
     
   </entry>
   
@@ -212,9 +269,9 @@
     <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
     
   </entry>
   
@@ -269,9 +326,9 @@
     <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
     
   </entry>
   
@@ -298,9 +355,9 @@
     <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
     
   </entry>
   
@@ -328,9 +385,9 @@
     <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
     
   </entry>
   
@@ -361,9 +418,9 @@
     <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
     
   </entry>
   
@@ -390,9 +447,9 @@
     <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
     
   </entry>
   
@@ -419,9 +476,9 @@
     <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
     
   </entry>
   
@@ -448,9 +505,9 @@
     <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
     
   </entry>
   
@@ -477,9 +534,9 @@
     <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
     
   </entry>
   
@@ -506,9 +563,9 @@
     <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
     
     
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
     
   </entry>
   
@@ -537,64 +594,6 @@
     <category term="hexo" scheme="https://yuchanghui.top/tags/hexo/"/>
     
     <category term="PicGo" scheme="https://yuchanghui.top/tags/PicGo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32CubeMx配置HAL库按键</title>
-    <link href="https://yuchanghui.top/2022/07/17/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%8C%89%E9%94%AE/"/>
-    <id>https://yuchanghui.top/2022/07/17/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%8C%89%E9%94%AE/</id>
-    <published>2022-07-17T14:36:24.000Z</published>
-    <updated>2022-07-29T06:45:58.123Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;STM32CubeMx配置HAL库按键&quot;&gt;&lt;a href=&quot;#STM32CubeMx配置HAL库按键&quot; class=&quot;headerlink&quot; title=&quot;STM32CubeMx配置HAL库按键&quot;&gt;&lt;/a&gt;STM32CubeMx配置HAL库按键&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
-    
-    
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32CubeMx配置HAL库流水灯</title>
-    <link href="https://yuchanghui.top/2022/07/16/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%B5%81%E6%B0%B4%E7%81%AF/"/>
-    <id>https://yuchanghui.top/2022/07/16/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%B5%81%E6%B0%B4%E7%81%AF/</id>
-    <published>2022-07-16T15:50:43.000Z</published>
-    <updated>2022-07-29T06:46:21.750Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;STM32CubeMx配置HAL库流水灯&quot;&gt;&lt;a href=&quot;#STM32CubeMx配置HAL库流水灯&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
-    
-    
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
     
   </entry>
   
