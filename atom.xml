@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2022-08-12T05:15:08.282Z</updated>
+  <updated>2022-09-01T11:06:17.809Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++项目通讯管理系统</title>
+    <link href="https://yuchanghui.top/2022/08/30/C-%E9%A1%B9%E7%9B%AE%E9%80%9A%E8%AE%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://yuchanghui.top/2022/08/30/C-%E9%A1%B9%E7%9B%AE%E9%80%9A%E8%AE%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</id>
+    <published>2022-08-30T12:51:14.000Z</published>
+    <updated>2022-09-01T11:06:17.809Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;显示菜单&quot;&gt;&lt;a href=&quot;#显示菜单&quot; class=&quot;headerlink&quot; title=&quot;显示菜单&quot;&gt;&lt;/a&gt;显示菜单&lt;/h2&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="程序设计" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="C/C++" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/C-C/"/>
+    
+    
+    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+  </entry>
   
   <entry>
     <title>Matlab学习02</title>
@@ -137,7 +164,7 @@
     <link href="https://yuchanghui.top/2022/07/29/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%BA%8C/"/>
     <id>https://yuchanghui.top/2022/07/29/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%BA%8C/</id>
     <published>2022-07-29T06:43:39.000Z</published>
-    <updated>2022-08-30T08:31:04.272Z</updated>
+    <updated>2022-08-30T12:50:16.906Z</updated>
     
     
       
@@ -566,34 +593,6 @@
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
     
     <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>typora中PicGo-Core插件的使用</title>
-    <link href="https://yuchanghui.top/2022/07/18/typora%E4%B8%ADPicGo-Core%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>https://yuchanghui.top/2022/07/18/typora%E4%B8%ADPicGo-Core%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
-    <published>2022-07-18T10:31:43.000Z</published>
-    <updated>2022-07-18T10:34:22.374Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;在使用PicGo(APP)时第一天还可以好好的上传成功，但是第二天就出现了问题：&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="HEXO" scheme="https://yuchanghui.top/categories/HEXO/"/>
-    
-    
-    <category term="hexo" scheme="https://yuchanghui.top/tags/hexo/"/>
-    
-    <category term="PicGo" scheme="https://yuchanghui.top/tags/PicGo/"/>
     
   </entry>
   
