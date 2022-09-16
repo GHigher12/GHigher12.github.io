@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2022-09-05T14:10:50.171Z</updated>
+  <updated>2022-09-16T10:47:27.482Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Pyqt5+Yolov5+Unet+Centernet</title>
+    <link href="https://yuchanghui.top/2022/09/16/Pyqt5-Yolov5-Unet-centernet/"/>
+    <id>https://yuchanghui.top/2022/09/16/Pyqt5-Yolov5-Unet-centernet/</id>
+    <published>2022-09-16T10:45:05.000Z</published>
+    <updated>2022-09-16T10:47:27.482Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Pyqt5与Unet、yolov5、centernet结合&quot;&gt;&lt;a href=&quot;#Pyqt5与Unet、yolov5、centernet结合&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="视觉处理" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/"/>
+    
+    <category term="Pytorch" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Pytorch/"/>
+    
+    
+    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
+    
+    <category term="Pytorch" scheme="https://yuchanghui.top/tags/Pytorch/"/>
+    
+    <category term="Pyqt5" scheme="https://yuchanghui.top/tags/Pyqt5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C++基础学习三</title>
     <link href="https://yuchanghui.top/2022/09/02/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%B8%89/"/>
     <id>https://yuchanghui.top/2022/09/02/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%B8%89/</id>
     <published>2022-09-02T14:12:34.000Z</published>
-    <updated>2022-09-05T14:10:50.171Z</updated>
+    <updated>2022-09-06T14:18:56.609Z</updated>
     
     
       
@@ -549,35 +580,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;虚拟串口简介&quot;&gt;&lt;a href=&quot;#虚拟串口简介&quot; class=&quot;headerlink&quot; title=&quot;虚拟串口简介&quot;&gt;&lt;/a&gt;虚拟串口简介&lt;/h2&gt;&lt;p&gt;USB 虚拟串口，简称 VCP，是 Virtual COM Port 的简写，它是利用 USB 的 CDC</summary>
-        
-      
-    
-    
-    
-    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
-    
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32CubeMx配置HAL库串口通信</title>
-    <link href="https://yuchanghui.top/2022/07/18/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/"/>
-    <id>https://yuchanghui.top/2022/07/18/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</id>
-    <published>2022-07-18T14:56:10.000Z</published>
-    <updated>2022-07-29T06:46:06.631Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;STM32CubeMx配置HAL库串口通信&quot;&gt;&lt;a href=&quot;#STM32CubeMx配置HAL库串口通信&quot; class=&quot;headerlink&quot;</summary>
         
       
     
