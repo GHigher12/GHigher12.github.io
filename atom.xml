@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2022-09-16T10:47:27.482Z</updated>
+  <updated>2022-10-01T12:19:45.954Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RaspberryPi的初次使用</title>
+    <link href="https://yuchanghui.top/2022/10/01/RaspberryPi%E7%9A%84%E5%88%9D%E6%AC%A1%E4%BD%BF%E7%94%A8/"/>
+    <id>https://yuchanghui.top/2022/10/01/RaspberryPi%E7%9A%84%E5%88%9D%E6%AC%A1%E4%BD%BF%E7%94%A8/</id>
+    <published>2022-10-01T12:18:40.000Z</published>
+    <updated>2022-10-01T12:19:45.954Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;系统烧录&quot;&gt;&lt;a href=&quot;#系统烧录&quot; class=&quot;headerlink&quot; title=&quot;系统烧录&quot;&gt;&lt;/a&gt;系统烧录&lt;/h2&gt;&lt;h3 id=&quot;硬件&quot;&gt;&lt;a href=&quot;#硬件&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="RaspberryPi" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/RaspberryPi/"/>
+    
+    
+    <category term="RaspberryPi" scheme="https://yuchanghui.top/tags/RaspberryPi/"/>
+    
+  </entry>
   
   <entry>
     <title>Pyqt5+Yolov5+Unet+Centernet</title>
@@ -551,35 +578,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;DMA概述&quot;&gt;&lt;a href=&quot;#DMA概述&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
-    
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32Cubemx配置虚拟串口</title>
-    <link href="https://yuchanghui.top/2022/07/19/STM32Cubemx%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%B2%E5%8F%A3/"/>
-    <id>https://yuchanghui.top/2022/07/19/STM32Cubemx%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%B2%E5%8F%A3/</id>
-    <published>2022-07-19T12:07:06.000Z</published>
-    <updated>2022-07-29T06:46:36.331Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;虚拟串口简介&quot;&gt;&lt;a href=&quot;#虚拟串口简介&quot; class=&quot;headerlink&quot; title=&quot;虚拟串口简介&quot;&gt;&lt;/a&gt;虚拟串口简介&lt;/h2&gt;&lt;p&gt;USB 虚拟串口，简称 VCP，是 Virtual COM Port 的简写，它是利用 USB 的 CDC</summary>
         
       
     

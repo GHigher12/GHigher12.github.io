@@ -3176,4 +3176,95 @@
         <tag>Pyqt5</tag>
       </tags>
   </entry>
+  <entry>
+    <title>RaspberryPi的初次使用</title>
+    <url>/2022/10/01/RaspberryPi%E7%9A%84%E5%88%9D%E6%AC%A1%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="系统烧录"><a href="#系统烧录" class="headerlink" title="系统烧录"></a>系统烧录</h2><h3 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h3><p>型号 Raspberry 4B</p>
+<p>SD卡</p>
+<p>读卡器</p>
+<h3 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h3><p><a href="https://www.raspberrypi.com/software/">官网</a></p>
+<p>官方烧录软件<strong>Imagre</strong></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220928171454492.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220928171454492.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220928171454492"></p>
+<p>然后选择合适的操作系统和SD卡进行烧录</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220928171915977.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220928171915977.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20220928171915977"></p>
+<p>等待烧录成功即可</p>
+<h2 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h2><h3 id="配置wifi"><a href="#配置wifi" class="headerlink" title="配置wifi"></a>配置wifi</h3><h4 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h4><p>新建文件名称<code>wpa_supplicant</code></p>
+<p>网上有添加<code>.conf</code>后缀虽然会读进配置文件，但是wifi连不上出错</p>
+<p>内容为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">country=CN</span><br><span class="line">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev</span><br><span class="line">update_config=1</span><br><span class="line"> </span><br><span class="line">network=&#123;  </span><br><span class="line">     ssid=&quot;RealmeGT&quot;  </span><br><span class="line">     psk=&quot;ych420420&quot;</span><br><span class="line">     priority=10</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中</p>
+<ul>
+<li>ssid为wifi名称</li>
+<li>psk为wifi密码</li>
+<li>priority为优先级数值越大优先级越高</li>
+</ul>
+<p>然后再新建空白文件为<code>ssh</code>无后缀</p>
+<h4 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h4><p>使用官方烧录软件时，可以进行配置wifi</p>
+<p>烧录之前点击软件右下角高级设置选项</p>
+<p>可以配置ssh、用户名及密码、wifi</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001193115720.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001193115720.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221001193115720"></p>
+<p>wifi可以填写电脑热点，方便查看ip</p>
+<h3 id="putty远程连接（命令行）"><a href="#putty远程连接（命令行）" class="headerlink" title="putty远程连接（命令行）"></a>putty远程连接（命令行）</h3><p>打开putty软件，填写ip地址</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001193316513.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001193316513.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221001193316513"></p>
+<p>输入设置的用户名及密码即可连接成功</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001170649090.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001170649090.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221001170649090"></p>
+<p>通过命令行打开vnc服务器</p>
+<p>vnc viewer显示cannot currently show the desktop</p>
+<p>解决调整分辨率</p>
+<p>用putty连接用命令输入</p>
+<p><code>sudo raspi-config</code></p>
+<p>Display-&gt;Resolutions设置适合自身电脑的分辨率即可</p>
+<h3 id="VNC远程连接（显示桌面）"><a href="#VNC远程连接（显示桌面）" class="headerlink" title="VNC远程连接（显示桌面）"></a>VNC远程连接（显示桌面）</h3><p>通过上述putty连接输入命令</p>
+<p><code>sudo raspi-config</code></p>
+<p>开启vnc</p>
+<p><strong>Interfacing Options-&gt;VNC</strong></p>
+<p>打开VNC viewer填写ip地址进行连接</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001173235516.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001173235516.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221001173235516"></p>
+<p>将树莓派设置VNC配置自启</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001175018000.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001175018000.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221001175018000"></p>
+<h2 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h2><ul>
+<li>U盘</li>
+<li>VNC传输</li>
+<li>FTP文件传输</li>
+</ul>
+<h3 id="VNC传输"><a href="#VNC传输" class="headerlink" title="VNC传输"></a>VNC传输</h3><p>电脑-&gt;树莓派</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001175632326.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001175632326.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221001175632326"></p>
+<p>树莓派-&gt;电脑</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001174352953.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001174352953.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221001174352953"></p>
+<h2 id="树莓派的编译环境"><a href="#树莓派的编译环境" class="headerlink" title="树莓派的编译环境"></a>树莓派的编译环境</h2><h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001180307738.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001180307738.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221001180307738"></p>
+<p>下载命令</p>
+<p><strong>python2：</strong></p>
+<p><code>pip install xxx</code></p>
+<p><strong>python3:</strong></p>
+<p><code>pip3 install xxx</code></p>
+<h3 id="C-C"><a href="#C-C" class="headerlink" title="C/C++"></a>C/C++</h3><p>对于树莓派的C编译环境，最重要的莫过于安装WiringPi库。</p>
+<p>选择要保存的目录</p>
+<p><code>cd /tmp</code></p>
+<p>下载dev包</p>
+<p><code>wget https://project-downloads.drogon.net/wiringpi-latest.deb</code></p>
+<p>安装dev包</p>
+<p><code>sudo dpkg -i wiringpi-latest.deb</code></p>
+<p>使用命令<code>gpio -v</code>或<code>gpio readall</code>查看是否安装成功</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001182415497.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001182415497.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221001182415497"></p>
+<h2 id="vi编辑器的使用"><a href="#vi编辑器的使用" class="headerlink" title="vi编辑器的使用"></a>vi编辑器的使用</h2><p><strong>3个模式</strong></p>
+<ul>
+<li>插入模式(Insert mode):在此模式下可以输入字符，按ESC将回到命令模式。</li>
+<li>底行模式(Last line mode):可以保存文件、退出vi、设置vi、查找等功能</li>
+<li>命令模式(Command mode):可以移动光标、删除字符等。</li>
+</ul>
+<p>常用命令</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001183915969.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221001183915969.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221001183915969"></p>
+<p>编辑文件</p>
+<p><code>vi xxx</code></p>
+<p>查看文件</p>
+<p><code>cat xxx</code></p>
+]]></content>
+      <categories>
+        <category>单片机</category>
+        <category>RaspberryPi</category>
+      </categories>
+      <tags>
+        <tag>RaspberryPi</tag>
+      </tags>
+  </entry>
 </search>
