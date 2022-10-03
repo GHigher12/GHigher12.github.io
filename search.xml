@@ -3267,4 +3267,35 @@
         <tag>RaspberryPi</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Vscode远程开发RaspberryPi</title>
+    <url>/2022/10/03/Vscode%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91RaspberryPi/</url>
+    <content><![CDATA[<h1 id="使用vscode开发raspberry-pi"><a href="#使用vscode开发raspberry-pi" class="headerlink" title="使用vscode开发raspberry pi"></a>使用vscode开发raspberry pi</h1><h2 id="下载扩展"><a href="#下载扩展" class="headerlink" title="下载扩展"></a>下载扩展</h2><p><code>Remote Development</code></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221003154839731.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221003154839731.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221003154839731"></p>
+<h2 id="远程配置"><a href="#远程配置" class="headerlink" title="远程配置"></a>远程配置</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221003155123319.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221003155123319.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221003155123319"></p>
+<p>依次点击远程控制-&gt;设置-&gt;后缀为(.ssh/config)</p>
+<p>进入配置界面</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Read more about SSH config files: https://linux.die.net/man/5/ssh_config</span></span><br><span class="line"><span class="string">Host</span> <span class="string">raspberrypi</span></span><br><span class="line">    <span class="string">HostName</span> <span class="number">192.168</span><span class="number">.137</span><span class="number">.111</span></span><br><span class="line">    <span class="string">User</span> <span class="string">pi</span></span><br></pre></td></tr></table></figure>
+<p>HostName为树莓派的ip地址</p>
+<p>User为用户名</p>
+<p>找到Remote SSH扩展设置</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221003155509473.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221003155509473.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221003155509473"></p>
+<p>划到最下面，勾选</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221003155620603.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221003155620603.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221003155620603"></p>
+<h2 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221003155924562.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221003155924562.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221003155924562"></p>
+<p>两处连接方式相同</p>
+<p>输入树莓派密码即可连接</p>
+<p>打开文件夹</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221003160205123.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221003160205123.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221003160205123"></p>
+<p>使用vscode远程开发，就可以直接对树莓派的文件进行操作和配置</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221002203034305.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221002203034305.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221002203034305"></p>
+]]></content>
+      <categories>
+        <category>单片机</category>
+        <category>RaspberryPi</category>
+      </categories>
+      <tags>
+        <tag>RaspberryPi</tag>
+      </tags>
+  </entry>
 </search>

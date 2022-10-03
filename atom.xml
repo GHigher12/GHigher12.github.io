@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2022-10-01T12:19:45.954Z</updated>
+  <updated>2022-10-03T08:06:05.857Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vscode远程开发RaspberryPi</title>
+    <link href="https://yuchanghui.top/2022/10/03/Vscode%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91RaspberryPi/"/>
+    <id>https://yuchanghui.top/2022/10/03/Vscode%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91RaspberryPi/</id>
+    <published>2022-10-03T08:04:48.000Z</published>
+    <updated>2022-10-03T08:06:05.857Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;使用vscode开发raspberry-pi&quot;&gt;&lt;a href=&quot;#使用vscode开发raspberry-pi&quot; class=&quot;headerlink&quot; title=&quot;使用vscode开发raspberry pi&quot;&gt;&lt;/a&gt;使用vscode开发raspberry</summary>
+        
+      
+    
+    
+    
+    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="RaspberryPi" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/RaspberryPi/"/>
+    
+    
+    <category term="RaspberryPi" scheme="https://yuchanghui.top/tags/RaspberryPi/"/>
+    
+  </entry>
   
   <entry>
     <title>RaspberryPi的初次使用</title>
@@ -549,35 +576,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;STM32CubeMx配置&quot;&gt;&lt;a href=&quot;#STM32CubeMx配置&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
-    
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32串口通信DMA方式</title>
-    <link href="https://yuchanghui.top/2022/07/19/STM32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1DMA%E6%96%B9%E5%BC%8F/"/>
-    <id>https://yuchanghui.top/2022/07/19/STM32%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1DMA%E6%96%B9%E5%BC%8F/</id>
-    <published>2022-07-19T15:35:21.000Z</published>
-    <updated>2022-07-29T06:47:10.268Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;DMA概述&quot;&gt;&lt;a href=&quot;#DMA概述&quot; class=&quot;headerlink&quot;</summary>
         
       
     
