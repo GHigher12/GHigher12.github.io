@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2022-10-03T08:06:05.857Z</updated>
+  <updated>2022-10-08T13:17:54.046Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>study</title>
+    <link href="https://yuchanghui.top/2022/10/08/study/"/>
+    <id>https://yuchanghui.top/2022/10/08/study/</id>
+    <published>2022-10-08T13:17:27.000Z</published>
+    <updated>2022-10-08T13:17:54.046Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;11111111&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Vscode远程开发RaspberryPi</title>
@@ -547,35 +569,6 @@
 &lt;p&gt;硬件&lt;/p&gt;
 &lt;p&gt;软件&lt;/p&gt;
 </summary>
-        
-      
-    
-    
-    
-    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
-    
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32CubeMx配置HAL库定时器</title>
-    <link href="https://yuchanghui.top/2022/07/20/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E5%AE%9A%E6%97%B6%E5%99%A8/"/>
-    <id>https://yuchanghui.top/2022/07/20/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E5%AE%9A%E6%97%B6%E5%99%A8/</id>
-    <published>2022-07-20T02:18:44.000Z</published>
-    <updated>2022-07-29T06:46:14.549Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;STM32CubeMx配置&quot;&gt;&lt;a href=&quot;#STM32CubeMx配置&quot; class=&quot;headerlink&quot;</summary>
         
       
     
