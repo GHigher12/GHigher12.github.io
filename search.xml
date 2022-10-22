@@ -3343,7 +3343,61 @@
   <entry>
     <title>C++基础学习四</title>
     <url>/2022/10/22/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E5%9B%9B/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="C-基础学习四"><a href="#C-基础学习四" class="headerlink" title="C++基础学习四"></a>C++基础学习四</h1><h2 id="文本文件"><a href="#文本文件" class="headerlink" title="文本文件"></a>文本文件</h2><h3 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h3><p><strong>步骤：</strong></p>
+<ul>
+<li>包含头文件:<code>#include &lt;fstream&gt;</code></li>
+<li>创建流对象:<code>ofstream ofs;</code></li>
+<li>打开文件:<code>ofs.open(&quot;文件路径&quot;, 打开方式);</code></li>
+<li>写数据:<code>ofs&lt;&lt;&quot;写入数据&quot;;</code></li>
+<li>关闭文件:<code>ofs.close;</code></li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">打开方式</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ios::in</td>
+<td style="text-align:center">为读文件而打开文件</td>
+</tr>
+<tr>
+<td style="text-align:center">ios::out</td>
+<td style="text-align:center">为写文件而打开文件</td>
+</tr>
+<tr>
+<td style="text-align:center">ios::ate</td>
+<td style="text-align:center">初始位置:文件尾</td>
+</tr>
+<tr>
+<td style="text-align:center">ios::app</td>
+<td style="text-align:center">追加方式写文件</td>
+</tr>
+<tr>
+<td style="text-align:center">ios::trunc</td>
+<td style="text-align:center">如果文件存在先删除，再创建</td>
+</tr>
+<tr>
+<td style="text-align:center">ios::binary</td>
+<td style="text-align:center">二进制方式</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ofstream ofs;</span><br><span class="line">    ofs.<span class="built_in">open</span>(<span class="string">&quot;D:\\C++_CLion\\Demo01\\FILE\\test.txt&quot;</span>, ios::out);</span><br><span class="line">    ofs&lt;&lt;<span class="string">&quot;姓名:张三&quot;</span>&lt;&lt;endl;</span><br><span class="line">    ofs&lt;&lt;<span class="string">&quot;年龄:18&quot;</span>&lt;&lt;endl;</span><br><span class="line">    ofs&lt;&lt;<span class="string">&quot;性别:男&quot;</span>&lt;&lt;endl;</span><br><span class="line">    ofs.<span class="built_in">close</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">test01</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221022193600777.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221022193600777.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221022193600777"></p>
+<h3 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h3><p><strong>步骤：</strong></p>
+<ul>
+<li>包含头文件:<code>#include &lt;fstream&gt;</code></li>
+<li>创建流对象:<code>ofstream ifs;</code></li>
+<li>打开文件:<code>ofs.open(&quot;文件路径&quot;, 打开方式);</code></li>
+<li>读数据:四种方式读数据;`</li>
+<li>关闭文件:<code>ofs.close;</code></li>
+</ul>
+]]></content>
       <categories>
         <category>程序设计</category>
         <category>C/C++</category>
