@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>标签 | GHigher&#39;s Blog</title>
+  <title>有限元分析学习一 | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -47,6 +47,8 @@
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
+    
+        <script src="/js/valine/index.js"></script>
     
 
     <!-- import link -->
@@ -543,257 +545,640 @@
 </header>
                                 <!-- 内容区域 -->
                                 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-tags" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+ <!-- prismjs 代码高亮 -->
+ 
 
-<div class="tags-header" style="background-image:url('/medias/14.jpg')">
-    <div class="tags-header-title">
-        标签
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/medias/11.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        有限元分析学习一
+      </span>
     </div>
-    <div class="tags-header-desc">
     
-        <span class="title" id="tags-header-desc"></span>
-        <script>
-  function typedFn() {
-    const el = '#tags-header-desc';
-    const type = 'tag';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
     
-    </div>
-    <div class="mask-box"></div>
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2022-10-29 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E6%9C%BA%E6%A2%B0/" class="post-detail-header_category">
+              机械
+            </a>
+          
+            <a href="/categories/%E6%9C%BA%E6%A2%B0/Simulation/" class="post-detail-header_category">
+              Simulation
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
 </div>
 
 
-<div class="tags-video">
-    <video class="full-video" autoplay loop muted>
-        <source style="width: 100%;height: 100vh;" src="https://assets.mixkit.co/videos/preview/mixkit-beautiful-starry-sky-in-nature-time-lapse-26990-large.mp4">
-    </video>
-    <div class="video-header-title">
-        标签
-    </div>
-    <div class="video-header-desc">
-    
-        <span class="title" id="tag-video-header-desc"></span>
-        <script>
-  function typedFn() {
-    const el = '#tag-video-header-desc';
-    const type = 'tag';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
+
+
+
+<div class="row justify-position" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1 id="有限元分析学习一"><a href="#有限元分析学习一" class="headerlink" title="有限元分析学习一"></a>有限元分析学习一</h1><h2 id="什么是有限元分析"><a href="#什么是有限元分析" class="headerlink" title="什么是有限元分析"></a>什么是有限元分析</h2><p><strong>有限元分析（FEA，Finite Element Analysis）</strong>利用数学近似的方法对真实物理系统(几何和载荷工况）进行模拟。利用简单而又相互作</p>
+<p>用的元素（即单元），就可以用有限数量的未知量去逼近无限未知量的真实系统。有限元分析是用较简单的问题代替复杂问题后再求解。</p>
+<p>它将求解域看成是由许多称为有限元的小的互连子域成，对每一单元假定一个合适的（较简单的）近似解，然后推导求解这个域点的满足</p>
+<p>条件（如结构的平衡条件），从而得到问题的解。因为实际问题被较简单的问题所代替，所以这个解不是准确解，而是近似解。由于大多</p>
+<p>数实际问题难以得到准确解，而有限元不仅计算精度高，而且能适应各种复杂形状，因而成为行之有效的工程分析手段。</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030105333851.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030105333851.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030105333851"></p>
+<h2 id="SolidWorks-Simulation模块"><a href="#SolidWorks-Simulation模块" class="headerlink" title="SolidWorks-Simulation模块"></a>SolidWorks-Simulation模块</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030111040508.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030111040508.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030111040508"></p>
+<h2 id="零件静态分析"><a href="#零件静态分析" class="headerlink" title="零件静态分析"></a>零件静态分析</h2><h3 id="默认配置"><a href="#默认配置" class="headerlink" title="默认配置"></a>默认配置</h3><p><strong>Simulation-&gt;选项-&gt;默认选项-&gt;单位</strong></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030155921406.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030155921406.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030155921406"></p>
+<h3 id="分析实例：带孔矩形板"><a href="#分析实例：带孔矩形板" class="headerlink" title="分析实例：带孔矩形板"></a>分析实例：带孔矩形板</h3><blockquote>
+<p>问题描述:带孔矩形板一侧面分别均布110000N载荷和11000N载荷，另一侧固定，利用Simulation求解两种工况下的应力和位移，并</p>
+<p>对分析结果进行解释。</p>
+<p>材料:AISI 304</p>
+</blockquote>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030160218830.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030160218830.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030160218830"></p>
+<p><strong>已知：</strong></p>
+<ul>
+<li>三维模型</li>
+<li>分析类型：静态分析</li>
+<li>材料：AISI 304</li>
+<li>约束：固定</li>
+<li>载荷：110000N/11000N</li>
+<li>接触：无</li>
+</ul>
+<h3 id="软件步骤"><a href="#软件步骤" class="headerlink" title="软件步骤"></a>软件步骤</h3><h4 id="新算例"><a href="#新算例" class="headerlink" title="新算例"></a>新算例</h4><p>simulation-&gt;新算例</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030160935094.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030160935094.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030160935094"></p>
+<h4 id="编辑材料：AISI-304"><a href="#编辑材料：AISI-304" class="headerlink" title="编辑材料：AISI 304"></a>编辑材料：AISI 304</h4><p>零件-&gt;应用/编辑材料</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030160837703.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030160837703.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030160837703"></p>
+<p><strong>属性三种颜色区分</strong></p>
+<ul>
+<li>红色分析必须用到的</li>
+<li>蓝色分析可能用到的</li>
+<li>黑色分析不必用到的</li>
+</ul>
+<h4 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h4><p>设置多个零件之间的接触关系，本次无接触不需要。</p>
+<h4 id="夹具"><a href="#夹具" class="headerlink" title="夹具"></a>夹具</h4><p>夹具-&gt;固定几何体-&gt;选中一个侧面</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030161435951.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030161435951.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030161435951"></p>
+<h4 id="外部载荷"><a href="#外部载荷" class="headerlink" title="外部载荷"></a>外部载荷</h4><p>外部载荷-&gt;力-&gt;选取面填写力的大小和方向</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030161617604.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030161617604.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030161617604"></p>
+<h4 id="网格"><a href="#网格" class="headerlink" title="网格"></a>网格</h4><p>画网格离散化</p>
+<p>网格-&gt;生成网格-&gt;先默认</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030161751212.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030161751212.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030161751212"></p>
+<h4 id="计算算例"><a href="#计算算例" class="headerlink" title="计算算例"></a>计算算例</h4><p>算例名称-&gt;运行</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030161841418.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030161841418.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030161841418"></p>
+<h4 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h4><p>应力</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030162036096.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030162036096.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030162036096"></p>
+<p>位移</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030162507273.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030162507273.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030162507273"></p>
+<p>应变</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030162525507.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030162525507.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030162525507"></p>
+<h4 id="后处理"><a href="#后处理" class="headerlink" title="后处理"></a>后处理</h4><p><strong>变形比例调整为1</strong></p>
+<p>编辑定义-&gt;真实比例</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030162843305.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030162843305.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030162843305"></p>
+<p><strong>自定义材料屈服强度为最大值，显示危险处更加明显</strong></p>
+<p>编辑定义-&gt;图标选项-&gt;自动定义最大值</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030163300986.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030163300986.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030163300986"></p>
+<p>eg:110000N</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030163424108.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030163424108.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030163424108"></p>
+<p>11000N</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030163501959.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030163501959.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030163501959"></p>
+<p>由110000N与11000N的应力分析图可知：</p>
+<ul>
+<li>载荷为110000N时，超过零件材料屈服强度面积较大，易破坏；</li>
+<li>载荷为11000N时，零件未超过材料的屈服强度，安全</li>
+</ul>
+
+      </div>
+      <div class="post-tags-categories">
         
+        <div class="tags">
+          
+            <a href="/tags/Soildworks/" class="">
+              Soildworks
+            </a>
+          
+            <a href="/tags/Simulation/" class="">
+              Simulation
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>GHigher</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2022/10/29/有限元分析学习一/" target="_blank" title="有限元分析学习一">https://yuchanghui.top/2022/10/29/有限元分析学习一/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/4.jpg" class="lazyload placeholder" data-srcset="/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <div class="mask-box"></div>
+    <a href="/2022/10/22/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E5%9B%9B/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">C++基础学习四</div>
+      </div>
+      <!-- <div class="content">
+        C++基础学习四文本文件写文件步骤：
+
+包含头文件:#include &lt;fstream&gt;
+创建流对象:ofs
+      </div> -->
+    </a>
+  </div>
+
 </div>
 
-<div id="tags" class="container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/C-C/" title="C/C++: 22">
-                    <span class="tag-content"
-                        title="C/C++" style="background-color: #F8C471;">C/C++
-                        <span class="tag-length">22</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/STM32/" title="STM32: 20">
-                    <span class="tag-content"
-                        title="STM32" style="background-color: #A3E4D7;">STM32
-                        <span class="tag-length">20</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/CLion/" title="CLion: 1">
-                    <span class="tag-content"
-                        title="CLion" style="background-color: #F9EBEA;">CLion
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/ESP32/" title="ESP32: 1">
-                    <span class="tag-content"
-                        title="ESP32" style="background-color: #85C1E9;">ESP32
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Micropython/" title="Micropython: 1">
-                    <span class="tag-content"
-                        title="Micropython" style="background-color: #F9E79F;">Micropython
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Markdown/" title="Markdown: 1">
-                    <span class="tag-content"
-                        title="Markdown" style="background-color: #F8F9F9;">Markdown
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Matlab/" title="Matlab: 5">
-                    <span class="tag-content"
-                        title="Matlab" style="background-color: #85C1E9;">Matlab
-                        <span class="tag-length">5</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/python/" title="python: 14">
-                    <span class="tag-content"
-                        title="python" style="background-color: #F8C471;">python
-                        <span class="tag-length">14</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Opencv/" title="Opencv: 6">
-                    <span class="tag-content"
-                        title="Opencv" style="background-color: #F9E79F;">Opencv
-                        <span class="tag-length">6</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Pytorch/" title="Pytorch: 4">
-                    <span class="tag-content"
-                        title="Pytorch" style="background-color: #D5F5E3;">Pytorch
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Linux/" title="Linux: 6">
-                    <span class="tag-content"
-                        title="Linux" style="background-color: #E8F8F5;">Linux
-                        <span class="tag-length">6</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Ubuntu/" title="Ubuntu: 6">
-                    <span class="tag-content"
-                        title="Ubuntu" style="background-color: #FEF9E7;">Ubuntu
-                        <span class="tag-length">6</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/VMware/" title="VMware: 4">
-                    <span class="tag-content"
-                        title="VMware" style="background-color: #FEF9E7;">VMware
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/ROS/" title="ROS: 2">
-                    <span class="tag-content"
-                        title="ROS" style="background-color: #82E0AA;">ROS
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/hexo/" title="hexo: 5">
-                    <span class="tag-content"
-                        title="hexo" style="background-color: #FFF;">hexo
-                        <span class="tag-length">5</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/PicGo/" title="PicGo: 2">
-                    <span class="tag-content"
-                        title="PicGo" style="background-color: #F9EBEA;">PicGo
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/VSCode/" title="VSCode: 1">
-                    <span class="tag-content"
-                        title="VSCode" style="background-color: #FEF9E7;">VSCode
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/WSL/" title="WSL: 1">
-                    <span class="tag-content"
-                        title="WSL" style="background-color: #F5EEF8;">WSL
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Soildworks/" title="Soildworks: 2">
-                    <span class="tag-content"
-                        title="Soildworks" style="background-color: #F8C471;">Soildworks
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Pyqt5/" title="Pyqt5: 1">
-                    <span class="tag-content"
-                        title="Pyqt5" style="background-color: #A3E4D7;">Pyqt5
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/RaspberryPi/" title="RaspberryPi: 2">
-                    <span class="tag-content"
-                        title="RaspberryPi" style="background-color: #D5F5E3;">RaspberryPi
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Simulation/" title="Simulation: 1">
-                    <span class="tag-content"
-                        title="Simulation" style="background-color: #E8F8F5;">Simulation
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-            </div>
-        </div>
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
     </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
 </div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em; margin: 15px auto;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('/medias/monkey.gif');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+
+
+<script>
+  function closeToc(init) {
+    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
+    $(".toc-content").css({'width': 0});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+  };
+  function openToc() {
+    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
+    $(".toc-content").css({'width': '300px'});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+  }
+  function openBtnClickFn () {
+    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+    let open = eval('' || 'true');
+    openOrCloseBtn.click(function() {
+      if (open) {
+        closeToc();
+        open = false;
+      } else {
+        openToc();
+        open = true;
+      }
+    });
+  };
+  openBtnClickFn();
+  initCloseTocWidth(true);
+
+  function initCloseTocWidth(init) {
+    if (window.innerWidth >= 992) {
+      let isClose = false;
+      isClose && closeToc(init)
+    }
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    $(".toc-aside").css({'transition': 'no'});
+  })
+  document.addEventListener('pjax:complete', function () {
+    openBtnClickFn();
+  })
+  
+</script>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
 
                             </main>
                           </div>
@@ -1450,6 +1835,144 @@
    
 
 <!-- 评论所需js -->
+
+  
+    <!-- 弹幕所需的css和js -->
+    
+  <!-- 弹幕插件 -->
+  <link href="/js/danmu/barrager.css" rel="stylesheet">
+  <script src="/js/danmu/jquery.barrager.js"></script>
+
+<!-- 具体js，请前往valine/script.ejs查看 -->
+
+    <script>
+  var requiredFields = '';
+  requiredFields = requiredFields.split(',');
+  comment_el = '.comment';
+  let looperValine = null;
+  load_valine = function () {
+    if ($(comment_el).length) {
+      var valine = new Valine({
+        el: '#vcomment',
+        path: window.location.pathname,
+        notify: false,
+        verify: false,
+        app_id: "2PVPHuivtIxkhlA1Kv1quvq2-gzGzoHsz",
+        app_key: "7EDHPdniI5WQBAkU96Yxy9bG",
+        placeholder: "说点什么吧",
+        avatar: "",
+        master: "9b1cd4514cf4b7b3747b9aaa3b78397f",   //博主邮箱md5
+        tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+        friends: "",
+        metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱" },
+        requiredFields: requiredFields,
+        enableQQ: true,
+      });
+      function debounce(fn) {
+        var timerID = null
+        return function () {
+          var arg = arguments[0]   //获取事件
+          if (timerID) {
+            clearTimeout(timerID)
+          }
+          timerID = setTimeout(function () {
+            fn(arg)              //事件传入函数
+          }, 200)
+        }
+      }
+      //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
+      var themeDanmu = eval('true');
+      var themeLoop = eval('false');
+      var themeLooperTime = '5000' || 5000;
+      var speed = '40' || 20;
+      var isBarrager = true;
+      if (themeDanmu == true) {
+        do_barrager();
+        if ($('.danmuBox').length <= 0) {
+          $('.navbar').append('<div class="danmuBox"><div class="danmuBtn open"><span class="danmuCircle"></span><span class="danmuText">弹幕</span></div></div>');
+        }
+        $('.danmuBtn').on('click', debounce(
+          function () {
+            if ($('.danmuBtn').hasClass('open')) {
+              $('.danmuBtn').removeClass('open')
+              clearInterval(looperValine);
+              $.fn.barrager.removeAll();
+            } else {
+              $('.danmuBtn').addClass("open");
+              do_barrager();
+            }
+          }
+        ))
+      }
+      function do_barrager() {
+        isBarrager && valine.Q(window.location.pathname).find().then(function (comments) {
+          // var num = 0; // 可以记录条数，循环调用的时候只取最新的评论放入弹幕中
+          var run_once = true;
+          var looper_time = themeLooperTime;
+          var total = comments.length;
+          // var looper = null;
+          var index = 0;
+          if (total > 0) {
+            barrager();
+          } else {
+            // 当评论数为0的时候，自动关闭弹幕
+            // $('.danmuBtn').removeClass('open');
+          }
+          function barrager() {
+            if (run_once) {
+              //如果是首次执行,则设置一个定时器,并且把首次执行置为false
+              looperValine = setInterval(barrager, looper_time);
+              run_once = false;
+            }
+            var content = comments[index]._serverData.comment;
+            var email = comments[index]._serverData.mail;
+            var link = comments[index]._serverData.link;
+            var newcontent = content.substring(0, 50).replace(/<[^>]+>/g, "");
+            //发布一个弹幕
+            const item = {
+              img: `https://q1.qlogo.cn/g?b=qq&nk=${email}&s=640`, //图片 
+              info: newcontent, //文字 
+              href: link, //链接 
+              close: true, //显示关闭按钮 
+              speed: speed, //延迟,单位秒,默认6 
+              color: '#fff', //颜色,默认白色 
+              old_ie_color: '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
+            }
+            $('body').barrager(item);
+            //索引自增
+            index++;
+            //所有弹幕发布完毕，清除计时器。
+            if (index == total) {
+              clearInterval(looperValine);
+              if (themeLoop === true) {
+                setTimeout(function () {
+                  do_barrager();
+                }, 5000);
+              } else {
+                $('.danmuBtn').removeClass('open');
+              }
+              return false;
+            }
+
+          }
+        })
+      }
+    }
+  };
+  $(document).ready(load_valine);
+  document.addEventListener('pjax:send', function (e) {
+    
+      $('.danmuBox').length > 0 && $('.danmuBox').remove()
+      looperValine && clearInterval(looperValine);
+      $.fn.barrager.removeAll();
+    
+  })
+  document.addEventListener('pjax:complete', function () {
+    load_valine();
+  });
+</script>
+
+  
 
 
 <!-- 鼠标点击特效 -->
