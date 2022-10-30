@@ -3453,9 +3453,9 @@
 <p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030161751212.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030161751212.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030161751212"></p>
 <h4 id="计算算例"><a href="#计算算例" class="headerlink" title="计算算例"></a>计算算例</h4><p>算例名称-&gt;运行</p>
 <p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030161841418.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030161841418.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030161841418"></p>
-<h4 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h4><p>应力</p>
+<h4 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h4><p>应力（对应强度）</p>
 <p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030162036096.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030162036096.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030162036096"></p>
-<p>位移</p>
+<p>位移（对应刚度）</p>
 <p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030162507273.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030162507273.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030162507273"></p>
 <p>应变</p>
 <p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030162525507.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030162525507.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030162525507"></p>
@@ -3474,6 +3474,85 @@
 <li>载荷为110000N时，超过零件材料屈服强度面积较大，易破坏；</li>
 <li>载荷为11000N时，零件未超过材料的屈服强度，安全</li>
 </ul>
+]]></content>
+      <categories>
+        <category>机械</category>
+        <category>Simulation</category>
+      </categories>
+      <tags>
+        <tag>Soildworks</tag>
+        <tag>Simulation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有限元分析学习二</title>
+    <url>/2022/10/30/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E4%BA%8C/</url>
+    <content><![CDATA[<h1 id="有限元分析学习二"><a href="#有限元分析学习二" class="headerlink" title="有限元分析学习二"></a>有限元分析学习二</h1><h2 id="第一、二、三强度理论"><a href="#第一、二、三强度理论" class="headerlink" title="第一、二、三强度理论"></a>第一、二、三强度理论</h2><p><strong>第一强度理论:最大拉应力准则</strong></p>
+<p>基本观点:材料中的最大拉应力到达材料的正断拉力时，即产生脆性断裂。适用范围:铸铁，工具钢，工业陶瓷等多数脆性材。</p>
+<p><strong>第三强度理论:最大剪应力准则</strong></p>
+<p>基本观点:材料中的最大剪应力到达该材料的剪切抗力时，即产生塑性屈服。适用范围:低碳钢、铜、软铝等塑性较好材料。</p>
+<p><strong>第四强度理论:形状改变比能准则</strong></p>
+<p>基本观点:材料中形状改变比能到达该材料的临界值时，即产生塑性屈服。</p>
+<p><strong><em>适用范围:它既突出了最大主应力对塑性屈服的作用，又适当考虑了其它两个主应力的影响，它与塑性较好材料的试验结果比第三强度理</em></strong></p>
+<p><strong><em>论符合得更好。</em></strong></p>
+<h2 id="安全系数图解"><a href="#安全系数图解" class="headerlink" title="安全系数图解"></a>安全系数图解</h2><p>结果-&gt;安全系数</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030165726124.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030165726124.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030165726124"></p>
+<p>除了Mohr-Coulomb应力，其他分别对应第一二三强度</p>
+<p>以最大von Mises应力为例：</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030170008098.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030170008098.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030170008098"></p>
+<p>安全系数图解反过来看，看最小值，最小是最危险的地方</p>
+<h2 id="四大强度理论公式"><a href="#四大强度理论公式" class="headerlink" title="四大强度理论公式"></a>四大强度理论公式</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030170901908.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030170901908.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030170901908"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030171443899.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030171443899.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030171443899"></p>
+<h2 id="第一强度理论分析（P1）"><a href="#第一强度理论分析（P1）" class="headerlink" title="第一强度理论分析（P1）"></a>第一强度理论分析（P1）</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030171559321.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030171559321.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030171559321"></p>
+<h2 id="第三强度理论分析（P1-P3）"><a href="#第三强度理论分析（P1-P3）" class="headerlink" title="第三强度理论分析（P1-P3）"></a>第三强度理论分析（P1-P3）</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030171612217.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030171612217.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030171612217"></p>
+<h2 id="直角L型支架的应力分析"><a href="#直角L型支架的应力分析" class="headerlink" title="直角L型支架的应力分析"></a>直角L型支架的应力分析</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
+<p>问题描述：L型支架上端面固定，同时在下端面施加900N弯曲载荷，分别使用10mm、3mm和1mm网格求解模型，对比应力结果</p>
+<p>材料: AISI 304</p>
+</blockquote>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030172733296.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030172733296.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030172733296"></p>
+<h3 id="创建新算例"><a href="#创建新算例" class="headerlink" title="创建新算例"></a>创建新算例</h3><h3 id="选择材料AISI-304"><a href="#选择材料AISI-304" class="headerlink" title="选择材料AISI 304"></a>选择材料AISI 304</h3><h3 id="夹具固定约束端"><a href="#夹具固定约束端" class="headerlink" title="夹具固定约束端"></a>夹具固定约束端</h3><h3 id="添加外部载荷力的大小和方向"><a href="#添加外部载荷力的大小和方向" class="headerlink" title="添加外部载荷力的大小和方向"></a>添加外部载荷力的大小和方向</h3><h3 id="生成网格"><a href="#生成网格" class="headerlink" title="生成网格"></a>生成网格</h3><p>设置网格参数分别为10mm,3mm,1mm</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030174649552.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030174649552.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030174649552" style="zoom:50%;" /></th>
+<th style="text-align:center"><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030181248603.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030181248603.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030181248603" style="zoom:50%;" /></th>
+<th style="text-align:center"><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030175301738.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030175301738.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030175301738" style="zoom:50%;" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10mm</td>
+<td style="text-align:center">3mm</td>
+<td style="text-align:center">1mm</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="运行计算"><a href="#运行计算" class="headerlink" title="运行计算"></a>运行计算</h3><p>复制算例，分别更改网格大小10mm,3mm,1mm，进行对比分析</p>
+<p>10mm<img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030174941401.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030174941401.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030174941401" style="zoom: 80%;" /></p>
+<p>3mm</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030175145134.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030175145134.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030175145134" style="zoom: 80%;" /></p>
+<p>1mm</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030181458625.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030181458625.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030181458625" style="zoom: 80%;" /></p>
+<h2 id="L型支架加上圆角"><a href="#L型支架加上圆角" class="headerlink" title="L型支架加上圆角"></a>L型支架加上圆角</h2><blockquote>
+<p>问题描述:L形支架上端面固定，同时在下端面施加900N弯曲载荷，分别使用10mm、2mm和0.5mm网格求解模型，对比应力分布和位移分布情况。</p>
+<p>材料: AISI304</p>
+</blockquote>
+<h3 id="应力结果"><a href="#应力结果" class="headerlink" title="应力结果"></a>应力结果</h3><h4 id="10mm"><a href="#10mm" class="headerlink" title="10mm"></a>10mm</h4><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030183642951.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030183642951.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030183642951"></p>
+<p><strong>局部网格</strong></p>
+<p>网格-&gt;应用网格控制</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030183934496.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030183934496.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030183934496"></p>
+<p>选择想要加网格面，设置网格大小，a/b的意思为网格变化的渐进过程大小</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030184121086.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030184121086.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030184121086"></p>
+<p>很明显可以看到网格逐步由小变大</p>
+<h4 id="2mm"><a href="#2mm" class="headerlink" title="2mm"></a>2mm</h4><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030184212573.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030184212573.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030184212573"></p>
+<h4 id="0-5mm"><a href="#0-5mm" class="headerlink" title="0.5mm"></a>0.5mm</h4><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030184501141.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030184501141.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030184501141"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030184713547.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030184713547.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030184713547"></p>
+<h3 id="网格的密度影响"><a href="#网格的密度影响" class="headerlink" title="网格的密度影响"></a>网格的密度影响</h3><h4 id="应力结果的网格无关性检查"><a href="#应力结果的网格无关性检查" class="headerlink" title="应力结果的网格无关性检查"></a>应力结果的网格无关性检查</h4><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030184356493.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030184356493.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030184356493"></p>
+<p>由以上分析可得，网格密度越小，其计算算例的时间就越长，才用局部网格可以缩短时间；而应力的结果受网格的精度影响很大。</p>
+<h4 id="位移影响与网格密度"><a href="#位移影响与网格密度" class="headerlink" title="位移影响与网格密度"></a>位移影响与网格密度</h4><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030185459727.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221030185459727.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221030185459727"></p>
+<p>位移影响与网格密度不大。</p>
 ]]></content>
       <categories>
         <category>机械</category>
