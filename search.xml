@@ -3563,4 +3563,37 @@
         <tag>Simulation</tag>
       </tags>
   </entry>
+  <entry>
+    <title>有限元分析学习三</title>
+    <url>/2022/10/31/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E4%B8%89/</url>
+    <content><![CDATA[<h1 id="有限元分析学习三"><a href="#有限元分析学习三" class="headerlink" title="有限元分析学习三"></a>有限元分析学习三</h1><h2 id="圆角和直角应力结果对比"><a href="#圆角和直角应力结果对比" class="headerlink" title="圆角和直角应力结果对比"></a>圆角和直角应力结果对比</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031201211983.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031201211983.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221031201211983"></p>
+<h2 id="应力集中"><a href="#应力集中" class="headerlink" title="应力集中"></a>应力集中</h2><p>应力局部增高的现象，一般出现在物体形状急剧变化的地方，如缺口、孔洞、沟槽以及有刚性约束处。应力集中能使物体产生疲劳裂纹，也能使脆性材料制成的零件发生静载断裂。</p>
+<h2 id="装配体分析"><a href="#装配体分析" class="headerlink" title="装配体分析"></a>装配体分析</h2><h3 id="分析实例：支架"><a href="#分析实例：支架" class="headerlink" title="分析实例：支架"></a>分析实例：支架</h3><blockquote>
+<p>问题描述：支架两端通过地脚螺栓固定在地面上，零件凹孔面承受2000N的法向推力，求解支架的应力和位移</p>
+<p>材料：AISI304</p>
+</blockquote>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031204638719.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031204638719.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221031204638719"></p>
+<h3 id="软件分析"><a href="#软件分析" class="headerlink" title="软件分析"></a>软件分析</h3><h4 id="新建算例"><a href="#新建算例" class="headerlink" title="新建算例"></a>新建算例</h4><h4 id="定义材料AIS304"><a href="#定义材料AIS304" class="headerlink" title="定义材料AIS304"></a>定义材料AIS304</h4><h4 id="选择除支架零件不包括在分析中"><a href="#选择除支架零件不包括在分析中" class="headerlink" title="选择除支架零件不包括在分析中"></a>选择除支架零件不包括在分析中</h4><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031205444175.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031205444175.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221031205444175"></p>
+<h4 id="删除连接"><a href="#删除连接" class="headerlink" title="删除连接"></a>删除连接</h4><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031205805546.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031205805546.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221031205805546"></p>
+<h4 id="加载荷，零件凹孔面承受2000N的法向推力"><a href="#加载荷，零件凹孔面承受2000N的法向推力" class="headerlink" title="加载荷，零件凹孔面承受2000N的法向推力"></a>加载荷，零件凹孔面承受2000N的法向推力</h4><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031210223651.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031210223651.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221031210223651"></p>
+<h4 id="固定约束"><a href="#固定约束" class="headerlink" title="固定约束"></a>固定约束</h4><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031210302911.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031210302911.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221031210302911"></p>
+<h4 id="生成网格"><a href="#生成网格" class="headerlink" title="生成网格"></a>生成网格</h4><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031211152784.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031211152784.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221031211152784"></p>
+<h4 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h4><h5 id="应力结果"><a href="#应力结果" class="headerlink" title="应力结果"></a>应力结果</h5><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031211244125.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031211244125.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221031211244125"></p>
+<h5 id="显示局部区域和网格"><a href="#显示局部区域和网格" class="headerlink" title="显示局部区域和网格"></a>显示局部区域和网格</h5><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031211444162.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031211444162.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221031211444162"></p>
+<h5 id="位移结果"><a href="#位移结果" class="headerlink" title="位移结果"></a>位移结果</h5><h4 id="地面约束实现"><a href="#地面约束实现" class="headerlink" title="地面约束实现"></a>地面约束实现</h4><p>结果—&gt;定义位移图解-&gt;Y位移、真实比例、局部实体</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031212554374.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031212554374.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221031212554374"></p>
+<p>显示等高线状态</p>
+<p>设定-&gt;边缘选项-&gt;直线</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031212645824.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031212645824.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221031212645824"></p>
+<p>编辑定义-&gt;图标选项-&gt;自动定义最小值0</p>
+]]></content>
+      <categories>
+        <category>机械</category>
+        <category>Simulation</category>
+      </categories>
+      <tags>
+        <tag>Soildworks</tag>
+        <tag>Simulation</tag>
+      </tags>
+  </entry>
 </search>
