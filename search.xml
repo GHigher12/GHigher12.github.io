@@ -3586,6 +3586,26 @@
 <p>设定-&gt;边缘选项-&gt;直线</p>
 <p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031212645824.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221031212645824.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221031212645824"></p>
 <p>编辑定义-&gt;图标选项-&gt;自动定义最小值0</p>
+<h3 id="分析实例：虎钳"><a href="#分析实例：虎钳" class="headerlink" title="分析实例：虎钳"></a>分析实例：虎钳</h3><blockquote>
+<p>问题描述：分别将225N的“挤压”力作用在钳臂的末端，平板短边两侧固定。求解模型，并查看位移和应力分布情况</p>
+<p>材料：合金钢</p>
+</blockquote>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221101173523864.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221101173523864.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221101173523864"></p>
+<p>新建算例</p>
+<p>编辑材料-&gt;合金钢</p>
+<p>固定约束</p>
+<p>施加载荷</p>
+<p>生成网格</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221101174345668.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221101174345668.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221101174345668"></p>
+<p>运行算例</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221101174509014.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221101174509014.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221101174509014"></p>
+<p><strong><em>运行结果是错误的，需要删除全局连接</em></strong></p>
+<h3 id="接触连接配置"><a href="#接触连接配置" class="headerlink" title="接触连接配置"></a>接触连接配置</h3><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221101175211091.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221101175211091.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221101175211091"></p>
+<p>连接-&gt;相触面组</p>
+<p>自动查找接触面组</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221101180230297.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221101180230297.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221101180230297"></p>
+<h3 id="各种报错——模型不稳定"><a href="#各种报错——模型不稳定" class="headerlink" title="各种报错——模型不稳定"></a>各种报错——模型不稳定</h3><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221101180512110.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221101180512110.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221101180512110"></p>
+<p>属性-&gt;软弹簧</p>
 ]]></content>
       <categories>
         <category>机械</category>
