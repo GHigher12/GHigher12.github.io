@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>归档 | GHigher&#39;s Blog</title>
+  <title>Vscode中的C++多文件编译cmake、json配置 | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -544,275 +544,655 @@
     
 </header>
                                 <!-- 内容区域 -->
-                                <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="archive-header" style="background-image:url('/medias/4.jpg')">
-  <div class="archive-header-title">
-    归档
-  </div>
-  <div class="archive-header-desc">
+                                
+ <!-- prismjs 代码高亮 -->
+ 
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/medias/11.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
-  <span class="title" id="archive-header-desc"></span>
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        Vscode中的C++多文件编译cmake、json配置
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2022-12-14 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/Others/" class="post-detail-header_category">
+              Others
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="row justify-position" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1 id="Vscode中的C-多文件编译cmake、json配置"><a href="#Vscode中的C-多文件编译cmake、json配置" class="headerlink" title="Vscode中的C++多文件编译cmake、json配置"></a>Vscode中的C++多文件编译cmake、json配置</h1><h2 id="Vscode中编写C-文件"><a href="#Vscode中编写C-文件" class="headerlink" title="Vscode中编写C++文件"></a>Vscode中编写C++文件</h2><p><code>main.c</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> &amp;x, <span class="keyword">int</span> &amp;y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">    temp = x;</span><br><span class="line">    x = y;</span><br><span class="line">    y = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">20</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Welcome Vscode&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;before swap&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;a = &quot;</span> &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;b = &quot;</span> &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">swap</span>(a,b);</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;after swap&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;a = &quot;</span> &lt;&lt; a &lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;b = &quot;</span> &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>新建终端</p>
+<p>执行命令</p>
+<p><code>g++ main.cpp</code></p>
+<p>生成可执行文件<code>a.exe</code></p>
+<p><code>./a.exe</code></p>
+<p>生成可以调试的可执行文件</p>
+<p><code>g++ -g main.cpp -o my.exe</code></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221214103923377.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221214103923377.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221214103923377"></p>
+<h2 id="launch-json-用于调试的配置文件"><a href="#launch-json-用于调试的配置文件" class="headerlink" title="launch.json:用于调试的配置文件"></a>launch.json:用于调试的配置文件</h2><blockquote>
+<p>指定语言环境</p>
+<p>指定调试类型</p>
+<p>……..</p>
+</blockquote>
+<p>生成launch.json执行调试</p>
+<p><strong><em>C\C++扩展退回到1.8.4版本</em></strong></p>
+<p>调试-&gt;Creat a launch.json file-&gt;C++(GDB/LDB)-&gt;g++.exe</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221213211650910.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221213211650910.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221213211650910"></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 使用 IntelliSense 了解相关属性。 </span></span><br><span class="line">    <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">    <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;0.2.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;g++.exe - 生成和调试活动文件&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;cppdbg&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;program&quot;</span>: <span class="string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span>,  <span class="comment">//重要</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span>: [],</span><br><span class="line">            <span class="attr">&quot;stopAtEntry&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">            <span class="attr">&quot;cwd&quot;</span>: <span class="string">&quot;$&#123;fileDirname&#125;&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;environment&quot;</span>: [],</span><br><span class="line">            <span class="attr">&quot;externalConsole&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">            <span class="attr">&quot;MIMode&quot;</span>: <span class="string">&quot;gdb&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;miDebuggerPath&quot;</span>: <span class="string">&quot;D:\\Exe\\mingw64\\bin\\gdb.exe&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;setupCommands&quot;</span>: [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="attr">&quot;description&quot;</span>: <span class="string">&quot;为 gdb 启用整齐打印&quot;</span>,</span><br><span class="line">                    <span class="attr">&quot;text&quot;</span>: <span class="string">&quot;-enable-pretty-printing&quot;</span>,</span><br><span class="line">                    <span class="attr">&quot;ignoreFailures&quot;</span>: <span class="literal">true</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="attr">&quot;description&quot;</span>: <span class="string">&quot;将反汇编风格设置为 Intel&quot;</span>,</span><br><span class="line">                    <span class="attr">&quot;text&quot;</span>: <span class="string">&quot;-gdb-set disassembly-flavor intel&quot;</span>,</span><br><span class="line">                    <span class="attr">&quot;ignoreFailures&quot;</span>: <span class="literal">true</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">&quot;preLaunchTask&quot;</span>: <span class="string">&quot;C/C++: g++.exe 生成活动文件&quot;</span>	<span class="comment">//重要</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>configurations</code>一个数组储存多个参数</p>
+<blockquote>
+<p>type : 指定编程环境(go node php…)</p>
+<p>name :给配置项起一个易理解的名字</p>
+<p>request: 指定调试模式(launch/attach)</p>
+</blockquote>
+<h3 id="手动启动应用程序："><a href="#手动启动应用程序：" class="headerlink" title="手动启动应用程序："></a>手动启动应用程序：</h3><p>开发者手动输入启动命令——&gt;程序运行——&gt;程序不支持打断点</p>
+<h3 id="launch启动应用程序"><a href="#launch启动应用程序" class="headerlink" title="launch启动应用程序"></a>launch启动应用程序</h3><p>vscode根据配置生成启动命令并运行——&gt;更程序搭配调试器——&gt;程序运行——&gt;支持打断点</p>
+<h2 id="编译多个文件"><a href="#编译多个文件" class="headerlink" title="编译多个文件"></a>编译多个文件</h2><p><code>g++ -g .\main.cpp .\swap.cpp -o multfiles</code></p>
+<p>生成 的默认<code>task.json</code>只能编译单个文件</p>
+<p>如果需要编译多个需要自己写<code>task.json</code>和<code>launch.json</code></p>
+<p>修改<code>launch.json</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;0.2.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            ...</span><br><span class="line">            <span class="attr">&quot;program&quot;</span>: <span class="string">&quot;$&#123;fileDirname&#125;\\mult_swap.exe&quot;</span>, <span class="comment">//改为g++生成的编译文件</span></span><br><span class="line">            ...</span><br><span class="line">            ],</span><br><span class="line">            <span class="comment">// &quot;preLaunchTask&quot;: &quot;C/C++: g++.exe 生成活动文件&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>task.json执行命令编译,for build before debug</p>
+<p>launch.json执行, for debug</p>
+<p>task.json的”label”与launch.json的”preLaunchTask”对应</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;cppbuild&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;label&quot;</span>: <span class="string">&quot;C/C++: g++.exe 生成活动文件&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;command&quot;</span>: <span class="string">&quot;D:\\Exe\\mingw64\\bin\\g++.exe&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;args&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;-fdiagnostics-color=always&quot;</span>,</span><br><span class="line">                <span class="string">&quot;-g&quot;</span>,</span><br><span class="line">                <span class="string">&quot;$&#123;file&#125;&quot;</span>,</span><br><span class="line">                <span class="string">&quot;-o&quot;</span>,</span><br><span class="line">                <span class="string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">&quot;options&quot;</span>: &#123;</span><br><span class="line">                <span class="attr">&quot;cwd&quot;</span>: <span class="string">&quot;$&#123;fileDirname&#125;&quot;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="attr">&quot;problemMatcher&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;$gcc&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">&quot;group&quot;</span>: <span class="string">&quot;build&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;调试器生成的任务。&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;cppbuild&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;label&quot;</span>: <span class="string">&quot;C/C++: g++.exe 生成活动文件 ver(1)&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;command&quot;</span>: <span class="string">&quot;D:\\Exe\\mingw64\\bin\\g++.exe&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;args&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;-fdiagnostics-color=always&quot;</span>,</span><br><span class="line">                <span class="string">&quot;-g&quot;</span>,</span><br><span class="line">                <span class="string">&quot;$&#123;file&#125;&quot;</span>,</span><br><span class="line">                <span class="string">&quot;-o&quot;</span>,</span><br><span class="line">                <span class="string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">&quot;options&quot;</span>: &#123;</span><br><span class="line">                <span class="attr">&quot;cwd&quot;</span>: <span class="string">&quot;$&#123;fileDirname&#125;&quot;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="attr">&quot;problemMatcher&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;$gcc&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">&quot;group&quot;</span>: &#123;</span><br><span class="line">                <span class="attr">&quot;kind&quot;</span>: <span class="string">&quot;build&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;isDefault&quot;</span>: <span class="literal">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="attr">&quot;detail&quot;</span>: <span class="string">&quot;调试器生成的任务。&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;2.0.0&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="CMake文件"><a href="#CMake文件" class="headerlink" title="CMake文件"></a>CMake文件</h2><p>cmake的定义： ——-高级编译配置工具</p>
+<p>当多个人用不同的语言或者编译器开发一个项目，最终要输出一个可执行文件或者共享库（(ll， so等等）这时候神器就出现了—-CMake!所有操</p>
+<p>作都是通过编译CMakeLists.txt来完成的一简单，为将来处理大型的C/C++/JAVA项目做准备</p>
+<p>首先windows安装CMake:<a target="_blank" rel="noopener" href="https://cmake.org/download/">官网下载</a></p>
+<p>安装过程中主要add Path,打开powershell输入命令<code>cmake</code>结果如下即安装成功</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221214112717515.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221214112717515.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221214112717515"></p>
+<p>vscode中新建文件<code>CMakeLists.txt</code></p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">project</span>(MYSWAPCPP)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(my_cmake_swap main.cpp swap.cpp)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>ctrl+shiift+p</code>输入CMake-&gt;Cmake配置-&gt;gcc</p>
+<p>如果出现<code>Bad CMake executable . Is it installed or settings contain the correct path (cmake.cmakePath)</code></p>
+<p>解决:【Settings】-&gt;【Extensions】-&gt;【CMake Tools Configuration】-&gt;【CMake:Cmake Path】）指定 cmake.exe 的文件地址。</p>
+<p>成功如下</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221214112929961.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221214112929961.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221214112929961"></p>
+<p>在build目录下输入命令</p>
+<p><code>cmake ..</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-- Configuring done</span><br><span class="line">-- Generating done</span><br><span class="line">-- Build files have been written to: D:/C++_CLion/Vscode_C++/build</span><br></pre></td></tr></table></figure>
+<p>继续输入命令<code>mingw32-make.exe</code>(运行windows的makefile文件)</p>
+<p>(linux为<code>make</code>)</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221214161453848.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20221214161453848.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20221214161453848"></p>
+<p>修改<code>launch.json</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;program&quot;</span>: <span class="string">&quot;$&#123;fileDirname&#125;\\build\\swap_file.exe&quot;</span>,</span><br></pre></td></tr></table></figure>
+<p>​             </p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/VSCode/" class="">
+              VSCode
+            </a>
+          
+            <a href="/tags/CMake/" class="">
+              CMake
+            </a>
+          
+            <a href="/tags/Json/" class="">
+              Json
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>GHigher</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2022/12/14/Vscode中的C-多文件编译cmake、json配置/" target="_blank" title="Vscode中的C++多文件编译cmake、json配置">https://yuchanghui.top/2022/12/14/Vscode中的C-多文件编译cmake、json配置/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/8.jpg" class="lazyload placeholder" data-srcset="/medias/8.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+    </div>
+    <a href="/2022/12/14/CMake%E5%AD%A6%E4%B9%A0/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">CMake学习</div>
+      </div>
+      
+      <!-- <div class="content">
+        CMake学习eg:
+12345PROJECT (HELLO)SET(SRC_LIST main.cpp)MESSAGE
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/10.png" class="lazyload placeholder" data-srcset="/medias/10.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/2022/11/11/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0-%E8%BD%BD%E8%8D%B7%E7%AE%80%E5%8C%96%E9%97%AE%E9%A2%98/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">有限元分析学习-载荷简化问题</div>
+      </div>
+      <!-- <div class="content">
+        有限元分析学习-载荷简化问题载荷简化问题
+分析实例: 桌面放置物体
+问题描述: 考察桌子正中间放置一个质量为44.6kg
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em; margin: 15px auto;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('/medias/monkey.gif');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+
+
+<script>
+  function closeToc(init) {
+    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
+    $(".toc-content").css({'width': 0});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+  };
+  function openToc() {
+    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
+    $(".toc-content").css({'width': '300px'});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+  }
+  function openBtnClickFn () {
+    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+    let open = eval('' || 'true');
+    openOrCloseBtn.click(function() {
+      if (open) {
+        closeToc();
+        open = false;
+      } else {
+        openToc();
+        open = true;
+      }
+    });
+  };
+  openBtnClickFn();
+  initCloseTocWidth(true);
+
+  function initCloseTocWidth(init) {
+    if (window.innerWidth >= 992) {
+      let isClose = false;
+      isClose && closeToc(init)
+    }
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    $(".toc-aside").css({'transition': 'no'});
+  })
+  document.addEventListener('pjax:complete', function () {
+    openBtnClickFn();
+  })
+  
+</script>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
   <script>
-  function typedFn() {
-    const el = '#archive-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
   
-  </div>
-  <div class="mask-box"></div>
-</div>
-
-<div class="archive-video">
-  <video class="full-video" autoplay loop muted>
-      <source style="width: 100%;height: 100vh;" src="https://assets.mixkit.co/videos/preview/mixkit-spinning-around-the-earth-29351-large.mp4">
-  </video>
-  <div class="video-header-title">
-    归档
-  </div>
-  <div class="video-header-desc">
-  
-      <span class="title" id="archive-video-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#archive-video-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
 </script>
-      
-  </div>
-  <div class="mask-box"></div>
-</div>
 
-<!-- hash算法 -->
-
-
-<div class="archive-main">
-  <section class="archive">
-    <div class="archive-content">
-      <ul class="post-archive">
-        
-        
-          
-            
-            <div class="year" data-aos="zoom-in-up">
-                <div class="bullet"></div>
-                <a href="/archives/2022">2022</a>
-            </div>
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/12/14/CMake%E5%AD%A6%E4%B9%A0/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/8.jpg" class="lazyload placeholder" data-srcset="/medias/8.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">12-14</span>
-              </div>
-              <a class="post-title" href="/2022/12/14/CMake%E5%AD%A6%E4%B9%A0/">CMake学习</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/12/14/Vscode%E4%B8%AD%E7%9A%84C-%E5%A4%9A%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91cmake%E3%80%81json%E9%85%8D%E7%BD%AE/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">12-14</span>
-              </div>
-              <a class="post-title" href="/2022/12/14/Vscode%E4%B8%AD%E7%9A%84C-%E5%A4%9A%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91cmake%E3%80%81json%E9%85%8D%E7%BD%AE/">Vscode中的C++多文件编译cmake、json配置</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/11/11/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0-%E8%BD%BD%E8%8D%B7%E7%AE%80%E5%8C%96%E9%97%AE%E9%A2%98/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/10.png" class="lazyload placeholder" data-srcset="/medias/10.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">11-11</span>
-              </div>
-              <a class="post-title" href="/2022/11/11/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0-%E8%BD%BD%E8%8D%B7%E7%AE%80%E5%8C%96%E9%97%AE%E9%A2%98/">有限元分析学习-载荷简化问题</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/10/31/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E4%B8%89/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">10-31</span>
-              </div>
-              <a class="post-title" href="/2022/10/31/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E4%B8%89/">有限元分析学习三</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/10/30/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E4%BA%8C/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">10-30</span>
-              </div>
-              <a class="post-title" href="/2022/10/30/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E4%BA%8C/">有限元分析学习二</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/10/29/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E4%B8%80/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">10-29</span>
-              </div>
-              <a class="post-title" href="/2022/10/29/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E4%B8%80/">有限元分析学习一</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/10/22/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E5%9B%9B/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/4.jpg" class="lazyload placeholder" data-srcset="/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">10-22</span>
-              </div>
-              <a class="post-title" href="/2022/10/22/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E5%9B%9B/">C++基础学习四</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/10/03/Vscode%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91RaspberryPi/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">10-03</span>
-              </div>
-              <a class="post-title" href="/2022/10/03/Vscode%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91RaspberryPi/">Vscode远程开发RaspberryPi</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/10/01/RaspberryPi%E7%9A%84%E5%88%9D%E6%AC%A1%E4%BD%BF%E7%94%A8/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/15.png" class="lazyload placeholder" data-srcset="/medias/15.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">10-01</span>
-              </div>
-              <a class="post-title" href="/2022/10/01/RaspberryPi%E7%9A%84%E5%88%9D%E6%AC%A1%E4%BD%BF%E7%94%A8/">RaspberryPi的初次使用</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/09/16/Pyqt5-Yolov5-Unet-centernet/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">09-16</span>
-              </div>
-              <a class="post-title" href="/2022/09/16/Pyqt5-Yolov5-Unet-centernet/">Pyqt5+Yolov5+Unet+Centernet</a>
-            </div>
-          </li>
-        
-      </ul>
-    </div>
-  </section>
-  <div class="w-70">
-    
-  <!-- <nav class="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="extend next" rel="next" href="/archives/page/2/">下一页</a>
-  </nav> -->
-  <div class="page-nav">
-    
-    <div class="page-info">
-        <div class="page-info-text">1 / 7</div>
-    </div>
-    
-      <a href="/archives/page/2/"
-         class="page-nav-next">
-          <span class="mr-5">下一页</span><i class="fas fa-angle-right"></i>
-      </a>
-      
-  </div>
-
-  </div>
-</div>
 
                             </main>
                           </div>
