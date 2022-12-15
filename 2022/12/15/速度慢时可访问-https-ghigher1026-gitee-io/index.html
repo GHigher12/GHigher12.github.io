@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Opencv学习03 | GHigher&#39;s Blog</title>
+  <title>速度慢时可访问:https://ghigher1026.gitee.io | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -558,21 +558,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/8.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/4.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        Opencv学习03
+        速度慢时可访问:https://ghigher1026.gitee.io
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2022-01-16 |
+          <i class="fas fa-calendar"></i> 发表于：2022-12-15 |
         </span>
       
 
@@ -580,12 +580,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/" class="post-detail-header_category">
-              视觉处理
-            </a>
-          
-            <a href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/" class="post-detail-header_category">
-              Opencv
+            <a href="/categories/Others/" class="post-detail-header_category">
+              Others
             </a>
           
         </span>
@@ -609,38 +605,9 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h3 id="Canny边缘检测"><a href="#Canny边缘检测" class="headerlink" title="Canny边缘检测"></a>Canny边缘检测</h3><p>1）使用高斯滤波，平滑图像，滤除噪声</p>
-<p>2）计算图像中每个像素点的梯度强度和方向</p>
-<p>3）应用非极大值抑制，以消除边缘检测带来的杂散响应</p>
-<p>4）应用双阈值检测来确定真实和潜在的边缘</p>
-<p><img src="双阈值检测.png" class="lazyload placeholder" data-srcset="双阈值检测.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
-<p>5）通过抑制孤立的边缘最终完成边缘检测</p>
-<p><code>cv2.Canny</code>函数：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.Canny(image, threshold1, threshold2[, edges[, apertureSize[, L2gradient ]]]) </span><br></pre></td></tr></table></figure>
-<ul>
-<li>第一个参数是需要处理的原图像，该图像必须为单通道的灰度图；</li>
-<li>第二个参数是阈值1，即minVal;</li>
-<li>第三个参数是阈值2 ，即maxVal;</li>
-<li>选参数中apertureSize就是Sobel算子的大小;</li>
-<li>L2gradient参数是一个布尔值，如果为真，则使用更精确的L2范数进行计算（即两个方向的倒数的平方和再开放），否则使用L1范数（直接将两个方向导数的绝对值相加）。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Canny边缘检测</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;./images/car.png&#x27;</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line"><span class="comment"># h, w = img.shape[:2]</span></span><br><span class="line"><span class="comment"># M = np.float32([[0.5, 0, 0], [0, 0.5, 0]])</span></span><br><span class="line"><span class="comment"># minVal：20 maxVal：100</span></span><br><span class="line">img_canny1 = cv2.Canny(img, <span class="number">20</span>, <span class="number">100</span>)</span><br><span class="line"><span class="comment"># minVal：50 maxVal：100</span></span><br><span class="line">img_canny2 = cv2.Canny(img, <span class="number">50</span>, <span class="number">100</span>)</span><br><span class="line"><span class="comment"># minVal：80 maxVal：100</span></span><br><span class="line">img_canny3 = cv2.Canny(img, <span class="number">80</span>, <span class="number">100</span>)</span><br><span class="line">img_canny = np.hstack((img_canny1, img_canny2, img_canny3))</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;./images/car_canny.png&#x27;</span>, img_canny)</span><br><span class="line">image_show(<span class="string">&#x27;img_canny&#x27;</span>, img_canny)</span><br></pre></td></tr></table></figure>
-<p><img src="car_canny.png" class="lazyload placeholder" data-srcset="car_canny.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
-
+        <h1 id="网址：ghigher1026-gitee-io-访问部署在Gitee中的网页，速度较快"><a href="#网址：ghigher1026-gitee-io-访问部署在Gitee中的网页，速度较快" class="headerlink" title="网址：ghigher1026.gitee.io 访问部署在Gitee中的网页，速度较快"></a>网址：<a href="ghigher1026.gitee.io">ghigher1026.gitee.io</a> 访问部署在Gitee中的网页，速度较快</h1><h1 id="网址：yuchanghui-top-or-GHigher12-github-io-访问部署在Github中的网页"><a href="#网址：yuchanghui-top-or-GHigher12-github-io-访问部署在Github中的网页" class="headerlink" title="网址：yuchanghui.top or GHigher12.github.io 访问部署在Github中的网页"></a>网址：<a href="yuchanghui.top">yuchanghui.top</a> or <a href="GHigher12.github.io">GHigher12.github.io</a> 访问部署在Github中的网页</h1><h1 id=""><a href="#" class="headerlink" title=" "></a> </h1>
       </div>
       <div class="post-tags-categories">
-        
-        <div class="tags">
-          
-            <a href="/tags/python/" class="">
-              python
-            </a>
-          
-            <a href="/tags/Opencv/" class="">
-              Opencv
-            </a>
-          
-        </div>
         
       </div>
       
@@ -651,7 +618,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2022/01/16/Opencv学习03/" target="_blank" title="Opencv学习03">https://yuchanghui.top/2022/01/16/Opencv学习03/</a>
+    <a href="/2022/12/15/速度慢时可访问-https-ghigher1026-gitee-io/" target="_blank" title="速度慢时可访问:https://ghigher1026.gitee.io">https://yuchanghui.top/2022/12/15/速度慢时可访问-https-ghigher1026-gitee-io/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -669,39 +636,22 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-    </div>
-    <a href="/2022/01/19/python%E4%B8%8Estm32%E9%80%9A%E4%BF%A1/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">python与stm32通信</div>
-      </div>
-      
-      <!-- <div class="content">
-        python与stm32通信学习了python也学习了stm32，而如何将他们结合起来呢，于是我上网寻找资料，终于发现p
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/9.png" class="lazyload placeholder" data-srcset="/medias/9.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/8.jpg" class="lazyload placeholder" data-srcset="/medias/8.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/2022/01/15/Opencv%E5%AD%A6%E4%B9%A002/" class="post-nav-link">
+    <a href="/2022/12/14/CMake%E5%AD%A6%E4%B9%A0/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Opencv学习02</div>
+        <div class="title-text">CMake学习</div>
       </div>
       <!-- <div class="content">
-        图像梯度处理图像计算的是图像的边缘信息，它能反映图像像素的变化。如灰度值变化较大的地方，梯度值也较大；灰度值较小的地方，
+        CMake学习eg:
+12345PROJECT (HELLO)SET(SRC_LIST main.cpp)MESSAGE
       </div> -->
     </a>
   </div>
