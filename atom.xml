@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2022-12-16T14:35:37.162Z</updated>
+  <updated>2022-12-16T15:31:24.429Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yuchanghui.top/2022/12/16/C-%E6%8F%90%E9%AB%98%E7%BC%96%E7%A8%8B%E2%80%94%E2%80%94%E6%A8%A1%E6%9D%BF%E3%80%81%E5%AE%B9%E5%99%A8/"/>
     <id>https://yuchanghui.top/2022/12/16/C-%E6%8F%90%E9%AB%98%E7%BC%96%E7%A8%8B%E2%80%94%E2%80%94%E6%A8%A1%E6%9D%BF%E3%80%81%E5%AE%B9%E5%99%A8/</id>
     <published>2022-12-16T14:29:10.000Z</published>
-    <updated>2022-12-16T14:35:37.162Z</updated>
+    <updated>2022-12-16T15:31:24.429Z</updated>
     
     
       
@@ -40,29 +40,6 @@
     
     
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>速度慢时可访问:https://ghigher1026.gitee.io</title>
-    <link href="https://yuchanghui.top/2022/12/15/%E9%80%9F%E5%BA%A6%E6%85%A2%E6%97%B6%E5%8F%AF%E8%AE%BF%E9%97%AE-https-ghigher1026-gitee-io/"/>
-    <id>https://yuchanghui.top/2022/12/15/%E9%80%9F%E5%BA%A6%E6%85%A2%E6%97%B6%E5%8F%AF%E8%AE%BF%E9%97%AE-https-ghigher1026-gitee-io/</id>
-    <published>2022-12-15T14:53:46.000Z</published>
-    <updated>2022-12-15T14:57:33.082Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;网址：ghigher1026-gitee-io-访问部署在Gitee中的网页，速度较快&quot;&gt;&lt;a href=&quot;#网址：ghigher1026-gitee-io-访问部署在Gitee中的网页，速度较快&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Others" scheme="https://yuchanghui.top/categories/Others/"/>
-    
     
   </entry>
   
@@ -570,6 +547,35 @@
     
     
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ESP32和Micropython点亮LED</title>
+    <link href="https://yuchanghui.top/2022/07/27/ESP32%E5%92%8CMicropython%E7%82%B9%E4%BA%AELED/"/>
+    <id>https://yuchanghui.top/2022/07/27/ESP32%E5%92%8CMicropython%E7%82%B9%E4%BA%AELED/</id>
+    <published>2022-07-27T15:21:49.000Z</published>
+    <updated>2022-07-28T12:54:37.640Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;环境搭建&quot;&gt;&lt;a href=&quot;#环境搭建&quot; class=&quot;headerlink&quot; title=&quot;环境搭建&quot;&gt;&lt;/a&gt;环境搭建&lt;/h2&gt;&lt;p&gt;Thonny下载地址 官网 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="ESP32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/ESP32/"/>
+    
+    
+    <category term="ESP32" scheme="https://yuchanghui.top/tags/ESP32/"/>
+    
+    <category term="Micropython" scheme="https://yuchanghui.top/tags/Micropython/"/>
     
   </entry>
   
