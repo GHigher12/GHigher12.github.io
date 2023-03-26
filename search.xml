@@ -4158,4 +4158,43 @@
         <tag>Ubuntu</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Ubuntu22.04安装ROS2</title>
+    <url>/2023/03/26/Ubuntu22-04%E5%AE%89%E8%A3%85ROS2/</url>
+    <content><![CDATA[<h1 id="Ubuntu22-04安装ROS2"><a href="#Ubuntu22-04安装ROS2" class="headerlink" title="Ubuntu22.04安装ROS2"></a>Ubuntu22.04安装ROS2</h1><h2 id="设置语言环境"><a href="#设置语言环境" class="headerlink" title="设置语言环境"></a>设置语言环境</h2><p>检查是否支持UTF-8编码</p>
+<p><code>locale</code></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/8d3193050687fa937666b7db679bb359.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/8d3193050687fa937666b7db679bb359.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230325182220960"></p>
+<h2 id="启动Ubuntu-universe存储库"><a href="#启动Ubuntu-universe存储库" class="headerlink" title="启动Ubuntu universe存储库"></a>启动Ubuntu universe存储库</h2><p>打开软件和更新</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/ae6ba05153aef98e90708616ae524573.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/ae6ba05153aef98e90708616ae524573.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230325182807253"></p>
+<h2 id="设置软件源"><a href="#设置软件源" class="headerlink" title="设置软件源"></a>设置软件源</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt install curl gnupg lsb-release</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(source /etc/os-release &amp;&amp; echo $UBUNTU_CODENAME) main&quot; | sudo tee /etc/apt/sources.list.d/ros2.list &gt; /dev/null</span><br></pre></td></tr></table></figure>
+<h2 id="安装ROS2"><a href="#安装ROS2" class="headerlink" title="安装ROS2"></a>安装ROS2</h2><p>更新apt存储库缓存</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<p>然后升级已安装的软件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
+<p>安装桌面版ROS2 包含：ROS、RViz、示例与教程，安装命令如下：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install ros-humble-desktop</span><br></pre></td></tr></table></figure>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>终端下，执行ROS2程序时，需要调用如下命令配置环境：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">source /opt/ros/humble/setup.bash</span><br></pre></td></tr></table></figure>
+<p>每次新开终端时，都得执行上述命令，或者也可以执行如下命令，将配置环境指令写入 ”~/.bashrc“ 文件，那么每次新启动终端时，不需要在手动配置环境：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;source /opt/ros/humble/setup.bash&quot; &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>到目前为止，ROS2就已经安装且配置完毕了。</p>
+<h2 id="验证安装成功"><a href="#验证安装成功" class="headerlink" title="验证安装成功"></a>验证安装成功</h2><p>终端输入</p>
+<p>打开小乌龟GUI界面</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ros2 run turtlesim turtlesim_node</span><br></pre></td></tr></table></figure>
+<p>控制小乌龟运动</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ros2 run turtlesim turtle_teleop_key</span><br></pre></td></tr></table></figure>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/8959a97296875d0e95dfff73a2ca4152.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/8959a97296875d0e95dfff73a2ca4152.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230325211135440"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>ROS</tag>
+      </tags>
+  </entry>
 </search>

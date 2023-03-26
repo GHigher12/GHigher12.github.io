@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2023-03-25T15:19:26.507Z</updated>
+  <updated>2023-03-26T14:04:04.694Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu22.04安装ROS2</title>
+    <link href="https://yuchanghui.top/2023/03/26/Ubuntu22-04%E5%AE%89%E8%A3%85ROS2/"/>
+    <id>https://yuchanghui.top/2023/03/26/Ubuntu22-04%E5%AE%89%E8%A3%85ROS2/</id>
+    <published>2023-03-26T14:03:05.000Z</published>
+    <updated>2023-03-26T14:04:04.694Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Ubuntu22-04安装ROS2&quot;&gt;&lt;a href=&quot;#Ubuntu22-04安装ROS2&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu22.04安装ROS2&quot;&gt;&lt;/a&gt;Ubuntu22.04安装ROS2&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu安装与卸载命令及Vim命令</title>
@@ -531,36 +562,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;神经网络搭建CIFAR10&quot;&gt;&lt;a href=&quot;#神经网络搭建CIFAR10&quot; class=&quot;headerlink&quot; title=&quot;神经网络搭建CIFAR10&quot;&gt;&lt;/a&gt;神经网络搭建CIFAR10&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    <category term="视觉处理" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/"/>
-    
-    <category term="Pytorch" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Pytorch/"/>
-    
-    
-    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
-    
-    <category term="Pytorch" scheme="https://yuchanghui.top/tags/Pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>torchvision中的数据集使用</title>
-    <link href="https://yuchanghui.top/2022/07/31/torchvision%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BD%BF%E7%94%A8/"/>
-    <id>https://yuchanghui.top/2022/07/31/torchvision%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BD%BF%E7%94%A8/</id>
-    <published>2022-07-31T08:58:25.000Z</published>
-    <updated>2022-07-31T15:45:21.714Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;数据集的下载、组织&quot;&gt;&lt;a href=&quot;#数据集的下载、组织&quot; class=&quot;headerlink&quot; title=&quot;数据集的下载、组织&quot;&gt;&lt;/a&gt;数据集的下载、组织&lt;/h2&gt;&lt;p&gt;进入Pytorch官网&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
         
       
     
