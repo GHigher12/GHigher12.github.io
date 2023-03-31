@@ -4199,4 +4199,49 @@
         <tag>Ubuntu</tag>
       </tags>
   </entry>
+  <entry>
+    <title>ROS2显示urdf模型中No transform from [XX_Link] to [base_link]</title>
+    <url>/2023/03/31/ROS2%E6%98%BE%E7%A4%BAurdf%E6%A8%A1%E5%9E%8B%E4%B8%ADNo%20transform%20from%20%5BXX_Link%5D%20to%20%5Bbase_link%5D/</url>
+    <content><![CDATA[<h1 id="ROS2显示urdf模型中No-transform-from-XX-Link-to-base-link"><a href="#ROS2显示urdf模型中No-transform-from-XX-Link-to-base-link" class="headerlink" title="ROS2显示urdf模型中No transform from [XX_Link] to [base_link]"></a>ROS2显示urdf模型中No transform from [XX_Link] to [base_link]</h1><h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b9c9a6b40ba61c7e97d14a5b156eabb3.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b9c9a6b40ba61c7e97d14a5b156eabb3.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230331221601858"></p>
+<p>该错误中关节<code>joint</code>为<code>fixed</code>可以正常显示，而其他<code>joint</code>为<code>cotinuous</code>,都显示无法关联到<code>base_link</code>，当我尝试把所有joint改为fixed时可以显示正常，但这并不是正确的解决办法。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>原因是我在拉launch.py文件中未添加<code>joint_state_publisher</code>节点,导致旋转关节无法关联</p>
+<p><code>display_launch.py</code></p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> launch <span class="keyword">import</span> LaunchDescription</span><br><span class="line"><span class="keyword">from</span> launch_ros.actions <span class="keyword">import</span> Node</span><br><span class="line"><span class="keyword">from</span> launch.substitutions <span class="keyword">import</span> Command</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> ament_index_python.packages <span class="keyword">import</span> get_package_share_directory</span><br><span class="line"><span class="keyword">from</span> launch_ros.parameter_descriptions <span class="keyword">import</span> ParameterValue</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate_launch_description</span>():</span></span><br><span class="line">    p_value = ParameterValue(Command([<span class="string">&quot;xacro &quot;</span>, get_package_share_directory(<span class="string">&quot;cpp06_urdf&quot;</span>) + <span class="string">&quot;/urdf/urdf/ros_car.urdf&quot;</span>]))</span><br><span class="line">    robot_state_pub = Node(</span><br><span class="line">        package=<span class="string">&quot;robot_state_publisher&quot;</span>,</span><br><span class="line">        executable=<span class="string">&quot;robot_state_publisher&quot;</span>,</span><br><span class="line">        parameters=[&#123;<span class="string">&quot;robot_description&quot;</span>:p_value&#125;]</span><br><span class="line">    )</span><br><span class="line">    rviz2 = Node(</span><br><span class="line">        package=<span class="string">&quot;rviz2&quot;</span>, </span><br><span class="line">        executable=<span class="string">&quot;rviz2&quot;</span>,</span><br><span class="line">        arguments=[<span class="string">&quot;-d&quot;</span>, get_package_share_directory(<span class="string">&quot;cpp06_urdf&quot;</span>)+<span class="string">&quot;/rviz/ros_car.urdf.rviz&quot;</span>])</span><br><span class="line">    <span class="keyword">return</span> LaunchDescription([model, robot_state_pub, rviz2])</span><br></pre></td></tr></table></figure>
+<p>添加<code>joint_state_publisher</code>节点</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">joint_state_pub = Node(</span><br><span class="line">    package=<span class="string">&quot;joint_state_publisher&quot;</span>, </span><br><span class="line">    executable=<span class="string">&quot;joint_state_publisher&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> LaunchDescription([model, robot_state_pub,joint_state_pub, rviz2])</span><br></pre></td></tr></table></figure>
+<p>重新编译并运行<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">colcon build --packages-select cpp06_urdf</span><br><span class="line">. install/setup.bash</span><br><span class="line">ros2 launch cpp06_urdf display_launch.py </span><br></pre></td></tr></table></figure></p>
+<p>显示正常</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/2aacc9744ea6567c867d66202ccdbda7.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/2aacc9744ea6567c867d66202ccdbda7.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230331222508142"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>ROS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CLion编译STM32解决FLASH溢出问题</title>
+    <url>/2023/03/31/CLion%E7%BC%96%E8%AF%91STM32%E8%A7%A3%E5%86%B3FLASH%E6%BA%A2%E5%87%BA%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="Clion编译STM32解决FLASH溢出问题"><a href="#Clion编译STM32解决FLASH溢出问题" class="headerlink" title="Clion编译STM32解决FLASH溢出问题"></a>Clion编译STM32解决FLASH溢出问题</h1><h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ld.exe: MPU6050.elf section `.data&#x27;  will not fit in region `FLASH&#x27;</span><br><span class="line">ld.exe: region `FLASH‘ overflowed by xxx bytes</span><br></pre></td></tr></table></figure>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>改变<code>STM32F103C8Tx_FLASH.ld</code>中FLASH大小</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b030187d80005917ab1e4d8da4000585.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b030187d80005917ab1e4d8da4000585.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230329183345675"></p>
+<p>改为256K</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">MEMORY</span><br><span class="line">&#123;</span><br><span class="line">RAM (xrw)      : ORIGIN = <span class="number">0x20000000</span>, LENGTH = <span class="number">20</span>K</span><br><span class="line">FLASH (rx)      : ORIGIN = <span class="number">0x8000000</span>, LENGTH = <span class="number">256</span>K</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="错误-1"><a href="#错误-1" class="headerlink" title="错误"></a>错误</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arm-none-eabi-gcc: error: Core/Inc/test.h: No such file or directory</span><br><span class="line">arm-none-eabi-gcc: error: Core/Src/test.c: No such file or directory</span><br></pre></td></tr></table></figure>
+<h2 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h2><p>修改<code>CMakeList.txt</code><br><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/125f38b9d5d33ec72338dba6fdefe0ad.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/125f38b9d5d33ec72338dba6fdefe0ad.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230329193312612"></p>
+<p>去掉后面的test.h和test.c文件及路径</p>
+]]></content>
+      <categories>
+        <category>单片机</category>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>CLion</tag>
+      </tags>
+  </entry>
 </search>
