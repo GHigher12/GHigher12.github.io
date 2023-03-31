@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Ubuntu安装与卸载命令及Vim命令 | GHigher&#39;s Blog</title>
+  <title>Ubuntu/Vim/Vscode常用命令 | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -558,14 +558,14 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/11.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/4.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        Ubuntu安装与卸载命令及Vim命令
+        Ubuntu/Vim/Vscode常用命令
       </span>
     </div>
     
@@ -609,14 +609,13 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="Ubuntu安装与卸载命令及Vim常用命令"><a href="#Ubuntu安装与卸载命令及Vim常用命令" class="headerlink" title="Ubuntu安装与卸载命令及Vim常用命令"></a>Ubuntu安装与卸载命令及Vim常用命令</h1><p>安装</p>
+        <h1 id="Ubuntu-Vim-Vscode常用命令"><a href="#Ubuntu-Vim-Vscode常用命令" class="headerlink" title="Ubuntu/Vim/Vscode常用命令"></a>Ubuntu/Vim/Vscode常用命令</h1><h2 id="Ubuntu命令"><a href="#Ubuntu命令" class="headerlink" title="Ubuntu命令"></a>Ubuntu命令</h2><p>安装</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ..</span><br></pre></td></tr></table></figure>
 <p>安装.deb文件</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i *.deb</span><br></pre></td></tr></table></figure>
 <p>卸载</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get --purge remove &lt;package&gt;	</span><br></pre></td></tr></table></figure>
-<p>Vim常用命令</p>
-<ul>
+<h2 id="Vim常用命令"><a href="#Vim常用命令" class="headerlink" title="Vim常用命令"></a>Vim常用命令</h2><ul>
 <li><code>i</code>:编辑模式</li>
 <li><code>:q</code>:不保存退出</li>
 <li><code>:wq</code>:保存退出</li>
@@ -624,6 +623,9 @@
 <li><code>:!wq</code>:强制保存退出</li>
 <li><code>esc</code>:退回到命令模式</li>
 </ul>
+<h2 id="Vscode常用命令"><a href="#Vscode常用命令" class="headerlink" title="Vscode常用命令"></a>Vscode常用命令</h2><p><code>ctrl+shift+space</code>代码参数提示信息</p>
+<h3 id="vscode中的代码提示自定义"><a href="#vscode中的代码提示自定义" class="headerlink" title="vscode中的代码提示自定义"></a>vscode中的代码提示自定义</h3><p>设置-&gt;用户代码片段-&gt;python.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="comment">// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and </span></span><br><span class="line">	<span class="comment">// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:</span></span><br><span class="line">	<span class="comment">// $1, $2 for tab stops, $0 for the final cursor position, and $&#123;1:label&#125;, $&#123;2:another&#125; for placeholders. Placeholders with the </span></span><br><span class="line">	<span class="comment">// same ids are connected.</span></span><br><span class="line">	<span class="comment">// Example:</span></span><br><span class="line">	<span class="attr">&quot;Print to console&quot;</span>: &#123;</span><br><span class="line">		<span class="attr">&quot;prefix&quot;</span>: <span class="string">&quot;ros2_node_py&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;body&quot;</span>: [</span><br><span class="line">			<span class="string">&quot;import rclpy&quot;</span>,</span><br><span class="line">			<span class="string">&quot;from rclpy.node import Node&quot;</span>,</span><br><span class="line">			<span class="string">&quot;&quot;</span>,</span><br><span class="line">			<span class="string">&quot;class Mynode(Node):&quot;</span>,</span><br><span class="line">			<span class="string">&quot;    def __init__(self):&quot;</span>,</span><br><span class="line">			<span class="string">&quot;        super().__init__(\&quot;my_node\&quot;)&quot;</span>,</span><br><span class="line">			<span class="string">&quot;&quot;</span>,</span><br><span class="line">			<span class="string">&quot;def main():&quot;</span>,</span><br><span class="line">			<span class="string">&quot;    rclpy.init()&quot;</span>,</span><br><span class="line">			<span class="string">&quot;    rclpy.spin(Mynode())&quot;</span>,</span><br><span class="line">			<span class="string">&quot;    rclpy.shutdown()&quot;</span>,</span><br><span class="line">			<span class="string">&quot;&quot;</span>,</span><br><span class="line">			<span class="string">&quot;&quot;</span>,</span><br><span class="line">			<span class="string">&quot;if __name__ == \&quot;__main__\&quot;:&quot;</span>,</span><br><span class="line">			<span class="string">&quot;    main()&quot;</span></span><br><span class="line">		],</span><br><span class="line">		<span class="attr">&quot;description&quot;</span>: <span class="string">&quot;Log output to console&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       </div>
       <div class="post-tags-categories">
@@ -649,7 +651,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2023/03/25/Ubuntu安装与卸载命令及Vim命令/" target="_blank" title="Ubuntu安装与卸载命令及Vim命令">https://yuchanghui.top/2023/03/25/Ubuntu安装与卸载命令及Vim命令/</a>
+    <a href="/2023/03/25/UbuntuVimVscode常用命令/" target="_blank" title="Ubuntu/Vim/Vscode常用命令">https://yuchanghui.top/2023/03/25/UbuntuVimVscode常用命令/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -2045,6 +2047,21 @@ Cla
 
 
 
-                  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+                  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
