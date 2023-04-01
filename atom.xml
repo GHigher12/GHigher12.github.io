@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2023-03-31T14:56:21.350Z</updated>
+  <updated>2023-04-01T09:53:43.637Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>solidworks小车模型转urdf文件</title>
+    <link href="https://yuchanghui.top/2023/04/01/solidworks%E5%B0%8F%E8%BD%A6%E6%A8%A1%E5%9E%8B%E8%BD%ACurdf%E6%96%87%E4%BB%B6/"/>
+    <id>https://yuchanghui.top/2023/04/01/solidworks%E5%B0%8F%E8%BD%A6%E6%A8%A1%E5%9E%8B%E8%BD%ACurdf%E6%96%87%E4%BB%B6/</id>
+    <published>2023-04-01T09:49:45.000Z</published>
+    <updated>2023-04-01T09:53:43.637Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;solidworks小车模型转urdf文件&quot;&gt;&lt;a href=&quot;#solidworks小车模型转urdf文件&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+    <category term="Solidworks" scheme="https://yuchanghui.top/tags/Solidworks/"/>
+    
+  </entry>
   
   <entry>
     <title>ROS2显示urdf模型中No transform from [XX_Link] to [base_link]</title>
@@ -540,33 +571,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;C-基础学习三&quot;&gt;&lt;a href=&quot;#C-基础学习三&quot; class=&quot;headerlink&quot; title=&quot;C++基础学习三&quot;&gt;&lt;/a&gt;C++基础学习三&lt;/h1&gt;&lt;h2 id=&quot;C-中的引用&quot;&gt;&lt;a href=&quot;#C-中的引用&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="程序设计" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/C-C/"/>
-    
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++项目通讯管理系统</title>
-    <link href="https://yuchanghui.top/2022/08/30/C-%E9%A1%B9%E7%9B%AE%E9%80%9A%E8%AE%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://yuchanghui.top/2022/08/30/C-%E9%A1%B9%E7%9B%AE%E9%80%9A%E8%AE%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</id>
-    <published>2022-08-30T12:51:14.000Z</published>
-    <updated>2022-09-01T11:06:17.809Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;显示菜单&quot;&gt;&lt;a href=&quot;#显示菜单&quot; class=&quot;headerlink&quot; title=&quot;显示菜单&quot;&gt;&lt;/a&gt;显示菜单&lt;/h2&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
         
       
     

@@ -4244,4 +4244,49 @@
         <tag>CLion</tag>
       </tags>
   </entry>
+  <entry>
+    <title>solidworks小车模型转urdf文件</title>
+    <url>/2023/04/01/solidworks%E5%B0%8F%E8%BD%A6%E6%A8%A1%E5%9E%8B%E8%BD%ACurdf%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="solidworks小车模型转urdf文件"><a href="#solidworks小车模型转urdf文件" class="headerlink" title="solidworks小车模型转urdf文件"></a>solidworks小车模型转urdf文件</h1><h2 id="下载sw2urdf插件"><a href="#下载sw2urdf插件" class="headerlink" title="下载sw2urdf插件"></a>下载sw2urdf插件</h2><p><a href="https://github.com/ros/solidworks_urdf_exporter/releases">sw2urdf插件安装github地址</a></p>
+<p>选择适合自己SolidWorks版本下载</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230401175317811.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230401175317811.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230401175317811"></p>
+<h2 id="SolidWorks建模"><a href="#SolidWorks建模" class="headerlink" title="SolidWorks建模"></a>SolidWorks建模</h2><ul>
+<li>装配零件</li>
+<li>在joint为旋转的地方建立参考基准轴</li>
+<li>每个零件建立参考坐标系</li>
+</ul>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230401172720912.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230401172720912.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230401172720912"></p>
+<h2 id="sw2urdf"><a href="#sw2urdf" class="headerlink" title="sw2urdf"></a>sw2urdf</h2><p><code>工具-&gt;Tools-&gt;Export as urdf</code></p>
+<p>首先选择主体部分base_link,然后选择参考坐标系和base_link相关联的link数目，我的为6包括4个轮子1个雷达1个摄像头</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230401173144435.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230401173144435.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230401173144435"></p>
+<p>然后对每一个link配置，由于步骤相似，现以一个轮子为例：</p>
+<p>重命名link和joint，选择参考坐标系与基准轴，选择joint类型，由于轮子为旋转关节，则<code>Joint Type</code>为<code>continous</code></p>
+<ul>
+<li>continuous: 旋转关节，可以绕单轴无限旋转</li>
+<li>revolute: 旋转关节，类似于 continues,但是有旋转角度限制</li>
+<li>prismatic: 滑动关节，沿某一轴线移动的关节，有位置极限</li>
+<li>planer: 平面关节，允许在平面正交方向上平移或旋转</li>
+<li>floating: 浮动关节，允许进行平移、旋转运动</li>
+<li>fixed: 固定关节，不允许运动的特殊关节</li>
+</ul>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230401173530599.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230401173530599.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230401173530599"></p>
+<p>雷达也是旋转关节与轮子的配置类似，摄像头只需要修改Joint Type为fixed即可。</p>
+<p>配置完成之后，选择Preview and Export as URDF</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230401174131957.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230401174131957.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230401174131957"></p>
+<p>配置没问题，Next</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230401174146551.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230401174146551.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230401174146551"></p>
+<p>然后选择Export URDF and Meshes,不要选Only URDF，因为URDF文件里会引入mesh标签里要用到meshes文件夹下的STL模型，否则在运行机器人模型时出现错误。</p>
+<p>生成的文件架构</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">│  CMakeLists.txt</span><br><span class="line">│  export.log</span><br><span class="line">│  package.xml</span><br><span class="line">│</span><br><span class="line">├─config</span><br><span class="line">│      joint_names_ros2_car.yaml</span><br><span class="line">│</span><br><span class="line">├─launch</span><br><span class="line">│      display.launch</span><br><span class="line">│      gazebo.launch</span><br><span class="line">│</span><br><span class="line">├─meshes</span><br><span class="line">│      base_link.STL</span><br><span class="line">│      Camera_Link.STL</span><br><span class="line">│      LB_Link.STL</span><br><span class="line">│      LF_Link.STL</span><br><span class="line">│      Radar_Link.STL</span><br><span class="line">│      RB_Link.STL</span><br><span class="line">│      RF_Link.STL</span><br><span class="line">│</span><br><span class="line">├─textures</span><br><span class="line">└─urdf</span><br><span class="line">        ros2_car.csv</span><br><span class="line">        ros2_car.urdf</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>ROS</tag>
+        <tag>Solidworks</tag>
+      </tags>
+  </entry>
 </search>
