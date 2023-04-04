@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2023-04-01T09:53:43.637Z</updated>
+  <updated>2023-04-04T14:12:55.466Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>STM32HAL库驱动MPU6050</title>
+    <link href="https://yuchanghui.top/2023/04/04/STM32HAL%E5%BA%93%E9%A9%B1%E5%8A%A8MPU6050/"/>
+    <id>https://yuchanghui.top/2023/04/04/STM32HAL%E5%BA%93%E9%A9%B1%E5%8A%A8MPU6050/</id>
+    <published>2023-04-04T14:09:24.000Z</published>
+    <updated>2023-04-04T14:12:55.466Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;STM32HAL库驱动MPU6050&quot;&gt;&lt;a href=&quot;#STM32HAL库驱动MPU6050&quot; class=&quot;headerlink&quot; title=&quot;STM32HAL库驱动MPU6050&quot;&gt;&lt;/a&gt;STM32HAL库驱动MPU6050&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    
+    
+    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git基础命令</title>
+    <link href="https://yuchanghui.top/2023/04/04/Git%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"/>
+    <id>https://yuchanghui.top/2023/04/04/Git%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</id>
+    <published>2023-04-04T14:08:47.000Z</published>
+    <updated>2023-04-04T14:11:12.044Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Git基础命令&quot;&gt;&lt;a href=&quot;#Git基础命令&quot; class=&quot;headerlink&quot; title=&quot;Git基础命令&quot;&gt;&lt;/a&gt;Git基础命令&lt;/h1&gt;&lt;h2 id=&quot;克隆到本地&quot;&gt;&lt;a href=&quot;#克隆到本地&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Others" scheme="https://yuchanghui.top/categories/Others/"/>
+    
+    
+    <category term="Git" scheme="https://yuchanghui.top/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>solidworks小车模型转urdf文件</title>
@@ -143,7 +197,7 @@
     <link href="https://yuchanghui.top/2023/03/25/UbuntuVimVscode%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>https://yuchanghui.top/2023/03/25/UbuntuVimVscode%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
     <published>2023-03-25T15:18:48.000Z</published>
-    <updated>2023-03-31T14:49:13.933Z</updated>
+    <updated>2023-04-04T14:12:02.478Z</updated>
     
     
       
@@ -524,64 +578,6 @@
     
     
     <category term="RaspberryPi" scheme="https://yuchanghui.top/tags/RaspberryPi/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Pyqt5+Yolov5+Unet+Centernet</title>
-    <link href="https://yuchanghui.top/2022/09/16/Pyqt5-Yolov5-Unet-centernet/"/>
-    <id>https://yuchanghui.top/2022/09/16/Pyqt5-Yolov5-Unet-centernet/</id>
-    <published>2022-09-16T10:45:05.000Z</published>
-    <updated>2022-09-16T10:47:27.482Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Pyqt5与Unet、yolov5、centernet结合&quot;&gt;&lt;a href=&quot;#Pyqt5与Unet、yolov5、centernet结合&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="视觉处理" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/"/>
-    
-    <category term="Pytorch" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Pytorch/"/>
-    
-    
-    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
-    
-    <category term="Pytorch" scheme="https://yuchanghui.top/tags/Pytorch/"/>
-    
-    <category term="Pyqt5" scheme="https://yuchanghui.top/tags/Pyqt5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++基础学习三</title>
-    <link href="https://yuchanghui.top/2022/09/02/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%B8%89/"/>
-    <id>https://yuchanghui.top/2022/09/02/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%B8%89/</id>
-    <published>2022-09-02T14:12:34.000Z</published>
-    <updated>2022-10-22T10:34:08.865Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;C-基础学习三&quot;&gt;&lt;a href=&quot;#C-基础学习三&quot; class=&quot;headerlink&quot; title=&quot;C++基础学习三&quot;&gt;&lt;/a&gt;C++基础学习三&lt;/h1&gt;&lt;h2 id=&quot;C-中的引用&quot;&gt;&lt;a href=&quot;#C-中的引用&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="程序设计" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/C-C/"/>
-    
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
     
   </entry>
   
