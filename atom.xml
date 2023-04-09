@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2023-04-04T14:12:55.466Z</updated>
+  <updated>2023-04-09T09:22:05.433Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>STM32使用OLED移植U8g2库</title>
+    <link href="https://yuchanghui.top/2023/04/09/STM32%E4%BD%BF%E7%94%A8OLED%E7%A7%BB%E6%A4%8DU8g2%E5%BA%93/"/>
+    <id>https://yuchanghui.top/2023/04/09/STM32%E4%BD%BF%E7%94%A8OLED%E7%A7%BB%E6%A4%8DU8g2%E5%BA%93/</id>
+    <published>2023-04-09T09:19:32.000Z</published>
+    <updated>2023-04-09T09:22:05.433Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;STM32使用OLED移植U8g2库&quot;&gt;&lt;a href=&quot;#STM32使用OLED移植U8g2库&quot; class=&quot;headerlink&quot; title=&quot;STM32使用OLED移植U8g2库&quot;&gt;&lt;/a&gt;STM32使用OLED移植U8g2库&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    
+    
+    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu添加桌面图标快捷方式</title>
+    <link href="https://yuchanghui.top/2023/04/09/Ubuntu%E6%B7%BB%E5%8A%A0%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/"/>
+    <id>https://yuchanghui.top/2023/04/09/Ubuntu%E6%B7%BB%E5%8A%A0%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</id>
+    <published>2023-04-09T09:19:05.000Z</published>
+    <updated>2023-04-09T09:21:00.347Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Ubuntu添加桌面图标快捷方式&quot;&gt;&lt;a href=&quot;#Ubuntu添加桌面图标快捷方式&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/categories/Linux/Ubuntu/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>STM32HAL库驱动MPU6050</title>
@@ -524,60 +582,6 @@
     
     
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vscode远程开发RaspberryPi</title>
-    <link href="https://yuchanghui.top/2022/10/03/Vscode%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91RaspberryPi/"/>
-    <id>https://yuchanghui.top/2022/10/03/Vscode%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91RaspberryPi/</id>
-    <published>2022-10-03T08:04:48.000Z</published>
-    <updated>2022-10-03T08:06:05.857Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;使用vscode开发raspberry-pi&quot;&gt;&lt;a href=&quot;#使用vscode开发raspberry-pi&quot; class=&quot;headerlink&quot; title=&quot;使用vscode开发raspberry pi&quot;&gt;&lt;/a&gt;使用vscode开发raspberry</summary>
-        
-      
-    
-    
-    
-    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    <category term="RaspberryPi" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/RaspberryPi/"/>
-    
-    
-    <category term="RaspberryPi" scheme="https://yuchanghui.top/tags/RaspberryPi/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RaspberryPi的初次使用</title>
-    <link href="https://yuchanghui.top/2022/10/01/RaspberryPi%E7%9A%84%E5%88%9D%E6%AC%A1%E4%BD%BF%E7%94%A8/"/>
-    <id>https://yuchanghui.top/2022/10/01/RaspberryPi%E7%9A%84%E5%88%9D%E6%AC%A1%E4%BD%BF%E7%94%A8/</id>
-    <published>2022-10-01T12:18:40.000Z</published>
-    <updated>2022-10-01T12:19:45.954Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;系统烧录&quot;&gt;&lt;a href=&quot;#系统烧录&quot; class=&quot;headerlink&quot; title=&quot;系统烧录&quot;&gt;&lt;/a&gt;系统烧录&lt;/h2&gt;&lt;h3 id=&quot;硬件&quot;&gt;&lt;a href=&quot;#硬件&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    <category term="RaspberryPi" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/RaspberryPi/"/>
-    
-    
-    <category term="RaspberryPi" scheme="https://yuchanghui.top/tags/RaspberryPi/"/>
     
   </entry>
   
