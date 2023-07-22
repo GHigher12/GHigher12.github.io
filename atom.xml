@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2023-07-21T11:25:05.454Z</updated>
+  <updated>2023-07-22T10:31:49.695Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ROS-Moveit机械臂追踪二维码（四）</title>
+    <link href="https://yuchanghui.top/2023/07/22/ROS-Moveit%E6%9C%BA%E6%A2%B0%E8%87%82%E8%BF%BD%E8%B8%AA%E4%BA%8C%E7%BB%B4%E7%A0%81%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
+    <id>https://yuchanghui.top/2023/07/22/ROS-Moveit%E6%9C%BA%E6%A2%B0%E8%87%82%E8%BF%BD%E8%B8%AA%E4%BA%8C%E7%BB%B4%E7%A0%81%EF%BC%88%E5%9B%9B%EF%BC%89/</id>
+    <published>2023-07-22T10:31:17.000Z</published>
+    <updated>2023-07-22T10:31:49.695Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;ROS-Moveit机械臂追踪二维码-四&quot;&gt;&lt;a href=&quot;#ROS-Moveit机械臂追踪二维码-四&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+  </entry>
   
   <entry>
     <title>Pytorch-MNIST手写数据集</title>
@@ -563,35 +594,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;Ubuntu配置Clash-for-Linux&quot;&gt;&lt;a href=&quot;#Ubuntu配置Clash-for-Linux&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu配置Clash for Linux&quot;&gt;&lt;/a&gt;Ubuntu配置Clash</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/categories/Linux/Ubuntu/"/>
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux双系统安装</title>
-    <link href="https://yuchanghui.top/2023/03/25/Linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
-    <id>https://yuchanghui.top/2023/03/25/Linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</id>
-    <published>2023-03-25T15:10:49.000Z</published>
-    <updated>2023-03-25T15:18:03.917Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Linux双系统的安装&quot;&gt;&lt;a href=&quot;#Linux双系统的安装&quot; class=&quot;headerlink&quot; title=&quot;Linux双系统的安装&quot;&gt;&lt;/a&gt;Linux双系统的安装&lt;/h1&gt;&lt;h2 id=&quot;硬件&quot;&gt;&lt;a href=&quot;#硬件&quot;</summary>
         
       
     
