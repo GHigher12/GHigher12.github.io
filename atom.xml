@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2023-07-22T10:31:49.695Z</updated>
+  <updated>2023-07-27T09:19:40.276Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,101 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ROS与STM32通信-rosserial</title>
+    <link href="https://yuchanghui.top/2023/07/27/ROS%E4%B8%8ESTM32%E9%80%9A%E4%BF%A1-rosserial/"/>
+    <id>https://yuchanghui.top/2023/07/27/ROS%E4%B8%8ESTM32%E9%80%9A%E4%BF%A1-rosserial/</id>
+    <published>2023-07-27T09:15:26.000Z</published>
+    <updated>2023-07-27T09:19:40.276Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;硬件&quot;&gt;&lt;a href=&quot;#硬件&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ROS中使用Kinect_v2</title>
+    <link href="https://yuchanghui.top/2023/07/27/ROS%E4%B8%AD%E4%BD%BF%E7%94%A8Kinect-v2/"/>
+    <id>https://yuchanghui.top/2023/07/27/ROS%E4%B8%AD%E4%BD%BF%E7%94%A8Kinect-v2/</id>
+    <published>2023-07-27T09:14:59.000Z</published>
+    <updated>2023-07-27T09:18:38.975Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;ROS中使用Kinect-v2&quot;&gt;&lt;a href=&quot;#ROS中使用Kinect-v2&quot; class=&quot;headerlink&quot; title=&quot;ROS中使用Kinect v2&quot;&gt;&lt;/a&gt;ROS中使用Kinect v2&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ROS-驱动摄像头</title>
+    <link href="https://yuchanghui.top/2023/07/27/ROS-%E9%A9%B1%E5%8A%A8%E6%91%84%E5%83%8F%E5%A4%B4/"/>
+    <id>https://yuchanghui.top/2023/07/27/ROS-%E9%A9%B1%E5%8A%A8%E6%91%84%E5%83%8F%E5%A4%B4/</id>
+    <published>2023-07-27T09:14:22.000Z</published>
+    <updated>2023-07-27T09:17:51.953Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;ROS-驱动摄像头&quot;&gt;&lt;a href=&quot;#ROS-驱动摄像头&quot; class=&quot;headerlink&quot; title=&quot;ROS-驱动摄像头&quot;&gt;&lt;/a&gt;ROS-驱动摄像头&lt;/h1&gt;&lt;h2 id=&quot;安装usb-cam&quot;&gt;&lt;a href=&quot;#安装usb-cam&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+  </entry>
   
   <entry>
     <title>ROS-Moveit机械臂追踪二维码（四）</title>
@@ -518,95 +613,6 @@
     <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
     
     <category term="CLion" scheme="https://yuchanghui.top/tags/CLion/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu22.04安装ROS2</title>
-    <link href="https://yuchanghui.top/2023/03/26/Ubuntu22-04%E5%AE%89%E8%A3%85ROS2/"/>
-    <id>https://yuchanghui.top/2023/03/26/Ubuntu22-04%E5%AE%89%E8%A3%85ROS2/</id>
-    <published>2023-03-26T14:03:05.000Z</published>
-    <updated>2023-03-26T14:04:04.694Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Ubuntu22-04安装ROS2&quot;&gt;&lt;a href=&quot;#Ubuntu22-04安装ROS2&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu22.04安装ROS2&quot;&gt;&lt;/a&gt;Ubuntu22.04安装ROS2&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
-    
-    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
-    
-    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu/Vim/Vscode常用命令</title>
-    <link href="https://yuchanghui.top/2023/03/25/UbuntuVimVscode%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>https://yuchanghui.top/2023/03/25/UbuntuVimVscode%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
-    <published>2023-03-25T15:18:48.000Z</published>
-    <updated>2023-04-04T14:12:02.478Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Ubuntu-Vim-Vscode常用命令&quot;&gt;&lt;a href=&quot;#Ubuntu-Vim-Vscode常用命令&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/categories/Linux/Ubuntu/"/>
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu配置Clash-for-Linux</title>
-    <link href="https://yuchanghui.top/2023/03/25/Ubuntu%E9%85%8D%E7%BD%AEClash-for-Linux/"/>
-    <id>https://yuchanghui.top/2023/03/25/Ubuntu%E9%85%8D%E7%BD%AEClash-for-Linux/</id>
-    <published>2023-03-25T15:14:59.000Z</published>
-    <updated>2023-03-25T15:17:14.707Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Ubuntu配置Clash-for-Linux&quot;&gt;&lt;a href=&quot;#Ubuntu配置Clash-for-Linux&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu配置Clash for Linux&quot;&gt;&lt;/a&gt;Ubuntu配置Clash</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/categories/Linux/Ubuntu/"/>
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
     
   </entry>
   
