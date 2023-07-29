@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2023-07-27T09:19:40.276Z</updated>
+  <updated>2023-07-29T11:47:54.720Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ROS中使用RealSense-D435</title>
+    <link href="https://yuchanghui.top/2023/07/29/ROS%E4%B8%AD%E4%BD%BF%E7%94%A8RealSense-D435/"/>
+    <id>https://yuchanghui.top/2023/07/29/ROS%E4%B8%AD%E4%BD%BF%E7%94%A8RealSense-D435/</id>
+    <published>2023-07-29T11:46:24.000Z</published>
+    <updated>2023-07-29T11:47:54.720Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;D435简介&quot;&gt;&lt;a href=&quot;#D435简介&quot; class=&quot;headerlink&quot; title=&quot;D435简介&quot;&gt;&lt;/a&gt;D435简介&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+  </entry>
   
   <entry>
     <title>ROS与STM32通信-rosserial</title>
@@ -584,35 +616,6 @@
     <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
     
     <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CLion编译STM32解决FLASH溢出问题</title>
-    <link href="https://yuchanghui.top/2023/03/31/CLion%E7%BC%96%E8%AF%91STM32%E8%A7%A3%E5%86%B3FLASH%E6%BA%A2%E5%87%BA%E9%97%AE%E9%A2%98/"/>
-    <id>https://yuchanghui.top/2023/03/31/CLion%E7%BC%96%E8%AF%91STM32%E8%A7%A3%E5%86%B3FLASH%E6%BA%A2%E5%87%BA%E9%97%AE%E9%A2%98/</id>
-    <published>2023-03-31T14:41:40.000Z</published>
-    <updated>2023-03-31T14:56:46.246Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Clion编译STM32解决FLASH溢出问题&quot;&gt;&lt;a href=&quot;#Clion编译STM32解决FLASH溢出问题&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
-    
-    
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
-    <category term="CLion" scheme="https://yuchanghui.top/tags/CLion/"/>
     
   </entry>
   
