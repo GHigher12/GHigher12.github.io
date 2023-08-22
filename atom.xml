@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2023-07-29T11:47:54.720Z</updated>
+  <updated>2023-08-22T03:38:11.969Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ROS与STM32通信(二)-pyserial</title>
+    <link href="https://yuchanghui.top/2023/08/22/ROS%E4%B8%8ESTM32%E9%80%9A%E4%BF%A1-pyserial/"/>
+    <id>https://yuchanghui.top/2023/08/22/ROS%E4%B8%8ESTM32%E9%80%9A%E4%BF%A1-pyserial/</id>
+    <published>2023-08-22T03:37:15.000Z</published>
+    <updated>2023-08-22T03:38:11.969Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;ROS与STM32通信-二-pyserial&quot;&gt;&lt;a href=&quot;#ROS与STM32通信-二-pyserial&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>ROS中使用RealSense-D435</title>
@@ -49,18 +70,18 @@
   </entry>
   
   <entry>
-    <title>ROS与STM32通信-rosserial</title>
+    <title>ROS与STM32通信(一)-rosserial</title>
     <link href="https://yuchanghui.top/2023/07/27/ROS%E4%B8%8ESTM32%E9%80%9A%E4%BF%A1-rosserial/"/>
     <id>https://yuchanghui.top/2023/07/27/ROS%E4%B8%8ESTM32%E9%80%9A%E4%BF%A1-rosserial/</id>
     <published>2023-07-27T09:15:26.000Z</published>
-    <updated>2023-07-27T09:19:40.276Z</updated>
+    <updated>2023-08-22T03:38:30.482Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;硬件&quot;&gt;&lt;a href=&quot;#硬件&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;ROS与STM32通信-一-rosserial&quot;&gt;&lt;a href=&quot;#ROS与STM32通信-一-rosserial&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -585,37 +606,6 @@
     <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
     
     <category term="Solidworks" scheme="https://yuchanghui.top/tags/Solidworks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ROS2显示urdf模型中No transform from [XX_Link] to [base_link]</title>
-    <link href="https://yuchanghui.top/2023/03/31/ROS2%E6%98%BE%E7%A4%BAurdf%E6%A8%A1%E5%9E%8B%E4%B8%ADNo%20transform%20from%20[XX_Link]%20to%20[base_link]/"/>
-    <id>https://yuchanghui.top/2023/03/31/ROS2%E6%98%BE%E7%A4%BAurdf%E6%A8%A1%E5%9E%8B%E4%B8%ADNo%20transform%20from%20[XX_Link]%20to%20[base_link]/</id>
-    <published>2023-03-31T14:43:42.000Z</published>
-    <updated>2023-03-31T14:56:21.350Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;ROS2显示urdf模型中No-transform-from-XX-Link-to-base-link&quot;&gt;&lt;a href=&quot;#ROS2显示urdf模型中No-transform-from-XX-Link-to-base-link&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
-    
-    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
-    
-    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
     
   </entry>
   
