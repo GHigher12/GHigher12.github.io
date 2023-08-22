@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2023-08-22T03:38:11.969Z</updated>
+  <updated>2023-08-22T03:53:41.954Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yuchanghui.top/2023/08/22/ROS%E4%B8%8ESTM32%E9%80%9A%E4%BF%A1-pyserial/"/>
     <id>https://yuchanghui.top/2023/08/22/ROS%E4%B8%8ESTM32%E9%80%9A%E4%BF%A1-pyserial/</id>
     <published>2023-08-22T03:37:15.000Z</published>
-    <updated>2023-08-22T03:38:11.969Z</updated>
+    <updated>2023-08-22T03:53:41.954Z</updated>
     
     
       
@@ -34,6 +34,18 @@
     
     
     
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
     
   </entry>
   

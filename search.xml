@@ -2583,6 +2583,16 @@ loss=\sum(WX+b-y)^{2}</script><figure class="highlight python"><table><tr><td cl
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rqt_graph</span><br></pre></td></tr></table></figure>
 <p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/7129a1096e8c505c19e30cbe3d73fe13.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/7129a1096e8c505c19e30cbe3d73fe13.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230820213251279"></p>
 ]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>ROS</tag>
+      </tags>
   </entry>
   <entry>
     <title>ROS中使用Kinect_v2</title>
