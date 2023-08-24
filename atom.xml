@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2023-08-24T03:57:52.693Z</updated>
+  <updated>2023-08-24T12:14:50.427Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>STM32使用PID调速</title>
+    <link href="https://yuchanghui.top/2023/08/24/STM32%E4%BD%BF%E7%94%A8PID%E8%B0%83%E9%80%9F/"/>
+    <id>https://yuchanghui.top/2023/08/24/STM32%E4%BD%BF%E7%94%A8PID%E8%B0%83%E9%80%9F/</id>
+    <published>2023-08-24T12:12:55.000Z</published>
+    <updated>2023-08-24T12:14:50.427Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;STM32使用PID调速&quot;&gt;&lt;a href=&quot;#STM32使用PID调速&quot; class=&quot;headerlink&quot; title=&quot;STM32使用PID调速&quot;&gt;&lt;/a&gt;STM32使用PID调速&lt;/h1&gt;&lt;h2 id=&quot;PID原理&quot;&gt;&lt;a href=&quot;#PID原理&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    
+    
+    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
+    
+  </entry>
   
   <entry>
     <title>STM32CubeMx配置HAL库编码器测速</title>
@@ -591,31 +620,6 @@
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
     
     <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git基础命令</title>
-    <link href="https://yuchanghui.top/2023/04/04/Git%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"/>
-    <id>https://yuchanghui.top/2023/04/04/Git%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</id>
-    <published>2023-04-04T14:08:47.000Z</published>
-    <updated>2023-04-04T14:11:12.044Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Git基础命令&quot;&gt;&lt;a href=&quot;#Git基础命令&quot; class=&quot;headerlink&quot; title=&quot;Git基础命令&quot;&gt;&lt;/a&gt;Git基础命令&lt;/h1&gt;&lt;h2 id=&quot;克隆到本地&quot;&gt;&lt;a href=&quot;#克隆到本地&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Others" scheme="https://yuchanghui.top/categories/Others/"/>
-    
-    
-    <category term="Git" scheme="https://yuchanghui.top/tags/Git/"/>
     
   </entry>
   
