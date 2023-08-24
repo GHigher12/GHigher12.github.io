@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2023-08-22T03:53:41.954Z</updated>
+  <updated>2023-08-24T03:57:52.693Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>STM32CubeMx配置HAL库编码器测速</title>
+    <link href="https://yuchanghui.top/2023/08/24/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E7%BC%96%E7%A0%81%E5%99%A8%E6%B5%8B%E9%80%9F/"/>
+    <id>https://yuchanghui.top/2023/08/24/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E7%BC%96%E7%A0%81%E5%99%A8%E6%B5%8B%E9%80%9F/</id>
+    <published>2023-08-24T02:05:52.000Z</published>
+    <updated>2023-08-24T03:57:52.693Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;编码器概述&quot;&gt;&lt;a href=&quot;#编码器概述&quot; class=&quot;headerlink&quot; title=&quot;编码器概述&quot;&gt;&lt;/a&gt;编码器概述&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
+    
+    
+    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
+    
+    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
+    
+  </entry>
   
   <entry>
     <title>ROS与STM32通信(二)-pyserial</title>
@@ -587,37 +616,6 @@
     
     
     <category term="Git" scheme="https://yuchanghui.top/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>solidworks小车模型转urdf文件</title>
-    <link href="https://yuchanghui.top/2023/04/01/solidworks%E5%B0%8F%E8%BD%A6%E6%A8%A1%E5%9E%8B%E8%BD%ACurdf%E6%96%87%E4%BB%B6/"/>
-    <id>https://yuchanghui.top/2023/04/01/solidworks%E5%B0%8F%E8%BD%A6%E6%A8%A1%E5%9E%8B%E8%BD%ACurdf%E6%96%87%E4%BB%B6/</id>
-    <published>2023-04-01T09:49:45.000Z</published>
-    <updated>2023-04-01T09:53:43.637Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;solidworks小车模型转urdf文件&quot;&gt;&lt;a href=&quot;#solidworks小车模型转urdf文件&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
-    
-    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
-    
-    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
-    
-    <category term="Solidworks" scheme="https://yuchanghui.top/tags/Solidworks/"/>
     
   </entry>
   

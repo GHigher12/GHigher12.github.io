@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>标签: C/C++ | GHigher&#39;s Blog</title>
+  <title>STM32CubeMx配置HAL库编码器测速 | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -545,495 +545,676 @@
 </header>
                                 <!-- 内容区域 -->
                                 
+ <!-- prismjs 代码高亮 -->
+ 
 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-tagDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
 
-<div class="tag-header" style="background-image: url('/medias/13.png');">
-  <div class="tag-header-title">
-    标签详情
-  </div>
-  <div class="tag-header-desc">
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/medias/1.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
-    <span class="title" id="tag-header-desc"></span>
-    <script>
-  function typedFn() {
-    const el = '#tag-header-desc';
-    const type = 'tagDetail';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-    
-  </div>
-  <div class="mask-box"></div>
-</div>
-
-
-
-<div class="tag">
-  <div class="tag-name">
-    <div class="name" style="background-color: #F8C471;">C/C++ 分类</div>
-  </div>
-  <!-- 每一篇文章卡片 -->
-  <!-- hash算法 -->
-
-<section class="posts">
-  
-    
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2022-07-18</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2022/07/18/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E4%B8%AD%E6%96%AD%E6%8E%A7%E5%88%B6/">STM32CubeMx配置HAL库外部中断</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/" rel="tag">C/C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STM32/" rel="tag">STM32</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a> <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/">STM32</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2022/07/18/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E4%B8%AD%E6%96%AD%E6%8E%A7%E5%88%B6/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            STM32CubeMx配置HAL库EXTI本节以按键外部中断为例
-GPIO配置
-
-
-
-Pin
-State
-Mode
-GPIO Pull-up/Pull-down
-User Label
-
-
-
-
-PA0
-GPIO_EXTI0
-上升沿触发
-Pul
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2022/07/18/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E4%B8%AD%E6%96%AD%E6%8E%A7%E5%88%B6/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2022/07/18/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E4%B8%AD%E6%96%AD%E6%8E%A7%E5%88%B6/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2022-07-17</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2022/07/17/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%8C%89%E9%94%AE/">STM32CubeMx配置HAL库按键</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/" rel="tag">C/C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STM32/" rel="tag">STM32</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a> <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/">STM32</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2022/07/17/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%8C%89%E9%94%AE/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            STM32CubeMx配置HAL库按键GPIO配置
-
-
-
-Pin
-GPIO mode
-
-
-
-
-PA0
-GPIO_Input
-
-
-PA15
-GPIO_Input
-
-
-PC5
-GPIO_Input
-
-
-
-
-根据stm32f103rct6的原理图
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2022/07/17/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%8C%89%E9%94%AE/">
-            <i class="iconfont iconmore" pointer style="  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2022/07/17/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%8C%89%E9%94%AE/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2022-07-16</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2022/07/16/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%B5%81%E6%B0%B4%E7%81%AF/">STM32CubeMx配置HAL库流水灯</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/" rel="tag">C/C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STM32/" rel="tag">STM32</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a> <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/">STM32</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2022/07/16/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%B5%81%E6%B0%B4%E7%81%AF/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            STM32CubeMx配置HAL库流水灯RCCRCC-&gt;High Speed Clock (HSE)-&gt; Crystal/Ceramic Resonator
-
-
-Disable（禁用）
-
-BYPASS Clock Source（
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2022/07/16/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%B5%81%E6%B0%B4%E7%81%AF/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2022/07/16/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E6%B5%81%E6%B0%B4%E7%81%AF/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-11-14</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/">STM32蓝牙小车四</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/" rel="tag">C/C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STM32/" rel="tag">STM32</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a> <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/">STM32</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/13.png" class="lazyload placeholder" data-srcset="/medias/13.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            <h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（四）"><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（四）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（四）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（四）</h1>
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/">
-            <i class="iconfont iconmore" pointer style="  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/13.png" class="lazyload placeholder" data-srcset="/medias/13.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-11-14</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%89/">STM32蓝牙小车三</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/" rel="tag">C/C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STM32/" rel="tag">STM32</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a> <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/">STM32</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%89/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            <h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（三）"><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（三）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（三）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（三）</h1>
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%89/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%89/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-11-14</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%BA%8C/">STM32蓝牙小车二</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/" rel="tag">C/C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STM32/" rel="tag">STM32</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a> <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/">STM32</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%BA%8C/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            <h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（二）"><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（二）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（二）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（二）</h1>
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%BA%8C/">
-            <i class="iconfont iconmore" pointer style="  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%BA%8C/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-    
-    <article class="post reveal" style="flex-direction: row-reverse;   ">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span class="post-time">2021-11-14</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%80/">STM32蓝牙小车一</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/" rel="tag">C/C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STM32/" rel="tag">STM32</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a> <a class="article-category-link" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/">STM32</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            <a href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%80/" style="background-size: cover; 
-              background-position: center center;">
-              <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-            </a>
-          </div>
-          <div class="post-content">
-            <h1 id="STM32基础项目：基于stm32f1的蓝牙遥控小车（一）"><a href="#STM32基础项目：基于stm32f1的蓝牙遥控小车（一）" class="headerlink" title="STM32基础项目：基于stm32f1的蓝牙遥控小车（一）"></a>STM32基础项目：基于stm32f1的蓝牙遥控小车（一）</h1>
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%80/">
-            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        <a href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E4%B8%80/" style="background-size: cover; 
-          background-position: center center;">
-          <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-        </a>
-      </div>
-    </article>
-  
-</section>
-</div>
-
-<div class="w-70">
-  
-  <!-- <nav class="page-nav">
-    <a class="extend prev" rel="prev" href="/tags/C-C/page/2/">上一页</a><a class="page-number" href="/tags/C-C/">1</a><a class="page-number" href="/tags/C-C/page/2/">2</a><span class="page-number current">3</span>
-  </nav> -->
-  <div class="page-nav">
-    
-      <a href="/tags/C-C/page/2/"
-         class="page-nav-pre">
-         <i class="fas fa-angle-left"></i><span class="ml-5">上一页</span>
-      </a>
-    
-    <div class="page-info">
-        <div class="page-info-text">3 / 3</div>
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        STM32CubeMx配置HAL库编码器测速
+      </span>
     </div>
     
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2023-08-24 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" class="post-detail-header_category">
+              单片机
+            </a>
+          
+            <a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/" class="post-detail-header_category">
+              STM32
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="row justify-position" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h2 id="编码器概述"><a href="#编码器概述" class="headerlink" title="编码器概述"></a>编码器概述</h2><p><img src="https://img-blog.csdnimg.cn/20210119213847839.gif#pic_center" class="lazyload placeholder" data-srcset="https://img-blog.csdnimg.cn/20210119213847839.gif#pic_center" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<p>编码器是一种用来测量机械旋转或位移的传感器。它能够测量机械部件在旋转或直线运动时的位移位置或速度等信息，并将其转换成一系</p>
+<p>列电信号。按照读出方式编码器可以分为接触式和非接触式两种；按照工作原理编码器可分为增量式和绝对式两类。编码器按照检测原</p>
+<p>理，可以分为光学式、磁式、感应式和电容式。</p>
+<p>而我们常见的是光电编码器(光学式)和霍尔编码器(磁式)</p>
+<p>下面主要以霍尔编码器的原理及应用为主。</p>
+<h2 id="霍尔编码器"><a href="#霍尔编码器" class="headerlink" title="霍尔编码器"></a>霍尔编码器</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230824102110353.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230824102110353.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230824102110353"></p>
+<p>霍尔编码器是一种通过磁电转换将输出轴上的机械几何位移量转换成脉冲或数字量的传感器。霍尔编码器是由霍尔码盘（磁环）和霍尔元</p>
+<p>件组成。霍尔码盘是在一定直径的圆板上等分地布置有不同的磁极。当电动机旋转时，霍尔元件检测输出电压信号，从而得到电动机的转</p>
+<p>速和位置信息  。</p>
+<p>根据A、B相位信号来测量转速和方向：</p>
+<ul>
+<li>转速：单位时间测量到的脉冲数量</li>
+<li>旋转方向：A、B之间相位的超前或滞后</li>
+</ul>
+<h3 id="实物"><a href="#实物" class="headerlink" title="实物"></a>实物</h3><p>通常编码器一般和电机相连在一起，实现电机实际测速</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230824112400666.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230824112400666.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230824112400666"></p>
+<h3 id="接线"><a href="#接线" class="headerlink" title="接线"></a>接线</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">硬件</th>
+<th style="text-align:center">引脚</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">编码器1+</td>
+<td style="text-align:center">PA0</td>
+<td style="text-align:center">TIM2_CH1</td>
+</tr>
+<tr>
+<td style="text-align:center">编码器1-</td>
+<td style="text-align:center">PA1</td>
+<td style="text-align:center">TIM2_CH2</td>
+</tr>
+<tr>
+<td style="text-align:center">编码器2+</td>
+<td style="text-align:center">PB6</td>
+<td style="text-align:center">TIM4_CH1</td>
+</tr>
+<tr>
+<td style="text-align:center">编码器2-</td>
+<td style="text-align:center">PB7</td>
+<td style="text-align:center">TIM4_CH1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="STM32编码器模式"><a href="#STM32编码器模式" class="headerlink" title="STM32编码器模式"></a>STM32编码器模式</h2><p>STM32单片机自带正交解码函数，采用定时器的编码器模式，所以一个电机需要采用两个定时器通道来采集A、B相信号。</p>
+<p>三种计数模式</p>
+<ul>
+<li>A相计数(TI1计数)</li>
+<li>B相计数(TI2计数)</li>
+<li>A相和B相都计数(TI1和TI2都计数)</li>
+</ul>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230824105005435.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230824105005435.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230824105005435"></p>
+<p>如图假设以TI1技术，当上升沿或下降沿触发时，看对应的TI2信号，图中的计数方向1为例，此时TI1为上升沿，对应的TI2为低电平，由表中可知TI1FP1信号为上升，相对信号(TI2)为低电平，则为向上计数；计数方向2对应TI1为下降沿，TI2为高电平，为向上计数。依次类推，仅在TI2计数和在TI1、TI2计数原理相同。</p>
+<ul>
+<li>仅在TI1计数或仅在TI2计数为——二倍频</li>
+<li>在TI1和TI2都计数为——四倍频</li>
+</ul>
+<p>计数方向</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230824111026698.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230824111026698.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230824111026698"></p>
+<p>向上计数0—65535装载值，向下计数65535—0</p>
+<p>两种计数测速方法：</p>
+<p>①这次编码器计数值 = 计数器值 + 计数器溢出次数 * 计数器最大计数值</p>
+<p>计数器两次变化值 = 这次编码器计数值 - 上次编码器计数值</p>
+<p>然后根据此变化量计算速度</p>
+<p>②计数器变化量 = 当前计数值</p>
+<p>每次计数器清零</p>
+<p>根据此变化量 计算速度</p>
+<p><strong>本次使用方法②来进行测速</strong></p>
+<h2 id="STM32CubeMx配置"><a href="#STM32CubeMx配置" class="headerlink" title="STM32CubeMx配置"></a>STM32CubeMx配置</h2><p>TIM2-&gt;Combined Channels-&gt;<strong>Encoder Mode</strong></p>
+<p>TIM4-&gt;Combined Channels-&gt;<strong>Encoder Mode</strong></p>
+<p><strong>!!!STM32编码器模式采用定时器的通道1和通道2</strong></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230824112807447.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230824112807447.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230824112807447"></p>
+<p>最大装载值设置为<strong>65535</strong>，编码器模式为<strong>Encoder Model TI1 and TI2</strong>(TI1和TI2都计数)，有需要的也可以适当调节下滤波值<strong>Input Fiter</strong></p>
+<p>也可以适当打开全局中断，方便查看溢出值</p>
+<h2 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h2><p>主函数<code>main.c</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 编码器初始化</span></span><br><span class="line"><span class="keyword">short</span> Enc1_cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">short</span> Enc2_cnt = <span class="number">0</span>;</span><br><span class="line">HAL_TIM_Encoder_Start(&amp;htim2, TIM_CHANNEL_ALL);</span><br><span class="line">HAL_TIM_Encoder_Start(&amp;htim4, TIM_CHANNEL_ALL);</span><br><span class="line"><span class="comment">// 定时器中断初始化</span></span><br><span class="line">HAL_TIM_Base_Start_IT(&amp;htim2);</span><br><span class="line">HAL_TIM_Base_Start_IT(&amp;htim4);</span><br><span class="line"><span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    Enc1_cnt = -(<span class="keyword">short</span>)__HAL_TIM_GET_COUNTER(&amp;htim2);</span><br><span class="line">    Enc2_cnt = (<span class="keyword">short</span>)__HAL_TIM_GET_COUNTER(&amp;htim4);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Enc1_cnt: %d\r\n&quot;</span>, Enc1_cnt);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Enc2_cnt: %d\r\n&quot;</span>, Enc2_cnt);</span><br><span class="line">    __HAL_TIM_SET_COUNTER(&amp;htim2, <span class="number">0</span>);</span><br><span class="line">    __HAL_TIM_SET_COUNTER(&amp;htim4, <span class="number">0</span>);</span><br><span class="line">    HAL_Delay(<span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>编码器测速</strong></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230824113610792.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230824113610792.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230824113610792"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230824113729265.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230824113729265.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230824113729265"></p>
+<p>根据自己购买的编码器参数，主要看<strong>脉冲数</strong>和<strong>减速比</strong>，我所用电机型号为驰海电机 GM25-370:</p>
+<ul>
+<li>脉冲数为11PPR(编码器线数),</li>
+<li>减速比为1:45</li>
+</ul>
+<p>即 编码器转一圈计数值 = 脉冲数 * 减速比</p>
+<p>又因为我们采用四倍频计数，所以</p>
+<p>编码器转一圈计数值 = 脉冲数 <em> 减速比 </em> 4</p>
+<p>再考虑到延时函数，将速度单位设置在m/s,需要再<strong>速度乘以1s/延时时间</strong></p>
+<p>所以 <strong>速度 = 计数变化量 / 一圈计数值 = 计数变化量 / 减速比 / 脉冲数 / 4 * 1s/延时时间</strong></p>
+<p>即 <strong>Speed = Cnt * 100 /45/ 11/4</strong></p>
+<p><strong>可以将程序烧录，把清零程序注释，看看转一圈的计数值是否与自己的计算值对应</strong></p>
+<p>则主函数<code>main.c</code>修改为</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> Enc1_cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">short</span> Enc2_cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">float</span> motor1_speed = <span class="number">0.00</span>;</span><br><span class="line"><span class="keyword">float</span> motor2_speed = <span class="number">0.00</span>;</span><br><span class="line"><span class="comment">//..................</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">//..............................</span></span><br><span class="line">  HAL_TIM_Encoder_Start(&amp;htim2, TIM_CHANNEL_ALL);</span><br><span class="line">  HAL_TIM_Encoder_Start(&amp;htim4, TIM_CHANNEL_ALL);</span><br><span class="line">  HAL_TIM_Base_Start_IT(&amp;htim2);</span><br><span class="line">  HAL_TIM_Base_Start_IT(&amp;htim4);</span><br><span class="line">  <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">      Enc1_cnt = -(<span class="keyword">short</span>)__HAL_TIM_GET_COUNTER(&amp;htim2);</span><br><span class="line">      Enc2_cnt = (<span class="keyword">short</span>)__HAL_TIM_GET_COUNTER(&amp;htim4);</span><br><span class="line">      </span><br><span class="line">      motor1_speed = (<span class="keyword">float</span>)Enc1_cnt*<span class="number">100</span>/<span class="number">45</span>/<span class="number">11</span>/<span class="number">4</span>;</span><br><span class="line">      motor2_speed = (<span class="keyword">float</span>)Enc2_cnt*<span class="number">100</span>/<span class="number">45</span>/<span class="number">11</span>/<span class="number">4</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;Enc1_cnt: %d\r\n&quot;</span>, Enc1_cnt);</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;Enc2_cnt: %d\r\n&quot;</span>, Enc2_cnt);</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;motor1_speed: %.3f\r\n&quot;</span>, motor1_speed);</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;motor2_speed: %.3f\r\n&quot;</span>, motor2_speed);</span><br><span class="line">      __HAL_TIM_SET_COUNTER(&amp;htim2, <span class="number">0</span>);</span><br><span class="line">      __HAL_TIM_SET_COUNTER(&amp;htim4, <span class="number">0</span>);</span><br><span class="line">      HAL_Delay(<span class="number">10</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* USER CODE END 3 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>演示</strong></p>
+<p>可以转动电机来观察计数值与速度，正转为正值，反转为负值</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/编码器测速.gif" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/编码器测速.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="编码器测速"></p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/C-C/" class="">
+              C/C++
+            </a>
+          
+            <a href="/tags/STM32/" class="">
+              STM32
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>GHigher</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2023/08/24/STM32CubeMx配置HAL库编码器测速/" target="_blank" title="STM32CubeMx配置HAL库编码器测速">https://yuchanghui.top/2023/08/24/STM32CubeMx配置HAL库编码器测速/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/2023/08/22/ROS%E4%B8%8ESTM32%E9%80%9A%E4%BF%A1-pyserial/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">ROS与STM32通信(二)-pyserial</div>
+      </div>
+      <!-- <div class="content">
+        ROS与STM32通信(二)-pyserialROS与STM32通信一般分为两种，
+
+STM32上运行ros节点实现通信
+      </div> -->
+    </a>
   </div>
 
 </div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em; margin: 15px auto;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('/medias/monkey.gif');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+
+
+<script>
+  function closeToc(init) {
+    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
+    $(".toc-content").css({'width': 0});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+  };
+  function openToc() {
+    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
+    $(".toc-content").css({'width': '300px'});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+  }
+  function openBtnClickFn () {
+    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+    let open = eval('' || 'true');
+    openOrCloseBtn.click(function() {
+      if (open) {
+        closeToc();
+        open = false;
+      } else {
+        openToc();
+        open = true;
+      }
+    });
+  };
+  openBtnClickFn();
+  initCloseTocWidth(true);
+
+  function initCloseTocWidth(init) {
+    if (window.innerWidth >= 992) {
+      let isClose = false;
+      isClose && closeToc(init)
+    }
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    $(".toc-aside").css({'transition': 'no'});
+  })
+  document.addEventListener('pjax:complete', function () {
+    openBtnClickFn();
+  })
+  
+</script>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
 
                             </main>
                           </div>
