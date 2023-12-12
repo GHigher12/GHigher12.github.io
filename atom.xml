@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2023-08-24T12:14:50.427Z</updated>
+  <updated>2023-12-12T09:20:28.884Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,170 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>直流无刷电机原理</title>
+    <link href="https://yuchanghui.top/2023/12/05/%E7%9B%B4%E6%B5%81%E6%97%A0%E5%88%B7%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/"/>
+    <id>https://yuchanghui.top/2023/12/05/%E7%9B%B4%E6%B5%81%E6%97%A0%E5%88%B7%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/</id>
+    <published>2023-12-05T09:19:24.000Z</published>
+    <updated>2023-12-12T09:20:28.884Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;直流无刷电机原理&quot;&gt;&lt;a href=&quot;#直流无刷电机原理&quot; class=&quot;headerlink&quot; title=&quot;直流无刷电机原理&quot;&gt;&lt;/a&gt;直流无刷电机原理&lt;/h1&gt;&lt;h2 id=&quot;直流无刷电机分类&quot;&gt;&lt;a href=&quot;#直流无刷电机分类&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Others" scheme="https://yuchanghui.top/categories/Others/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数据类型及强制转换</title>
+    <link href="https://yuchanghui.top/2023/11/29/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2/"/>
+    <id>https://yuchanghui.top/2023/11/29/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2/</id>
+    <published>2023-11-29T09:13:46.000Z</published>
+    <updated>2023-12-12T09:19:01.142Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数据类型范围（基本）&quot;&gt;&lt;a href=&quot;#数据类型范围（基本）&quot; class=&quot;headerlink&quot; title=&quot;数据类型范围（基本）&quot;&gt;&lt;/a&gt;数据类型范围（基本）&lt;/h2&gt;&lt;div</summary>
+        
+      
+    
+    
+    
+    <category term="Others" scheme="https://yuchanghui.top/categories/Others/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python读取Modbus-RTU协议</title>
+    <link href="https://yuchanghui.top/2023/11/27/Python%E8%AF%BB%E5%8F%96Modbus-RTU%E5%8D%8F%E8%AE%AE/"/>
+    <id>https://yuchanghui.top/2023/11/27/Python%E8%AF%BB%E5%8F%96Modbus-RTU%E5%8D%8F%E8%AE%AE/</id>
+    <published>2023-11-27T09:11:03.000Z</published>
+    <updated>2023-12-12T09:13:11.066Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Python读取modbus-RTU协议&quot;&gt;&lt;a href=&quot;#Python读取modbus-RTU协议&quot; class=&quot;headerlink&quot; title=&quot;Python读取modbus RTU协议&quot;&gt;&lt;/a&gt;Python读取modbus</summary>
+        
+      
+    
+    
+    
+    <category term="程序设计" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="Python" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Python/"/>
+    
+    
+    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>控制实体小车cartographer建图</title>
+    <link href="https://yuchanghui.top/2023/11/22/%E6%8E%A7%E5%88%B6%E5%AE%9E%E4%BD%93%E5%B0%8F%E8%BD%A6cartographer%E5%BB%BA%E5%9B%BE/"/>
+    <id>https://yuchanghui.top/2023/11/22/%E6%8E%A7%E5%88%B6%E5%AE%9E%E4%BD%93%E5%B0%8F%E8%BD%A6cartographer%E5%BB%BA%E5%9B%BE/</id>
+    <published>2023-11-22T09:09:46.000Z</published>
+    <updated>2023-12-12T09:10:30.640Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;cartographer建图&quot;&gt;&lt;a href=&quot;#cartographer建图&quot; class=&quot;headerlink&quot; title=&quot;cartographer建图&quot;&gt;&lt;/a&gt;cartographer建图&lt;/h1&gt;&lt;h2 id=&quot;跑通官方例程&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>键盘控制ROS小车运动</title>
+    <link href="https://yuchanghui.top/2023/11/20/%E9%94%AE%E7%9B%98%E6%8E%A7%E5%88%B6ROS%E5%B0%8F%E8%BD%A6%E8%BF%90%E5%8A%A8/"/>
+    <id>https://yuchanghui.top/2023/11/20/%E9%94%AE%E7%9B%98%E6%8E%A7%E5%88%B6ROS%E5%B0%8F%E8%BD%A6%E8%BF%90%E5%8A%A8/</id>
+    <published>2023-11-20T09:06:01.000Z</published>
+    <updated>2023-12-12T09:07:00.283Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;键盘控制ROS车运动&quot;&gt;&lt;a href=&quot;#键盘控制ROS车运动&quot; class=&quot;headerlink&quot; title=&quot;键盘控制ROS车运动&quot;&gt;&lt;/a&gt;键盘控制ROS车运动&lt;/h1&gt;&lt;h2 id=&quot;上位机&quot;&gt;&lt;a href=&quot;#上位机&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Yolov5-detect.py代码简化（便于移植）</title>
+    <link href="https://yuchanghui.top/2023/11/01/Yolov5-detect-py%E4%BB%A3%E7%A0%81%E7%AE%80%E5%8C%96%EF%BC%88%E4%BE%BF%E4%BA%8E%E7%A7%BB%E6%A4%8D%EF%BC%89/"/>
+    <id>https://yuchanghui.top/2023/11/01/Yolov5-detect-py%E4%BB%A3%E7%A0%81%E7%AE%80%E5%8C%96%EF%BC%88%E4%BE%BF%E4%BA%8E%E7%A7%BB%E6%A4%8D%EF%BC%89/</id>
+    <published>2023-11-01T09:01:51.000Z</published>
+    <updated>2023-12-12T09:05:23.292Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Yolov5-detect-py代码简化（便于移植）&quot;&gt;&lt;a href=&quot;#Yolov5-detect-py代码简化（便于移植）&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="视觉处理" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/"/>
+    
+    <category term="Pytorch" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Pytorch/"/>
+    
+    
+    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
+    
+    <category term="Pytorch" scheme="https://yuchanghui.top/tags/Pytorch/"/>
+    
+  </entry>
   
   <entry>
     <title>STM32使用PID调速</title>
@@ -446,180 +610,6 @@
     <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
     
     <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32HAL库RS485-ModBus协议控制伺服电机</title>
-    <link href="https://yuchanghui.top/2023/05/27/STM32HAL%E5%BA%93RS485-ModBus%E5%8D%8F%E8%AE%AE%E6%8E%A7%E5%88%B6%E4%BC%BA%E6%9C%8D%E7%94%B5%E6%9C%BA/"/>
-    <id>https://yuchanghui.top/2023/05/27/STM32HAL%E5%BA%93RS485-ModBus%E5%8D%8F%E8%AE%AE%E6%8E%A7%E5%88%B6%E4%BC%BA%E6%9C%8D%E7%94%B5%E6%9C%BA/</id>
-    <published>2023-05-27T12:15:23.000Z</published>
-    <updated>2023-05-29T12:20:49.258Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;STM32HAL库RS485-ModBus协议控制伺服电机&quot;&gt;&lt;a href=&quot;#STM32HAL库RS485-ModBus协议控制伺服电机&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
-    
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenMV初体验</title>
-    <link href="https://yuchanghui.top/2023/04/16/OpenMV%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
-    <id>https://yuchanghui.top/2023/04/16/OpenMV%E5%88%9D%E4%BD%93%E9%AA%8C/</id>
-    <published>2023-04-16T12:15:04.000Z</published>
-    <updated>2023-05-29T12:18:58.974Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Openmv初体验&quot;&gt;&lt;a href=&quot;#Openmv初体验&quot; class=&quot;headerlink&quot; title=&quot;Openmv初体验&quot;&gt;&lt;/a&gt;Openmv初体验&lt;/h1&gt;&lt;p&gt;OpenMV</summary>
-        
-      
-    
-    
-    
-    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    <category term="Openmv" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/Openmv/"/>
-    
-    
-    <category term="Openmv" scheme="https://yuchanghui.top/tags/Openmv/"/>
-    
-    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32使用OLED移植U8g2库</title>
-    <link href="https://yuchanghui.top/2023/04/09/STM32%E4%BD%BF%E7%94%A8OLED%E7%A7%BB%E6%A4%8DU8g2%E5%BA%93/"/>
-    <id>https://yuchanghui.top/2023/04/09/STM32%E4%BD%BF%E7%94%A8OLED%E7%A7%BB%E6%A4%8DU8g2%E5%BA%93/</id>
-    <published>2023-04-09T09:19:32.000Z</published>
-    <updated>2023-04-09T09:22:05.433Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;STM32使用OLED移植U8g2库&quot;&gt;&lt;a href=&quot;#STM32使用OLED移植U8g2库&quot; class=&quot;headerlink&quot; title=&quot;STM32使用OLED移植U8g2库&quot;&gt;&lt;/a&gt;STM32使用OLED移植U8g2库&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
-    
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu添加桌面图标快捷方式</title>
-    <link href="https://yuchanghui.top/2023/04/09/Ubuntu%E6%B7%BB%E5%8A%A0%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/"/>
-    <id>https://yuchanghui.top/2023/04/09/Ubuntu%E6%B7%BB%E5%8A%A0%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</id>
-    <published>2023-04-09T09:19:05.000Z</published>
-    <updated>2023-04-09T09:21:00.347Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Ubuntu添加桌面图标快捷方式&quot;&gt;&lt;a href=&quot;#Ubuntu添加桌面图标快捷方式&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/categories/Linux/Ubuntu/"/>
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>不调用CV库实现图像的平移、镜像、旋转</title>
-    <link href="https://yuchanghui.top/2023/04/08/%E4%B8%8D%E8%B0%83%E7%94%A8CV%E5%BA%93%E5%AE%9E%E7%8E%B0%E5%9B%BE%E5%83%8F%E7%9A%84%E5%B9%B3%E7%A7%BB%E3%80%81%E9%95%9C%E5%83%8F%E3%80%81%E6%97%8B%E8%BD%AC/"/>
-    <id>https://yuchanghui.top/2023/04/08/%E4%B8%8D%E8%B0%83%E7%94%A8CV%E5%BA%93%E5%AE%9E%E7%8E%B0%E5%9B%BE%E5%83%8F%E7%9A%84%E5%B9%B3%E7%A7%BB%E3%80%81%E9%95%9C%E5%83%8F%E3%80%81%E6%97%8B%E8%BD%AC/</id>
-    <published>2023-04-08T12:12:32.000Z</published>
-    <updated>2023-05-29T12:17:26.315Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Python实现图像的平移、镜像、旋转（不调用CV自身函数）&quot;&gt;&lt;a href=&quot;#Python实现图像的平移、镜像、旋转（不调用CV自身函数）&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="视觉处理" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/"/>
-    
-    <category term="Opencv" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/"/>
-    
-    
-    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
-    
-    <category term="Opencv" scheme="https://yuchanghui.top/tags/Opencv/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32HAL库驱动MPU6050</title>
-    <link href="https://yuchanghui.top/2023/04/04/STM32HAL%E5%BA%93%E9%A9%B1%E5%8A%A8MPU6050/"/>
-    <id>https://yuchanghui.top/2023/04/04/STM32HAL%E5%BA%93%E9%A9%B1%E5%8A%A8MPU6050/</id>
-    <published>2023-04-04T14:09:24.000Z</published>
-    <updated>2023-04-04T14:12:55.466Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;STM32HAL库驱动MPU6050&quot;&gt;&lt;a href=&quot;#STM32HAL库驱动MPU6050&quot; class=&quot;headerlink&quot; title=&quot;STM32HAL库驱动MPU6050&quot;&gt;&lt;/a&gt;STM32HAL库驱动MPU6050&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="单片机" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"/>
-    
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
-    
-    <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
     
   </entry>
   
