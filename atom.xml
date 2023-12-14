@@ -28,7 +28,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;直流无刷电机原理&quot;&gt;&lt;a href=&quot;#直流无刷电机原理&quot; class=&quot;headerlink&quot; title=&quot;直流无刷电机原理&quot;&gt;&lt;/a&gt;直流无刷电机原理&lt;/h1&gt;&lt;h2 id=&quot;直流无刷电机分类&quot;&gt;&lt;a href=&quot;#直流无刷电机分类&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -51,7 +51,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;数据类型范围（基本）&quot;&gt;&lt;a href=&quot;#数据类型范围（基本）&quot; class=&quot;headerlink&quot; title=&quot;数据类型范围（基本）&quot;&gt;&lt;/a&gt;数据类型范围（基本）&lt;/h2&gt;&lt;div</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -74,7 +74,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Python读取modbus-RTU协议&quot;&gt;&lt;a href=&quot;#Python读取modbus-RTU协议&quot; class=&quot;headerlink&quot; title=&quot;Python读取modbus RTU协议&quot;&gt;&lt;/a&gt;Python读取modbus</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -101,7 +101,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;cartographer建图&quot;&gt;&lt;a href=&quot;#cartographer建图&quot; class=&quot;headerlink&quot; title=&quot;cartographer建图&quot;&gt;&lt;/a&gt;cartographer建图&lt;/h1&gt;&lt;h2 id=&quot;跑通官方例程&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -132,7 +132,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;键盘控制ROS车运动&quot;&gt;&lt;a href=&quot;#键盘控制ROS车运动&quot; class=&quot;headerlink&quot; title=&quot;键盘控制ROS车运动&quot;&gt;&lt;/a&gt;键盘控制ROS车运动&lt;/h1&gt;&lt;h2 id=&quot;上位机&quot;&gt;&lt;a href=&quot;#上位机&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -163,7 +163,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Yolov5-detect-py代码简化（便于移植）&quot;&gt;&lt;a href=&quot;#Yolov5-detect-py代码简化（便于移植）&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -192,7 +192,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;STM32使用PID调速&quot;&gt;&lt;a href=&quot;#STM32使用PID调速&quot; class=&quot;headerlink&quot; title=&quot;STM32使用PID调速&quot;&gt;&lt;/a&gt;STM32使用PID调速&lt;/h1&gt;&lt;h2 id=&quot;PID原理&quot;&gt;&lt;a href=&quot;#PID原理&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -221,7 +221,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;编码器概述&quot;&gt;&lt;a href=&quot;#编码器概述&quot; class=&quot;headerlink&quot; title=&quot;编码器概述&quot;&gt;&lt;/a&gt;编码器概述&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -250,7 +250,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;ROS与STM32通信-二-pyserial&quot;&gt;&lt;a href=&quot;#ROS与STM32通信-二-pyserial&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -283,8 +283,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;D435简介&quot;&gt;&lt;a href=&quot;#D435简介&quot; class=&quot;headerlink&quot; title=&quot;D435简介&quot;&gt;&lt;/a&gt;D435简介&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -315,7 +314,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;ROS与STM32通信-一-rosserial&quot;&gt;&lt;a href=&quot;#ROS与STM32通信-一-rosserial&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -348,7 +347,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;ROS中使用Kinect-v2&quot;&gt;&lt;a href=&quot;#ROS中使用Kinect-v2&quot; class=&quot;headerlink&quot; title=&quot;ROS中使用Kinect v2&quot;&gt;&lt;/a&gt;ROS中使用Kinect v2&lt;/h1&gt;&lt;h2</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -379,7 +378,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;ROS-驱动摄像头&quot;&gt;&lt;a href=&quot;#ROS-驱动摄像头&quot; class=&quot;headerlink&quot; title=&quot;ROS-驱动摄像头&quot;&gt;&lt;/a&gt;ROS-驱动摄像头&lt;/h1&gt;&lt;h2 id=&quot;安装usb-cam&quot;&gt;&lt;a href=&quot;#安装usb-cam&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -410,7 +409,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;ROS-Moveit机械臂追踪二维码-四&quot;&gt;&lt;a href=&quot;#ROS-Moveit机械臂追踪二维码-四&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -441,7 +440,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Pytorch-MNIST手写数据集&quot;&gt;&lt;a href=&quot;#Pytorch-MNIST手写数据集&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -470,7 +469,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Pytorch-线性回归问题&quot;&gt;&lt;a href=&quot;#Pytorch-线性回归问题&quot; class=&quot;headerlink&quot; title=&quot;Pytorch-线性回归问题&quot;&gt;&lt;/a&gt;Pytorch-线性回归问题&lt;/h1&gt;&lt;script type=&quot;math/tex;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -499,8 +498,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;当我使用python程序控制机械臂作笛卡尔空间运动时，让其轨迹在空间中画一个正方形，具体程序如下&lt;/p&gt;
-&lt;figure</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -531,8 +529,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;在工作空间/src目录新建功能包&lt;code&gt;moveit_project&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;添加依赖&lt;code&gt;rospy&lt;/code&gt;  &lt;code&gt;moveit_commander&lt;/code&gt; </summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -563,7 +560,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;URDF功能包配置&quot;&gt;&lt;a href=&quot;#URDF功能包配置&quot; class=&quot;headerlink&quot; title=&quot;URDF功能包配置&quot;&gt;&lt;/a&gt;URDF功能包配置&lt;/h2&gt;&lt;h3 id=&quot;config&quot;&gt;&lt;a href=&quot;#config&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -594,7 +591,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;ROS-Moveit-配置&quot;&gt;&lt;a href=&quot;#ROS-Moveit-配置&quot; class=&quot;headerlink&quot; title=&quot;ROS-Moveit!配置&quot;&gt;&lt;/a&gt;ROS-Moveit!配置&lt;/h1&gt;&lt;p&gt;MoveIt! 一个机器人（mobile</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
