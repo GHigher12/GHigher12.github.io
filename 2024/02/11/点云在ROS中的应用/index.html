@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>归档 | GHigher&#39;s Blog</title>
+  <title>点云在ROS中的应用 | GHigher&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -544,280 +544,618 @@
     
 </header>
                                 <!-- 内容区域 -->
-                                <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="archive-header" style="background-image:url('/medias/4.jpg')">
-  <div class="archive-header-title">
-    归档
-  </div>
-  <div class="archive-header-desc">
+                                
+ <!-- prismjs 代码高亮 -->
+ 
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/medias/11.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
-  <span class="title" id="archive-header-desc"></span>
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        点云在ROS中的应用
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2024-02-11 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/Linux/" class="post-detail-header_category">
+              Linux
+            </a>
+          
+            <a href="/categories/Linux/ROS/" class="post-detail-header_category">
+              ROS
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="row justify-position" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <p>﻿## 点云在ROS中的应用</p>
+<h2 id="用RoboSense雷达节点，加载pcap发布原始数据"><a href="#用RoboSense雷达节点，加载pcap发布原始数据" class="headerlink" title="用RoboSense雷达节点，加载pcap发布原始数据"></a>用RoboSense雷达节点，加载pcap发布原始数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p pointcloud_ws/src</span><br><span class="line">cd src</span><br><span class="line">git clone https://github.com/RoboSense-LiDAR/ros_rslidar</span><br><span class="line">cd ..</span><br><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
+<p>下载并安装libpcap-dev</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libpcap-dev</span><br></pre></td></tr></table></figure>
+<p>修改<code>slidar_pointcloud\launch\rs_lidar_32.launch</code>文件中的pacp文件目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;param name=&quot;pcap&quot; value=&quot;/media/ghigher/KINGIDISK/Datasets/CH1激光雷达/RS_32_data.pcap&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<p>运行launch文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch rslidar_pointcloud rs_lidar_32.launch </span><br></pre></td></tr></table></figure>
+<p><img src="https://img-typora-acer.oss-cn-qingdao.aliyuncs.com/imgs_acer/16da412fbecc7be7e219b9789c4c4c2b.png" class="lazyload placeholder" data-srcset="https://img-typora-acer.oss-cn-qingdao.aliyuncs.com/imgs_acer/16da412fbecc7be7e219b9789c4c4c2b.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20240203221045545" style="zoom: 67%;" /></p>
+<h2 id="rosbag录制激光雷达数据"><a href="#rosbag录制激光雷达数据" class="headerlink" title="rosbag录制激光雷达数据"></a>rosbag录制激光雷达数据</h2><p>运行激光雷达数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch rslidar_pointcloud rs_lidar_32.launch </span><br></pre></td></tr></table></figure>
+<p>查看话题<code>rostopic list</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/clicked_point</span><br><span class="line">/cloud_node/parameter_descriptions</span><br><span class="line">/cloud_node/parameter_updates</span><br><span class="line">/diagnostics</span><br><span class="line">/initialpose</span><br><span class="line">/move_base_simple/goal</span><br><span class="line">/rosout</span><br><span class="line">/rosout_agg</span><br><span class="line">/rslidar_node/parameter_descriptions</span><br><span class="line">/rslidar_node/parameter_updates</span><br><span class="line">/rslidar_packets</span><br><span class="line">/rslidar_packets_difop</span><br><span class="line">/rslidar_points</span><br><span class="line">/temperature</span><br><span class="line">/tf</span><br><span class="line">/tf_static</span><br></pre></td></tr></table></figure>
+<p>其中话题<code>/rslidar_points</code>就是需要录制的激光雷达数据</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rosbag record -o lidar_point.bag /rslidar_points</span><br></pre></td></tr></table></figure>
+<p>或者通过可视化界面录制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rqt_bag</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-typora-acer.oss-cn-qingdao.aliyuncs.com/imgs_acer/fb7eeed635760cf44ebb138e6fe35b42.png" class="lazyload placeholder" data-srcset="https://img-typora-acer.oss-cn-qingdao.aliyuncs.com/imgs_acer/fb7eeed635760cf44ebb138e6fe35b42.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20240203222529897" style="zoom: 67%;" /></p>
+<p>bag查看</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rosbag play lidar_point_2024-02-03-22-19-29.bag </span><br></pre></td></tr></table></figure>
+<p>或者通过可视化界面查看</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rqt_bag lidar_point_2024-02-03-22-19-29.bag</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-typora-acer.oss-cn-qingdao.aliyuncs.com/imgs_acer/2047041560716fb43343527aa0b93c94.png" class="lazyload placeholder" data-srcset="https://img-typora-acer.oss-cn-qingdao.aliyuncs.com/imgs_acer/2047041560716fb43343527aa0b93c94.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20240203222318961"></p>
+<h2 id="同步订阅雷达和图像话题"><a href="#同步订阅雷达和图像话题" class="headerlink" title="同步订阅雷达和图像话题"></a>同步订阅雷达和图像话题</h2><p><strong>要求:</strong></p>
+<ul>
+<li>同步订阅激光雷达话题和图像话题</li>
+<li>更改图像信息的header时间戳，与激光消息一致，并发布</li>
+<li>录制发布的同步激光雷达和图像数据</li>
+</ul>
+<p>ros官网提供了message_filters用于对齐多种传感信息的时间戳。</p>
+<p>官方概述：<a target="_blank" rel="noopener" href="http://wiki.ros.org/message_filters">http://wiki.ros.org/message_filters</a></p>
+<p><code>message_filters</code>is a utility library for use with <a target="_blank" rel="noopener" href="http://wiki.ros.org/roscpp">roscpp </a>and <a target="_blank" rel="noopener" href="http://wiki.ros.org/rospy">rospy </a>. It collects commonly used message “filtering” algorithms into a common  space.  A message filter is defined as something which a message arrives into and may or may not be spit back out of at a later point in time. </p>
+<p>An example is the time synchronizer, which takes in messages of different  types from multiple sources, and outputs them only if it has received a  message on each of those sources with the same timestamp. </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;ros/ros.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;rosbag/bag.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sensor_msgs/PointCloud2.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sensor_msgs/Image.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;message_filters/subscriber.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;message_filters/time_synchronizer.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;message_filters/sync_policies/approximate_time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line">std::string img_topic = <span class="string">&quot;/ccf_pc/_img&quot;</span>;</span><br><span class="line">std::string point_topic = <span class="string">&quot;/ccf_pc/_points&quot;</span>;</span><br><span class="line"></span><br><span class="line">rosbag::Bag bag_record; <span class="comment">// bag文件记录</span></span><br><span class="line"></span><br><span class="line">ros::Publisher img_pub;</span><br><span class="line">ros::Publisher pointcloud_pub;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> message_filters::sync_policies::ApproximateTime&lt;sensor_msgs::Image, sensor_msgs::PointCloud2&gt; testSyncPoicy;</span><br><span class="line"><span class="comment">// 回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">callback</span><span class="params">(<span class="keyword">const</span> sensor_msgs::ImageConstPtr &amp;image, <span class="keyword">const</span> sensor_msgs::PointCloud2ConstPtr &amp;point)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    sensor_msgs::Image img_temp;</span><br><span class="line">    img_temp = *image;</span><br><span class="line">    img_temp.header.stamp = point-&gt;header.stamp; <span class="comment">// 复制时间戳</span></span><br><span class="line">    <span class="comment">// 直接写入bag文件</span></span><br><span class="line">    bag_record.<span class="built_in">write</span>(img_topic, image-&gt;header.stamp.<span class="built_in">now</span>(), image);</span><br><span class="line">    bag_record.<span class="built_in">write</span>(point_topic, point-&gt;header.stamp.<span class="built_in">now</span>(), point);</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;encoding...&quot;</span> &lt;&lt; image-&gt;encoding &lt;&lt; std::endl;</span><br><span class="line">    <span class="comment">// ROS_INFO(&quot;encoding: %s&quot;, image-&gt;encoding);</span></span><br><span class="line">    <span class="built_in">ROS_INFO</span>(<span class="string">&quot;step: %d&quot;</span>, image-&gt;step);</span><br><span class="line">    <span class="built_in">ROS_INFO</span>(<span class="string">&quot;height: %d&quot;</span>, image-&gt;height);</span><br><span class="line">    <span class="built_in">ROS_INFO</span>(<span class="string">&quot;width: %d&quot;</span>, image-&gt;width);</span><br><span class="line">    <span class="comment">//实时发布</span></span><br><span class="line">    img_pub.<span class="built_in">publish</span>(image);</span><br><span class="line">    pointcloud_pub.<span class="built_in">publish</span>(point);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ros::<span class="built_in">init</span>(argc, argv, <span class="string">&quot;time_sync&quot;</span>);</span><br><span class="line">    ros::NodeHandle n;</span><br><span class="line"></span><br><span class="line">    bag_record.<span class="built_in">open</span>(<span class="string">&quot;/home/ghigher/workplace/pointcloud_ws/src/time_sync_demo/bag/record.bag&quot;</span>, rosbag::bagmode::Write); <span class="comment">//写入路径</span></span><br><span class="line">    <span class="comment">//发布的话题</span></span><br><span class="line">    img_pub = n.advertise&lt;sensor_msgs::Image&gt;(img_topic, <span class="number">1000</span>);</span><br><span class="line">    pointcloud_pub = n.advertise&lt;sensor_msgs::PointCloud2&gt;(point_topic, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">    <span class="function">message_filters::Subscriber&lt;sensor_msgs::Image&gt; <span class="title">img_sub</span><span class="params">(n, <span class="string">&quot;/zed/zed_node/left/image_rect_color&quot;</span>, <span class="number">1</span>)</span></span>; <span class="comment">//topic1输入</span></span><br><span class="line">    <span class="function">message_filters::Subscriber&lt;sensor_msgs::PointCloud2&gt; <span class="title">pointcloud_sub</span><span class="params">(n, <span class="string">&quot;/rslidar_points&quot;</span>, <span class="number">1</span>)</span></span>;  <span class="comment">//topic2输入</span></span><br><span class="line"></span><br><span class="line">    <span class="function">message_filters::Synchronizer&lt;testSyncPoicy&gt; <span class="title">sync</span><span class="params">(testSyncPoicy(<span class="number">10</span>), img_sub, pointcloud_sub)</span></span>; <span class="comment">// 同步</span></span><br><span class="line">    sync.<span class="built_in">registerCallback</span>(boost::<span class="built_in">bind</span>(&amp;callback, _1, _2));</span><br><span class="line"></span><br><span class="line">    ros::<span class="built_in">spin</span>();</span><br><span class="line">    ros::<span class="built_in">shutdown</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">roscore</span><br><span class="line">rosrun time_sync_demo time_sync </span><br></pre></td></tr></table></figure>
+<p>运行bag文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rosbag play seu.bag </span><br></pre></td></tr></table></figure>
+<p>查看bag</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rqt_bag record.bag</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-typora-acer.oss-cn-qingdao.aliyuncs.com/imgs_acer/3387deac38bfab9de59822b65b28ee9e.png" class="lazyload placeholder" data-srcset="https://img-typora-acer.oss-cn-qingdao.aliyuncs.com/imgs_acer/3387deac38bfab9de59822b65b28ee9e.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20240204104230493"></p>
+<p>可以看出图像与激光雷达时间戳大致对齐，小部分差异是由程序bag写入时的先后顺序导致的。</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/Linux/" class="">
+              Linux
+            </a>
+          
+            <a href="/tags/Ubuntu/" class="">
+              Ubuntu
+            </a>
+          
+            <a href="/tags/ROS/" class="">
+              ROS
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>GHigher</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2024/02/11/点云在ROS中的应用/" target="_blank" title="点云在ROS中的应用">https://yuchanghui.top/2024/02/11/点云在ROS中的应用/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+    </div>
+    <a href="/2023/12/25/STM32CubeMX%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E8%BE%93%E5%85%A5%E6%8D%95%E8%8E%B7/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">STM32CubeMX配置HAL库输入捕获</div>
+      </div>
+      <!-- <div class="content">
+        STM32CubeMX配置HAL库输入捕获STM32的输入捕获功能可以用来测量脉冲宽度或者频率。其工作原理是，通过检测T
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em; margin: 15px auto;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('/medias/monkey.gif');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+
+
+<script>
+  function closeToc(init) {
+    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
+    $(".toc-content").css({'width': 0});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+  };
+  function openToc() {
+    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
+    $(".toc-content").css({'width': '300px'});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+  }
+  function openBtnClickFn () {
+    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+    let open = eval('' || 'true');
+    openOrCloseBtn.click(function() {
+      if (open) {
+        closeToc();
+        open = false;
+      } else {
+        openToc();
+        open = true;
+      }
+    });
+  };
+  openBtnClickFn();
+  initCloseTocWidth(true);
+
+  function initCloseTocWidth(init) {
+    if (window.innerWidth >= 992) {
+      let isClose = false;
+      isClose && closeToc(init)
+    }
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    $(".toc-aside").css({'transition': 'no'});
+  })
+  document.addEventListener('pjax:complete', function () {
+    openBtnClickFn();
+  })
+  
+</script>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
   <script>
-  function typedFn() {
-    const el = '#archive-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
   
-  </div>
-  <div class="mask-box"></div>
-</div>
-
-<div class="archive-video">
-  <video class="full-video" autoplay loop muted>
-      <source style="width: 100%;height: 100vh;" src="https://assets.mixkit.co/videos/preview/mixkit-spinning-around-the-earth-29351-large.mp4">
-  </video>
-  <div class="video-header-title">
-    归档
-  </div>
-  <div class="video-header-desc">
-  
-      <span class="title" id="archive-video-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#archive-video-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
 </script>
-      
-  </div>
-  <div class="mask-box"></div>
-</div>
 
-<!-- hash算法 -->
-
-
-<div class="archive-main">
-  <section class="archive">
-    <div class="archive-content">
-      <ul class="post-archive">
-        
-        
-          
-            
-            <div class="year" data-aos="zoom-in-up">
-                <div class="bullet"></div>
-                <a href="/archives/2022">2022</a>
-            </div>
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/12/14/Vscode%E4%B8%AD%E7%9A%84C-%E5%A4%9A%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91cmake%E3%80%81json%E9%85%8D%E7%BD%AE/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">12-14</span>
-              </div>
-              <a class="post-title" href="/2022/12/14/Vscode%E4%B8%AD%E7%9A%84C-%E5%A4%9A%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91cmake%E3%80%81json%E9%85%8D%E7%BD%AE/">Vscode中的C++多文件编译cmake、json配置</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/11/11/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0-%E8%BD%BD%E8%8D%B7%E7%AE%80%E5%8C%96%E9%97%AE%E9%A2%98/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/10.png" class="lazyload placeholder" data-srcset="/medias/10.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">11-11</span>
-              </div>
-              <a class="post-title" href="/2022/11/11/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0-%E8%BD%BD%E8%8D%B7%E7%AE%80%E5%8C%96%E9%97%AE%E9%A2%98/">有限元分析学习-载荷简化问题</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/10/31/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E4%B8%89/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">10-31</span>
-              </div>
-              <a class="post-title" href="/2022/10/31/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E4%B8%89/">有限元分析学习三</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/10/30/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E4%BA%8C/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">10-30</span>
-              </div>
-              <a class="post-title" href="/2022/10/30/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E4%BA%8C/">有限元分析学习二</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/10/29/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E4%B8%80/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">10-29</span>
-              </div>
-              <a class="post-title" href="/2022/10/29/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90%E5%AD%A6%E4%B9%A0%E4%B8%80/">有限元分析学习一</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/10/22/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E5%9B%9B/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/4.jpg" class="lazyload placeholder" data-srcset="/medias/4.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">10-22</span>
-              </div>
-              <a class="post-title" href="/2022/10/22/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E5%9B%9B/">C++基础学习四</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/10/03/Vscode%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91RaspberryPi/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">10-03</span>
-              </div>
-              <a class="post-title" href="/2022/10/03/Vscode%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91RaspberryPi/">Vscode远程开发RaspberryPi</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/10/01/RaspberryPi%E7%9A%84%E5%88%9D%E6%AC%A1%E4%BD%BF%E7%94%A8/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/15.png" class="lazyload placeholder" data-srcset="/medias/15.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">10-01</span>
-              </div>
-              <a class="post-title" href="/2022/10/01/RaspberryPi%E7%9A%84%E5%88%9D%E6%AC%A1%E4%BD%BF%E7%94%A8/">RaspberryPi的初次使用</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/09/16/Pyqt5-Yolov5-Unet-centernet/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">09-16</span>
-              </div>
-              <a class="post-title" href="/2022/09/16/Pyqt5-Yolov5-Unet-centernet/">Pyqt5+Yolov5+Unet+Centernet</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/09/02/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%B8%89/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">09-02</span>
-              </div>
-              <a class="post-title" href="/2022/09/02/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%B8%89/">C++基础学习三</a>
-            </div>
-          </li>
-        
-      </ul>
-    </div>
-  </section>
-  <div class="w-70">
-    
-  <!-- <nav class="page-nav">
-    <a class="extend prev" rel="prev" href="/archives/page/4/">上一页</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/11/">11</a><a class="extend next" rel="next" href="/archives/page/6/">下一页</a>
-  </nav> -->
-  <div class="page-nav">
-    
-      <a href="/archives/page/4/"
-         class="page-nav-pre">
-         <i class="fas fa-angle-left"></i><span class="ml-5">上一页</span>
-      </a>
-    
-    <div class="page-info">
-        <div class="page-info-text">5 / 11</div>
-    </div>
-    
-      <a href="/archives/page/6/"
-         class="page-nav-next">
-          <span class="mr-5">下一页</span><i class="fas fa-angle-right"></i>
-      </a>
-      
-  </div>
-
-  </div>
-</div>
 
                             </main>
                           </div>
