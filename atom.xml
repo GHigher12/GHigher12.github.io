@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2024-02-11T02:37:50.322Z</updated>
+  <updated>2024-02-17T10:01:01.978Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>点云在ROS中的应用</title>
-    <link href="https://yuchanghui.top/2024/02/11/%E7%82%B9%E4%BA%91%E5%9C%A8ROS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/"/>
-    <id>https://yuchanghui.top/2024/02/11/%E7%82%B9%E4%BA%91%E5%9C%A8ROS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</id>
-    <published>2024-02-11T02:36:35.000Z</published>
-    <updated>2024-02-11T02:37:50.322Z</updated>
+    <title>OpenCV库学习及ROS中使用</title>
+    <link href="https://yuchanghui.top/2024/02/17/OpenCV%E5%BA%93%E5%AD%A6%E4%B9%A0%E5%8F%8AROS%E4%B8%AD%E4%BD%BF%E7%94%A8/"/>
+    <id>https://yuchanghui.top/2024/02/17/OpenCV%E5%BA%93%E5%AD%A6%E4%B9%A0%E5%8F%8AROS%E4%B8%AD%E4%BD%BF%E7%94%A8/</id>
+    <published>2024-02-17T10:00:18.000Z</published>
+    <updated>2024-02-17T10:01:01.978Z</updated>
     
     
       
@@ -44,6 +44,74 @@
     <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
     
     <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+    <category term="Opencv" scheme="https://yuchanghui.top/tags/Opencv/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PCL库学习及ROS中使用</title>
+    <link href="https://yuchanghui.top/2024/02/17/PCL%E5%BA%93%E5%AD%A6%E4%B9%A0%E5%8F%8AROS%E4%B8%AD%E4%BD%BF%E7%94%A8/"/>
+    <id>https://yuchanghui.top/2024/02/17/PCL%E5%BA%93%E5%AD%A6%E4%B9%A0%E5%8F%8AROS%E4%B8%AD%E4%BD%BF%E7%94%A8/</id>
+    <published>2024-02-17T09:58:24.000Z</published>
+    <updated>2024-02-17T09:59:58.153Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+    <category term="PCL" scheme="https://yuchanghui.top/tags/PCL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>点云在ROS中的应用</title>
+    <link href="https://yuchanghui.top/2024/02/11/%E7%82%B9%E4%BA%91%E5%9C%A8ROS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/"/>
+    <id>https://yuchanghui.top/2024/02/11/%E7%82%B9%E4%BA%91%E5%9C%A8ROS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</id>
+    <published>2024-02-11T02:36:35.000Z</published>
+    <updated>2024-02-17T09:59:37.805Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+    <category term="PCL" scheme="https://yuchanghui.top/tags/PCL/"/>
     
   </entry>
   
@@ -541,66 +609,6 @@
     <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
     
     <category term="Pytorch" scheme="https://yuchanghui.top/tags/Pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Pytorch-线性回归问题</title>
-    <link href="https://yuchanghui.top/2023/07/21/Pytorch-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98/"/>
-    <id>https://yuchanghui.top/2023/07/21/Pytorch-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98/</id>
-    <published>2023-07-21T11:08:17.000Z</published>
-    <updated>2023-07-21T11:24:58.003Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="视觉处理" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/"/>
-    
-    <category term="Pytorch" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Pytorch/"/>
-    
-    
-    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
-    
-    <category term="Pytorch" scheme="https://yuchanghui.top/tags/Pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ROS-Moveit-ABORTED_CONTROL_FAILED</title>
-    <link href="https://yuchanghui.top/2023/07/13/ROS-Moveit-ABORTED-CONTROL-FAILED/"/>
-    <id>https://yuchanghui.top/2023/07/13/ROS-Moveit-ABORTED-CONTROL-FAILED/</id>
-    <published>2023-07-13T09:11:41.000Z</published>
-    <updated>2023-07-13T09:12:06.820Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
-    
-    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
-    
-    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
     
   </entry>
   
