@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>GHigher&#39;s Blog</title>
+  <title>Ychui&#39;s Blog</title>
   
   <subtitle>write code and love life</subtitle>
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://yuchanghui.top/</id>
   
   <author>
-    <name>GHigher</name>
+    <name>Ychui</name>
     
   </author>
   
