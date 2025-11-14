@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>标签 | Ychui&#39;s Blog</title>
+  <title>标签: STM32,C/C++,RSD485,Modbus | Ychui&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -47,6 +47,8 @@
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
+    
+        <script src="/js/valine/index.js"></script>
     
 
     <!-- import link -->
@@ -541,20 +543,21 @@
 </header>
                                 <!-- 内容区域 -->
                                 
+
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-tags" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+<div class="bg-light-floor-tagDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
 
-<div class="tags-header" style="background-image:url('/medias/wallpaper/03.png')">
-    <div class="tags-header-title">
-        标签
-    </div>
-    <div class="tags-header-desc">
-    
-        <span class="title" id="tags-header-desc"></span>
-        <script>
+<div class="tag-header" style="background-image: url('/medias/wallpaper/04.png');">
+  <div class="tag-header-title">
+    标签详情
+  </div>
+  <div class="tag-header-desc">
+  
+    <span class="title" id="tag-header-desc"></span>
+    <script>
   function typedFn() {
-    const el = '#tags-header-desc';
-    const type = 'tag';
+    const el = '#tag-header-desc';
+    const type = 'tagDetail';
     let desc = '愿你如风，被人温柔以待'
     var typed = new Typed(el, {
       strings: [desc],
@@ -568,293 +571,82 @@
   typedFn();
 </script>
     
-    </div>
-    <div class="mask-box"></div>
+  </div>
+  <div class="mask-box"></div>
 </div>
 
 
-<div class="tags-video">
-    <video class="full-video" autoplay loop muted>
-        <source style="width: 100%;height: 100vh;" src="/videos/flying.mp4">
-    </video>
-    <div class="video-header-title">
-        标签
-    </div>
-    <div class="video-header-desc">
+
+<div class="tag">
+  <div class="tag-name">
+    <div class="name" style="background-color: #FEF9E7;">STM32,C/C++,RSD485,Modbus 分类</div>
+  </div>
+  <!-- 每一篇文章卡片 -->
+  <!-- hash算法 -->
+
+<section class="posts">
+  
     
-        <span class="title" id="tag-video-header-desc"></span>
-        <script>
-  function typedFn() {
-    const el = '#tag-video-header-desc';
-    const type = 'tag';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-        
-    </div>
-    <div class="mask-box"></div>
+    <article class="post reveal" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <span class="post-time">2023-05-27</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2023/05/27/STM32HAL%E5%BA%93RS485-ModBus%E5%8D%8F%E8%AE%AE%E6%8E%A7%E5%88%B6%E4%BC%BA%E6%9C%8D%E7%94%B5%E6%9C%BA/">STM32HAL库RS485-ModBus协议控制伺服电机</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
+
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STM32-C-C-RSD485-Modbus/" rel="tag">STM32,C/C++,RSD485,Modbus</a></li></ul>
+
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/Control/">Control</a> <a class="article-category-link" href="/categories/Control/RS485/">RS485</a>
 </div>
 
-<div id="tags" class="container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+
             </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/C-C/" title="C/C++: 29">
-                    <span class="tag-content"
-                        title="C/C++" style="background-color: #F8C471;">C/C++
-                        <span class="tag-length">29</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/STM32/" title="STM32: 28">
-                    <span class="tag-content"
-                        title="STM32" style="background-color: #A3E4D7;">STM32
-                        <span class="tag-length">28</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/CLion/" title="CLion: 2">
-                    <span class="tag-content"
-                        title="CLion" style="background-color: #F9EBEA;">CLion
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/CMake/" title="CMake: 2">
-                    <span class="tag-content"
-                        title="CMake" style="background-color: #F9EBEA;">CMake
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/ESP32/" title="ESP32: 1">
-                    <span class="tag-content"
-                        title="ESP32" style="background-color: #85C1E9;">ESP32
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Micropython/" title="Micropython: 1">
-                    <span class="tag-content"
-                        title="Micropython" style="background-color: #F9E79F;">Micropython
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Git/" title="Git: 1">
-                    <span class="tag-content"
-                        title="Git" style="background-color: #F9E79F;">Git
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Linux/" title="Linux: 27">
-                    <span class="tag-content"
-                        title="Linux" style="background-color: #E8F8F5;">Linux
-                        <span class="tag-length">27</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Ubuntu/" title="Ubuntu: 26">
-                    <span class="tag-content"
-                        title="Ubuntu" style="background-color: #FEF9E7;">Ubuntu
-                        <span class="tag-length">26</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Markdown/" title="Markdown: 1">
-                    <span class="tag-content"
-                        title="Markdown" style="background-color: #F8F9F9;">Markdown
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Matlab/" title="Matlab: 5">
-                    <span class="tag-content"
-                        title="Matlab" style="background-color: #85C1E9;">Matlab
-                        <span class="tag-length">5</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Openmv/" title="Openmv: 1">
-                    <span class="tag-content"
-                        title="Openmv" style="background-color: #F9EBEA;">Openmv
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/python/" title="python: 20">
-                    <span class="tag-content"
-                        title="python" style="background-color: #F8C471;">python
-                        <span class="tag-length">20</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Opencv/" title="Opencv: 7">
-                    <span class="tag-content"
-                        title="Opencv" style="background-color: #F9E79F;">Opencv
-                        <span class="tag-length">7</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Pytorch/" title="Pytorch: 7">
-                    <span class="tag-content"
-                        title="Pytorch" style="background-color: #D5F5E3;">Pytorch
-                        <span class="tag-length">7</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Pyqt5/" title="Pyqt5: 1">
-                    <span class="tag-content"
-                        title="Pyqt5" style="background-color: #A3E4D7;">Pyqt5
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/RS485/" title="RS485: 1">
-                    <span class="tag-content"
-                        title="RS485" style="background-color: #F9EBEA;">RS485
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Modbus/" title="Modbus: 1">
-                    <span class="tag-content"
-                        title="Modbus" style="background-color: #85C1E9;">Modbus
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/ROS/" title="ROS: 18">
-                    <span class="tag-content"
-                        title="ROS" style="background-color: #82E0AA;">ROS
-                        <span class="tag-length">18</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/VMware/" title="VMware: 4">
-                    <span class="tag-content"
-                        title="VMware" style="background-color: #FEF9E7;">VMware
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/RaspberryPi/" title="RaspberryPi: 2">
-                    <span class="tag-content"
-                        title="RaspberryPi" style="background-color: #D5F5E3;">RaspberryPi
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/STM32-C-C-RSD485-Modbus/" title="STM32,C/C++,RSD485,Modbus: 1">
-                    <span class="tag-content"
-                        title="STM32,C/C++,RSD485,Modbus" style="background-color: #FEF9E7;">STM32,C/C++,RSD485,Modbus
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/hexo/" title="hexo: 4">
-                    <span class="tag-content"
-                        title="hexo" style="background-color: #FFF;">hexo
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/PicGo/" title="PicGo: 2">
-                    <span class="tag-content"
-                        title="PicGo" style="background-color: #F9EBEA;">PicGo
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/VSCode/" title="VSCode: 2">
-                    <span class="tag-content"
-                        title="VSCode" style="background-color: #FEF9E7;">VSCode
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Json/" title="Json: 1">
-                    <span class="tag-content"
-                        title="Json" style="background-color: #F9E79F;">Json
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Solidworks/" title="Solidworks: 6">
-                    <span class="tag-content"
-                        title="Solidworks" style="background-color: #FEF9E7;">Solidworks
-                        <span class="tag-length">6</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/WSL/" title="WSL: 1">
-                    <span class="tag-content"
-                        title="WSL" style="background-color: #F5EEF8;">WSL
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Simulation/" title="Simulation: 4">
-                    <span class="tag-content"
-                        title="Simulation" style="background-color: #E8F8F5;">Simulation
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Canopen/" title="Canopen: 1">
-                    <span class="tag-content"
-                        title="Canopen" style="background-color: #F8C471;">Canopen
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-            </div>
+          </div>
+          <div class="post-img-mobile">
+            <a href="/2023/05/27/STM32HAL%E5%BA%93RS485-ModBus%E5%8D%8F%E8%AE%AE%E6%8E%A7%E5%88%B6%E4%BC%BA%E6%9C%8D%E7%94%B5%E6%9C%BA/" style="background-size: cover; 
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/15.png" class="lazyload placeholder" data-srcset="/medias/15.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+            </a>
+          </div>
+          <div class="post-content">
+            STM32HAL库RS485-ModBus协议控制伺服电机一个月前，接手了一个学长的毕设小车，小车采用rs485通信的modbus协议驱动轮毂电机，与往常我学习的pwm控制电机方法大相径庭，在这里以这篇博客记录下该学习过程。
+小车主要架构
+
+          </div>
         </div>
-    </div>
+        <div class="post-more">
+          <a href="/2023/05/27/STM32HAL%E5%BA%93RS485-ModBus%E5%8D%8F%E8%AE%AE%E6%8E%A7%E5%88%B6%E4%BC%BA%E6%9C%8D%E7%94%B5%E6%9C%BA/">
+            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/2023/05/27/STM32HAL%E5%BA%93RS485-ModBus%E5%8D%8F%E8%AE%AE%E6%8E%A7%E5%88%B6%E4%BC%BA%E6%9C%8D%E7%94%B5%E6%9C%BA/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="/medias/15.png" class="lazyload placeholder" data-srcset="/medias/15.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+        </a>
+      </div>
+    </article>
+  
+</section>
+</div>
+
+<div class="w-70">
+  
 </div>
 
                             </main>
@@ -1512,6 +1304,144 @@
    
 
 <!-- 评论所需js -->
+
+  
+    <!-- 弹幕所需的css和js -->
+    
+  <!-- 弹幕插件 -->
+  <link href="/js/danmu/barrager.css" rel="stylesheet">
+  <script src="/js/danmu/jquery.barrager.js"></script>
+
+<!-- 具体js，请前往valine/script.ejs查看 -->
+
+    <script>
+  var requiredFields = '';
+  requiredFields = requiredFields.split(',');
+  comment_el = '.comment';
+  let looperValine = null;
+  load_valine = function () {
+    if ($(comment_el).length) {
+      var valine = new Valine({
+        el: '#vcomment',
+        path: window.location.pathname,
+        notify: false,
+        verify: false,
+        app_id: "2PVPHuivtIxkhlA1Kv1quvq2-gzGzoHsz",
+        app_key: "7EDHPdniI5WQBAkU96Yxy9bG",
+        placeholder: "说点什么吧",
+        avatar: "",
+        master: "9b1cd4514cf4b7b3747b9aaa3b78397f",   //博主邮箱md5
+        tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+        friends: "",
+        metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱" },
+        requiredFields: requiredFields,
+        enableQQ: true,
+      });
+      function debounce(fn) {
+        var timerID = null
+        return function () {
+          var arg = arguments[0]   //获取事件
+          if (timerID) {
+            clearTimeout(timerID)
+          }
+          timerID = setTimeout(function () {
+            fn(arg)              //事件传入函数
+          }, 200)
+        }
+      }
+      //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
+      var themeDanmu = eval('true');
+      var themeLoop = eval('false');
+      var themeLooperTime = '5000' || 5000;
+      var speed = '40' || 20;
+      var isBarrager = true;
+      if (themeDanmu == true) {
+        do_barrager();
+        if ($('.danmuBox').length <= 0) {
+          $('.navbar').append('<div class="danmuBox"><div class="danmuBtn open"><span class="danmuCircle"></span><span class="danmuText">弹幕</span></div></div>');
+        }
+        $('.danmuBtn').on('click', debounce(
+          function () {
+            if ($('.danmuBtn').hasClass('open')) {
+              $('.danmuBtn').removeClass('open')
+              clearInterval(looperValine);
+              $.fn.barrager.removeAll();
+            } else {
+              $('.danmuBtn').addClass("open");
+              do_barrager();
+            }
+          }
+        ))
+      }
+      function do_barrager() {
+        isBarrager && valine.Q(window.location.pathname).find().then(function (comments) {
+          // var num = 0; // 可以记录条数，循环调用的时候只取最新的评论放入弹幕中
+          var run_once = true;
+          var looper_time = themeLooperTime;
+          var total = comments.length;
+          // var looper = null;
+          var index = 0;
+          if (total > 0) {
+            barrager();
+          } else {
+            // 当评论数为0的时候，自动关闭弹幕
+            // $('.danmuBtn').removeClass('open');
+          }
+          function barrager() {
+            if (run_once) {
+              //如果是首次执行,则设置一个定时器,并且把首次执行置为false
+              looperValine = setInterval(barrager, looper_time);
+              run_once = false;
+            }
+            var content = comments[index]._serverData.comment;
+            var email = comments[index]._serverData.mail;
+            var link = comments[index]._serverData.link;
+            var newcontent = content.substring(0, 50).replace(/<[^>]+>/g, "");
+            //发布一个弹幕
+            const item = {
+              img: `https://q1.qlogo.cn/g?b=qq&nk=${email}&s=640`, //图片 
+              info: newcontent, //文字 
+              href: link, //链接 
+              close: true, //显示关闭按钮 
+              speed: speed, //延迟,单位秒,默认6 
+              color: '#fff', //颜色,默认白色 
+              old_ie_color: '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
+            }
+            $('body').barrager(item);
+            //索引自增
+            index++;
+            //所有弹幕发布完毕，清除计时器。
+            if (index == total) {
+              clearInterval(looperValine);
+              if (themeLoop === true) {
+                setTimeout(function () {
+                  do_barrager();
+                }, 5000);
+              } else {
+                $('.danmuBtn').removeClass('open');
+              }
+              return false;
+            }
+
+          }
+        })
+      }
+    }
+  };
+  $(document).ready(load_valine);
+  document.addEventListener('pjax:send', function (e) {
+    
+      $('.danmuBox').length > 0 && $('.danmuBox').remove()
+      looperValine && clearInterval(looperValine);
+      $.fn.barrager.removeAll();
+    
+  })
+  document.addEventListener('pjax:complete', function () {
+    load_valine();
+  });
+</script>
+
+  
 
 
 <!-- 鼠标点击特效 -->
