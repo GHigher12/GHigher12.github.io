@@ -115,7 +115,7 @@
                       <!-- 判断是否为暗黑风格 -->
                       <!-- 判断是否为黑夜模式 -->
 <script>
-  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
 
   if (isDark) {
     $(document.body).addClass('darkModel');
@@ -1202,7 +1202,7 @@ Clash For Linux 是基于 Electron 和 Clash 开发的 Linux 代理程序，可�
       this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
     },
     setFishColor: function () {
-      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
       if (isDark) {
         this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
       } else {
@@ -1399,7 +1399,7 @@ Clash For Linux 是基于 Electron 和 Clash 开发的 Linux 代理程序，可�
 
 <script>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('true');
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
     if (isDark) {
       $(".dark-content").replaceWith(
           `

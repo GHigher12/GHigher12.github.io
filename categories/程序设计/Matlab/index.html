@@ -115,7 +115,7 @@
                       <!-- 判断是否为暗黑风格 -->
                       <!-- 判断是否为黑夜模式 -->
 <script>
-  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
 
   if (isDark) {
     $(document.body).addClass('darkModel');
@@ -860,7 +860,7 @@ x = input(prompt) 显示 prompt 中的文本并等待用户输入值后按 Ret
       this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
     },
     setFishColor: function () {
-      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
       if (isDark) {
         this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
       } else {
@@ -1057,7 +1057,7 @@ x = input(prompt) 显示 prompt 中的文本并等待用户输入值后按 Ret
 
 <script>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('true');
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
     if (isDark) {
       $(".dark-content").replaceWith(
           `
