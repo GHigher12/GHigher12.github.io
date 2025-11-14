@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2025-11-14T14:10:04.942Z</updated>
+  <updated>2025-11-14T14:19:42.791Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>激光slam学习记录一</title>
+    <link href="https://yuchanghui.top/2025/11/14/%E6%BF%80%E5%85%89slam%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/"/>
+    <id>https://yuchanghui.top/2025/11/14/%E6%BF%80%E5%85%89slam%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E4%B8%80/</id>
+    <published>2025-11-14T14:03:19.000Z</published>
+    <updated>2025-11-14T14:19:42.791Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="SLAM" scheme="https://yuchanghui.top/categories/SLAM/"/>
+    
+    
+    <category term="SLAM" scheme="https://yuchanghui.top/tags/SLAM/"/>
+    
+  </entry>
   
   <entry>
     <title>步科伺服电机Canopen协议驱动</title>
@@ -572,35 +597,6 @@
     <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
     
     <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Pytorch-MNIST手写数据集</title>
-    <link href="https://yuchanghui.top/2023/07/21/Pytorch-MNIST%E6%89%8B%E5%86%99%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    <id>https://yuchanghui.top/2023/07/21/Pytorch-MNIST%E6%89%8B%E5%86%99%E6%95%B0%E6%8D%AE%E9%9B%86/</id>
-    <published>2023-07-21T11:08:36.000Z</published>
-    <updated>2023-07-21T11:25:05.454Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="视觉处理" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/"/>
-    
-    <category term="Pytorch" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Pytorch/"/>
-    
-    
-    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
-    
-    <category term="Pytorch" scheme="https://yuchanghui.top/tags/Pytorch/"/>
     
   </entry>
   
