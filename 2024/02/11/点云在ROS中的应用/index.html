@@ -115,7 +115,7 @@
                       <!-- 判断是否为暗黑风格 -->
                       <!-- 判断是否为黑夜模式 -->
 <script>
-  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
 
   if (isDark) {
     $(document.body).addClass('darkModel');
@@ -699,17 +699,18 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/2.jpg" class="lazyload placeholder" data-srcset="/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
     </div>
-    <a href="/2025/11/14/Qexo%E9%83%A8%E7%BD%B2Hexo%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/" class="post-nav-link">
+    <a href="/2025/11/14/Ubuntu%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Qexo部署Hexo后台管理</div>
+        <div class="title-text">Ubuntu系统美化</div>
       </div>
       
       <!-- <div class="content">
-        Vercel额外部署Vercel官网
-登录Vercel，创建一个项目，他会让你选择你的Github的仓库，我们选择博客仓
+        终端Terminator1sudo apt-get install terminator
+更改为默认终端
+1sudo u
       </div> -->
     </a>
   </div>
@@ -1194,7 +1195,7 @@
       this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
     },
     setFishColor: function () {
-      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
       if (isDark) {
         this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
       } else {
@@ -1391,7 +1392,7 @@
 
 <script>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('true');
     if (isDark) {
       $(".dark-content").replaceWith(
           `

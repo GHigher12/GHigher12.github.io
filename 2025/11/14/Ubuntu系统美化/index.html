@@ -115,7 +115,7 @@
                       <!-- 判断是否为暗黑风格 -->
                       <!-- 判断是否为黑夜模式 -->
 <script>
-  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
 
   if (isDark) {
     $(document.body).addClass('darkModel');
@@ -696,16 +696,16 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/2.jpg" class="lazyload placeholder" data-srcset="/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
     </div>
-    <a href="/2025/11/14/Qexo%E9%83%A8%E7%BD%B2Hexo%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/" class="post-nav-link">
+    <a href="/2024/02/11/%E7%82%B9%E4%BA%91%E5%9C%A8ROS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Qexo部署Hexo后台管理</div>
+        <div class="title-text">点云在ROS中的应用</div>
       </div>
       <!-- <div class="content">
-        Vercel额外部署Vercel官网
-登录Vercel，创建一个项目，他会让你选择你的Github的仓库，我们选择博客仓
+        ﻿## 点云在ROS中的应用
+用RoboSense雷达节点，加载pcap发布原始数据12345mkdir -p poin
       </div> -->
     </a>
   </div>
@@ -1171,7 +1171,7 @@
       this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
     },
     setFishColor: function () {
-      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
       if (isDark) {
         this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
       } else {
@@ -1368,7 +1368,7 @@
 
 <script>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('true');
     if (isDark) {
       $(".dark-content").replaceWith(
           `

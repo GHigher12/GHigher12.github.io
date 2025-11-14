@@ -115,7 +115,7 @@
                       <!-- 判断是否为暗黑风格 -->
                       <!-- 判断是否为黑夜模式 -->
 <script>
-  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
 
   if (isDark) {
     $(document.body).addClass('darkModel');
@@ -622,23 +622,6 @@
           <li class="post-item" data-aos="fade-left">
             
             <div class="post-img-box">
-              <a href="/2021/12/14/Opencv%E5%AD%A6%E4%B9%A001/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/10.png" class="lazyload placeholder" data-srcset="/medias/10.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">12-14</span>
-              </div>
-              <a class="post-title" href="/2021/12/14/Opencv%E5%AD%A6%E4%B9%A001/">Opencv学习01</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
               <a href="/2021/12/12/PIL%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" src="/medias/2.jpg" class="lazyload placeholder" data-srcset="/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
@@ -788,6 +771,23 @@
             </div>
           </li>
         
+          
+          <li class="post-item" data-aos="fade-left">
+            
+            <div class="post-img-box">
+              <a href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" src="/medias/13.png" class="lazyload placeholder" data-srcset="/medias/13.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                <span class="post-date">11-14</span>
+              </div>
+              <a class="post-title" href="/2021/11/14/STM32%E8%93%9D%E7%89%99%E5%B0%8F%E8%BD%A6%E5%9B%9B/">STM32蓝牙小车四</a>
+            </div>
+          </li>
+        
       </ul>
     </div>
   </section>
@@ -837,7 +837,7 @@
       this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
     },
     setFishColor: function () {
-      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
       if (isDark) {
         this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
       } else {
@@ -1034,7 +1034,7 @@
 
 <script>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('true');
     if (isDark) {
       $(".dark-content").replaceWith(
           `

@@ -115,7 +115,7 @@
                       <!-- 判断是否为暗黑风格 -->
                       <!-- 判断是否为黑夜模式 -->
 <script>
-  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
 
   if (isDark) {
     $(document.body).addClass('darkModel');
@@ -622,23 +622,6 @@
           <li class="post-item" data-aos="fade-left">
             
             <div class="post-img-box">
-              <a href="/2022/07/18/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-18</span>
-              </div>
-              <a class="post-title" href="/2022/07/18/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/">STM32CubeMx配置HAL库串口通信</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
               <a href="/2022/07/18/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E4%B8%AD%E6%96%AD%E6%8E%A7%E5%88%B6/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
@@ -788,6 +771,23 @@
             </div>
           </li>
         
+          
+          <li class="post-item" data-aos="fade-left">
+            
+            <div class="post-img-box">
+              <a href="/2022/04/14/windows%E4%B8%8B%E5%AE%89%E8%A3%85WSL2/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                <span class="post-date">04-14</span>
+              </div>
+              <a class="post-title" href="/2022/04/14/windows%E4%B8%8B%E5%AE%89%E8%A3%85WSL2/">windows下安装WSL2</a>
+            </div>
+          </li>
+        
       </ul>
     </div>
   </section>
@@ -837,7 +837,7 @@
       this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
     },
     setFishColor: function () {
-      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
       if (isDark) {
         this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
       } else {
@@ -1034,7 +1034,7 @@
 
 <script>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('true');
     if (isDark) {
       $(".dark-content").replaceWith(
           `

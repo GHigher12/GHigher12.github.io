@@ -46,31 +46,6 @@
   </entry>
   
   <entry>
-    <title>Qexo部署Hexo后台管理</title>
-    <link href="https://yuchanghui.top/2025/11/14/Qexo%E9%83%A8%E7%BD%B2Hexo%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/"/>
-    <id>https://yuchanghui.top/2025/11/14/Qexo%E9%83%A8%E7%BD%B2Hexo%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/</id>
-    <published>2025-11-14T02:26:13.000Z</published>
-    <updated>2025-11-14T02:34:48.759Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="HEXO" scheme="https://yuchanghui.top/categories/HEXO/"/>
-    
-    
-    <category term="hexo" scheme="https://yuchanghui.top/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
     <title>点云在ROS中的应用</title>
     <link href="https://yuchanghui.top/2024/02/11/%E7%82%B9%E4%BA%91%E5%9C%A8ROS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/"/>
     <id>https://yuchanghui.top/2024/02/11/%E7%82%B9%E4%BA%91%E5%9C%A8ROS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</id>
@@ -575,6 +550,35 @@
     <id>https://yuchanghui.top/2023/07/21/Pytorch-MNIST%E6%89%8B%E5%86%99%E6%95%B0%E6%8D%AE%E9%9B%86/</id>
     <published>2023-07-21T11:08:36.000Z</published>
     <updated>2023-07-21T11:25:05.454Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="视觉处理" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/"/>
+    
+    <category term="Pytorch" scheme="https://yuchanghui.top/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Pytorch/"/>
+    
+    
+    <category term="python" scheme="https://yuchanghui.top/tags/python/"/>
+    
+    <category term="Pytorch" scheme="https://yuchanghui.top/tags/Pytorch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pytorch-线性回归问题</title>
+    <link href="https://yuchanghui.top/2023/07/21/Pytorch-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98/"/>
+    <id>https://yuchanghui.top/2023/07/21/Pytorch-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E9%97%AE%E9%A2%98/</id>
+    <published>2023-07-21T11:08:17.000Z</published>
+    <updated>2023-07-21T11:24:58.003Z</updated>
     
     
       

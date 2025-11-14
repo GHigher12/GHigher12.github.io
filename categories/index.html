@@ -113,7 +113,7 @@
                       <!-- 判断是否为暗黑风格 -->
                       <!-- 判断是否为黑夜模式 -->
 <script>
-  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
 
   if (isDark) {
     $(document.body).addClass('darkModel');
@@ -654,10 +654,10 @@
                 </a>
                 
                 
-                <a href="/categories/HEXO/" title="HEXO: 6">
+                <a href="/categories/HEXO/" title="HEXO: 5">
                     <span class="category-content"
                         title="HEXO" style="background-color: #FFF;">HEXO
-                        <span class="category-length">6</span>
+                        <span class="category-length">5</span>
                     </span>
                 </a>
                 
@@ -670,18 +670,26 @@
                 </a>
                 
                 
-                <a href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/" title="视觉处理: 14">
-                    <span class="category-content"
-                        title="视觉处理" style="background-color: #85C1E9;">视觉处理
-                        <span class="category-length">14</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/" title="STM32: 27">
                     <span class="category-content"
                         title="STM32" style="background-color: #A3E4D7;">STM32
                         <span class="category-length">27</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/Openmv/" title="Openmv: 1">
+                    <span class="category-content"
+                        title="Openmv" style="background-color: #F9EBEA;">Openmv
+                        <span class="category-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/" title="视觉处理: 14">
+                    <span class="category-content"
+                        title="视觉处理" style="background-color: #85C1E9;">视觉处理
+                        <span class="category-length">14</span>
                     </span>
                 </a>
                 
@@ -702,14 +710,6 @@
                 </a>
                 
                 
-                <a href="/categories/Linux/Ubuntu/" title="Ubuntu: 8">
-                    <span class="category-content"
-                        title="Ubuntu" style="background-color: #FEF9E7;">Ubuntu
-                        <span class="category-length">8</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/Linux/ROS/" title="ROS: 18">
                     <span class="category-content"
                         title="ROS" style="background-color: #82E0AA;">ROS
@@ -718,10 +718,10 @@
                 </a>
                 
                 
-                <a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/Openmv/" title="Openmv: 1">
+                <a href="/categories/Linux/Ubuntu/" title="Ubuntu: 8">
                     <span class="category-content"
-                        title="Openmv" style="background-color: #F9EBEA;">Openmv
-                        <span class="category-length">1</span>
+                        title="Ubuntu" style="background-color: #FEF9E7;">Ubuntu
+                        <span class="category-length">8</span>
                     </span>
                 </a>
                 
@@ -806,7 +806,7 @@
       this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
     },
     setFishColor: function () {
-      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
       if (isDark) {
         this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
       } else {
@@ -1003,7 +1003,7 @@
 
 <script>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('true');
     if (isDark) {
       $(".dark-content").replaceWith(
           `

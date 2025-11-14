@@ -115,7 +115,7 @@
                       <!-- 判断是否为暗黑风格 -->
                       <!-- 判断是否为黑夜模式 -->
 <script>
-  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
 
   if (isDark) {
     $(document.body).addClass('darkModel');
@@ -636,23 +636,6 @@
           </li>
         
           
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2025/11/14/Qexo%E9%83%A8%E7%BD%B2Hexo%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/2.jpg" class="lazyload placeholder" data-srcset="/medias/2.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">11-14</span>
-              </div>
-              <a class="post-title" href="/2025/11/14/Qexo%E9%83%A8%E7%BD%B2Hexo%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/">Qexo部署Hexo后台管理</a>
-            </div>
-          </li>
-        
-          
             
             <div class="year" data-aos="zoom-in-up">
                 <div class="bullet"></div>
@@ -800,6 +783,23 @@
             </div>
           </li>
         
+          
+          <li class="post-item" data-aos="fade-left">
+            
+            <div class="post-img-box">
+              <a href="/2023/11/01/Yolov5-detect-py%E4%BB%A3%E7%A0%81%E7%AE%80%E5%8C%96%EF%BC%88%E4%BE%BF%E4%BA%8E%E7%A7%BB%E6%A4%8D%EF%BC%89/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                <span class="post-date">11-01</span>
+              </div>
+              <a class="post-title" href="/2023/11/01/Yolov5-detect-py%E4%BB%A3%E7%A0%81%E7%AE%80%E5%8C%96%EF%BC%88%E4%BE%BF%E4%BA%8E%E7%A7%BB%E6%A4%8D%EF%BC%89/">Yolov5-detect.py代码简化（便于移植）</a>
+            </div>
+          </li>
+        
       </ul>
     </div>
   </section>
@@ -844,7 +844,7 @@
       this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
     },
     setFishColor: function () {
-      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('true');
       if (isDark) {
         this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
       } else {
@@ -1041,7 +1041,7 @@
 
 <script>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('true');
     if (isDark) {
       $(".dark-content").replaceWith(
           `
