@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html>
-<!-- meta/link... -->
-
-
-
-
-<head>
+<!DOCTYPE html><html><!-- meta/link... --><head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>统计 | Ychui&#39;s Blog</title>
+  <title>统计 | Ychui's Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -67,19 +60,19 @@
     
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Ychui's Blog" type="application/atom+xml">
-</head>
+<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script><script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script></head>
 
 
   <!-- 依赖于jquery和vue -->
   
     
-<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+
 
       
 
           
             
-<script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+
 
               
 
@@ -87,8 +80,8 @@
                     <!-- 预加载动画 -->
                     <!-- 页面预加载动画 -->
 
-<div id='loader'>
-  <link rel="stylesheet" href="/js/loaded/index.css" >
+<div id="loader">
+  <link rel="stylesheet" href="/js/loaded/index.css">
   <div class="loading-left-bg"></div>
   <div class="loading-right-bg"></div>
   <div class="spinner-box">
@@ -197,11 +190,8 @@
                             <main class="main" id="pjax-container">
                               <!-- 头部导航 -->
                               
-<header class="header   " 
-  id="navHeader"
-  style="position: fixed;
-  left: 0; top: 0; z-index: 10;width: 100%;"
->
+<header class="header   " id="navHeader" style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;">
   <div class="header-content">
     <div class="bars">
       <div id="appDrawer" class="sidebar-image">
@@ -210,13 +200,13 @@
   </div>
   
   <transition name="fade">
-    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
     </div>
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
-      <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&amp;fm=26&amp;fmt=auto&amp;gp=0.jpg" alt="logo">
+      <h3 class="drawer-box-head_title">Ychui's Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
     
@@ -353,10 +343,10 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&amp;fm=26&amp;fmt=auto&amp;gp=0.jpg" alt="logo">
         </div>
       
-      <a href="/" class="logo">Ychui&#39;s Blog</a>
+      <a href="/" class="logo">Ychui's Blog</a>
     </div>
     <nav class="navbar">
       <ul class="menu">
@@ -433,25 +423,19 @@
       
       
         <div id="appSearch">
-  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
   <transition name="fade">
-    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
       <div class="message-box animated bounceInDown">
         <h2>
           <span>
             <i class="fas fa-search" aria-hidden="true"></i>
             <span class="title">本地搜索</span>
           </span>
-          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
         </h2>
         <form class="site-search-form">
-          <input type="text"
-            placeholder="请输入关键字"
-            id="local-search-input" 
-            @click="getSearchFile()"
-            class="st-search-input"
-            v-model="searchInput"
-          />
+          <input type="text" placeholder="请输入关键字" id="local-search-input" @click="getSearchFile()" class="st-search-input" v-model="searchInput">
         </form>
         <div class="result-wrapper">
           <div id="local-search-result" class="local-search-result-cls"></div>
@@ -558,7 +542,7 @@
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;background-image:url('/medias/5.jpg')">
   <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
@@ -589,8 +573,7 @@
 
 
 
-<div class="row justify-position" 
-  style="padding-top: 0px;">
+<div class="row justify-position" style="padding-top: 0px;">
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
@@ -601,10 +584,294 @@
 <!-- 文章发布时间统计图 -->
 <p><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script></p>
 <div id="posts-chart" data-start="2020-09" style="border-radius: 8px; height: 300px; padding: 10px;"></div>
+  <script id="postsChart">
+    var color = document.documentElement.getAttribute('data-theme') === 'light' ? '#4c4948' : 'rgba(255,255,255,0.7)'
+    var postsChart = echarts.init(document.getElementById('posts-chart'), 'light');
+    var postsOption = {
+      title: {
+        text: '文章发布统计图',
+        x: 'center',
+        textStyle: {
+          color: color
+        }
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      xAxis: {
+        name: '日期',
+        type: 'category',
+        boundaryGap: false,
+        nameTextStyle: {
+          color: color
+        },
+        axisTick: {
+          show: false
+        },
+        axisLabel: {
+          show: true,
+          color: color
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: color
+          }
+        },
+        data: ["2020-09","2020-10","2020-11","2020-12","2021-01","2021-02","2021-03","2021-04","2021-05","2021-06","2021-07","2021-08","2021-09","2021-10","2021-11","2021-12","2022-01","2022-02","2022-03","2022-04","2022-05","2022-06","2022-07","2022-08","2022-09","2022-10","2022-11","2022-12","2023-01","2023-02","2023-03","2023-04","2023-05","2023-06","2023-07","2023-08","2023-09","2023-10","2023-11","2023-12","2024-01","2024-02","2024-03","2024-04","2024-05","2024-06","2024-07","2024-08","2024-09","2024-10","2024-11","2024-12","2025-01","2025-02","2025-03","2025-04","2025-05","2025-06","2025-07","2025-08","2025-09","2025-10","2025-11"]
+      },
+      yAxis: {
+        name: '文章篇数',
+        type: 'value',
+        nameTextStyle: {
+          color: color
+        },
+        splitLine: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        },
+        axisLabel: {
+          show: true,
+          color: color
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: color
+          }
+        }
+      },
+      series: [{
+        name: '文章篇数',
+        type: 'line',
+        smooth: true,
+        lineStyle: {
+            width: 0
+        },
+        showSymbol: false,
+        itemStyle: {
+          opacity: 1,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+            offset: 0,
+            color: 'rgba(128, 255, 165)'
+          },
+          {
+            offset: 1,
+            color: 'rgba(1, 191, 236)'
+          }])
+        },
+        areaStyle: {
+          opacity: 1,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+            offset: 0,
+            color: 'rgba(128, 255, 165)'
+          }, {
+            offset: 1,
+            color: 'rgba(1, 191, 236)'
+          }])
+        },
+        data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,6,5,0,1,3,2,0,22,3,2,6,1,3,0,0,7,7,1,0,11,3,0,0,5,3,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3],
+        markLine: {
+          data: [{
+            name: '平均值',
+            type: 'average',
+            label: {
+              color: color
+            }
+          }]
+        }
+      }]
+    };
+    postsChart.setOption(postsOption);
+    window.addEventListener('resize', () => { 
+      postsChart.resize();
+    });
+    postsChart.on('click', 'series', (event) => {
+      if (event.componentType === 'series') window.location.href = '/archives/' + event.name.replace('-', '/');
+    });
+  </script>
 
 <div id="tags-chart" data-length="10" style="border-radius: 8px; height: 300px; padding: 10px;"></div>
+  <script id="tagsChart">
+    var color = document.documentElement.getAttribute('data-theme') === 'light' ? '#4c4948' : 'rgba(255,255,255,0.7)'
+    var tagsChart = echarts.init(document.getElementById('tags-chart'), 'light');
+    var tagsOption = {
+      title: {
+        text: 'Top 10 标签统计图',
+        x: 'center',
+        textStyle: {
+          color: color
+        }
+      },
+      tooltip: {},
+      xAxis: {
+        name: '标签',
+        type: 'category',
+        nameTextStyle: {
+          color: color
+        },
+        axisTick: {
+          show: false
+        },
+        axisLabel: {
+          show: true,
+          color: color,
+          interval: 0
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: color
+          }
+        },
+        data: ["C/C++","STM32","Linux","Ubuntu","python","ROS","Opencv","Pytorch","Solidworks","Matlab"]
+      },
+      yAxis: {
+        name: '文章篇数',
+        type: 'value',
+        splitLine: {
+          show: false
+        },
+        nameTextStyle: {
+          color: color
+        },
+        axisTick: {
+          show: false
+        },
+        axisLabel: {
+          show: true,
+          color: color
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: color
+          }
+        }
+      },
+      series: [{
+        name: '文章篇数',
+        type: 'bar',
+        data: [{"name":"C/C++","value":29,"path":"tags/C-C/"},{"name":"STM32","value":28,"path":"tags/STM32/"},{"name":"Linux","value":27,"path":"tags/Linux/"},{"name":"Ubuntu","value":26,"path":"tags/Ubuntu/"},{"name":"python","value":20,"path":"tags/python/"},{"name":"ROS","value":18,"path":"tags/ROS/"},{"name":"Opencv","value":7,"path":"tags/Opencv/"},{"name":"Pytorch","value":7,"path":"tags/Pytorch/"},{"name":"Solidworks","value":6,"path":"tags/Solidworks/"},{"name":"Matlab","value":5,"path":"tags/Matlab/"},{"name":"VMware","value":4,"path":"tags/VMware/"},{"name":"hexo","value":4,"path":"tags/hexo/"},{"name":"Simulation","value":4,"path":"tags/Simulation/"},{"name":"CLion","value":2,"path":"tags/CLion/"},{"name":"CMake","value":2,"path":"tags/CMake/"},{"name":"RaspberryPi","value":2,"path":"tags/RaspberryPi/"},{"name":"PicGo","value":2,"path":"tags/PicGo/"},{"name":"VSCode","value":2,"path":"tags/VSCode/"},{"name":"ESP32","value":1,"path":"tags/ESP32/"},{"name":"Micropython","value":1,"path":"tags/Micropython/"},{"name":"Git","value":1,"path":"tags/Git/"},{"name":"Markdown","value":1,"path":"tags/Markdown/"},{"name":"Openmv","value":1,"path":"tags/Openmv/"},{"name":"Pyqt5","value":1,"path":"tags/Pyqt5/"},{"name":"RS485","value":1,"path":"tags/RS485/"},{"name":"Modbus","value":1,"path":"tags/Modbus/"},{"name":"STM32,C/C++,RSD485,Modbus","value":1,"path":"tags/STM32-C-C-RSD485-Modbus/"},{"name":"Json","value":1,"path":"tags/Json/"},{"name":"WSL","value":1,"path":"tags/WSL/"},{"name":"Canopen","value":1,"path":"tags/Canopen/"},{"name":"SLAM","value":1,"path":"tags/SLAM/"}],
+        itemStyle: {
+          borderRadius: [5, 5, 0, 0],
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+            offset: 0,
+            color: 'rgba(128, 255, 165)'
+          },
+          {
+            offset: 1,
+            color: 'rgba(1, 191, 236)'
+          }])
+        },
+        emphasis: {
+          itemStyle: {
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+              offset: 0,
+              color: 'rgba(128, 255, 195)'
+            },
+            {
+              offset: 1,
+              color: 'rgba(1, 211, 255)'
+            }])
+          }
+        },
+        markLine: {
+          data: [{
+            name: '平均值',
+            type: 'average',
+            label: {
+              color: color
+            }
+          }]
+        }
+      }]
+    };
+    tagsChart.setOption(tagsOption);
+    window.addEventListener('resize', () => { 
+      tagsChart.resize();
+    });
+    tagsChart.on('click', 'series', (event) => {
+      if(event.data.path) window.location.href = '/' + event.data.path;
+    });
+  </script>
 
 <div id="categories-chart" data-parent="true" style="border-radius: 8px; height: 300px; padding: 10px;"></div>
+  <script id="categoriesChart">
+    var color = document.documentElement.getAttribute('data-theme') === 'light' ? '#4c4948' : 'rgba(255,255,255,0.7)'
+    var categoriesChart = echarts.init(document.getElementById('categories-chart'), 'light');
+    var categoryParentFlag = true
+    var categoriesOption = {
+      title: {
+        text: '文章分类统计图',
+        x: 'center',
+        textStyle: {
+          color: color
+        }
+      },
+      legend: {
+        top: 'bottom',
+        data: ["单片机","Linux","STM32","ROS","程序设计","视觉处理","Ubuntu","C/C++","Opencv","Pytorch","Others","HEXO","机械","Matlab","Simulation","Python","Control","RaspberryPi","RS485","ESP32","Openmv","WSL","Canopen","SLAM","Solidworks"],
+        textStyle: {
+          color: color
+        }
+      },
+      tooltip: {
+        trigger: 'item'
+      },
+      series: []
+    };
+    categoriesOption.series.push(
+      categoryParentFlag ? 
+      {
+        nodeClick :false,
+        name: '文章篇数',
+        type: 'sunburst',
+        radius: ['15%', '90%'],
+        center: ['50%', '55%'],
+        sort: 'desc',
+        data: [{"name":"单片机","value":30,"path":"categories/单片机/","id":"cmi2jn525001tb6et5w961b0i","parentId":"0","children":[{"name":"STM32","value":26,"path":"categories/单片机/STM32/","id":"cmi2jn52i004kb6et7kam5kp1","parentId":"cmi2jn525001tb6et5w961b0i"},{"name":"RaspberryPi","value":2,"path":"categories/单片机/RaspberryPi/","id":"cmi2jn53100anb6etamvw7e6c","parentId":"cmi2jn525001tb6et5w961b0i"},{"name":"ESP32","value":1,"path":"categories/单片机/ESP32/","id":"cmi2jn52q0070b6et43p929e9","parentId":"cmi2jn525001tb6et5w961b0i"},{"name":"Openmv","value":1,"path":"categories/单片机/Openmv/","id":"cmi2jn53100atb6etb0yg5n96","parentId":"cmi2jn525001tb6et5w961b0i"}]},{"name":"Linux","value":27,"path":"categories/Linux/","id":"cmi2jn52a002sb6et72nyg8oj","parentId":"0","children":[{"name":"ROS","value":18,"path":"categories/Linux/ROS/","id":"cmi2jn52t007wb6etehie8iu4","parentId":"cmi2jn52a002sb6et72nyg8oj"},{"name":"Ubuntu","value":8,"path":"categories/Linux/Ubuntu/","id":"cmi2jn52v0086b6et7jobgxvl","parentId":"cmi2jn52a002sb6et72nyg8oj"},{"name":"WSL","value":1,"path":"categories/Linux/WSL/","id":"cmi2jn53800g6b6etcrd3gg6x","parentId":"cmi2jn52a002sb6et72nyg8oj"}]},{"name":"程序设计","value":14,"path":"categories/程序设计/","id":"cmi2jn51t0004b6et8sbc2rna","parentId":"0","children":[{"name":"C/C++","value":7,"path":"categories/程序设计/C-C/","id":"cmi2jn51z000pb6et0x643f6g","parentId":"cmi2jn51t0004b6et8sbc2rna"},{"name":"Matlab","value":4,"path":"categories/程序设计/Matlab/","id":"cmi2jn52c0035b6etd3sud6gr","parentId":"cmi2jn51t0004b6et8sbc2rna"},{"name":"Python","value":3,"path":"categories/程序设计/Python/","id":"cmi2jn52m005vb6et5dyz9u6a","parentId":"cmi2jn51t0004b6et8sbc2rna"}]},{"name":"视觉处理","value":14,"path":"categories/视觉处理/","id":"cmi2jn52f0040b6etbqze04ts","parentId":"0","children":[{"name":"Opencv","value":7,"path":"categories/视觉处理/Opencv/","id":"cmi2jn53200bcb6et6li1c6z0","parentId":"cmi2jn52f0040b6etbqze04ts"},{"name":"Pytorch","value":7,"path":"categories/视觉处理/Pytorch/","id":"cmi2jn53400dbb6etcyds0bsl","parentId":"cmi2jn52f0040b6etbqze04ts"}]},{"name":"Others","value":6,"path":"categories/Others/","id":"cmi2jn528002bb6eth74t6uqh","parentId":"0"},{"name":"HEXO","value":5,"path":"categories/HEXO/","id":"cmi2jn52b002zb6et0rp82eqk","parentId":"0"},{"name":"机械","value":5,"path":"categories/机械/","id":"cmi2jn53800gjb6et6qsq3dc9","parentId":"0","children":[{"name":"Simulation","value":4,"path":"categories/机械/Simulation/","id":"cmi2jn53a00hzb6et52kxg0lt","parentId":"cmi2jn53800gjb6et6qsq3dc9"},{"name":"Solidworks","value":1,"path":"categories/机械/Solidworks/","id":"cmi2jn53b00ikb6et72h3cv0n","parentId":"cmi2jn53800gjb6et6qsq3dc9"}]},{"name":"Control","value":3,"path":"categories/Control/","id":"cmi2jn52n0064b6et3fv4gke3","parentId":"0","children":[{"name":"RS485","value":2,"path":"categories/Control/RS485/","id":"cmi2jn53500dib6et53am6cqp","parentId":"cmi2jn52n0064b6et3fv4gke3"},{"name":"Canopen","value":1,"path":"categories/Control/Canopen/","id":"cmi2jn53a00hdb6et0d207bni","parentId":"cmi2jn52n0064b6et3fv4gke3"}]},{"name":"SLAM","value":1,"path":"categories/SLAM/","id":"cmi2jn53a00hpb6et80sag1yj","parentId":"0"}],
+        itemStyle: {
+          borderColor: '#fff',
+          borderWidth: 2,
+          emphasis: {
+            focus: 'ancestor',
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(255, 255, 255, 0.5)'
+          }
+        }
+      }
+      :
+      {
+        name: '文章篇数',
+        type: 'pie',
+        radius: [30, 80],
+        roseType: 'area',
+        label: {
+          color: color,
+          formatter: '{b} : {c} ({d}%)'
+        },
+        data: [{"name":"单片机","value":30,"path":"categories/单片机/","id":"cmi2jn525001tb6et5w961b0i","parentId":"0"},{"name":"Linux","value":27,"path":"categories/Linux/","id":"cmi2jn52a002sb6et72nyg8oj","parentId":"0"},{"name":"STM32","value":26,"path":"categories/单片机/STM32/","id":"cmi2jn52i004kb6et7kam5kp1","parentId":"cmi2jn525001tb6et5w961b0i"},{"name":"ROS","value":18,"path":"categories/Linux/ROS/","id":"cmi2jn52t007wb6etehie8iu4","parentId":"cmi2jn52a002sb6et72nyg8oj"},{"name":"程序设计","value":14,"path":"categories/程序设计/","id":"cmi2jn51t0004b6et8sbc2rna","parentId":"0"},{"name":"视觉处理","value":14,"path":"categories/视觉处理/","id":"cmi2jn52f0040b6etbqze04ts","parentId":"0"},{"name":"Ubuntu","value":8,"path":"categories/Linux/Ubuntu/","id":"cmi2jn52v0086b6et7jobgxvl","parentId":"cmi2jn52a002sb6et72nyg8oj"},{"name":"C/C++","value":7,"path":"categories/程序设计/C-C/","id":"cmi2jn51z000pb6et0x643f6g","parentId":"cmi2jn51t0004b6et8sbc2rna"},{"name":"Opencv","value":7,"path":"categories/视觉处理/Opencv/","id":"cmi2jn53200bcb6et6li1c6z0","parentId":"cmi2jn52f0040b6etbqze04ts"},{"name":"Pytorch","value":7,"path":"categories/视觉处理/Pytorch/","id":"cmi2jn53400dbb6etcyds0bsl","parentId":"cmi2jn52f0040b6etbqze04ts"},{"name":"Others","value":6,"path":"categories/Others/","id":"cmi2jn528002bb6eth74t6uqh","parentId":"0"},{"name":"HEXO","value":5,"path":"categories/HEXO/","id":"cmi2jn52b002zb6et0rp82eqk","parentId":"0"},{"name":"机械","value":5,"path":"categories/机械/","id":"cmi2jn53800gjb6et6qsq3dc9","parentId":"0"},{"name":"Matlab","value":4,"path":"categories/程序设计/Matlab/","id":"cmi2jn52c0035b6etd3sud6gr","parentId":"cmi2jn51t0004b6et8sbc2rna"},{"name":"Simulation","value":4,"path":"categories/机械/Simulation/","id":"cmi2jn53a00hzb6et52kxg0lt","parentId":"cmi2jn53800gjb6et6qsq3dc9"},{"name":"Python","value":3,"path":"categories/程序设计/Python/","id":"cmi2jn52m005vb6et5dyz9u6a","parentId":"cmi2jn51t0004b6et8sbc2rna"},{"name":"Control","value":3,"path":"categories/Control/","id":"cmi2jn52n0064b6et3fv4gke3","parentId":"0"},{"name":"RaspberryPi","value":2,"path":"categories/单片机/RaspberryPi/","id":"cmi2jn53100anb6etamvw7e6c","parentId":"cmi2jn525001tb6et5w961b0i"},{"name":"RS485","value":2,"path":"categories/Control/RS485/","id":"cmi2jn53500dib6et53am6cqp","parentId":"cmi2jn52n0064b6et3fv4gke3"},{"name":"ESP32","value":1,"path":"categories/单片机/ESP32/","id":"cmi2jn52q0070b6et43p929e9","parentId":"cmi2jn525001tb6et5w961b0i"},{"name":"Openmv","value":1,"path":"categories/单片机/Openmv/","id":"cmi2jn53100atb6etb0yg5n96","parentId":"cmi2jn525001tb6et5w961b0i"},{"name":"WSL","value":1,"path":"categories/Linux/WSL/","id":"cmi2jn53800g6b6etcrd3gg6x","parentId":"cmi2jn52a002sb6et72nyg8oj"},{"name":"Canopen","value":1,"path":"categories/Control/Canopen/","id":"cmi2jn53a00hdb6et0d207bni","parentId":"cmi2jn52n0064b6et3fv4gke3"},{"name":"SLAM","value":1,"path":"categories/SLAM/","id":"cmi2jn53a00hpb6et80sag1yj","parentId":"0"},{"name":"Solidworks","value":1,"path":"categories/机械/Solidworks/","id":"cmi2jn53b00ikb6et72h3cv0n","parentId":"cmi2jn53800gjb6et6qsq3dc9"}],
+        itemStyle: {
+          emphasis: {
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(255, 255, 255, 0.5)'
+          }
+        }
+      }
+    )
+    categoriesChart.setOption(categoriesOption);
+    window.addEventListener('resize', () => { 
+      categoriesChart.resize();
+    });
+    categoriesChart.on('click', 'series', (event) => {
+      if(event.data.path) window.location.href = '/' + event.data.path;
+    });
+  </script>
 
 
 
@@ -619,7 +886,7 @@
         <div class="copyright">
   <ul class="post-copyright">
     <li class="post-copyright-author">
-    <strong>作者:  </strong>Ychui</a>
+    <strong>作者:  </strong>Ychui
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
@@ -633,7 +900,7 @@
   </ul>
 <div>
       
-    </article>
+    </div></div></article>
     <!-- 上一篇文章和下一篇文章 -->
     
       <!-- 文章详情页的上一页和下一页 -->
@@ -655,18 +922,13 @@
     <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
   </div>
   <transition name="fade">
-    <div 
-      class="donate-box-mask"
-      v-cloak 
-      v-show="visible"
-      @click="cancelDialogDrawer()"
-    >
+    <div class="donate-box-mask" v-cloak="" v-show="visible" @click="cancelDialogDrawer()">
     </div>
   </transition>
   <transition name="bounce">
-    <div class="donate-box" v-cloak v-show="visible">
+    <div class="donate-box" v-cloak="" v-show="visible">
       <div class="donate-box_close">
-        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer=""></i>
       </div>
       <div class="donate-box_title">
         <h4>
@@ -674,19 +936,19 @@
         </h4>
       </div>
       <div class="donate-box_tab">
-        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+        <div class="Alipay" pointer="" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
           支付宝
         </div>
-        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+        <div class="WeChatpay" pointer="" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
           微信
         </div>
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&amp;fm=26&amp;fmt=auto&amp;gp=0.jpg" alt="支付宝打赏">
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&amp;fm=26&amp;fmt=auto&amp;gp=0.jpg" alt="微信打赏">
         </div>
       </div>
     </div>
@@ -741,7 +1003,7 @@
 <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
 <script src="/js/shareJs/social-share.min.js"></script>
-</script>
+
 
 <style>
   .social-share {
@@ -758,8 +1020,7 @@
   <div id="myComment">
     
       
-<section id="comments" style="padding: 1em; margin: 15px auto;"
-	class="animated bounceInUp">
+<section id="comments" style="padding: 1em; margin: 15px auto;" class="animated bounceInUp">
 	<div id="vcomment" class="comment"></div>
 </section>
 <style>
@@ -934,10 +1195,9 @@
 </div>
 
 <!-- 文章详情页背景图 -->
-<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
-	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
 	<transition-group tag="ul" :name="names">
-		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
 			<img :src="image" class="bg-swiper-img no-lazy">
 		</li>
 	</transition-group>
@@ -1271,7 +1531,7 @@
       <i class="fas fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
 </span>
 <span class="post-meta-divider">|</span>
-<span id="busuanzi_container_site_uv" style='display:none'>
+<span id="busuanzi_container_site_uv" style="display:none">
       <i class="fas fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
 </span>
 
@@ -1339,7 +1599,7 @@
                                 
                                   <!-- 渲染回到顶部按钮 -->
                                   
-                                    <div class="goTop top-btn-color" pointer>
+                                    <div class="goTop top-btn-color" pointer="">
   <i class="fas fa-arrow-up" aria-hidden="true"></i>
 </div>
 <script src="/js/goTop.js"></script>
@@ -1373,20 +1633,7 @@
 
 
 </style>
-<meting-js  
-  class=""
-  server="netease"
-  type="playlist"
-  id="8934224878"
-  fixed='true'
-  autoplay='true'
-  theme='#2c2c2c'
-  loop='all'
-  order='list'
-  preload='auto'
-  volume='0.75'
-  list-folded='true'
->
+<meting-js class="" server="netease" type="playlist" id="8934224878" fixed="true" autoplay="true" theme="#2c2c2c" loop="all" order="list" preload="auto" volume="0.75" list-folded="true">
 </meting-js>
 
 <!-- <style>
@@ -1402,8 +1649,7 @@
 
                                               <!-- 图片放大 -->
                                               
-                                                <script
-                                                  src="/js/fancybox/jquery.fancybox.min.js"></script>
+                                                <script src="/js/fancybox/jquery.fancybox.min.js"></script>
                                                 
 
                                                   <!-- 百度解析 -->
@@ -1430,13 +1676,10 @@
                                                       
 
                                                           
-                                                            <script type="text/javascript" color="0,0,0" opacity='0.6'
-                                                              zIndex="-1" count="99"
-                                                              src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+                                                            <script type="text/javascript" color="0,0,0" opacity="0.6" zindex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
                                                             
 
-                                                              <script
-                                                                src="/js/utils/index.js"></script>
+                                                              <script src="/js/utils/index.js"></script>
                                                               <script src="/js/app.js"></script>
 
                                                               <!-- 文章目录所需js -->
@@ -1658,7 +1901,7 @@
   <script src="/js/clipboard/clipboard.min.js"></script>
   <div id="appCopy">
   </div>
-  <script data-pjax>
+  <script data-pjax="">
     var vm = new Vue({
       el: '#appCopy',
       data: {
@@ -1708,7 +1951,7 @@
   
 
 <!-- 图片懒加载 -->
-<script defer src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script defer="" src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
 <script>
   // https://www.npmjs.com/package/vanilla-lazyload
   // Set the options globally
@@ -1883,7 +2126,7 @@
 <!-- 爱心点击 -->
 
   
-    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;"></canvas>
     <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
     <script src="/js/cursor/explosion.min.js"></script>
   
@@ -1891,7 +2134,7 @@
 
 
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax=""></script>
 
 
                                                                 <!-- pjax -->
@@ -1995,6 +2238,6 @@
     });
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script>
 
-</html>
+</body></html>
