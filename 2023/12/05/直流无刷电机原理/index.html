@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<!-- meta/link... -->
-
+  <!-- meta/link... -->
+  
 
 
 
@@ -28,9 +28,7 @@
 
   
   
-    
-<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
-
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
   
   
     
@@ -44,15 +42,21 @@
             }
         }
     </style>
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <script defer src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
     
         <script src="/js/valine/index.js"></script>
     
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
 
     <!-- import link -->
     
+        
+            
         
             
         
@@ -69,52 +73,53 @@
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Ychui's Blog" type="application/atom+xml">
 </head>
 
-
-  <!-- 依赖于jquery和vue -->
   
-    
-<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
-
-      
-
-          
-            
-<script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
-
-              
-
-                  <body>
-                    <!-- 预加载动画 -->
-                    <!-- 页面预加载动画 -->
-
-<div id='loader'>
-  <link rel="stylesheet" href="/js/loaded/index.css" >
-  <div class="loading-left-bg"></div>
-  <div class="loading-right-bg"></div>
-  <div class="spinner-box">
-    <div class="configure-border-1">
-      <div class="configure-core"></div>
+  <!-- 预加载动画 -->
+  
+  
+  <div class="preloader_5" id="loader">
+  <div class="cube">
+    <div class="topD"></div>
+    <div>
+      <span style="--i:0"></span>
+      <span style="--i:1"></span>
+      <span style="--i:2"></span>
+      <span style="--i:3"></span>
     </div>
-    <div class="configure-border-2">
-      <div class="configure-core"></div>
+
+    <div class="cube2">
+      <div>
+        <span style="--i:0"></span>
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+      </div>
+
+      <div class="cube3">
+        <div class="top3"></div>
+        <div>
+          <span style="--i:0"></span>
+          <span style="--i:1"></span>
+          <span style="--i:2"></span>
+          <span style="--i:3"></span>
+        </div>
+      </div>
     </div>
-    <div class="loading-word">加载中...</div>
   </div>
 </div>
-
-<script>
-  var endLoading = function () {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loader').classList.add("loading");
-  }
-  window.addEventListener('DOMContentLoaded',endLoading);
-  
-</script>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
 
 
-                      <!-- 判断是否为暗黑风格 -->
-                      <!-- 判断是否为黑夜模式 -->
-<script>
+  <body>
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer>
   let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
 
   if (isDark) {
@@ -122,8 +127,8 @@
   }
 </script>
 
-                        <!-- 需要在上面加载的js -->
-                        <script>
+    <!-- 需要在上面加载的js -->
+    <script>
   function loadScript(src, cb) {
     return new Promise(resolve => {
       setTimeout(function () {
@@ -159,7 +164,7 @@
   }
 
   //https://github.com/filamentgroup/loadCSS
-  var loadCSS = function (href, before, media, attributes) {
+  var loadCSS = function (src) {
     return new Promise(resolve => {
       setTimeout(function () {
         var link = document.createElement('link');
@@ -193,11 +198,11 @@
 <script src="https://unpkg.com/typed.js@2.0.11"></script>
 
 
-                          <div id="safearea">
-                            <main class="main" id="pjax-container">
-                              <!-- 头部导航 -->
-                              
-<header class="header   " 
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " 
   id="navHeader"
   style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"
@@ -215,7 +220,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -353,7 +358,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -515,7 +520,7 @@
   
   
     <div id="he-plugin-simple"></div>
-    <script>
+    <script defer>
       WIDGET = {
         CONFIG: {
           "modules": "012",
@@ -538,13 +543,14 @@
         }
       }
     </script>
-    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    <script defer src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
     
 </header>
-                                <!-- 内容区域 -->
-                                
- <!-- prismjs 代码高亮 -->
- 
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
 
 
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
@@ -590,7 +596,7 @@
   </div>
   
   
-    <script src="/js/bubble/bubble.js"></script>
+    <script defer src="/js/bubble/bubble.js"></script>
   
 </div>
 
@@ -598,48 +604,48 @@
 
 
 
-<div class="row justify-position" 
+<div class="post-detail-content post-row" 
   style="padding-top: 0px;">
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="直流无刷电机原理"><a href="#直流无刷电机原理" class="headerlink" title="直流无刷电机原理"></a>直流无刷电机原理</h1><h2 id="直流无刷电机分类"><a href="#直流无刷电机分类" class="headerlink" title="直流无刷电机分类"></a>直流无刷电机分类</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204161933701.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204161933701.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20231204161933701"></p>
+        <h1 id="直流无刷电机原理"><a href="#直流无刷电机原理" class="headerlink" title="直流无刷电机原理"></a>直流无刷电机原理</h1><h2 id="直流无刷电机分类"><a href="#直流无刷电机分类" class="headerlink" title="直流无刷电机分类"></a>直流无刷电机分类</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204161933701.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204161933701.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20231204161933701"></p>
 <h2 id="基础理论知识"><a href="#基础理论知识" class="headerlink" title="基础理论知识"></a>基础理论知识</h2><h3 id="电生磁"><a href="#电生磁" class="headerlink" title="电生磁"></a>电生磁</h3><p><strong>奥斯特实验：通电导线周围存在磁场，电流的磁场方向跟电流的方向有关。————电流的磁效应(电生磁)</strong></p>
 <h3 id="右手螺旋定则-安倍定则"><a href="#右手螺旋定则-安倍定则" class="headerlink" title="右手螺旋定则(安倍定则)"></a>右手螺旋定则(安倍定则)</h3><ul>
 <li>通电直导线的判定：大拇指方向为电流方向，四指弯曲方向为磁场方向，磁场是一个同心圆。</li>
 </ul>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204164044496.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204164044496.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20231204164044496"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204164044496.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204164044496.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20231204164044496"></p>
 <ul>
 <li>通电螺线管的判定：四指弯曲方向为电流方向，大拇指方向为磁场N极所指方向，磁场与条形磁铁方向相似。</li>
 </ul>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204164023563.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204164023563.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20231204164023563"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204164023563.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204164023563.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20231204164023563"></p>
 <h2 id="直流无刷电机原理-1"><a href="#直流无刷电机原理-1" class="headerlink" title="直流无刷电机原理"></a>直流无刷电机原理</h2><p>内部有3对电极组成</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165029520.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165029520.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20231204165029520"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165029520.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165029520.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20231204165029520"></p>
 <p>分为<strong>Y型连接</strong>和<strong>三角型连接</strong>，以<strong>Y型连接</strong>为例</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165215124.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165215124.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20231204165215124"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165215124.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165215124.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20231204165215124"></p>
 <p>当电流给AC通电时，根据<strong>右手螺旋定则</strong>和<strong>矢量相加原则</strong>，可求出磁场方向，转子位置与之相反，如图</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165355989.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165355989.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20231204165355989"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165355989.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165355989.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20231204165355989"></p>
 <p>根据不同的通电方向，一共可以分成6组情况，相邻两组相差60度。<strong>(六步换相)</strong></p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165749117.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165749117.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20231204165749117"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165749117.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204165749117.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20231204165749117"></p>
 <p>💡如果磁场旋转太快，转子跟不上磁场，就会发生抖动。</p>
 <p><strong><em>如何确定转子位置？</em></strong></p>
 <p>当转子从上一个磁场方向旋转到下一个磁场方向后，再改变通电方向。每隔60度改变方向，<strong>使用霍尔传感器来确定转子位置</strong></p>
 <h2 id="霍尔传感器"><a href="#霍尔传感器" class="headerlink" title="霍尔传感器"></a>霍尔传感器</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>磁场会对位于其中的带电导体内运动的电荷载流子施加一个垂直于其运动方向的力，该力会使得正负电荷分别积聚到导体的两侧。这在薄而平的导体中尤为明显。</p>
 <p>电荷在导体两侧的积累会平衡磁场的影响，在导体两侧建立稳定的电势差。产生这一电势差的过程就叫做霍尔效应。</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204171146676.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204171146676.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20231204171146676"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204171146676.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204171146676.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20231204171146676"></p>
 <ul>
 <li>有正向磁场通过霍尔，输出”1”，高电平</li>
 <li>有反向磁场通过霍尔，输出”0”，低电平</li>
 </ul>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204171054927.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204171054927.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20231204171054927"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204171054927.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204171054927.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20231204171054927"></p>
 <p>磁场旋转一圈，转子旋转一圈，但是此电机有四对磁极，所以磁场旋转四圈，转子旋转一圈。</p>
 <p>以一个磁极为例，逆时针旋转一圈，分别检测霍尔1、2、3的波形</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173334525.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173334525.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20231204173334525"></p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173438058.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173438058.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20231204173438058"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173334525.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173334525.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20231204173334525"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173438058.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173438058.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20231204173438058"></p>
 <p>以霍尔1上升沿为例，左移如图</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173627324.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173627324.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20231204173627324"></p>
-<h3 id="逆时针"><a href="#逆时针" class="headerlink" title="逆时针"></a>逆时针</h3><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173654799.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173654799.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20231204173654799"></p>
-<h3 id="顺时针"><a href="#顺时针" class="headerlink" title="顺时针"></a>顺时针</h3><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204174215538.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204174215538.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20231204174215538"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173627324.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173627324.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20231204173627324"></p>
+<h3 id="逆时针"><a href="#逆时针" class="headerlink" title="逆时针"></a>逆时针</h3><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173654799.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204173654799.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20231204173654799"></p>
+<h3 id="顺时针"><a href="#顺时针" class="headerlink" title="顺时针"></a>顺时针</h3><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204174215538.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20231204174215538.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20231204174215538"></p>
 
       </div>
       <div class="post-tags-categories">
@@ -675,7 +681,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/13.png" class="lazyload placeholder" data-srcset="/medias/13.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/13.png" class="lazyload placeholder" data-srcset="/medias/13.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
     <a href="/2023/12/14/C-Eigen%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/" class="post-nav-link">
       <div class="title">
@@ -695,7 +701,7 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/15.png" class="lazyload placeholder" data-srcset="/medias/15.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/15.png" class="lazyload placeholder" data-srcset="/medias/15.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
     <a href="/2023/11/29/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2/" class="post-nav-link">
       <div class="title">
@@ -762,10 +768,10 @@ char（signed char）
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -819,7 +825,7 @@ char（signed char）
 <!-- 文章详情页的分享 -->
 <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
-<script src="/js/shareJs/social-share.min.js"></script>
+<script defer src="/js/shareJs/social-share.min.js"></script>
 </script>
 
 <style>
@@ -837,13 +843,13 @@ char（signed char）
   <div id="myComment">
     
       
-<section id="comments" style="padding: 1em; margin: 15px auto;"
-	class="animated bounceInUp">
+<section id="comments" style="padding: 1em;">
 	<div id="vcomment" class="comment"></div>
 </section>
 <style>
 	#comments {
 		background: rgba(255,255,255,0.9);
+		border-radius: 8px;
 	}
 	#veditor {
 		background-image: url('/medias/monkey.gif');
@@ -857,13 +863,7 @@ char（signed char）
 		background-position-y: 200px;
 		transition: all 0.2s ease-in-out 0s;
 	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
+	
 	#vcomment .vcards .vcard .vhead .vsys i {
 		display: none;
 	}
@@ -935,81 +935,122 @@ char（signed char）
     
   </div>
 
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
 
 
   </div>
 
   <!-- 目录 -->
-  <!-- 文章详情页右侧目录 -->
-
-  <div class="toc-aside">
-    <div class="toc-main">
-      <div class="toc-aside-title">
-        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img src='/medias/touxiang.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
         
-          <div class="toc-open-close">本文目录</div>
+          <h2>Ychui's Blog</h2>
+        
+        
+          <p>write code and love life</p>
+
+        
+        
+          <p><span id="jinrishici-sentence">Ychui's Blog</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://blog.csdn.net/weixin_51002159?spm=1000.2115.3001.5343"
+              class="social fab fa-cuttlefish flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/GHIgher12"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=2535410943"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
       <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B4%E6%B5%81%E6%97%A0%E5%88%B7%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86"><span class="toc-text">直流无刷电机原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B4%E6%B5%81%E6%97%A0%E5%88%B7%E7%94%B5%E6%9C%BA%E5%88%86%E7%B1%BB"><span class="toc-text">直流无刷电机分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86"><span class="toc-text">基础理论知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E7%94%9F%E7%A3%81"><span class="toc-text">电生磁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%B3%E6%89%8B%E8%9E%BA%E6%97%8B%E5%AE%9A%E5%88%99-%E5%AE%89%E5%80%8D%E5%AE%9A%E5%88%99"><span class="toc-text">右手螺旋定则(安倍定则)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B4%E6%B5%81%E6%97%A0%E5%88%B7%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86-1"><span class="toc-text">直流无刷电机原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%8D%E5%B0%94%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="toc-text">霍尔传感器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%86%E6%97%B6%E9%92%88"><span class="toc-text">逆时针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E6%97%B6%E9%92%88"><span class="toc-text">顺时针</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
   </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  <!-- 手机端目录按钮 -->
-  <div id="toc-mobile-btn">
-    <i class="fas fa-list-ul" aria-hidden="true"></i>
+      
+    
   </div>
-
-
-<script>
-  function closeToc(init) {
-    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
-    $(".toc-content").css({'width': 0});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
-  };
-  function openToc() {
-    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
-    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
-    $(".toc-content").css({'width': '300px'});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
-  }
-  function openBtnClickFn () {
-    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-    let open = eval('' || 'true');
-    openOrCloseBtn.click(function() {
-      if (open) {
-        closeToc();
-        open = false;
-      } else {
-        openToc();
-        open = true;
-      }
-    });
-  };
-  openBtnClickFn();
-  initCloseTocWidth(true);
-
-  function initCloseTocWidth(init) {
-    if (window.innerWidth >= 992) {
-      let isClose = false;
-      isClose && closeToc(init)
-    }
-  }
-
-  document.addEventListener('pjax:complete', function () {
-    $(".toc-aside").css({'transition': 'no'});
-  })
-  document.addEventListener('pjax:complete', function () {
-    openBtnClickFn();
-  })
-  
-</script>
+</aside>
 
   <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
+  <script defer src="/js/wrapImage.js"></script>
 </div>
 
 <!-- 文章详情页背景图 -->
@@ -1163,15 +1204,16 @@ char（signed char）
 </script>
 
 
-                            </main>
-                          </div>
+      </main>
+    </div>
 
-                          <!-- 页脚 -->
-                          
+    <!-- 页脚 -->
+    
   
-  <!-- 底部鱼儿跳动效果，依赖于jquery-->
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
 <div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
-<script>
+<script defer>
   var RENDERER = {
     POINT_INTERVAL: 5,
     FISH_COUNT: 3,
@@ -1326,6 +1368,7 @@ char（signed char）
     })
   });
 </script>
+  
   <div class="footer bg-color">
     <div class="footer-main">
       
@@ -1368,65 +1411,52 @@ char（signed char）
 
 
 
-                            <!-- 渲染暗黑按钮 -->
-                            
-                              <div class="dark">
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
   <div class="dark-content">
-    <i class="fas fa-moon" aria-hidden="true"></i>
-    <!-- <span>关灯</span> -->
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
   </div>
-  
 </div>
 
-<script>
+<script defer>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
     if (isDark) {
-      $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-          </div>
-          `
-        );
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
     }
-    $('.dark').click(function() {
-      if ($(document.body).is('.darkModel')) {
-        $(document.body).removeClass('darkModel');
-        localStorage.setItem('dark', false);
-        $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-moon" aria-hidden="true"></i>
-          </div>
-          `
-        );
-      } else {
-        $(document.body).addClass('darkModel');
-        localStorage.setItem('dark', true);
-        $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-          </div>
-          `
-        );
-      }
-    })
-  })
+  }
 </script>
-                                
-                                  <!-- 渲染回到顶部按钮 -->
-                                  
-                                    <div class="goTop top-btn-color" pointer>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
   <i class="fas fa-arrow-up" aria-hidden="true"></i>
 </div>
-<script src="/js/goTop.js"></script>
+<script defer src="/js/goTop.js"></script>
 
-                                      
-                                        <!-- 渲染左下角音乐播放器 -->
-                                        
-                                          <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
 <style>
 .aplayer .aplayer-lrc p {
   
@@ -1475,22 +1505,21 @@ char（signed char）
     bottom: 300px;
   }
 </style> -->
-<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-<script src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
-                                            
+<script defer src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
 
-                                              <!-- 图片放大 -->
-                                              
-                                                <script
-                                                  src="/js/fancybox/jquery.fancybox.min.js"></script>
-                                                
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
 
-                                                  <!-- 百度解析 -->
-                                                  <!-- Baidu Analytics -->
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
 
-                                                    <!-- Baidu Push -->
+    <!-- Baidu Push -->
 
-<script>
+<script async>
     (function () {
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
@@ -1504,23 +1533,24 @@ char（signed char）
     })();
 </script>
 
+    
+    <!-- 背景彩带 -->
+    
+    
+      <script type="text/javascript" color="0,0,0" opacity='0.6' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+    
 
-                                                      <!-- 背景彩带 -->
-                                                      
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script> -->
 
-                                                          
-                                                            <script type="text/javascript" color="0,0,0" opacity='0.6'
-                                                              zIndex="-1" count="99"
-                                                              src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
-                                                            
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
 
-                                                              <script
-                                                                src="/js/utils/index.js"></script>
-                                                              <script src="/js/app.js"></script>
 
-                                                              <!-- 文章目录所需js -->
-<link href="/js/tocbot/tocbot.css" rel="stylesheet">
-<script src="/js/tocbot/tocbot.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
 
 <script>
   var headerEl = 'h2, h3, h4',  //headers 
@@ -1535,12 +1565,15 @@ char（signed char）
     // Which headings to grab inside of the contentSelector element.
     headingSelector: headerEl,
     scrollSmooth: true,
-    scrollSmoothOffset: -80,
-    headingsOffset: -($(window).height() * 0.4 - 45),
-    positionFixedSelector: '.toc-main',
-    positionFixedClass: 'is-position-fixed',
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
     fixedSidebarOffset: 'auto',
     activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
     // onClick: function (e) {},
   }
   if ($('.toc').length > 0) {
@@ -1593,7 +1626,7 @@ char（signed char）
     if (activePosition > (document.documentElement.clientHeight - 100)) {
       $cardToc.scrollTop = sidebarScrollTop + 150
     }
-    if (activePosition < 100) {
+    if (activePosition < 150) {
       $cardToc.scrollTop = sidebarScrollTop - 150
     }
   }
@@ -1613,7 +1646,7 @@ char（signed char）
   
   // 手机端toc按钮点击出现目录
   const mobileTocClick = function () {
-    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
     const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
     let right = '45px';
     if (window.innerWidth >= 551 && window.innerWidth <= 992) {
@@ -1645,7 +1678,7 @@ char（signed char）
 </script>
 
 <style>
-  .is-position-fixed {
+  /* .is-position-fixed {
     position: sticky !important;
     top: 74px;
   }
@@ -1660,14 +1693,13 @@ char（signed char）
     position: absolute;
     left: 12px;
     top: 0;
-  }
-</style> 
+  } */
+</style>
+ 
 
 <!-- 设置导航背景 -->
 <script>
   let setHeaderClass = () => {
-    const headerMenuTransparent = true;
-    if (!headerMenuTransparent) { return; }
     const nav = $('#navHeader');
     const navTop = nav.outerHeight();
     const winTop = $(window).scrollTop();
@@ -1715,6 +1747,61 @@ char（signed char）
   document.addEventListener('pjax:complete', function () {
     if (typeof IssuesAPI == "undefined") {
       loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
     }
   })
 </script>
@@ -1820,15 +1907,15 @@ char（signed char）
 <!-- 评论所需js -->
 
   
-    <!-- 弹幕所需的css和js -->
-    
+        
   <!-- 弹幕插件 -->
   <link href="/js/danmu/barrager.css" rel="stylesheet">
   <script src="/js/danmu/jquery.barrager.js"></script>
 
 <!-- 具体js，请前往valine/script.ejs查看 -->
 
-    <script>
+      
+        <script>
   var requiredFields = '';
   requiredFields = requiredFields.split(',');
   comment_el = '.comment';
@@ -1955,7 +2042,7 @@ char（signed char）
   });
 </script>
 
-  
+      
 
 
 <!-- 鼠标点击特效 -->
@@ -1963,8 +2050,8 @@ char（signed char）
 
   
     <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
-    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-    <script src="/js/cursor/explosion.min.js"></script>
+    <script async src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script async src="/js/cursor/explosion.min.js"></script>
   
 
 
@@ -1973,17 +2060,69 @@ char（signed char）
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
 
 
-                                                                <!-- pjax -->
-                                                                
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
 
 <!-- pjax -->
 
 
   <script src="/js/pjax@0.2.8/index.js"></script>
   
-    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
-
-<div class="pjax-animate">
+    <div class="pjax-animate">
   
     <div class="loading-circle"><div id="loader-circle"></div></div>
     <script>
@@ -2059,7 +2198,7 @@ char（signed char）
 
 
 
-                  <script type="text/x-mathjax-config">
+  <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ["$","$"], ["\\(","\\)"] ],
@@ -2075,5 +2214,4 @@ char（signed char）
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-
 </html>

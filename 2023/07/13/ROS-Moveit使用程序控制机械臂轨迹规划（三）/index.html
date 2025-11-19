@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<!-- meta/link... -->
-
+  <!-- meta/link... -->
+  
 
 
 
@@ -28,9 +28,7 @@
 
   
   
-    
-<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
-
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
   
   
     
@@ -44,15 +42,21 @@
             }
         }
     </style>
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <script defer src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
     
         <script src="/js/valine/index.js"></script>
     
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
 
     <!-- import link -->
     
+        
+            
         
             
         
@@ -69,52 +73,53 @@
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Ychui's Blog" type="application/atom+xml">
 </head>
 
-
-  <!-- 依赖于jquery和vue -->
   
-    
-<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
-
-      
-
-          
-            
-<script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
-
-              
-
-                  <body>
-                    <!-- 预加载动画 -->
-                    <!-- 页面预加载动画 -->
-
-<div id='loader'>
-  <link rel="stylesheet" href="/js/loaded/index.css" >
-  <div class="loading-left-bg"></div>
-  <div class="loading-right-bg"></div>
-  <div class="spinner-box">
-    <div class="configure-border-1">
-      <div class="configure-core"></div>
+  <!-- 预加载动画 -->
+  
+  
+  <div class="preloader_5" id="loader">
+  <div class="cube">
+    <div class="topD"></div>
+    <div>
+      <span style="--i:0"></span>
+      <span style="--i:1"></span>
+      <span style="--i:2"></span>
+      <span style="--i:3"></span>
     </div>
-    <div class="configure-border-2">
-      <div class="configure-core"></div>
+
+    <div class="cube2">
+      <div>
+        <span style="--i:0"></span>
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+      </div>
+
+      <div class="cube3">
+        <div class="top3"></div>
+        <div>
+          <span style="--i:0"></span>
+          <span style="--i:1"></span>
+          <span style="--i:2"></span>
+          <span style="--i:3"></span>
+        </div>
+      </div>
     </div>
-    <div class="loading-word">加载中...</div>
   </div>
 </div>
-
-<script>
-  var endLoading = function () {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loader').classList.add("loading");
-  }
-  window.addEventListener('DOMContentLoaded',endLoading);
-  
-</script>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
 
 
-                      <!-- 判断是否为暗黑风格 -->
-                      <!-- 判断是否为黑夜模式 -->
-<script>
+  <body>
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer>
   let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
 
   if (isDark) {
@@ -122,8 +127,8 @@
   }
 </script>
 
-                        <!-- 需要在上面加载的js -->
-                        <script>
+    <!-- 需要在上面加载的js -->
+    <script>
   function loadScript(src, cb) {
     return new Promise(resolve => {
       setTimeout(function () {
@@ -159,7 +164,7 @@
   }
 
   //https://github.com/filamentgroup/loadCSS
-  var loadCSS = function (href, before, media, attributes) {
+  var loadCSS = function (src) {
     return new Promise(resolve => {
       setTimeout(function () {
         var link = document.createElement('link');
@@ -193,11 +198,11 @@
 <script src="https://unpkg.com/typed.js@2.0.11"></script>
 
 
-                          <div id="safearea">
-                            <main class="main" id="pjax-container">
-                              <!-- 头部导航 -->
-                              
-<header class="header   " 
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " 
   id="navHeader"
   style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"
@@ -215,7 +220,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -353,7 +358,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -515,7 +520,7 @@
   
   
     <div id="he-plugin-simple"></div>
-    <script>
+    <script defer>
       WIDGET = {
         CONFIG: {
           "modules": "012",
@@ -538,13 +543,14 @@
         }
       }
     </script>
-    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    <script defer src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
     
 </header>
-                                <!-- 内容区域 -->
-                                
- <!-- prismjs 代码高亮 -->
- 
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
 
 
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
@@ -594,7 +600,7 @@
   </div>
   
   
-    <script src="/js/bubble/bubble.js"></script>
+    <script defer src="/js/bubble/bubble.js"></script>
   
 </div>
 
@@ -602,7 +608,7 @@
 
 
 
-<div class="row justify-position" 
+<div class="post-detail-content post-row" 
   style="padding-top: 0px;">
   <div class="main-content">
     <article class="post post-detail">
@@ -620,11 +626,11 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> rospy, sys</span><br><span class="line"><span class="keyword">import</span> moveit_commander</span><br><span class="line"><span class="keyword">from</span> control_msgs.msg <span class="keyword">import</span> GripperCommand</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MoveItFkDemo</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment"># 初始化move_group的API</span></span><br><span class="line">        moveit_commander.roscpp_initialize(sys.argv)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 初始化ROS节点</span></span><br><span class="line">        rospy.init_node(<span class="string">&#x27;moveit_fk_demo&#x27;</span>, anonymous=<span class="literal">True</span>)</span><br><span class="line"> </span><br><span class="line">        <span class="comment"># 初始化需要使用move group控制的机械臂中的arm group</span></span><br><span class="line">        arm = moveit_commander.MoveGroupCommander(<span class="string">&#x27;arm_group&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 初始化需要使用move group控制的机械臂中的gripper group</span></span><br><span class="line">        gripper = moveit_commander.MoveGroupCommander(<span class="string">&#x27;hand_group&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 设置机械臂和夹爪的允许误差值</span></span><br><span class="line">        arm.set_goal_joint_tolerance(<span class="number">0.001</span>)</span><br><span class="line">        gripper.set_goal_joint_tolerance(<span class="number">0.001</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 控制机械臂先回到初始化位置</span></span><br><span class="line">        arm.set_named_target(<span class="string">&#x27;zero_pose&#x27;</span>)</span><br><span class="line">        arm.go()</span><br><span class="line">        rospy.sleep(<span class="number">2</span>)</span><br><span class="line">         </span><br><span class="line">      </span><br><span class="line">        <span class="comment"># 设置机械臂的目标位置，使用六轴的位置数据进行描述（单位：弧度）</span></span><br><span class="line">        joint_positions = [<span class="number">3.14</span>, <span class="number">0.90</span>, <span class="number">0.84</span>, <span class="number">0</span>, <span class="number">1.59</span>, <span class="number">1.52</span>]</span><br><span class="line">        arm.set_joint_value_target(joint_positions)</span><br><span class="line">                 </span><br><span class="line">        <span class="comment"># 控制机械臂完成运动</span></span><br><span class="line">        arm.go()</span><br><span class="line">        rospy.sleep(<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 设置夹爪的目标位置，并控制夹爪运动</span></span><br><span class="line">        gripper.set_joint_value_target([<span class="number">0.03</span>, -<span class="number">0.03</span>])</span><br><span class="line">        gripper.go()</span><br><span class="line">        rospy.sleep(<span class="number">1</span>)</span><br><span class="line">         </span><br><span class="line">        <span class="comment"># 关闭并退出moveit</span></span><br><span class="line">        moveit_commander.roscpp_shutdown()</span><br><span class="line">        moveit_commander.os._exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        MoveItFkDemo()</span><br><span class="line">    <span class="keyword">except</span> rospy.ROSInterruptException:</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 <h2 id="根据末端位姿控制机械臂"><a href="#根据末端位姿控制机械臂" class="headerlink" title="根据末端位姿控制机械臂"></a>根据末端位姿控制机械臂</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> rospy, sys</span><br><span class="line"><span class="keyword">import</span> moveit_commander</span><br><span class="line"><span class="keyword">from</span> moveit_msgs.msg <span class="keyword">import</span> RobotTrajectory</span><br><span class="line"><span class="keyword">from</span> trajectory_msgs.msg <span class="keyword">import</span> JointTrajectoryPoint</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> geometry_msgs.msg <span class="keyword">import</span> PoseStamped, Pose</span><br><span class="line"><span class="keyword">from</span> tf.transformations <span class="keyword">import</span> euler_from_quaternion, quaternion_from_euler</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MoveItIkDemo</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment"># 初始化move_group的API</span></span><br><span class="line">        moveit_commander.roscpp_initialize(sys.argv)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 初始化ROS节点</span></span><br><span class="line">        rospy.init_node(<span class="string">&#x27;moveit_ik_demo&#x27;</span>)</span><br><span class="line"> </span><br><span class="line">        <span class="comment"># 初始化需要使用move group控制的机械臂中的arm group</span></span><br><span class="line">        arm = moveit_commander.MoveGroupCommander(<span class="string">&#x27;arm_group&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        end_effector = arm.get_end_effector_link()</span><br><span class="line">        </span><br><span class="line">        reference_frame = <span class="string">&quot;base_link&quot;</span></span><br><span class="line">        arm.set_pose_reference_frame(reference_frame)</span><br><span class="line">        </span><br><span class="line">        arm.allow_replanning(<span class="literal">True</span>)</span><br><span class="line">        <span class="comment"># 设置位置（米）和姿态（、弧度）允许误差</span></span><br><span class="line">        arm.set_goal_position_tolerance(<span class="number">0.001</span>)</span><br><span class="line">        arm.set_goal_orientation_tolerance(<span class="number">0.01</span>)</span><br><span class="line">        <span class="comment"># 设置允许最大速度和加速度</span></span><br><span class="line">        arm.set_max_acceleration_scaling_factor(<span class="number">0.5</span>)</span><br><span class="line">        arm.set_max_velocity_scaling_factor(<span class="number">0.5</span>)</span><br><span class="line">        <span class="comment"># 回到初始位置</span></span><br><span class="line">        arm.set_named_target(<span class="string">&quot;zero_pose&quot;</span>)</span><br><span class="line">        arm.go()</span><br><span class="line">        rospy.sleep(<span class="number">2</span>)</span><br><span class="line">        <span class="comment">#设置机械臂工作空间中的目标位姿，位置使用x/y/z坐标描述</span></span><br><span class="line">        <span class="comment"># 姿态使用四元数描述，基于base_link坐标系</span></span><br><span class="line">        target_pose = PoseStamped()</span><br><span class="line">        target_pose.header.frame_id = reference_frame</span><br><span class="line">        target_pose.header.stamp = rospy.Time.now()     </span><br><span class="line">        target_pose.pose.position.x = <span class="number">0.5</span></span><br><span class="line">        target_pose.pose.position.y = <span class="number">0.5</span></span><br><span class="line">        target_pose.pose.position.z = <span class="number">0.5</span></span><br><span class="line">        target_pose.pose.orientation.x = <span class="number">0.911822</span></span><br><span class="line">        target_pose.pose.orientation.y = -<span class="number">0.0269758</span></span><br><span class="line">        target_pose.pose.orientation.z = <span class="number">0.285694</span></span><br><span class="line">        target_pose.pose.orientation.w = -<span class="number">0.293653</span></span><br><span class="line">        <span class="comment"># 设置机器臂当前的状态作为运动初始状态</span></span><br><span class="line">        arm.set_start_state_to_current_state()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 设置机械臂终端运动的目标位姿</span></span><br><span class="line">        arm.set_pose_target(target_pose, end_effector)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 规划运动路径</span></span><br><span class="line">        plan_success,traj,planning_time,error_code=arm.plan()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 按照规划的运动路径控制机械臂运动</span></span><br><span class="line">        arm.execute(traj)</span><br><span class="line">        rospy.sleep(<span class="number">1</span>)</span><br><span class="line">         </span><br><span class="line">        <span class="comment"># 控制机械臂终端向右移动5cm</span></span><br><span class="line">        arm.shift_pose_target(<span class="number">1</span>, -<span class="number">0.05</span>, end_effector)</span><br><span class="line">        arm.go()</span><br><span class="line">        rospy.sleep(<span class="number">1</span>)</span><br><span class="line">  </span><br><span class="line">        <span class="comment"># # 控制机械臂终端反向旋转90度</span></span><br><span class="line">        arm.shift_pose_target(<span class="number">3</span>, -<span class="number">1.57</span>, end_effector)</span><br><span class="line">        arm.go()</span><br><span class="line">        rospy.sleep(<span class="number">1</span>)</span><br><span class="line">           </span><br><span class="line">        <span class="comment"># # 控制机械臂回到初始化位置</span></span><br><span class="line">        arm.set_named_target(<span class="string">&#x27;zero_pose&#x27;</span>)</span><br><span class="line">        arm.go()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 关闭并退出moveit</span></span><br><span class="line">        moveit_commander.roscpp_shutdown()</span><br><span class="line">        moveit_commander.os._exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        MoveItIkDemo()</span><br><span class="line">    <span class="keyword">except</span> rospy.ROSInterruptException:</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 <h2 id="画正方形"><a href="#画正方形" class="headerlink" title="画正方形"></a>画正方形</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> rospy, sys</span><br><span class="line"><span class="keyword">import</span> moveit_commander</span><br><span class="line"><span class="keyword">from</span> moveit_commander <span class="keyword">import</span> MoveGroupCommander</span><br><span class="line"><span class="keyword">from</span> geometry_msgs.msg <span class="keyword">import</span> Pose</span><br><span class="line"><span class="keyword">from</span> copy <span class="keyword">import</span> deepcopy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MoveItCartesianDemo</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment"># 初始化move_group的API</span></span><br><span class="line">        moveit_commander.roscpp_initialize(sys.argv)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 初始化ROS节点</span></span><br><span class="line">        rospy.init_node(<span class="string">&#x27;moveit_line_demo&#x27;</span>, anonymous=<span class="literal">True</span>)</span><br><span class="line">      </span><br><span class="line">        <span class="comment"># 初始化需要使用move group控制的机械臂中的arm group</span></span><br><span class="line">        arm = MoveGroupCommander(<span class="string">&#x27;arm_group&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 当运动规划失败后，允许重新规划</span></span><br><span class="line">        arm.allow_replanning(<span class="literal">True</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 设置目标位置所使用的参考坐标系</span></span><br><span class="line">        arm.set_pose_reference_frame(<span class="string">&#x27;base_link&#x27;</span>)</span><br><span class="line">                </span><br><span class="line">        <span class="comment"># 设置位置(单位：米)和姿态（单位：弧度）的允许误差</span></span><br><span class="line">        arm.set_goal_position_tolerance(<span class="number">0.001</span>)</span><br><span class="line">        arm.set_goal_orientation_tolerance(<span class="number">0.001</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 设置允许的最大速度和加速度</span></span><br><span class="line">        arm.set_max_acceleration_scaling_factor(<span class="number">0.5</span>)</span><br><span class="line">        arm.set_max_velocity_scaling_factor(<span class="number">0.5</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 获取终端link的名称</span></span><br><span class="line">        end_effector_link = arm.get_end_effector_link()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 控制机械臂先回到初始化位置</span></span><br><span class="line">        arm.set_named_target(<span class="string">&#x27;zero_pose&#x27;</span>)</span><br><span class="line">        arm.go()</span><br><span class="line">        rospy.sleep(<span class="number">1</span>)</span><br><span class="line">                                               </span><br><span class="line">        <span class="comment"># 获取当前位姿数据最为机械臂运动的起始位姿</span></span><br><span class="line">        start_pose = arm.get_current_pose(end_effector_link).pose</span><br><span class="line">                </span><br><span class="line">        <span class="comment"># 初始化路点列表</span></span><br><span class="line">        waypoints = []</span><br><span class="line"></span><br><span class="line">        <span class="comment"># # 将初始位姿加入路点列表</span></span><br><span class="line">        <span class="comment"># waypoints.append(start_pose)</span></span><br><span class="line">            </span><br><span class="line">        <span class="comment"># 设置路点数据，并加入路点列表</span></span><br><span class="line">        wpose = deepcopy(start_pose)</span><br><span class="line">    </span><br><span class="line">        wpose.position.x += <span class="number">0.20</span></span><br><span class="line">        waypoints.append(deepcopy(wpose))</span><br><span class="line">        wpose.position.z -= <span class="number">0.2</span></span><br><span class="line">        waypoints.append(deepcopy(wpose))</span><br><span class="line">        wpose.position.x += <span class="number">0.20</span></span><br><span class="line">        waypoints.append(deepcopy(wpose))</span><br><span class="line">        wpose.position.y += <span class="number">0.20</span></span><br><span class="line">        waypoints.append(deepcopy(wpose))</span><br><span class="line">        wpose.position.x -= <span class="number">0.20</span></span><br><span class="line">        waypoints.append(deepcopy(wpose))</span><br><span class="line">        wpose.position.y -= <span class="number">0.20</span></span><br><span class="line">        waypoints.append(deepcopy(wpose))</span><br><span class="line">        wpose.position.z += <span class="number">0.2</span></span><br><span class="line">        waypoints.append(deepcopy(wpose))</span><br><span class="line">        wpose.position.x -= <span class="number">0.20</span></span><br><span class="line">        waypoints.append(deepcopy(wpose))</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        fraction = <span class="number">0.0</span>   <span class="comment">#路径规划覆盖率</span></span><br><span class="line">        maxtries = <span class="number">100</span>   <span class="comment">#最大尝试规划次数</span></span><br><span class="line">        attempts = <span class="number">0</span>     <span class="comment">#已经尝试规划次数</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment"># 设置机器臂当前的状态作为运动初始状态</span></span><br><span class="line">        arm.set_start_state_to_current_state()</span><br><span class="line">	 </span><br><span class="line">		<span class="comment"># 尝试规划一条笛卡尔空间下的路径，依次通过所有路点</span></span><br><span class="line">        <span class="keyword">while</span> fraction &lt; <span class="number">1.0</span> <span class="keyword">and</span> attempts &lt; maxtries:</span><br><span class="line">            (plan, fraction) = arm.compute_cartesian_path (</span><br><span class="line">		                    waypoints,   <span class="comment"># waypoint poses，路点列表</span></span><br><span class="line">		                    <span class="number">0.01</span>,        <span class="comment"># eef_step，终端步进值</span></span><br><span class="line">		                    <span class="number">0.0</span>,         <span class="comment"># jump_threshold，跳跃阈值</span></span><br><span class="line">		                    <span class="literal">True</span>)        <span class="comment"># avoid_collisions，避障规划</span></span><br><span class="line">		    </span><br><span class="line">		    <span class="comment"># 尝试次数累加</span></span><br><span class="line">            attempts += <span class="number">1</span></span><br><span class="line">		    </span><br><span class="line">                <span class="comment"># 打印运动规划进程</span></span><br><span class="line">            <span class="keyword">if</span> attempts % <span class="number">10</span> == <span class="number">0</span>:</span><br><span class="line">                rospy.loginfo(<span class="string">&quot;Still trying after &quot;</span> + <span class="built_in">str</span>(attempts) + <span class="string">&quot; attempts...&quot;</span>)</span><br><span class="line">                    </span><br><span class="line">            <span class="comment"># 如果路径规划成功（覆盖率100%）,则开始控制机械臂运动</span></span><br><span class="line">        <span class="keyword">if</span> fraction == <span class="number">1.0</span>:</span><br><span class="line">            rospy.loginfo(<span class="string">&quot;Path computed successfully. Moving the arm.&quot;</span>)</span><br><span class="line">            arm.execute(plan)</span><br><span class="line">            rospy.loginfo(<span class="string">&quot;Path execution complete.&quot;</span>)</span><br><span class="line">            <span class="comment"># 如果路径规划失败，则打印失败信息</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            rospy.loginfo(<span class="string">&quot;Path planning failed with only &quot;</span> + <span class="built_in">str</span>(fraction) + <span class="string">&quot; success after &quot;</span> + <span class="built_in">str</span>(maxtries) + <span class="string">&quot; attempts.&quot;</span>)  </span><br><span class="line"></span><br><span class="line">            rospy.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 控制机械臂先回到初始化位置</span></span><br><span class="line">        arm.set_named_target(<span class="string">&#x27;zero_pose&#x27;</span>)</span><br><span class="line">        arm.go()</span><br><span class="line">        rospy.sleep(<span class="number">2</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 关闭并退出moveit</span></span><br><span class="line">        moveit_commander.roscpp_shutdown()</span><br><span class="line">        moveit_commander.os._exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        MoveItCartesianDemo()</span><br><span class="line">    <span class="keyword">except</span> rospy.ROSInterruptException:</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/c292959cbc95dc74dd4cf85ce3f9df62.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/c292959cbc95dc74dd4cf85ce3f9df62.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230712155040962"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/c292959cbc95dc74dd4cf85ce3f9df62.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/c292959cbc95dc74dd4cf85ce3f9df62.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230712155040962"></p>
 <h2 id="画圆形"><a href="#画圆形" class="headerlink" title="画圆形"></a>画圆形</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> rospy, sys</span><br><span class="line"><span class="keyword">import</span> moveit_commander</span><br><span class="line"><span class="keyword">from</span> moveit_commander <span class="keyword">import</span> MoveGroupCommander</span><br><span class="line"><span class="keyword">from</span> geometry_msgs.msg <span class="keyword">import</span> Pose, PoseStamped</span><br><span class="line"><span class="keyword">from</span> copy <span class="keyword">import</span> deepcopy</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MoveItCartesianDemo</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment"># 初始化move_group的API</span></span><br><span class="line">        moveit_commander.roscpp_initialize(sys.argv)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 初始化ROS节点</span></span><br><span class="line">        rospy.init_node(<span class="string">&#x27;moveit_cycle_demo&#x27;</span>, anonymous=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">      </span><br><span class="line">                      </span><br><span class="line">        <span class="comment"># 初始化需要使用move group控制的机械臂中的arm group</span></span><br><span class="line">        arm = MoveGroupCommander(<span class="string">&#x27;arm_group&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 当运动规划失败后，允许重新规划</span></span><br><span class="line">        arm.allow_replanning(<span class="literal">True</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 设置目标位置所使用的参考坐标系</span></span><br><span class="line">        reference_frame = <span class="string">&#x27;base_link&#x27;</span></span><br><span class="line">        arm.set_pose_reference_frame(<span class="string">&#x27;base_link&#x27;</span>)</span><br><span class="line">                </span><br><span class="line">        <span class="comment"># 设置位置(单位：米)和姿态（单位：弧度）的允许误差</span></span><br><span class="line">        arm.set_goal_position_tolerance(<span class="number">0.001</span>)</span><br><span class="line">        arm.set_goal_orientation_tolerance(<span class="number">0.001</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 设置允许的最大速度和加速度</span></span><br><span class="line">        arm.set_max_acceleration_scaling_factor(<span class="number">0.5</span>)</span><br><span class="line">        arm.set_max_velocity_scaling_factor(<span class="number">0.5</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 获取终端link的名称</span></span><br><span class="line">        end_effector_link = arm.get_end_effector_link()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 控制机械臂先回到初始化位置</span></span><br><span class="line">        arm.set_named_target(<span class="string">&#x27;zero_pose&#x27;</span>)</span><br><span class="line">        arm.go()</span><br><span class="line">        rospy.sleep(<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 设置路点数据，并加入路点列表</span></span><br><span class="line">                                         </span><br><span class="line">        target_pose = PoseStamped()</span><br><span class="line">        target_pose.header.frame_id = reference_frame</span><br><span class="line">        target_pose.header.stamp = rospy.Time.now()     </span><br><span class="line">        target_pose.pose.position.x = <span class="number">0.5</span></span><br><span class="line">        target_pose.pose.position.y = <span class="number">0</span></span><br><span class="line">        target_pose.pose.position.z = <span class="number">0.5</span></span><br><span class="line">        target_pose.pose.orientation.x = <span class="number">0.707</span></span><br><span class="line">        target_pose.pose.orientation.y = <span class="number">0.7071</span></span><br><span class="line">        target_pose.pose.orientation.z = <span class="number">0</span></span><br><span class="line">        target_pose.pose.orientation.w = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 设置机械臂终端运动的目标位姿</span></span><br><span class="line">        arm.set_pose_target(target_pose, end_effector_link)</span><br><span class="line">        arm.go()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 初始化路点列表</span></span><br><span class="line">        waypoints = []</span><br><span class="line">                </span><br><span class="line">        <span class="comment"># 将圆弧上的路径点加入列表</span></span><br><span class="line">        waypoints.append(target_pose.pose)</span><br><span class="line"></span><br><span class="line">        centerA = target_pose.pose.position.y</span><br><span class="line">        centerB = target_pose.pose.position.z</span><br><span class="line">        radius = <span class="number">0.1</span></span><br><span class="line">        <span class="keyword">for</span> th <span class="keyword">in</span> numpy.arange(<span class="number">0</span>, <span class="number">6.28</span>, <span class="number">0.02</span>):</span><br><span class="line">            target_pose.pose.position.y = centerA + <span class="number">1.5</span>*radius * math.cos(th)</span><br><span class="line">            target_pose.pose.position.z = centerB + <span class="number">1.5</span>*radius * math.sin(th)</span><br><span class="line">            wpose = deepcopy(target_pose.pose)</span><br><span class="line">            waypoints.append(deepcopy(wpose))</span><br><span class="line">        </span><br><span class="line">        wpose.position.z += <span class="number">0.2</span></span><br><span class="line">        waypoints.append(deepcopy(wpose))</span><br><span class="line">        </span><br><span class="line">        fraction = <span class="number">0.0</span>   <span class="comment">#路径规划覆盖率</span></span><br><span class="line">        maxtries = <span class="number">100</span>   <span class="comment">#最大尝试规划次数</span></span><br><span class="line">        attempts = <span class="number">0</span>     <span class="comment">#已经尝试规划次数</span></span><br><span class="line">            </span><br><span class="line">        <span class="comment"># 设置机器臂当前的状态作为运动初始状态</span></span><br><span class="line">        arm.set_start_state_to_current_state()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 尝试规划一条笛卡尔空间下的路径，依次通过所有路点</span></span><br><span class="line">        <span class="keyword">while</span> fraction &lt; <span class="number">1.0</span> <span class="keyword">and</span> attempts &lt; maxtries:</span><br><span class="line">            (plan, fraction) = arm.compute_cartesian_path (</span><br><span class="line">                                waypoints,   <span class="comment"># waypoint poses，路点列表</span></span><br><span class="line">                                <span class="number">0.01</span>,        <span class="comment"># eef_step，终端步进值</span></span><br><span class="line">                                <span class="number">0.0</span>,         <span class="comment"># jump_threshold，跳跃阈值</span></span><br><span class="line">                                <span class="literal">True</span>)        <span class="comment"># avoid_collisions，避障规划</span></span><br><span class="line">                </span><br><span class="line">                <span class="comment"># 尝试次数累加</span></span><br><span class="line">            attempts += <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">                <span class="comment"># 打印运动规划进程</span></span><br><span class="line">            <span class="keyword">if</span> attempts % <span class="number">10</span> == <span class="number">0</span>:</span><br><span class="line">                rospy.loginfo(<span class="string">&quot;Still trying after &quot;</span> + <span class="built_in">str</span>(attempts) + <span class="string">&quot; attempts...&quot;</span>)</span><br><span class="line">                        </span><br><span class="line">        <span class="comment"># 如果路径规划成功（覆盖率100%）,则开始控制机械臂运动</span></span><br><span class="line">        <span class="keyword">if</span> fraction == <span class="number">1.0</span>:</span><br><span class="line">            rospy.loginfo(<span class="string">&quot;Path computed successfully. Moving the arm.&quot;</span>)</span><br><span class="line">            arm.execute(plan)</span><br><span class="line">            rospy.loginfo(<span class="string">&quot;Path execution complete.&quot;</span>)</span><br><span class="line">        <span class="comment"># 如果路径规划失败，则打印失败信息</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            rospy.loginfo(<span class="string">&quot;Path planning failed with only &quot;</span> + <span class="built_in">str</span>(fraction) + <span class="string">&quot; success after &quot;</span> + <span class="built_in">str</span>(maxtries) + <span class="string">&quot; attempts.&quot;</span>)  </span><br><span class="line"></span><br><span class="line">            rospy.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 控制机械臂先回到初始化位置</span></span><br><span class="line">        arm.set_named_target(<span class="string">&#x27;zero_pose&#x27;</span>)</span><br><span class="line">        arm.go()</span><br><span class="line">        rospy.sleep(<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 关闭并退出moveit</span></span><br><span class="line">        moveit_commander.roscpp_shutdown()</span><br><span class="line">        moveit_commander.os._exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        MoveItCartesianDemo()</span><br><span class="line">    <span class="keyword">except</span> rospy.ROSInterruptException:</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b4f26cf5e71cadb3981fd16da27c7383.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b4f26cf5e71cadb3981fd16da27c7383.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230712155145190"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b4f26cf5e71cadb3981fd16da27c7383.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b4f26cf5e71cadb3981fd16da27c7383.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230712155145190"></p>
 <p>还可以根据自己的喜好，让机械臂在笛卡尔空间作不同的运动。</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/31f80eb43eb382d005cff2ce98e56c68.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/31f80eb43eb382d005cff2ce98e56c68.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230712155425882"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/31f80eb43eb382d005cff2ce98e56c68.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/31f80eb43eb382d005cff2ce98e56c68.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230712155425882"></p>
 
       </div>
       <div class="post-tags-categories">
@@ -676,7 +682,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
     <a href="/2023/07/13/ROS-Moveit-ABORTED-CONTROL-FAILED/" class="post-nav-link">
       <div class="title">
@@ -697,7 +703,7 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
     <a href="/2023/07/13/ROS-Moveit%E5%92%8CGazebo%E8%81%94%E5%90%88%E4%BB%BF%E7%9C%9F%EF%BC%88%E4%BA%8C%EF%BC%89/" class="post-nav-link">
       <div class="title">
@@ -750,10 +756,10 @@
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -807,7 +813,7 @@
 <!-- 文章详情页的分享 -->
 <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
-<script src="/js/shareJs/social-share.min.js"></script>
+<script defer src="/js/shareJs/social-share.min.js"></script>
 </script>
 
 <style>
@@ -825,13 +831,13 @@
   <div id="myComment">
     
       
-<section id="comments" style="padding: 1em; margin: 15px auto;"
-	class="animated bounceInUp">
+<section id="comments" style="padding: 1em;">
 	<div id="vcomment" class="comment"></div>
 </section>
 <style>
 	#comments {
 		background: rgba(255,255,255,0.9);
+		border-radius: 8px;
 	}
 	#veditor {
 		background-image: url('/medias/monkey.gif');
@@ -845,13 +851,7 @@
 		background-position-y: 200px;
 		transition: all 0.2s ease-in-out 0s;
 	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
+	
 	#vcomment .vcards .vcard .vhead .vsys i {
 		display: none;
 	}
@@ -923,81 +923,122 @@
     
   </div>
 
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
 
 
   </div>
 
   <!-- 目录 -->
-  <!-- 文章详情页右侧目录 -->
-
-  <div class="toc-aside">
-    <div class="toc-main">
-      <div class="toc-aside-title">
-        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img src='/medias/touxiang.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
         
-          <div class="toc-open-close">本文目录</div>
+          <h2>Ychui's Blog</h2>
+        
+        
+          <p>write code and love life</p>
+
+        
+        
+          <p><span id="jinrishici-sentence">Ychui's Blog</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://blog.csdn.net/weixin_51002159?spm=1000.2115.3001.5343"
+              class="social fab fa-cuttlefish flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/GHIgher12"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=2535410943"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
       <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E5%85%B3%E8%8A%82%E8%A7%92%E5%BA%A6%E6%8E%A7%E5%88%B6%E6%9C%BA%E6%A2%B0%E8%87%82"><span class="toc-text">根据关节角度控制机械臂</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E6%9C%AB%E7%AB%AF%E4%BD%8D%E5%A7%BF%E6%8E%A7%E5%88%B6%E6%9C%BA%E6%A2%B0%E8%87%82"><span class="toc-text">根据末端位姿控制机械臂</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%BB%E6%AD%A3%E6%96%B9%E5%BD%A2"><span class="toc-text">画正方形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%BB%E5%9C%86%E5%BD%A2"><span class="toc-text">画圆形</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
   </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  <!-- 手机端目录按钮 -->
-  <div id="toc-mobile-btn">
-    <i class="fas fa-list-ul" aria-hidden="true"></i>
+      
+    
   </div>
-
-
-<script>
-  function closeToc(init) {
-    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
-    $(".toc-content").css({'width': 0});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
-  };
-  function openToc() {
-    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
-    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
-    $(".toc-content").css({'width': '300px'});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
-  }
-  function openBtnClickFn () {
-    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-    let open = eval('' || 'true');
-    openOrCloseBtn.click(function() {
-      if (open) {
-        closeToc();
-        open = false;
-      } else {
-        openToc();
-        open = true;
-      }
-    });
-  };
-  openBtnClickFn();
-  initCloseTocWidth(true);
-
-  function initCloseTocWidth(init) {
-    if (window.innerWidth >= 992) {
-      let isClose = false;
-      isClose && closeToc(init)
-    }
-  }
-
-  document.addEventListener('pjax:complete', function () {
-    $(".toc-aside").css({'transition': 'no'});
-  })
-  document.addEventListener('pjax:complete', function () {
-    openBtnClickFn();
-  })
-  
-</script>
+</aside>
 
   <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
+  <script defer src="/js/wrapImage.js"></script>
 </div>
 
 <!-- 文章详情页背景图 -->
@@ -1151,15 +1192,16 @@
 </script>
 
 
-                            </main>
-                          </div>
+      </main>
+    </div>
 
-                          <!-- 页脚 -->
-                          
+    <!-- 页脚 -->
+    
   
-  <!-- 底部鱼儿跳动效果，依赖于jquery-->
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
 <div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
-<script>
+<script defer>
   var RENDERER = {
     POINT_INTERVAL: 5,
     FISH_COUNT: 3,
@@ -1314,6 +1356,7 @@
     })
   });
 </script>
+  
   <div class="footer bg-color">
     <div class="footer-main">
       
@@ -1356,65 +1399,52 @@
 
 
 
-                            <!-- 渲染暗黑按钮 -->
-                            
-                              <div class="dark">
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
   <div class="dark-content">
-    <i class="fas fa-moon" aria-hidden="true"></i>
-    <!-- <span>关灯</span> -->
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
   </div>
-  
 </div>
 
-<script>
+<script defer>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
     if (isDark) {
-      $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-          </div>
-          `
-        );
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
     }
-    $('.dark').click(function() {
-      if ($(document.body).is('.darkModel')) {
-        $(document.body).removeClass('darkModel');
-        localStorage.setItem('dark', false);
-        $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-moon" aria-hidden="true"></i>
-          </div>
-          `
-        );
-      } else {
-        $(document.body).addClass('darkModel');
-        localStorage.setItem('dark', true);
-        $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-          </div>
-          `
-        );
-      }
-    })
-  })
+  }
 </script>
-                                
-                                  <!-- 渲染回到顶部按钮 -->
-                                  
-                                    <div class="goTop top-btn-color" pointer>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
   <i class="fas fa-arrow-up" aria-hidden="true"></i>
 </div>
-<script src="/js/goTop.js"></script>
+<script defer src="/js/goTop.js"></script>
 
-                                      
-                                        <!-- 渲染左下角音乐播放器 -->
-                                        
-                                          <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
 <style>
 .aplayer .aplayer-lrc p {
   
@@ -1463,22 +1493,21 @@
     bottom: 300px;
   }
 </style> -->
-<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-<script src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
-                                            
+<script defer src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
 
-                                              <!-- 图片放大 -->
-                                              
-                                                <script
-                                                  src="/js/fancybox/jquery.fancybox.min.js"></script>
-                                                
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
 
-                                                  <!-- 百度解析 -->
-                                                  <!-- Baidu Analytics -->
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
 
-                                                    <!-- Baidu Push -->
+    <!-- Baidu Push -->
 
-<script>
+<script async>
     (function () {
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
@@ -1492,23 +1521,24 @@
     })();
 </script>
 
+    
+    <!-- 背景彩带 -->
+    
+    
+      <script type="text/javascript" color="0,0,0" opacity='0.6' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+    
 
-                                                      <!-- 背景彩带 -->
-                                                      
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script> -->
 
-                                                          
-                                                            <script type="text/javascript" color="0,0,0" opacity='0.6'
-                                                              zIndex="-1" count="99"
-                                                              src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
-                                                            
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
 
-                                                              <script
-                                                                src="/js/utils/index.js"></script>
-                                                              <script src="/js/app.js"></script>
 
-                                                              <!-- 文章目录所需js -->
-<link href="/js/tocbot/tocbot.css" rel="stylesheet">
-<script src="/js/tocbot/tocbot.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
 
 <script>
   var headerEl = 'h2, h3, h4',  //headers 
@@ -1523,12 +1553,15 @@
     // Which headings to grab inside of the contentSelector element.
     headingSelector: headerEl,
     scrollSmooth: true,
-    scrollSmoothOffset: -80,
-    headingsOffset: -($(window).height() * 0.4 - 45),
-    positionFixedSelector: '.toc-main',
-    positionFixedClass: 'is-position-fixed',
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
     fixedSidebarOffset: 'auto',
     activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
     // onClick: function (e) {},
   }
   if ($('.toc').length > 0) {
@@ -1581,7 +1614,7 @@
     if (activePosition > (document.documentElement.clientHeight - 100)) {
       $cardToc.scrollTop = sidebarScrollTop + 150
     }
-    if (activePosition < 100) {
+    if (activePosition < 150) {
       $cardToc.scrollTop = sidebarScrollTop - 150
     }
   }
@@ -1601,7 +1634,7 @@
   
   // 手机端toc按钮点击出现目录
   const mobileTocClick = function () {
-    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
     const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
     let right = '45px';
     if (window.innerWidth >= 551 && window.innerWidth <= 992) {
@@ -1633,7 +1666,7 @@
 </script>
 
 <style>
-  .is-position-fixed {
+  /* .is-position-fixed {
     position: sticky !important;
     top: 74px;
   }
@@ -1648,14 +1681,13 @@
     position: absolute;
     left: 12px;
     top: 0;
-  }
-</style> 
+  } */
+</style>
+ 
 
 <!-- 设置导航背景 -->
 <script>
   let setHeaderClass = () => {
-    const headerMenuTransparent = true;
-    if (!headerMenuTransparent) { return; }
     const nav = $('#navHeader');
     const navTop = nav.outerHeight();
     const winTop = $(window).scrollTop();
@@ -1703,6 +1735,61 @@
   document.addEventListener('pjax:complete', function () {
     if (typeof IssuesAPI == "undefined") {
       loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
     }
   })
 </script>
@@ -1808,15 +1895,15 @@
 <!-- 评论所需js -->
 
   
-    <!-- 弹幕所需的css和js -->
-    
+        
   <!-- 弹幕插件 -->
   <link href="/js/danmu/barrager.css" rel="stylesheet">
   <script src="/js/danmu/jquery.barrager.js"></script>
 
 <!-- 具体js，请前往valine/script.ejs查看 -->
 
-    <script>
+      
+        <script>
   var requiredFields = '';
   requiredFields = requiredFields.split(',');
   comment_el = '.comment';
@@ -1943,7 +2030,7 @@
   });
 </script>
 
-  
+      
 
 
 <!-- 鼠标点击特效 -->
@@ -1951,8 +2038,8 @@
 
   
     <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
-    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-    <script src="/js/cursor/explosion.min.js"></script>
+    <script async src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script async src="/js/cursor/explosion.min.js"></script>
   
 
 
@@ -1961,17 +2048,69 @@
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
 
 
-                                                                <!-- pjax -->
-                                                                
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
 
 <!-- pjax -->
 
 
   <script src="/js/pjax@0.2.8/index.js"></script>
   
-    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
-
-<div class="pjax-animate">
+    <div class="pjax-animate">
   
     <div class="loading-circle"><div id="loader-circle"></div></div>
     <script>
@@ -2047,7 +2186,7 @@
 
 
 
-                  <script type="text/x-mathjax-config">
+  <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ["$","$"], ["\\(","\\)"] ],
@@ -2063,5 +2202,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-
 </html>

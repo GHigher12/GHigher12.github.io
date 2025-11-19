@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<!-- meta/link... -->
-
+  <!-- meta/link... -->
+  
 
 
 
@@ -28,9 +28,7 @@
 
   
   
-    
-<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
-
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
   
   
     
@@ -44,15 +42,21 @@
             }
         }
     </style>
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <script defer src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
     
         <script src="/js/valine/index.js"></script>
     
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
 
     <!-- import link -->
     
+        
+            
         
             
         
@@ -69,52 +73,53 @@
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Ychui's Blog" type="application/atom+xml">
 </head>
 
-
-  <!-- 依赖于jquery和vue -->
   
-    
-<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
-
-      
-
-          
-            
-<script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
-
-              
-
-                  <body>
-                    <!-- 预加载动画 -->
-                    <!-- 页面预加载动画 -->
-
-<div id='loader'>
-  <link rel="stylesheet" href="/js/loaded/index.css" >
-  <div class="loading-left-bg"></div>
-  <div class="loading-right-bg"></div>
-  <div class="spinner-box">
-    <div class="configure-border-1">
-      <div class="configure-core"></div>
+  <!-- 预加载动画 -->
+  
+  
+  <div class="preloader_5" id="loader">
+  <div class="cube">
+    <div class="topD"></div>
+    <div>
+      <span style="--i:0"></span>
+      <span style="--i:1"></span>
+      <span style="--i:2"></span>
+      <span style="--i:3"></span>
     </div>
-    <div class="configure-border-2">
-      <div class="configure-core"></div>
+
+    <div class="cube2">
+      <div>
+        <span style="--i:0"></span>
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+      </div>
+
+      <div class="cube3">
+        <div class="top3"></div>
+        <div>
+          <span style="--i:0"></span>
+          <span style="--i:1"></span>
+          <span style="--i:2"></span>
+          <span style="--i:3"></span>
+        </div>
+      </div>
     </div>
-    <div class="loading-word">加载中...</div>
   </div>
 </div>
-
-<script>
-  var endLoading = function () {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loader').classList.add("loading");
-  }
-  window.addEventListener('DOMContentLoaded',endLoading);
-  
-</script>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
 
 
-                      <!-- 判断是否为暗黑风格 -->
-                      <!-- 判断是否为黑夜模式 -->
-<script>
+  <body>
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer>
   let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
 
   if (isDark) {
@@ -122,8 +127,8 @@
   }
 </script>
 
-                        <!-- 需要在上面加载的js -->
-                        <script>
+    <!-- 需要在上面加载的js -->
+    <script>
   function loadScript(src, cb) {
     return new Promise(resolve => {
       setTimeout(function () {
@@ -159,7 +164,7 @@
   }
 
   //https://github.com/filamentgroup/loadCSS
-  var loadCSS = function (href, before, media, attributes) {
+  var loadCSS = function (src) {
     return new Promise(resolve => {
       setTimeout(function () {
         var link = document.createElement('link');
@@ -193,11 +198,11 @@
 <script src="https://unpkg.com/typed.js@2.0.11"></script>
 
 
-                          <div id="safearea">
-                            <main class="main" id="pjax-container">
-                              <!-- 头部导航 -->
-                              
-<header class="header   " 
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " 
   id="navHeader"
   style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"
@@ -215,7 +220,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -353,7 +358,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -515,7 +520,7 @@
   
   
     <div id="he-plugin-simple"></div>
-    <script>
+    <script defer>
       WIDGET = {
         CONFIG: {
           "modules": "012",
@@ -538,13 +543,14 @@
         }
       }
     </script>
-    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    <script defer src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
     
 </header>
-                                <!-- 内容区域 -->
-                                
- <!-- prismjs 代码高亮 -->
- 
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
 
 
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
@@ -594,7 +600,7 @@
   </div>
   
   
-    <script src="/js/bubble/bubble.js"></script>
+    <script defer src="/js/bubble/bubble.js"></script>
   
 </div>
 
@@ -602,13 +608,13 @@
 
 
 
-<div class="row justify-position" 
+<div class="post-detail-content post-row" 
   style="padding-top: 0px;">
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
         <p>[TOC]</p>
-<h2 id="D435简介"><a href="#D435简介" class="headerlink" title="D435简介"></a>D435简介</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b36ee431227cca80f0cc3a91b6226180.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b36ee431227cca80f0cc3a91b6226180.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230728200550446"></p>
+<h2 id="D435简介"><a href="#D435简介" class="headerlink" title="D435简介"></a>D435简介</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b36ee431227cca80f0cc3a91b6226180.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b36ee431227cca80f0cc3a91b6226180.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230728200550446"></p>
 <p>Intel RealSense D435是Intel推出的一款结合RGB和深度摄像的立体视觉摄像头,具有以下主要特点:</p>
 <ol>
 <li><p>使用双摄像头和红外投射器实现立体视觉采集。</p>
@@ -640,7 +646,7 @@
 <p>可选</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install librealsense2-dev</span><br><span class="line">sudo apt-get install librealsense2-dbg</span><br></pre></td></tr></table></figure>
 <p>不过这个方法只能下在最新版本，由于ros2的适配，该版本的realsense-ros对ros2匹配，因此在下载时建议使用方法2下载</p>
-<h3 id="方法2：利用源码安装"><a href="#方法2：利用源码安装" class="headerlink" title="方法2：利用源码安装"></a>方法2：利用源码安装</h3><h4 id="GitHub下载librealsense"><a href="#GitHub下载librealsense" class="headerlink" title="GitHub下载librealsense"></a>GitHub下载librealsense</h4><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/1ac23769b094a761bdfb57d074518079.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/1ac23769b094a761bdfb57d074518079.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230729172838240"></p>
+<h3 id="方法2：利用源码安装"><a href="#方法2：利用源码安装" class="headerlink" title="方法2：利用源码安装"></a>方法2：利用源码安装</h3><h4 id="GitHub下载librealsense"><a href="#GitHub下载librealsense" class="headerlink" title="GitHub下载librealsense"></a>GitHub下载librealsense</h4><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/1ac23769b094a761bdfb57d074518079.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/1ac23769b094a761bdfb57d074518079.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230729172838240"></p>
 <p>这里以v2.50.0版本为例</p>
 <h4 id="安装编译依赖"><a href="#安装编译依赖" class="headerlink" title="安装编译依赖"></a>安装编译依赖</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev bison flex</span><br><span class="line">sudo apt-get install libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev libelf-dev elfutils</span><br></pre></td></tr></table></figure>
 <h4 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> librealsense-2.50.0/</span><br><span class="line">./scripts/setup_udev_rules.sh</span><br></pre></td></tr></table></figure>
@@ -648,7 +654,7 @@
 <p>重新连接 Intel Realsense 深度摄像机并运行: <code>realsense-viewer</code> 以验证安装</p>
 <h3 id="软件显示"><a href="#软件显示" class="headerlink" title="软件显示"></a>软件显示</h3><p>连接d435与电脑</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">realsense-viewer </span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/e84889d9b5fcba854bb7baec01e31a11.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/e84889d9b5fcba854bb7baec01e31a11.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230729190530066"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/e84889d9b5fcba854bb7baec01e31a11.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/e84889d9b5fcba854bb7baec01e31a11.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230729190530066"></p>
 <p>左侧的Stereo Module可以开启深度图显示，RGB Module可以显示RGB影像</p>
 <h2 id="ROS接口安装"><a href="#ROS接口安装" class="headerlink" title="ROS接口安装"></a>ROS接口安装</h2><p>由于ros1的维护，直接安装会以最新版本下载，其适配ros2，导致编译失败，所以在安装时要选择与之ros相对应的tag</p>
 <p>以ros noetic为例</p>
@@ -658,17 +664,17 @@
 <p>编译</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
 <h3 id="启动节点"><a href="#启动节点" class="headerlink" title="启动节点"></a>启动节点</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch realsense2_camera rs_camera.launch</span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/65575843aea5923f64866e1fb6cf726a.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/65575843aea5923f64866e1fb6cf726a.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230729191329877"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/65575843aea5923f64866e1fb6cf726a.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/65575843aea5923f64866e1fb6cf726a.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230729191329877"></p>
 <p>出现<code>RealSense Node Is Up!</code>证明节点启动成功</p>
 <h3 id="查看话题"><a href="#查看话题" class="headerlink" title="查看话题"></a>查看话题</h3><p><code>rostopic list</code></p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/ce46f64c859d0beee6003b54c3698198.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/ce46f64c859d0beee6003b54c3698198.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230729191513483"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/ce46f64c859d0beee6003b54c3698198.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/ce46f64c859d0beee6003b54c3698198.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230729191513483"></p>
 <p><code>rqt_image_view</code></p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/7368d098a59737f1bbb67cce1ff6a13b.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/7368d098a59737f1bbb67cce1ff6a13b.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230729191627233"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/7368d098a59737f1bbb67cce1ff6a13b.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/7368d098a59737f1bbb67cce1ff6a13b.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230729191627233"></p>
 <h3 id="rviz显示点云"><a href="#rviz显示点云" class="headerlink" title="rviz显示点云"></a>rviz显示点云</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch realsense2_camera demo_pointcloud.launch </span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/40c7bdd70af91908812c0687b6cf1686.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/40c7bdd70af91908812c0687b6cf1686.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230729192410943"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/40c7bdd70af91908812c0687b6cf1686.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/40c7bdd70af91908812c0687b6cf1686.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230729192410943"></p>
 <h2 id="Python接口安装"><a href="#Python接口安装" class="headerlink" title="Python接口安装"></a>Python接口安装</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyrealsense2</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pyrealsense2 <span class="keyword">as</span> rs</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment"># Configure depth and color streams</span></span><br><span class="line">    pipeline = rs.pipeline()</span><br><span class="line">    config = rs.config()</span><br><span class="line">    config.enable_stream(rs.stream.depth, <span class="number">640</span>, <span class="number">480</span>, rs.<span class="built_in">format</span>.z16, <span class="number">30</span>)</span><br><span class="line">    config.enable_stream(rs.stream.color, <span class="number">640</span>, <span class="number">480</span>, rs.<span class="built_in">format</span>.bgr8, <span class="number">30</span>)</span><br><span class="line">    <span class="comment"># Start streaming</span></span><br><span class="line">    pipeline.start(config)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="comment"># Wait for a coherent pair of frames: depth and color</span></span><br><span class="line">            frames = pipeline.wait_for_frames()</span><br><span class="line">            depth_frame = frames.get_depth_frame()</span><br><span class="line">            color_frame = frames.get_color_frame()</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> depth_frame <span class="keyword">or</span> <span class="keyword">not</span> color_frame:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="comment"># Convert images to numpy arrays</span></span><br><span class="line"> </span><br><span class="line">            depth_image = np.asanyarray(depth_frame.get_data())</span><br><span class="line"> </span><br><span class="line">            color_image = np.asanyarray(color_frame.get_data())</span><br><span class="line"> </span><br><span class="line">            <span class="comment"># Apply colormap on depth image (image must be converted to 8-bit per pixel first)</span></span><br><span class="line">            depth_colormap = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=<span class="number">0.03</span>), cv2.COLORMAP_JET)</span><br><span class="line">            <span class="comment"># Stack both images horizontally</span></span><br><span class="line">            images = np.hstack((color_image, depth_colormap))</span><br><span class="line">            <span class="comment"># Show images</span></span><br><span class="line">            cv2.namedWindow(<span class="string">&#x27;RealSense&#x27;</span>, cv2.WINDOW_AUTOSIZE)</span><br><span class="line">            cv2.imshow(<span class="string">&#x27;RealSense&#x27;</span>, images)</span><br><span class="line">            key = cv2.waitKey(<span class="number">1</span>)</span><br><span class="line">            <span class="comment"># Press esc or &#x27;q&#x27; to close the image window</span></span><br><span class="line">            <span class="keyword">if</span> key &amp; <span class="number">0xFF</span> == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>) <span class="keyword">or</span> key == <span class="number">27</span>:</span><br><span class="line">                cv2.destroyAllWindows()</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        <span class="comment"># Stop streaming</span></span><br><span class="line">        pipeline.stop()</span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/557334b87457ab4ed070386f5eaedaa8.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/557334b87457ab4ed070386f5eaedaa8.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230729192950314"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/557334b87457ab4ed070386f5eaedaa8.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/557334b87457ab4ed070386f5eaedaa8.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230729192950314"></p>
 
       </div>
       <div class="post-tags-categories">
@@ -720,7 +726,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
     <a href="/2023/08/22/ROS%E4%B8%8ESTM32%E9%80%9A%E4%BF%A1-pyserial/" class="post-nav-link">
       <div class="title">
@@ -742,7 +748,7 @@ STM32上运行ros节点实现通信
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
     <a href="/2023/07/27/ROS%E4%B8%8ESTM32%E9%80%9A%E4%BF%A1-rosserial/" class="post-nav-link">
       <div class="title">
@@ -799,10 +805,10 @@ S
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -856,7 +862,7 @@ S
 <!-- 文章详情页的分享 -->
 <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
-<script src="/js/shareJs/social-share.min.js"></script>
+<script defer src="/js/shareJs/social-share.min.js"></script>
 </script>
 
 <style>
@@ -874,13 +880,13 @@ S
   <div id="myComment">
     
       
-<section id="comments" style="padding: 1em; margin: 15px auto;"
-	class="animated bounceInUp">
+<section id="comments" style="padding: 1em;">
 	<div id="vcomment" class="comment"></div>
 </section>
 <style>
 	#comments {
 		background: rgba(255,255,255,0.9);
+		border-radius: 8px;
 	}
 	#veditor {
 		background-image: url('/medias/monkey.gif');
@@ -894,13 +900,7 @@ S
 		background-position-y: 200px;
 		transition: all 0.2s ease-in-out 0s;
 	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
+	
 	#vcomment .vcards .vcard .vhead .vsys i {
 		display: none;
 	}
@@ -972,81 +972,122 @@ S
     
   </div>
 
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
 
 
   </div>
 
   <!-- 目录 -->
-  <!-- 文章详情页右侧目录 -->
-
-  <div class="toc-aside">
-    <div class="toc-main">
-      <div class="toc-aside-title">
-        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img src='/medias/touxiang.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
         
-          <div class="toc-open-close">本文目录</div>
+          <h2>Ychui's Blog</h2>
+        
+        
+          <p>write code and love life</p>
+
+        
+        
+          <p><span id="jinrishici-sentence">Ychui's Blog</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://blog.csdn.net/weixin_51002159?spm=1000.2115.3001.5343"
+              class="social fab fa-cuttlefish flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/GHIgher12"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=2535410943"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
       <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#D435%E7%AE%80%E4%BB%8B"><span class="toc-text">D435简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RealSense%E7%9A%84SDK2-0%E5%AE%89%E8%A3%85"><span class="toc-text">RealSense的SDK2.0安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%951%EF%BC%9A%E7%9B%B4%E6%8E%A5%E5%88%A9%E7%94%A8%E5%AE%89%E8%A3%85%E6%BA%90%E5%AE%89%E8%A3%85"><span class="toc-text">方法1：直接利用安装源安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%85%AC%E5%8C%99"><span class="toc-text">注册服务器公匙</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B7%BB%E5%8A%A0%E5%88%B0%E5%AD%98%E5%82%A8%E5%BA%93%E5%88%97%E8%A1%A8"><span class="toc-text">将服务器添加到存储库列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%BA%93"><span class="toc-text">安装库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%952%EF%BC%9A%E5%88%A9%E7%94%A8%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85"><span class="toc-text">方法2：利用源码安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#GitHub%E4%B8%8B%E8%BD%BDlibrealsense"><span class="toc-text">GitHub下载librealsense</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%BC%96%E8%AF%91%E4%BE%9D%E8%B5%96"><span class="toc-text">安装编译依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC"><span class="toc-text">运行脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cmake%E7%BC%96%E8%AF%91"><span class="toc-text">cmake编译</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%98%BE%E7%A4%BA"><span class="toc-text">软件显示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ROS%E6%8E%A5%E5%8F%A3%E5%AE%89%E8%A3%85"><span class="toc-text">ROS接口安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E8%8A%82%E7%82%B9"><span class="toc-text">启动节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%AF%9D%E9%A2%98"><span class="toc-text">查看话题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rviz%E6%98%BE%E7%A4%BA%E7%82%B9%E4%BA%91"><span class="toc-text">rviz显示点云</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E6%8E%A5%E5%8F%A3%E5%AE%89%E8%A3%85"><span class="toc-text">Python接口安装</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
   </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  <!-- 手机端目录按钮 -->
-  <div id="toc-mobile-btn">
-    <i class="fas fa-list-ul" aria-hidden="true"></i>
+      
+    
   </div>
-
-
-<script>
-  function closeToc(init) {
-    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
-    $(".toc-content").css({'width': 0});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
-  };
-  function openToc() {
-    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
-    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
-    $(".toc-content").css({'width': '300px'});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
-  }
-  function openBtnClickFn () {
-    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-    let open = eval('' || 'true');
-    openOrCloseBtn.click(function() {
-      if (open) {
-        closeToc();
-        open = false;
-      } else {
-        openToc();
-        open = true;
-      }
-    });
-  };
-  openBtnClickFn();
-  initCloseTocWidth(true);
-
-  function initCloseTocWidth(init) {
-    if (window.innerWidth >= 992) {
-      let isClose = false;
-      isClose && closeToc(init)
-    }
-  }
-
-  document.addEventListener('pjax:complete', function () {
-    $(".toc-aside").css({'transition': 'no'});
-  })
-  document.addEventListener('pjax:complete', function () {
-    openBtnClickFn();
-  })
-  
-</script>
+</aside>
 
   <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
+  <script defer src="/js/wrapImage.js"></script>
 </div>
 
 <!-- 文章详情页背景图 -->
@@ -1200,15 +1241,16 @@ S
 </script>
 
 
-                            </main>
-                          </div>
+      </main>
+    </div>
 
-                          <!-- 页脚 -->
-                          
+    <!-- 页脚 -->
+    
   
-  <!-- 底部鱼儿跳动效果，依赖于jquery-->
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
 <div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
-<script>
+<script defer>
   var RENDERER = {
     POINT_INTERVAL: 5,
     FISH_COUNT: 3,
@@ -1363,6 +1405,7 @@ S
     })
   });
 </script>
+  
   <div class="footer bg-color">
     <div class="footer-main">
       
@@ -1405,65 +1448,52 @@ S
 
 
 
-                            <!-- 渲染暗黑按钮 -->
-                            
-                              <div class="dark">
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
   <div class="dark-content">
-    <i class="fas fa-moon" aria-hidden="true"></i>
-    <!-- <span>关灯</span> -->
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
   </div>
-  
 </div>
 
-<script>
+<script defer>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
     if (isDark) {
-      $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-          </div>
-          `
-        );
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
     }
-    $('.dark').click(function() {
-      if ($(document.body).is('.darkModel')) {
-        $(document.body).removeClass('darkModel');
-        localStorage.setItem('dark', false);
-        $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-moon" aria-hidden="true"></i>
-          </div>
-          `
-        );
-      } else {
-        $(document.body).addClass('darkModel');
-        localStorage.setItem('dark', true);
-        $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-          </div>
-          `
-        );
-      }
-    })
-  })
+  }
 </script>
-                                
-                                  <!-- 渲染回到顶部按钮 -->
-                                  
-                                    <div class="goTop top-btn-color" pointer>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
   <i class="fas fa-arrow-up" aria-hidden="true"></i>
 </div>
-<script src="/js/goTop.js"></script>
+<script defer src="/js/goTop.js"></script>
 
-                                      
-                                        <!-- 渲染左下角音乐播放器 -->
-                                        
-                                          <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
 <style>
 .aplayer .aplayer-lrc p {
   
@@ -1512,22 +1542,21 @@ S
     bottom: 300px;
   }
 </style> -->
-<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-<script src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
-                                            
+<script defer src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
 
-                                              <!-- 图片放大 -->
-                                              
-                                                <script
-                                                  src="/js/fancybox/jquery.fancybox.min.js"></script>
-                                                
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
 
-                                                  <!-- 百度解析 -->
-                                                  <!-- Baidu Analytics -->
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
 
-                                                    <!-- Baidu Push -->
+    <!-- Baidu Push -->
 
-<script>
+<script async>
     (function () {
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
@@ -1541,23 +1570,24 @@ S
     })();
 </script>
 
+    
+    <!-- 背景彩带 -->
+    
+    
+      <script type="text/javascript" color="0,0,0" opacity='0.6' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+    
 
-                                                      <!-- 背景彩带 -->
-                                                      
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script> -->
 
-                                                          
-                                                            <script type="text/javascript" color="0,0,0" opacity='0.6'
-                                                              zIndex="-1" count="99"
-                                                              src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
-                                                            
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
 
-                                                              <script
-                                                                src="/js/utils/index.js"></script>
-                                                              <script src="/js/app.js"></script>
 
-                                                              <!-- 文章目录所需js -->
-<link href="/js/tocbot/tocbot.css" rel="stylesheet">
-<script src="/js/tocbot/tocbot.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
 
 <script>
   var headerEl = 'h2, h3, h4',  //headers 
@@ -1572,12 +1602,15 @@ S
     // Which headings to grab inside of the contentSelector element.
     headingSelector: headerEl,
     scrollSmooth: true,
-    scrollSmoothOffset: -80,
-    headingsOffset: -($(window).height() * 0.4 - 45),
-    positionFixedSelector: '.toc-main',
-    positionFixedClass: 'is-position-fixed',
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
     fixedSidebarOffset: 'auto',
     activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
     // onClick: function (e) {},
   }
   if ($('.toc').length > 0) {
@@ -1630,7 +1663,7 @@ S
     if (activePosition > (document.documentElement.clientHeight - 100)) {
       $cardToc.scrollTop = sidebarScrollTop + 150
     }
-    if (activePosition < 100) {
+    if (activePosition < 150) {
       $cardToc.scrollTop = sidebarScrollTop - 150
     }
   }
@@ -1650,7 +1683,7 @@ S
   
   // 手机端toc按钮点击出现目录
   const mobileTocClick = function () {
-    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
     const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
     let right = '45px';
     if (window.innerWidth >= 551 && window.innerWidth <= 992) {
@@ -1682,7 +1715,7 @@ S
 </script>
 
 <style>
-  .is-position-fixed {
+  /* .is-position-fixed {
     position: sticky !important;
     top: 74px;
   }
@@ -1697,14 +1730,13 @@ S
     position: absolute;
     left: 12px;
     top: 0;
-  }
-</style> 
+  } */
+</style>
+ 
 
 <!-- 设置导航背景 -->
 <script>
   let setHeaderClass = () => {
-    const headerMenuTransparent = true;
-    if (!headerMenuTransparent) { return; }
     const nav = $('#navHeader');
     const navTop = nav.outerHeight();
     const winTop = $(window).scrollTop();
@@ -1752,6 +1784,61 @@ S
   document.addEventListener('pjax:complete', function () {
     if (typeof IssuesAPI == "undefined") {
       loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
     }
   })
 </script>
@@ -1857,15 +1944,15 @@ S
 <!-- 评论所需js -->
 
   
-    <!-- 弹幕所需的css和js -->
-    
+        
   <!-- 弹幕插件 -->
   <link href="/js/danmu/barrager.css" rel="stylesheet">
   <script src="/js/danmu/jquery.barrager.js"></script>
 
 <!-- 具体js，请前往valine/script.ejs查看 -->
 
-    <script>
+      
+        <script>
   var requiredFields = '';
   requiredFields = requiredFields.split(',');
   comment_el = '.comment';
@@ -1992,7 +2079,7 @@ S
   });
 </script>
 
-  
+      
 
 
 <!-- 鼠标点击特效 -->
@@ -2000,8 +2087,8 @@ S
 
   
     <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
-    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-    <script src="/js/cursor/explosion.min.js"></script>
+    <script async src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script async src="/js/cursor/explosion.min.js"></script>
   
 
 
@@ -2010,17 +2097,69 @@ S
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
 
 
-                                                                <!-- pjax -->
-                                                                
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
 
 <!-- pjax -->
 
 
   <script src="/js/pjax@0.2.8/index.js"></script>
   
-    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
-
-<div class="pjax-animate">
+    <div class="pjax-animate">
   
     <div class="loading-circle"><div id="loader-circle"></div></div>
     <script>
@@ -2096,7 +2235,7 @@ S
 
 
 
-                  <script type="text/x-mathjax-config">
+  <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ["$","$"], ["\\(","\\)"] ],
@@ -2112,5 +2251,4 @@ S
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-
 </html>

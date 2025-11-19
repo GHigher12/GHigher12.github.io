@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<!-- meta/link... -->
-
+  <!-- meta/link... -->
+  
 
 
 
@@ -28,9 +28,7 @@
 
   
   
-    
-<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
-
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
   
   
     
@@ -44,15 +42,21 @@
             }
         }
     </style>
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <script defer src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
     
         <script src="/js/valine/index.js"></script>
     
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
 
     <!-- import link -->
     
+        
+            
         
             
         
@@ -69,52 +73,53 @@
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Ychui's Blog" type="application/atom+xml">
 </head>
 
-
-  <!-- 依赖于jquery和vue -->
   
-    
-<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
-
-      
-
-          
-            
-<script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
-
-              
-
-                  <body>
-                    <!-- 预加载动画 -->
-                    <!-- 页面预加载动画 -->
-
-<div id='loader'>
-  <link rel="stylesheet" href="/js/loaded/index.css" >
-  <div class="loading-left-bg"></div>
-  <div class="loading-right-bg"></div>
-  <div class="spinner-box">
-    <div class="configure-border-1">
-      <div class="configure-core"></div>
+  <!-- 预加载动画 -->
+  
+  
+  <div class="preloader_5" id="loader">
+  <div class="cube">
+    <div class="topD"></div>
+    <div>
+      <span style="--i:0"></span>
+      <span style="--i:1"></span>
+      <span style="--i:2"></span>
+      <span style="--i:3"></span>
     </div>
-    <div class="configure-border-2">
-      <div class="configure-core"></div>
+
+    <div class="cube2">
+      <div>
+        <span style="--i:0"></span>
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+      </div>
+
+      <div class="cube3">
+        <div class="top3"></div>
+        <div>
+          <span style="--i:0"></span>
+          <span style="--i:1"></span>
+          <span style="--i:2"></span>
+          <span style="--i:3"></span>
+        </div>
+      </div>
     </div>
-    <div class="loading-word">加载中...</div>
   </div>
 </div>
-
-<script>
-  var endLoading = function () {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loader').classList.add("loading");
-  }
-  window.addEventListener('DOMContentLoaded',endLoading);
-  
-</script>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
 
 
-                      <!-- 判断是否为暗黑风格 -->
-                      <!-- 判断是否为黑夜模式 -->
-<script>
+  <body>
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer>
   let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
 
   if (isDark) {
@@ -122,8 +127,8 @@
   }
 </script>
 
-                        <!-- 需要在上面加载的js -->
-                        <script>
+    <!-- 需要在上面加载的js -->
+    <script>
   function loadScript(src, cb) {
     return new Promise(resolve => {
       setTimeout(function () {
@@ -159,7 +164,7 @@
   }
 
   //https://github.com/filamentgroup/loadCSS
-  var loadCSS = function (href, before, media, attributes) {
+  var loadCSS = function (src) {
     return new Promise(resolve => {
       setTimeout(function () {
         var link = document.createElement('link');
@@ -193,11 +198,11 @@
 <script src="https://unpkg.com/typed.js@2.0.11"></script>
 
 
-                          <div id="safearea">
-                            <main class="main" id="pjax-container">
-                              <!-- 头部导航 -->
-                              
-<header class="header   " 
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " 
   id="navHeader"
   style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"
@@ -215,7 +220,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -353,7 +358,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -515,7 +520,7 @@
   
   
     <div id="he-plugin-simple"></div>
-    <script>
+    <script defer>
       WIDGET = {
         CONFIG: {
           "modules": "012",
@@ -538,13 +543,14 @@
         }
       }
     </script>
-    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    <script defer src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
     
 </header>
-                                <!-- 内容区域 -->
-                                
- <!-- prismjs 代码高亮 -->
- 
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
 
 
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
@@ -594,7 +600,7 @@
   </div>
   
   
-    <script src="/js/bubble/bubble.js"></script>
+    <script defer src="/js/bubble/bubble.js"></script>
   
 </div>
 
@@ -602,7 +608,7 @@
 
 
 
-<div class="row justify-position" 
+<div class="post-detail-content post-row" 
   style="padding-top: 0px;">
   <div class="main-content">
     <article class="post post-detail">
@@ -610,11 +616,11 @@
         <h2 id="Opencv项目实战：信用卡数字识别"><a href="#Opencv项目实战：信用卡数字识别" class="headerlink" title="Opencv项目实战：信用卡数字识别"></a>Opencv项目实战：信用卡数字识别</h2><h3 id="导入库，定义展示函数"><a href="#导入库，定义展示函数" class="headerlink" title="导入库，定义展示函数"></a>导入库，定义展示函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> imutils <span class="keyword">import</span> contours</span><br><span class="line"><span class="keyword">import</span> myutils <span class="comment"># 自定义的库</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">img_show</span>(<span class="params">img, name</span>):</span></span><br><span class="line">    cv2.imshow(<span class="string">&#x27;name&#x27;</span>, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
 <h3 id="读取模板图片，进行轮廓检测。"><a href="#读取模板图片，进行轮廓检测。" class="headerlink" title="读取模板图片，进行轮廓检测。"></a>读取模板图片，进行轮廓检测。</h3><p>而轮廓检测<code>cv2.findContours()</code>接收是二值图像，所以先对模板进行灰度和二值处理，由于原图像是白底黑图，所以进行反二值处理为黑底白图。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 读取数字图片</span></span><br><span class="line">number = cv2.imread(<span class="string">&#x27;./images/ocr_a_reference.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 转换为灰度图片 色彩空间转换</span></span><br><span class="line">number_gray = cv2.cvtColor(number, cv2.COLOR_BGR2GRAY)</span><br><span class="line"><span class="comment"># 转化为二值图像 图像阈值处理</span></span><br><span class="line"><span class="comment"># 其返回值为两个，【0】表示返回阈值 【1】表示返回图像</span></span><br><span class="line">number_gray = cv2.threshold(number_gray, <span class="number">10</span>, <span class="number">255</span>, cv2.THRESH_BINARY_INV)[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<p>原图：<img src="number.png" class="lazyload placeholder" data-srcset="number.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="模板"></p>
-<p>转化后：<img src="number_gray.png" class="lazyload placeholder" data-srcset="number_gray.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="二值处理"></p>
+<p>原图：<img src="number.png" class="lazyload placeholder" data-srcset="number.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="模板"></p>
+<p>转化后：<img src="number_gray.png" class="lazyload placeholder" data-srcset="number_gray.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="二值处理"></p>
 <h3 id="轮廓检测"><a href="#轮廓检测" class="headerlink" title="轮廓检测"></a>轮廓检测</h3><p>外轮廓，并绘出轮廓</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 轮廓检测 外轮廓</span></span><br><span class="line"><span class="comment"># 新版本opencv只有两个返回值，分别是轮廓和轮廓的层次信息</span></span><br><span class="line">refCnts, hierarchy = cv2.findContours(number_gray.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</span><br><span class="line"><span class="comment"># 绘制轮廓</span></span><br><span class="line"><span class="comment"># 参数：图像，轮廓，边缘索引，颜色，厚度</span></span><br><span class="line">cv2.drawContours(number, refCnts, -<span class="number">1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">3</span>)  <span class="comment"># -1表示绘出所有轮廓</span></span><br></pre></td></tr></table></figure>
-<p><img src="number_contours.png" class="lazyload placeholder" data-srcset="number_contours.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="轮廓检测"></p>
+<p><img src="number_contours.png" class="lazyload placeholder" data-srcset="number_contours.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="轮廓检测"></p>
 <h3 id="轮廓进行排序"><a href="#轮廓进行排序" class="headerlink" title="轮廓进行排序"></a>轮廓进行排序</h3><p>应用自定义库<code>myutils</code>对绘出的轮廓进行排序</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sort_contours</span>(<span class="params">cnts, method=<span class="string">&quot;left-to-right&quot;</span></span>):</span></span><br><span class="line">    reverse = <span class="literal">False</span></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> method == <span class="string">&quot;right-to-left&quot;</span> <span class="keyword">or</span> method == <span class="string">&quot;bottom-to-top&quot;</span>:</span><br><span class="line">        reverse = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> method == <span class="string">&quot;top-to-bottom&quot;</span> <span class="keyword">or</span> method == <span class="string">&quot;bottom-to-top&quot;</span>:</span><br><span class="line">        i = <span class="number">1</span></span><br><span class="line">    <span class="comment"># 用一个最小的矩形，把找到的形状包起来x,y,h,w对外接矩形取左上点的横坐标，通过对横坐标的排序即可实现对数字的排序</span></span><br><span class="line">    <span class="comment"># boundingBoxes是一个由元组构成的列表，其中每个元组包含x、y、h、w四个值</span></span><br><span class="line">    boundingBoxes = [cv2.boundingRect(c) <span class="keyword">for</span> c <span class="keyword">in</span> cnts]  </span><br><span class="line">	<span class="comment"># zip[iterable,...]函数返回一个以元组为元素的列表,zip()和*操作符一起操作可以用来unzip(分解)一个列表为多个元组</span></span><br><span class="line">    <span class="comment"># zip(cnts, boundingBoxes),key=lambda b: b[1][i], reverse=reverse)这里首先将cnts, boundingBoxes合成</span></span><br><span class="line">    <span class="comment"># 为(cnts, (x, y, w, h))又根据自定义函数lambada函数提取b[1]=(x, y, w, h)根据i值确定x，y值排序，最后zip(*)拆分</span></span><br><span class="line">    <span class="comment"># 返回cnts和boundingBoxes值</span></span><br><span class="line">    (cnts, boundingBoxes) = <span class="built_in">zip</span>(*<span class="built_in">sorted</span>(<span class="built_in">zip</span>(cnts, boundingBoxes)</span><br><span class="line">                                        key=<span class="keyword">lambda</span> b: b[<span class="number">1</span>][i], reverse=reverse))  <span class="comment"># 使用其X进行判断</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> cnts, boundingBoxes  <span class="comment"># 返回值为排序完的轮廓</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 排序从左到右，从上到下,根据method，则轮廓为根据x值升序进行排序</span></span><br><span class="line">refCnts = myutils.sort_contours(refCnts, method=<span class="string">&quot;left-to-right&quot;</span>)[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 <p>定义一个空字典进行模板匹配</p>
@@ -625,31 +631,31 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 初始化卷积核</span></span><br><span class="line">ntKernel = cv2.getStructuringElement(cv2.MORPH_RECT, (<span class="number">9</span>, <span class="number">3</span>))</span><br><span class="line">ffKernel = cv2.getStructuringElement(cv2.MORPH_RECT, (<span class="number">5</span>, <span class="number">5</span>))</span><br></pre></td></tr></table></figure>
 <h3 id="读取信用卡图片"><a href="#读取信用卡图片" class="headerlink" title="读取信用卡图片"></a>读取信用卡图片</h3><p>引用<code>myutils</code>中的函数缩小尺寸，并进行灰度处理</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">resize</span>(<span class="params">image, width=<span class="literal">None</span>, height=<span class="literal">None</span>, inter=cv2.INTER_AREA</span>):</span></span><br><span class="line">    dim = <span class="literal">None</span></span><br><span class="line">    (h, w) = image.shape[:<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">if</span> width <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> height <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> image</span><br><span class="line">    <span class="keyword">if</span> width <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        r = height / <span class="built_in">float</span>(h)</span><br><span class="line">        dim = (<span class="built_in">int</span>(w * r), height)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        r = width / <span class="built_in">float</span>(w)</span><br><span class="line">        dim = (width, <span class="built_in">int</span>(h * r))</span><br><span class="line">    resized = cv2.resize(image, dim, interpolation=inter)</span><br><span class="line">    <span class="keyword">return</span> resized</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取信用卡图像</span></span><br><span class="line">card_01 = cv2.imread(<span class="string">&#x27;./images/credit_card_01.png&#x27;</span>)</span><br><span class="line">card_01 = myutils.resize(card_01, width=<span class="number">300</span>)</span><br><span class="line">card_01_gray = cv2.cvtColor(card_01, cv2.COLOR_BGR2GRAY)</span><br></pre></td></tr></table></figure>
-<p><img src="card_01.png" class="lazyload placeholder" data-srcset="card_01.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="card_01"></p>
+<p><img src="card_01.png" class="lazyload placeholder" data-srcset="card_01.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="card_01"></p>
 <h3 id="礼帽操作"><a href="#礼帽操作" class="headerlink" title="礼帽操作"></a>礼帽操作</h3><p>对图像进行礼帽操作(原始图像-(开运算结果(先腐蚀后膨胀))），作用：获得图像的噪声信息或者比原始图像边缘更亮的边缘部分。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 礼帽操作 突出更明亮的区域（白色部分）</span></span><br><span class="line">card_tophat = cv2.morphologyEx(card_01_gray, cv2.MORPH_TOPHAT, ntKernel)</span><br></pre></td></tr></table></figure>
-<p><img src="card_tophat.png" class="lazyload placeholder" data-srcset="card_tophat.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="礼帽操作"></p>
+<p><img src="card_tophat.png" class="lazyload placeholder" data-srcset="card_tophat.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="礼帽操作"></p>
 <h3 id="Sobel算子"><a href="#Sobel算子" class="headerlink" title="Sobel算子"></a>Sobel算子</h3><p>进行Sobel算子进行梯度运算，对噪声具有平滑作用，能很好的消除噪声的影响。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gradX = cv2.Sobel(card_tophat, ddepth=cv2.CV_32F, dx=<span class="number">1</span>, dy=<span class="number">0</span>, ksize=-<span class="number">1</span>)</span><br><span class="line">gradX = np.absolute(gradX)  <span class="comment"># 绝对值</span></span><br><span class="line"><span class="comment"># 将边界归一化处理，看的更清楚</span></span><br><span class="line">minVal, maxVal = np.<span class="built_in">min</span>(gradX), np.<span class="built_in">max</span>(gradX)</span><br><span class="line">gradX = <span class="number">255</span> * (gradX - minVal) / (maxVal - minVal)</span><br><span class="line"><span class="comment">#转化为8位无符号数</span></span><br><span class="line">gradX = gradX.astype(<span class="string">&#x27;uint8&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="card_sobel.png" class="lazyload placeholder" data-srcset="card_sobel.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="sobel算子"></p>
+<p><img src="card_sobel.png" class="lazyload placeholder" data-srcset="card_sobel.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="sobel算子"></p>
 <h3 id="闭操作"><a href="#闭操作" class="headerlink" title="闭操作"></a>闭操作</h3><p>进行闭操作（先膨胀在腐蚀），可以填充白色物体内细小黑色空洞的区域、连接临近物体</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 填充白色区域内细小黑色空洞的区域， 将数字连在一起，形成白色块状</span></span><br><span class="line">gradX = cv2.morphologyEx(gradX, cv2.MORPH_CLOSE, ntKernel)</span><br></pre></td></tr></table></figure>
-<p><img src="card_close_1.png" class="lazyload placeholder" data-srcset="card_close_1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="card_close"></p>
+<p><img src="card_close_1.png" class="lazyload placeholder" data-srcset="card_close_1.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="card_close"></p>
 <h3 id="二值化处理"><a href="#二值化处理" class="headerlink" title="二值化处理"></a>二值化处理</h3><p>二值化处理，将两种主题明显分隔开，用<code>THRESH_OTSU</code>自动做判断</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># THRESH_OTSU自动寻找合适的阈值， 需把阈值参数设置为0</span></span><br><span class="line">thresh = cv2.threshold(gradX, <span class="number">0</span>, <span class="number">255</span>, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<p><img src="card_gradx.png" class="lazyload placeholder" data-srcset="card_gradx.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
+<p><img src="card_gradx.png" class="lazyload placeholder" data-srcset="card_gradx.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt=""></p>
 <h3 id="闭操作-1"><a href="#闭操作-1" class="headerlink" title="闭操作"></a>闭操作</h3><p>图像中白色块内有出先黑色空洞，再次使用闭操作填充黑色空洞部分</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在执行一个闭操作，白色填充黑色区域</span></span><br><span class="line">gradX = cv2.morphologyEx(gradX, cv2.MORPH_CLOSE, ffKernel)</span><br><span class="line">img_show(gradX, <span class="string">&quot;gradx&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="card_close_2.png" class="lazyload placeholder" data-srcset="card_close_2.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="gradx"></p>
+<p><img src="card_close_2.png" class="lazyload placeholder" data-srcset="card_close_2.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="gradx"></p>
 <h3 id="轮廓检测，-绘制轮廓"><a href="#轮廓检测，-绘制轮廓" class="headerlink" title="轮廓检测， 绘制轮廓"></a>轮廓检测， 绘制轮廓</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 绘制轮廓</span></span><br><span class="line">threshCnts, hierarchy = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</span><br><span class="line">cnts = threshCnts</span><br><span class="line">cur_img = card_01.copy()</span><br><span class="line">cv2.drawContours(cur_img, cnts, -<span class="number">1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="card_drawCon.png" class="lazyload placeholder" data-srcset="card_drawCon.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="绘制轮廓"></p>
+<p><img src="card_drawCon.png" class="lazyload placeholder" data-srcset="card_drawCon.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="绘制轮廓"></p>
 <h3 id="过滤轮廓"><a href="#过滤轮廓" class="headerlink" title="过滤轮廓"></a>过滤轮廓</h3><p>选出需要的4个数字轮廓，并定义空列表添加所需轮廓</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">locs = []</span><br><span class="line"><span class="comment"># 遍历轮廓</span></span><br><span class="line"><span class="keyword">for</span> i, c <span class="keyword">in</span> <span class="built_in">enumerate</span>(cnts):</span><br><span class="line">    <span class="comment"># 计算矩形</span></span><br><span class="line">    (x, y, w, h) = cv2.boundingRect(c)</span><br><span class="line">    ar = w / <span class="built_in">float</span>(h)</span><br><span class="line">    <span class="comment"># 通过计算长宽比例，把符合的留下来</span></span><br><span class="line">    <span class="keyword">if</span> <span class="number">2.5</span> &lt; ar &lt; <span class="number">4.0</span>:</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">40</span> &lt; w &lt; <span class="number">55</span>) <span class="keyword">and</span> (<span class="number">10</span> &lt; h &lt; <span class="number">20</span>):</span><br><span class="line">            locs.append((x, y, w, h))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(locs))  <span class="comment"># 数量为4</span></span><br><span class="line"><span class="comment"># 通过轮廓的x值从左到右排序(升序)</span></span><br><span class="line">locs = <span class="built_in">sorted</span>(locs, key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>]) </span><br></pre></td></tr></table></figure>
 <h3 id="得到每一个轮廓"><a href="#得到每一个轮廓" class="headerlink" title="得到每一个轮廓"></a>得到每一个轮廓</h3><p>先定义一个空列表<code>output = []</code>储存信用卡的数字</p>
 <p>遍历<code>locs</code>列表里4个轮廓的每一个轮廓，对每一个轮廓的图像进行，轮廓检测与排序，从而的每一个轮廓中每一个数字的轮廓</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (i, (gx, gy, gw, gh)) <span class="keyword">in</span> <span class="built_in">enumerate</span>(locs):</span><br><span class="line">    group_out = []</span><br><span class="line">    <span class="comment"># 往外扩展</span></span><br><span class="line">    group = card_01_gray[gy - <span class="number">5</span>: gy + gh + <span class="number">5</span>, gx - <span class="number">5</span>: gx + gw + <span class="number">5</span>]</span><br><span class="line">    <span class="comment"># img_show(group, &#x27;group&#x27;)</span></span><br><span class="line">    <span class="comment"># 轮廓检测找到每一个小轮廓</span></span><br><span class="line">    group = cv2.threshold(group, <span class="number">0</span>, <span class="number">255</span>, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[<span class="number">1</span>]</span><br><span class="line">    <span class="comment"># 得到每一个数字的轮廓</span></span><br><span class="line">    digitCnts, hierarchy = cv2.findContours(group.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</span><br><span class="line">    <span class="comment"># 排序从左到右</span></span><br><span class="line">    digitCnts = contours.sort_contours(digitCnts, method=<span class="string">&quot;left to right&quot;</span>)[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 <p>阈值处理得到的每一个轮廓图像</p>
-<p><img src="con_1.png" class="lazyload placeholder" data-srcset="con_1.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="4000"><img src="con_2.png" class="lazyload placeholder" data-srcset="con_2.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="1234"><img src="con_3.png" class="lazyload placeholder" data-srcset="con_3.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="5678"><img src="con_4.png" class="lazyload placeholder" data-srcset="con_4.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="9010"></p>
+<p><img src="con_1.png" class="lazyload placeholder" data-srcset="con_1.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="4000"><img src="con_2.png" class="lazyload placeholder" data-srcset="con_2.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="1234"><img src="con_3.png" class="lazyload placeholder" data-srcset="con_3.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="5678"><img src="con_4.png" class="lazyload placeholder" data-srcset="con_4.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="9010"></p>
 <h3 id="得到每一个数字"><a href="#得到每一个数字" class="headerlink" title="得到每一个数字"></a>得到每一个数字</h3><p> 遍历每一个轮廓中的数字</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (i, (gx, gy, gw, gh)) <span class="keyword">in</span> <span class="built_in">enumerate</span>(locs):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">	<span class="keyword">for</span> c <span class="keyword">in</span> digitCnts:</span><br><span class="line">        <span class="comment"># 得到每一个数字的轮廓值</span></span><br><span class="line">        (x, y, w, h) = cv2.boundingRect(c)</span><br><span class="line">        <span class="comment"># 提取每个数字图像</span></span><br><span class="line">        roi = group[y:y + h, x:x + w]</span><br><span class="line">        roi = cv2.resize(roi, (<span class="number">57</span>, <span class="number">88</span>))  <span class="comment"># 获得每个数字的轮廓并将其resize为和模板一样大小的图片以便于模式匹配</span></span><br></pre></td></tr></table></figure>
 <h3 id="模板匹配"><a href="#模板匹配" class="headerlink" title="模板匹配"></a>模板匹配</h3><p>将信用卡得到的数字图像与模板数字图像进行模板匹配</p>
@@ -657,9 +663,9 @@
 <p>这里由于<code>result</code>是与模板里的数字轮廓相匹配的程度，而其模板图片中轮廓所代表的值与scores的索引相同，顺序都为【0-9】，转换为字符即为正确数字。然后绘出矩形和数字在图像中即可完成。</p>
 <h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>最后打印输出结果。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Card number :&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(<span class="string">&quot;&quot;</span>.join(output)))</span><br><span class="line">img_show(card_01, <span class="string">&#x27;card_01&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="card_01_succes.png" class="lazyload placeholder" data-srcset="card_01_succes.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="result"><code>输出: Card number :4000123456789010</code></p>
+<p><img src="card_01_succes.png" class="lazyload placeholder" data-srcset="card_01_succes.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="result"><code>输出: Card number :4000123456789010</code></p>
 <p>others：</p>
-<p><img src="card_02.png" class="lazyload placeholder" data-srcset="card_02.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="card_02"><img src="card_03.png" class="lazyload placeholder" data-srcset="card_03.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="card_03"><img src="card_04.png" class="lazyload placeholder" data-srcset="card_04.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="card_04"></p>
+<p><img src="card_02.png" class="lazyload placeholder" data-srcset="card_02.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="card_02"><img src="card_03.png" class="lazyload placeholder" data-srcset="card_03.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="card_03"><img src="card_04.png" class="lazyload placeholder" data-srcset="card_04.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="card_04"></p>
 
       </div>
       <div class="post-tags-categories">
@@ -707,7 +713,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
     <a href="/2022/01/31/Opencv%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98-%E6%96%87%E6%A1%A3%E6%89%AB%E6%8F%8FOCR%E8%AF%86%E5%88%AB/" class="post-nav-link">
       <div class="title">
@@ -731,7 +737,7 @@ OCR
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
     <a href="/2022/01/19/python%E4%B8%8Estm32%E9%80%9A%E4%BF%A1/" class="post-nav-link">
       <div class="title">
@@ -784,10 +790,10 @@ OCR
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -841,7 +847,7 @@ OCR
 <!-- 文章详情页的分享 -->
 <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
-<script src="/js/shareJs/social-share.min.js"></script>
+<script defer src="/js/shareJs/social-share.min.js"></script>
 </script>
 
 <style>
@@ -859,13 +865,13 @@ OCR
   <div id="myComment">
     
       
-<section id="comments" style="padding: 1em; margin: 15px auto;"
-	class="animated bounceInUp">
+<section id="comments" style="padding: 1em;">
 	<div id="vcomment" class="comment"></div>
 </section>
 <style>
 	#comments {
 		background: rgba(255,255,255,0.9);
+		border-radius: 8px;
 	}
 	#veditor {
 		background-image: url('/medias/monkey.gif');
@@ -879,13 +885,7 @@ OCR
 		background-position-y: 200px;
 		transition: all 0.2s ease-in-out 0s;
 	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
+	
 	#vcomment .vcards .vcard .vhead .vsys i {
 		display: none;
 	}
@@ -957,81 +957,122 @@ OCR
     
   </div>
 
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
 
 
   </div>
 
   <!-- 目录 -->
-  <!-- 文章详情页右侧目录 -->
-
-  <div class="toc-aside">
-    <div class="toc-main">
-      <div class="toc-aside-title">
-        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img src='/medias/touxiang.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
         
-          <div class="toc-open-close">本文目录</div>
+          <h2>Ychui's Blog</h2>
+        
+        
+          <p>write code and love life</p>
+
+        
+        
+          <p><span id="jinrishici-sentence">Ychui's Blog</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://blog.csdn.net/weixin_51002159?spm=1000.2115.3001.5343"
+              class="social fab fa-cuttlefish flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/GHIgher12"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=2535410943"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
       <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Opencv%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BF%A1%E7%94%A8%E5%8D%A1%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB"><span class="toc-text">Opencv项目实战：信用卡数字识别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E5%BA%93%EF%BC%8C%E5%AE%9A%E4%B9%89%E5%B1%95%E7%A4%BA%E5%87%BD%E6%95%B0"><span class="toc-text">导入库，定义展示函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E6%A8%A1%E6%9D%BF%E5%9B%BE%E7%89%87%EF%BC%8C%E8%BF%9B%E8%A1%8C%E8%BD%AE%E5%BB%93%E6%A3%80%E6%B5%8B%E3%80%82"><span class="toc-text">读取模板图片，进行轮廓检测。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AE%E5%BB%93%E6%A3%80%E6%B5%8B"><span class="toc-text">轮廓检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AE%E5%BB%93%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F"><span class="toc-text">轮廓进行排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%BD%AE%E5%BB%93%E8%BF%9B%E8%A1%8C%E9%81%8D%E5%8E%86"><span class="toc-text">对轮廓进行遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E4%BF%A1%E7%94%A8%E5%8D%A1%E5%9B%BE%E7%89%87"><span class="toc-text">读取信用卡图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BC%E5%B8%BD%E6%93%8D%E4%BD%9C"><span class="toc-text">礼帽操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sobel%E7%AE%97%E5%AD%90"><span class="toc-text">Sobel算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E6%93%8D%E4%BD%9C"><span class="toc-text">闭操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%80%BC%E5%8C%96%E5%A4%84%E7%90%86"><span class="toc-text">二值化处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E6%93%8D%E4%BD%9C-1"><span class="toc-text">闭操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AE%E5%BB%93%E6%A3%80%E6%B5%8B%EF%BC%8C-%E7%BB%98%E5%88%B6%E8%BD%AE%E5%BB%93"><span class="toc-text">轮廓检测， 绘制轮廓</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E8%BD%AE%E5%BB%93"><span class="toc-text">过滤轮廓</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%97%E5%88%B0%E6%AF%8F%E4%B8%80%E4%B8%AA%E8%BD%AE%E5%BB%93"><span class="toc-text">得到每一个轮廓</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%97%E5%88%B0%E6%AF%8F%E4%B8%80%E4%B8%AA%E6%95%B0%E5%AD%97"><span class="toc-text">得到每一个数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%8C%B9%E9%85%8D"><span class="toc-text">模板匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-text">结果</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
   </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  <!-- 手机端目录按钮 -->
-  <div id="toc-mobile-btn">
-    <i class="fas fa-list-ul" aria-hidden="true"></i>
+      
+    
   </div>
-
-
-<script>
-  function closeToc(init) {
-    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
-    $(".toc-content").css({'width': 0});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
-  };
-  function openToc() {
-    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
-    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
-    $(".toc-content").css({'width': '300px'});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
-  }
-  function openBtnClickFn () {
-    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-    let open = eval('' || 'true');
-    openOrCloseBtn.click(function() {
-      if (open) {
-        closeToc();
-        open = false;
-      } else {
-        openToc();
-        open = true;
-      }
-    });
-  };
-  openBtnClickFn();
-  initCloseTocWidth(true);
-
-  function initCloseTocWidth(init) {
-    if (window.innerWidth >= 992) {
-      let isClose = false;
-      isClose && closeToc(init)
-    }
-  }
-
-  document.addEventListener('pjax:complete', function () {
-    $(".toc-aside").css({'transition': 'no'});
-  })
-  document.addEventListener('pjax:complete', function () {
-    openBtnClickFn();
-  })
-  
-</script>
+</aside>
 
   <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
+  <script defer src="/js/wrapImage.js"></script>
 </div>
 
 <!-- 文章详情页背景图 -->
@@ -1185,15 +1226,16 @@ OCR
 </script>
 
 
-                            </main>
-                          </div>
+      </main>
+    </div>
 
-                          <!-- 页脚 -->
-                          
+    <!-- 页脚 -->
+    
   
-  <!-- 底部鱼儿跳动效果，依赖于jquery-->
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
 <div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
-<script>
+<script defer>
   var RENDERER = {
     POINT_INTERVAL: 5,
     FISH_COUNT: 3,
@@ -1348,6 +1390,7 @@ OCR
     })
   });
 </script>
+  
   <div class="footer bg-color">
     <div class="footer-main">
       
@@ -1390,65 +1433,52 @@ OCR
 
 
 
-                            <!-- 渲染暗黑按钮 -->
-                            
-                              <div class="dark">
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
   <div class="dark-content">
-    <i class="fas fa-moon" aria-hidden="true"></i>
-    <!-- <span>关灯</span> -->
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
   </div>
-  
 </div>
 
-<script>
+<script defer>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
     if (isDark) {
-      $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-          </div>
-          `
-        );
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
     }
-    $('.dark').click(function() {
-      if ($(document.body).is('.darkModel')) {
-        $(document.body).removeClass('darkModel');
-        localStorage.setItem('dark', false);
-        $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-moon" aria-hidden="true"></i>
-          </div>
-          `
-        );
-      } else {
-        $(document.body).addClass('darkModel');
-        localStorage.setItem('dark', true);
-        $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-          </div>
-          `
-        );
-      }
-    })
-  })
+  }
 </script>
-                                
-                                  <!-- 渲染回到顶部按钮 -->
-                                  
-                                    <div class="goTop top-btn-color" pointer>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
   <i class="fas fa-arrow-up" aria-hidden="true"></i>
 </div>
-<script src="/js/goTop.js"></script>
+<script defer src="/js/goTop.js"></script>
 
-                                      
-                                        <!-- 渲染左下角音乐播放器 -->
-                                        
-                                          <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
 <style>
 .aplayer .aplayer-lrc p {
   
@@ -1497,22 +1527,21 @@ OCR
     bottom: 300px;
   }
 </style> -->
-<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-<script src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
-                                            
+<script defer src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
 
-                                              <!-- 图片放大 -->
-                                              
-                                                <script
-                                                  src="/js/fancybox/jquery.fancybox.min.js"></script>
-                                                
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
 
-                                                  <!-- 百度解析 -->
-                                                  <!-- Baidu Analytics -->
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
 
-                                                    <!-- Baidu Push -->
+    <!-- Baidu Push -->
 
-<script>
+<script async>
     (function () {
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
@@ -1526,23 +1555,24 @@ OCR
     })();
 </script>
 
+    
+    <!-- 背景彩带 -->
+    
+    
+      <script type="text/javascript" color="0,0,0" opacity='0.6' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+    
 
-                                                      <!-- 背景彩带 -->
-                                                      
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script> -->
 
-                                                          
-                                                            <script type="text/javascript" color="0,0,0" opacity='0.6'
-                                                              zIndex="-1" count="99"
-                                                              src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
-                                                            
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
 
-                                                              <script
-                                                                src="/js/utils/index.js"></script>
-                                                              <script src="/js/app.js"></script>
 
-                                                              <!-- 文章目录所需js -->
-<link href="/js/tocbot/tocbot.css" rel="stylesheet">
-<script src="/js/tocbot/tocbot.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
 
 <script>
   var headerEl = 'h2, h3, h4',  //headers 
@@ -1557,12 +1587,15 @@ OCR
     // Which headings to grab inside of the contentSelector element.
     headingSelector: headerEl,
     scrollSmooth: true,
-    scrollSmoothOffset: -80,
-    headingsOffset: -($(window).height() * 0.4 - 45),
-    positionFixedSelector: '.toc-main',
-    positionFixedClass: 'is-position-fixed',
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
     fixedSidebarOffset: 'auto',
     activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
     // onClick: function (e) {},
   }
   if ($('.toc').length > 0) {
@@ -1615,7 +1648,7 @@ OCR
     if (activePosition > (document.documentElement.clientHeight - 100)) {
       $cardToc.scrollTop = sidebarScrollTop + 150
     }
-    if (activePosition < 100) {
+    if (activePosition < 150) {
       $cardToc.scrollTop = sidebarScrollTop - 150
     }
   }
@@ -1635,7 +1668,7 @@ OCR
   
   // 手机端toc按钮点击出现目录
   const mobileTocClick = function () {
-    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
     const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
     let right = '45px';
     if (window.innerWidth >= 551 && window.innerWidth <= 992) {
@@ -1667,7 +1700,7 @@ OCR
 </script>
 
 <style>
-  .is-position-fixed {
+  /* .is-position-fixed {
     position: sticky !important;
     top: 74px;
   }
@@ -1682,14 +1715,13 @@ OCR
     position: absolute;
     left: 12px;
     top: 0;
-  }
-</style> 
+  } */
+</style>
+ 
 
 <!-- 设置导航背景 -->
 <script>
   let setHeaderClass = () => {
-    const headerMenuTransparent = true;
-    if (!headerMenuTransparent) { return; }
     const nav = $('#navHeader');
     const navTop = nav.outerHeight();
     const winTop = $(window).scrollTop();
@@ -1737,6 +1769,61 @@ OCR
   document.addEventListener('pjax:complete', function () {
     if (typeof IssuesAPI == "undefined") {
       loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
     }
   })
 </script>
@@ -1842,15 +1929,15 @@ OCR
 <!-- 评论所需js -->
 
   
-    <!-- 弹幕所需的css和js -->
-    
+        
   <!-- 弹幕插件 -->
   <link href="/js/danmu/barrager.css" rel="stylesheet">
   <script src="/js/danmu/jquery.barrager.js"></script>
 
 <!-- 具体js，请前往valine/script.ejs查看 -->
 
-    <script>
+      
+        <script>
   var requiredFields = '';
   requiredFields = requiredFields.split(',');
   comment_el = '.comment';
@@ -1977,7 +2064,7 @@ OCR
   });
 </script>
 
-  
+      
 
 
 <!-- 鼠标点击特效 -->
@@ -1985,8 +2072,8 @@ OCR
 
   
     <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
-    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-    <script src="/js/cursor/explosion.min.js"></script>
+    <script async src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script async src="/js/cursor/explosion.min.js"></script>
   
 
 
@@ -1995,17 +2082,69 @@ OCR
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
 
 
-                                                                <!-- pjax -->
-                                                                
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
 
 <!-- pjax -->
 
 
   <script src="/js/pjax@0.2.8/index.js"></script>
   
-    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
-
-<div class="pjax-animate">
+    <div class="pjax-animate">
   
     <div class="loading-circle"><div id="loader-circle"></div></div>
     <script>
@@ -2081,7 +2220,7 @@ OCR
 
 
 
-                  <script type="text/x-mathjax-config">
+  <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ["$","$"], ["\\(","\\)"] ],
@@ -2097,5 +2236,4 @@ OCR
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-
 </html>

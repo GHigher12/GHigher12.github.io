@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<!-- meta/link... -->
-
+  <!-- meta/link... -->
+  
 
 
 
@@ -28,9 +28,7 @@
 
   
   
-    
-<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
-
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
   
   
     
@@ -44,15 +42,21 @@
             }
         }
     </style>
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <script defer src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
     
         <script src="/js/valine/index.js"></script>
     
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
 
     <!-- import link -->
     
+        
+            
         
             
         
@@ -69,52 +73,53 @@
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Ychui's Blog" type="application/atom+xml">
 </head>
 
-
-  <!-- 依赖于jquery和vue -->
   
-    
-<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
-
-      
-
-          
-            
-<script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
-
-              
-
-                  <body>
-                    <!-- 预加载动画 -->
-                    <!-- 页面预加载动画 -->
-
-<div id='loader'>
-  <link rel="stylesheet" href="/js/loaded/index.css" >
-  <div class="loading-left-bg"></div>
-  <div class="loading-right-bg"></div>
-  <div class="spinner-box">
-    <div class="configure-border-1">
-      <div class="configure-core"></div>
+  <!-- 预加载动画 -->
+  
+  
+  <div class="preloader_5" id="loader">
+  <div class="cube">
+    <div class="topD"></div>
+    <div>
+      <span style="--i:0"></span>
+      <span style="--i:1"></span>
+      <span style="--i:2"></span>
+      <span style="--i:3"></span>
     </div>
-    <div class="configure-border-2">
-      <div class="configure-core"></div>
+
+    <div class="cube2">
+      <div>
+        <span style="--i:0"></span>
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+      </div>
+
+      <div class="cube3">
+        <div class="top3"></div>
+        <div>
+          <span style="--i:0"></span>
+          <span style="--i:1"></span>
+          <span style="--i:2"></span>
+          <span style="--i:3"></span>
+        </div>
+      </div>
     </div>
-    <div class="loading-word">加载中...</div>
   </div>
 </div>
-
-<script>
-  var endLoading = function () {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loader').classList.add("loading");
-  }
-  window.addEventListener('DOMContentLoaded',endLoading);
-  
-</script>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
 
 
-                      <!-- 判断是否为暗黑风格 -->
-                      <!-- 判断是否为黑夜模式 -->
-<script>
+  <body>
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer>
   let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
 
   if (isDark) {
@@ -122,8 +127,8 @@
   }
 </script>
 
-                        <!-- 需要在上面加载的js -->
-                        <script>
+    <!-- 需要在上面加载的js -->
+    <script>
   function loadScript(src, cb) {
     return new Promise(resolve => {
       setTimeout(function () {
@@ -159,7 +164,7 @@
   }
 
   //https://github.com/filamentgroup/loadCSS
-  var loadCSS = function (href, before, media, attributes) {
+  var loadCSS = function (src) {
     return new Promise(resolve => {
       setTimeout(function () {
         var link = document.createElement('link');
@@ -193,11 +198,11 @@
 <script src="https://unpkg.com/typed.js@2.0.11"></script>
 
 
-                          <div id="safearea">
-                            <main class="main" id="pjax-container">
-                              <!-- 头部导航 -->
-                              
-<header class="header   " 
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " 
   id="navHeader"
   style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"
@@ -215,7 +220,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -353,7 +358,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -515,7 +520,7 @@
   
   
     <div id="he-plugin-simple"></div>
-    <script>
+    <script defer>
       WIDGET = {
         CONFIG: {
           "modules": "012",
@@ -538,13 +543,14 @@
         }
       }
     </script>
-    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    <script defer src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
     
 </header>
-                                <!-- 内容区域 -->
-                                
- <!-- prismjs 代码高亮 -->
- 
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
 
 
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
@@ -594,7 +600,7 @@
   </div>
   
   
-    <script src="/js/bubble/bubble.js"></script>
+    <script defer src="/js/bubble/bubble.js"></script>
   
 </div>
 
@@ -602,40 +608,40 @@
 
 
 
-<div class="row justify-position" 
+<div class="post-detail-content post-row" 
   style="padding-top: 0px;">
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="机械设计——曲柄滑块"><a href="#机械设计——曲柄滑块" class="headerlink" title="机械设计——曲柄滑块"></a>机械设计——曲柄滑块</h1><h2 id="一、零件"><a href="#一、零件" class="headerlink" title="一、零件"></a>一、零件</h2><h3 id="1、主动杆"><a href="#1、主动杆" class="headerlink" title="1、主动杆"></a>1、主动杆</h3><p><img src="主动杆.jpg" class="lazyload placeholder" data-srcset="主动杆.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+        <h1 id="机械设计——曲柄滑块"><a href="#机械设计——曲柄滑块" class="headerlink" title="机械设计——曲柄滑块"></a>机械设计——曲柄滑块</h1><h2 id="一、零件"><a href="#一、零件" class="headerlink" title="一、零件"></a>一、零件</h2><h3 id="1、主动杆"><a href="#1、主动杆" class="headerlink" title="1、主动杆"></a>1、主动杆</h3><p><img src="主动杆.jpg" class="lazyload placeholder" data-srcset="主动杆.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 <h4 id="草图："><a href="#草图：" class="headerlink" title="草图："></a>草图：</h4><p>草图1：大圆直径20mm，两圆圆心之距60mm，连接线50mm，一边绘制小圆直径8mm。</p>
 <p>草图2：在凸台面上无圆孔一端绘制小圆直径8mm。</p>
 <h4 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h4><p>凸台拉伸3：拉伸草图1，给定深度3mm。（圆孔用于配合圆盘）</p>
 <p>凸台拉伸4：拉伸草图2，等距1.5mm，两侧堆成9mm。（用于配合连杆和圆盘）</p>
-<h3 id="2、连杆"><a href="#2、连杆" class="headerlink" title="2、连杆"></a>2、连杆</h3><p><img src="连杆.jpg" class="lazyload placeholder" data-srcset="连杆.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<h3 id="2、连杆"><a href="#2、连杆" class="headerlink" title="2、连杆"></a>2、连杆</h3><p><img src="连杆.jpg" class="lazyload placeholder" data-srcset="连杆.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 <h4 id="草图：-1"><a href="#草图：-1" class="headerlink" title="草图："></a>草图：</h4><p>草图1：大圆直径20mm，两圆圆心之距300mm，连接线290mm，一边绘制小圆直径8mm。</p>
 <p>草图2：在凸台面上无圆孔一端绘制小圆直径8mm。</p>
 <h4 id="特征：-1"><a href="#特征：-1" class="headerlink" title="特征："></a>特征：</h4><p>凸台拉伸3：拉伸草图1，一定深度3mm。（圆孔用于配合主动杆）</p>
 <p>凸台拉伸4：拉伸草图2，给定深度10mm（用于配合滑块）</p>
-<h3 id="3、圆盘"><a href="#3、圆盘" class="headerlink" title="3、圆盘"></a>3、圆盘</h3><p><img src="圆盘.jpg" class="lazyload placeholder" data-srcset="圆盘.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<h3 id="3、圆盘"><a href="#3、圆盘" class="headerlink" title="3、圆盘"></a>3、圆盘</h3><p><img src="圆盘.jpg" class="lazyload placeholder" data-srcset="圆盘.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 <h4 id="草图"><a href="#草图" class="headerlink" title="草图"></a>草图</h4><p>草图1：大圆直径150mm，圆弧槽口宽度12mm，弧度60度，圆弧半径59—61mm，圆周阵列3个。</p>
 <p>草图2：圆盘中心圆直径8mm。</p>
 <p>草图3：圆孔直径8mm。</p>
 <h4 id="特征：-2"><a href="#特征：-2" class="headerlink" title="特征："></a>特征：</h4><p>凸台拉伸1：拉伸草图1，给定深度10mm。</p>
 <p>凸台拉伸2：拉伸草图2，给定深度3mm。（配合主动杆）</p>
 <p>切除拉伸1：切除草图3，完全贯穿。（配合主动杆）</p>
-<h3 id="4、滑块"><a href="#4、滑块" class="headerlink" title="4、滑块"></a>4、滑块</h3><p><img src="滑块.jpg" class="lazyload placeholder" data-srcset="滑块.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<h3 id="4、滑块"><a href="#4、滑块" class="headerlink" title="4、滑块"></a>4、滑块</h3><p><img src="滑块.jpg" class="lazyload placeholder" data-srcset="滑块.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 <h4 id="草图-1"><a href="#草图-1" class="headerlink" title="草图"></a>草图</h4><p>草图1：长为100mm，宽为50mm的矩形。</p>
 <p>草图2：滑块中心位置圆，直径8mm。</p>
 <h4 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h4><p>凸台拉伸1：拉伸草图1，给定深度50mm。</p>
 <p>切除拉伸1：切除草图2，完全贯穿。</p>
-<h3 id="5、轨道"><a href="#5、轨道" class="headerlink" title="5、轨道"></a>5、轨道</h3><p><img src="轨道.jpg" class="lazyload placeholder" data-srcset="轨道.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<h3 id="5、轨道"><a href="#5、轨道" class="headerlink" title="5、轨道"></a>5、轨道</h3><p><img src="轨道.jpg" class="lazyload placeholder" data-srcset="轨道.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 <h4 id="草图-2"><a href="#草图-2" class="headerlink" title="草图"></a>草图</h4><p>草图1：长为300mm，宽为60mm的矩形。</p>
 <p>草图2：绘制与长方体上、下、左三个方向相距20mm的矩形。</p>
 <p>在轨道高度1/2处建立基准面1，并绘制与原点水平方向相距360mm的轴线。（配合圆盘）</p>
 <h4 id="特征-1"><a href="#特征-1" class="headerlink" title="特征"></a>特征</h4><p>凸台拉伸1：拉伸草图1，给定深度90mm。</p>
 <p>切除拉伸1：切除草图2，完全贯穿。</p>
-<h2 id="二、装配体"><a href="#二、装配体" class="headerlink" title="二、装配体"></a>二、装配体</h2><p><img src="曲柄滑块.jpg" class="lazyload placeholder" data-srcset="曲柄滑块.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<h2 id="二、装配体"><a href="#二、装配体" class="headerlink" title="二、装配体"></a>二、装配体</h2><p><img src="曲柄滑块.jpg" class="lazyload placeholder" data-srcset="曲柄滑块.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 <p>先导入轨道，固定轨道在原点，再依次导入其他零件。</p>
 <h3 id="配合"><a href="#配合" class="headerlink" title="配合"></a>配合</h3><p>重合1：连杆与滑块面重合；</p>
 <p>同心1：连杆凸台与滑块圆孔同心；</p>
@@ -655,15 +661,15 @@
 
 <h3 id="Motion分析"><a href="#Motion分析" class="headerlink" title="Motion分析"></a>Motion分析</h3><p>选择结果与图解，类别-位移/速度/加速度，子类别-分别选取线性位移、线性速度、线性加速度，结果分量为X分量，选取滑块某一面，然后生成图解。</p>
 <p><strong>线性位移</strong></p>
-<p><img src="线性位移.jpg" class="lazyload placeholder" data-srcset="线性位移.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<p><img src="线性位移.jpg" class="lazyload placeholder" data-srcset="线性位移.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 <p><strong>线性速度</strong></p>
-<p><img src="线性速度.jpg" class="lazyload placeholder" data-srcset="线性速度.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<p><img src="线性速度.jpg" class="lazyload placeholder" data-srcset="线性速度.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 <p><strong>线性加速度</strong></p>
-<p><img src="线性加速度.jpg" class="lazyload placeholder" data-srcset="线性加速度.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<p><img src="线性加速度.jpg" class="lazyload placeholder" data-srcset="线性加速度.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 <h2 id="四、编程计算绘图"><a href="#四、编程计算绘图" class="headerlink" title="四、编程计算绘图"></a>四、编程计算绘图</h2><p>将solidwork生成的图解导出csv文件，用matlab读取csv文件，将数据取出，用plot函数绘制滑块的实际参数曲线。根据课本给出的公式，绘制滑块的理论参数曲线。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line">r = <span class="number">60</span>; <span class="comment">% 主动件杆长</span></span><br><span class="line"></span><br><span class="line">l = <span class="number">300</span>; <span class="comment">% 连杆长度</span></span><br><span class="line"></span><br><span class="line">w = <span class="number">20</span>; <span class="comment">% 角速度</span></span><br><span class="line"></span><br><span class="line">theta = <span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">100</span>:<span class="number">4</span>*<span class="built_in">pi</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">size</span> = [<span class="number">100</span>, <span class="number">200</span>, <span class="number">1400</span>, <span class="number">400</span>];</span><br><span class="line"></span><br><span class="line">s1 = r*<span class="built_in">cos</span>(theta)+l*(<span class="number">1</span>-(r*<span class="built_in">sin</span>(theta)/l).^<span class="number">2</span>).^<span class="number">0.5</span>;</span><br><span class="line"></span><br><span class="line">v1 = -r*w*(<span class="built_in">sin</span>(theta)+<span class="number">0.5</span>*(r/l)*<span class="built_in">sin</span>(<span class="number">2</span>*theta)/(l-(r*<span class="built_in">sin</span>(theta)/l).^<span class="number">2</span>).^<span class="number">0.5</span>);</span><br><span class="line"></span><br><span class="line">a1 = -r*w.^<span class="number">2</span>*(<span class="built_in">cos</span>(theta)+r*(l.^<span class="number">2</span>*(<span class="number">1</span><span class="number">-2</span>*<span class="built_in">cos</span>(theta))-r.^<span class="number">2</span>*<span class="built_in">sin</span>(theta).^<span class="number">4</span>)/(l.^<span class="number">2</span>-(r*<span class="built_in">sin</span>(theta)).^<span class="number">2</span>).^<span class="number">1.5</span>);</span><br><span class="line"></span><br><span class="line">s2 = csvread(<span class="string">&#x27;滑块位移曲线.csv&#x27;</span>, <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">v2 = csvread(<span class="string">&#x27;滑块速度曲线.csv&#x27;</span>,<span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">a2 = csvread(<span class="string">&#x27;滑块加速度曲线.csv&#x27;</span>, <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;滑块参数曲线&#x27;</span>);</span><br><span class="line"></span><br><span class="line">set(<span class="built_in">figure</span>(<span class="number">1</span>),<span class="string">&#x27;position&#x27;</span>,<span class="built_in">size</span>);</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">subplot(<span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">yyaxis left;</span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(theta/<span class="built_in">pi</span>*<span class="number">180</span>, s1, <span class="string">&#x27;--r&#x27;</span>);</span><br><span class="line"></span><br><span class="line">ylabel(<span class="string">&#x27;理论位移s/mm&#x27;</span>);</span><br><span class="line"></span><br><span class="line">yyaxis right;</span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(s2(:, <span class="number">1</span>)*<span class="number">20</span>/<span class="built_in">pi</span>*<span class="number">180</span>, s2(:, <span class="number">2</span>), <span class="string">&#x27;-b&#x27;</span>);</span><br><span class="line"></span><br><span class="line">ylim([<span class="number">140</span>, <span class="number">260</span>]);</span><br><span class="line"></span><br><span class="line">xlabel(<span class="string">&#x27;曲柄转角\theta/(°)&#x27;</span>);</span><br><span class="line"></span><br><span class="line">ylabel(<span class="string">&#x27;实际位移s/mm&#x27;</span>);</span><br><span class="line"></span><br><span class="line">xlim([<span class="number">0</span>, <span class="number">720</span>]);</span><br><span class="line"></span><br><span class="line">x_new = <span class="built_in">linspace</span>(<span class="number">0</span>, <span class="number">720</span>, <span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">xticks(x_new);</span><br><span class="line"></span><br><span class="line">title(<span class="string">&#x27;滑块位移曲线&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">legend</span>(<span class="string">&#x27;理论滑块位移&#x27;</span>,<span class="string">&#x27;实际滑块位移&#x27;</span>);</span><br><span class="line"></span><br><span class="line">grid on;</span><br><span class="line"></span><br><span class="line"><span class="comment">% figure(2);</span></span><br><span class="line"></span><br><span class="line">subplot(<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(theta/<span class="built_in">pi</span>*<span class="number">180</span>, v1/<span class="number">1000</span>, <span class="string">&#x27;--r&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(v2(:, <span class="number">1</span>)*<span class="number">20</span>/<span class="built_in">pi</span>*<span class="number">180</span>,v2(:, <span class="number">2</span>)/<span class="number">1000</span>, <span class="string">&#x27;-b&#x27;</span>);</span><br><span class="line"></span><br><span class="line">xlabel(<span class="string">&#x27;曲柄转角\theta/(°)&#x27;</span>);</span><br><span class="line"></span><br><span class="line">ylabel(<span class="string">&#x27;滑块速度v/(m/s)&#x27;</span>);</span><br><span class="line"></span><br><span class="line">xlim([<span class="number">0</span>, <span class="number">720</span>]);</span><br><span class="line"></span><br><span class="line">x_new = <span class="built_in">linspace</span>(<span class="number">0</span>, <span class="number">720</span>, <span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">xticks(x_new);</span><br><span class="line"></span><br><span class="line">title(<span class="string">&#x27;滑块的速度曲线&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">legend</span>(<span class="string">&#x27;理论滑块速度&#x27;</span>,<span class="string">&#x27;实际滑块速度&#x27;</span>);</span><br><span class="line"></span><br><span class="line">grid on;</span><br><span class="line"></span><br><span class="line"><span class="comment">% figure(3);</span></span><br><span class="line"></span><br><span class="line">subplot(<span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(theta/<span class="built_in">pi</span>*<span class="number">180</span>, a1/<span class="number">1e6</span>, <span class="string">&#x27;--r&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"></span><br><span class="line"><span class="built_in">plot</span>(a2(:, <span class="number">1</span>)*<span class="number">20</span>/<span class="built_in">pi</span>*<span class="number">180</span>, a2(:, <span class="number">2</span>)/<span class="number">1e6</span>, <span class="string">&#x27;-b&#x27;</span>);</span><br><span class="line"></span><br><span class="line">xlabel(<span class="string">&#x27;曲柄转角\theta/(°)&#x27;</span>);</span><br><span class="line"></span><br><span class="line">ylabel(<span class="string">&#x27;滑块加速度a/(m/s^2)&#x27;</span>);</span><br><span class="line"></span><br><span class="line">xlim([<span class="number">0</span>, <span class="number">720</span>]);</span><br><span class="line"></span><br><span class="line">x_new = <span class="built_in">linspace</span>(<span class="number">0</span>, <span class="number">720</span>, <span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">xticks(x_new);</span><br><span class="line"></span><br><span class="line">title(<span class="string">&#x27;滑块的加速度曲线&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">legend</span>(<span class="string">&#x27;理论滑块加速度&#x27;</span>,<span class="string">&#x27;实际滑块加速度&#x27;</span>);</span><br><span class="line"></span><br><span class="line">grid on;</span><br></pre></td></tr></table></figure>
 <p>(其中速度公式与课本不同，取了相反数，因为绘制后的理论图与课本的图正好曲线相反，所以猜测课本的速度公式少了个负号)</p>
-<h3 id="曲线图"><a href="#曲线图" class="headerlink" title="曲线图"></a>曲线图</h3><p><img src="matlab曲线图.jpg" class="lazyload placeholder" data-srcset="matlab曲线图.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="img"></p>
+<h3 id="曲线图"><a href="#曲线图" class="headerlink" title="曲线图"></a>曲线图</h3><p><img src="matlab曲线图.jpg" class="lazyload placeholder" data-srcset="matlab曲线图.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="img"></p>
 
       </div>
       <div class="post-tags-categories">
@@ -711,7 +717,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
     <a href="/2022/04/14/windows%E4%B8%8B%E5%AE%89%E8%A3%85WSL2/" class="post-nav-link">
       <div class="title">
@@ -732,7 +738,7 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
     <a href="/2022/03/23/Matlab%E5%AD%A6%E4%B9%A001/" class="post-nav-link">
       <div class="title">
@@ -785,10 +791,10 @@
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -842,7 +848,7 @@
 <!-- 文章详情页的分享 -->
 <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
-<script src="/js/shareJs/social-share.min.js"></script>
+<script defer src="/js/shareJs/social-share.min.js"></script>
 </script>
 
 <style>
@@ -860,13 +866,13 @@
   <div id="myComment">
     
       
-<section id="comments" style="padding: 1em; margin: 15px auto;"
-	class="animated bounceInUp">
+<section id="comments" style="padding: 1em;">
 	<div id="vcomment" class="comment"></div>
 </section>
 <style>
 	#comments {
 		background: rgba(255,255,255,0.9);
+		border-radius: 8px;
 	}
 	#veditor {
 		background-image: url('/medias/monkey.gif');
@@ -880,13 +886,7 @@
 		background-position-y: 200px;
 		transition: all 0.2s ease-in-out 0s;
 	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
+	
 	#vcomment .vcards .vcard .vhead .vsys i {
 		display: none;
 	}
@@ -958,81 +958,122 @@
     
   </div>
 
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
 
 
   </div>
 
   <!-- 目录 -->
-  <!-- 文章详情页右侧目录 -->
-
-  <div class="toc-aside">
-    <div class="toc-main">
-      <div class="toc-aside-title">
-        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img src='/medias/touxiang.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
         
-          <div class="toc-open-close">本文目录</div>
+          <h2>Ychui's Blog</h2>
+        
+        
+          <p>write code and love life</p>
+
+        
+        
+          <p><span id="jinrishici-sentence">Ychui's Blog</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://blog.csdn.net/weixin_51002159?spm=1000.2115.3001.5343"
+              class="social fab fa-cuttlefish flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/GHIgher12"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=2535410943"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
       <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%BA%E6%A2%B0%E8%AE%BE%E8%AE%A1%E2%80%94%E2%80%94%E6%9B%B2%E6%9F%84%E6%BB%91%E5%9D%97"><span class="toc-text">机械设计——曲柄滑块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%9B%B6%E4%BB%B6"><span class="toc-text">一、零件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E4%B8%BB%E5%8A%A8%E6%9D%86"><span class="toc-text">1、主动杆</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8D%89%E5%9B%BE%EF%BC%9A"><span class="toc-text">草图：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%EF%BC%9A"><span class="toc-text">特征：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E8%BF%9E%E6%9D%86"><span class="toc-text">2、连杆</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8D%89%E5%9B%BE%EF%BC%9A-1"><span class="toc-text">草图：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%EF%BC%9A-1"><span class="toc-text">特征：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%9C%86%E7%9B%98"><span class="toc-text">3、圆盘</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8D%89%E5%9B%BE"><span class="toc-text">草图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%EF%BC%9A-2"><span class="toc-text">特征：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E6%BB%91%E5%9D%97"><span class="toc-text">4、滑块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8D%89%E5%9B%BE-1"><span class="toc-text">草图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%BE%81"><span class="toc-text">特征</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81%E8%BD%A8%E9%81%93"><span class="toc-text">5、轨道</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8D%89%E5%9B%BE-2"><span class="toc-text">草图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%BE%81-1"><span class="toc-text">特征</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%A3%85%E9%85%8D%E4%BD%93"><span class="toc-text">二、装配体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E5%90%88"><span class="toc-text">配合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%8A%A8%E7%94%BB%E5%8F%8AMotion%E5%88%86%E6%9E%90"><span class="toc-text">三、动画及Motion分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB"><span class="toc-text">动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Motion%E5%88%86%E6%9E%90"><span class="toc-text">Motion分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%BC%96%E7%A8%8B%E8%AE%A1%E7%AE%97%E7%BB%98%E5%9B%BE"><span class="toc-text">四、编程计算绘图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B2%E7%BA%BF%E5%9B%BE"><span class="toc-text">曲线图</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
   </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  <!-- 手机端目录按钮 -->
-  <div id="toc-mobile-btn">
-    <i class="fas fa-list-ul" aria-hidden="true"></i>
+      
+    
   </div>
-
-
-<script>
-  function closeToc(init) {
-    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
-    $(".toc-content").css({'width': 0});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
-  };
-  function openToc() {
-    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
-    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
-    $(".toc-content").css({'width': '300px'});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
-  }
-  function openBtnClickFn () {
-    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-    let open = eval('' || 'true');
-    openOrCloseBtn.click(function() {
-      if (open) {
-        closeToc();
-        open = false;
-      } else {
-        openToc();
-        open = true;
-      }
-    });
-  };
-  openBtnClickFn();
-  initCloseTocWidth(true);
-
-  function initCloseTocWidth(init) {
-    if (window.innerWidth >= 992) {
-      let isClose = false;
-      isClose && closeToc(init)
-    }
-  }
-
-  document.addEventListener('pjax:complete', function () {
-    $(".toc-aside").css({'transition': 'no'});
-  })
-  document.addEventListener('pjax:complete', function () {
-    openBtnClickFn();
-  })
-  
-</script>
+</aside>
 
   <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
+  <script defer src="/js/wrapImage.js"></script>
 </div>
 
 <!-- 文章详情页背景图 -->
@@ -1186,15 +1227,16 @@
 </script>
 
 
-                            </main>
-                          </div>
+      </main>
+    </div>
 
-                          <!-- 页脚 -->
-                          
+    <!-- 页脚 -->
+    
   
-  <!-- 底部鱼儿跳动效果，依赖于jquery-->
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
 <div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
-<script>
+<script defer>
   var RENDERER = {
     POINT_INTERVAL: 5,
     FISH_COUNT: 3,
@@ -1349,6 +1391,7 @@
     })
   });
 </script>
+  
   <div class="footer bg-color">
     <div class="footer-main">
       
@@ -1391,65 +1434,52 @@
 
 
 
-                            <!-- 渲染暗黑按钮 -->
-                            
-                              <div class="dark">
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
   <div class="dark-content">
-    <i class="fas fa-moon" aria-hidden="true"></i>
-    <!-- <span>关灯</span> -->
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
   </div>
-  
 </div>
 
-<script>
+<script defer>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
     if (isDark) {
-      $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-          </div>
-          `
-        );
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
     }
-    $('.dark').click(function() {
-      if ($(document.body).is('.darkModel')) {
-        $(document.body).removeClass('darkModel');
-        localStorage.setItem('dark', false);
-        $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-moon" aria-hidden="true"></i>
-          </div>
-          `
-        );
-      } else {
-        $(document.body).addClass('darkModel');
-        localStorage.setItem('dark', true);
-        $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-          </div>
-          `
-        );
-      }
-    })
-  })
+  }
 </script>
-                                
-                                  <!-- 渲染回到顶部按钮 -->
-                                  
-                                    <div class="goTop top-btn-color" pointer>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
   <i class="fas fa-arrow-up" aria-hidden="true"></i>
 </div>
-<script src="/js/goTop.js"></script>
+<script defer src="/js/goTop.js"></script>
 
-                                      
-                                        <!-- 渲染左下角音乐播放器 -->
-                                        
-                                          <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
 <style>
 .aplayer .aplayer-lrc p {
   
@@ -1498,22 +1528,21 @@
     bottom: 300px;
   }
 </style> -->
-<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-<script src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
-                                            
+<script defer src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
 
-                                              <!-- 图片放大 -->
-                                              
-                                                <script
-                                                  src="/js/fancybox/jquery.fancybox.min.js"></script>
-                                                
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
 
-                                                  <!-- 百度解析 -->
-                                                  <!-- Baidu Analytics -->
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
 
-                                                    <!-- Baidu Push -->
+    <!-- Baidu Push -->
 
-<script>
+<script async>
     (function () {
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
@@ -1527,23 +1556,24 @@
     })();
 </script>
 
+    
+    <!-- 背景彩带 -->
+    
+    
+      <script type="text/javascript" color="0,0,0" opacity='0.6' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+    
 
-                                                      <!-- 背景彩带 -->
-                                                      
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script> -->
 
-                                                          
-                                                            <script type="text/javascript" color="0,0,0" opacity='0.6'
-                                                              zIndex="-1" count="99"
-                                                              src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
-                                                            
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
 
-                                                              <script
-                                                                src="/js/utils/index.js"></script>
-                                                              <script src="/js/app.js"></script>
 
-                                                              <!-- 文章目录所需js -->
-<link href="/js/tocbot/tocbot.css" rel="stylesheet">
-<script src="/js/tocbot/tocbot.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
 
 <script>
   var headerEl = 'h2, h3, h4',  //headers 
@@ -1558,12 +1588,15 @@
     // Which headings to grab inside of the contentSelector element.
     headingSelector: headerEl,
     scrollSmooth: true,
-    scrollSmoothOffset: -80,
-    headingsOffset: -($(window).height() * 0.4 - 45),
-    positionFixedSelector: '.toc-main',
-    positionFixedClass: 'is-position-fixed',
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
     fixedSidebarOffset: 'auto',
     activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
     // onClick: function (e) {},
   }
   if ($('.toc').length > 0) {
@@ -1616,7 +1649,7 @@
     if (activePosition > (document.documentElement.clientHeight - 100)) {
       $cardToc.scrollTop = sidebarScrollTop + 150
     }
-    if (activePosition < 100) {
+    if (activePosition < 150) {
       $cardToc.scrollTop = sidebarScrollTop - 150
     }
   }
@@ -1636,7 +1669,7 @@
   
   // 手机端toc按钮点击出现目录
   const mobileTocClick = function () {
-    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
     const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
     let right = '45px';
     if (window.innerWidth >= 551 && window.innerWidth <= 992) {
@@ -1668,7 +1701,7 @@
 </script>
 
 <style>
-  .is-position-fixed {
+  /* .is-position-fixed {
     position: sticky !important;
     top: 74px;
   }
@@ -1683,14 +1716,13 @@
     position: absolute;
     left: 12px;
     top: 0;
-  }
-</style> 
+  } */
+</style>
+ 
 
 <!-- 设置导航背景 -->
 <script>
   let setHeaderClass = () => {
-    const headerMenuTransparent = true;
-    if (!headerMenuTransparent) { return; }
     const nav = $('#navHeader');
     const navTop = nav.outerHeight();
     const winTop = $(window).scrollTop();
@@ -1738,6 +1770,61 @@
   document.addEventListener('pjax:complete', function () {
     if (typeof IssuesAPI == "undefined") {
       loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
     }
   })
 </script>
@@ -1843,15 +1930,15 @@
 <!-- 评论所需js -->
 
   
-    <!-- 弹幕所需的css和js -->
-    
+        
   <!-- 弹幕插件 -->
   <link href="/js/danmu/barrager.css" rel="stylesheet">
   <script src="/js/danmu/jquery.barrager.js"></script>
 
 <!-- 具体js，请前往valine/script.ejs查看 -->
 
-    <script>
+      
+        <script>
   var requiredFields = '';
   requiredFields = requiredFields.split(',');
   comment_el = '.comment';
@@ -1978,7 +2065,7 @@
   });
 </script>
 
-  
+      
 
 
 <!-- 鼠标点击特效 -->
@@ -1986,8 +2073,8 @@
 
   
     <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
-    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-    <script src="/js/cursor/explosion.min.js"></script>
+    <script async src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script async src="/js/cursor/explosion.min.js"></script>
   
 
 
@@ -1996,17 +2083,69 @@
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
 
 
-                                                                <!-- pjax -->
-                                                                
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
 
 <!-- pjax -->
 
 
   <script src="/js/pjax@0.2.8/index.js"></script>
   
-    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
-
-<div class="pjax-animate">
+    <div class="pjax-animate">
   
     <div class="loading-circle"><div id="loader-circle"></div></div>
     <script>
@@ -2082,7 +2221,7 @@
 
 
 
-                  <script type="text/x-mathjax-config">
+  <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ["$","$"], ["\\(","\\)"] ],
@@ -2098,5 +2237,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<!-- meta/link... -->
-
+  <!-- meta/link... -->
+  
 
 
 
@@ -28,9 +28,7 @@
 
   
   
-    
-<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
-
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
   
   
     
@@ -44,15 +42,21 @@
             }
         }
     </style>
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <script defer src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
     
         <script src="/js/valine/index.js"></script>
     
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
 
     <!-- import link -->
     
+        
+            
         
             
         
@@ -69,52 +73,53 @@
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Ychui's Blog" type="application/atom+xml">
 </head>
 
-
-  <!-- 依赖于jquery和vue -->
   
-    
-<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
-
-      
-
-          
-            
-<script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
-
-              
-
-                  <body>
-                    <!-- 预加载动画 -->
-                    <!-- 页面预加载动画 -->
-
-<div id='loader'>
-  <link rel="stylesheet" href="/js/loaded/index.css" >
-  <div class="loading-left-bg"></div>
-  <div class="loading-right-bg"></div>
-  <div class="spinner-box">
-    <div class="configure-border-1">
-      <div class="configure-core"></div>
+  <!-- 预加载动画 -->
+  
+  
+  <div class="preloader_5" id="loader">
+  <div class="cube">
+    <div class="topD"></div>
+    <div>
+      <span style="--i:0"></span>
+      <span style="--i:1"></span>
+      <span style="--i:2"></span>
+      <span style="--i:3"></span>
     </div>
-    <div class="configure-border-2">
-      <div class="configure-core"></div>
+
+    <div class="cube2">
+      <div>
+        <span style="--i:0"></span>
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+      </div>
+
+      <div class="cube3">
+        <div class="top3"></div>
+        <div>
+          <span style="--i:0"></span>
+          <span style="--i:1"></span>
+          <span style="--i:2"></span>
+          <span style="--i:3"></span>
+        </div>
+      </div>
     </div>
-    <div class="loading-word">加载中...</div>
   </div>
 </div>
-
-<script>
-  var endLoading = function () {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loader').classList.add("loading");
-  }
-  window.addEventListener('DOMContentLoaded',endLoading);
-  
-</script>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
 
 
-                      <!-- 判断是否为暗黑风格 -->
-                      <!-- 判断是否为黑夜模式 -->
-<script>
+  <body>
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer>
   let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
 
   if (isDark) {
@@ -122,8 +127,8 @@
   }
 </script>
 
-                        <!-- 需要在上面加载的js -->
-                        <script>
+    <!-- 需要在上面加载的js -->
+    <script>
   function loadScript(src, cb) {
     return new Promise(resolve => {
       setTimeout(function () {
@@ -159,7 +164,7 @@
   }
 
   //https://github.com/filamentgroup/loadCSS
-  var loadCSS = function (href, before, media, attributes) {
+  var loadCSS = function (src) {
     return new Promise(resolve => {
       setTimeout(function () {
         var link = document.createElement('link');
@@ -193,11 +198,11 @@
 <script src="https://unpkg.com/typed.js@2.0.11"></script>
 
 
-                          <div id="safearea">
-                            <main class="main" id="pjax-container">
-                              <!-- 头部导航 -->
-                              
-<header class="header   " 
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " 
   id="navHeader"
   style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"
@@ -215,7 +220,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -353,7 +358,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -515,7 +520,7 @@
   
   
     <div id="he-plugin-simple"></div>
-    <script>
+    <script defer>
       WIDGET = {
         CONFIG: {
           "modules": "012",
@@ -538,13 +543,14 @@
         }
       }
     </script>
-    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    <script defer src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
     
 </header>
-                                <!-- 内容区域 -->
-                                
- <!-- prismjs 代码高亮 -->
- 
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
 
 
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
@@ -594,7 +600,7 @@
   </div>
   
   
-    <script src="/js/bubble/bubble.js"></script>
+    <script defer src="/js/bubble/bubble.js"></script>
   
 </div>
 
@@ -602,13 +608,13 @@
 
 
 
-<div class="row justify-position" 
+<div class="post-detail-content post-row" 
   style="padding-top: 0px;">
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
         <h1 id="STM32HAL库RS485-ModBus协议控制伺服电机"><a href="#STM32HAL库RS485-ModBus协议控制伺服电机" class="headerlink" title="STM32HAL库RS485-ModBus协议控制伺服电机"></a>STM32HAL库RS485-ModBus协议控制伺服电机</h1><p>一个月前，接手了一个学长的毕设小车，小车采用rs485通信的modbus协议驱动轮毂电机，与往常我学习的pwm控制电机方法大相径庭，在这里以这篇博客记录下该学习过程。</p>
-<h2 id="小车主要架构"><a href="#小车主要架构" class="headerlink" title="小车主要架构"></a>小车主要架构</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/bc2d1ec33d2159e2ac3bb8c752c8a640.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/bc2d1ec33d2159e2ac3bb8c752c8a640.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230422152803354"></p>
+<h2 id="小车主要架构"><a href="#小车主要架构" class="headerlink" title="小车主要架构"></a>小车主要架构</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/bc2d1ec33d2159e2ac3bb8c752c8a640.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/bc2d1ec33d2159e2ac3bb8c752c8a640.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230422152803354"></p>
 <h2 id="电机型号"><a href="#电机型号" class="headerlink" title="电机型号"></a>电机型号</h2><p><a target="_blank" rel="noopener" href="http://www.zlingkj.com/">中菱轮毂电机</a></p>
 <h2 id="轮毂驱动器ZLAC8015D"><a href="#轮毂驱动器ZLAC8015D" class="headerlink" title="轮毂驱动器ZLAC8015D"></a>轮毂驱动器ZLAC8015D</h2><ul>
 <li>ZLAC8015D 的 RS485 支持 Modbus RTU 协议。</li>
@@ -638,7 +644,7 @@
 </div>
 <h2 id="STM32实现主从机RS485通信"><a href="#STM32实现主从机RS485通信" class="headerlink" title="STM32实现主从机RS485通信"></a>STM32实现主从机RS485通信</h2><p>STM32F103ZET6 </p>
 <p>RS485接口 A接A B接B</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b8a4f38008a073ada8a2aa6ecb30096d.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b8a4f38008a073ada8a2aa6ecb30096d.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230422180220414"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b8a4f38008a073ada8a2aa6ecb30096d.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b8a4f38008a073ada8a2aa6ecb30096d.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230422180220414"></p>
 <p>从机：</p>
 <p>RS485发送 “Hello World”</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> Buff[<span class="number">30</span>];</span><br><span class="line"><span class="comment">//*******************</span></span><br><span class="line"><span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line">      HAL_GPIO_WritePin(GPIOD, GPIO_PIN_7, GPIO_PIN_SET); <span class="comment">//拉高发送</span></span><br><span class="line">      <span class="built_in">sprintf</span>(Buff,<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">      HAL_UART_Transmit(&amp;huart2, Buff, <span class="keyword">sizeof</span>(Buff), <span class="number">0xffff</span>); </span><br><span class="line">      HAL_Delay(<span class="number">500</span>);</span><br><span class="line">    <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
@@ -646,7 +652,7 @@
 <p>RS485接收 “Hello World”</p>
 <p>虚拟串口打印</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">HAL_UART_Receive_IT(&amp;huart2, RxBuff,<span class="number">1</span>);</span><br><span class="line">HAL_GPIO_WritePin(GPIOD,GPIO_PIN_7, GPIO_PIN_RESET);  <span class="comment">//拉低接收</span></span><br><span class="line"><span class="comment">//*******************************</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HAL_UART_RxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">uint8_t</span> i;</span><br><span class="line">    <span class="keyword">if</span>(huart-&gt;Instance==USART2)</span><br><span class="line">    &#123;</span><br><span class="line">        HAL_UART_Receive_IT(&amp;huart2,RxBuff,<span class="number">10</span>);</span><br><span class="line">        CDC_Transmit_FS(RxBuff, <span class="keyword">sizeof</span>(RxBuff));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/bcef8e242e703374611f6adadbeb0ef4.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/bcef8e242e703374611f6adadbeb0ef4.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230417170911895"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/bcef8e242e703374611f6adadbeb0ef4.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/bcef8e242e703374611f6adadbeb0ef4.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230417170911895"></p>
 <h2 id="Modbus协议"><a href="#Modbus协议" class="headerlink" title="Modbus协议"></a>Modbus协议</h2><p>Modbus就是一种用在工业上的简单协议!</p>
 <p>大致分为以下几种:</p>
 <ul>
@@ -658,10 +664,10 @@
 <p>Modbus是<strong>主从方式通信</strong>，也就是说，不能同步进行通信，总线上每次只有一个数据进行传输，即主机发送，从机应答，主机不发送，总线上就没有数据通信。</p>
 <h3 id="Modbus-Poll主机Modbus-Slave从机通信"><a href="#Modbus-Poll主机Modbus-Slave从机通信" class="headerlink" title="Modbus Poll主机Modbus Slave从机通信"></a>Modbus Poll主机Modbus Slave从机通信</h3><p>第三方测试软件：vspd、Modbus Poll、Modbus  Slave</p>
 <p>虚拟一个串口</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/bce7bd088dc75569c0c3141c916d32ed.png" class="lazyload placeholder" data-srcset="https://img-blog.csdnimg.cn/img_convert/bce7bd088dc75569c0c3141c916d32ed.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230422151542599"></p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/e724c1c8ad5eae04bc38e982bfaec844.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/e724c1c8ad5eae04bc38e982bfaec844.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230422152049651"></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/bce7bd088dc75569c0c3141c916d32ed.png" class="lazyload placeholder" data-srcset="https://img-blog.csdnimg.cn/img_convert/bce7bd088dc75569c0c3141c916d32ed.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230422151542599"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/e724c1c8ad5eae04bc38e982bfaec844.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/e724c1c8ad5eae04bc38e982bfaec844.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230422152049651"></p>
 <p>修改配置</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/cef7118adccbdaef3c4c166d35411565.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/cef7118adccbdaef3c4c166d35411565.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230422152532666"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/cef7118adccbdaef3c4c166d35411565.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/cef7118adccbdaef3c4c166d35411565.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230422152532666"></p>
 <p><strong>读取数据</strong></p>
 <p>发送</p>
 <p>Tx:000024-    01 03 00 00 00 0A C5 CD</p>
@@ -734,7 +740,7 @@
 </tbody>
 </table>
 </div>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b7b03e3f0ed0726e4a8011311a42c57c.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b7b03e3f0ed0726e4a8011311a42c57c.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230422160343498"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b7b03e3f0ed0726e4a8011311a42c57c.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b7b03e3f0ed0726e4a8011311a42c57c.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230422160343498"></p>
 <p><strong>发送多条数据</strong></p>
 <p>主机TX：</p>
 <div class="table-container">
@@ -795,11 +801,11 @@
 <li>10-&gt;发送多条数据</li>
 </ul>
 <h3 id="SSCOM主机Modbus-Slave从机通信"><a href="#SSCOM主机Modbus-Slave从机通信" class="headerlink" title="SSCOM主机Modbus Slave从机通信"></a>SSCOM主机Modbus Slave从机通信</h3><p>读取数据</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/9bdf80fc4f22b11888dc14d80c9ab159.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/9bdf80fc4f22b11888dc14d80c9ab159.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230422165736981"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/9bdf80fc4f22b11888dc14d80c9ab159.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/9bdf80fc4f22b11888dc14d80c9ab159.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230422165736981"></p>
 <p>发送单条数据</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/a97dc8cc33121ad43c153f5a9f2f9942.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/a97dc8cc33121ad43c153f5a9f2f9942.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230422165911874"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/a97dc8cc33121ad43c153f5a9f2f9942.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/a97dc8cc33121ad43c153f5a9f2f9942.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230422165911874"></p>
 <p>发送多条数据</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/c58093df3a0c52138f5d47735e7ccf0a.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/c58093df3a0c52138f5d47735e7ccf0a.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230422170213418"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/c58093df3a0c52138f5d47735e7ccf0a.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/c58093df3a0c52138f5d47735e7ccf0a.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230422170213418"></p>
 <h3 id="STM32通过RS485完成Modbus协议通信"><a href="#STM32通过RS485完成Modbus协议通信" class="headerlink" title="STM32通过RS485完成Modbus协议通信"></a>STM32通过RS485完成Modbus协议通信</h3><h4 id="移植Modbus协议"><a href="#移植Modbus协议" class="headerlink" title="移植Modbus协议"></a>移植Modbus协议</h4><p><code>mbrtu_master.h</code></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> MBRTU_MASTER_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MBRTU_MASTER_H_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;mbrtu_master.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;usart.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;tim.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////////////////////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">/// MODBUS RTU 主机控制结构</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="comment">// 收发数据缓存</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="keyword">uint8_t</span> ucBuf[<span class="number">128</span>];</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="comment">// 收发数据状态</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="keyword">uint16_t</span> usStatus;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="comment">// 如果使用了RTOS需要进行互斥,那么需要实现以下两个函数的绑定</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="keyword">void</span> (*lock)(<span class="keyword">void</span>);</span><br><span class="line">	<span class="keyword">void</span> (*unlock)(<span class="keyword">void</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="comment">// 微秒延时函数,用于等待超时</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="keyword">void</span> (*delayms)(<span class="keyword">uint32_t</span> nms);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="comment">// 定时器启动和停止函数</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="keyword">void</span> (*timerStop)(<span class="keyword">void</span>);</span><br><span class="line">	<span class="keyword">void</span> (*timerStart)(<span class="keyword">void</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="comment">// 发送数据函数,可以是串口、TCP等</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="keyword">uint32_t</span> (*sendData)(<span class="keyword">const</span> <span class="keyword">void</span>* buf, <span class="keyword">uint32_t</span> len);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="comment">// 以下四个回调函数分别是:读线圈、读离散量输入、读保持寄存器、读输入寄存器</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="keyword">void</span> (*readCoilsCallback)(<span class="keyword">uint16_t</span> usStartAddr, <span class="keyword">uint16_t</span> usNum, <span class="keyword">const</span> <span class="keyword">uint8_t</span>* pucBitsOfCoilsState, <span class="keyword">uint16_t</span> usLen);</span><br><span class="line">	<span class="keyword">void</span> (*readDiscreteInputsCallback)(<span class="keyword">uint16_t</span> usStartAddr, <span class="keyword">uint16_t</span> usNum, <span class="keyword">const</span> <span class="keyword">uint8_t</span>* pucBitsOfDiscreteInputsState, <span class="keyword">uint16_t</span> usLen);</span><br><span class="line">	<span class="keyword">void</span> (*readHoldingRegistersCallback)(<span class="keyword">uint16_t</span> usStartAddr, <span class="keyword">uint16_t</span> usNum, <span class="keyword">const</span> <span class="keyword">uint16_t</span>* pusHoldingRegistersVal, <span class="keyword">uint16_t</span> usLen);</span><br><span class="line">	<span class="keyword">void</span> (*readInputRegistersCallback)(<span class="keyword">uint16_t</span> usStartAddr, <span class="keyword">uint16_t</span> usNum, <span class="keyword">const</span> <span class="keyword">uint16_t</span>* pusInputRegistersVal, <span class="keyword">uint16_t</span> usLen);</span><br><span class="line"></span><br><span class="line">&#125;MBRTUMaterTypeDef;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////////////////////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">timerStop</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">timerStart</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">delayms</span><span class="params">(<span class="keyword">uint32_t</span> nms)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">uint32_t</span> <span class="title">sendData</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> *buf, <span class="keyword">uint32_t</span> len)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">readCoilsCallback</span><span class="params">(<span class="keyword">uint16_t</span> usStartAddr, <span class="keyword">uint16_t</span> usNum, <span class="keyword">const</span> <span class="keyword">uint8_t</span> *pucBitsOfCoilsState, <span class="keyword">uint16_t</span> usLen)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">readDiscreteInputsCallback</span><span class="params">(<span class="keyword">uint16_t</span> usStartAddr, <span class="keyword">uint16_t</span> usNum, <span class="keyword">const</span> <span class="keyword">uint8_t</span> *pucBitsOfDiscreteInputsState, <span class="keyword">uint16_t</span> usLen)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">readHoldingRegistersCallback</span><span class="params">(<span class="keyword">uint16_t</span> usStartAddr, <span class="keyword">uint16_t</span> usNum, <span class="keyword">const</span> <span class="keyword">uint16_t</span> *pusHoldingRegistersVal, <span class="keyword">uint16_t</span> usLen)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">readInputRegistersCallback</span><span class="params">(<span class="keyword">uint16_t</span> usStartAddr, <span class="keyword">uint16_t</span> usNum, <span class="keyword">const</span> <span class="keyword">uint16_t</span> *pusInputRegistersVal, <span class="keyword">uint16_t</span> usLen)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////////////////////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">/// MODBUS RTU 主机 API</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MBRTUMasterReadCoils</span><span class="params">(MBRTUMaterTypeDef* psModbus, <span class="keyword">uint8_t</span> ucSlaveAddress, <span class="keyword">uint16_t</span> usAddress, <span class="keyword">uint16_t</span> usNum, <span class="keyword">uint16_t</span> usTimeout)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MBRTUMasterReadDiscreteInputs</span><span class="params">(MBRTUMaterTypeDef* psModbus, <span class="keyword">uint8_t</span> ucSlaveAddress, <span class="keyword">uint16_t</span> usAddress, <span class="keyword">uint16_t</span> usNum, <span class="keyword">uint16_t</span> usTimeout)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MBRTUMasterReadHoldingRegisters</span><span class="params">(MBRTUMaterTypeDef* psModbus, <span class="keyword">uint8_t</span> ucSlaveAddress, <span class="keyword">uint16_t</span> usAddress, <span class="keyword">uint16_t</span> usNum, <span class="keyword">uint16_t</span> usTimeout)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MBRTUMasterReadInputRegisters</span><span class="params">(MBRTUMaterTypeDef* psModbus, <span class="keyword">uint8_t</span> ucSlaveAddress, <span class="keyword">uint16_t</span> usAddress, <span class="keyword">uint16_t</span> usNum, <span class="keyword">uint16_t</span> usTimeout)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MBRTUMasterWriteSingleCoil</span><span class="params">(MBRTUMaterTypeDef* psModbus, <span class="keyword">uint8_t</span> ucSlaveAddress, <span class="keyword">uint16_t</span> usAddress, <span class="keyword">uint8_t</span> ucState, <span class="keyword">uint16_t</span> usTimeout)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MBRTUMasterWriteSingleRegister</span><span class="params">(MBRTUMaterTypeDef* psModbus, <span class="keyword">uint8_t</span> ucSlaveAddress, <span class="keyword">uint16_t</span> usAddress, <span class="keyword">uint16_t</span> usRegVal, <span class="keyword">uint16_t</span> usTimeout)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MBRTUMasterWriteMultipleCoils</span><span class="params">(MBRTUMaterTypeDef* psModbus, <span class="keyword">uint8_t</span> ucSlaveAddress, <span class="keyword">uint16_t</span> usAddress, <span class="keyword">uint16_t</span> usNum, <span class="keyword">const</span> <span class="keyword">uint8_t</span>* pucStateBitsBuf, <span class="keyword">uint16_t</span> usTimeout)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MBRTUMasterWriteMultipleRegisters</span><span class="params">(MBRTUMaterTypeDef* psModbus, <span class="keyword">uint8_t</span> ucSlaveAddress, <span class="keyword">uint16_t</span> usAddress, <span class="keyword">uint16_t</span> usNum, <span class="keyword">const</span> <span class="keyword">uint16_t</span>* pusRegVal, <span class="keyword">uint16_t</span> usTimeout)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////////////////////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="comment">/// MODBUS RTU 主机接收数据回调函数和超时回调函数</span></span><br><span class="line"><span class="comment">/// </span></span><br><span class="line"><span class="comment">/// MBRTUMasterRecvByteISRCallback：放置于串口接收中断中</span></span><br><span class="line"><span class="comment">/// MBRTUMasterTimerISRCallback：放置于定时器超时中断中</span></span><br><span class="line"><span class="comment">///</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MBRTUMasterRecvByteISRCallback</span><span class="params">(MBRTUMaterTypeDef* psModbus, <span class="keyword">uint8_t</span> ucByte)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MBRTUMasterTimerISRCallback</span><span class="params">(MBRTUMaterTypeDef* psModbus)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* MBRTU_MASTER_H_ */</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><code>mbrtu_master.c</code></p>
@@ -807,9 +813,9 @@
 <p><code>main.c</code></p>
 <p>TX </p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> MBRTUMaterTypeDef MBRTUHandle;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">/*.............*/</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">      HAL_GPIO_WritePin(GPIOD, GPIO_PIN_7, GPIO_PIN_SET); <span class="comment">//拉高发送</span></span><br><span class="line">      MBRTUMasterWriteSingleRegister(&amp;MBRTUHandle, <span class="number">1</span>, <span class="number">6</span>, <span class="number">0X0501</span>, <span class="number">100</span>);</span><br><span class="line">      HAL_Delay(<span class="number">1000</span>);</span><br><span class="line">  &#125;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/cdc1f6ecde37c0fefd307bf02f90b1ad.gif" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/cdc1f6ecde37c0fefd307bf02f90b1ad.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/cdc1f6ecde37c0fefd307bf02f90b1ad.gif" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/cdc1f6ecde37c0fefd307bf02f90b1ad.gif" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt=""></p>
 <h4 id="STM32主机Modbus-Slave从机通信"><a href="#STM32主机Modbus-Slave从机通信" class="headerlink" title="STM32主机Modbus Slave从机通信"></a>STM32主机Modbus Slave从机通信</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;mbrtu_master.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> MBRTUMaterTypeDef MBRTUHandle;</span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;=<span class="number">255</span>;j++) &#123;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">8</span>;i++) &#123;</span><br><span class="line">        MBRTUMasterWriteSingleRegister(&amp;MBRTUHandle, <span class="number">1</span>, i, j, <span class="number">100</span>);</span><br><span class="line">        HAL_Delay(<span class="number">1000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/05e1ae7876487613c3178ce86f2013cc.gif" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/05e1ae7876487613c3178ce86f2013cc.gif" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt=""></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/05e1ae7876487613c3178ce86f2013cc.gif" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/05e1ae7876487613c3178ce86f2013cc.gif" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt=""></p>
 <h4 id="STM32按键控制发送ZLAC8015D电机指令"><a href="#STM32按键控制发送ZLAC8015D电机指令" class="headerlink" title="STM32按键控制发送ZLAC8015D电机指令"></a>STM32按键控制发送ZLAC8015D电机指令</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">      <span class="keyword">if</span> (HAL_GPIO_ReadPin(WK_UP_GPIO_Port, WK_UP_Pin) == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="comment">/*延时一小段时间，消除抖动*/</span></span><br><span class="line">            HAL_Delay(<span class="number">10</span>);</span><br><span class="line">            <span class="comment">/*延时时间后再来判断按键状态，如果还是按下状态说明按键确实被按下*/</span></span><br><span class="line">            <span class="keyword">if</span> (HAL_GPIO_ReadPin(WK_UP_GPIO_Port, WK_UP_Pin) == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="comment">/*等待按键弹开才退出按键扫描函数*/</span></span><br><span class="line">                <span class="keyword">while</span> (HAL_GPIO_ReadPin(WK_UP_GPIO_Port, WK_UP_Pin) == <span class="number">1</span>);</span><br><span class="line">                MBRTUMasterWriteSingleRegister(&amp;MBRTUHandle, <span class="number">1</span>, <span class="number">0X200D</span>, <span class="number">0x0003</span>, <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//                MBRTUMasterWriteSingleRegister(&amp;MBRTUHandle, 1, 0X2088, 0X0064, 100);</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (HAL_GPIO_ReadPin(KEY0_GPIO_Port, KEY0_Pin) == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">/*延时一小段时间，消除抖动*/</span></span><br><span class="line">            HAL_Delay(<span class="number">10</span>);</span><br><span class="line">            <span class="comment">/*延时时间后再来判断按键状态，如果还是按下状态说明按键确实被按下*/</span></span><br><span class="line">            <span class="keyword">if</span> (HAL_GPIO_ReadPin(KEY0_GPIO_Port, KEY0_Pin) == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">/*等待按键弹开才退出按键扫描函数*/</span></span><br><span class="line">                <span class="keyword">while</span> (HAL_GPIO_ReadPin(KEY0_GPIO_Port, KEY0_Pin) == <span class="number">0</span>);</span><br><span class="line">           </span><br><span class="line">                MBRTUMasterWriteSingleRegister(&amp;MBRTUHandle, <span class="number">1</span>, <span class="number">0X200E</span>, <span class="number">0x0008</span>, <span class="number">100</span>);</span><br><span class="line">                HAL_Delay(<span class="number">10</span>);</span><br><span class="line">                MBRTUMasterWriteSingleRegister(&amp;MBRTUHandle, <span class="number">1</span>, <span class="number">0X200E</span>, <span class="number">0x0010</span>, <span class="number">100</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (HAL_GPIO_ReadPin(KEY1_GPIO_Port, KEY1_Pin) == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">/*延时一小段时间，消除抖动*/</span></span><br><span class="line">            HAL_Delay(<span class="number">10</span>);</span><br><span class="line">            <span class="comment">/*延时时间后再来判断按键状态，如果还是按下状态说明按键确实被按下*/</span></span><br><span class="line">            <span class="keyword">if</span> (HAL_GPIO_ReadPin(KEY1_GPIO_Port, KEY1_Pin) == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">/*等待按键弹开才退出按键扫描函数*/</span></span><br><span class="line">                <span class="keyword">while</span> (HAL_GPIO_ReadPin(KEY1_GPIO_Port, KEY1_Pin) == <span class="number">0</span>);</span><br><span class="line">                MBRTUMasterWriteSingleRegister(&amp;MBRTUHandle, <span class="number">1</span>, <span class="number">0X2088</span>, <span class="number">0X0064</span>, <span class="number">100</span>);</span><br><span class="line"><span class="comment">//                HAL_Delay(10);</span></span><br><span class="line">                MBRTUMasterWriteSingleRegister(&amp;MBRTUHandle, <span class="number">1</span>, <span class="number">0X2089</span>, <span class="number">0X0064</span>, <span class="number">100</span>);</span><br><span class="line">                HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_5);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>指令依次是</p>
 <p>设置速度模式</p>
@@ -817,8 +823,8 @@
 <p>电机同步启动</p>
 <p>设置左电机目标转速100RPM</p>
 <p>设置右点击目标转速100RPM</p>
-<p>、<img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/6b9319d49de1c8f7ffcfa7a7d75a6616.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/6b9319d49de1c8f7ffcfa7a7d75a6616.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230430183058256"></p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/cdb4964956f75fb731cfd64c634b34e7.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/cdb4964956f75fb731cfd64c634b34e7.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="image-20230429183327552"></p>
+<p>、<img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/6b9319d49de1c8f7ffcfa7a7d75a6616.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/6b9319d49de1c8f7ffcfa7a7d75a6616.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230430183058256"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/cdb4964956f75fb731cfd64c634b34e7.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/cdb4964956f75fb731cfd64c634b34e7.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230429183327552"></p>
 
       </div>
       <div class="post-tags-categories">
@@ -862,7 +868,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
     <a href="/2023/07/13/ROS-Moveit%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-nav-link">
       <div class="title">
@@ -882,7 +888,7 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
     <a href="/2023/04/16/OpenMV%E5%88%9D%E4%BD%93%E9%AA%8C/" class="post-nav-link">
       <div class="title">
@@ -937,10 +943,10 @@ OPENMV4-STM32H743
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -994,7 +1000,7 @@ OPENMV4-STM32H743
 <!-- 文章详情页的分享 -->
 <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
-<script src="/js/shareJs/social-share.min.js"></script>
+<script defer src="/js/shareJs/social-share.min.js"></script>
 </script>
 
 <style>
@@ -1012,13 +1018,13 @@ OPENMV4-STM32H743
   <div id="myComment">
     
       
-<section id="comments" style="padding: 1em; margin: 15px auto;"
-	class="animated bounceInUp">
+<section id="comments" style="padding: 1em;">
 	<div id="vcomment" class="comment"></div>
 </section>
 <style>
 	#comments {
 		background: rgba(255,255,255,0.9);
+		border-radius: 8px;
 	}
 	#veditor {
 		background-image: url('/medias/monkey.gif');
@@ -1032,13 +1038,7 @@ OPENMV4-STM32H743
 		background-position-y: 200px;
 		transition: all 0.2s ease-in-out 0s;
 	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
+	
 	#vcomment .vcards .vcard .vhead .vsys i {
 		display: none;
 	}
@@ -1110,81 +1110,122 @@ OPENMV4-STM32H743
     
   </div>
 
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
 
 
   </div>
 
   <!-- 目录 -->
-  <!-- 文章详情页右侧目录 -->
-
-  <div class="toc-aside">
-    <div class="toc-main">
-      <div class="toc-aside-title">
-        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img src='/medias/touxiang.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
         
-          <div class="toc-open-close">本文目录</div>
+          <h2>Ychui's Blog</h2>
+        
+        
+          <p>write code and love life</p>
+
+        
+        
+          <p><span id="jinrishici-sentence">Ychui's Blog</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
         
       </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://blog.csdn.net/weixin_51002159?spm=1000.2115.3001.5343"
+              class="social fab fa-cuttlefish flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/GHIgher12"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=2535410943"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
       <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#STM32HAL%E5%BA%93RS485-ModBus%E5%8D%8F%E8%AE%AE%E6%8E%A7%E5%88%B6%E4%BC%BA%E6%9C%8D%E7%94%B5%E6%9C%BA"><span class="toc-text">STM32HAL库RS485-ModBus协议控制伺服电机</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E8%BD%A6%E4%B8%BB%E8%A6%81%E6%9E%B6%E6%9E%84"><span class="toc-text">小车主要架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E6%9C%BA%E5%9E%8B%E5%8F%B7"><span class="toc-text">电机型号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AE%E6%AF%82%E9%A9%B1%E5%8A%A8%E5%99%A8ZLAC8015D"><span class="toc-text">轮毂驱动器ZLAC8015D</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RS485%E9%80%9A%E4%BF%A1"><span class="toc-text">RS485通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STM32%E5%AE%9E%E7%8E%B0%E4%B8%BB%E4%BB%8E%E6%9C%BARS485%E9%80%9A%E4%BF%A1"><span class="toc-text">STM32实现主从机RS485通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modbus%E5%8D%8F%E8%AE%AE"><span class="toc-text">Modbus协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Modbus-Poll%E4%B8%BB%E6%9C%BAModbus-Slave%E4%BB%8E%E6%9C%BA%E9%80%9A%E4%BF%A1"><span class="toc-text">Modbus Poll主机Modbus Slave从机通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSCOM%E4%B8%BB%E6%9C%BAModbus-Slave%E4%BB%8E%E6%9C%BA%E9%80%9A%E4%BF%A1"><span class="toc-text">SSCOM主机Modbus Slave从机通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STM32%E9%80%9A%E8%BF%87RS485%E5%AE%8C%E6%88%90Modbus%E5%8D%8F%E8%AE%AE%E9%80%9A%E4%BF%A1"><span class="toc-text">STM32通过RS485完成Modbus协议通信</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%BB%E6%A4%8DModbus%E5%8D%8F%E8%AE%AE"><span class="toc-text">移植Modbus协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#STM32%E4%B8%BB%E6%9C%BAModbus-Slave%E4%BB%8E%E6%9C%BA%E9%80%9A%E4%BF%A1"><span class="toc-text">STM32主机Modbus Slave从机通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#STM32%E6%8C%89%E9%94%AE%E6%8E%A7%E5%88%B6%E5%8F%91%E9%80%81ZLAC8015D%E7%94%B5%E6%9C%BA%E6%8C%87%E4%BB%A4"><span class="toc-text">STM32按键控制发送ZLAC8015D电机指令</span></a></li></ol></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
   </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  <!-- 手机端目录按钮 -->
-  <div id="toc-mobile-btn">
-    <i class="fas fa-list-ul" aria-hidden="true"></i>
+      
+    
   </div>
-
-
-<script>
-  function closeToc(init) {
-    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
-    $(".toc-content").css({'width': 0});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
-  };
-  function openToc() {
-    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
-    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
-    $(".toc-content").css({'width': '300px'});
-    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
-  }
-  function openBtnClickFn () {
-    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-    let open = eval('' || 'true');
-    openOrCloseBtn.click(function() {
-      if (open) {
-        closeToc();
-        open = false;
-      } else {
-        openToc();
-        open = true;
-      }
-    });
-  };
-  openBtnClickFn();
-  initCloseTocWidth(true);
-
-  function initCloseTocWidth(init) {
-    if (window.innerWidth >= 992) {
-      let isClose = false;
-      isClose && closeToc(init)
-    }
-  }
-
-  document.addEventListener('pjax:complete', function () {
-    $(".toc-aside").css({'transition': 'no'});
-  })
-  document.addEventListener('pjax:complete', function () {
-    openBtnClickFn();
-  })
-  
-</script>
+</aside>
 
   <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
+  <script defer src="/js/wrapImage.js"></script>
 </div>
 
 <!-- 文章详情页背景图 -->
@@ -1338,15 +1379,16 @@ OPENMV4-STM32H743
 </script>
 
 
-                            </main>
-                          </div>
+      </main>
+    </div>
 
-                          <!-- 页脚 -->
-                          
+    <!-- 页脚 -->
+    
   
-  <!-- 底部鱼儿跳动效果，依赖于jquery-->
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
 <div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
-<script>
+<script defer>
   var RENDERER = {
     POINT_INTERVAL: 5,
     FISH_COUNT: 3,
@@ -1501,6 +1543,7 @@ OPENMV4-STM32H743
     })
   });
 </script>
+  
   <div class="footer bg-color">
     <div class="footer-main">
       
@@ -1543,65 +1586,52 @@ OPENMV4-STM32H743
 
 
 
-                            <!-- 渲染暗黑按钮 -->
-                            
-                              <div class="dark">
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
   <div class="dark-content">
-    <i class="fas fa-moon" aria-hidden="true"></i>
-    <!-- <span>关灯</span> -->
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
   </div>
-  
 </div>
 
-<script>
+<script defer>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
     if (isDark) {
-      $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-          </div>
-          `
-        );
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
     }
-    $('.dark').click(function() {
-      if ($(document.body).is('.darkModel')) {
-        $(document.body).removeClass('darkModel');
-        localStorage.setItem('dark', false);
-        $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-moon" aria-hidden="true"></i>
-          </div>
-          `
-        );
-      } else {
-        $(document.body).addClass('darkModel');
-        localStorage.setItem('dark', true);
-        $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-          </div>
-          `
-        );
-      }
-    })
-  })
+  }
 </script>
-                                
-                                  <!-- 渲染回到顶部按钮 -->
-                                  
-                                    <div class="goTop top-btn-color" pointer>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
   <i class="fas fa-arrow-up" aria-hidden="true"></i>
 </div>
-<script src="/js/goTop.js"></script>
+<script defer src="/js/goTop.js"></script>
 
-                                      
-                                        <!-- 渲染左下角音乐播放器 -->
-                                        
-                                          <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
 <style>
 .aplayer .aplayer-lrc p {
   
@@ -1650,22 +1680,21 @@ OPENMV4-STM32H743
     bottom: 300px;
   }
 </style> -->
-<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-<script src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
-                                            
+<script defer src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
 
-                                              <!-- 图片放大 -->
-                                              
-                                                <script
-                                                  src="/js/fancybox/jquery.fancybox.min.js"></script>
-                                                
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
 
-                                                  <!-- 百度解析 -->
-                                                  <!-- Baidu Analytics -->
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
 
-                                                    <!-- Baidu Push -->
+    <!-- Baidu Push -->
 
-<script>
+<script async>
     (function () {
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
@@ -1679,23 +1708,24 @@ OPENMV4-STM32H743
     })();
 </script>
 
+    
+    <!-- 背景彩带 -->
+    
+    
+      <script type="text/javascript" color="0,0,0" opacity='0.6' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+    
 
-                                                      <!-- 背景彩带 -->
-                                                      
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script> -->
 
-                                                          
-                                                            <script type="text/javascript" color="0,0,0" opacity='0.6'
-                                                              zIndex="-1" count="99"
-                                                              src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
-                                                            
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
 
-                                                              <script
-                                                                src="/js/utils/index.js"></script>
-                                                              <script src="/js/app.js"></script>
 
-                                                              <!-- 文章目录所需js -->
-<link href="/js/tocbot/tocbot.css" rel="stylesheet">
-<script src="/js/tocbot/tocbot.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
 
 <script>
   var headerEl = 'h2, h3, h4',  //headers 
@@ -1710,12 +1740,15 @@ OPENMV4-STM32H743
     // Which headings to grab inside of the contentSelector element.
     headingSelector: headerEl,
     scrollSmooth: true,
-    scrollSmoothOffset: -80,
-    headingsOffset: -($(window).height() * 0.4 - 45),
-    positionFixedSelector: '.toc-main',
-    positionFixedClass: 'is-position-fixed',
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
     fixedSidebarOffset: 'auto',
     activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
     // onClick: function (e) {},
   }
   if ($('.toc').length > 0) {
@@ -1768,7 +1801,7 @@ OPENMV4-STM32H743
     if (activePosition > (document.documentElement.clientHeight - 100)) {
       $cardToc.scrollTop = sidebarScrollTop + 150
     }
-    if (activePosition < 100) {
+    if (activePosition < 150) {
       $cardToc.scrollTop = sidebarScrollTop - 150
     }
   }
@@ -1788,7 +1821,7 @@ OPENMV4-STM32H743
   
   // 手机端toc按钮点击出现目录
   const mobileTocClick = function () {
-    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
     const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
     let right = '45px';
     if (window.innerWidth >= 551 && window.innerWidth <= 992) {
@@ -1820,7 +1853,7 @@ OPENMV4-STM32H743
 </script>
 
 <style>
-  .is-position-fixed {
+  /* .is-position-fixed {
     position: sticky !important;
     top: 74px;
   }
@@ -1835,14 +1868,13 @@ OPENMV4-STM32H743
     position: absolute;
     left: 12px;
     top: 0;
-  }
-</style> 
+  } */
+</style>
+ 
 
 <!-- 设置导航背景 -->
 <script>
   let setHeaderClass = () => {
-    const headerMenuTransparent = true;
-    if (!headerMenuTransparent) { return; }
     const nav = $('#navHeader');
     const navTop = nav.outerHeight();
     const winTop = $(window).scrollTop();
@@ -1890,6 +1922,61 @@ OPENMV4-STM32H743
   document.addEventListener('pjax:complete', function () {
     if (typeof IssuesAPI == "undefined") {
       loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
     }
   })
 </script>
@@ -1995,15 +2082,15 @@ OPENMV4-STM32H743
 <!-- 评论所需js -->
 
   
-    <!-- 弹幕所需的css和js -->
-    
+        
   <!-- 弹幕插件 -->
   <link href="/js/danmu/barrager.css" rel="stylesheet">
   <script src="/js/danmu/jquery.barrager.js"></script>
 
 <!-- 具体js，请前往valine/script.ejs查看 -->
 
-    <script>
+      
+        <script>
   var requiredFields = '';
   requiredFields = requiredFields.split(',');
   comment_el = '.comment';
@@ -2130,7 +2217,7 @@ OPENMV4-STM32H743
   });
 </script>
 
-  
+      
 
 
 <!-- 鼠标点击特效 -->
@@ -2138,8 +2225,8 @@ OPENMV4-STM32H743
 
   
     <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
-    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-    <script src="/js/cursor/explosion.min.js"></script>
+    <script async src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script async src="/js/cursor/explosion.min.js"></script>
   
 
 
@@ -2148,17 +2235,69 @@ OPENMV4-STM32H743
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
 
 
-                                                                <!-- pjax -->
-                                                                
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
 
 <!-- pjax -->
 
 
   <script src="/js/pjax@0.2.8/index.js"></script>
   
-    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
-
-<div class="pjax-animate">
+    <div class="pjax-animate">
   
     <div class="loading-circle"><div id="loader-circle"></div></div>
     <script>
@@ -2234,7 +2373,7 @@ OPENMV4-STM32H743
 
 
 
-                  <script type="text/x-mathjax-config">
+  <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ["$","$"], ["\\(","\\)"] ],
@@ -2250,5 +2389,4 @@ OPENMV4-STM32H743
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-
 </html>
