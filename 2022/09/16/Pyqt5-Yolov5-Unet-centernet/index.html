@@ -55,17 +55,7 @@
 
     <!-- import link -->
     
-        
-            <link href="/bubbly-bg/bubbly.css" rel="stylesheet">
-        
-    
     <!-- import script -->
-    
-        
-            <script src="/bubbly-bg/bubbly.js"></script>
-        
-            <script src="/bubbly-bg/index.js"></script>
-        
     
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Ychui's Blog" type="application/atom+xml">
@@ -191,7 +181,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -329,7 +319,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -585,23 +575,23 @@
     <article class="post post-detail">
       <div class="post-content">
         <h1 id="Pyqt5与Unet、yolov5、centernet结合"><a href="#Pyqt5与Unet、yolov5、centernet结合" class="headerlink" title="Pyqt5与Unet、yolov5、centernet结合"></a>Pyqt5与Unet、yolov5、centernet结合</h1><h2 id="创建导入文件按钮和显示图片"><a href="#创建导入文件按钮和显示图片" class="headerlink" title="创建导入文件按钮和显示图片"></a>创建导入文件按钮和显示图片</h2><p>使用Qtdesigner创建QpushButton和QLabel类，保存，使用PyUIC转换成python代码，编写当按钮被点击就会发出信号的处理函数<em>Importfile,返回文件路径，用opencv读取文件路径获取图片，转换图片格式由BGR转为RGB，根据Label的大小来使用</em>cv2.resize函数调整图片大小，使图片使用Label框，然后将cv 图片转换成 qt图片格式，显示在Label中。</p>
-<p>  <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image002.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image002.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="img">  </p>
+<p>  <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image002.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image002.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img">  </p>
 <h2 id="显示视频"><a href="#显示视频" class="headerlink" title="显示视频"></a>显示视频</h2><p>将文件路径进行字符串操作，获取到文件类型，进而判断是图片还是视频，来进行展示。定义展示视频函数和调整图片大小函数，通过读取视频文件路径获取到视频里的每一帧，在进行图片大小的挑战和图片格式的转换来显示视频。</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image004.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image004.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="img"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image004.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image004.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img"></p>
 <h2 id="PyQt5与Yolov5结合"><a href="#PyQt5与Yolov5结合" class="headerlink" title="PyQt5与Yolov5结合"></a>PyQt5与Yolov5结合</h2><p>将Yolov5关于detect图像的负责处理检测的逻辑，具体包括实现模型选择，初始化，图片/视频/摄像头检测包装成一个对象，视频检测部分使用Qthead实现多线程处理。</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image006.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image006.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="img"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image006.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image006.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img"></p>
 <p>利用导入yolov5权重按钮，将yolov5的权重文件赋值给导入的文件，点击检测文件按钮传递信号到<strong><em>term_or_con\</em></strong>函数，执行run函数运行多线程开始检测获得检测后的图片和检测目标的类别及数目，然后使用lambel自定义函数调用<strong><em>show_image\</em></strong>，在相应的label上显示图片或视频，在listWidget显示类别数目。</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image008.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image008.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="img"></p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image010.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image010.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="img"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image008.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image008.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image010.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image010.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img"></p>
 <h2 id="PyQt5与Centernet结合"><a href="#PyQt5与Centernet结合" class="headerlink" title="PyQt5与Centernet结合"></a>PyQt5与Centernet结合</h2><p>导入Centernet对象，定义self.centernet,对centernet的模型配置默认路径，设置centernet需要检测图片传递的参数count（是否需要计数）和crop（是否需要裁剪）</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image012.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image012.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="img"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image012.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image012.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img"></p>
 <p>在show_net_img和show_net_video中分别对图片进行检测和类别名称和数目展示</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image014.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image014.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="img"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image014.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image014.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img"></p>
 <h2 id="PyQt5与Unet结合"><a href="#PyQt5与Unet结合" class="headerlink" title="PyQt5与Unet结合"></a>PyQt5与Unet结合</h2><p>同Centernet一样，首先调入Unet对象，对其中的权重、类别参数做默认配置，分别在图像及视频检测中添加unet检测图像函数，并在相应的label窗口中显示检测结果。</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image016.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image016.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="img"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image016.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image016.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img"></p>
 <h2 id="优化界面"><a href="#优化界面" class="headerlink" title="优化界面"></a>优化界面</h2><p>增加置信度滑块、按钮的启用与禁用状态、各个控件的qss样式、界面背景和图标、退出提示框</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image002.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image002.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="img"></p>
-<h2 id="版本迭代过程"><a href="#版本迭代过程" class="headerlink" title="版本迭代过程"></a>版本迭代过程</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220916174628069.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220916174628069.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220916174628069"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image002.jpg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/clip_image002.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img"></p>
+<h2 id="版本迭代过程"><a href="#版本迭代过程" class="headerlink" title="版本迭代过程"></a>版本迭代过程</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220916174628069.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220916174628069.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20220916174628069"></p>
 <h2 id="结果演示"><a href="#结果演示" class="headerlink" title="结果演示"></a>结果演示</h2><p><a target="_blank" rel="noopener" href="https://download.csdn.net/download/weixin_51002159/86501298?spm=1001.2014.3001.5503">CSDN程序源码</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/GHigher12/Pyqt5_yolov5_unet_centernet">想白嫖的</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1oa41197r2?vd_source=b57e293dfa3402722a1522f3d1c08c97#reply130279227488">演示视频</a></p>
@@ -656,7 +646,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/15.png" class="lazyload placeholder" data-srcset="/medias/15.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/15.png" class="lazyload placeholder" data-srcset="/medias/15.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
     </div>
     <a href="/2022/10/01/RaspberryPi%E7%9A%84%E5%88%9D%E6%AC%A1%E4%BD%BF%E7%94%A8/" class="post-nav-link">
       <div class="title">
@@ -682,7 +672,7 @@ SD卡
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" src="" alt="">
     </div>
     <a href="/2022/09/02/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%B8%89/" class="post-nav-link">
       <div class="title">
@@ -736,10 +726,10 @@ SD卡
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -2166,5 +2156,20 @@ SD卡
 
 
 
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

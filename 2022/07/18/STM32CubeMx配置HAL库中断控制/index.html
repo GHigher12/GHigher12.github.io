@@ -55,17 +55,7 @@
 
     <!-- import link -->
     
-        
-            <link href="/bubbly-bg/bubbly.css" rel="stylesheet">
-        
-    
     <!-- import script -->
-    
-        
-            <script src="/bubbly-bg/bubbly.js"></script>
-        
-            <script src="/bubbly-bg/index.js"></script>
-        
     
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Ychui's Blog" type="application/atom+xml">
@@ -191,7 +181,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -329,7 +319,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -614,11 +604,11 @@
 </tbody>
 </table>
 </div>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718180730151.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718180730151.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220718180730151"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718180730151.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718180730151.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20220718180730151"></p>
 <h2 id="NVIC配置"><a href="#NVIC配置" class="headerlink" title="NVIC配置"></a>NVIC配置</h2><p>设置优先级组<code>NVIC_PRIORITYGROUP_2</code></p>
 <p>设置中断<code>EXTI line0 interrupt</code>和<code>EXTI line[9:5] interrupt</code></p>
 <p>启动中断<code>Enabel</code></p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718165640952.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718165640952.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220718165640952"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718165640952.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718165640952.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20220718165640952"></p>
 <h2 id="GENERATE-CODE"><a href="#GENERATE-CODE" class="headerlink" title="GENERATE CODE"></a>GENERATE CODE</h2><p><code>gpio.c</code></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MX_GPIO_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">  GPIO_InitTypeDef GPIO_InitStruct = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* GPIO Ports Clock Enable */</span></span><br><span class="line">  __HAL_RCC_GPIOD_CLK_ENABLE();</span><br><span class="line">  __HAL_RCC_GPIOA_CLK_ENABLE();</span><br><span class="line">  __HAL_RCC_GPIOC_CLK_ENABLE();</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin Output Level */</span></span><br><span class="line">  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin Output Level */</span></span><br><span class="line">  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin : PtPin */</span></span><br><span class="line">  GPIO_InitStruct.Pin = WK_UP_EXTI_Pin;</span><br><span class="line">  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;</span><br><span class="line">  GPIO_InitStruct.Pull = GPIO_PULLDOWN;</span><br><span class="line">  HAL_GPIO_Init(WK_UP_EXTI_GPIO_Port, &amp;GPIO_InitStruct);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin : PtPin */</span></span><br><span class="line">  GPIO_InitStruct.Pin = KEY0_EXTI_Pin;</span><br><span class="line">  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;</span><br><span class="line">  GPIO_InitStruct.Pull = GPIO_NOPULL;</span><br><span class="line">  HAL_GPIO_Init(KEY0_EXTI_GPIO_Port, &amp;GPIO_InitStruct);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin : PtPin */</span></span><br><span class="line">  GPIO_InitStruct.Pin = LED0_Pin;</span><br><span class="line">  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;</span><br><span class="line">  GPIO_InitStruct.Pull = GPIO_NOPULL;</span><br><span class="line">  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;</span><br><span class="line">  HAL_GPIO_Init(LED0_GPIO_Port, &amp;GPIO_InitStruct);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin : PtPin */</span></span><br><span class="line">  GPIO_InitStruct.Pin = KEY1_Pin;</span><br><span class="line">  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;</span><br><span class="line">  GPIO_InitStruct.Pull = GPIO_NOPULL;</span><br><span class="line">  HAL_GPIO_Init(KEY1_GPIO_Port, &amp;GPIO_InitStruct);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*Configure GPIO pin : PtPin */</span></span><br><span class="line">  GPIO_InitStruct.Pin = LED1_Pin;</span><br><span class="line">  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;</span><br><span class="line">  GPIO_InitStruct.Pull = GPIO_NOPULL;</span><br><span class="line">  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;</span><br><span class="line">  HAL_GPIO_Init(LED1_GPIO_Port, &amp;GPIO_InitStruct);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* EXTI interrupt init*/</span></span><br><span class="line">  HAL_NVIC_SetPriority(EXTI0_IRQn, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  HAL_NVIC_EnableIRQ(EXTI0_IRQn);</span><br><span class="line"></span><br><span class="line">  HAL_NVIC_SetPriority(EXTI9_5_IRQn, <span class="number">2</span>, <span class="number">2</span>);</span><br><span class="line">  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>stm32f1xx_hal_msp.c</code></p>
@@ -626,7 +616,7 @@
 <p><code>stm32f1xx_it.c</code>文件中，有两个中断服务函数</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI0_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN EXTI0_IRQn 0 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END EXTI0_IRQn 0 */</span></span><br><span class="line">  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN EXTI0_IRQn 1 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END EXTI0_IRQn 1 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * @brief This function handles EXTI line[9:5] interrupts.</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI9_5_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN EXTI9_5_IRQn 0 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END EXTI9_5_IRQn 0 */</span></span><br><span class="line">  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_5);</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN EXTI9_5_IRQn 1 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END EXTI9_5_IRQn 1 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="编写中断回调函数"><a href="#编写中断回调函数" class="headerlink" title="编写中断回调函数"></a>编写中断回调函数</h2><p>找到中断服务函数，按住<code>ctrl+鼠标左键</code>点击<code>HAL_GPIO_EXTI_IRQHandler</code>,找到函数定义</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718181838325.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718181838325.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220718181838325"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718181838325.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220718181838325.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20220718181838325"></p>
 <p><code>HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)</code>即为中断回调函数</p>
 <p>在<code>stm32f1xx_it.c</code>文件中编写</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HAL_GPIO_EXTI_Callback</span><span class="params">(<span class="keyword">uint16_t</span> GPIO_Pin)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    HAL_Delay(<span class="number">10</span>);</span><br><span class="line">    <span class="keyword">switch</span>(GPIO_Pin)&#123;</span><br><span class="line">        <span class="keyword">case</span> GPIO_PIN_0:</span><br><span class="line">            HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> KEY0_EXTI_Pin:</span><br><span class="line">            HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -679,7 +669,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
     </div>
     <a href="/2022/07/18/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" class="post-nav-link">
       <div class="title">
@@ -701,7 +691,7 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" src="" alt="">
     </div>
     <a href="/2022/07/18/typora%E4%B8%ADPicGo-Core%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/" class="post-nav-link">
       <div class="title">
@@ -756,10 +746,10 @@
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -2186,5 +2176,20 @@
 
 
 
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

@@ -55,17 +55,7 @@
 
     <!-- import link -->
     
-        
-            <link href="/bubbly-bg/bubbly.css" rel="stylesheet">
-        
-    
     <!-- import script -->
-    
-        
-            <script src="/bubbly-bg/bubbly.js"></script>
-        
-            <script src="/bubbly-bg/index.js"></script>
-        
     
 
 <meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Ychui's Blog" type="application/atom+xml">
@@ -191,7 +181,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -329,7 +319,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -587,10 +577,10 @@
         <h1 id="Openmv初体验"><a href="#Openmv初体验" class="headerlink" title="Openmv初体验"></a>Openmv初体验</h1><p>OpenMV IDE</p>
 <p>OPENMV4-STM32H743</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sensor, image, time</span><br><span class="line">sensor.reset()</span><br><span class="line">sensor.set_pixformat(sensor.RGB565) <span class="comment"># 图像彩色/灰白</span></span><br><span class="line">sensor.set_framesize(sensor.QVGA) <span class="comment"># 图像大小</span></span><br><span class="line">sensor.skip_frames(time = <span class="number">2000</span>) <span class="comment"># 几秒后开始或跳过几帧</span></span><br><span class="line">cnt = <span class="number">0</span></span><br><span class="line"><span class="comment">#sensor.set_windowing((120, 120)) # 设置中间窗口区域</span></span><br><span class="line"><span class="comment"># 翻转</span></span><br><span class="line">sensor.set_hmirror(<span class="literal">True</span>)</span><br><span class="line"><span class="comment">#sensor.set_vflip(True)</span></span><br><span class="line"><span class="built_in">print</span>(sensor.width(), sensor.height(), sep=<span class="string">&quot; &quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(sensor.get_pixformat())</span><br><span class="line">ROI = [<span class="number">60</span>, <span class="number">50</span>, <span class="number">60</span>, <span class="number">60</span>]</span><br><span class="line">Red = (<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">Green = (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>)</span><br><span class="line">Blue = (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>)</span><br><span class="line">White = (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    cnt += <span class="number">1</span></span><br><span class="line">    img = sensor.snapshot() <span class="comment"># 获取图像</span></span><br><span class="line">    static = img.get_statistics(roi = ROI)</span><br><span class="line">    <span class="comment">#time.sleep(1.0)</span></span><br><span class="line">    <span class="comment">#print(type(img))</span></span><br><span class="line">    <span class="comment">#print(img.get_pixel(160, 120))</span></span><br><span class="line">    <span class="comment">#img.set_pixel(160, 120, (255, 255, 0))</span></span><br><span class="line">    <span class="comment">#img.invert() # 二值化图像</span></span><br><span class="line">    <span class="keyword">if</span> cnt == <span class="number">20</span>:</span><br><span class="line">        cnt = <span class="number">0</span></span><br><span class="line">        <span class="comment">#print(img.width(), img.height(), img.format(), img.size(), sep=&quot; &quot;)</span></span><br><span class="line">        color_l = static.l_mode()</span><br><span class="line">        color_a = static.a_mode()</span><br><span class="line">        color_b = static.b_mode()</span><br><span class="line">        <span class="built_in">print</span>(color_l, color_a, color_b, sep=<span class="string">&quot; &quot;</span>)</span><br><span class="line">    <span class="comment"># 绘图</span></span><br><span class="line">    img.draw_rectangle(ROI, color=Red, thickness=<span class="number">5</span>) <span class="comment"># (x, y, w, h)</span></span><br><span class="line">    <span class="comment">#img.draw_line((10, 10, 100, 200), color=Green) # x0, y0, x1, y1</span></span><br><span class="line">    img.draw_circle(<span class="number">160</span>, <span class="number">120</span>, <span class="number">50</span>, color=Blue, fill=<span class="literal">True</span>) <span class="comment"># x, y, r</span></span><br><span class="line">    img.draw_cross(<span class="number">10</span>, <span class="number">20</span>, size=<span class="number">10</span>, color=White)</span><br><span class="line">    img.draw_string(<span class="number">100</span>, <span class="number">150</span>, <span class="string">&quot;OpenMV&quot;</span>, color=Red)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/ef313d885c4c8ef30479ef883d3ffb0f.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/ef313d885c4c8ef30479ef883d3ffb0f.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20230415212017939"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/ef313d885c4c8ef30479ef883d3ffb0f.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/ef313d885c4c8ef30479ef883d3ffb0f.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20230415212017939"></p>
 <p>颜色识别</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sensor, image, time</span><br><span class="line"></span><br><span class="line">sensor.reset()</span><br><span class="line">sensor.set_pixformat(sensor.RGB565)</span><br><span class="line">sensor.set_framesize(sensor.QVGA)</span><br><span class="line">sensor.skip_frames(time = <span class="number">2000</span>)</span><br><span class="line">w = sensor.width()</span><br><span class="line">h = sensor.height()</span><br><span class="line">sensor.set_windowing((h//<span class="number">2</span>, h//<span class="number">2</span>))</span><br><span class="line">clock = time.clock()</span><br><span class="line">red = (<span class="number">29</span>, <span class="number">61</span>, <span class="number">32</span>, <span class="number">127</span>, -<span class="number">128</span>, <span class="number">127</span>) <span class="comment"># 阈值</span></span><br><span class="line">blue = (<span class="number">32</span>, <span class="number">61</span>, <span class="number">10</span>, <span class="number">44</span>, -<span class="number">128</span>, -<span class="number">53</span>)</span><br><span class="line"><span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">    clock.tick()</span><br><span class="line">    img = sensor.snapshot()</span><br><span class="line">    <span class="comment">#print(clock.fps())</span></span><br><span class="line">    blobred = img.find_blobs([red],merge=<span class="literal">True</span>)</span><br><span class="line">    blobblue = img.find_blobs([blue],merge=<span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">for</span> blob <span class="keyword">in</span> blobred:</span><br><span class="line">        <span class="comment">#print(blob)</span></span><br><span class="line">        img.draw_rectangle(blob.rect(), thickness=<span class="number">5</span>, color=(<span class="number">0</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> blobblue:</span><br><span class="line">        <span class="comment">#print(blob)</span></span><br><span class="line">        img.draw_rectangle(i.rect(), thickness=<span class="number">5</span>, color=(<span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>))</span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/ab434b8ef7cd3c5c5172dfcbe89021f9.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/ab434b8ef7cd3c5c5172dfcbe89021f9.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20230415222308909"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/ab434b8ef7cd3c5c5172dfcbe89021f9.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/ab434b8ef7cd3c5c5172dfcbe89021f9.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20230415222308909"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&quot;x&quot;</span>:<span class="number">12</span>, <span class="string">&quot;y&quot;</span>:<span class="number">16</span>, <span class="string">&quot;w&quot;</span>:<span class="number">28</span>, <span class="string">&quot;h&quot;</span>:<span class="number">24</span>, <span class="string">&quot;pixels&quot;</span>:<span class="number">584</span>, <span class="string">&quot;cx&quot;</span>:<span class="number">25</span>, <span class="string">&quot;cy&quot;</span>:<span class="number">28</span>, <span class="string">&quot;rotation&quot;</span>:<span class="number">3.102839</span>, <span class="string">&quot;code&quot;</span>:<span class="number">1</span>, <span class="string">&quot;count&quot;</span>:<span class="number">1</span>, <span class="string">&quot;perimeter&quot;</span>:<span class="number">142</span>, <span class="string">&quot;roundness&quot;</span>:<span class="number">0.815352</span>&#125;</span><br></pre></td></tr></table></figure>
 <p>blob有多个方法：</p>
 <ul>
@@ -671,7 +661,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/15.png" class="lazyload placeholder" data-srcset="/medias/15.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/15.png" class="lazyload placeholder" data-srcset="/medias/15.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
     </div>
     <a href="/2023/05/27/STM32HAL%E5%BA%93RS485-ModBus%E5%8D%8F%E8%AE%AE%E6%8E%A7%E5%88%B6%E4%BC%BA%E6%9C%8D%E7%94%B5%E6%9C%BA/" class="post-nav-link">
       <div class="title">
@@ -691,7 +681,7 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/13.png" class="lazyload placeholder" data-srcset="/medias/13.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/13.png" class="lazyload placeholder" data-srcset="/medias/13.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" src="" alt="">
     </div>
     <a href="/2023/04/09/STM32%E4%BD%BF%E7%94%A8OLED%E7%A7%BB%E6%A4%8DU8g2%E5%BA%93/" class="post-nav-link">
       <div class="title">
@@ -746,10 +736,10 @@ I2C通信OLED 12
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -2176,5 +2166,20 @@ I2C通信OLED 12
 
 
 
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
