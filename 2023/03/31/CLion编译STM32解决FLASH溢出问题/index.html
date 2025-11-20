@@ -56,17 +56,15 @@
     <!-- import link -->
     
         
-            
-        
-            
+            <link href="/bubbly-bg/bubbly.css" rel="stylesheet">
         
     
     <!-- import script -->
     
         
-            
+            <script src="/bubbly-bg/bubbly.js"></script>
         
-            
+            <script src="/bubbly-bg/index.js"></script>
         
     
 
@@ -193,7 +191,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -331,7 +329,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -588,11 +586,11 @@
       <div class="post-content">
         <h1 id="Clion编译STM32解决FLASH溢出问题"><a href="#Clion编译STM32解决FLASH溢出问题" class="headerlink" title="Clion编译STM32解决FLASH溢出问题"></a>Clion编译STM32解决FLASH溢出问题</h1><h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ld.exe: MPU6050.elf section `.data&#x27;  will not fit in region `FLASH&#x27;</span><br><span class="line">ld.exe: region `FLASH‘ overflowed by xxx bytes</span><br></pre></td></tr></table></figure>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>改变<code>STM32F103C8Tx_FLASH.ld</code>中FLASH大小</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b030187d80005917ab1e4d8da4000585.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b030187d80005917ab1e4d8da4000585.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230329183345675"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b030187d80005917ab1e4d8da4000585.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/b030187d80005917ab1e4d8da4000585.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20230329183345675"></p>
 <p>改为256K</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MEMORY</span><br><span class="line">&#123;</span><br><span class="line">RAM (xrw)      : ORIGIN = <span class="number">0x20000000</span>, LENGTH = <span class="number">20</span>K</span><br><span class="line">FLASH (rx)      : ORIGIN = <span class="number">0x8000000</span>, LENGTH = <span class="number">256</span>K</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="错误-1"><a href="#错误-1" class="headerlink" title="错误"></a>错误</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arm-none-eabi-gcc: error: Core/Inc/test.h: No such file or directory</span><br><span class="line">arm-none-eabi-gcc: error: Core/Src/test.c: No such file or directory</span><br></pre></td></tr></table></figure>
-<h2 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h2><p>修改<code>CMakeList.txt</code><br><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/125f38b9d5d33ec72338dba6fdefe0ad.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/125f38b9d5d33ec72338dba6fdefe0ad.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230329193312612"></p>
+<h2 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h2><p>修改<code>CMakeList.txt</code><br><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/125f38b9d5d33ec72338dba6fdefe0ad.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/125f38b9d5d33ec72338dba6fdefe0ad.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20230329193312612"></p>
 <p>去掉后面的test.h和test.c文件及路径</p>
 
       </div>
@@ -641,7 +639,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="">
     </div>
     <a href="/2023/03/31/ROS2%E6%98%BE%E7%A4%BAurdf%E6%A8%A1%E5%9E%8B%E4%B8%ADNo%20transform%20from%20%5BXX_Link%5D%20to%20%5Bbase_link%5D/" class="post-nav-link">
       <div class="title">
@@ -662,7 +660,7 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/8.jpg" class="lazyload placeholder" data-srcset="/medias/8.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/8.jpg" class="lazyload placeholder" data-srcset="/medias/8.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" src="" alt="">
     </div>
     <a href="/2023/03/26/Ubuntu22-04%E5%AE%89%E8%A3%85ROS2/" class="post-nav-link">
       <div class="title">
@@ -718,10 +716,10 @@ locale
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -2148,20 +2146,5 @@ locale
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

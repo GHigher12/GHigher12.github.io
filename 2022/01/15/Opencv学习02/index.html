@@ -56,17 +56,15 @@
     <!-- import link -->
     
         
-            
-        
-            
+            <link href="/bubbly-bg/bubbly.css" rel="stylesheet">
         
     
     <!-- import script -->
     
         
-            
+            <script src="/bubbly-bg/bubbly.js"></script>
         
-            
+            <script src="/bubbly-bg/index.js"></script>
         
     
 
@@ -193,7 +191,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -331,7 +329,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -590,22 +588,22 @@
 <h3 id="Sobel算子"><a href="#Sobel算子" class="headerlink" title="Sobel算子"></a>Sobel算子</h3><h5 id="Opencv中提供l了cv2-Sobel-函数"><a href="#Opencv中提供l了cv2-Sobel-函数" class="headerlink" title="Opencv中提供l了cv2.Sobel()函数"></a><strong>Opencv中提供l了<code>cv2.Sobel()</code>函数</strong></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dst = cv2.Sobel(src, ddepth, dx, dy[, dst[, ksize[, scale[, delta[, borderType]]]]])</span><br></pre></td></tr></table></figure>
 <p>前四个是必须的参数：<br>src：需要处理的图像；<br>ddpteh：是图像的深度，-1表示采用的是与原图像相同的深度。目标图像的深度 必须大于等于原图像的深度；<br>dx和dy表示的是求导的阶数，0表示这个方向上没有求导，一般为0、1、2。<br>可选的参数：<br>dst：目标图像<br>ksize：Sobel算子的大小，必须为1、3、5、7。<br>scale：是缩放导数的比例常数，默认情况下没有伸缩系数；<br>delta：是一个可选的增量，将会加到最终的dst中，同样，默认情况下没有额外的值加到dst中；<br>borderType：判断图像边界的模式。这个参数默认值cv2.BORDER_DEFAULT。</p>
 <h5 id="图像深度参数"><a href="#图像深度参数" class="headerlink" title="图像深度参数"></a>图像深度参数</h5><p>ddpteh这个参数代表dst图像的深度，可选的参数如CV_16S、CV_32F、CV_64F等。<br>由于Sobel算子计算的是差分，有正有负，并且可能存在超过255的数，因此如果采用8为深度的话，显示图像会有问题。</p>
-<h5 id="计算水平方向偏导数的近似值"><a href="#计算水平方向偏导数的近似值" class="headerlink" title="计算水平方向偏导数的近似值"></a>计算水平方向偏导数的近似值</h5><p><img src="Sobelx.png" class="lazyload placeholder" data-srcset="Sobelx.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="sobelx"></p>
+<h5 id="计算水平方向偏导数的近似值"><a href="#计算水平方向偏导数的近似值" class="headerlink" title="计算水平方向偏导数的近似值"></a>计算水平方向偏导数的近似值</h5><p><img src="Sobelx.png" class="lazyload placeholder" data-srcset="Sobelx.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="sobelx"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">image_show</span>(<span class="params">name, img</span>):</span></span><br><span class="line">    cv2.imshow(name, img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 图像梯度-Sobel算子 右-左</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;./images/cyclie.png&#x27;</span>)</span><br><span class="line"><span class="comment"># 白：255 黑: 0 </span></span><br><span class="line"><span class="comment"># 从右向左白-黑为白 黑-白=-255 为负数则会截断取0</span></span><br><span class="line">img_sobelx = cv2.Sobel(img, cv2.CV_64F, <span class="number">1</span>, <span class="number">0</span>, ksize=<span class="number">3</span>)</span><br><span class="line"><span class="comment"># 取绝对值后，-255处为白</span></span><br><span class="line">img_sobel = cv2.convertScaleAbs(img_sobelx)</span><br><span class="line"><span class="comment"># 水平方向合并</span></span><br><span class="line">img_all = np.hstack((img, img_sobelx, img_sobel))</span><br><span class="line">image_show(<span class="string">&#x27;img_all&#x27;</span>, img_all)</span><br></pre></td></tr></table></figure>
-<p><img src="sol_x.png" class="lazyload placeholder" data-srcset="sol_x.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt=""></p>
-<h5 id="计算垂直方向偏导数的近似值"><a href="#计算垂直方向偏导数的近似值" class="headerlink" title="计算垂直方向偏导数的近似值"></a>计算垂直方向偏导数的近似值</h5><p><img src="Sobely.png" class="lazyload placeholder" data-srcset="Sobely.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="sobely"></p>
+<p><img src="sol_x.png" class="lazyload placeholder" data-srcset="sol_x.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt=""></p>
+<h5 id="计算垂直方向偏导数的近似值"><a href="#计算垂直方向偏导数的近似值" class="headerlink" title="计算垂直方向偏导数的近似值"></a>计算垂直方向偏导数的近似值</h5><p><img src="Sobely.png" class="lazyload placeholder" data-srcset="Sobely.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="sobely"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 图像梯度-Sobel算子 下-上</span></span><br><span class="line">img_sobely = cv2.Sobel(img, cv2.CV_64F, <span class="number">0</span>, <span class="number">1</span>, ksize=<span class="number">3</span>)</span><br><span class="line">img_sobel = cv2.convertScaleAbs(img_sobely)</span><br><span class="line">img_all = np.hstack((img, img_sobely, img_sobel))</span><br><span class="line">image_show(<span class="string">&#x27;img_all&#x27;</span>, img_all)</span><br></pre></td></tr></table></figure>
-<p><img src="sob_y.png" class="lazyload placeholder" data-srcset="sob_y.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt=""></p>
+<p><img src="sob_y.png" class="lazyload placeholder" data-srcset="sob_y.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt=""></p>
 <h3 id="Scharr算子"><a href="#Scharr算子" class="headerlink" title="Scharr算子"></a>Scharr算子</h3><p>Scharr算子可被视为Sobel算子的改进，具有Sobel算子相同的计算速度，但是其精度更高。</p>
 <p><strong>水平X:</strong></p>
-<p><img src="Scharrx.png" class="lazyload placeholder" data-srcset="Scharrx.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt=""></p>
+<p><img src="Scharrx.png" class="lazyload placeholder" data-srcset="Scharrx.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt=""></p>
 <p><strong>数值Y:</strong></p>
-<p><img src="Scharry.png" class="lazyload placeholder" data-srcset="Scharry.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt=""></p>
+<p><img src="Scharry.png" class="lazyload placeholder" data-srcset="Scharry.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt=""></p>
 <p><strong>使用</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">panda_scharrx = cv2.Scharr(panda, cv2.CV_64F, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">panda_scharry = cv2.Scharr(panda, cv2.CV_64F, <span class="number">0</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="Laplacian算子"><a href="#Laplacian算子" class="headerlink" title="Laplacian算子"></a>Laplacian算子</h3><p>Laplacian算子是一种二姐导数算子，具有旋转不变性，可以满足不同方向上的边缘检测要求。<br><strong>使用</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">car = cv2.imread(<span class="string">&#x27;./images/car.png&#x27;</span>)</span><br><span class="line">car_Lap = cv2.Laplacian(car, cv2.CV_64F)</span><br><span class="line"><span class="comment"># 取绝对值</span></span><br><span class="line">car_Lap = cv2.convertScaleAbs(car_Lap)</span><br><span class="line"><span class="comment"># 合并</span></span><br><span class="line">car_all = np.hstack((car, car_Lap))</span><br><span class="line">image_show(<span class="string">&#x27;car_all&#x27;</span>, car_all)</span><br></pre></td></tr></table></figure>
-<p><img src="car_lap.png" class="lazyload placeholder" data-srcset="car_lap.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt=""></p>
+<p><img src="car_lap.png" class="lazyload placeholder" data-srcset="car_lap.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt=""></p>
 
       </div>
       <div class="post-tags-categories">
@@ -653,7 +651,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/8.jpg" class="lazyload placeholder" data-srcset="/medias/8.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/8.jpg" class="lazyload placeholder" data-srcset="/medias/8.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="">
     </div>
     <a href="/2022/01/16/Opencv%E5%AD%A6%E4%B9%A003/" class="post-nav-link">
       <div class="title">
@@ -675,7 +673,7 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" src="" alt="">
     </div>
     <a href="/2021/12/22/Python%E9%A2%98%E7%9B%AE%E7%BB%83%E4%B9%A002/" class="post-nav-link">
       <div class="title">
@@ -728,10 +726,10 @@
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -2158,20 +2156,5 @@
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

@@ -56,17 +56,15 @@
     <!-- import link -->
     
         
-            
-        
-            
+            <link href="/bubbly-bg/bubbly.css" rel="stylesheet">
         
     
     <!-- import script -->
     
         
-            
+            <script src="/bubbly-bg/bubbly.js"></script>
         
-            
+            <script src="/bubbly-bg/index.js"></script>
         
     
 
@@ -193,7 +191,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -331,7 +329,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -587,10 +585,10 @@
     <article class="post post-detail">
       <div class="post-content">
         <h2 id="PWM简介"><a href="#PWM简介" class="headerlink" title="PWM简介"></a>PWM简介</h2><p>PWM(Pulse Width Modulation)是脉冲宽度调制的缩写，是一种利用微处理器的数字输出来对模拟电路进行控制的技术。PWM的原理是</p>
-<p>通过调节<strong>占空比</strong>来调节脉冲宽度，从而改变输出电压的大小。波形图如下<br><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822103209917.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822103209917.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230822103209917"></p>
+<p>通过调节<strong>占空比</strong>来调节脉冲宽度，从而改变输出电压的大小。波形图如下<br><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822103209917.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822103209917.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20230822103209917"></p>
 <p>PWM的两个重要参数为<strong>频率</strong>和<strong>占空比</strong>。频率是周期的导数即$f=1/T$,占空比是指脉宽时间占周期的比例。</p>
 <p>STM32中用定时器来输出PWM，其原理图如下</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822103605225.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822103605225.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230822103605225"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822103605225.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822103605225.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20230822103605225"></p>
 <p>定时器重复计数从0到ARR，设定比较值为CCRx，当定时器的计数值向上计数到和CCRx的值相等时，对应波形输出管脚电瓶翻转，</p>
 <p>当定时器计数值计到ARR时，输出管脚波形再次翻转。从图中可以看出，定时器的一个计时周期对应一个 PWM周期，脉宽（高电平的宽</p>
 <p>度）需要根据输出管脚的初始电平的不同或者为0—CCRx这一段，或者为CCRx—ARR,这一段。改变CCRx的值即可实现脉宽的控制。</p>
@@ -652,12 +650,12 @@
 <li>SYS-&gt;Debug-&gt;Serial Wire</li>
 <li>GPIO</li>
 </ul>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822104850113.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822104850113.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230822104850113"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822104850113.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822104850113.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20230822104850113"></p>
 <ul>
 <li>TIM3-&gt;Channel1-&gt;PWM Generation CH1</li>
 <li>TIM3-&gt;Channel2-&gt;PWM Generation CH1</li>
 </ul>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822105013360.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822105013360.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20230822105013360"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822105013360.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20230822105013360.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20230822105013360"></p>
 <p>预分频系数(PSC)设置为144-1，自动重装载值为1000-1，PWM模式1，向上计数，则计时器时钟频率为$72M/144/1000=500Hz$,周期为$T=1/500=2ms$</p>
 <ul>
 <li>Clock Configuration-&gt;HCLK-&gt;72</li>
@@ -716,7 +714,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="">
     </div>
     <a href="/2022/07/21/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93RTC/" class="post-nav-link">
       <div class="title">
@@ -738,7 +736,7 @@ SYS-&gt;Debug-&gt;Serial Wir
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" src="" alt="">
     </div>
     <a href="/2022/07/20/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93%E5%AE%9A%E6%97%B6%E5%99%A8/" class="post-nav-link">
       <div class="title">
@@ -793,10 +791,10 @@ SYS设置Debug为
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -2223,20 +2221,5 @@ SYS设置Debug为
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

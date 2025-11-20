@@ -56,17 +56,15 @@
     <!-- import link -->
     
         
-            
-        
-            
+            <link href="/bubbly-bg/bubbly.css" rel="stylesheet">
         
     
     <!-- import script -->
     
         
-            
+            <script src="/bubbly-bg/bubbly.js"></script>
         
-            
+            <script src="/bubbly-bg/index.js"></script>
         
     
 
@@ -193,7 +191,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -331,7 +329,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -590,7 +588,7 @@
 <p>2）计算图像中每个像素点的梯度强度和方向</p>
 <p>3）应用非极大值抑制，以消除边缘检测带来的杂散响应</p>
 <p>4）应用双阈值检测来确定真实和潜在的边缘</p>
-<p><img src="双阈值检测.png" class="lazyload placeholder" data-srcset="双阈值检测.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt=""></p>
+<p><img src="双阈值检测.png" class="lazyload placeholder" data-srcset="双阈值检测.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt=""></p>
 <p>5）通过抑制孤立的边缘最终完成边缘检测</p>
 <p><code>cv2.Canny</code>函数：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.Canny(image, threshold1, threshold2[, edges[, apertureSize[, L2gradient ]]]) </span><br></pre></td></tr></table></figure>
@@ -602,7 +600,7 @@
 <li>L2gradient参数是一个布尔值，如果为真，则使用更精确的L2范数进行计算（即两个方向的倒数的平方和再开放），否则使用L1范数（直接将两个方向导数的绝对值相加）。</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Canny边缘检测</span></span><br><span class="line">img = cv2.imread(<span class="string">&#x27;./images/car.png&#x27;</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line"><span class="comment"># h, w = img.shape[:2]</span></span><br><span class="line"><span class="comment"># M = np.float32([[0.5, 0, 0], [0, 0.5, 0]])</span></span><br><span class="line"><span class="comment"># minVal：20 maxVal：100</span></span><br><span class="line">img_canny1 = cv2.Canny(img, <span class="number">20</span>, <span class="number">100</span>)</span><br><span class="line"><span class="comment"># minVal：50 maxVal：100</span></span><br><span class="line">img_canny2 = cv2.Canny(img, <span class="number">50</span>, <span class="number">100</span>)</span><br><span class="line"><span class="comment"># minVal：80 maxVal：100</span></span><br><span class="line">img_canny3 = cv2.Canny(img, <span class="number">80</span>, <span class="number">100</span>)</span><br><span class="line">img_canny = np.hstack((img_canny1, img_canny2, img_canny3))</span><br><span class="line">cv2.imwrite(<span class="string">&#x27;./images/car_canny.png&#x27;</span>, img_canny)</span><br><span class="line">image_show(<span class="string">&#x27;img_canny&#x27;</span>, img_canny)</span><br></pre></td></tr></table></figure>
-<p><img src="car_canny.png" class="lazyload placeholder" data-srcset="car_canny.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt=""></p>
+<p><img src="car_canny.png" class="lazyload placeholder" data-srcset="car_canny.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt=""></p>
 
       </div>
       <div class="post-tags-categories">
@@ -650,7 +648,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="">
     </div>
     <a href="/2022/01/19/python%E4%B8%8Estm32%E9%80%9A%E4%BF%A1/" class="post-nav-link">
       <div class="title">
@@ -670,7 +668,7 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/9.png" class="lazyload placeholder" data-srcset="/medias/9.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/9.png" class="lazyload placeholder" data-srcset="/medias/9.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" src="" alt="">
     </div>
     <a href="/2022/01/15/Opencv%E5%AD%A6%E4%B9%A002/" class="post-nav-link">
       <div class="title">
@@ -723,10 +721,10 @@
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -2153,20 +2151,5 @@
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

@@ -56,17 +56,15 @@
     <!-- import link -->
     
         
-            
-        
-            
+            <link href="/bubbly-bg/bubbly.css" rel="stylesheet">
         
     
     <!-- import script -->
     
         
-            
+            <script src="/bubbly-bg/bubbly.js"></script>
         
-            
+            <script src="/bubbly-bg/index.js"></script>
         
     
 
@@ -193,7 +191,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -331,7 +329,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -587,14 +585,14 @@
     <article class="post post-detail">
       <div class="post-content">
         <h2 id="数据集的下载、组织"><a href="#数据集的下载、组织" class="headerlink" title="数据集的下载、组织"></a>数据集的下载、组织</h2><p>进入Pytorch官网</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731173639596.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731173639596.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20220731173639596"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731173639596.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731173639596.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220731173639596"></p>
 <ul>
 <li>torchaudio处理语音</li>
 <li>torchtext处理文本</li>
 <li>torchviison处理视觉</li>
 </ul>
 <h2 id="torchvision-dataset的使用"><a href="#torchvision-dataset的使用" class="headerlink" title="torchvision dataset的使用"></a>torchvision dataset的使用</h2><p>以<code>CIFAR10</code>数据集为例</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731174108374.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731174108374.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20220731174108374"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731174108374.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731174108374.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220731174108374"></p>
 <ul>
 <li>root：数据集的根目录</li>
 <li>train：bool类型，True为训练集，False为测试集</li>
@@ -605,23 +603,23 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line"><span class="keyword">import</span> ssl</span><br><span class="line">ssl._create_default_https_context = ssl._create_unverified_context</span><br><span class="line">train_dataset = torchvision.datasets.CIFAR10(root=<span class="string">&#x27;./datasets&#x27;</span>, train=<span class="literal">True</span>, download=<span class="literal">True</span>)</span><br><span class="line">test_dataset = torchvision.datasets.CIFAR10(root=<span class="string">&#x27;./datasets&#x27;</span>, train=<span class="literal">False</span>, download=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 <p>加入ssl库是因为urllib发送请求报错</p>
 <p><code>urllib.error.URLError: &lt;urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1131)&gt;</code></p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731175528860.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731175528860.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20220731175528860"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731175528860.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731175528860.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220731175528860"></p>
 <p>下载成功</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731175553014.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731175553014.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20220731175553014"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731175553014.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731175553014.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220731175553014"></p>
 <p>一个是压缩文件一个是解压文件</p>
 <p>输出数据集的类型、元素组成和类</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(train_dataset))</span><br><span class="line"><span class="built_in">print</span>(train_dataset[<span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>(train_dataset.classes)</span><br><span class="line">“”“</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">torchvision</span>.<span class="title">datasets</span>.<span class="title">cifar</span>.<span class="title">CIFAR10</span>&#x27;&gt;</span></span><br><span class="line"><span class="class">(<span class="params">&lt;PIL.Image.Image image mode=RGB size=32x32 at <span class="number">0x226C2A995E0</span>&gt;, <span class="number">6</span></span>)</span></span><br><span class="line"><span class="class">[&#x27;<span class="title">airplane</span>&#x27;, &#x27;<span class="title">automobile</span>&#x27;, &#x27;<span class="title">bird</span>&#x27;, &#x27;<span class="title">cat</span>&#x27;, &#x27;<span class="title">deer</span>&#x27;, &#x27;<span class="title">dog</span>&#x27;, &#x27;<span class="title">frog</span>&#x27;, &#x27;<span class="title">horse</span>&#x27;, &#x27;<span class="title">ship</span>&#x27;, &#x27;<span class="title">truck</span>&#x27;]</span></span><br><span class="line"><span class="class">“”“</span></span><br></pre></td></tr></table></figure>
 <p>可以看出数据集的元素组成分别为一张图片和target</p>
 <p>其中数字6为target，所对应的类为一个label即frog青蛙</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">img, target = train_dataset[<span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(train_dataset.classes[target])</span><br><span class="line">img.show()</span><br><span class="line">“”“</span><br><span class="line">frog</span><br><span class="line">“”“</span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731181503226.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731181503226.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20220731181503226"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731181503226.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731181503226.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220731181503226"></p>
 <p>CIFAR10数据集一共有60000张32x32的图像，其中每一类有6000张，数据集分为五个训练批次和一个测试批次，每个批次有 10000 张图像。测试批次恰好包含来自每个类别的 1000 个随机选择的图像。</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731181807163.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731181807163.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20220731181807163"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731181807163.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731181807163.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220731181807163"></p>
 <p>将PIL图像类型转换为Tensor类型</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line"><span class="keyword">import</span> ssl</span><br><span class="line"></span><br><span class="line">dataset_transform = torchvision.transforms.Compose([torchvision.transforms.ToTensor()])</span><br><span class="line">ssl._create_default_https_context = ssl._create_unverified_context</span><br><span class="line">train_dataset = torchvision.datasets.CIFAR10(root=<span class="string">&#x27;./datasets&#x27;</span>, train=<span class="literal">True</span>, transform=dataset_transform,download=<span class="literal">True</span>)</span><br><span class="line">test_dataset = torchvision.datasets.CIFAR10(root=<span class="string">&#x27;./datasets&#x27;</span>, train=<span class="literal">False</span>, transform=dataset_transform, download=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(train_dataset[<span class="number">0</span>][<span class="number">0</span>])  <span class="comment"># &lt;class &#x27;torch.Tensor&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
 <p>上传到tensorboard中</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorboardX <span class="keyword">import</span> SummaryWriter</span><br><span class="line"></span><br><span class="line">writer = SummaryWriter(<span class="string">&quot;cifar&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    img, target = train_dataset[i]</span><br><span class="line">    writer.add_image(<span class="string">&quot;test_img&quot;</span>, img, i)</span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731222621836.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731222621836.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20220731222621836"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731222621836.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220731222621836.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220731222621836"></p>
 
       </div>
       <div class="post-tags-categories">
@@ -669,7 +667,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="">
     </div>
     <a href="/2022/08/11/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E6%90%AD%E5%BB%BA%E5%B0%8F%E5%AE%9E%E6%88%98/" class="post-nav-link">
       <div class="title">
@@ -689,7 +687,7 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" src="" alt="">
     </div>
     <a href="/2022/07/30/Pytorch%E4%B8%AD%E7%9A%84tensorboard/" class="post-nav-link">
       <div class="title">
@@ -743,10 +741,10 @@ Tenso
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -2173,20 +2171,5 @@ Tenso
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

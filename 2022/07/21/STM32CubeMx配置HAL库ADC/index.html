@@ -56,17 +56,15 @@
     <!-- import link -->
     
         
-            
-        
-            
+            <link href="/bubbly-bg/bubbly.css" rel="stylesheet">
         
     
     <!-- import script -->
     
         
-            
+            <script src="/bubbly-bg/bubbly.js"></script>
         
-            
+            <script src="/bubbly-bg/index.js"></script>
         
     
 
@@ -193,7 +191,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
       <h3 class="drawer-box-head_title">Ychui&#39;s Blog</h3>
       <h5 class="drawer-box-head_desc"></h5>
     </div>
@@ -331,7 +329,7 @@
     <div class="blog-title" id="author-avatar">
       
         <div class="avatar">
-          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+          <img src="/medias/touxiang.png" class="lazyload placeholder" data-srcset="/medias/touxiang.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="logo">
         </div>
       
       <a href="/" class="logo">Ychui&#39;s Blog</a>
@@ -588,7 +586,7 @@
       <div class="post-content">
         <h1 id="STM32CubeMx配置HAL库ADC"><a href="#STM32CubeMx配置HAL库ADC" class="headerlink" title="STM32CubeMx配置HAL库ADC"></a>STM32CubeMx配置HAL库ADC</h1><h2 id="ADC"><a href="#ADC" class="headerlink" title="ADC"></a>ADC</h2><p>ADC是（Analog-to-DigitalConverter）的缩写。指模/数转换器或者模拟/数字转换器。是指将连续变量的模拟信号转换为离散的数字信号的器件。典型的模拟数字转换器将模拟信号转换为表示一定比例电压值的数字信号。</p>
 <p>STM32的ADC精度是12位，它有18个通道，可以测量16路外部和2个内部信号源，各通道的A/D转换可以单次、连续、扫描或间断模式执行，ADC的结果可以左对齐或右对齐方式存储在16位数据寄存器中。</p>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721215640945.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721215640945.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20220721215640945"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721215640945.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721215640945.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220721215640945"></p>
 <p>本章选取stm32的内部温度传感器为例，说明stm32cubemx配置ADC的整个过程。</p>
 <h2 id="内部温度传感器"><a href="#内部温度传感器" class="headerlink" title="内部温度传感器"></a>内部温度传感器</h2><p>STM32 有一个内部的温度传感器，可以用来测量 CPU 及周围的温度(TA)。该温度传感器 在内部和 ADCx_IN16 输入通道相连接，此通道把传感器输出的电压转换成数字值。温度传感 器模拟输入推荐采样时间是 17.1μs。 STM32 的内部温度传感器支持的温度范围为：-40~125 度，精度为±1.5℃左右（实际效果不咋地）。</p>
 <p>STM32 的内部温度传感器固定的连接在 ADC 的通道 16 上，所以，我们在设 置好 ADC 之后只要读取通道 16 的值，就是温度传感器返回来的电压值了。根据这个值，我们 就可以计算出当前温度。计算公式如下： </p>
@@ -600,16 +598,16 @@
 <li>RCC-&gt;HSE-&gt;Crystal/Ceramic Resonator</li>
 <li>时钟树，时钟设置为72M，ADC预分频因子设置为<strong>6</strong>，ADC_CLK为<strong>12MHz</strong></li>
 </ul>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721220414964.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721220414964.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20220721220414964"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721220414964.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721220414964.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220721220414964"></p>
 <ul>
 <li>激活ADC1温度传感器通道，设置右对齐，关闭扫描、连续及间断模式，使能regular conversion，设置软件触发、设置采样时间239.5个周期（19.96us）</li>
 </ul>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721220826063.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721220826063.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20220721220826063"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721220826063.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721220826063.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220721220826063"></p>
 <h2 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a>代码编写</h2><p><code>adc.c</code>中的初始化程序</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">ADC_HandleTypeDef hadc1;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* ADC1 init function */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MX_ADC1_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN ADC1_Init 0 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END ADC1_Init 0 */</span></span><br><span class="line"></span><br><span class="line">  ADC_ChannelConfTypeDef sConfig = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN ADC1_Init 1 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END ADC1_Init 1 */</span></span><br><span class="line">  <span class="comment">/** Common config</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  hadc1.Instance = ADC1;</span><br><span class="line">  hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;</span><br><span class="line">  hadc1.Init.ContinuousConvMode = DISABLE;</span><br><span class="line">  hadc1.Init.DiscontinuousConvMode = DISABLE;</span><br><span class="line">  hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;</span><br><span class="line">  hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;</span><br><span class="line">  hadc1.Init.NbrOfConversion = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (HAL_ADC_Init(&amp;hadc1) != HAL_OK)</span><br><span class="line">  &#123;</span><br><span class="line">    Error_Handler();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/** Configure Regular Channel</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  sConfig.Channel = ADC_CHANNEL_TEMPSENSOR;</span><br><span class="line">  sConfig.Rank = ADC_REGULAR_RANK_1;</span><br><span class="line">  sConfig.SamplingTime = ADC_SAMPLETIME_239CYCLES_5;</span><br><span class="line">  <span class="keyword">if</span> (HAL_ADC_ConfigChannel(&amp;hadc1, &amp;sConfig) != HAL_OK)</span><br><span class="line">  &#123;</span><br><span class="line">    Error_Handler();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN ADC1_Init 2 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END ADC1_Init 2 */</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>main.c</code></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN 1 */</span></span><br><span class="line">  <span class="keyword">uint16_t</span> adc_value;</span><br><span class="line">  <span class="keyword">float</span> vol_value,temp;</span><br><span class="line">  <span class="comment">/* USER CODE END 1 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* MCU Configuration--------------------------------------------------------*/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Reset of all peripherals, Initializes the Flash interface and the Systick. */</span></span><br><span class="line">  HAL_Init();</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN Init */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END Init */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Configure the system clock */</span></span><br><span class="line">  SystemClock_Config();</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN SysInit */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END SysInit */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Initialize all configured peripherals */</span></span><br><span class="line">  MX_GPIO_Init();</span><br><span class="line">  MX_ADC1_Init();</span><br><span class="line">  MX_USART1_UART_Init();</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN 2 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END 2 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Infinite loop */</span></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN WHILE */</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">    HAL_ADC_Start(&amp;hadc1); <span class="comment">//启动ADC转换</span></span><br><span class="line">    HAL_ADC_PollForConversion(&amp;hadc1,<span class="number">10</span>); <span class="comment">//等待转换完成，10ms表示超时时间</span></span><br><span class="line">    adc_value= HAL_ADC_GetValue(&amp;hadc1);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;ADC转换数据:%d\r\n&quot;</span>, adc_value);</span><br><span class="line">    vol_value=adc_value*(<span class="number">3.3</span>/<span class="number">4096</span>);<span class="comment">//AD值乘以分辨率为电压值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;电压值为%.2f\r\n&quot;</span>,vol_value);</span><br><span class="line">    temp=(<span class="number">1.43</span> - vol_value)/<span class="number">0.0043</span> + <span class="number">25</span>;<span class="comment">//根据公式算出温度值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;MCU内部温度为%.2f\r\n&quot;</span>,temp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">    HAL_Delay(<span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* USER CODE END 3 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721215358949.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721215358949.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image-20220721215358949"></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721215358949.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img/image-20220721215358949.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="image-20220721215358949"></p>
 
       </div>
       <div class="post-tags-categories">
@@ -657,7 +655,7 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/3.jpg" class="lazyload placeholder" data-srcset="/medias/3.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="">
     </div>
     <a href="/2022/07/22/STM32%E7%94%A8HAL%E5%BA%93%E9%A9%B1%E5%8A%A8OLED/" class="post-nav-link">
       <div class="title">
@@ -679,7 +677,7 @@ oled.h
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" src="" alt="">
     </div>
     <a href="/2022/07/21/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93RTC/" class="post-nav-link">
       <div class="title">
@@ -734,10 +732,10 @@ SYS-&gt;Debug-&gt;Serial Wir
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/e73212c3ea3b9ab26586cae9113712a8.gif" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -2164,20 +2162,5 @@ SYS-&gt;Debug-&gt;Serial Wir
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
