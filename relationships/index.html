@@ -754,6 +754,13 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                id: 'Openmv',
+                name: 'Openmv',
+                symbolSize: 11,
+                value: 1
+            },
+        
+            {
                 id: 'python',
                 name: 'python',
                 symbolSize: 30,
@@ -765,13 +772,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Opencv',
                 symbolSize: 17,
                 value: 7
-            },
-        
-            {
-                id: 'Openmv',
-                name: 'Openmv',
-                symbolSize: 11,
-                value: 1
             },
         
             {
@@ -954,20 +954,20 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'python',
-                target: 'Opencv',
-                value: 7,
+                source: 'Openmv',
+                target: 'python',
+                value: 1,
                 lineStyle: {
-                    width: 7
+                    width: 1
                 }
             },
         
             {
                 source: 'python',
-                target: 'Openmv',
-                value: 1,
+                target: 'Opencv',
+                value: 7,
                 lineStyle: {
-                    width: 1
+                    width: 7
                 }
             },
         
