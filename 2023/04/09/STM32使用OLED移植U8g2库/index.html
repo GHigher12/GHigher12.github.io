@@ -236,6 +236,17 @@
           
             <li class="drawer-box-content_item" style="position: relative;">
               
+                <a href="/graph" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                  
+                  <span class="name">图谱</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
                 <a href="/about" class="drawer-menu-item-link">
                   
                     <i class="fas fa-user" aria-hidden="true"></i>
@@ -247,12 +258,27 @@
           
             <li class="drawer-box-content_item" style="position: relative;">
               
-                <a href="/" class="drawer-menu-item-link">
-                  
-                    <i class="fas fa-chevron-circle-down" aria-hidden="true"></i>
-                  
-                  <span class="name">更多</span>
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(6)">
+                  <span>
+                    
+                      <i class="fas fa-chevron-circle-down"></i>
+                    
+                    <span class="name">更多</span>
+                  </span>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(6)}" aria-hidden="true"></i>
                 </a>
+                <ul class="drawer-sub-menu" v-if="isOpen(6)">
+                  
+                  <li>
+                    <a href="/wallpapers">
+                      
+                      <i class="fas fa-images" style="margin-top: -20px;"></i>
+                      
+                      <span>壁纸</span>
+                    </a>
+                  </li>
+                  
+                </ul>
               
             </li>
           
@@ -374,6 +400,17 @@
           
             <li class="menu-item" style="position: relative;">
               
+                <a href="/graph" class="menu-item-link" title="图谱">
+                  
+                    <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                  
+                  <span class="name">图谱</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
                 <a href="/about" class="menu-item-link" title="关于">
                   
                     <i class="fas fa-user" aria-hidden="true"></i>
@@ -385,12 +422,25 @@
           
             <li class="menu-item" style="position: relative;">
               
-                <a href="/" class="menu-item-link" title="更多">
+                <a href="javascript:;" class="menu-item-link" title="更多">
                   
-                    <i class="fas fa-chevron-circle-down" aria-hidden="true"></i>
+                    <i class="fas fa-chevron-circle-down"></i>
                   
                   <span class="name">更多</span>
+                  <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
                 </a>
+                <ul class="sub-menu">
+                  
+                  <li>
+                    <a href="/wallpapers">
+                      
+                      <i class="fas fa-images" style="margin-top: -20px;"></i>
+                      
+                      <span>壁纸</span>
+                    </a>
+                  </li>
+                  
+                </ul>
               
             </li>
           
@@ -2183,20 +2233,5 @@ OPENMV4-STM32H743
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
