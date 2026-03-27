@@ -819,10 +819,10 @@
                 </a>
                 
                 
-                <a href="/tags/RS485/" title="RS485: 1">
+                <a href="/tags/RS485/" title="RS485: 2">
                     <span class="tag-content"
                         title="RS485" style="background-color: #F9EBEA;">RS485
-                        <span class="tag-length">1</span>
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -855,14 +855,6 @@
                     <span class="tag-content"
                         title="RaspberryPi" style="background-color: #D5F5E3;">RaspberryPi
                         <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/RSD85/" title="RSD85: 1">
-                    <span class="tag-content"
-                        title="RSD85" style="background-color: #F8C471;">RSD85
-                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -1755,7 +1747,7 @@
       try {
         var currentUrl = window.location.pathname;
         var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
+        var banUrl = ["/graph", "/footprint"];
         if (banUrl[0] != "") {
           banUrl.forEach(item => {
             if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {

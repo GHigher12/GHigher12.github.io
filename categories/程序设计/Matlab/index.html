@@ -1836,7 +1836,7 @@ x = input(prompt) 显示 prompt 中的文本并等待用户输入值后按 Ret
       try {
         var currentUrl = window.location.pathname;
         var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
+        var banUrl = ["/graph", "/footprint"];
         if (banUrl[0] != "") {
           banUrl.forEach(item => {
             if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {

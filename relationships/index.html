@@ -616,7 +616,7 @@
     <div class="card">
         <div class="card-content">
             <div class="relationship-info">
-                <p>共 <strong>35</strong> 个标签，<strong>42</strong> 条关联关系</p>
+                <p>共 <strong>34</strong> 个标签，<strong>41</strong> 条关联关系</p>
                 <p>拖拽标签可以拖动，滚轮可以缩放，双击可以聚焦</p>
             </div>
             <div id="tag-graph-container"></div>
@@ -813,8 +813,8 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 id: 'RS485',
                 name: 'RS485',
-                symbolSize: 11,
-                value: 1
+                symbolSize: 12,
+                value: 2
             },
         
             {
@@ -843,13 +843,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'RaspberryPi',
                 symbolSize: 12,
                 value: 2
-            },
-        
-            {
-                id: 'RSD85',
-                name: 'RSD85',
-                symbolSize: 11,
-                value: 1
             },
         
             {
@@ -1041,9 +1034,9 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 source: 'RS485',
                 target: 'Modbus',
-                value: 1,
+                value: 2,
                 lineStyle: {
-                    width: 1
+                    width: 2
                 }
             },
         
@@ -1130,7 +1123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
             {
                 source: 'C/C++',
-                target: 'Modbus',
+                target: 'RS485',
                 value: 1,
                 lineStyle: {
                     width: 1
@@ -1139,15 +1132,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
             {
                 source: 'C/C++',
-                target: 'RSD85',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'STM32',
                 target: 'Modbus',
                 value: 1,
                 lineStyle: {
@@ -1157,7 +1141,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
             {
                 source: 'STM32',
-                target: 'RSD85',
+                target: 'RS485',
                 value: 1,
                 lineStyle: {
                     width: 1
@@ -1165,8 +1149,8 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'Modbus',
-                target: 'RSD85',
+                source: 'STM32',
+                target: 'Modbus',
                 value: 1,
                 lineStyle: {
                     width: 1
@@ -2177,7 +2161,7 @@ document.addEventListener('DOMContentLoaded', function() {
       try {
         var currentUrl = window.location.pathname;
         var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
+        var banUrl = ["/graph", "/footprint"];
         if (banUrl[0] != "") {
           banUrl.forEach(item => {
             if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {

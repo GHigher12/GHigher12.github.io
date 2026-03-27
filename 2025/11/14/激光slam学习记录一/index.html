@@ -2875,7 +2875,7 @@ x = \left[ p, v, R, b_g, b_a, g \right]^\top \in \mathcal{M}</script><p>按照�
       try {
         var currentUrl = window.location.pathname;
         var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
+        var banUrl = ["/graph", "/footprint"];
         if (banUrl[0] != "") {
           banUrl.forEach(item => {
             if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {

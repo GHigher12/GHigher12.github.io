@@ -2202,7 +2202,7 @@ u(t)=K_{p}*e(t)+K_{i}*\sum_{n=0}^{t} e(n)+k{d}*[e(t)-e(t-1)]</script><ul>
       try {
         var currentUrl = window.location.pathname;
         var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
+        var banUrl = ["/graph", "/footprint"];
         if (banUrl[0] != "") {
           banUrl.forEach(item => {
             if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
