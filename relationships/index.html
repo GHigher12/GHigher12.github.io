@@ -664,17 +664,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var nodes = [
         
             {
-                id: 'C/C++',
-                name: 'C/C++',
-                symbolSize: 40,
-                value: 30
-            },
-        
-            {
                 id: 'AI',
                 name: 'AI',
                 symbolSize: 14,
                 value: 4
+            },
+        
+            {
+                id: 'C/C++',
+                name: 'C/C++',
+                symbolSize: 40,
+                value: 30
             },
         
             {
@@ -689,20 +689,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'CLion',
                 symbolSize: 12,
                 value: 2
-            },
-        
-            {
-                id: 'ESP32',
-                name: 'ESP32',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
-                id: 'Micropython',
-                name: 'Micropython',
-                symbolSize: 11,
-                value: 1
             },
         
             {
@@ -727,6 +713,20 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                id: 'ESP32',
+                name: 'ESP32',
+                symbolSize: 11,
+                value: 1
+            },
+        
+            {
+                id: 'Micropython',
+                name: 'Micropython',
+                symbolSize: 11,
+                value: 1
+            },
+        
+            {
                 id: 'Linux',
                 name: 'Linux',
                 symbolSize: 39,
@@ -738,13 +738,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Ubuntu',
                 symbolSize: 38,
                 value: 28
-            },
-        
-            {
-                id: 'hexo',
-                name: 'hexo',
-                symbolSize: 15,
-                value: 5
             },
         
             {
@@ -846,6 +839,13 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                id: 'hexo',
+                name: 'hexo',
+                symbolSize: 15,
+                value: 5
+            },
+        
+            {
                 id: 'PicGo',
                 name: 'PicGo',
                 symbolSize: 12,
@@ -915,20 +915,20 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'ESP32',
-                target: 'Micropython',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
                 source: 'AI',
                 target: 'ClaudeCode',
                 value: 2,
                 lineStyle: {
                     width: 2
+                }
+            },
+        
+            {
+                source: 'ESP32',
+                target: 'Micropython',
+                value: 1,
+                lineStyle: {
+                    width: 1
                 }
             },
         
@@ -1185,6 +1185,15 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                source: 'STM32',
+                target: 'python',
+                value: 1,
+                lineStyle: {
+                    width: 1
+                }
+            },
+        
+            {
                 source: 'CMake',
                 target: 'VSCode',
                 value: 1,
@@ -1205,15 +1214,6 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 source: 'VSCode',
                 target: 'Json',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'STM32',
-                target: 'python',
                 value: 1,
                 lineStyle: {
                     width: 1
