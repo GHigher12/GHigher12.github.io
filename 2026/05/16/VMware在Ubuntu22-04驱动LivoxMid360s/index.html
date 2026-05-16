@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>归档 | Ychui&#39;s Blog</title>
+  <title>VMware在Ubuntu22.04驱动LivoxMid360s | Ychui&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -580,280 +580,730 @@
     
 </header>
         <!-- 内容区域 -->
-        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="archive-header" style="background-image:url('/medias/wallpaper/02.png')">
-  <div class="archive-header-title">
-    归档
-  </div>
-  <div class="archive-header-desc">
+        
+<!-- prismjs 代码高亮 -->
+
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/medias/7.png')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
-  <span class="title" id="archive-header-desc"></span>
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        VMware在Ubuntu22.04驱动LivoxMid360s
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2026-05-16 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/Linux/" class="post-detail-header_category">
+              Linux
+            </a>
+          
+            <a href="/categories/Linux/ROS/" class="post-detail-header_category">
+              ROS
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script defer src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h2 id="Mid360s介绍"><a href="#Mid360s介绍" class="headerlink" title="Mid360s介绍"></a>Mid360s介绍</h2><p>Livox-Mid360s官网 <a target="_blank" rel="noopener" href="https://www.livoxtech.com/cn/mid-360s">https://www.livoxtech.com/cn/mid-360s</a><br> <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-03-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-03-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"><br> 具体参数如下</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>参数项</th>
+<th>规格详情</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>产品型号</td>
+<td>Mid-360S（混合固态激光雷达）</td>
+</tr>
+<tr>
+<td>激光波长</td>
+<td>905 nm</td>
+</tr>
+<tr>
+<td>激光安全等级</td>
+<td>Class 1（IEC60825-1:2014），人眼安全</td>
+</tr>
+<tr>
+<td>探测距离（@100 klx 强光）</td>
+<td>40 m @ 10% 反射率；70 m @ 80% 反射率</td>
+</tr>
+<tr>
+<td>近场盲区</td>
+<td>0.1 m（10 cm）</td>
+</tr>
+<tr>
+<td>水平视场角</td>
+<td>360°（全向）</td>
+</tr>
+<tr>
+<td>垂直视场角</td>
+<td>-7° ~ +52°（总 59°）</td>
+</tr>
+<tr>
+<td>测距随机误差（1σ）</td>
+<td>≤ 2 cm @ 10 m；≤ 4 cm @ 0.2 m</td>
+</tr>
+<tr>
+<td>角度随机误差（1σ）</td>
+<td>&lt; 0.15°</td>
+</tr>
+<tr>
+<td>点云速率</td>
+<td>200,000 点 / 秒（单回波）</td>
+</tr>
+<tr>
+<td>典型帧率</td>
+<td>10 Hz</td>
+</tr>
+<tr>
+<td>虚警率（@100 klx 强光）</td>
+<td>&lt; 0.01%</td>
+</tr>
+<tr>
+<td>抗串扰能力</td>
+<td>支持多雷达共存</td>
+</tr>
+<tr>
+<td>内置 IMU</td>
+<td>ICM40609</td>
+</tr>
+<tr>
+<td>数据接口</td>
+<td>100 BASE-TX 以太网</td>
+</tr>
+<tr>
+<td>时间同步</td>
+<td>IEEE 1588-2008（PTPv2）、GPS</td>
+</tr>
+<tr>
+<td>供电电压</td>
+<td>9–27 V DC</td>
+</tr>
+<tr>
+<td>典型功耗</td>
+<td>6.5 W（@25℃）</td>
+</tr>
+<tr>
+<td>产品尺寸</td>
+<td>65 × 65 × 60 mm</td>
+</tr>
+<tr>
+<td>产品重量</td>
+<td>约 265 g</td>
+</tr>
+<tr>
+<td>防护等级</td>
+<td>IP67（防尘防水）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Windows设置"><a href="#Windows设置" class="headerlink" title="Windows设置"></a>Windows设置</h2><p>雷达的接线和电脑接线方式如下<img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-54-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-54-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"><br> 按照以上方式连接<br> 打开网络设置，选择以太网连接，右键属性<br> <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-51-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-51-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"><br> 选择IPv4，记住名字<strong>Realtek PCIe GbE Family Controller</strong><br> <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-05-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-05-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<p>配置静态IP，IP地址192.168.1.50，子网掩码255.255.255.0，默认网关192.168.1.1<br> <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-43-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-43-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"><br> 然后确定，下载Livox viewer2 ： <a target="_blank" rel="noopener" href="https://www.livoxtech.com/cn/downloads">https://www.livoxtech.com/cn/downloads</a><br> 下载之后启动界面如下，如果IP没有正确连接，点击Adapter，Refresh<br> <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-59-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-59-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<p>点击工具栏的设置，显示Lidar IP: <strong>192.168.1.1XX</strong> (XX一般为购买雷达S/N码后两位)<br> <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-48-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-48-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<h2 id="Vmware设置"><a href="#Vmware设置" class="headerlink" title="Vmware设置"></a>Vmware设置</h2><p>接下来打开Vmware进行设置，编辑虚拟机设置-&gt;网络适配器-&gt;桥接模式(自动)</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-29-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-29-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<p>然后找到工具栏-&gt;编辑-&gt;虚拟网络编辑器-&gt;更改设置<br> <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-16-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-16-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"><br> 对桥接模式进行设置，选择刚才记住的名字<br> <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-38-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-38-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"><br> 启动虚拟机即可<br> 设置静态IP，网络IPv4 手动<br> <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-40-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-40-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<h2 id="雷达驱动配置"><a href="#雷达驱动配置" class="headerlink" title="雷达驱动配置"></a>雷达驱动配置</h2><p>编译暗转Livox-SDK</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Livox-SDK/Livox-SDK2.git</span><br><span class="line"><span class="built_in">cd</span> ./Livox-SDK2/</span><br><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake .. &amp;&amp; make -j</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+<p>安装livox_ros_driver2包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Livox-SDK/livox_ros_driver2.git</span><br></pre></td></tr></table></figure>
+<p>配置config文件夹下的MID360s_config.jso那文件，主机IP改为192.168.1.50，雷达Ip改为192.168.1.1XX</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;lidar_summary_info&quot;</span> : &#123;</span><br><span class="line">    <span class="attr">&quot;lidar_type&quot;</span>: <span class="number">8</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;Mid360s&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;lidar_net_info&quot;</span> : &#123;</span><br><span class="line">      <span class="attr">&quot;cmd_data_port&quot;</span>  : <span class="number">56100</span>,</span><br><span class="line">      <span class="attr">&quot;push_msg_port&quot;</span>  : <span class="number">56200</span>,</span><br><span class="line">      <span class="attr">&quot;point_data_port&quot;</span>: <span class="number">56300</span>,</span><br><span class="line">      <span class="attr">&quot;imu_data_port&quot;</span>  : <span class="number">56400</span>,</span><br><span class="line">      <span class="attr">&quot;log_data_port&quot;</span>  : <span class="number">56500</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;host_net_info&quot;</span> : [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">&quot;host_ip&quot;</span>        : <span class="string">&quot;192.168.1.50&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;cmd_data_port&quot;</span>  : <span class="number">56101</span>,</span><br><span class="line">        <span class="attr">&quot;push_msg_port&quot;</span>  : <span class="number">56201</span>,</span><br><span class="line">        <span class="attr">&quot;point_data_port&quot;</span>: <span class="number">56301</span>,</span><br><span class="line">        <span class="attr">&quot;imu_data_port&quot;</span>  : <span class="number">56401</span>,</span><br><span class="line">        <span class="attr">&quot;log_data_port&quot;</span>  : <span class="number">56501</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;lidar_configs&quot;</span> : [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">&quot;ip&quot;</span> : <span class="string">&quot;192.168.1.188&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;pcl_data_type&quot;</span> : <span class="number">1</span>,</span><br><span class="line">      <span class="attr">&quot;pattern_mode&quot;</span> : <span class="number">0</span>,</span><br><span class="line">      <span class="attr">&quot;extrinsic_parameter&quot;</span> : &#123;</span><br><span class="line">        <span class="attr">&quot;roll&quot;</span>: <span class="number">0.0</span>,</span><br><span class="line">        <span class="attr">&quot;pitch&quot;</span>: <span class="number">0.0</span>,</span><br><span class="line">        <span class="attr">&quot;yaw&quot;</span>: <span class="number">0.0</span>,</span><br><span class="line">        <span class="attr">&quot;x&quot;</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">&quot;y&quot;</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">&quot;z&quot;</span>: <span class="number">0</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>For ROS2 Humble: 关于 ROS2 Humble：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /opt/ros/humble/setup.sh</span><br><span class="line"><span class="built_in">cd</span> ws_livox/src/livox_ros_driver2</span><br><span class="line">./build.sh humble</span><br></pre></td></tr></table></figure>
+<h2 id="雷达节点启动"><a href="#雷达节点启动" class="headerlink" title="雷达节点启动"></a>雷达节点启动</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source ./install/setup.bash</span><br><span class="line">ros2 launch livox_ros_driver2 rviz_MID360s_launch.py</span><br></pre></td></tr></table></figure>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-46-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-16-46-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="dca20d5c049ff353598cf9564ac81149.png"></p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/Linux/" class="">
+              Linux
+            </a>
+          
+            <a href="/tags/Ubuntu/" class="">
+              Ubuntu
+            </a>
+          
+            <a href="/tags/ROS2/" class="">
+              ROS2
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>Ychui</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2026/05/16/VMware在Ubuntu22-04驱动LivoxMid360s/" target="_blank" title="VMware在Ubuntu22.04驱动LivoxMid360s">https://yuchanghui.top/2026/05/16/VMware在Ubuntu22-04驱动LivoxMid360s/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/10.png" class="lazyload placeholder" data-srcset="/medias/10.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" src="" alt="">
+    </div>
+    <a href="/2026/05/16/%E4%BD%B3%E8%83%BDLBP6018%E6%89%93%E5%8D%B0%E6%9C%BA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">佳能LBP6018打印机使用教程</div>
+      </div>
+      <!-- <div class="content">
+        佳能LBP6018系列打印机使用方法
+一、适用设备与系统
+适用机型：LBP6018w/LBP6018L/LBP6018w
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em;">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+		border-radius: 8px;
+	}
+	#veditor {
+		background-image: url('/medias/monkey.gif');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img src='/medias/touxiang.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>Ychui's Blog</h2>
+        
+        
+          <p>write code and love life</p>
+
+        
+        
+          <p><span id="jinrishici-sentence">Ychui's Blog</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://blog.csdn.net/weixin_51002159?spm=1000.2115.3001.5343"
+              class="social fab fa-cuttlefish flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/GHIgher12"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=2535410943"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+    
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mid360s%E4%BB%8B%E7%BB%8D"><span class="toc-text">Mid360s介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows%E8%AE%BE%E7%BD%AE"><span class="toc-text">Windows设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vmware%E8%AE%BE%E7%BD%AE"><span class="toc-text">Vmware设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B7%E8%BE%BE%E9%A9%B1%E5%8A%A8%E9%85%8D%E7%BD%AE"><span class="toc-text">雷达驱动配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B7%E8%BE%BE%E8%8A%82%E7%82%B9%E5%90%AF%E5%8A%A8"><span class="toc-text">雷达节点启动</span></a></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
   <script>
-  function typedFn() {
-    const el = '#archive-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
   
-  </div>
-  <div class="mask-box"></div>
-</div>
-
-<div class="archive-video">
-  <video class="full-video" autoplay loop muted>
-      <source style="width: 100%;height: 100vh;" src="/videos/turquoise.mp4">
-  </video>
-  <div class="video-header-title">
-    归档
-  </div>
-  <div class="video-header-desc">
-  
-      <span class="title" id="archive-video-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#archive-video-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
 </script>
-      
-  </div>
-  <div class="mask-box"></div>
-</div>
 
-<!-- hash算法 -->
-
-
-<div class="archive-main">
-  <section class="archive">
-    <div class="archive-content">
-      <ul class="post-archive">
-        
-        
-          
-            
-            <div class="year" data-aos="zoom-in-up">
-                <div class="bullet"></div>
-                <a href="/archives/2022">2022</a>
-            </div>
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/07/29/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%BA%8C/" class="post-img " style="background-size: cover;
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/10.png" class="lazyload placeholder" data-srcset="/medias/10.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-29</span>
-              </div>
-              <a class="post-title" href="/2022/07/29/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%BA%8C/">C++基础学习二</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/07/29/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%B8%80/" class="post-img " style="background-size: cover;
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/2.jpeg" class="lazyload placeholder" data-srcset="/medias/2.jpeg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-29</span>
-              </div>
-              <a class="post-title" href="/2022/07/29/C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E4%B8%80/">C++基础学习一</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/07/27/ESP32%E5%92%8CMicropython%E7%82%B9%E4%BA%AELED/" class="post-img " style="background-size: cover;
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/4.png" class="lazyload placeholder" data-srcset="/medias/4.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-27</span>
-              </div>
-              <a class="post-title" href="/2022/07/27/ESP32%E5%92%8CMicropython%E7%82%B9%E4%BA%AELED/">ESP32和Micropython点亮LED</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/07/25/STM32-esp8266-MQTT%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%80%9A%E4%BF%A1/" class="post-img " style="background-size: cover;
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/5.png" class="lazyload placeholder" data-srcset="/medias/5.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-25</span>
-              </div>
-              <a class="post-title" href="/2022/07/25/STM32-esp8266-MQTT%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%80%9A%E4%BF%A1/">STM32+esp8266+MQTT服务器通信</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/07/25/STM32HAL%E5%BA%93%E9%A9%B1%E5%8A%A8DHT11%E5%92%8CBH1750/" class="post-img " style="background-size: cover;
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/10.png" class="lazyload placeholder" data-srcset="/medias/10.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-25</span>
-              </div>
-              <a class="post-title" href="/2022/07/25/STM32HAL%E5%BA%93%E9%A9%B1%E5%8A%A8DHT11%E5%92%8CBH1750/">STM32HAL库驱动DHT11和BH1750</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/07/22/STM32F103C8t6%E7%83%A7%E5%BD%95%E9%97%AE%E9%A2%98/" class="post-img " style="background-size: cover;
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/5.png" class="lazyload placeholder" data-srcset="/medias/5.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-22</span>
-              </div>
-              <a class="post-title" href="/2022/07/22/STM32F103C8t6%E7%83%A7%E5%BD%95%E9%97%AE%E9%A2%98/">STM32F103C8T6烧录问题</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/07/22/STM32%E7%94%A8HAL%E5%BA%93%E9%A9%B1%E5%8A%A8OLED/" class="post-img " style="background-size: cover;
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/9.png" class="lazyload placeholder" data-srcset="/medias/9.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-22</span>
-              </div>
-              <a class="post-title" href="/2022/07/22/STM32%E7%94%A8HAL%E5%BA%93%E9%A9%B1%E5%8A%A8OLED/">STM32用HAL库驱动OLED</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/07/21/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93ADC/" class="post-img " style="background-size: cover;
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/9.png" class="lazyload placeholder" data-srcset="/medias/9.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-21</span>
-              </div>
-              <a class="post-title" href="/2022/07/21/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93ADC/">STM32CubeMx配置HAL库ADC</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/07/21/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93RTC/" class="post-img " style="background-size: cover;
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/6.png" class="lazyload placeholder" data-srcset="/medias/6.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-21</span>
-              </div>
-              <a class="post-title" href="/2022/07/21/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93RTC/">STM32CubeMx配置HAL库RTC</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/07/20/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93PWM/" class="post-img " style="background-size: cover;
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-20</span>
-              </div>
-              <a class="post-title" href="/2022/07/20/STM32CubeMx%E9%85%8D%E7%BD%AEHAL%E5%BA%93PWM/">STM32CubeMx配置HAL库PWM</a>
-            </div>
-          </li>
-        
-      </ul>
-    </div>
-  </section>
-  <div class="w-70">
-    
-  <!-- <nav class="page-nav">
-    <a class="extend prev" rel="prev" href="/archives/page/7/">上一页</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/12/">12</a><a class="extend next" rel="next" href="/archives/page/9/">下一页</a>
-  </nav> -->
-  <div class="page-nav">
-    
-      <a href="/archives/page/7/"
-         class="page-nav-pre">
-         <i class="fas fa-angle-left"></i><span class="ml-5">上一页</span>
-      </a>
-    
-    <div class="page-info">
-        <div class="page-info-text">8 / 12</div>
-    </div>
-    
-      <a href="/archives/page/9/"
-         class="page-nav-next">
-          <span class="mr-5">下一页</span><i class="fas fa-angle-right"></i>
-      </a>
-      
-  </div>
-
-  </div>
-</div>
 
       </main>
     </div>

@@ -616,7 +616,7 @@
     <div class="card">
         <div class="card-content">
             <div class="relationship-info">
-                <p>共 <strong>34</strong> 个标签，<strong>41</strong> 条关联关系</p>
+                <p>共 <strong>36</strong> 个标签，<strong>43</strong> 条关联关系</p>
                 <p>拖拽标签可以拖动，滚轮可以缩放，双击可以聚焦</p>
             </div>
             <div id="tag-graph-container"></div>
@@ -699,13 +699,6 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'ClaudeCode',
-                name: 'ClaudeCode',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
                 id: 'ESP32',
                 name: 'ESP32',
                 symbolSize: 11,
@@ -717,6 +710,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Micropython',
                 symbolSize: 11,
                 value: 1
+            },
+        
+            {
+                id: 'ClaudeCode',
+                name: 'ClaudeCode',
+                symbolSize: 12,
+                value: 2
             },
         
             {
@@ -736,15 +736,15 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 id: 'Linux',
                 name: 'Linux',
-                symbolSize: 39,
-                value: 29
+                symbolSize: 40,
+                value: 30
             },
         
             {
                 id: 'Ubuntu',
                 name: 'Ubuntu',
-                symbolSize: 38,
-                value: 28
+                symbolSize: 39,
+                value: 29
             },
         
             {
@@ -853,6 +853,13 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                id: 'ROS2',
+                name: 'ROS2',
+                symbolSize: 11,
+                value: 1
+            },
+        
+            {
                 id: 'VSCode',
                 name: 'VSCode',
                 symbolSize: 12,
@@ -876,6 +883,13 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 id: 'WSL',
                 name: 'WSL',
+                symbolSize: 11,
+                value: 1
+            },
+        
+            {
+                id: 'Printer',
+                name: 'Printer',
                 symbolSize: 11,
                 value: 1
             },
@@ -915,15 +929,6 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'AI',
-                target: 'ClaudeCode',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
                 source: 'ESP32',
                 target: 'Micropython',
                 value: 1,
@@ -933,11 +938,20 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                source: 'AI',
+                target: 'ClaudeCode',
+                value: 2,
+                lineStyle: {
+                    width: 2
+                }
+            },
+        
+            {
                 source: 'Linux',
                 target: 'Ubuntu',
-                value: 28,
+                value: 29,
                 lineStyle: {
-                    width: 28
+                    width: 29
                 }
             },
         
@@ -1163,6 +1177,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 value: 2,
                 lineStyle: {
                     width: 2
+                }
+            },
+        
+            {
+                source: 'Linux',
+                target: 'ROS2',
+                value: 1,
+                lineStyle: {
+                    width: 1
+                }
+            },
+        
+            {
+                source: 'Ubuntu',
+                target: 'ROS2',
+                value: 1,
+                lineStyle: {
+                    width: 1
                 }
             },
         
