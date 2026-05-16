@@ -699,6 +699,13 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                id: 'ClaudeCode',
+                name: 'ClaudeCode',
+                symbolSize: 12,
+                value: 2
+            },
+        
+            {
                 id: 'ESP32',
                 name: 'ESP32',
                 symbolSize: 11,
@@ -710,13 +717,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Micropython',
                 symbolSize: 11,
                 value: 1
-            },
-        
-            {
-                id: 'ClaudeCode',
-                name: 'ClaudeCode',
-                symbolSize: 12,
-                value: 2
             },
         
             {
@@ -929,20 +929,20 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'ESP32',
-                target: 'Micropython',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
                 source: 'AI',
                 target: 'ClaudeCode',
                 value: 2,
                 lineStyle: {
                     width: 2
+                }
+            },
+        
+            {
+                source: 'ESP32',
+                target: 'Micropython',
+                value: 1,
+                lineStyle: {
+                    width: 1
                 }
             },
         
