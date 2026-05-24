@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>标签关系图谱 | Ychui&#39;s Blog</title>
+  <title>Ychui&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -45,6 +45,8 @@
     <script defer src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
+    
+        <script src="/js/valine/index.js"></script>
     
     
     <!-- 依赖于jquery和vue -->
@@ -579,799 +581,626 @@
 </header>
         <!-- 内容区域 -->
         
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-relationships" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+<!-- prismjs 代码高亮 -->
 
-<div class="relationships-header" style="background-image:url('/medias/wallpaper/05.png')">
-    <div class="relationships-header-title">
-        标签关系图谱
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/medias/1.jpeg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        
+      </span>
     </div>
-    <div class="relationships-header-desc">
     
-        <span class="title" id="relationships-header-desc"></span>
-        <script>
-  function typedFn() {
-    const el = '#relationships-header-desc';
-    const type = 'relationships';
-    let desc = ''
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
     
-    </div>
-    <div class="mask-box"></div>
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2026-05-24 |
+        </span>
+      
+
+      
+
+      
+    
+  </div>
+  
+  
+    <script defer src="/js/bubble/bubble.js"></script>
+  
 </div>
 
 
 
-<div id="relationships" class="container">
-    <div class="card">
-        <div class="card-content">
-            <div class="relationship-info">
-                <p>共 <strong>36</strong> 个标签，<strong>43</strong> 条关联关系</p>
-                <p>拖拽标签可以拖动，滚轮可以缩放，双击可以聚焦</p>
-            </div>
-            <div id="tag-graph-container"></div>
+
+
+<div class="post-detail-content post-row" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Jeston</span> <span class="string">Orin</span> <span class="string">Nano烧录Ubuntu22.04系统</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2026-05-22 11:04:09</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Linux</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Ubuntu</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">JestonNano</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Linux</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Ubuntu</span></span><br></pre></td></tr></table></figure>
+<h2 id="烧录准备"><a href="#烧录准备" class="headerlink" title="烧录准备"></a>烧录准备</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-31-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-31-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img"></p>
+<h2 id="下载SDKManager"><a href="#下载SDKManager" class="headerlink" title="下载SDKManager"></a>下载SDKManager</h2><p><a target="_blank" rel="noopener" href="https://developer.nvidia.cn/embedded/jetpack">https://developer.nvidia.cn/embedded/jetpack</a></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-33-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-33-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i sdkmanager_2.4.0-13236_amd64.deb </span><br><span class="line">sdkmanager</span><br></pre></td></tr></table></figure>
+<ol>
+<li>关闭系统电源，请确保使电源关闭而不是进入待机状态；  </li>
+<li>使用 USB Type C 到 USB Type A 的链接线链接载板和主机；  </li>
+<li>将 FC REC 和GND 保持短路状态，并进入Recovery 模式；  </li>
+<li>对设备上电<br> " class="lazyload placeholder" data-srcset="" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" class="lazyload placeholder" data-srcset="" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif<img src="" alt="Uploading file...ncd7f"></li>
+</ol>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-53-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-53-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<p>连接成功</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-50-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-50-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<p>JetPack 6.2.2 对应的是：<br> 目标系统（Jetson 板子）：Ubuntu 22.04（aarch64）<br> 主机（刷写用 PC）支持：Ubuntu 20.04 / 22.04（x86_64）</p>
+<p><strong>Host machine</strong> = 你眼前用来刷机的电脑</p>
+<ol>
+<li><strong>勾选</strong>：刷机后<strong>开发板系统版本、软件包</strong>和你电脑系统保持一致</li>
+<li><strong>不勾选</strong>：只刷官方默认固件，不和电脑系统同步</li>
+</ol>
+<p>然后CONTINUE即可</p>
+<p>STEP02选择要下载的内容CONTINUE</p>
+<p>最后选择烧录NVMe(硬盘)或者SDCard</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>Ychui</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2026/05/24/Jeston-Orin-Nano烧录Ubuntu22-04系统/" target="_blank" title="">https://yuchanghui.top/2026/05/24/Jeston-Orin-Nano烧录Ubuntu22-04系统/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpeg" class="lazyload placeholder" data-srcset="/medias/1.jpeg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
+    </div>
+    <a href="/2026/05/24/ROS2-Humble%E5%9B%9B%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">ROS2 Humble四旋翼无人机仿真环境搭建</div>
+      </div>
+      
+      <!-- <div class="content">
+        基于 ROS2 Humble+ Gazebo  Sim+ PX4 搭建的四旋翼无人机仿真开发环境，支持无人机姿态控制、路
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/6.png" class="lazyload placeholder" data-srcset="/medias/6.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" src="" alt="">
+    </div>
+    <a href="/2026/05/24/ROS-Noetic%E6%90%AD%E5%BB%BAPX4%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">ROS Noetic搭建PX4仿真环境</div>
+      </div>
+      <!-- <div class="content">
+        参考链接： https://blog.csdn.net/HuangChen666/article/details/128
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
         </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/medias/alipay.png" class="lazyload placeholder" data-srcset="/medias/alipay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/medias/wechatpay.png" class="lazyload placeholder" data-srcset="/medias/wechatpay.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="微信打赏" />
+        </div>
+      </div>
     </div>
+  </transition>
 </div>
-
-<style>
-.relationship-info {
-    text-align: center;
-    margin-bottom: 15px;
-    color: #666;
-}
-
-.relationship-info strong {
-    color: #2c2c2c;
-    font-size: 1.1rem;
-}
-
-#tag-graph-container {
-    width: 100%;
-    height: 600px;
-    background: transparent;
-    border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-    #tag-graph-container {
-        height: 400px;
-    }
-}
-</style>
-
-<!-- ECharts CDN -->
-<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var container = document.getElementById('tag-graph-container');
-    if (!container) return;
-
-    // Initialize ECharts
-    var myChart = echarts.init(container);
-
-    var nodes = [
-        
-            {
-                id: 'AI',
-                name: 'AI',
-                symbolSize: 14,
-                value: 4
-            },
-        
-            {
-                id: 'C/C++',
-                name: 'C/C++',
-                symbolSize: 38,
-                value: 30
-            },
-        
-            {
-                id: 'STM32',
-                name: 'STM32',
-                symbolSize: 37,
-                value: 29
-            },
-        
-            {
-                id: 'CLion',
-                name: 'CLion',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
-                id: 'CMake',
-                name: 'CMake',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
-                id: 'ClaudeCode',
-                name: 'ClaudeCode',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
-                id: 'ESP32',
-                name: 'ESP32',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
-                id: 'Micropython',
-                name: 'Micropython',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
-                id: 'Git',
-                name: 'Git',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
-                id: 'hexo',
-                name: 'hexo',
-                symbolSize: 15,
-                value: 5
-            },
-        
-            {
-                id: 'Linux',
-                name: 'Linux',
-                symbolSize: 40,
-                value: 32
-            },
-        
-            {
-                id: 'Ubuntu',
-                name: 'Ubuntu',
-                symbolSize: 39,
-                value: 31
-            },
-        
-            {
-                id: 'Markdown',
-                name: 'Markdown',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
-                id: 'Matlab',
-                name: 'Matlab',
-                symbolSize: 15,
-                value: 5
-            },
-        
-            {
-                id: 'Obsidian',
-                name: 'Obsidian',
-                symbolSize: 13,
-                value: 3
-            },
-        
-            {
-                id: 'OpenClaw',
-                name: 'OpenClaw',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
-                id: 'Openmv',
-                name: 'Openmv',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
-                id: 'python',
-                name: 'python',
-                symbolSize: 29,
-                value: 20
-            },
-        
-            {
-                id: 'Opencv',
-                name: 'Opencv',
-                symbolSize: 17,
-                value: 7
-            },
-        
-            {
-                id: 'Pytorch',
-                name: 'Pytorch',
-                symbolSize: 17,
-                value: 7
-            },
-        
-            {
-                id: 'Pyqt5',
-                name: 'Pyqt5',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
-                id: 'RS485',
-                name: 'RS485',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
-                id: 'Modbus',
-                name: 'Modbus',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
-                id: 'ROS',
-                name: 'ROS',
-                symbolSize: 30,
-                value: 21
-            },
-        
-            {
-                id: 'VMware',
-                name: 'VMware',
-                symbolSize: 14,
-                value: 4
-            },
-        
-            {
-                id: 'RaspberryPi',
-                name: 'RaspberryPi',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
-                id: 'PicGo',
-                name: 'PicGo',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
-                id: 'ROS2',
-                name: 'ROS2',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
-                id: 'VSCode',
-                name: 'VSCode',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
-                id: 'Json',
-                name: 'Json',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
-                id: 'Solidworks',
-                name: 'Solidworks',
-                symbolSize: 16,
-                value: 6
-            },
-        
-            {
-                id: 'WSL',
-                name: 'WSL',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
-                id: 'Printer',
-                name: 'Printer',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
-                id: 'Simulation',
-                name: 'Simulation',
-                symbolSize: 14,
-                value: 4
-            },
-        
-            {
-                id: 'Canopen',
-                name: 'Canopen',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
-                id: 'SLAM',
-                name: 'SLAM',
-                symbolSize: 11,
-                value: 1
-            },
-        
-    ];
-
-    var links = [
-        
-            {
-                source: 'STM32',
-                target: 'CLion',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
-                source: 'AI',
-                target: 'ClaudeCode',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
-                source: 'ESP32',
-                target: 'Micropython',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'Linux',
-                target: 'Ubuntu',
-                value: 31,
-                lineStyle: {
-                    width: 31
-                }
-            },
-        
-            {
-                source: 'AI',
-                target: 'Obsidian',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'ClaudeCode',
-                target: 'Obsidian',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'AI',
-                target: 'OpenClaw',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'Openmv',
-                target: 'python',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'python',
-                target: 'Opencv',
-                value: 7,
-                lineStyle: {
-                    width: 7
-                }
-            },
-        
-            {
-                source: 'python',
-                target: 'Pytorch',
-                value: 7,
-                lineStyle: {
-                    width: 7
-                }
-            },
-        
-            {
-                source: 'python',
-                target: 'Pyqt5',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'Pytorch',
-                target: 'Pyqt5',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'python',
-                target: 'RS485',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'python',
-                target: 'Modbus',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'RS485',
-                target: 'Modbus',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
-                source: 'Linux',
-                target: 'ROS',
-                value: 21,
-                lineStyle: {
-                    width: 21
-                }
-            },
-        
-            {
-                source: 'Ubuntu',
-                target: 'ROS',
-                value: 20,
-                lineStyle: {
-                    width: 20
-                }
-            },
-        
-            {
-                source: 'STM32',
-                target: 'Linux',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
-                source: 'STM32',
-                target: 'Ubuntu',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
-                source: 'STM32',
-                target: 'ROS',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
-                source: 'Linux',
-                target: 'VMware',
-                value: 4,
-                lineStyle: {
-                    width: 4
-                }
-            },
-        
-            {
-                source: 'Ubuntu',
-                target: 'VMware',
-                value: 4,
-                lineStyle: {
-                    width: 4
-                }
-            },
-        
-            {
-                source: 'ROS',
-                target: 'VMware',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
-                source: 'C/C++',
-                target: 'STM32',
-                value: 23,
-                lineStyle: {
-                    width: 23
-                }
-            },
-        
-            {
-                source: 'C/C++',
-                target: 'RS485',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'C/C++',
-                target: 'Modbus',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'STM32',
-                target: 'RS485',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'STM32',
-                target: 'Modbus',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'hexo',
-                target: 'PicGo',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
-                source: 'Linux',
-                target: 'ROS2',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
-                source: 'Ubuntu',
-                target: 'ROS2',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
-                source: 'Linux',
-                target: 'VSCode',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'Ubuntu',
-                target: 'VSCode',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'CMake',
-                target: 'VSCode',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'CMake',
-                target: 'Json',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'VSCode',
-                target: 'Json',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'STM32',
-                target: 'python',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'Linux',
-                target: 'Solidworks',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'ROS',
-                target: 'Solidworks',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'Linux',
-                target: 'WSL',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'Ubuntu',
-                target: 'WSL',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'Solidworks',
-                target: 'Simulation',
-                value: 4,
-                lineStyle: {
-                    width: 4
-                }
-            },
-        
-            {
-                source: 'Matlab',
-                target: 'Solidworks',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-    ];
-
-    var option = {
-        backgroundColor: 'transparent',
-        tooltip: {
-            show: true,
-            formatter: function(params) {
-                if (params.dataType === 'node') {
-                    return params.name + '<br/>' + params.value + ' 篇文章';
-                }
-                return params.source + ' - ' + params.target + '<br/>共同出现在 ' + params.value + ' 篇文章中';
-            }
-        },
-        series: [{
-            type: 'graph',
-            layout: 'force',
-            animation: true,
-            roam: true,
-            focusNodeAdjacency: true,
-            draggable: true,
-            label: {
-                show: true,
-                position: 'inside',
-                fontSize: 12,
-                color: '#333'
-            },
-            force: {
-                repulsion: 200,
-                edgeLength: 80,
-                layoutAnimation: true
-            },
-            emphasis: {
-                label: {
-                    show: true,
-                    fontSize: 14
-                },
-                itemStyle: {
-                    shadowBlur: 10,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
-                }
-            },
-            data: nodes,
-            links: links,
-            lineStyle: {
-                color: 'source',
-                curveness: 0.3,
-                opacity: 0.6
-            }
-        }]
-    };
-
-    myChart.setOption(option);
-
-    // Responsive resize
-    window.addEventListener('resize', function() {
-        myChart.resize();
-    });
-
-    // Double click to focus
-    container.addEventListener('dblclick', function(params) {
-        myChart.dispatchAction({
-            type: 'focusNodeAdjacency'
-        });
-    });
-});
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
 </script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em;">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+		border-radius: 8px;
+	}
+	#veditor {
+		background-image: url('/medias/monkey.gif');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img src='/medias/touxiang.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>Ychui's Blog</h2>
+        
+        
+          <p>write code and love life</p>
+
+        
+        
+          <p><span id="jinrishici-sentence">Ychui's Blog</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://blog.csdn.net/weixin_51002159?spm=1000.2115.3001.5343"
+              class="social fab fa-cuttlefish flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/GHIgher12"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=2535410943"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+    
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%83%A7%E5%BD%95%E5%87%86%E5%A4%87"><span class="toc-text">烧录准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDSDKManager"><span class="toc-text">下载SDKManager</span></a></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
 
       </main>
     </div>
@@ -2074,6 +1903,144 @@ document.addEventListener('DOMContentLoaded', function() {
    
 
 <!-- 评论所需js -->
+
+  
+        
+  <!-- 弹幕插件 -->
+  <link href="/js/danmu/barrager.css" rel="stylesheet">
+  <script src="/js/danmu/jquery.barrager.js"></script>
+
+<!-- 具体js，请前往valine/script.ejs查看 -->
+
+      
+        <script>
+  var requiredFields = '';
+  requiredFields = requiredFields.split(',');
+  comment_el = '.comment';
+  let looperValine = null;
+  load_valine = function () {
+    if ($(comment_el).length) {
+      var valine = new Valine({
+        el: '#vcomment',
+        path: window.location.pathname,
+        notify: false,
+        verify: false,
+        app_id: "2PVPHuivtIxkhlA1Kv1quvq2-gzGzoHsz",
+        app_key: "7EDHPdniI5WQBAkU96Yxy9bG",
+        placeholder: "说点什么吧",
+        avatar: "",
+        master: "9b1cd4514cf4b7b3747b9aaa3b78397f",   //博主邮箱md5
+        tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+        friends: "",
+        metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱" },
+        requiredFields: requiredFields,
+        enableQQ: true,
+      });
+      function debounce(fn) {
+        var timerID = null
+        return function () {
+          var arg = arguments[0]   //获取事件
+          if (timerID) {
+            clearTimeout(timerID)
+          }
+          timerID = setTimeout(function () {
+            fn(arg)              //事件传入函数
+          }, 200)
+        }
+      }
+      //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
+      var themeDanmu = eval('true');
+      var themeLoop = eval('false');
+      var themeLooperTime = '5000' || 5000;
+      var speed = '40' || 20;
+      var isBarrager = true;
+      if (themeDanmu == true) {
+        do_barrager();
+        if ($('.danmuBox').length <= 0) {
+          $('.navbar').append('<div class="danmuBox"><div class="danmuBtn open"><span class="danmuCircle"></span><span class="danmuText">弹幕</span></div></div>');
+        }
+        $('.danmuBtn').on('click', debounce(
+          function () {
+            if ($('.danmuBtn').hasClass('open')) {
+              $('.danmuBtn').removeClass('open')
+              clearInterval(looperValine);
+              $.fn.barrager.removeAll();
+            } else {
+              $('.danmuBtn').addClass("open");
+              do_barrager();
+            }
+          }
+        ))
+      }
+      function do_barrager() {
+        isBarrager && valine.Q(window.location.pathname).find().then(function (comments) {
+          // var num = 0; // 可以记录条数，循环调用的时候只取最新的评论放入弹幕中
+          var run_once = true;
+          var looper_time = themeLooperTime;
+          var total = comments.length;
+          // var looper = null;
+          var index = 0;
+          if (total > 0) {
+            barrager();
+          } else {
+            // 当评论数为0的时候，自动关闭弹幕
+            // $('.danmuBtn').removeClass('open');
+          }
+          function barrager() {
+            if (run_once) {
+              //如果是首次执行,则设置一个定时器,并且把首次执行置为false
+              looperValine = setInterval(barrager, looper_time);
+              run_once = false;
+            }
+            var content = comments[index]._serverData.comment;
+            var email = comments[index]._serverData.mail;
+            var link = comments[index]._serverData.link;
+            var newcontent = content.substring(0, 50).replace(/<[^>]+>/g, "");
+            //发布一个弹幕
+            const item = {
+              img: `https://q1.qlogo.cn/g?b=qq&nk=${email}&s=640`, //图片 
+              info: newcontent, //文字 
+              href: link, //链接 
+              close: true, //显示关闭按钮 
+              speed: speed, //延迟,单位秒,默认6 
+              color: '#fff', //颜色,默认白色 
+              old_ie_color: '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
+            }
+            $('body').barrager(item);
+            //索引自增
+            index++;
+            //所有弹幕发布完毕，清除计时器。
+            if (index == total) {
+              clearInterval(looperValine);
+              if (themeLoop === true) {
+                setTimeout(function () {
+                  do_barrager();
+                }, 5000);
+              } else {
+                $('.danmuBtn').removeClass('open');
+              }
+              return false;
+            }
+
+          }
+        })
+      }
+    }
+  };
+  $(document).ready(load_valine);
+  document.addEventListener('pjax:send', function (e) {
+    
+      $('.danmuBox').length > 0 && $('.danmuBox').remove()
+      looperValine && clearInterval(looperValine);
+      $.fn.barrager.removeAll();
+    
+  })
+  document.addEventListener('pjax:complete', function () {
+    load_valine();
+  });
+</script>
+
+      
 
 
 <!-- 鼠标点击特效 -->

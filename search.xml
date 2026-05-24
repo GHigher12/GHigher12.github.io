@@ -8063,4 +8063,308 @@ x = \left[ p, v, R, b_g, b_a, g \right]^\top \in \mathcal{M}</script><p>按照�
         <tag>ROS</tag>
       </tags>
   </entry>
+  <entry>
+    <title></title>
+    <url>/2026/05/24/Jeston-Orin-Nano%E7%83%A7%E5%BD%95Ubuntu22-04%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Jeston</span> <span class="string">Orin</span> <span class="string">Nano烧录Ubuntu22.04系统</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2026-05-22 11:04:09</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Linux</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Ubuntu</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">JestonNano</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Linux</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Ubuntu</span></span><br></pre></td></tr></table></figure>
+<h2 id="烧录准备"><a href="#烧录准备" class="headerlink" title="烧录准备"></a>烧录准备</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-31-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-31-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img"></p>
+<h2 id="下载SDKManager"><a href="#下载SDKManager" class="headerlink" title="下载SDKManager"></a>下载SDKManager</h2><p><a href="https://developer.nvidia.cn/embedded/jetpack">https://developer.nvidia.cn/embedded/jetpack</a></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-33-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-33-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo dpkg -i sdkmanager_2.4.0-13236_amd64.deb </span><br><span class="line">sdkmanager</span><br></pre></td></tr></table></figure>
+<ol>
+<li>关闭系统电源，请确保使电源关闭而不是进入待机状态；  </li>
+<li>使用 USB Type C 到 USB Type A 的链接线链接载板和主机；  </li>
+<li>将 FC REC 和GND 保持短路状态，并进入Recovery 模式；  </li>
+<li>对设备上电<br> " class="lazyload placeholder" data-srcset="" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif<img src="" alt="Uploading file...ncd7f"></li>
+</ol>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-53-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-53-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<p>连接成功</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-50-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-50-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<p>JetPack 6.2.2 对应的是：<br> 目标系统（Jetson 板子）：Ubuntu 22.04（aarch64）<br> 主机（刷写用 PC）支持：Ubuntu 20.04 / 22.04（x86_64）</p>
+<p><strong>Host machine</strong> = 你眼前用来刷机的电脑</p>
+<ol>
+<li><strong>勾选</strong>：刷机后<strong>开发板系统版本、软件包</strong>和你电脑系统保持一致</li>
+<li><strong>不勾选</strong>：只刷官方默认固件，不和电脑系统同步</li>
+</ol>
+<p>然后CONTINUE即可</p>
+<p>STEP02选择要下载的内容CONTINUE</p>
+<p>最后选择烧录NVMe(硬盘)或者SDCard</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>ROS Noetic搭建PX4仿真环境</title>
+    <url>/2026/05/24/ROS-Noetic%E6%90%AD%E5%BB%BAPX4%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>参考链接：<br> <a href="https://blog.csdn.net/HuangChen666/article/details/128754106">https://blog.csdn.net/HuangChen666/article/details/128754106</a><br> <a href="https://www.yuque.com/xtdrone/manual_cn/basic_config_13">https://www.yuque.com/xtdrone/manual_cn/basic_config_13</a><br> <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260415222859918.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260415222859918.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<h2 id="安装mavros"><a href="#安装mavros" class="headerlink" title="安装mavros"></a>安装mavros</h2><p>MAVROS是ROS（机器人操作系统）下的开源功能包，核心作用是搭建ROS与MAVLink协议设备（如PX4飞控）之间的通信桥梁，适配ROS1与ROS2版本（含MAVROS2）。</p>
+<p>它可实现ROS话题、服务与飞控指令、状态数据的双向互通，既能向PX4飞控下发起飞、悬停、返航等控制指令，也能实时订阅GPS位置、飞行姿态、电池状态等遥测数据。</p>
+<p>作为无人机智能化开发的核心工具，MAVROS广泛应用于避障算法、目标追踪、路径规划等场景，也是Offboard模式调试的关键支撑，常与PX4飞控配合使用，构成无人机开发的标准架构。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install ros-noetic-mavros ros-noetic-mavros-extras  <span class="comment"># for ros-noetic</span></span><br><span class="line">wget https://gitee.com/robin_shaun/XTDrone/raw/master/sitl_config/mavros/install_geographiclib_datasets.sh</span><br><span class="line">sudo chmod a+x ./install_geographiclib_datasets.sh</span><br><span class="line">sudo ./install_geographiclib_datasets.sh <span class="comment">#这步需要装一段时间</span></span><br></pre></td></tr></table></figure>
+<h2 id="安装PX4"><a href="#安装PX4" class="headerlink" title="安装PX4"></a>安装PX4</h2><h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><p>Github下载</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/PX4/PX4-Autopilot.git</span><br><span class="line">mv PX4-Autopilot PX4_Firmware</span><br><span class="line">cd PX4_Firmware</span><br><span class="line">git checkout -b xtdrone/dev v1.13.2</span><br><span class="line">git submodule update --init --recursive</span><br><span class="line">make px4_sitl_default gazebo</span><br></pre></td></tr></table></figure>
+<p>可下载上述安装包</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd PX4_Firmware</span><br><span class="line">make px4_sitl_default gazebo</span><br></pre></td></tr></table></figure>
+<p>编译完成后，会弹出Gazebo界面，将其关闭即可。<br> 修改 ~/.bashrc，加入以下代码,注意路径匹配，前两个source顺序不能颠倒。<br> 我用的是zsh<br> 所以添加这些到~/.zshrc</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># PX4 Gazebo simulation environment</span></span><br><span class="line"><span class="built_in">source</span> ~/PX4_Firmware/Tools/setup_gazebo.bash ~/PX4_Firmware/ ~/PX4_Firmware/build/px4_sitl_default</span><br><span class="line"><span class="built_in">export</span> ROS_PACKAGE_PATH=<span class="variable">$ROS_PACKAGE_PATH</span>:~/PX4_Firmware</span><br><span class="line"><span class="built_in">export</span> ROS_PACKAGE_PATH=<span class="variable">$ROS_PACKAGE_PATH</span>:~/PX4_Firmware/Tools/sitl_gazebo</span><br></pre></td></tr></table></figure>
+<h3 id="改变飞机模型"><a href="#改变飞机模型" class="headerlink" title="改变飞机模型"></a>改变飞机模型</h3><p>搭载不同传感器</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Tools/sitl_gazebo/models/</span><br></pre></td></tr></table></figure>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260416103009163.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260416103009163.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"><br> 修改launch文件的<code>sdf</code>属性<br> ``</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;commander takeoff&quot;</span> | python3 Tools/mavlink_shell.py 127.0.0.1:14550</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;commander land&quot;</span> | python3 Tools/mavlink_shell.py 127.0.0.1:14550</span><br><span class="line"><span class="built_in">cd</span> ~/PX4_Firmware</span><br><span class="line">roslaunch px4 indoor1.launch</span><br></pre></td></tr></table></figure>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260415154728533.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260415154728533.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">roslaunch px4 outdoor1.launch</span><br></pre></td></tr></table></figure>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260416111542041.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260416111542041.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"><br> 需要下再好gazebo的模型不然运行时会加载不出来，保存到~/.gazebo/models目录下</p>
+<h2 id="安装XTDrone"><a href="#安装XTDrone" class="headerlink" title="安装XTDrone"></a>安装XTDrone</h2><p>XTDrone是一款基于ROS、Gazebo与PX4开发的开源通用无人机仿真平台，可看作无人机开发的“虚拟沙盒”，核心用于无人机算法调试、功能验证与开发练习，无需真机即可完成各类测试，安全且高效。</p>
+<p>它支持多旋翼、固定翼、VTOL等多种机型，还可适配无人车、无人船、机械臂等多种无人系统，能实现多机编队、自主导航、SLAM、目标追踪等多种场景的仿真。其核心优势是模块化设计，可灵活修改仿真模型与参数，且在平台上验证通过的算法，能方便地部署到真实无人机上。</p>
+<p>XTDrone与PX4飞控配合紧密，可通过相关通信工具实现ROS与PX4飞控的通信，构建起“仿真环境-飞控”的完整开发架构，是无人机智能化开发与调试的重要工具。</p>
+<h2 id="安装QGC"><a href="#安装QGC" class="headerlink" title="安装QGC"></a>安装QGC</h2><p><strong>QGroundControl (QGC)</strong> 是一款<strong>开源、跨平台、专业级</strong>的无人机 / 无人系统地面控制站（GCS），基于 <strong>MAVLink</strong> 协议，为 <strong>PX4、ArduPilot</strong> 等主流飞控提供全链路控制、任务规划与数据分析能力。<br> 完全适配 PX4 仿真。</p>
+<p>官网： <a href="https://qgroundcontrol.com/">https://qgroundcontrol.com/</a></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260415220649852.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260415220649852.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<ol>
+<li><p>On the command prompt enter:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo usermod -a -G dialout $USER</span><br><span class="line">sudo apt-get remove modemmanager -y</span><br><span class="line">sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl -y</span><br><span class="line">sudo apt install libfuse2 -y</span><br><span class="line">sudo apt install libxcb-xinerama0 libxkbcommon-x11-0 libxcb-cursor-dev -y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Logout and login again to enable the change to user permissions.</p>
+<p>To install <em>QGroundControl</em>:</p>
+</li>
+<li><p>Download <a href="https://d176tv9ibo4jno.cloudfront.net/latest/QGroundControl-x86_64.AppImage">QGroundControl-x86_64.AppImage</a>.</p>
+</li>
+<li><p>Install (and run) using the terminal commands:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod +x ./QGroundControl-x86_64.AppImage</span><br><span class="line">./QGroundControl-x86_64.AppImage  (or double click)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>安装版本为v3.5.5版本，参考github链接 ： <a href="https://github.com/mavlink/qgroundcontrol/releases">https://github.com/mavlink/qgroundcontrol/releases</a><br> 安装过程用Claude code解决</p>
+<p>在设置中可打开虚拟按钮操控<br> <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260416111719959.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260416111719959.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"><br> 左摇杆为升降高度，右摇杆为前后左右</p>
+<h2 id="安装Lightning-LM"><a href="#安装Lightning-LM" class="headerlink" title="安装Lightning-LM"></a>安装Lightning-LM</h2><p>Lightning-Speed Lidar Localization and Mapping</p>
+<p>Lightning-LM 是一个完整的激光建图+定位模块。</p>
+<p>Lightning-LM特性：</p>
+<ol>
+<li>[done] 完整的3D Lidar SLAM，快速的LIO前端（AA-FasterLIO），标配</li>
+<li>[done] 3D至2D地图转换（g2p5），选配，选上的话会输出实时的2D栅格，可以保存</li>
+<li>[done] 实时回环检测，标配，选上的话会进行后端回环检测并闭环</li>
+<li>[done] 流畅的高精3D Lidar 定位，标配</li>
+<li>[done] 地图分区动态加载方案，适用大场景</li>
+<li>[done] 动静态图层分离定位，适配动态场景，可选择动态图层的策略，选配，选上的话会保存动态图层的地图内容，有三种策略可以选（短期、中期、永久），默认永久</li>
+<li>[done] 高频率IMU平滑输出，标配，100Hz</li>
+<li>GPS地理信息关联，选配 (TODO)</li>
+<li>车辆里程计输入，选配 (TODO)</li>
+<li>[done] 轻量优化库miao以及增量式优化（来自g2o，但更轻更快，支持增量优化，不需要重新构建优化模型），标配，在回环、定位中均有用到</li>
+<li>[done] 离线与在线两种验证方案。离线可以断点调试，一致性强。在线可以多线程并发，处理速度快，可以设置动态跳帧，占用低。</li>
+<li>[done] 基于外推器和平滑器的高频率输出，平滑因子可调</li>
+<li>[done] 高性能计算：以上这些特性在纯CPU端不到一个核心就可以运行（在线定位0.8个核，建图1.2个核，32线雷达，无UI情况）</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git　<span class="built_in">clone</span>　https://github.com/gaoxiang12/lightning-lm.git</span><br></pre></td></tr></table></figure>
+<p>因为此算法适配的是ROS2,需要改为ROS1 noteic<br> 此步骤采用CC来辅助实现</p>
+<p>采用NCLT数据集测试<br> 离线建图指令为</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rosrun lightning run_slam_offline --config /home/ychooo/ROS_WS/Lightning_ws/src/lightning-lm/config/default_nclt.yaml --input_bag /media/ychooo/KINGIDISK/Datasets/nclt/20130110.bag</span><br></pre></td></tr></table></figure>
+<p>已成功运行<br> <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260417201207266.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260417201207266.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"><br> 结束后会自动保存至data/new_map目录下</p>
+<p>原作者提供了三种msg类型: PointCloud, PointCloud2 和 CustomMsg，因此可以兼容A-LOAM，Fast-LIO和R3live等slam算法。</p>
+<p>结论：错误原因是 Gazebo 仿真数据中 Livox 点云的有效数据不足</p>
+<p>  根据我的分析：</p>
+<ol>
+<li>你使用的是 Gazebo 仿真，/scan topic 是 livox_ros_driver/CustomMsg 格式</li>
+<li>AviaHandler 过滤条件太严格 — Gazebo 模拟器产生的 Livox 消息中 tag 和 line 字段可能不符合 Livox<br> 官方驱动设置的有效值（tag: 0x00 或 0x10，line: &lt; 6）</li>
+<li><p>这导致每帧点云几乎为空 → EKF 状态估计失败 → 后续处理崩溃</p>
+<p>建议修改 src/faster-lio/src/pointcloud_preprocess.cc 中的 AviaHandler 函数，放宽对 tag 和 line<br>的过滤条件，或者改用适配仿真数据的 launch 配置。</p>
+<p>你想让我帮你：</p>
+</li>
+<li><p>修改 AviaHandler 使其兼容 Gazebo 仿真数据？</p>
+</li>
+<li>还是改用 Velodyne 配置（如果 Gazebo 发布的是标准格式）？</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>ROS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ROS2 Humble四旋翼无人机仿真环境搭建</title>
+    <url>/2026/05/24/ROS2-Humble%E5%9B%9B%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>基于 ROS2 Humble+ Gazebo  Sim+ PX4 搭建的四旋翼无人机仿真开发环境，支持无人机姿态控制、路径规划、SLAM 等算法验证与开发。</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/architecture_xrce-dds_ros2.CpY9H3P9.svg" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/architecture_xrce-dds_ros2.CpY9H3P9.svg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="Architecture uXRCE-DDS with ROS 2"></p>
+<h2 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h2><p>本项目用于快速搭建 <strong>ROS2 Humble (Ubuntu 22.04)</strong> 下的四旋翼无人机仿真平台，集成物理仿真器 Gazebo、无人机动力学模型、控制接口与可视化工具，无需实体无人机即可完成无人机算法开发、调试与测试。</p>
+<h2 id="环境依赖"><a href="#环境依赖" class="headerlink" title="环境依赖"></a>环境依赖</h2><ul>
+<li>操作系统：Ubuntu 22.04 LTS</li>
+<li>ROS 版本：ROS2 Humble</li>
+</ul>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~/uav_ws/</span><br><span class="line">    -Micro-XRCE-DDS-Agent/</span><br><span class="line">    -PX4-Autopilot/</span><br><span class="line">    -ROS2_WS/</span><br><span class="line">        -lightning_ws/</span><br><span class="line">        -px4_ws/</span><br><span class="line">        	-src/</span><br><span class="line">        		-px4_msgs</span><br><span class="line">        		-px4_ros_com</span><br><span class="line">        -ws_xtd2/</span><br></pre></td></tr></table></figure>
+<h2 id="系统介绍"><a href="#系统介绍" class="headerlink" title="系统介绍"></a>系统介绍</h2><h3 id="ROS-2用户指南"><a href="#ROS-2用户指南" class="headerlink" title="ROS 2用户指南"></a>ROS 2用户指南</h3><p>ROS 2-PX4 架构在 ROS 2 和 PX4 之间进行了深度整合。允许 ROS 2 订阅或发布节点直接使用 PX4 uORB 话题。</p>
+<p>本指南介绍了系统架构和应用程序流程，并解释了如何与 PX4 一起安装和使用 ROS2。</p>
+<blockquote>
+<p><strong>INFO</strong><br> 从 PX4 v1.14，ROS 2 使用 <code>uXRCE-DDS</code> 中间件替换版本 1 中使用的 <code>FastRTPS</code> 中间件。3 (v1.13 不支持 uXRCE-DDS)。<br> <code>migration guide</code> 解释您需要做什么来将 ROS2 应用程序从 PX4 v1.13 迁移到 PX4 v1.14。<br> If you’re still working on PX4 v1.13, please follow the instructions in the PX4 v1.13 Docs.</p>
+</blockquote>
+<hr>
+<h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><p>得益于 <code>uXRCE-DDS</code> 通信中间件的使用，ROS 2 的应用流程非常简单直接。</p>
+<p>uXRCE-DDS 中间件由两部分组成：一部分是运行在 PX4 上的客户端，另一部分是运行在机载计算机上的代理；二者之间通过串口、UDP、TCP 或自定义链路进行双向数据交换。代理充当客户端的代理角色，以便在全局 DDS 数据空间中发布和订阅主题。</p>
+<p>PX4 <code>uxrce_dds_client</code> 是在构建时生成，并且默认包含在 PX4 固件中。它包含“通用”XRCE-DDS客户端代码和它用来发布到来自 uORB 主题的 PX4 特定转换代码。生成到客户端中的 uORB 消息子集在 <code>dds_topics.yaml</code> 中说明。生成器使用源代码树中的 uORB 消息定义：<code>PX4-Autopilot/msg</code> 用于生成发送 ROS 2 消息的代码。</p>
+<p>ROS 2 应用程序需要在一个工作空间中构建，该工作空间需包含与 PX4 固件中创建 uXRCE-DDS 客户端模块时所用完全相同的消息定义。您可以通过克隆接口包 <code>PX4/px4_msgs</code> 将这些内容纳入您的 ROS 2 工作空间（repo 中的范围与不同的 PX4 版本的消息相对应）。</p>
+<p>从 PX4 v1.16 版本开始 <code>message versioning</code>，ROS 2 应用程序所使用的消息定义版本，可与构建 PX4 时所用的消息定义版本不同。这需要 <code>ROS 2 Message Translation Node</code> 运行 ROS 2 消息转换节点，以确保消息能够正确转换和交互。</p>
+<p>需要注意的是，微型 XRCE-DDS agent 本身并不依赖客户端代码。它可以从 <code>source</code> 中单独构建，或者作为 ROS 构建的一部分，或者作为 snap 包安装。</p>
+<p>在使用 ROS 2 时，您通常需要同时启动客户端和代理。需要注意的是，uXRCE-DDS 客户端默认已内置到固件中，但除仿真器构建版本外，不会自动启动。</p>
+<blockquote>
+<p><strong>INFO</strong><br> 在 PX4 v1.13 及更早版本中，ROS 2 依赖于 <code>px4_ros_com</code> 中的消息定义。该代码仓库已不再需要，但其中包含一些实用的示例。</p>
+</blockquote>
+<h3 id="PX4-Autopilot"><a href="#PX4-Autopilot" class="headerlink" title="PX4-Autopilot"></a>PX4-Autopilot</h3><p>PX4-Autopilot是由Dronecode基金会（Linux基金会旗下）维护的开源无人机与无人车辆飞控堆栈仓库，采用BSD 3-Clause宽松开源协议，支持商业与闭源二次开发。项目基于NuttX RTOS与Linux等系统，以模块化uORB发布订阅中间件为核心架构，实现全并行、线程安全的飞行控制功能，可按需裁剪模块以适配不同硬件资源。它全面支持多旋翼、固定翼、倾转旋翼（VTOL）、无人车、直升机等多种飞行/移动平台，兼容Pixhawk系列及各类主流飞控硬件、传感器与外设。仓库内置完整的自主飞行能力，包含航点任务、自动起降、返航、多传感器融合（IMU/GPS/视觉/激光雷达）、避障与路径规划等核心功能，同时原生支持MAVLink通信协议与DDS/ROS 2生态集成，可通过QGroundControl地面站或MAVSDK进行外部控制与数据交互。配套提供完善的SITL仿真、硬件在环测试与日志分析工具，拥有全球活跃的开发者社区与稳定的版本迭代机制，广泛应用于工业巡检、农业植保、物流配送、科研勘探及消费级航拍等领域，是目前全球最主流、功能最完善的开源飞控解决方案之一。</p>
+<h3 id="Micro-XRCE-DDS-Agent"><a href="#Micro-XRCE-DDS-Agent" class="headerlink" title="Micro-XRCE-DDS-Agent"></a>Micro-XRCE-DDS-Agent</h3><p>Micro-XRCE-DDS-Agent是eProsima公司开源实现的遵循OMG XRCE-DDS标准的代理服务端仓库，作为Micro XRCE-DDS架构中的核心网关组件，常与运行在单片机、嵌入式MCU、PX4飞控等资源受限设备上的客户端配合使用。该项目基于C++11开发，依赖Fast DDS库，通过CMake完成编译构建，采用客户端与代理端分离的架构模式，由代理端代为在DDS网络域中创建发布订阅实体、完成数据收发与消息转发，大幅降低低端嵌入式设备的算力与内存开销。仓库原生支持UDP、TCP、串口等多种通信传输方式，兼容发布订阅通信模式以及DDS-RPC请求响应机制，能够无缝将资源受限的嵌入式设备接入标准DDS网络与ROS2生态系统，广泛应用于无人机飞控与ROS2通信、小型嵌入式机器人、物联网终端接入机器人中间件等轻量化工业与机器人开发场景，同时支持常规编译部署、Docker容器部署等多种运行方式，适配不同开发与工程部署需求。</p>
+<h3 id="lightning-ws"><a href="#lightning-ws" class="headerlink" title="lightning_ws"></a>lightning_ws</h3><p>Lightning-LM工作空间</p>
+<p>Lightning-LM 全称 Lightweight LiDAR-Inertial Mapping，采用<strong>前端里程计 + 回环检测 + 轻量级位姿图优化</strong>的模块化架构，基于 ROS 2 开发（兼容 ROS 1），支持纯定位与 SLAM 双模式运行。前端借鉴 Fast-LIO 思想，以<strong>iVox 体素索引</strong>实现高效点云匹配，结合 IMU 预积分补偿运动畸变，输出高频（100Hz）平滑位姿；后端通过<strong>NDT 回环检测</strong>与自研<strong>miao 轻量级优化库</strong>（基于 g2o 精简重构，支持增量优化）抑制累积漂移，全局一致性强。</p>
+<h3 id="px4-ws"><a href="#px4-ws" class="headerlink" title="px4_ws"></a>px4_ws</h3><p>PX4工作空间储存ROS 2 消息定义仓库、ROS 2与PX4固件通信桥接及工具库仓库</p>
+<p><strong>px4_msgs</strong>是 PX4 官方维护的 ROS 2 消息定义仓库，专门为 PX4 Autopilot 与 ROS 2 生态的通信提供标准化接口。它包含与 PX4 固件内部 uORB 消息完全对应的 ROS 2 消息（.msg）与服务（.srv）定义，覆盖传感器数据、飞行状态、控制指令、任务信息等全维度通信接口。仓库通过自动化 CI/CD 流水线与 PX4-Autopilot 主仓库同步，确保 uORB 与 ROS 2 消息定义实时一致，支持多版本 PX4 与 ROS 2（如 Humble、Iron）的兼容性适配。作为 PX4-ROS 2 通信的基础依赖包，它不包含可执行代码，仅提供接口定义，是构建 ROS 2 控制节点、状态订阅节点的前提，广泛用于无人机自主控制、传感器融合、避障算法开发等场景。</p>
+<p><strong>px4_ros_com</strong>是 PX4 官方的 ROS 2 与 PX4 固件通信桥接及工具库仓库，强依赖 px4_msgs，基于 Micro-XRCE-DDS（原 Fast-RTPS）中间件实现 ROS 2 与 PX4 uORB 系统的双向数据交互。它提供核心通信桥接功能、坐标系转换工具库（解决 ROS 2 与 PX4 坐标系差异）及丰富的示例节点（如传感器数据监听、离线控制、航点任务下发等），帮助开发者快速上手 ROS 2 控制 PX4 无人机。仓库包含 C++/Python 实现的通信节点、启动文件与测试脚本，支持 SITL 仿真与真机环境的无缝对接，同时提供时间同步、数据转换、异常处理等基础能力，是开发 ROS 2 端自主飞行、路径规划、多机协同等高级应用的核心工具包。</p>
+<h3 id="ws-xtd2"><a href="#ws-xtd2" class="headerlink" title="ws_xtd2"></a>ws_xtd2</h3><p>XTDrone2工作空间</p>
+<p>XTDrone是一款基于ROS、Gazebo与PX4开发的开源通用无人机仿真平台，可看作无人机开发的“虚拟沙盒”，核心用于无人机算法调试、功能验证与开发练习，无需真机即可完成各类测试，安全且高效。</p>
+<p>它支持多旋翼、固定翼、VTOL等多种机型，还可适配无人车、无人船、机械臂等多种无人系统，能实现多机编队、自主导航、SLAM、目标追踪等多种场景的仿真。其核心优势是模块化设计，可灵活修改仿真模型与参数，且在平台上验证通过的算法，能方便地部署到真实无人机上。</p>
+<p>XTDrone与PX4飞控配合紧密，可通过相关通信工具实现ROS与PX4飞控的通信，构建起“仿真环境-飞控”的完整开发架构，是无人机智能化开发与调试的重要工具。</p>
+<p>在XTDrone的基础上，<strong>XTDrone2</strong>更新采用了更模块化和轻量化的仿真器Gazebo Ignition；同时由于ROS1版本不再更新维护，XTDrone2将全部基于ROS2进行开发；同时PX4的版本也采用了更新更稳定的1.15.3版本。</p>
+<p>使用文档 ：<a href="https://www.yuque.com/xtdrone/xtdrone2">https://www.yuque.com/xtdrone/xtdrone2</a></p>
+<p>（项目还在开发过程中，功能待完善…）</p>
+<h2 id="安装与设置"><a href="#安装与设置" class="headerlink" title="安装与设置"></a>安装与设置</h2><p>安装使用 PX4 的 ROS 2:</p>
+<ul>
+<li>Install PX4 (to use the PX4 simulator)</li>
+<li>Install ROS 2</li>
+<li>Setup Micro XRCE-DDS Agent &amp; Client</li>
+<li>Build &amp; Run ROS 2 Workspace</li>
+</ul>
+<p>该架构中会自动安装的其他依赖项（如 Fast DDS）未在此处提及。</p>
+<h3 id="1-从本仓库安装"><a href="#1-从本仓库安装" class="headerlink" title="1.从本仓库安装"></a>1.从本仓库安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/sduzgx/sduav.git</span><br><span class="line">git submodule update --init --recursive</span><br><span class="line"><span class="built_in">cd</span> Simulation</span><br><span class="line"><span class="comment"># 编译PX4</span></span><br><span class="line"><span class="built_in">cd</span> PX4-Autopilot</span><br><span class="line">bash ./Tools/setup/ubuntu.sh</span><br><span class="line">make px4_sitl</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="comment"># 编译XRCE-DDS</span></span><br><span class="line"><span class="built_in">cd</span> Micro-XRCE-DDS-Agent &amp;&amp; mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig /usr/<span class="built_in">local</span>/lib/</span><br><span class="line"><span class="comment"># 编译ROS2_WS</span></span><br><span class="line"><span class="built_in">cd</span> ROS2_WS/lightning_ws/ &amp;&amp; colcon build</span><br><span class="line"><span class="built_in">cd</span> ROS2_WS/px4_ws/ &amp;&amp; colcon build</span><br><span class="line"><span class="built_in">cd</span> ws_xtd2 &amp;&amp; colcon build</span><br></pre></td></tr></table></figure>
+<p><strong>编译报错可以用Claude code 或者 codex等Agent解决</strong></p>
+<h3 id="2-自己手动安装"><a href="#2-自己手动安装" class="headerlink" title="2.自己手动安装"></a>2.自己手动安装</h3><h4 id="安装-PX4"><a href="#安装-PX4" class="headerlink" title="安装 PX4"></a>安装 PX4</h4><p>若要使用该仿真器，你需要安装 PX4 开发工具链。</p>
+<blockquote>
+<p><strong>INFO</strong><br> 唯一依赖于 ROS2 的 PX4 是一组信息定义，它从 <code>px4_msgs</code> 获取。您只需要安装 PX4 当您需要模拟器时（如我们在本指南中所做的那样），或者如果您正在创建一个发布自定义 uORB 主题的构建。</p>
+</blockquote>
+<p>通过以下方式在 Ubuntu 上配置一个 PX4 开发环境:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/PX4/PX4-Autopilot.git --recursive</span><br><span class="line">bash ./PX4-Autopilot/Tools/setup/ubuntu.sh</span><br><span class="line"><span class="built_in">cd</span> PX4-Autopilot/</span><br><span class="line">make px4_sitl</span><br></pre></td></tr></table></figure>
+<p>请注意，上述命令将为您的 Ubuntu 版本安装推荐的模拟器。如果您想要安装 PX4，但保留您现有的模拟器安装，请使用 <code>--no-sim-tools</code> 标志运行 <code>ubuntu.sh</code>。</p>
+<h4 id="安装-ROS-2"><a href="#安装-ROS-2" class="headerlink" title="安装 ROS 2"></a>安装 ROS 2</h4><p>安装 ROS 2 及其依赖:</p>
+<ol>
+<li><p>安装 ROS 2.</p>
+<p><strong>humble</strong><br> To install ROS 2 “Humble” on Ubuntu 22.04:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt install locales</span><br><span class="line">sudo locale-gen en_US en_US.UTF-8</span><br><span class="line">sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8</span><br><span class="line"><span class="built_in">export</span> LANG=en_US.UTF-8</span><br><span class="line">sudo apt install software-properties-common</span><br><span class="line">sudo add-apt-repository universe</span><br><span class="line">sudo apt update &amp;&amp; sudo apt install curl -y</span><br><span class="line">sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [arch=<span class="subst">$(dpkg --print-architecture)</span> signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu <span class="subst">$(. /etc/os-release &amp;&amp; echo $UBUNTU_CODENAME)</span> main&quot;</span> | sudo tee /etc/apt/sources.list.d/ros2.list &gt; /dev/null</span><br><span class="line">sudo apt update &amp;&amp; sudo apt install ros-humble-desktop</span><br><span class="line">sudo apt install ros-humble-tools</span><br><span class="line"><span class="built_in">source</span> /opt/ros/humble/setup.bash &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;source /opt/ros/humble/setup.bash&quot;</span> &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>以上说明转载自官方安装指南：Install ROS 2 Humble。您可以安装 either the desktop (<code>ros-humble-desktop</code>) or bare-bones versions (<code>ros-humble-ros-base</code>), and the development tools (<code>ros-dev-tools</code>).</p>
+</li>
+<li><p>一些 Python 依赖关系也必须安装（使用 <code>pip</code> 或 <code>apt</code>）:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install --user -U empy==3.3.4 pyros-genmsg setuptools</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="配置微型-XRCE-DDS-代理与客户端"><a href="#配置微型-XRCE-DDS-代理与客户端" class="headerlink" title="配置微型 XRCE-DDS 代理与客户端"></a>配置微型 XRCE-DDS 代理与客户端</h4><p>要实现 ROS 2 与 PX4 的通信，<code>uXRCE-DDS client</code> 必须在 PX4 上运行，且需与运行在机载计算机上的微型 XRCE-DDS 代理建立连接。</p>
+<h5 id="设置代理-Agent"><a href="#设置代理-Agent" class="headerlink" title="设置代理(Agent)"></a>设置代理(Agent)</h5><p>代理可以安装在机载计算机上 <code>number of ways</code>。下文将介绍如何从源代码“独立”构建代理，并连接到运行在 PX4 仿真器上的客户端。</p>
+<p>设置并启动代理:</p>
+<ol>
+<li><p>打开一个终端。</p>
+</li>
+<li><p>输入以下命令从仓库获取源代码并构建代理(Agent):</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b v2.4.3 https://github.com/eProsima/Micro-XRCE-DDS-Agent.git</span><br><span class="line"><span class="built_in">cd</span> Micro-XRCE-DDS-Agent</span><br><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig /usr/<span class="built_in">local</span>/lib/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动代理并设置以连接运行在模拟器上的 uXRCE-DDS 客户端(Client):</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">MicroXRCEAgent udp4 -p 8888</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="启动客户端-Client"><a href="#启动客户端-Client" class="headerlink" title="启动客户端(Client)"></a>启动客户端(Client)</h5><p>PX4 仿真器会自动启动 uXRCE-DDS 客户端，并连接到本地主机上的 UDP 8888 端口。</p>
+<p>启动模拟器(和客户端):</p>
+<ol>
+<li><p>在之前安装好的 PX4 自动驾驶仪 代码仓库的根目录下，打开一个新的终端。</p>
+<p><strong>humble</strong></p>
+<ul>
+<li>使用 PX4 Gazebo 模拟:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make px4_sitl gz_x500</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>代理和客户端现已运行并二者应已建立连接。</p>
+<p>PX4 终端会显示 <code>NuttShell/PX4 System Console</code> 系统控制台的输出内容，该输出会在 PX4 启动和运行过程中实时呈现。代理一建立连接，输出内容中就应包含 INFO 级别的消息，这些消息会显示数据撰写器的创建情况:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">INFO  [uxrce_dds_client] synchronized with time offset 1675929429203524us</span><br><span class="line">INFO  [uxrce_dds_client] successfully created rt/fmu/out/failsafe_flags data writer, ...</span><br><span class="line">INFO  [uxrce_dds_client] successfully created rt/fmu/out/sensor_combined data writer, ...</span><br><span class="line">INFO  [uxrce_dds_client] successfully created rt/fmu/out/timesync_status data writer, ...</span><br></pre></td></tr></table></figure>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-04-21-43-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-04-21-43-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<p>微型 XRCE-DDS 代理终端也应开始显示输出内容，因为在 DDS 网络中会创建对应的主题:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[1675929445.268957] info  | ProxyClient.cpp | create_publisher   | publish</span><br><span class="line">[1675929445.269521] info  | ProxyClient.cpp | create_datawriter | datawri</span><br><span class="line">[1675929445.270412] info  | ProxyClient.cpp | create_topic      | topic c</span><br></pre></td></tr></table></figure>
+<h4 id="构建-ROS-2-工作空间"><a href="#构建-ROS-2-工作空间" class="headerlink" title="构建 ROS 2 工作空间"></a>构建 ROS 2 工作空间</h4><p>本节介绍如何在你的主目录中创建一个 ROS 2 工作空间（可根据需要修改命令，将源代码放置到其他位置）。</p>
+<p><code>px4_ros_com</code> 和 <code>px4_msgs</code> 这两个功能包会被克隆到工作空间文件夹中，之后使用 <code>colcon</code> 工具对该工作空间进行构建 此示例使用 “ros2 launch” 运行。</p>
+<p>您应该使用一个 <code>px4_msgs</code> 包的版本与 <code>same_</code> 消息定义作为您已经安装在上面步骤中的 PX4 固件对应。<code>px4_msgs</code> 代码仓库中的分支均以特定名称命名，这些名称与不同 PX4 版本的消息定义——对应。如果出于任何原因，您不能确保您的 PX4 固件和 ROS 2 <code>px4_msgs</code> 包之间具有相同的消息定义。 您还需要 <code>start the message translation node</code>，作为您设置过程的一部分。</p>
+<blockquote>
+<p><strong>INFO</strong><br> 该示例会构建 ROS 2 Listener 示例应用程序，该程序位于 <code>px4_ros_com</code> 中。<code>px4_msgs</code> 也是需要的，以便示例能够解释 PX4 ROS 2 主题。</p>
+</blockquote>
+<h4 id="构建工作空间"><a href="#构建工作空间" class="headerlink" title="构建工作空间"></a>构建工作空间</h4><p>要创建和构建工作空间:</p>
+<ol>
+<li><p>打开一个新的终端。</p>
+</li>
+<li><p>使用以下方式创建并进入一个新的工作空间目录:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir -p ~/ws_sensor_combined/src/</span><br><span class="line"><span class="built_in">cd</span> ~/ws_sensor_combined/src/</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>INFO</strong><br> 一个为工作空间文件夹制定命名规范，有助于更轻松地管理工作空间。</p>
+</blockquote>
+</li>
+<li><p>将示例代码仓库和 <code>px4_msgs</code> 克隆到 <code>/src</code> 目录下（默认克隆 <code>main</code> 分支，该分支与我们当前运行的 PX4 版本相对应）:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/PX4/px4_msgs.git</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/PX4/px4_ros_com.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在当前终端中加载 ROS 2 开发环境，并使用 <code>colcon</code> 工具编译工作空间:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="built_in">source</span> /opt/ros/humble/setup.bash</span><br><span class="line">colcon build</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>该操作会使用已加载的工具链对 <code>/src</code> 目录下的所有文件夹进行构建。</p>
+<h4 id="运行示例"><a href="#运行示例" class="headerlink" title="运行示例"></a>运行示例</h4><p>要运行你刚刚构建好的可执行文件，需加载 <code>local_setup.bash</code>。 这提供了当前工作空间的 “environment hooks” 访问权限。 换句话说，它会让刚刚构建好的可执行文件在当前终端中可用。</p>
+<blockquote>
+<p><strong>INFO</strong><br> ROS2 初学者教程建议您打开一个新的终端来运行您的可执行文件。</p>
+</blockquote>
+<p>在新终端中:</p>
+<ol>
+<li><p>进入工作空间目录的顶层，并加载 ROS 2 环境（本例中为 “Humble” 版本）:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/ws_sensor_combined/</span><br><span class="line"><span class="built_in">source</span> /opt/ros/humble/setup.bash</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>加载 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">local_setup.bash</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> install/local_setup.bash</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>现在启动示例。 请注意，此处我们使用的是 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 launch</span><br></pre></td></tr></table></figure>
+<p>，其相关说明如下。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ros2 launch px4_ros_com sensor_combined_listener.launch.py</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>若此功能正常运行，你应能在启动 ROS 监听器的终端 / 控制台上看到数据正在打印输出:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">RECEIVED DATA FROM SENSOR COMBINED</span><br><span class="line">===================================</span><br><span class="line">ts: 870938190</span><br><span class="line">gyro_rad[0]: 0.00341645</span><br><span class="line">gyro_rad[1]: 0.00626475</span><br><span class="line">gyro_rad[2]: -0.000515705</span><br><span class="line">gyro_integral_dt: 4739</span><br><span class="line">accelerometer_timestamp_relative: 0</span><br><span class="line">accelerometer_m_s2[0]: -0.273381</span><br><span class="line">accelerometer_m_s2[1]: 0.0949186</span><br><span class="line">accelerometer_m_s2[2]: -9.76044</span><br><span class="line">accelerometer_integral_dt: 4739</span><br></pre></td></tr></table></figure>
+<h3 id="3-安装QGC"><a href="#3-安装QGC" class="headerlink" title="3.安装QGC"></a>3.安装QGC</h3><p>无论是从仓库安装还是手动安装都可以安装QGC软件来实现手动控制无人机仿真</p>
+<p><strong>QGroundControl (QGC)</strong> 是一款<strong>开源、跨平台、专业级</strong>的无人机 / 无人系统地面控制站（GCS），基于 <strong>MAVLink</strong> 协议，为 <strong>PX4、ArduPilot</strong> 等主流飞控提供全链路控制、任务规划与数据分析能力。<br> 完全适配 PX4 仿真。</p>
+<p>官网： <a href="https://qgroundcontrol.com/">https://qgroundcontrol.com/</a></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260415220649852.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/20260415220649852.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<ol>
+<li><p>On the command prompt enter:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo usermod -a -G dialout $USER</span><br><span class="line">sudo apt-get remove modemmanager -y</span><br><span class="line">sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl -y</span><br><span class="line">sudo apt install libfuse2 -y</span><br><span class="line">sudo apt install libxcb-xinerama0 libxkbcommon-x11-0 libxcb-cursor-dev -y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Logout and login again to enable the change to user permissions.</p>
+<p>To install <em>QGroundControl</em>:</p>
+</li>
+<li><p>Download <a href="https://d176tv9ibo4jno.cloudfront.net/latest/QGroundControl-x86_64.AppImage">QGroundControl-x86_64.AppImage</a>.</p>
+</li>
+<li><p>Install (and run) using the terminal commands:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod +x ./QGroundControl-x86_64.AppImage</span><br><span class="line">./QGroundControl-x86_64.AppImage  (or double click)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="4-安装Lightning-LM算法"><a href="#4-安装Lightning-LM算法" class="headerlink" title="4.安装Lightning_LM算法"></a>4.安装Lightning_LM算法</h3><p><strong>若采用从本仓库安装可不用执行以下命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/catkin_ws/src</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/gaoxiang12/lightning-lm.git</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">colcon build</span><br></pre></td></tr></table></figure>
+<p>运行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ./install/setup.bash</span><br><span class="line"><span class="comment"># 实时建图</span></span><br><span class="line">ros2 run lightning run_slam_online --config ./config/default_livox.yaml</span><br><span class="line">ros2bag play XXX.db</span><br><span class="line"><span class="comment"># 离线建图</span></span><br><span class="line">ros2 run lightning run_slam_offline --input_bag ~/data/NCLT/20130110/20130110.db3 --config ./config/default_livox.yaml</span><br><span class="line"><span class="comment">#保存地图</span></span><br><span class="line">ros2 service call /lightning/save_map lightning/srv/SaveMap <span class="string">&quot;&#123;map_id: new_map&#125;&quot;</span></span><br><span class="line"><span class="comment"># 实时定位</span></span><br><span class="line">ros2 run lightning run_loc_online --config ./config/default_livox.yaml</span><br><span class="line">ros2bag play XXX.db</span><br><span class="line"><span class="comment"># 离线定位</span></span><br><span class="line">ros2 run lightning run_loc_offline --input_bag ~/data/NCLT/20130110/20130110.db3 --config ./config/default_livox.yaml</span><br><span class="line"><span class="comment"># 查看地图</span></span><br><span class="line">pcl_viewer ./data/new_map/global.pcd</span><br></pre></td></tr></table></figure>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260507161721403.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260507161721403.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260507161721403"></p>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><h3 id="运行PX4-Gazebo仿真"><a href="#运行PX4-Gazebo仿真" class="headerlink" title="运行PX4 Gazebo仿真"></a>运行PX4 Gazebo仿真</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> PX4-Autopilot/</span><br><span class="line">make px4_sitl gz_x500</span><br></pre></td></tr></table></figure>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-04-21-16-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-04-21-16-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<h3 id="打开XRCE-DDS通信"><a href="#打开XRCE-DDS通信" class="headerlink" title="打开XRCE-DDS通信"></a>打开XRCE-DDS通信</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> Micro-XRCE-DDS-Agent</span><br><span class="line">MicroXRCEAgent udp4 -p 8888</span><br></pre></td></tr></table></figure>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-04-21-12-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-04-21-12-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
+<h3 id="查看ROS2话题"><a href="#查看ROS2话题" class="headerlink" title="查看ROS2话题"></a>查看ROS2话题</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ros2 topic list</span><br></pre></td></tr></table></figure>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260507165614382.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260507165614382.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260507165614382"></p>
+<h3 id="启动QGC"><a href="#启动QGC" class="headerlink" title="启动QGC"></a>启动QGC</h3><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260507170230960.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260507170230960.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260507170230960"></p>
+<h3 id="最终仿真结果"><a href="#最终仿真结果" class="headerlink" title="最终仿真结果"></a>最终仿真结果</h3><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260507154005212.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260507154005212.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260507154005212"></p>
+<h3 id="实时建图仿真"><a href="#实时建图仿真" class="headerlink" title="实时建图仿真"></a>实时建图仿真</h3><p>LightningLM算法</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>ROS</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>ROS2</tag>
+      </tags>
+  </entry>
 </search>

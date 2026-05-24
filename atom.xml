@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2026-05-16T12:25:47.605Z</updated>
+  <updated>2026-05-24T12:06:59.219Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,89 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ROS2 Humble四旋翼无人机仿真环境搭建</title>
+    <link href="https://yuchanghui.top/2026/05/24/ROS2-Humble%E5%9B%9B%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    <id>https://yuchanghui.top/2026/05/24/ROS2-Humble%E5%9B%9B%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</id>
+    <published>2026-05-24T10:34:22.000Z</published>
+    <updated>2026-05-24T12:06:59.219Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="ROS2" scheme="https://yuchanghui.top/tags/ROS2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://yuchanghui.top/2026/05/24/Jeston-Orin-Nano%E7%83%A7%E5%BD%95Ubuntu22-04%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://yuchanghui.top/2026/05/24/Jeston-Orin-Nano%E7%83%A7%E5%BD%95Ubuntu22-04%E7%B3%BB%E7%BB%9F/</id>
+    <published>2026-05-24T10:33:09.597Z</published>
+    <updated>2026-05-24T12:07:25.997Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ROS Noetic搭建PX4仿真环境</title>
+    <link href="https://yuchanghui.top/2026/05/24/ROS-Noetic%E6%90%AD%E5%BB%BAPX4%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/"/>
+    <id>https://yuchanghui.top/2026/05/24/ROS-Noetic%E6%90%AD%E5%BB%BAPX4%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/</id>
+    <published>2026-05-24T10:32:38.000Z</published>
+    <updated>2026-05-24T12:08:01.127Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
+    
+    
+    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
+    
+    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
+    
+    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
+    
+  </entry>
   
   <entry>
     <title>VMware在Ubuntu22.04驱动LivoxMid360s</title>
@@ -480,79 +563,6 @@
     <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
     
     <category term="STM32" scheme="https://yuchanghui.top/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++_Eigen库的使用</title>
-    <link href="https://yuchanghui.top/2023/12/14/C-Eigen%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>https://yuchanghui.top/2023/12/14/C-Eigen%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
-    <published>2023-12-14T07:49:03.000Z</published>
-    <updated>2026-03-16T11:00:34.665Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="程序设计" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/C-C/"/>
-    
-    
-    <category term="C/C++" scheme="https://yuchanghui.top/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>直流无刷电机原理</title>
-    <link href="https://yuchanghui.top/2023/12/05/%E7%9B%B4%E6%B5%81%E6%97%A0%E5%88%B7%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/"/>
-    <id>https://yuchanghui.top/2023/12/05/%E7%9B%B4%E6%B5%81%E6%97%A0%E5%88%B7%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/</id>
-    <published>2023-12-05T09:19:24.000Z</published>
-    <updated>2026-03-16T11:00:34.831Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Others" scheme="https://yuchanghui.top/categories/Others/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>数据类型及强制转换</title>
-    <link href="https://yuchanghui.top/2023/11/29/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2/"/>
-    <id>https://yuchanghui.top/2023/11/29/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2/</id>
-    <published>2023-11-29T09:13:46.000Z</published>
-    <updated>2026-03-16T11:00:34.821Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Others" scheme="https://yuchanghui.top/categories/Others/"/>
-    
     
   </entry>
   
