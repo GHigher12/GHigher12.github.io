@@ -832,6 +832,13 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                id: 'ROS2',
+                name: 'ROS2',
+                symbolSize: 12,
+                value: 2
+            },
+        
+            {
                 id: 'VMware',
                 name: 'VMware',
                 symbolSize: 14,
@@ -848,13 +855,6 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 id: 'PicGo',
                 name: 'PicGo',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
-                id: 'ROS2',
-                name: 'ROS2',
                 symbolSize: 12,
                 value: 2
             },
@@ -1073,6 +1073,24 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                source: 'Linux',
+                target: 'ROS2',
+                value: 2,
+                lineStyle: {
+                    width: 2
+                }
+            },
+        
+            {
+                source: 'Ubuntu',
+                target: 'ROS2',
+                value: 2,
+                lineStyle: {
+                    width: 2
+                }
+            },
+        
+            {
                 source: 'STM32',
                 target: 'Linux',
                 value: 2,
@@ -1174,24 +1192,6 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 source: 'hexo',
                 target: 'PicGo',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
-                source: 'Linux',
-                target: 'ROS2',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
-                source: 'Ubuntu',
-                target: 'ROS2',
                 value: 2,
                 lineStyle: {
                     width: 2
@@ -2229,20 +2229,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
