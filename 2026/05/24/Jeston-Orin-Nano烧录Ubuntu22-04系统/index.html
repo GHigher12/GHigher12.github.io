@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Ychui&#39;s Blog</title>
+  <title>Jeston-Orin-Nano烧录Ubuntu22.04系统 | Ychui&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -595,14 +595,14 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/1.jpeg')">
+  background-position: center center;position: relative;background-image:url('/medias/11.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        
+        Jeston-Orin-Nano烧录Ubuntu22.04系统
       </span>
     </div>
     
@@ -613,6 +613,19 @@
         </span>
       
 
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/Linux/" class="post-detail-header_category">
+              Linux
+            </a>
+          
+            <a href="/categories/Linux/Ubuntu/" class="post-detail-header_category">
+              Ubuntu
+            </a>
+          
+        </span>
       
 
       
@@ -633,8 +646,7 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Jeston-Orin-Nano烧录Ubuntu22.04系统</span></span><br><span class="line"><span class="attr">typora-root-url:</span> <span class="string">..\imgs</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2026-05-22 11:04:09</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Linux</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Ubuntu</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">JestonNano</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Linux</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Ubuntu</span></span><br></pre></td></tr></table></figure>
-<h2 id="烧录准备"><a href="#烧录准备" class="headerlink" title="烧录准备"></a>烧录准备</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-31-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-31-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img"></p>
+        <h2 id="烧录准备"><a href="#烧录准备" class="headerlink" title="烧录准备"></a>烧录准备</h2><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-31-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-31-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img"></p>
 <h2 id="下载SDKManager"><a href="#下载SDKManager" class="headerlink" title="下载SDKManager"></a>下载SDKManager</h2><p><a target="_blank" rel="noopener" href="https://developer.nvidia.cn/embedded/jetpack">https://developer.nvidia.cn/embedded/jetpack</a></p>
 <p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-33-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-33-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i sdkmanager_2.4.0-13236_amd64.deb </span><br><span class="line">sdkmanager</span><br></pre></td></tr></table></figure>
@@ -642,7 +654,7 @@
 <li>关闭系统电源，请确保使电源关闭而不是进入待机状态；  </li>
 <li>使用 USB Type C 到 USB Type A 的链接线链接载板和主机；  </li>
 <li>将 FC REC 和GND 保持短路状态，并进入Recovery 模式；  </li>
-<li>对设备上电<br> " class="lazyload placeholder" data-srcset="" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" class="lazyload placeholder" data-srcset="" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif<img src="" alt="Uploading file...ncd7f"></li>
+<li>对设备上电<br> <img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260528193249352.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260528193249352.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260528193249352" style="zoom:50%;" /></li>
 </ol>
 <p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-53-ychooo.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-05-22-53-ychooo.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image.png"></p>
 <p>连接成功</p>
@@ -660,6 +672,22 @@
       </div>
       <div class="post-tags-categories">
         
+        <div class="tags">
+          
+            <a href="/tags/Linux/" class="">
+              Linux
+            </a>
+          
+            <a href="/tags/Ubuntu/" class="">
+              Ubuntu
+            </a>
+          
+            <a href="/tags/JestonNano/" class="">
+              JestonNano
+            </a>
+          
+        </div>
+        
       </div>
       
         <div class="copyright">
@@ -669,7 +697,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2026/05/24/Jeston-Orin-Nano烧录Ubuntu22-04系统/" target="_blank" title="">https://yuchanghui.top/2026/05/24/Jeston-Orin-Nano烧录Ubuntu22-04系统/</a>
+    <a href="/2026/05/24/Jeston-Orin-Nano烧录Ubuntu22-04系统/" target="_blank" title="Jeston-Orin-Nano烧录Ubuntu22.04系统">https://yuchanghui.top/2026/05/24/Jeston-Orin-Nano烧录Ubuntu22-04系统/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -691,16 +719,16 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/1.jpeg" class="lazyload placeholder" data-srcset="/medias/1.jpeg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/3.jpeg" class="lazyload placeholder" data-srcset="/medias/3.jpeg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="">
     </div>
-    <a href="/2026/05/24/ROS2-Humble%E5%9B%9B%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-nav-link">
+    <a href="/2026/05/28/Pxhawk-Jeston-Board%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E5%8F%8AROS2%E9%80%9A%E4%BF%A1/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">ROS2 Humble四旋翼无人机仿真环境搭建</div>
+        <div class="title-text">Pxhawk-Jeston-Board使用教程及ROS2通信</div>
       </div>
       
       <!-- <div class="content">
-        基于 ROS2 Humble+ Gazebo  Sim+ PX4 搭建的四旋翼无人机仿真开发环境，支持无人机姿态控制、路
+        硬件连接Pixhawk 和 Jetson 板块必须分别通过各自的电源端口供电。套件附带的电源模块支持 2S-12S 电池
       </div> -->
     </a>
   </div>
@@ -711,15 +739,15 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/6.png" class="lazyload placeholder" data-srcset="/medias/6.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpeg" class="lazyload placeholder" data-srcset="/medias/1.jpeg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" src="" alt="">
     </div>
-    <a href="/2026/05/24/ROS-Noetic%E6%90%AD%E5%BB%BAPX4%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/" class="post-nav-link">
+    <a href="/2026/05/24/ROS2-Humble%E5%9B%9B%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">ROS Noetic搭建PX4仿真环境</div>
+        <div class="title-text">ROS2 Humble四旋翼无人机仿真环境搭建</div>
       </div>
       <!-- <div class="content">
-        参考链接： https://blog.csdn.net/HuangChen666/article/details/128
+        基于 ROS2 Humble+ Gazebo  Sim+ PX4 搭建的四旋翼无人机仿真开发环境，支持无人机姿态控制、路
       </div> -->
     </a>
   </div>
@@ -2196,5 +2224,20 @@
 
 
 
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

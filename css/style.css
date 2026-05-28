@@ -170,11 +170,11 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   }
 }
 ::-moz-selection {
-  background: #2c2c2c;
+  background: #42b983;
   color: #fff;
 }
 ::selection {
-  background: #2c2c2c;
+  background: #42b983;
   color: #fff;
 }
 .bg-floor {
