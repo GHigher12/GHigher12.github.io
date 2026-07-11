@@ -15,7 +15,7 @@
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
-  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
   
   
@@ -28,7 +28,7 @@
 
   
   
-    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
   
   
     
@@ -48,8 +48,8 @@
     
     
     <!-- 依赖于jquery和vue -->
-    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
-    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js"></script>
 
     <!-- import link -->
     
@@ -154,7 +154,7 @@
 <script src="/js/vue-seamless-scroll/index.js"></script>
 
 <!-- 打字机效果js -->
-<script src="https://unpkg.com/typed.js@2.0.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
 
 
     <div id="safearea">
@@ -256,6 +256,17 @@
           
             <li class="drawer-box-content_item" style="position: relative;">
               
+                <a href="/love" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-heart" aria-hidden="true"></i>
+                  
+                  <span class="name">小窝</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
                 <a href="/about" class="drawer-menu-item-link">
                   
                     <i class="fas fa-user" aria-hidden="true"></i>
@@ -267,16 +278,16 @@
           
             <li class="drawer-box-content_item" style="position: relative;">
               
-                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(7)">
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(8)">
                   <span>
                     
                       <i class="fas fa-chevron-circle-down"></i>
                     
                     <span class="name">更多</span>
                   </span>
-                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(7)}" aria-hidden="true"></i>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(8)}" aria-hidden="true"></i>
                 </a>
-                <ul class="drawer-sub-menu" v-if="isOpen(7)">
+                <ul class="drawer-sub-menu" v-if="isOpen(8)">
                   
                   <li>
                     <a href="/wallpapers">
@@ -425,6 +436,17 @@
                     <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
                   
                   <span class="name">足迹</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/love" class="menu-item-link" title="小窝">
+                  
+                    <i class="fas fa-heart" aria-hidden="true"></i>
+                  
+                  <span class="name">小窝</span>
                 </a>
               
             </li>
@@ -580,226 +602,108 @@
         <!-- 内容区域 -->
         
 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-footprint" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+<section class="footprint-dashboard" data-bamboo-page="footprint3d">
+  <div class="footprint-backdrop" aria-hidden="true"></div>
 
+  <nav class="footprint-rail" aria-label="足迹功能">
+    <a href="#footprint-globe" class="is-active" title="地球"><i class="fas fa-globe-asia"></i><span>地球</span></a>
+    <button type="button" id="footprint-focus" title="查看全部足迹"><i class="fas fa-map-marker-alt"></i><span>足迹</span></button>
+    <button type="button" id="footprint-add" title="添加旅行照片"><i class="fas fa-images"></i><span>相册</span></button>
+    <a href="/love/" title="情侣旅行"><i class="fas fa-heart"></i><span>双人</span></a>
+  </nav>
 
-<div class="footprint-video">
-    <video class="full-video" autoplay loop muted>
-        <source style="width: 100%;height: 100vh;" src="/videos/flying.mp4">
-    </video>
-    <div class="video-header-title">足迹</div>
-    <div class="video-header-desc">
-    
-        <span class="title" id="footprint-video-header-desc"></span>
-        <script>
-  function typedFn() {
-    const el = '#footprint-video-header-desc';
-    const type = 'footprint';
-    let desc = '记录走过的每一寸土地'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-    
+  <div class="footprint-grid">
+    <aside class="footprint-card footprint-summary">
+      <div class="footprint-card-title"><i class="fas fa-globe-asia"></i><strong>我的足迹</strong></div>
+      <div class="footprint-mini-world" aria-hidden="true"><i class="fas fa-globe"></i><span>18 个足迹点正在发光</span></div>
+      <div class="footprint-continent-list">
+        
+          <div><span class="continent-dot" style="--dot:#6ed5a8"></span><strong>亚洲</strong><em>18 个城市</em></div>
+        
+      </div>
+      <p class="footprint-note">足迹点亮世界的每一个角落</p>
+    </aside>
+
+    <main class="footprint-stage" id="footprint-globe">
+      <div id="travel-globe" aria-label="可旋转和缩放的三维旅行地球"></div>
+      <div class="footprint-stage-title">
+        <span>TRAVEL AROUND THE WORLD</span>
+        <h1>把走过的路，留在星球上</h1>
+      </div>
+      <div class="footprint-globe-controls">
+        <button type="button" id="globe-rotate" class="is-active" aria-pressed="true" title="自动旋转"><i class="fas fa-sync-alt"></i></button>
+        <button type="button" id="globe-reset" title="重置视角"><i class="fas fa-crosshairs"></i></button>
+        <button type="button" id="globe-zoom-in" title="放大"><i class="fas fa-search-plus"></i></button>
+        <button type="button" id="globe-zoom-out" title="缩小"><i class="fas fa-search-minus"></i></button>
+      </div>
+      <p class="footprint-gesture"><i class="fas fa-hand-pointer"></i> 拖动旋转地球，滚轮或双指缩放</p>
+    </main>
+
+    <aside class="footprint-side">
+      <section class="footprint-card footprint-data-card">
+        <div class="footprint-card-title"><i class="fas fa-chart-pie"></i><strong>旅行数据</strong></div>
+        <div class="footprint-data-grid">
+          <div><strong>1</strong><span>国家/地区</span></div>
+          <div><strong>18</strong><span>城市</span></div>
+          <div><strong>待统计</strong><span>旅行天数</span></div>
+        </div>
+      </section>
+      <section class="footprint-card footprint-stories">
+        <div class="footprint-card-title"><i class="fas fa-book-open"></i><strong>最近旅行故事</strong><button type="button" id="footprint-view-all">查看全部</button></div>
+        <div class="footprint-story-list" id="footprint-story-list">
+          
+          
+            <div class="footprint-photo-placeholder"><i class="fas fa-image"></i><strong>照片位置已预留</strong><span>上传旅行照片后，会自动显示在对应城市</span></div>
+          
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="footprint-metrics">
+    <div><i class="fas fa-plane"></i><span><small>总里程</small><strong>待统计</strong></span></div>
+    <div><i class="fas fa-shoe-prints"></i><span><small>足迹点</small><strong id="footprint-count">18 个</strong></span></div>
+    <div><i class="fas fa-map"></i><span><small>国家/地区</small><strong>1 个</strong></span></div>
+    <div><i class="fas fa-camera"></i><span><small>照片</small><strong id="footprint-photo-count">0 张</strong></span></div>
+    <div><i class="fas fa-calendar-alt"></i><span><small>旅行天数</small><strong>待统计 天</strong></span></div>
+    <div><i class="fas fa-heart"></i><span><small>最爱的地方</small><strong>待发现</strong></span></div>
+  </footer>
+
+  <aside class="footprint-detail" id="footprint-detail" aria-live="polite" aria-hidden="true">
+    <button type="button" class="footprint-detail-close" id="footprint-detail-close" aria-label="关闭"><i class="fas fa-times"></i></button>
+    " class="lazyload placeholder" data-srcset="" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif<img id="footprint-detail-image" src="" alt="">
+    <div>
+      <small id="footprint-detail-date"></small>
+      <h2 id="footprint-detail-title"></h2>
+      <p id="footprint-detail-story"></p>
+      <span id="footprint-detail-location"></span>
     </div>
-    <div class="mask-box"></div>
-</div>
+  </aside>
 
+  <dialog class="footprint-dialog" id="footprint-dialog">
+    <form method="dialog" id="footprint-form">
+      <button type="button" class="dialog-close" data-dialog-close aria-label="关闭"><i class="fas fa-times"></i></button>
+      <p class="panel-eyebrow">ADD A NEW MEMORY</p>
+      <h2>添加旅行照片</h2>
+      <p class="dialog-help">选择照片后会尝试读取 GPS；没有位置信息时可以手动填写经纬度。</p>
+      <label>旅行照片<input type="file" name="photo" accept="image/*" required></label>
+      <div class="form-row">
+        <label>城市<input name="city" required placeholder="例如：青岛"></label>
+        <label>旅行日期<input name="date" type="date" required></label>
+      </div>
+      <div class="form-row">
+        <label>纬度<input name="lat" type="number" step="any" required placeholder="36.067"></label>
+        <label>经度<input name="lng" type="number" step="any" required placeholder="120.382"></label>
+      </div>
+      <label>旅行故事<textarea name="story" rows="3" placeholder="写下一段值得记住的故事"></textarea></label>
+      <p class="gps-status" id="footprint-gps-status"></p>
+      <button class="dialog-primary" type="submit"><i class="fas fa-map-pin"></i> 保存足迹</button>
+    </form>
+  </dialog>
 
-<!-- Full width content -->
-<div class="footprint-content-container">
-    <div class="footprint-content-full">
-        <div id="map" class="footprint-map"></div>
-    </div>
-</div>
-
-<style>
-.footprint-header {
-    position: relative;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-left: calc(-50vw + 50%);
-    margin-bottom: 40px;
-    background-image: url('/medias/wallpaper/07.png');
-}
-
-.footprint-video {
-    position: relative;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    margin-left: calc(-50vw + 50%);
-    margin-bottom: 40px;
-}
-
-.footprint-video .full-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.footprint-header-title,
-.video-header-title {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 3rem;
-    font-weight: 600;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    z-index: 2;
-}
-
-.footprint-header-desc,
-.video-header-desc {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 1.3rem;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    z-index: 2;
-}
-
-.video-header-desc .title {
-    color: #fff;
-}
-
-.mask-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.35);
-    z-index: 1;
-}
-
-.footprint-content-container {
-    position: relative;
-    left: 0;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    padding: 0 20px;
-}
-
-.footprint-content-full {
-    background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 40px;
-    max-width: 100%;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.footprint-map {
-    width: 100%;
-    height: 70vh;
-    min-height: 500px;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-@media (max-width: 992px) {
-    .footprint-map {
-        height: 50vh;
-        min-height: 350px;
-    }
-}
-</style>
-
-<!-- 高德地图安全密钥 -->
-<script>
-window._AMapSecurityConfig = {
-    securityJsCode: '3846cca32b8101acafa198c204b3ceb8'
-};
-</script>
-
-<!-- 高德地图JS API -->
-<script src="https://webapi.amap.com/maps?v=2.0&key=efd44563dbc891638a93dee5267405c7"></script>
-
-<!-- AMap UI组件库 -->
-<script src="https://webapi.amap.com/ui/1.1/main.js"></script>
-
-<script>
-var footprintMap = null;
-
-function initFootprint() {
-    var container = document.getElementById('map');
-    if (!container) return;
-
-    // Dispose existing map if it exists
-    if (footprintMap) {
-        footprintMap.destroy();
-        footprintMap = null;
-    }
-
-    var footprintData = [{"name":"淄博","lng":118.05,"lat":36.82},{"name":"上海","lng":121.49,"lat":31.23},{"name":"临沂","lng":118.35,"lat":35.1},{"name":"北京","lng":116.4,"lat":39.91},{"name":"天津","lng":117.2,"lat":39.1},{"name":"香港","lng":114.17,"lat":22.28},{"name":"广州","lng":113.3,"lat":23.11},{"name":"深圳","lng":114.06,"lat":22.54},{"name":"杭州","lng":120.21,"lat":30.2},{"name":"日照","lng":119.53,"lat":35.42},{"name":"威海","lng":122.12,"lat":37.51},{"name":"烟台","lng":121.45,"lat":37.46},{"name":"济南","lng":117,"lat":36.67},{"name":"廊坊","lng":116.68,"lat":39.54},{"name":"德州","lng":116.36,"lat":37.44},{"name":"青岛","lng":120.38,"lat":36.07},{"name":"沈阳","lng":123.43,"lat":41.8},{"name":"菏泽","lng":115.54,"lat":34.83}];
-
-    footprintMap = new AMap.Map('map', {
-        zoom: 5,
-        center: [105.07, 36.03],
-        resizeEnable: true,
-        mapStyle: 'amap://styles/normal'
-    });
-
-    AMap.plugin('AMap.InfoWindow', function() {
-        footprintData.forEach(function(p) {
-            var marker = new AMap.CircleMarker({
-                center: [p.lng, p.lat],
-                radius: 8,
-                fillColor: '#ff4444',
-                fillOpacity: 0.9,
-                strokeColor: '#fff',
-                strokeWeight: 2,
-                map: footprintMap,
-                cursor: 'pointer'
-            });
-
-            var infoWindow = new AMap.InfoWindow({
-                content: '<div style="padding:10px;font-family:\'Microsoft YaHei\',sans-serif;"><h3 style="margin:0 0 8px 0;font-size:16px;color:#333;">' + p.name + '</h3><p style="margin:0;font-size:13px;color:#666;">经纬度：' + p.lng + ', ' + p.lat + '</p></div>',
-                offset: new AMap.Pixel(0, -15),
-                closeWhenClickMap: true
-            });
-
-            marker.on('click', function() {
-                infoWindow.open(footprintMap, [p.lng, p.lat]);
-            });
-        });
-
-        if (footprintData.length > 0) {
-            footprintMap.setFitView();
-        }
-    });
-}
-
-// Initialize on DOM ready
-document.addEventListener('DOMContentLoaded', initFootprint);
-
-// Reinitialize on PJAX complete
-document.addEventListener('pjax:complete', initFootprint);
-</script>
+  <p class="footprint-page-error" data-page-error></p>
+  <script id="footprint3d-data" type="application/json">{"trips":[{"id":"zibo","city":"淄博","country":"中国","lat":36.82,"lng":118.05,"date":"","title":"淄博","story":"","photo":""},{"id":"shanghai","city":"上海","country":"中国","lat":31.23,"lng":121.49,"date":"","title":"上海","story":"","photo":""},{"id":"linyi","city":"临沂","country":"中国","lat":35.1,"lng":118.35,"date":"","title":"临沂","story":"","photo":""},{"id":"beijing","city":"北京","country":"中国","lat":39.91,"lng":116.4,"date":"","title":"北京","story":"","photo":""},{"id":"tianjin","city":"天津","country":"中国","lat":39.1,"lng":117.2,"date":"","title":"天津","story":"","photo":""},{"id":"hongkong","city":"香港","country":"中国","lat":22.28,"lng":114.17,"date":"","title":"香港","story":"","photo":""},{"id":"guangzhou","city":"广州","country":"中国","lat":23.11,"lng":113.3,"date":"","title":"广州","story":"","photo":""},{"id":"shenzhen","city":"深圳","country":"中国","lat":22.54,"lng":114.06,"date":"","title":"深圳","story":"","photo":""},{"id":"hangzhou","city":"杭州","country":"中国","lat":30.2,"lng":120.21,"date":"","title":"杭州","story":"","photo":""},{"id":"rizhao","city":"日照","country":"中国","lat":35.42,"lng":119.53,"date":"","title":"日照","story":"","photo":""},{"id":"weihai","city":"威海","country":"中国","lat":37.51,"lng":122.12,"date":"","title":"威海","story":"","photo":""},{"id":"yantai","city":"烟台","country":"中国","lat":37.46,"lng":121.45,"date":"","title":"烟台","story":"","photo":""},{"id":"jinan","city":"济南","country":"中国","lat":36.67,"lng":117,"date":"","title":"济南","story":"","photo":""},{"id":"langfang","city":"廊坊","country":"中国","lat":39.54,"lng":116.68,"date":"","title":"廊坊","story":"","photo":""},{"id":"dezhou","city":"德州","country":"中国","lat":37.44,"lng":116.36,"date":"","title":"德州","story":"","photo":""},{"id":"qingdao","city":"青岛","country":"中国","lat":36.07,"lng":120.38,"date":"","title":"青岛","story":"","photo":""},{"id":"shenyang","city":"沈阳","country":"中国","lat":41.8,"lng":123.43,"date":"","title":"沈阳","story":"","photo":""},{"id":"heze","city":"菏泽","country":"中国","lat":34.83,"lng":115.54,"date":"","title":"菏泽","story":"","photo":""}],"routes":[]}</script>
+</section>
 
       </main>
     </div>
@@ -1102,13 +1006,13 @@ document.addEventListener('pjax:complete', initFootprint);
     bottom: 300px;
   }
 </style> -->
-<script defer src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-<script defer src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+<script defer src="/js/vendor/APlayer.min.js"></script>
+<script defer src="/js/vendor/Meting.min.js"></script>
     
 
     <!-- 图片放大 -->
     
-      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     
 
     <!-- 百度解析 -->
@@ -1139,6 +1043,10 @@ document.addEventListener('pjax:complete', initFootprint);
 
     <script src="/js/utils/index.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/pages/runtime.js"></script>
+    <script src="/js/pages/graph3d.js"></script>
+    <script src="/js/pages/footprint3d.js"></script>
+    <script src="/js/pages/love-space.js"></script>
     
     <!-- 文章目录所需js -->
 <!-- <link href="/js/tocbot/tocbot.css" rel="stylesheet">
@@ -1416,8 +1324,8 @@ document.addEventListener('pjax:complete', initFootprint);
 
 <!-- markdown代码一键复制功能 -->
 
-  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
-  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css">
+  <script src="https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js"></script>
   <script src="/js/clipboard/clipboard.min.js"></script>
   <div id="appCopy">
   </div>
@@ -1471,7 +1379,7 @@ document.addEventListener('pjax:complete', initFootprint);
   
 
 <!-- 图片懒加载 -->
-<script defer src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
 <script>
   // https://www.npmjs.com/package/vanilla-lazyload
   // Set the options globally
@@ -1524,8 +1432,8 @@ document.addEventListener('pjax:complete', initFootprint);
   var bambooSwiperTag = {};
   function load_swiper() {
     if (!document.querySelectorAll(".post-swiper-container")[0]) return;
-    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
-    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+    loadCSS("https://cdn.jsdelivr.net/npm/swiper@6/swiper-bundle.min.css")
+    loadScript("https://cdn.jsdelivr.net/npm/swiper@6/swiper-bundle.min.js").then(() => {
       pjax_swiper();
     });
   }
@@ -1621,7 +1529,7 @@ document.addEventListener('pjax:complete', initFootprint);
       try {
         var currentUrl = window.location.pathname;
         var targetUrl = e.triggerElement.href;
-        var banUrl = ["/graph", "/footprint"];
+        var banUrl = ["/__full_reload_only__"];
         if (banUrl[0] != "") {
           banUrl.forEach(item => {
             if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
@@ -1657,20 +1565,5 @@ document.addEventListener('pjax:complete', initFootprint);
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

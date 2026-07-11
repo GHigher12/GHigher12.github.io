@@ -28,7 +28,7 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;硬件连接&quot;&gt;&lt;a href=&quot;#硬件连接&quot; class=&quot;headerlink&quot; title=&quot;硬件连接&quot;&gt;&lt;/a&gt;硬件连接&lt;/h2&gt;&lt;p&gt;Pixhawk 和 Jetson 板块必须分别通过各自的电源端口供电。套件附带的电源模块支持 2S-12S 电池输入，并为</summary>
         
       
     
@@ -61,7 +61,7 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;烧录准备&quot;&gt;&lt;a href=&quot;#烧录准备&quot; class=&quot;headerlink&quot; title=&quot;烧录准备&quot;&gt;&lt;/a&gt;烧录准备&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
         
       
     
@@ -92,7 +92,8 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;p&gt;基于 ROS2 Humble+ Gazebo  Sim+ PX4 搭建的四旋翼无人机仿真开发环境，支持无人机姿态控制、路径规划、SLAM 等算法验证与开发。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
         
       
     
@@ -123,7 +124,7 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;p&gt;参考链接：&lt;br&gt; &lt;a</summary>
         
       
     
@@ -154,7 +155,7 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;Mid360s介绍&quot;&gt;&lt;a href=&quot;#Mid360s介绍&quot; class=&quot;headerlink&quot; title=&quot;Mid360s介绍&quot;&gt;&lt;/a&gt;Mid360s介绍&lt;/h2&gt;&lt;p&gt;Livox-Mid360s官网 &lt;a</summary>
         
       
     
@@ -185,7 +186,7 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;佳能LBP6018系列打印机使用方法&quot;&gt;&lt;a href=&quot;#佳能LBP6018系列打印机使用方法&quot; class=&quot;headerlink&quot; title=&quot;佳能LBP6018系列打印机使用方法&quot;&gt;&lt;/a&gt;佳能LBP6018系列打印机使用方法&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
         
       
     
@@ -210,7 +211,13 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;🌤️ &lt;strong&gt;天气信息&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;table-container&quot;&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th</summary>
         
       
     
@@ -235,7 +242,7 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;一、前期准备&quot;&gt;&lt;a href=&quot;#一、前期准备&quot; class=&quot;headerlink&quot; title=&quot;一、前期准备&quot;&gt;&lt;/a&gt;一、前期准备&lt;/h2&gt;&lt;h3 id=&quot;1-安装Git&quot;&gt;&lt;a href=&quot;#1-安装Git&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -260,7 +267,8 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;Obsidian-CLI-启用&quot;&gt;&lt;a href=&quot;#Obsidian-CLI-启用&quot; class=&quot;headerlink&quot; title=&quot;Obsidian CLI 启用&quot;&gt;&lt;/a&gt;Obsidian CLI 启用&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;打开 Obsidian</summary>
         
       
     
@@ -289,7 +297,8 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;Prompt&quot;&gt;&lt;a href=&quot;#Prompt&quot; class=&quot;headerlink&quot; title=&quot;Prompt&quot;&gt;&lt;/a&gt;Prompt&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：你与 AI</summary>
         
       
     
@@ -314,7 +323,7 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;windows安装&quot;&gt;&lt;a href=&quot;#windows安装&quot; class=&quot;headerlink&quot; title=&quot;windows安装&quot;&gt;&lt;/a&gt;windows安装&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;需要代理&lt;/strong&gt;&lt;br&gt;windows打开power</summary>
         
       
     
@@ -341,7 +350,8 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;p&gt;官方网址：&lt;a href=&quot;https://openclaws.io/zh/&quot;&gt;https://openclaws.io/zh/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Git安装&quot;&gt;&lt;a href=&quot;#Git安装&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -368,7 +378,7 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/2026-03-05-27-ychooo.png&quot; class=&quot;lazyload placeholder&quot;</summary>
         
       
     
@@ -393,7 +403,7 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;安装链接&quot;&gt;&lt;a href=&quot;#安装链接&quot; class=&quot;headerlink&quot; title=&quot;安装链接&quot;&gt;&lt;/a&gt;安装链接&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://obsidian.md/&quot;&gt;官方链接&lt;/a&gt;&lt;br&gt;&lt;img</summary>
         
       
     
@@ -418,7 +428,7 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span</summary>
         
       
     
@@ -449,7 +459,7 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;rosbag&quot;&gt;&lt;a href=&quot;#rosbag&quot; class=&quot;headerlink&quot; title=&quot;rosbag&quot;&gt;&lt;/a&gt;rosbag&lt;/h2&gt;&lt;h3 id=&quot;记录&quot;&gt;&lt;a href=&quot;#记录&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -480,7 +490,7 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;激光SLAM学习&quot;&gt;&lt;a href=&quot;#激光SLAM学习&quot; class=&quot;headerlink&quot; title=&quot;激光SLAM学习&quot;&gt;&lt;/a&gt;激光SLAM学习&lt;/h1&gt;&lt;h2 id=&quot;IMU&quot;&gt;&lt;a href=&quot;#IMU&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -505,7 +515,7 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;KincoServo软件控制&quot;&gt;&lt;a href=&quot;#KincoServo软件控制&quot; class=&quot;headerlink&quot; title=&quot;KincoServo软件控制&quot;&gt;&lt;/a&gt;KincoServo软件控制&lt;/h2&gt;&lt;h3 id=&quot;硬件&quot;&gt;&lt;a</summary>
         
       
     
@@ -532,7 +542,7 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;终端Terminator&quot;&gt;&lt;a href=&quot;#终端Terminator&quot; class=&quot;headerlink&quot; title=&quot;终端Terminator&quot;&gt;&lt;/a&gt;终端Terminator&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
         
       
     
@@ -561,7 +571,8 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;p&gt;﻿## 点云在ROS中的应用&lt;/p&gt;
+&lt;h2 id=&quot;用RoboSense雷达节点，加载pcap发布原始数据&quot;&gt;&lt;a href=&quot;#用RoboSense雷达节点，加载pcap发布原始数据&quot; class=&quot;headerlink&quot;</summary>
         
       
     

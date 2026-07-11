@@ -1,10 +1,7 @@
 function setTime() {
-  var create_time = Math.round(
-    new Date(Date.UTC(2026, 3, 11, 0, 0, 0)).getTime() / 1000
-  );
-  var timestamp = Math.round(
-    (new Date().getTime() + 8 * 60 * 60 * 1000) / 1000
-  );
+  // Keep the homepage love wall in the same local-time baseline as 小窝.
+  var create_time = Math.round(new Date(2026, 3, 10, 0, 0, 0).getTime() / 1000);
+  var timestamp = Math.round(new Date().getTime() / 1000);
   currentTime = secondToDate(timestamp - create_time);
   currentTimeHtml =
     currentTime[0] +
