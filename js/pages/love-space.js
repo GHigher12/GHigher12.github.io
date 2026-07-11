@@ -7,6 +7,7 @@
     var currentSection = 'home';
     var currentAddType = 'tasks';
     var activeTaskId = null;
+    var activeRecordId = null;
     var maps = [];
     var elapsedTimer = null;
 
@@ -225,6 +226,14 @@
       return '<button type="button" class="love-task-item ' + (task.done ? 'is-done' : '') + '" data-task-open="' + escapeHtml(task.id) + '"><span class="task-check"><i class="fas fa-check"></i></span><span><strong>' + escapeHtml(task.title) + '</strong><small>' + escapeHtml(taskMeta) + '</small></span>' + taskEmoji + taskPhoto + '</button>';
     }
 
+    function recordActions(type, id) {
+      return '<div class="love-record-actions"><button type="button" data-record-edit="' + escapeHtml(id) + '" data-record-type="' + type + '"><i class="fas fa-pen"></i> 修改</button><button type="button" class="is-delete" data-record-delete="' + escapeHtml(id) + '" data-record-type="' + type + '"><i class="fas fa-trash-alt"></i> 删除</button></div>';
+    }
+
+    function taskManageCard(task) {
+      return '<article class="love-task-manage">' + taskCard(task) + recordActions('tasks', task.id) + '</article>';
+    }
+
     function photoCard(item) {
       return '<button type="button" data-photo="' + escapeHtml(item.url) + '" data-caption="' + escapeHtml((item.caption || '我们的回忆') + ' · ' + (item.place || item.date || '')) + '"><img src="' + escapeHtml(item.url) + '" alt="' + escapeHtml(item.caption || '回忆照片') + '"><span>' + escapeHtml(item.caption || '我们的回忆') + '</span></button>';
     }
@@ -261,18 +270,18 @@
       if (section === 'tasks') {
         var tasks = state.tasks.filter(function (item) { return !query || item.title.toLowerCase().indexOf(query) !== -1; });
         var done = state.tasks.filter(function (item) { return item.done; }).length;
-        html = '<div class="love-section-summary"><div><span>共同进度</span><strong>' + done + ' / 100</strong></div><div class="love-progress"><span style="width:' + done + '%"></span></div></div><div class="love-task-grid">' + tasks.map(taskCard).join('') + '</div>';
+        html = '<div class="love-section-summary"><div><span>共同进度</span><strong>' + done + ' / 100</strong></div><div class="love-progress"><span style="width:' + done + '%"></span></div></div><div class="love-task-grid">' + tasks.map(taskManageCard).join('') + '</div>';
       } else if (section === 'trips') {
         var trips = state.trips.filter(function (item) { return !query || item.city.toLowerCase().indexOf(query) !== -1 || item.story.toLowerCase().indexOf(query) !== -1; });
         html = '<div class="love-travel-layout"><div class="love-map love-map-large" id="love-trips-map"><span><i class="fas fa-map-marked-alt"></i> 正在加载旅行地图</span></div><div class="love-trip-cards">' + trips.map(function (trip) {
-          return '<article><img src="' + escapeHtml(tripLandmarkPhoto(trip)) + '" alt="' + escapeHtml(trip.city) + '标志性景点"><div><small>' + escapeHtml(trip.date) + '</small><h3>' + escapeHtml(trip.city) + '</h3><p>' + escapeHtml(trip.story) + '</p><span><i class="fas fa-map-marker-alt"></i> ' + Number(trip.lat).toFixed(3) + ', ' + Number(trip.lng).toFixed(3) + '</span></div></article>';
+          return '<article><img src="' + escapeHtml(tripLandmarkPhoto(trip)) + '" alt="' + escapeHtml(trip.city) + '标志性景点"><div><small>' + escapeHtml(trip.date) + '</small><h3>' + escapeHtml(trip.city) + '</h3><p>' + escapeHtml(trip.story) + '</p><span><i class="fas fa-map-marker-alt"></i> ' + Number(trip.lat).toFixed(3) + ', ' + Number(trip.lng).toFixed(3) + '</span>' + recordActions('trips', trip.id) + '</div></article>';
         }).join('') + '</div></div>';
       } else if (section === 'album') {
         var media = state.media.filter(function (item) { return !query || (item.caption || '').toLowerCase().indexOf(query) !== -1 || (item.place || '').toLowerCase().indexOf(query) !== -1; });
         html = '<div class="love-album-grid">' + media.map(photoCard).join('') + '</div>';
       } else if (section === 'timeline') {
         html = '<div class="love-timeline-full">' + state.timeline.slice().reverse().filter(function (item) { return !query || item.title.toLowerCase().indexOf(query) !== -1; }).map(function (item) {
-          return '<article><div class="timeline-date">' + escapeHtml(item.date) + '</div><i></i><div class="timeline-card">' + (item.photo ? '<img src="' + escapeHtml(item.photo) + '" alt="' + escapeHtml(item.title) + '">' : '') + '<small>' + escapeHtml(item.mood || '回忆') + '</small><h3>' + escapeHtml(item.title) + '</h3><p>' + escapeHtml(item.text) + '</p></div></article>';
+          return '<article><div class="timeline-date">' + escapeHtml(item.date) + '</div><i></i><div class="timeline-card">' + (item.photo ? '<img src="' + escapeHtml(item.photo) + '" alt="' + escapeHtml(item.title) + '">' : '') + '<small>' + escapeHtml(item.mood || '回忆') + '</small><h3>' + escapeHtml(item.title) + '</h3><p>' + escapeHtml(item.text) + '</p>' + recordActions('timeline', item.id) + '</div></article>';
         }).join('') + '</div>';
       } else if (section === 'settings') {
         html = '<form class="love-settings-form" id="love-settings-form"><div class="love-settings-card"><h2>重要日期</h2><label>恋爱开始日期<input type="date" name="startDate" value="' + escapeHtml(state.profile.startDate) + '"></label><label>相识日期<input type="date" name="metDate" value="' + escapeHtml(state.profile.metDate) + '"></label><button type="submit" class="love-primary-button">保存设置</button></div><div class="love-settings-card"><h2>隐私与数据</h2><p>当前预览数据保存在本机浏览器中，不会上传到博客静态文件。</p><button type="button" data-export-love><i class="fas fa-download"></i> 导出备份</button><button type="button" data-reset-love class="danger"><i class="fas fa-trash-alt"></i> 恢复示例数据</button></div></form>';
@@ -317,6 +326,10 @@
       return '<label>' + label + '<input name="' + name + '" type="' + type + '" ' + (extra || '') + '></label>';
     }
 
+    function selectOptions(values, selected) {
+      return values.map(function (value) { return '<option' + (value === selected ? ' selected' : '') + '>' + escapeHtml(value) + '</option>'; }).join('');
+    }
+
     function taskEmojiPicker(selected) {
       var emojis = ['💗', '🥰', '✨', '🎉', '🌷', '🫶', '📸', '🍰', '🧳', '🌈', '💫', '🥂'];
       return '<label>打卡表情<input type="hidden" name="emoji" value="' + escapeHtml(selected || '💗') + '"><span class="love-emoji-picker">' + emojis.map(function (emoji) {
@@ -337,18 +350,20 @@
       if (typeof dialog.showModal === 'function') dialog.showModal(); else dialog.setAttribute('open', '');
     }
 
-    function openDialog(type) {
+    function openDialog(type, recordId) {
       currentAddType = type === 'home' ? 'diaries' : type;
       activeTaskId = null;
+      activeRecordId = recordId || null;
       formStatus.textContent = '';
       recordForm.reset();
-      dialogTitle.textContent = sectionMeta[currentAddType] ? sectionMeta[currentAddType][1] : '记录此刻';
+      var editingItem = activeRecordId && state[currentAddType] ? state[currentAddType].find(function (item) { return item.id === activeRecordId; }) : null;
+      dialogTitle.textContent = editingItem ? '修改' + (sectionMeta[currentAddType] ? sectionMeta[currentAddType][0] : '记录') : (sectionMeta[currentAddType] ? sectionMeta[currentAddType][1] : '记录此刻');
       var today = new Date().toISOString().slice(0, 10);
       var fields = '';
-      if (currentAddType === 'tasks') fields = field('title', '想一起完成的事情', 'text', 'required placeholder="例如：一起去看海 🌊"') + '<label>分类<select name="category"><option>日常</option><option>旅行</option><option>成长</option><option>未来</option></select></label>' + taskEmojiPicker('💗');
-      else if (currentAddType === 'trips') fields = field('city', '旅行地点', 'text', 'required') + field('date', '旅行日期', 'date', 'required value="' + today + '"') + '<div class="form-row">' + field('lat', '纬度', 'number', 'step="any" required') + field('lng', '经度', 'number', 'step="any" required') + '</div><label>照片<input name="photo" type="file" accept="image/*"></label><label>旅行故事<textarea name="story" rows="4" required></textarea></label><p class="love-gps-status" data-love-gps></p>';
+      if (currentAddType === 'tasks') fields = field('title', '想一起完成的事情', 'text', 'required placeholder="例如：一起去看海 🌊" value="' + escapeHtml(editingItem ? editingItem.title : '') + '"') + '<label>分类<select name="category">' + selectOptions(['日常', '旅行', '成长', '未来'], editingItem ? editingItem.category : '日常') + '</select></label>' + taskEmojiPicker(editingItem ? editingItem.emoji : '💗');
+      else if (currentAddType === 'trips') fields = field('city', '旅行地点', 'text', 'required value="' + escapeHtml(editingItem ? editingItem.city : '') + '"') + field('date', '旅行日期', 'date', 'required value="' + escapeHtml(editingItem ? editingItem.date : today) + '"') + '<div class="form-row">' + field('lat', '纬度', 'number', 'step="any" required value="' + escapeHtml(editingItem ? editingItem.lat : '') + '"') + field('lng', '经度', 'number', 'step="any" required value="' + escapeHtml(editingItem ? editingItem.lng : '') + '"') + '</div><label>照片<input name="photo" type="file" accept="image/*"><small>' + (editingItem && editingItem.photo ? '不重新选择将保留现有照片' : '可上传旅行照片') + '</small></label><label>旅行故事<textarea name="story" rows="4" required>' + escapeHtml(editingItem ? editingItem.story : '') + '</textarea></label><p class="love-gps-status" data-love-gps></p>';
       else if (currentAddType === 'album') fields = '<label>照片<input name="photo" type="file" accept="image/*" required></label>' + field('caption', '照片名称', 'text', 'required') + field('date', '拍摄日期', 'date', 'value="' + today + '"') + field('place', '拍摄地点');
-      else if (currentAddType === 'timeline') fields = field('title', '回忆标题', 'text', 'required') + field('date', '发生日期', 'date', 'required value="' + today + '"') + field('mood', '心情标签', 'text', 'placeholder="开心、浪漫、感动"') + '<label>回忆故事<textarea name="text" rows="4" required></textarea></label>';
+      else if (currentAddType === 'timeline') fields = field('title', '回忆标题', 'text', 'required value="' + escapeHtml(editingItem ? editingItem.title : '') + '"') + field('date', '发生日期', 'date', 'required value="' + escapeHtml(editingItem ? editingItem.date : today) + '"') + field('mood', '心情标签', 'text', 'placeholder="开心、浪漫、感动" value="' + escapeHtml(editingItem ? editingItem.mood : '') + '"') + '<label>回忆照片<input name="photo" type="file" accept="image/*"><small>' + (editingItem && editingItem.photo ? '不重新选择将保留现有照片' : '可选') + '</small></label><label>回忆故事<textarea name="text" rows="4" required>' + escapeHtml(editingItem ? editingItem.text : '') + '</textarea></label>';
       else if (currentAddType === 'diaries') fields = field('title', '日记标题', 'text', 'required') + field('date', '日期', 'date', 'required value="' + today + '"') + field('mood', '今天的心情', 'text', 'placeholder="甜蜜"') + '<label>日记内容<textarea name="content" rows="6" required></textarea></label>';
       else if (currentAddType === 'anniversaries') fields = field('title', '纪念日名称', 'text', 'required') + field('date', '日期', 'date', 'required');
       else if (currentAddType === 'gifts') fields = field('title', '礼物名称', 'text', 'required') + field('date', '日期', 'date', 'value="' + today + '"') + field('from', '赠送人', 'text', 'placeholder="我 / 你 / 我们"') + '<label>礼物故事<textarea name="story" rows="4"></textarea></label>';
@@ -424,23 +439,52 @@
         }
         return;
       }
-      if (currentAddType === 'tasks') item = { id: id, title: data.get('title') + ' ' + (data.get('emoji') || '💗'), category: data.get('category'), done: false, date: '', location: '', note: '', photo: '', emoji: data.get('emoji') || '💗' };
+      if (activeRecordId && ['tasks', 'trips', 'timeline'].indexOf(currentAddType) !== -1) {
+        var existing = state[currentAddType].find(function (entry) { return entry.id === activeRecordId; });
+        if (!existing) return;
+        if (currentAddType === 'tasks') {
+          existing.title = data.get('title');
+          existing.category = data.get('category');
+          existing.emoji = data.get('emoji') || existing.emoji || '💗';
+        } else if (currentAddType === 'trips') {
+          var editedTripFile = recordForm.elements.photo.files && recordForm.elements.photo.files[0];
+          existing.city = data.get('city'); existing.date = data.get('date');
+          existing.lat = Number(data.get('lat')); existing.lng = Number(data.get('lng'));
+          existing.story = data.get('story');
+          if (editedTripFile) existing.photo = await imageToDataUrl(editedTripFile);
+          destroyMaps();
+        } else {
+          var editedTimelineFile = recordForm.elements.photo.files && recordForm.elements.photo.files[0];
+          existing.title = data.get('title'); existing.date = data.get('date');
+          existing.mood = data.get('mood'); existing.text = data.get('text');
+          if (editedTimelineFile) existing.photo = await imageToDataUrl(editedTimelineFile);
+        }
+        if (saveState()) {
+          activeRecordId = null;
+          closeDialog(); updateDashboard(); renderSection(currentSection, sectionSearch.value);
+        }
+        return;
+      }
+      if (currentAddType === 'tasks') item = { id: id, title: data.get('title'), category: data.get('category'), done: false, date: '', location: '', note: '', photo: '', emoji: data.get('emoji') || '💗' };
       else if (currentAddType === 'trips') {
         var tripFile = recordForm.elements.photo.files && recordForm.elements.photo.files[0];
-        var tripPhoto = tripFile ? await imageToDataUrl(tripFile) : '/medias/love/couple-sunset.png';
+        var tripPhoto = tripFile ? await imageToDataUrl(tripFile) : '';
         item = { id: id, city: data.get('city'), date: data.get('date'), lat: Number(data.get('lat')), lng: Number(data.get('lng')), story: data.get('story'), photo: tripPhoto };
-        state.media.unshift({ id: 'media-' + Date.now(), url: tripPhoto, caption: data.get('city') + '旅行', date: data.get('date'), place: data.get('city') });
-        state.timeline.unshift({ id: 'time-' + Date.now(), date: data.get('date'), title: data.get('city') + '旅行', text: data.get('story'), mood: '旅行', photo: tripPhoto });
+        if (tripPhoto) state.media.unshift({ id: 'media-' + Date.now(), url: tripPhoto, caption: data.get('city') + '旅行', date: data.get('date'), place: data.get('city') });
       } else if (currentAddType === 'album') {
         var albumFile = recordForm.elements.photo.files[0];
         item = { id: id, url: await imageToDataUrl(albumFile), caption: data.get('caption'), date: data.get('date'), place: data.get('place') };
-      } else if (currentAddType === 'timeline') item = { id: id, title: data.get('title'), date: data.get('date'), mood: data.get('mood'), text: data.get('text'), photo: '' };
+      } else if (currentAddType === 'timeline') {
+        var timelineFile = recordForm.elements.photo.files && recordForm.elements.photo.files[0];
+        item = { id: id, title: data.get('title'), date: data.get('date'), mood: data.get('mood'), text: data.get('text'), photo: timelineFile ? await imageToDataUrl(timelineFile) : '' };
+      }
       else if (currentAddType === 'diaries') item = { id: id, title: data.get('title'), date: data.get('date'), mood: data.get('mood'), content: data.get('content') };
       else if (currentAddType === 'anniversaries') item = { id: id, title: data.get('title'), date: data.get('date') };
       else if (currentAddType === 'gifts') item = { id: id, title: data.get('title'), date: data.get('date'), from: data.get('from'), story: data.get('story') };
       else if (currentAddType === 'messages') item = { id: id, from: data.get('from'), content: data.get('content'), date: new Date().toISOString().slice(0, 10) };
       else item = { id: id, title: data.get('title'), date: data.get('date') || '', status: data.get('status') || '想去' };
       state[currentAddType].unshift(item);
+      if (currentAddType === 'trips') destroyMaps();
       if (saveState()) {
         closeDialog();
         updateDashboard();
@@ -456,6 +500,19 @@
       saveState();
       updateDashboard();
       if (currentSection === 'tasks') renderSection('tasks', sectionSearch.value);
+    }
+
+    function deleteRecord(type, id) {
+      if (['tasks', 'trips', 'timeline'].indexOf(type) === -1 || !state[type]) return;
+      var item = state[type].find(function (entry) { return entry.id === id; });
+      var name = item ? (item.title || item.city || '这条记录') : '这条记录';
+      if (!confirm('确定删除“' + name + '”吗？')) return;
+      state[type] = state[type].filter(function (entry) { return entry.id !== id; });
+      if (type === 'trips') destroyMaps();
+      if (saveState()) {
+        updateDashboard();
+        if (currentSection === type) renderSection(type, sectionSearch.value);
+      }
     }
 
     function openPhoto(url, caption) {
@@ -476,6 +533,10 @@
       if (openSection) return activateSection(openSection.dataset.openSection);
       var addType = event.target.closest('[data-add-type]');
       if (addType) return openDialog(addType.dataset.addType);
+      var editRecord = event.target.closest('[data-record-edit]');
+      if (editRecord) return openDialog(editRecord.dataset.recordType, editRecord.dataset.recordEdit);
+      var deleteRecordButton = event.target.closest('[data-record-delete]');
+      if (deleteRecordButton) return deleteRecord(deleteRecordButton.dataset.recordType, deleteRecordButton.dataset.recordDelete);
       var taskEmoji = event.target.closest('[data-task-emoji]');
       if (taskEmoji) {
         var emojiInput = dialogFields.querySelector('input[name="emoji"]');
@@ -536,6 +597,7 @@
     function destroyMaps() {
       maps.forEach(function (map) { try { map.destroy(); } catch (error) {} });
       maps = [];
+      root.querySelectorAll('.love-map').forEach(function (element) { delete element.dataset.mapReady; });
     }
 
     async function unlock(event) {

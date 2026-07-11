@@ -5732,18 +5732,58 @@ body:has(.love-space-page) #navHeader {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
-.love-task-grid .love-task-item {
+.love-task-manage {
   padding: 12px;
   border: 1px solid #f1e0e5;
   border-radius: 14px;
   background-color: rgba(255,255,255,0.88);
 }
-.darkModel .love-task-grid .love-task-item {
+.darkModel .love-task-manage {
   border-color: rgba(193,153,222,0.15);
   background-color: #0f1c36;
 }
+.love-task-grid .love-task-item {
+  padding: 0;
+}
 .love-task-grid .love-task-item strong {
   max-width: none;
+}
+.love-record-actions {
+  margin-top: 9px;
+  padding-top: 8px;
+  border-top: 1px solid #f4e2e7;
+  display: flex;
+  justify-content: flex-end;
+  gap: 7px;
+  clear: both;
+}
+.darkModel .love-record-actions {
+  border-color: rgba(193,153,222,0.15);
+}
+.love-record-actions button {
+  min-height: 28px;
+  padding: 0 9px;
+  border: 1px solid #efd7df;
+  border-radius: 8px;
+  color: #a2687a;
+  background-color: #fff8fa;
+  cursor: pointer;
+  font-size: 11px;
+}
+.love-record-actions button:hover {
+  color: #df5f84;
+  border-color: #eaa4b8;
+}
+.love-record-actions button.is-delete {
+  color: #c84f6c;
+}
+.darkModel .love-record-actions button {
+  color: #d9c9df;
+  border-color: #493956;
+  background-color: #14213d;
+}
+.darkModel .love-record-actions button.is-delete {
+  color: #ff91aa;
 }
 .love-travel-layout {
   display: grid;
@@ -5797,6 +5837,9 @@ body:has(.love-space-page) #navHeader {
 .love-trip-cards span {
   color: #9b888f;
   font-size: 8px;
+}
+.love-trip-cards .love-record-actions {
+  margin-top: 8px;
 }
 .love-album-grid {
   columns: 4 210px;
@@ -5907,6 +5950,9 @@ body:has(.love-space-page) #navHeader {
 }
 .darkModel .timeline-card p {
   color: #b9afc1;
+}
+.timeline-card .love-record-actions {
+  margin-top: 12px;
 }
 .love-record-list {
   display: grid;

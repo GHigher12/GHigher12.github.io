@@ -68,6 +68,7 @@
 
       var controls = { autoRotate: true, autoRotateSpeed: .42, enableDamping: true, dampingFactor: .07, minDistance: 170, maxDistance: 520 };
       var markerMeshes = [];
+      var twinkleMarkers = [];
       var animationId = 0;
       var pointerStart = null;
       var dragged = false;
@@ -82,15 +83,49 @@
 
       function createLabel(text, winter) {
         var canvas = document.createElement('canvas');
-        canvas.width = 192; canvas.height = 48;
+        canvas.width = 160; canvas.height = 40;
         var context = canvas.getContext('2d');
         var labelText = (winter ? '❄ ' : '') + text;
         context.clearRect(0, 0, canvas.width, canvas.height);
-        context.font = '600 18px sans-serif'; context.textAlign = 'center'; context.textBaseline = 'middle';
-        context.lineWidth = 4; context.strokeStyle = 'rgba(3,12,24,.82)'; context.strokeText(labelText, 96, 25);
-        context.fillStyle = winter ? '#bfeaff' : '#fff'; context.fillText(labelText, 96, 25);
+        context.font = '400 15px sans-serif'; context.textAlign = 'center'; context.textBaseline = 'middle';
+        context.lineWidth = 3; context.strokeStyle = 'rgba(3,12,24,.9)'; context.strokeText(labelText, 80, 21);
+        context.fillStyle = winter ? '#d9f5ff' : '#fff'; context.fillText(labelText, 80, 21);
         var sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(canvas), transparent: true, depthWrite: false }));
-        sprite.scale.set(18, 4.5, 1);
+        sprite.scale.set(14, 3.5, 1);
+        return sprite;
+      }
+
+      function createMarkerSprite(trip) {
+        var canvas = document.createElement('canvas');
+        canvas.width = canvas.height = 96;
+        var context = canvas.getContext('2d');
+        var isBeijing = trip.city === '北京';
+        if (isBeijing) {
+          var glow = context.createRadialGradient(48, 48, 1, 48, 48, 42);
+          glow.addColorStop(0, 'rgba(255,255,255,1)');
+          glow.addColorStop(.16, 'rgba(220,241,255,.95)');
+          glow.addColorStop(.48, 'rgba(116,190,255,.34)');
+          glow.addColorStop(1, 'rgba(116,190,255,0)');
+          context.fillStyle = glow; context.fillRect(0, 0, 96, 96);
+          context.save(); context.translate(48, 48); context.fillStyle = '#fff';
+          context.beginPath();
+          for (var point = 0; point < 8; point += 1) {
+            var radius = point % 2 === 0 ? 19 : 4.5;
+            var angle = -Math.PI / 2 + point * Math.PI / 4;
+            var x = Math.cos(angle) * radius, y = Math.sin(angle) * radius;
+            if (point === 0) context.moveTo(x, y); else context.lineTo(x, y);
+          }
+          context.closePath(); context.fill(); context.restore();
+        } else {
+          context.strokeStyle = 'rgba(255,255,255,.98)'; context.lineWidth = 6;
+          context.beginPath(); context.arc(48, 48, 27, 0, Math.PI * 2); context.stroke();
+          context.fillStyle = '#fff'; context.beginPath(); context.arc(48, 48, 7, 0, Math.PI * 2); context.fill();
+        }
+        var material = new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(canvas), transparent: true, depthWrite: false });
+        var sprite = new THREE.Sprite(material);
+        sprite.scale.set(isBeijing ? 9 : 6.5, isBeijing ? 9 : 6.5, 1);
+        sprite.userData.trip = trip;
+        if (isBeijing) twinkleMarkers.push(sprite);
         return sprite;
       }
 
@@ -105,10 +140,11 @@
       function setTrips(nextTrips) {
         clearGroup(markerGroup);
         markerMeshes = [];
+        twinkleMarkers = [];
         (nextTrips || []).forEach(function (trip) {
           var position = toVector(trip.lat, trip.lng, 103);
-          var marker = new THREE.Mesh(new THREE.SphereGeometry(trip.photo ? 2.5 : 1.9, 16, 16), new THREE.MeshStandardMaterial({ color: trip.winter ? '#bdefff' : (trip.photo ? '#ff7287' : '#ffd35c'), emissive: trip.winter ? '#69cfff' : '#ff8a65', emissiveIntensity: .75 }));
-          marker.position.copy(position); marker.userData.trip = trip;
+          var marker = createMarkerSprite(trip);
+          marker.position.copy(position);
           markerGroup.add(marker); markerMeshes.push(marker);
           var label = createLabel(trip.city, trip.winter);
           label.position.copy(position.clone().multiplyScalar(1.08)); markerGroup.add(label);
@@ -174,6 +210,12 @@
       function animate() {
         animationId = requestAnimationFrame(animate);
         if (controls.autoRotate) globeGroup.rotation.y += .0018 * controls.autoRotateSpeed;
+        var pulse = .58 + (Math.sin(performance.now() * .0045) + 1) * .21;
+        twinkleMarkers.forEach(function (marker) {
+          marker.material.opacity = pulse;
+          var scale = 8.2 + pulse * 2.1;
+          marker.scale.set(scale, scale, 1);
+        });
         renderer.render(scene, camera);
       }
 

@@ -161,8 +161,12 @@
     controls.autoRotateSpeed = 0.32;
     controls.enableDamping = true;
     controls.dampingFactor = 0.08;
-    controls.minDistance = 80;
-    controls.maxDistance = 720;
+    controls.zoomSpeed = 1.25;
+    controls.minDistance = 24;
+    controls.maxDistance = 1600;
+    graph.camera().near = 0.5;
+    graph.camera().far = 5000;
+    graph.camera().updateProjectionMatrix();
 
     function selectNode(node, moveCamera) {
       selectedNode = node;
@@ -187,7 +191,7 @@
       openButton.textContent = node.type === 'post' ? '阅读文章' : '查看标签';
 
       if (moveCamera && isFinite(node.x)) {
-        var distance = 92;
+        var distance = 58;
         var ratio = 1 + distance / Math.hypot(node.x, node.y, node.z);
         graph.cameraPosition({ x: node.x * ratio, y: node.y * ratio, z: node.z * ratio }, node, 900);
       }
