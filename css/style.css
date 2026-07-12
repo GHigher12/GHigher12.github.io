@@ -6269,6 +6269,127 @@ body:has(.love-space-page) #navHeader {
   background-color: rgba(10,8,10,0.64);
   cursor: pointer;
 }
+.love-crop-dialog {
+  width: calc(100vw - 28px);
+  max-width: 820px;
+  max-height: 92vh;
+  padding: 0;
+  border: 0;
+  border-radius: 24px;
+  color: #302e37;
+  background-color: #fffafb;
+  box-shadow: 0 28px 90px rgba(59,28,43,0.36);
+}
+.love-crop-dialog::backdrop {
+  background-color: rgba(9,8,14,0.76);
+  backdrop-filter: blur(7px);
+}
+.darkModel .love-crop-dialog {
+  color: #f8f3fb;
+  background-color: #0d1a33;
+}
+.love-crop-panel {
+  position: relative;
+  padding: 26px;
+}
+.love-crop-panel h2 {
+  margin: 3px 0 5px;
+  font-size: 22px;
+}
+.love-crop-tip {
+  margin: 0 0 14px;
+  color: #8b7981;
+  font-size: 12px;
+}
+.darkModel .love-crop-tip {
+  color: #bdb2c4;
+}
+.love-crop-stage {
+  min-height: 300px;
+  max-height: 56vh;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: repeating-conic-gradient(#20232b 0 25%, #292d36 0 50%) 50%/22px 22px;
+  touch-action: none;
+  cursor: grab;
+}
+.love-crop-stage:active {
+  cursor: grabbing;
+}
+.love-crop-stage canvas {
+  display: block;
+  max-width: 100%;
+  max-height: 56vh;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.2);
+}
+.love-crop-controls {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 18px;
+}
+.love-crop-controls label {
+  display: grid;
+  gap: 7px;
+  color: #806f77;
+  font-size: 12px;
+}
+.darkModel .love-crop-controls label {
+  color: #c8bdce;
+}
+.love-crop-controls select {
+  min-height: 38px;
+  padding: 0 10px;
+  border: 1px solid #ead8de;
+  border-radius: 10px;
+  color: inherit;
+  background-color: #fff;
+}
+.darkModel .love-crop-controls select {
+  border-color: #403851;
+  background-color: #111f3b;
+}
+.love-crop-controls input[type='range'] {
+  width: 100%;
+  accent-color: #ed668d;
+}
+.love-crop-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.love-crop-actions button {
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid #ecd8df;
+  border-radius: 12px;
+  color: #806b74;
+  background-color: #fff;
+  cursor: pointer;
+}
+.love-crop-actions .love-primary-button {
+  color: #fff;
+  border: 0;
+  background-color: #ef688f;
+}
+.darkModel .love-crop-actions button {
+  color: #d8cedd;
+  border-color: #44394f;
+  background-color: #14213d;
+}
+.darkModel .love-crop-actions .love-primary-button {
+  color: #fff;
+  background-color: #a45bd5;
+}
+.love-crop-ready {
+  display: block;
+  margin-top: 5px;
+  color: #2d9b7f;
+  font-size: 11px;
+}
 .love-lightbox p {
   margin: 8px 0 0;
   color: #fff;
@@ -6549,6 +6670,20 @@ body:has(.love-space-page) #navHeader {
   }
   .love-settings-form {
     grid-template-columns: 1fr;
+  }
+  .love-crop-panel {
+    padding: 21px 15px 16px;
+  }
+  .love-crop-stage {
+    min-height: 230px;
+  }
+  .love-crop-controls {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .love-crop-actions button {
+    flex: 1;
+    padding: 0 10px;
   }
 }
 @media (max-width: 390px) {

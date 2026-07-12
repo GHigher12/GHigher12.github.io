@@ -35,6 +35,15 @@
     var lightbox = root.querySelector('#love-lightbox');
     var lightboxImage = root.querySelector('#love-lightbox-image');
     var lightboxCaption = root.querySelector('#love-lightbox-caption');
+    var cropDialog = root.querySelector('#love-crop-dialog');
+    var cropCanvas = root.querySelector('#love-crop-canvas');
+    var cropContext = cropCanvas.getContext('2d');
+    var cropAspect = root.querySelector('#love-crop-aspect');
+    var cropZoom = root.querySelector('#love-crop-zoom');
+    var cropConfirm = root.querySelector('#love-crop-confirm');
+    var cropCancel = root.querySelector('#love-crop-cancel');
+    var cropClose = root.querySelector('#love-crop-close');
+    var cropState = { input: null, image: null, zoom: 1, offsetX: 0, offsetY: 0, dragging: false, x: 0, y: 0 };
 
     var taskTitles = [
       '一起过生日 🎂', '一起去旅行 🧳', '一起过情人节 💛', '一起吃海底捞 🍲', '一起吊娃娃 🧸',
@@ -417,6 +426,132 @@
       });
     }
 
+    function cropCanvasSize() {
+      var ratio = Number(cropAspect.value) || 1;
+      if (ratio >= 1) {
+        cropCanvas.width = 960;
+        cropCanvas.height = Math.round(960 / ratio);
+      } else {
+        cropCanvas.height = 960;
+        cropCanvas.width = Math.round(960 * ratio);
+      }
+    }
+
+    function drawCropImage() {
+      if (!cropState.image) return;
+      var image = cropState.image;
+      var baseScale = Math.max(cropCanvas.width / image.naturalWidth, cropCanvas.height / image.naturalHeight);
+      var scale = baseScale * cropState.zoom;
+      var width = image.naturalWidth * scale;
+      var height = image.naturalHeight * scale;
+      var maxX = Math.max(0, (width - cropCanvas.width) / 2);
+      var maxY = Math.max(0, (height - cropCanvas.height) / 2);
+      cropState.offsetX = Math.max(-maxX, Math.min(maxX, cropState.offsetX));
+      cropState.offsetY = Math.max(-maxY, Math.min(maxY, cropState.offsetY));
+      cropContext.clearRect(0, 0, cropCanvas.width, cropCanvas.height);
+      cropContext.drawImage(image, (cropCanvas.width - width) / 2 + cropState.offsetX, (cropCanvas.height - height) / 2 + cropState.offsetY, width, height);
+    }
+
+    function openImageCrop(input, file) {
+      if (!file || !file.type || file.type.indexOf('image/') !== 0) return;
+      var reader = new FileReader();
+      reader.onload = function () {
+        var image = new Image();
+        image.onload = function () {
+          cropState.input = input;
+          cropState.image = image;
+          cropState.zoom = 1;
+          cropState.offsetX = 0;
+          cropState.offsetY = 0;
+          cropZoom.value = '1';
+          cropAspect.value = currentAddType === 'tasks' || currentAddType === 'task-checkin' ? '1' : '1.333333';
+          cropCanvasSize();
+          drawCropImage();
+          if (typeof cropDialog.showModal === 'function') cropDialog.showModal(); else cropDialog.setAttribute('open', '');
+        };
+        image.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function closeImageCrop(clearInput) {
+      if (clearInput && cropState.input) {
+        cropState.input.value = '';
+        delete cropState.input.dataset.croppedImage;
+      }
+      if (typeof cropDialog.close === 'function') cropDialog.close(); else cropDialog.removeAttribute('open');
+      cropState.input = null;
+      cropState.image = null;
+      cropState.dragging = false;
+    }
+
+    function confirmImageCrop() {
+      if (!cropState.input || !cropState.image) return closeImageCrop(false);
+      cropState.input.dataset.croppedImage = cropCanvas.toDataURL('image/jpeg', .88);
+      var label = cropState.input.closest('label');
+      if (label) {
+        var ready = label.querySelector('.love-crop-ready');
+        if (!ready) {
+          ready = document.createElement('span');
+          ready.className = 'love-crop-ready';
+          label.appendChild(ready);
+        }
+        ready.innerHTML = '<i class="fas fa-check-circle"></i> 图片已裁剪，保存记录后生效';
+      }
+      closeImageCrop(false);
+    }
+
+    function handleImageSelection(event) {
+      var input = event.target.closest('input[type="file"][accept*="image"]');
+      if (!input) return;
+      delete input.dataset.croppedImage;
+      var file = input.files && input.files[0];
+      if (file) openImageCrop(input, file);
+    }
+
+    function handleCropPointerDown(event) {
+      if (!cropState.image) return;
+      cropState.dragging = true;
+      cropState.x = event.clientX;
+      cropState.y = event.clientY;
+    }
+
+    function handleCropPointerMove(event) {
+      if (!cropState.dragging || !cropState.image) return;
+      var rect = cropCanvas.getBoundingClientRect();
+      cropState.offsetX += (event.clientX - cropState.x) * (cropCanvas.width / rect.width);
+      cropState.offsetY += (event.clientY - cropState.y) * (cropCanvas.height / rect.height);
+      cropState.x = event.clientX;
+      cropState.y = event.clientY;
+      drawCropImage();
+    }
+
+    function handleCropPointerUp() { cropState.dragging = false; }
+
+    function handleCropAspect() {
+      cropState.offsetX = 0;
+      cropState.offsetY = 0;
+      cropCanvasSize();
+      drawCropImage();
+    }
+
+    function handleCropZoom() {
+      cropState.zoom = Number(cropZoom.value) || 1;
+      drawCropImage();
+    }
+
+    function cancelImageCrop(event) {
+      if (event) event.preventDefault();
+      closeImageCrop(true);
+    }
+
+    function croppedImageFromInput(input) {
+      if (!input) return Promise.resolve('');
+      if (input.dataset.croppedImage) return Promise.resolve(input.dataset.croppedImage);
+      var file = input.files && input.files[0];
+      return file ? imageToDataUrl(file) : Promise.resolve('');
+    }
+
     async function saveRecord(event) {
       event.preventDefault();
       var data = new FormData(recordForm);
@@ -425,13 +560,13 @@
       if (currentAddType === 'task-checkin') {
         var task = state.tasks.find(function (entry) { return entry.id === activeTaskId; });
         if (!task) return;
-        var taskFile = recordForm.elements.photo.files && recordForm.elements.photo.files[0];
+        var taskPhotoData = await croppedImageFromInput(recordForm.elements.photo);
         task.done = true;
         task.date = data.get('date');
         task.location = data.get('location') || '';
         task.note = data.get('note') || '';
         task.emoji = data.get('emoji') || '💗';
-        if (taskFile) task.photo = await imageToDataUrl(taskFile);
+        if (taskPhotoData) task.photo = taskPhotoData;
         if (saveState()) {
           closeDialog();
           updateDashboard();
@@ -447,17 +582,17 @@
           existing.category = data.get('category');
           existing.emoji = data.get('emoji') || existing.emoji || '💗';
         } else if (currentAddType === 'trips') {
-          var editedTripFile = recordForm.elements.photo.files && recordForm.elements.photo.files[0];
+          var editedTripPhoto = await croppedImageFromInput(recordForm.elements.photo);
           existing.city = data.get('city'); existing.date = data.get('date');
           existing.lat = Number(data.get('lat')); existing.lng = Number(data.get('lng'));
           existing.story = data.get('story');
-          if (editedTripFile) existing.photo = await imageToDataUrl(editedTripFile);
+          if (editedTripPhoto) existing.photo = editedTripPhoto;
           destroyMaps();
         } else {
-          var editedTimelineFile = recordForm.elements.photo.files && recordForm.elements.photo.files[0];
+          var editedTimelinePhoto = await croppedImageFromInput(recordForm.elements.photo);
           existing.title = data.get('title'); existing.date = data.get('date');
           existing.mood = data.get('mood'); existing.text = data.get('text');
-          if (editedTimelineFile) existing.photo = await imageToDataUrl(editedTimelineFile);
+          if (editedTimelinePhoto) existing.photo = editedTimelinePhoto;
         }
         if (saveState()) {
           activeRecordId = null;
@@ -467,16 +602,13 @@
       }
       if (currentAddType === 'tasks') item = { id: id, title: data.get('title'), category: data.get('category'), done: false, date: '', location: '', note: '', photo: '', emoji: data.get('emoji') || '💗' };
       else if (currentAddType === 'trips') {
-        var tripFile = recordForm.elements.photo.files && recordForm.elements.photo.files[0];
-        var tripPhoto = tripFile ? await imageToDataUrl(tripFile) : '';
+        var tripPhoto = await croppedImageFromInput(recordForm.elements.photo);
         item = { id: id, city: data.get('city'), date: data.get('date'), lat: Number(data.get('lat')), lng: Number(data.get('lng')), story: data.get('story'), photo: tripPhoto };
         if (tripPhoto) state.media.unshift({ id: 'media-' + Date.now(), url: tripPhoto, caption: data.get('city') + '旅行', date: data.get('date'), place: data.get('city') });
       } else if (currentAddType === 'album') {
-        var albumFile = recordForm.elements.photo.files[0];
-        item = { id: id, url: await imageToDataUrl(albumFile), caption: data.get('caption'), date: data.get('date'), place: data.get('place') };
+        item = { id: id, url: await croppedImageFromInput(recordForm.elements.photo), caption: data.get('caption'), date: data.get('date'), place: data.get('place') };
       } else if (currentAddType === 'timeline') {
-        var timelineFile = recordForm.elements.photo.files && recordForm.elements.photo.files[0];
-        item = { id: id, title: data.get('title'), date: data.get('date'), mood: data.get('mood'), text: data.get('text'), photo: timelineFile ? await imageToDataUrl(timelineFile) : '' };
+        item = { id: id, title: data.get('title'), date: data.get('date'), mood: data.get('mood'), text: data.get('text'), photo: await croppedImageFromInput(recordForm.elements.photo) };
       }
       else if (currentAddType === 'diaries') item = { id: id, title: data.get('title'), date: data.get('date'), mood: data.get('mood'), content: data.get('content') };
       else if (currentAddType === 'anniversaries') item = { id: id, title: data.get('title'), date: data.get('date') };
@@ -660,11 +792,21 @@
     lockNow.addEventListener('click', relock);
     root.addEventListener('click', handleRootClick);
     root.addEventListener('submit', handleSettingsSubmit);
+    root.addEventListener('change', handleImageSelection);
     recordForm.addEventListener('submit', saveRecord);
     dialogClose.addEventListener('click', closeDialog);
     sectionSearch.addEventListener('input', searchSection);
     sectionAdd.addEventListener('click', function () { openDialog(currentSection); });
     quickAdd.addEventListener('click', function () { openDialog(currentSection === 'home' ? 'tasks' : currentSection); });
+    cropAspect.addEventListener('change', handleCropAspect);
+    cropZoom.addEventListener('input', handleCropZoom);
+    cropCanvas.addEventListener('pointerdown', handleCropPointerDown);
+    window.addEventListener('pointermove', handleCropPointerMove);
+    window.addEventListener('pointerup', handleCropPointerUp);
+    cropConfirm.addEventListener('click', confirmImageCrop);
+    cropCancel.addEventListener('click', cancelImageCrop);
+    cropClose.addEventListener('click', cancelImageCrop);
+    cropDialog.addEventListener('cancel', cancelImageCrop);
 
     if (sessionStorage.getItem(SESSION_KEY) === 'true') showApp();
     else { lockView.hidden = false; app.hidden = true; }
@@ -677,9 +819,19 @@
       lockNow.removeEventListener('click', relock);
       root.removeEventListener('click', handleRootClick);
       root.removeEventListener('submit', handleSettingsSubmit);
+      root.removeEventListener('change', handleImageSelection);
       recordForm.removeEventListener('submit', saveRecord);
       dialogClose.removeEventListener('click', closeDialog);
       sectionSearch.removeEventListener('input', searchSection);
+      cropAspect.removeEventListener('change', handleCropAspect);
+      cropZoom.removeEventListener('input', handleCropZoom);
+      cropCanvas.removeEventListener('pointerdown', handleCropPointerDown);
+      window.removeEventListener('pointermove', handleCropPointerMove);
+      window.removeEventListener('pointerup', handleCropPointerUp);
+      cropConfirm.removeEventListener('click', confirmImageCrop);
+      cropCancel.removeEventListener('click', cancelImageCrop);
+      cropClose.removeEventListener('click', cancelImageCrop);
+      cropDialog.removeEventListener('cancel', cancelImageCrop);
     };
   });
 })();

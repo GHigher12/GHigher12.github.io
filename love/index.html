@@ -712,6 +712,33 @@
   </dialog>
 
   <dialog class="love-lightbox" id="love-lightbox"><button type="button" data-lightbox-close aria-label="关闭"><i class="fas fa-times"></i></button>" class="lazyload placeholder" data-srcset="" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif<img id="love-lightbox-image" src="" alt="回忆照片"><p id="love-lightbox-caption"></p></dialog>
+
+  <dialog class="love-crop-dialog" id="love-crop-dialog">
+    <div class="love-crop-panel">
+      <button type="button" class="dialog-close" id="love-crop-close" aria-label="关闭图片裁剪"><i class="fas fa-times"></i></button>
+      <p class="panel-eyebrow">CROP THE MEMORY</p>
+      <h2>裁剪图片</h2>
+      <p class="love-crop-tip">拖动图片调整位置，使用滑块缩放取景。</p>
+      <div class="love-crop-stage"><canvas id="love-crop-canvas" width="960" height="720"></canvas></div>
+      <div class="love-crop-controls">
+        <label>裁剪比例
+          <select id="love-crop-aspect">
+            <option value="1">1:1 正方形</option>
+            <option value="1.333333">4:3 横图</option>
+            <option value="1.777778">16:9 宽屏</option>
+            <option value="0.75">3:4 竖图</option>
+          </select>
+        </label>
+        <label>缩放
+          <input id="love-crop-zoom" type="range" min="1" max="3" step="0.01" value="1">
+        </label>
+      </div>
+      <div class="love-crop-actions">
+        <button type="button" id="love-crop-cancel">取消</button>
+        <button type="button" class="love-primary-button" id="love-crop-confirm"><i class="fas fa-crop-alt"></i> 使用裁剪图片</button>
+      </div>
+    </div>
+  </dialog>
   <p class="love-page-error" data-page-error></p>
 </section>
 

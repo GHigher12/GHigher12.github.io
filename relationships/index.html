@@ -686,17 +686,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var nodes = [
         
             {
-                id: 'C/C++',
-                name: 'C/C++',
-                symbolSize: 36,
-                value: 30
-            },
-        
-            {
                 id: 'AI',
                 name: 'AI',
                 symbolSize: 14,
                 value: 4
+            },
+        
+            {
+                id: 'C/C++',
+                name: 'C/C++',
+                symbolSize: 36,
+                value: 30
             },
         
             {
@@ -805,13 +805,6 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'Openmv',
-                name: 'Openmv',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
                 id: 'python',
                 name: 'python',
                 symbolSize: 28,
@@ -823,6 +816,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Opencv',
                 symbolSize: 16,
                 value: 7
+            },
+        
+            {
+                id: 'Openmv',
+                name: 'Openmv',
+                symbolSize: 11,
+                value: 1
             },
         
             {
@@ -1030,20 +1030,20 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'Openmv',
-                target: 'python',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
                 source: 'python',
                 target: 'Opencv',
                 value: 7,
                 lineStyle: {
                     width: 7
+                }
+            },
+        
+            {
+                source: 'python',
+                target: 'Openmv',
+                value: 1,
+                lineStyle: {
+                    width: 1
                 }
             },
         
