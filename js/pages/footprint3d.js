@@ -123,7 +123,7 @@
         }
         var material = new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(canvas), transparent: true, depthWrite: false });
         var sprite = new THREE.Sprite(material);
-        sprite.scale.set(isBeijing ? 9 : 6.5, isBeijing ? 9 : 6.5, 1);
+        sprite.scale.set(isBeijing ? 7.2 : 4.4, isBeijing ? 7.2 : 4.4, 1);
         sprite.userData.trip = trip;
         if (isBeijing) twinkleMarkers.push(sprite);
         return sprite;
@@ -213,7 +213,7 @@
         var pulse = .58 + (Math.sin(performance.now() * .0045) + 1) * .21;
         twinkleMarkers.forEach(function (marker) {
           marker.material.opacity = pulse;
-          var scale = 8.2 + pulse * 2.1;
+          var scale = 6.3 + pulse * 1.5;
           marker.scale.set(scale, scale, 1);
         });
         renderer.render(scene, camera);

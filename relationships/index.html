@@ -686,17 +686,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var nodes = [
         
             {
-                id: 'AI',
-                name: 'AI',
-                symbolSize: 14,
-                value: 4
-            },
-        
-            {
                 id: 'C/C++',
                 name: 'C/C++',
                 symbolSize: 36,
                 value: 30
+            },
+        
+            {
+                id: 'AI',
+                name: 'AI',
+                symbolSize: 14,
+                value: 4
             },
         
             {
@@ -798,6 +798,13 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                id: 'OpenClaw',
+                name: 'OpenClaw',
+                symbolSize: 11,
+                value: 1
+            },
+        
+            {
                 id: 'Openmv',
                 name: 'Openmv',
                 symbolSize: 11,
@@ -809,13 +816,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'python',
                 symbolSize: 28,
                 value: 20
-            },
-        
-            {
-                id: 'OpenClaw',
-                name: 'OpenClaw',
-                symbolSize: 11,
-                value: 1
             },
         
             {
@@ -1021,8 +1021,8 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'Openmv',
-                target: 'python',
+                source: 'AI',
+                target: 'OpenClaw',
                 value: 1,
                 lineStyle: {
                     width: 1
@@ -1030,8 +1030,8 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'AI',
-                target: 'OpenClaw',
+                source: 'Openmv',
+                target: 'python',
                 value: 1,
                 lineStyle: {
                     width: 1

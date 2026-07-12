@@ -3978,6 +3978,66 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   font-size: 11px;
   font-style: normal;
 }
+.footprint-city-block {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(87,118,135,0.12);
+}
+.footprint-city-title {
+  display: block;
+  margin-bottom: 8px;
+  color: #546d7c;
+  font-size: 11px;
+}
+.darkModel .footprint-city-title {
+  color: #b8cbda;
+}
+.footprint-city-title i {
+  margin-right: 5px;
+  color: #43b7cd;
+}
+.footprint-city-list {
+  max-height: 142px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.footprint-city-list button {
+  min-width: 0;
+  height: 27px;
+  padding: 0 5px;
+  border: 1px solid rgba(84,139,162,0.15);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow: hidden;
+  color: #4f6878;
+  background-color: rgba(235,247,250,0.7);
+  cursor: pointer;
+  font-size: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.footprint-city-list button:hover {
+  color: #167f94;
+  border-color: rgba(67,183,205,0.42);
+  background-color: rgba(220,244,248,0.95);
+}
+.footprint-city-list button span {
+  flex: 0 0 5px;
+  width: 5px;
+  height: 5px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+.darkModel .footprint-city-list button {
+  color: #d1e5f2;
+  border-color: rgba(145,188,218,0.18);
+  background-color: rgba(17,39,57,0.72);
+}
 .footprint-note {
   margin: 10px 0 0;
   text-align: center;

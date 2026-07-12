@@ -20,6 +20,7 @@
     var detailCopy = root.querySelector('#cosmos-detail-copy');
     var openButton = root.querySelector('#cosmos-open');
     var selectedNode = null;
+    var lastNodeClick = { id: '', time: 0 };
     var planetObjects = {};
 
     function planetTexture(node) {
@@ -118,6 +119,13 @@
         container.style.cursor = node ? 'pointer' : 'grab';
       })
       .onNodeClick(function (node) {
+        var now = Date.now();
+        var isDoubleClick = node.type === 'post' && node.url && lastNodeClick.id === node.id && now - lastNodeClick.time < 380;
+        lastNodeClick = { id: node.id, time: now };
+        if (isDoubleClick) {
+          window.BambooPageRuntime.navigate(node.url);
+          return;
+        }
         selectNode(node, true);
       })
       .onEngineTick(function () {
