@@ -6,7 +6,7 @@
   <link href="https://yuchanghui.top/atom.xml" rel="self"/>
   
   <link href="https://yuchanghui.top/"/>
-  <updated>2026-05-28T12:06:58.869Z</updated>
+  <updated>2026-07-12T13:54:26.764Z</updated>
   <id>https://yuchanghui.top/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ultra_Fusion算法Docker部署</title>
+    <link href="https://yuchanghui.top/2026/07/12/Ultra-Fusion%E7%AE%97%E6%B3%95Docker%E9%83%A8%E7%BD%B2/"/>
+    <id>https://yuchanghui.top/2026/07/12/Ultra-Fusion%E7%AE%97%E6%B3%95Docker%E9%83%A8%E7%BD%B2/</id>
+    <published>2026-07-12T13:46:07.000Z</published>
+    <updated>2026-07-12T13:54:26.764Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;论文:&lt;a href=&quot;https://arxiv.org/abs/2501.11515&quot;&gt;https://arxiv.org/abs/2501.11515&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Github:&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="SLAM" scheme="https://yuchanghui.top/categories/SLAM/"/>
+    
+    
+    <category term="SLAM" scheme="https://yuchanghui.top/tags/SLAM/"/>
+    
+    <category term="Docker" scheme="https://yuchanghui.top/tags/Docker/"/>
+    
+    <category term="WSL2" scheme="https://yuchanghui.top/tags/WSL2/"/>
+    
+  </entry>
   
   <entry>
     <title>Pxhawk-Jeston-Board使用教程及ROS2通信</title>
@@ -556,38 +586,6 @@
     <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
     
     <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>点云在ROS中的应用</title>
-    <link href="https://yuchanghui.top/2024/02/11/%E7%82%B9%E4%BA%91%E5%9C%A8ROS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/"/>
-    <id>https://yuchanghui.top/2024/02/11/%E7%82%B9%E4%BA%91%E5%9C%A8ROS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</id>
-    <published>2024-02-11T02:36:35.000Z</published>
-    <updated>2026-03-16T11:00:34.831Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;﻿## 点云在ROS中的应用&lt;/p&gt;
-&lt;h2 id=&quot;用RoboSense雷达节点，加载pcap发布原始数据&quot;&gt;&lt;a href=&quot;#用RoboSense雷达节点，加载pcap发布原始数据&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/categories/Linux/"/>
-    
-    <category term="ROS" scheme="https://yuchanghui.top/categories/Linux/ROS/"/>
-    
-    
-    <category term="Linux" scheme="https://yuchanghui.top/tags/Linux/"/>
-    
-    <category term="Ubuntu" scheme="https://yuchanghui.top/tags/Ubuntu/"/>
-    
-    <category term="ROS" scheme="https://yuchanghui.top/tags/ROS/"/>
     
   </entry>
   

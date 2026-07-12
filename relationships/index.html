@@ -638,7 +638,7 @@
     <div class="card">
         <div class="card-content">
             <div class="relationship-info">
-                <p>共 <strong>37</strong> 个标签，<strong>46</strong> 条关联关系</p>
+                <p>共 <strong>39</strong> 个标签，<strong>49</strong> 条关联关系</p>
                 <p>拖拽标签可以拖动，滚轮可以缩放，双击可以聚焦</p>
             </div>
             <div id="tag-graph-container"></div>
@@ -686,17 +686,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var nodes = [
         
             {
-                id: 'C/C++',
-                name: 'C/C++',
-                symbolSize: 36,
-                value: 30
-            },
-        
-            {
                 id: 'AI',
                 name: 'AI',
                 symbolSize: 14,
                 value: 4
+            },
+        
+            {
+                id: 'C/C++',
+                name: 'C/C++',
+                symbolSize: 36,
+                value: 30
             },
         
             {
@@ -721,13 +721,6 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'ClaudeCode',
-                name: 'ClaudeCode',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
                 id: 'ESP32',
                 name: 'ESP32',
                 symbolSize: 11,
@@ -739,6 +732,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Micropython',
                 symbolSize: 11,
                 value: 1
+            },
+        
+            {
+                id: 'ClaudeCode',
+                name: 'ClaudeCode',
+                symbolSize: 12,
+                value: 2
             },
         
             {
@@ -826,6 +826,13 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                id: 'ROS2',
+                name: 'ROS2',
+                symbolSize: 13,
+                value: 3
+            },
+        
+            {
                 id: 'Pytorch',
                 name: 'Pytorch',
                 symbolSize: 16,
@@ -854,13 +861,6 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'ROS2',
-                name: 'ROS2',
-                symbolSize: 13,
-                value: 3
-            },
-        
-            {
                 id: 'ROS',
                 name: 'ROS',
                 symbolSize: 29,
@@ -886,6 +886,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'PicGo',
                 symbolSize: 12,
                 value: 2
+            },
+        
+            {
+                id: 'SLAM',
+                name: 'SLAM',
+                symbolSize: 12,
+                value: 2
+            },
+        
+            {
+                id: 'Docker',
+                name: 'Docker',
+                symbolSize: 11,
+                value: 1
+            },
+        
+            {
+                id: 'WSL2',
+                name: 'WSL2',
+                symbolSize: 11,
+                value: 1
             },
         
             {
@@ -937,13 +958,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 value: 1
             },
         
-            {
-                id: 'SLAM',
-                name: 'SLAM',
-                symbolSize: 11,
-                value: 1
-            },
-        
     ];
 
     var links = [
@@ -958,20 +972,20 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'AI',
-                target: 'ClaudeCode',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
                 source: 'ESP32',
                 target: 'Micropython',
                 value: 1,
                 lineStyle: {
                     width: 1
+                }
+            },
+        
+            {
+                source: 'AI',
+                target: 'ClaudeCode',
+                value: 2,
+                lineStyle: {
+                    width: 2
                 }
             },
         
@@ -1048,6 +1062,33 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                source: 'Linux',
+                target: 'ROS2',
+                value: 3,
+                lineStyle: {
+                    width: 3
+                }
+            },
+        
+            {
+                source: 'Ubuntu',
+                target: 'ROS2',
+                value: 3,
+                lineStyle: {
+                    width: 3
+                }
+            },
+        
+            {
+                source: 'JestonNano',
+                target: 'ROS2',
+                value: 1,
+                lineStyle: {
+                    width: 1
+                }
+            },
+        
+            {
                 source: 'python',
                 target: 'Pytorch',
                 value: 7,
@@ -1098,33 +1139,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 value: 2,
                 lineStyle: {
                     width: 2
-                }
-            },
-        
-            {
-                source: 'Linux',
-                target: 'ROS2',
-                value: 3,
-                lineStyle: {
-                    width: 3
-                }
-            },
-        
-            {
-                source: 'Ubuntu',
-                target: 'ROS2',
-                value: 3,
-                lineStyle: {
-                    width: 3
-                }
-            },
-        
-            {
-                source: 'JestonNano',
-                target: 'ROS2',
-                value: 1,
-                lineStyle: {
-                    width: 1
                 }
             },
         
@@ -1251,6 +1265,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 value: 2,
                 lineStyle: {
                     width: 2
+                }
+            },
+        
+            {
+                source: 'SLAM',
+                target: 'Docker',
+                value: 1,
+                lineStyle: {
+                    width: 1
+                }
+            },
+        
+            {
+                source: 'SLAM',
+                target: 'WSL2',
+                value: 1,
+                lineStyle: {
+                    width: 1
+                }
+            },
+        
+            {
+                source: 'Docker',
+                target: 'WSL2',
+                value: 1,
+                lineStyle: {
+                    width: 1
                 }
             },
         

@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>关于我 | Ychui&#39;s Blog</title>
+  <title>Ultra_Fusion算法Docker部署 | Ychui&#39;s Blog</title>
 
   <link rel="icon" type="image/svg+xml" href="/blog.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -617,17 +617,36 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/7.png')">
+  background-position: center center;position: relative;background-image:url('/medias/4.png')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        关于我
+        Ultra_Fusion算法Docker部署
       </span>
     </div>
     
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2026-07-12 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/SLAM/" class="post-detail-header_category">
+              SLAM
+            </a>
+          
+        </span>
+      
+
+      
     
   </div>
   
@@ -645,20 +664,412 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="个人介绍"><a href="#个人介绍" class="headerlink" title="个人介绍"></a>个人介绍</h1><p>博主: Ychui | 性别: 男 | 邮箱:2535410943@qq.com</p>
-<h2 id="我的社交账号"><a href="#我的社交账号" class="headerlink" title="我的社交账号"></a>我的社交账号</h2><div style="display: flex;">
-<span class='btn center cool-2'><a class="button" target="_blank" rel="noopener" href='https://github.com/GHigher12' title='Github'><i class='fa-brands fa-github-alt'></i>Github</a></span>
-<span style="width:5px;"></span>
-<span class='btn center cool-2'><a class="button" target="_blank" rel="noopener" href='https://www.zhihu.com/people/yi-jie-shu-sheng-46-17' title='知乎'><i class='fa-brands fa-zhihu'></i>知乎</a></span>
-<span style="width:5px;"></span>
-<span class='btn center cool-2'><a class="button" target="_blank" rel="noopener" href='https://space.bilibili.com/697921567?spm_id_from=333.1007.0.0' title='B站'><i class='fa-brands fa-bilibili'></i>B站</a></span>
-<span style="width:5px;"></span>
-<span class='btn center cool-2'><a class="button" target="_blank" rel="noopener" href='https://www.douyin.com/user/MS4wLjABAAAAeo4KRhdsoZWre5kYZCLR-_rmjjtbb4jfXVWae_Gi9c0?from_tab_name=main' title='抖音'><i class='fa-brands fa-tiktok'></i>抖音</a></span>
+        <p>论文:<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2501.11515">https://arxiv.org/abs/2501.11515</a></p>
+<p>Github:<a target="_blank" rel="noopener" href="https://github.com/sjtuyinjie/Ultra-Fusion.git">https://github.com/sjtuyinjie/Ultra-Fusion.git</a></p>
+<h2 id="windows安装WSL2"><a href="#windows安装WSL2" class="headerlink" title="windows安装WSL2"></a>windows安装WSL2</h2><h3 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h3><p>因为如果直接安装<code>wsl --install</code>,会下载不到你自己想要的Ubuntu 版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --update</span><br></pre></td></tr></table></figure>
+<p>然后设置WSL默认版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将 WSL 默认版本设置为 WSL 2</span></span><br><span class="line">wsl --set-default-version 2</span><br></pre></td></tr></table></figure>
+<p>wsl1与wsl2区别：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2026/png/34531762/1783689638506-4112ac1d-7950-4634-8deb-1289c05dad62.png" class="lazyload placeholder" data-srcset="https://cdn.nlark.com/yuque/0/2026/png/34531762/1783689638506-4112ac1d-7950-4634-8deb-1289c05dad62.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img"></p>
+<h3 id="官网下载Ubuntu版本"><a href="#官网下载Ubuntu版本" class="headerlink" title="官网下载Ubuntu版本"></a>官网下载Ubuntu版本</h3><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/wsl/install-manual#step-6---install-your-linux-distribution-of-choice">https://learn.microsoft.com/zh-cn/windows/wsl/install-manual#step-6---install-your-linux-distribution-of-choice</a></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712214908634.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712214908634.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260712214908634"></p>
+<p>下载下来是一个后缀为AppxBundle文件，修改后缀为zip，然后解压</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712214931765.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712214931765.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260712214931765"></p>
+<p>找到后缀为appx最大文件并且适合自己的windows版本，我的为x64</p>
+<p>修改appx后缀为zip，然后解压，移动到想要自己安装的路径，例如移动到D盘</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712214940190.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712214940190.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260712214940190"></p>
+<p>然后双击ubuntu.exe文件即可，初次打开会让你设置用户名和密码，然后在文件夹里生成一个ext4.vhdx文件</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215316923.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215316923.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260712215316923"></p>
+<p>参考连接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_48076899/article/details/135214749">https://blog.csdn.net/weixin_48076899/article/details/135214749</a></p>
+<h3 id="打开wsl"><a href="#打开wsl" class="headerlink" title="打开wsl"></a>打开wsl</h3><p>按win键输入wsl或者ubuntu即可打开</p>
+<p>wsl相关命令如下</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>wsl</code></td>
+<td>直接启动默认 WSL 发行版，进入 Linux 交互终端</td>
+</tr>
+<tr>
+<td><code>wsl --list</code></td>
+<td>查看已安装的所有 WSL 发行版</td>
+</tr>
+<tr>
+<td><code>wsl --list --verbose</code></td>
+<td>查看已安装发行版的详细信息（版本、运行状态、默认标识）</td>
+</tr>
+<tr>
+<td><code>wsl --install</code></td>
+<td>一键安装 WSL2 + 默认 Ubuntu 发行版</td>
+</tr>
+<tr>
+<td><code>wsl --install -d &lt;发行版名&gt;</code></td>
+<td>指定发行版安装 WSL</td>
+</tr>
+<tr>
+<td><code>wsl -d &lt;发行版名&gt;</code></td>
+<td>启动指定名称的 WSL 发行版</td>
+</tr>
+<tr>
+<td><code>wsl --set-default &lt;发行版名&gt;</code></td>
+<td>设置指定发行版为默认启动系统</td>
+</tr>
+<tr>
+<td><code>wsl --shutdown</code></td>
+<td>强制关闭所有正在运行的 WSL 虚拟机</td>
+</tr>
+<tr>
+<td><code>wsl -t &lt;发行版名&gt;</code></td>
+<td>单独终止指定发行版的运行进程</td>
+</tr>
+<tr>
+<td><code>wsl --set-version &lt;发行版名&gt; 2</code></td>
+<td>将指定发行版切换为 WSL2 版本（推荐）</td>
+</tr>
+<tr>
+<td><code>wsl --get-default-version</code></td>
+<td>查看新建发行版默认使用的 WSL 版本</td>
+</tr>
+<tr>
+<td><code>wsl --set-default-version 2</code></td>
+<td>设置新建发行版默认使用 WSL2</td>
+</tr>
+<tr>
+<td><code>wsl --export &lt;发行版名&gt; &lt;保存路径&gt;</code></td>
+<td>导出发行版镜像备份为 tar 文件</td>
+</tr>
+<tr>
+<td><code>wsl --unregister &lt;发行版名&gt;</code></td>
+<td>注销指定发行版（删除所有数据，不可恢复）</td>
+</tr>
+<tr>
+<td><code>wsl --uninstall</code></td>
+<td>卸载 WSL 组件与虚拟机平台</td>
+</tr>
+<tr>
+<td><code>wsl --help</code></td>
+<td>查看 WSL 命令的全部官方参数说明</td>
+</tr>
+</tbody>
+</table>
 </div>
-
+<p>wsl里推出到powershell ：<code>exit</code></p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215331838.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215331838.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260712215331838"></p>
+<h3 id="挂载目录"><a href="#挂载目录" class="headerlink" title="挂载目录"></a>挂载目录</h3><p><strong>默认挂载目录</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>Windows 盘符</strong></th>
+<th><strong>WSL 内默认挂载路径</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>C:</strong></td>
+<td><code>**/mnt/c/**</code></td>
+<td><strong>系统盘，可读写</strong></td>
+</tr>
+<tr>
+<td><strong>D:</strong></td>
+<td><code>**/mnt/d/**</code></td>
+<td><strong>数据盘</strong></td>
+</tr>
+<tr>
+<td><strong>E: / F: / U 盘</strong></td>
+<td><code>**/mnt/e/**``**/mnt/f/**``**/mnt/u/**</code></td>
+<td><strong>所有固定 / 移动磁盘自动挂载</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>自定义挂载</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/ychooo/datasets</span><br><span class="line">sudo mount -t drvfs E:/Datasets /home/ychooo/datasets</span><br></pre></td></tr></table></figure>
+<p>这就相当于把wsl2中的<code>/home/ychooo/datasets</code>文件夹映射到windows的<code>E:/Datasets</code>文件夹</p>
+<p>这里推荐使用mkdir，因为后续docker目录挂载如果使用<code>sudo mkdir</code>创建的目录，后续在docker中映射不到</p>
+<p>使用<code>:ro</code> 代表只读挂载，<strong>不影响读取查看文件</strong>，但有 2 个坑：</p>
+<ol>
+<li>容器内无法新建 / 修改文件，但原有文件一定能 ls 看到；</li>
+<li>如果宿主机目录权限是 root，WSL 普通用户可读，但容器内 root 权限不兼容会看不见。</li>
+</ol>
+<p><strong>开机自动挂载</strong></p>
+<p>在wsl中执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/fstab</span><br><span class="line"><span class="comment">#写入</span></span><br><span class="line">E:\Datasets /home/ychooo/datasets drvfs defaults 0 0</span><br><span class="line"><span class="comment">#保存运行</span></span><br><span class="line">sudo mount -a</span><br></pre></td></tr></table></figure>
+<p>如果重复挂载可以参考下列命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 查看重复挂载</span></span><br><span class="line">mount | grep drvfs</span><br><span class="line"><span class="comment"># 2. 卸载多余挂载点</span></span><br><span class="line">sudo umount /mnt/datasets</span><br><span class="line"><span class="comment"># 3. 删除fstab多余配置</span></span><br><span class="line">sudo nano /etc/fstab</span><br><span class="line"><span class="comment"># 4. 刷新挂载</span></span><br><span class="line">sudo mount -a</span><br></pre></td></tr></table></figure>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/duzw/p/16594104.html">https://www.cnblogs.com/duzw/p/16594104.html</a></p>
+<h2 id="docker连接wsl2"><a href="#docker连接wsl2" class="headerlink" title="docker连接wsl2"></a>docker连接wsl2</h2><h4 id="下载docker-desktop"><a href="#下载docker-desktop" class="headerlink" title="下载docker desktop"></a>下载docker desktop</h4><p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215338784.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215338784.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260712215338784"></p>
+<p>连接时一定要启动这个位置</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2026/png/34531762/1783692790895-1cb5cd73-bd1a-403b-bae5-5625d4fc1685.png" class="lazyload placeholder" data-srcset="https://cdn.nlark.com/yuque/0/2026/png/34531762/1783692790895-1cb5cd73-bd1a-403b-bae5-5625d4fc1685.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="img"></p>
+<p>否则会报错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">failed to connect to the docker API at unix:///var/run/docker.sock; check <span class="keyword">if</span> the path is correct and <span class="keyword">if</span> the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory</span><br></pre></td></tr></table></figure>
+<p>在powershell输入命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">╰─wsl --list --verbose</span><br><span class="line">  NAME              STATE           VERSION</span><br><span class="line">* Ubuntu            Running         2</span><br><span class="line">  docker-desktop    Running         2</span><br></pre></td></tr></table></figure>
+<p>可查看运行，这样在wsl中可以检测到docker命令</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215346351.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215346351.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260712215346351"></p>
+<p>相关docker命令如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it 容器ID bash</span><br><span class="line">docker ps -a <span class="comment">#列出所有容器</span></span><br><span class="line">docker stop contain_ID <span class="comment">#停止容器</span></span><br><span class="line">docker rm contain_ID <span class="comment">#删除容器</span></span><br><span class="line">docker rmi images_ID <span class="comment">#删除镜像</span></span><br></pre></td></tr></table></figure>
+<h2 id="vscode连接wsl2"><a href="#vscode连接wsl2" class="headerlink" title="vscode连接wsl2"></a>vscode连接wsl2</h2><p>安装完成后先下载一些插件，如下相关远程的插件</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215357241.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215357241.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260712215357241"></p>
+<p>安装完成后点左下角有一个 打开远程窗口-&gt;使用发行版连接到wsl-&gt;选择Ubunt版本，连接后如下</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215403164.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215403164.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260712215403164"></p>
+<h2 id="docker部署算法"><a href="#docker部署算法" class="headerlink" title="docker部署算法"></a>docker部署算法</h2><h3 id="安装Ultra-Fusion"><a href="#安装Ultra-Fusion" class="headerlink" title="安装Ultra-Fusion"></a>安装Ultra-Fusion</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/sjtuyinjie/Ultra-Fusion.git</span><br><span class="line"><span class="built_in">cd</span> Ultra-Fusion</span><br><span class="line"><span class="comment"># 拉取镜像</span></span><br><span class="line">docker pull maotiandocker/ultrafusion-ros2:0.2.0</span><br><span class="line"><span class="comment"># 拉阿里云镜像</span></span><br><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com/bit_robot_image/ultrafusion-ros2:0.2.0</span><br><span class="line"><span class="comment"># 简化镜像名</span></span><br><span class="line">docker tag registry.cn-hangzhou.aliyuncs.com/bit_robot_image/ultrafusion-ros2:0.2.0 ultrafusion-ros2:0.2.0</span><br><span class="line"><span class="comment">#（可选）可删除长名字,不会删除镜像</span></span><br><span class="line">docker rmi registry.cn-hangzhou.aliyuncs.com/bit_robot_image/ultrafusion-ros2:0.2.0 </span><br></pre></td></tr></table></figure>
+<h3 id="启动容器rosbag2-├─-livox-imu-sensor-msgs-msg-Imu-───────────────┐-└─-livox-lidar-livox-ros-driver2-msg-CustomMsg-│-↓-转换节点-│-livox-lidar-points-PointCloud2-───────┤-↓-Ultra-Fusion-LIO"><a href="#启动容器rosbag2-├─-livox-imu-sensor-msgs-msg-Imu-───────────────┐-└─-livox-lidar-livox-ros-driver2-msg-CustomMsg-│-↓-转换节点-│-livox-lidar-points-PointCloud2-───────┤-↓-Ultra-Fusion-LIO" class="headerlink" title="启动容器rosbag2  ├─ /livox/imu   sensor_msgs/msg/Imu ───────────────┐  └─ /livox/lidar livox_ros_driver2/msg/CustomMsg    │                          ↓ 转换节点                   │               /livox/lidar_points PointCloud2 ───────┤                                                      ↓                                               Ultra-Fusion LIO"></a>启动容器rosbag2  ├─ /livox/imu   sensor_msgs/msg/Imu ───────────────┐  └─ /livox/lidar livox_ros_driver2/msg/CustomMsg    │                          ↓ 转换节点                   │               /livox/lidar_points PointCloud2 ───────┤                                                      ↓                                               Ultra-Fusion LIO</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">xhost +<span class="built_in">local</span>:docker</span><br><span class="line"><span class="comment"># non-network local connections being added to access control list</span></span><br><span class="line">docker run -dit --net=host --ipc=host \</span><br><span class="line">  --name ultrafusion_env \</span><br><span class="line">  -e DISPLAY=<span class="string">&quot;<span class="variable">$&#123;DISPLAY&#125;</span>&quot;</span> \</span><br><span class="line">  -e QT_X11_NO_MITSHM=1 \</span><br><span class="line">  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \</span><br><span class="line">  -v /media:/media:ro \</span><br><span class="line">  -v <span class="string">&quot;<span class="subst">$(pwd)</span>&quot;</span>:/workspace \</span><br><span class="line">  -v /home/ychooo/datasets:/root/datasets:ro \</span><br><span class="line">  ultrafusion-ros2:0.2.0</span><br><span class="line"><span class="comment">#查看容器ID</span></span><br><span class="line">docker ps -a </span><br><span class="line"><span class="comment">#进入容器（bash\zsh）</span></span><br><span class="line">docker <span class="built_in">exec</span> -it contain_ID bash </span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>参数 / 选项</th>
+<th>核心作用</th>
+<th>关键说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基础运行</td>
+<td><code>docker run -dit</code></td>
+<td>后台启动容器并保留交互能力</td>
+<td><code>--name</code>自定义容器名<code>-d</code>后台常驻不阻塞终端；<code>-i</code>保持标准输入打开；<code>-t</code> 分配伪终端，支持后续<code>exec</code>进入交互</td>
+</tr>
+<tr>
+<td></td>
+<td><code>--rm</code></td>
+<td></td>
+<td>容器停止后自动删除容器，不会残留无用容器，清理更省心</td>
+</tr>
+<tr>
+<td>网络与进程通信</td>
+<td><code>--net=host</code></td>
+<td>容器共享宿主机网络命名空间</td>
+<td>不做网络隔离，直接复用宿主机网卡、IP、端口，解决 ROS2/DDS 设备发现、端口转发、网络延迟问题</td>
+</tr>
+<tr>
+<td>网络与进程通信</td>
+<td><code>--ipc=host</code></td>
+<td>容器共享宿主机进程间通信命名空间</td>
+<td>共享内存、信号量互通，解决 RViz/Gazebo 共享内存渲染崩溃、ROS2 大数据传输卡顿问题</td>
+</tr>
+<tr>
+<td>GUI 图形环境</td>
+<td><code>-e DISPLAY=&quot;$&#123;DISPLAY&#125;&quot;</code></td>
+<td>传递图形显示地址</td>
+<td>告诉容器内 GUI 程序（RViz/Gazebo/Qt）渲染到宿主机 X11 显示服务器，否则会报无法连接显示的错误</td>
+</tr>
+<tr>
+<td>GUI 图形环境</td>
+<td><code>-e QT_X11_NO_MITSHM=1</code></td>
+<td>关闭 Qt 共享内存扩展</td>
+<td>经典排错参数，解决容器内 RViz 白屏、Gazebo 闪退、Qt 程序 X11 报错问题</td>
+</tr>
+<tr>
+<td>数据卷挂载</td>
+<td><code>-v /tmp/.X11-unix:/tmp/.X11-unix:rw</code></td>
+<td>挂载 X11 图形套接字</td>
+<td>GUI 必备参数，容器通过该套接字和宿主机显卡通信，无此挂载无法弹出图形窗口，<code>rw</code>为读写权限</td>
+</tr>
+<tr>
+<td>数据卷挂载</td>
+<td><code>-v /media:/media:ro</code></td>
+<td>挂载宿主机外接存储目录</td>
+<td>只读（<code>ro</code>）映射 U 盘、移动硬盘等外接设备，容器内可直接读取数据集、标定文件</td>
+</tr>
+<tr>
+<td>数据卷挂载</td>
+<td><code>-v &quot;$(pwd)&quot;:/workspace</code></td>
+<td>挂载当前终端目录到容器</td>
+<td>宿主机当前工作目录映射到器<code>/workspace</code>，默认读写，本地代码修改实时同步到容器，无需重新构建镜像</td>
+</tr>
+<tr>
+<td>数据卷挂载</td>
+<td><code>-v /home/ychooo/ros2_ws/datasets:/root/datasets:ro</code></td>
+<td>挂载宿主机数据集目录</td>
+<td>只读映射本地数据集文件夹到容器<code>/root/datasets</code>，保护原始点云 / 图像数据不被误修改</td>
+</tr>
+<tr>
+<td>镜像标识</td>
+<td><code>ultrafusion-ros2:0.2.0</code></td>
+<td>指定启动的容器镜像</td>
+<td>基于 Ultra-Fusion 多传感器融合 ROS2 环境镜像，0.2.0 为指定的镜像版本标签</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>这里以自己录制的数据集为例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[INFO] [1783862094.897458058] [rosbag2_storage]: Opened database <span class="string">&#x27;rosbag2_2026_07_03-16_05_12/rosbag2_2026_07_03-16_05_12_0.db3&#x27;</span> <span class="keyword">for</span> READ_ON│&gt; [ DataSync_Interpolation ] average time usage: 0.0013789 ms , called <span class="built_in">times</span>: 1853</span><br><span class="line">LY.                                                                                                                                         │&gt; [ FeatureCloud_Publish ] average time usage: 0.256092 ms , called <span class="built_in">times</span>: 1833</span><br><span class="line">                                                                                                                                            │&gt; [ ImuWheel_Buffer_ESKF ] average time usage: 0.00709597 ms , called <span class="built_in">times</span>: 1853</span><br><span class="line">Files:             rosbag2_2026_07_03-16_05_12/rosbag2_2026_07_03-16_05_12_0.db3                                                            │&gt; [ MAPInitialization ] average time usage: 8.25075 ms , called <span class="built_in">times</span>: 1</span><br><span class="line">Bag size:          737.9 MiB                                                                                                                │&gt; [ OnlyLidarMatching ] average time usage: 44.02 ms , called <span class="built_in">times</span>: 1833</span><br><span class="line">Storage id:        sqlite3                                                                                                                  │&gt; [ OnlyLidarMatching_CeresSolve ] average time usage: 3.43973 ms , called <span class="built_in">times</span>: 13225</span><br><span class="line">Duration:          191.383279148s                                                                                                           │&gt; [ OnlyLidarMatching_Init ] average time usage: 21.7657 ms , called <span class="built_in">times</span>: 20</span><br><span class="line">Start:             Jul  3 2026 08:05:12.164392407 (1783065912.164392407)                                                                    │&gt; [ Optimization_Total ] average time usage: 61.8928 ms , called <span class="built_in">times</span>: 1853</span><br><span class="line">End:               Jul  3 2026 08:08:23.547671555 (1783066103.547671555)                                                                    │&gt; [ PostProcessPublish ] average time usage: 1.40701 ms , called <span class="built_in">times</span>: 1853</span><br><span class="line">Messages:          39753                                                                                                                    │&gt; [ Preinit_Prediction ] average time usage: 0.246912 ms , called <span class="built_in">times</span>: 20</span><br><span class="line">Topic information: Topic: /rosout | Type: rcl_interfaces/msg/Log | Count: 15 | Serialization Format: cdr                                    │&gt; [ Tracking_Prediction ] average time usage: 1.89409 ms , called <span class="built_in">times</span>: 1833</span><br><span class="line">                   Topic: /events/write_split | Type: rosbag2_interfaces/msg/WriteSplitEvent | Count: 0 | Serialization Format: cdr         │&gt; [ UFEstimateLidarPose ] average time usage: 17.941 ms , called <span class="built_in">times</span>: 1833</span><br><span class="line">                   Topic: /livox/imu | Type: sensor_msgs/msg/Imu | Count: 37846 | Serialization Format: cdr                                 │&gt; [ UFEstimate_CeresSolve ] average time usage: 13.9556 ms , called <span class="built_in">times</span>: 1833</span><br><span class="line">                   Topic: /livox/lidar | Type: livox_ros_driver2/msg/CustomMsg | Count: 1892 | Serialization Format: cdr                    │&gt; [ ZUPT_Check ] average time usage: 0.00310374 ms , called <span class="built_in">times</span>: 1853</span><br><span class="line">                   Topic: /parameter_events | Type: rcl_interfaces/msg/ParameterEvent | Count: 0 | Serialization Format: cdr </span><br></pre></td></tr></table></figure>
+<h3 id="安装ROS2相关依赖"><a href="#安装ROS2相关依赖" class="headerlink" title="安装ROS2相关依赖"></a>安装ROS2相关依赖</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">apt install \</span><br><span class="line">ros-humble-ros-base \</span><br><span class="line">ros-humble-ament-cmake \</span><br><span class="line">ros-humble-ament-cmake-auto \</span><br><span class="line">python3-colcon-common-extensions \</span><br><span class="line">ros-humble-rosidl-default-generators \</span><br><span class="line">ros-humble-rosidl-default-runtime \</span><br><span class="line">ros-humble-rosidl-typesupport-cpp</span><br></pre></td></tr></table></figure>
+<h3 id="安装Livox驱动"><a href="#安装Livox驱动" class="headerlink" title="安装Livox驱动"></a>安装Livox驱动</h3><p>参考<a target="_blank" rel="noopener" href="https://ychooo.netlify.app/2026/05/16/vmware在ubuntu22-04驱动livoxmid360s/#雷达驱动配置">https://ychooo.netlify.app/2026/05/16/vmware%E5%9C%A8ubuntu22-04%E9%A9%B1%E5%8A%A8livoxmid360s/#%E9%9B%B7%E8%BE%BE%E9%A9%B1%E5%8A%A8%E9%85%8D%E7%BD%AE</a>，这篇文章</p>
+<h3 id="数据及转换"><a href="#数据及转换" class="headerlink" title="数据及转换"></a>数据及转换</h3><p>我的数据bag <strong>不能直接使用当前官方 Ultra-Fusion ROS2 v0.2.1 配置运行</strong>，原因是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/livox/lidar</span><br><span class="line">类型：livox_ros_driver2/msg/CustomMsg</span><br></pre></td></tr></table></figure>
+<p>而 Ultra-Fusion ROS2 版本实际接收的是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sensor_msgs/msg/PointCloud2</span><br></pre></td></tr></table></figure>
+<p>官方的 M3DGR ROS2 流程也会先把 Livox <code>CustomMsg</code> 转换为 <code>PointCloud2</code>，再交给 <code>uf_node</code>。</p>
+<p>正确链路为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">rosbag2</span><br><span class="line"> ├─ /livox/imu   sensor_msgs/msg/Imu ───────────────┐</span><br><span class="line"> └─ /livox/lidar livox_ros_driver2/msg/CustomMsg    │</span><br><span class="line">                         ↓ 转换节点                   │</span><br><span class="line">              /livox/lidar_points PointCloud2 ───────┤</span><br><span class="line">                                                     ↓</span><br><span class="line">                                              Ultra-Fusion LIO</span><br></pre></td></tr></table></figure>
+<p>修改<code>/opt/ultrafusion/config/m3dgr/uf_m3dgr_ros2_lio.yaml</code>的雷达和IMU话题</p>
+<p> <strong>创建 CustomMsg → PointCloud2 转换节点</strong> </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br></pre></td><td class="code"><pre><span class="line">touch Ultra_Fusion/scripts/livox_custom_to_pointcloud2.py  </span><br><span class="line">chmod +x Ultra_Fusion/scripts/livox_custom_to_pointcloud2.py  </span><br><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line">import rclpy</span><br><span class="line">from rclpy.node import Node</span><br><span class="line">from rclpy.qos import (</span><br><span class="line">    QoSProfile,</span><br><span class="line">    ReliabilityPolicy,</span><br><span class="line">    DurabilityPolicy,</span><br><span class="line">    HistoryPolicy,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">from sensor_msgs.msg import PointField</span><br><span class="line">from sensor_msgs_py import point_cloud2</span><br><span class="line">from livox_ros_driver2.msg import CustomMsg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class LivoxCustomToPointCloud2(Node):</span><br><span class="line">    <span class="string">&quot;&quot;</span><span class="string">&quot;Convert Livox CustomMsg into the PointCloud2 layout expected by Ultra-Fusion.&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    def __init__(self) -&gt; None:</span><br><span class="line">        super().__init__(<span class="string">&quot;livox_custom_to_pointcloud2&quot;</span>)</span><br><span class="line"></span><br><span class="line">        input_qos = QoSProfile(</span><br><span class="line">            <span class="built_in">history</span>=HistoryPolicy.KEEP_LAST,</span><br><span class="line">            depth=20,</span><br><span class="line">            reliability=ReliabilityPolicy.BEST_EFFORT,</span><br><span class="line">            durability=DurabilityPolicy.VOLATILE,</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        output_qos = QoSProfile(</span><br><span class="line">            <span class="built_in">history</span>=HistoryPolicy.KEEP_LAST,</span><br><span class="line">            depth=10,</span><br><span class="line">            reliability=ReliabilityPolicy.RELIABLE,</span><br><span class="line">            durability=DurabilityPolicy.VOLATILE,</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        self.fields = [</span><br><span class="line">            PointField(</span><br><span class="line">                name=<span class="string">&quot;x&quot;</span>,</span><br><span class="line">                offset=0,</span><br><span class="line">                datatype=PointField.FLOAT32,</span><br><span class="line">                count=1,</span><br><span class="line">            ),</span><br><span class="line">            PointField(</span><br><span class="line">                name=<span class="string">&quot;y&quot;</span>,</span><br><span class="line">                offset=4,</span><br><span class="line">                datatype=PointField.FLOAT32,</span><br><span class="line">                count=1,</span><br><span class="line">            ),</span><br><span class="line">            PointField(</span><br><span class="line">                name=<span class="string">&quot;z&quot;</span>,</span><br><span class="line">                offset=8,</span><br><span class="line">                datatype=PointField.FLOAT32,</span><br><span class="line">                count=1,</span><br><span class="line">            ),</span><br><span class="line">            PointField(</span><br><span class="line">                name=<span class="string">&quot;intensity&quot;</span>,</span><br><span class="line">                offset=12,</span><br><span class="line">                datatype=PointField.FLOAT32,</span><br><span class="line">                count=1,</span><br><span class="line">            ),</span><br><span class="line">            PointField(</span><br><span class="line">                name=<span class="string">&quot;timestamp&quot;</span>,</span><br><span class="line">                offset=16,</span><br><span class="line">                datatype=PointField.FLOAT64,</span><br><span class="line">                count=1,</span><br><span class="line">            ),</span><br><span class="line">            PointField(</span><br><span class="line">                name=<span class="string">&quot;tag&quot;</span>,</span><br><span class="line">                offset=24,</span><br><span class="line">                datatype=PointField.UINT8,</span><br><span class="line">                count=1,</span><br><span class="line">            ),</span><br><span class="line">            PointField(</span><br><span class="line">                name=<span class="string">&quot;line&quot;</span>,</span><br><span class="line">                offset=25,</span><br><span class="line">                datatype=PointField.UINT8,</span><br><span class="line">                count=1,</span><br><span class="line">            ),</span><br><span class="line">        ]</span><br><span class="line"></span><br><span class="line">        self.publisher = self.create_publisher(</span><br><span class="line">            msg_type=point_cloud2.PointCloud2,</span><br><span class="line">            topic=<span class="string">&quot;/livox/lidar_points&quot;</span>,</span><br><span class="line">            qos_profile=output_qos,</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        self.subscription = self.create_subscription(</span><br><span class="line">            msg_type=CustomMsg,</span><br><span class="line">            topic=<span class="string">&quot;/livox/lidar&quot;</span>,</span><br><span class="line">            callback=self.callback,</span><br><span class="line">            qos_profile=input_qos,</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        self.frame_count = 0</span><br><span class="line">        self.get_logger().info(</span><br><span class="line">            <span class="string">&quot;Converting /livox/lidar CustomMsg -&gt; &quot;</span></span><br><span class="line">            <span class="string">&quot;/livox/lidar_points PointCloud2&quot;</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def callback(self, msg: CustomMsg) -&gt; None:</span><br><span class="line">        <span class="comment"># Ultra-Fusion&#x27;s Livox PointCloud2 path expects an absolute</span></span><br><span class="line">        <span class="comment"># per-point timestamp expressed in nanoseconds.</span></span><br><span class="line">        points = [</span><br><span class="line">            (</span><br><span class="line">                <span class="built_in">float</span>(point.x),</span><br><span class="line">                <span class="built_in">float</span>(point.y),</span><br><span class="line">                <span class="built_in">float</span>(point.z),</span><br><span class="line">                <span class="built_in">float</span>(point.reflectivity),</span><br><span class="line">                <span class="built_in">float</span>(msg.timebase + point.offset_time),</span><br><span class="line">                int(point.tag),</span><br><span class="line">                int(point.line),</span><br><span class="line">            )</span><br><span class="line">            <span class="keyword">for</span> point <span class="keyword">in</span> msg.points</span><br><span class="line">        ]</span><br><span class="line"></span><br><span class="line">        cloud = point_cloud2.create_cloud(</span><br><span class="line">            header=msg.header,</span><br><span class="line">            fields=self.fields,</span><br><span class="line">            points=points,</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        cloud.is_dense = True</span><br><span class="line">        self.publisher.publish(cloud)</span><br><span class="line"></span><br><span class="line">        self.frame_count += 1</span><br><span class="line">        <span class="keyword">if</span> self.frame_count % 100 == 0:</span><br><span class="line">            self.get_logger().info(</span><br><span class="line">                f<span class="string">&quot;Converted &#123;self.frame_count&#125; frames, &quot;</span></span><br><span class="line">                f<span class="string">&quot;current points: &#123;len(points)&#125;&quot;</span></span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main() -&gt; None:</span><br><span class="line">    rclpy.init()</span><br><span class="line">    node = LivoxCustomToPointCloud2()</span><br><span class="line"></span><br><span class="line">    try:</span><br><span class="line">        rclpy.spin(node)</span><br><span class="line">    except KeyboardInterrupt:</span><br><span class="line">        pass</span><br><span class="line">    finally:</span><br><span class="line">        node.destroy_node()</span><br><span class="line">        rclpy.shutdown()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h3 id="运行算法"><a href="#运行算法" class="headerlink" title="运行算法"></a>运行算法</h3><h4 id="终端1：启动消息转换节点"><a href="#终端1：启动消息转换节点" class="headerlink" title="终端1：启动消息转换节点"></a>终端1：启动消息转换节点</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">source /opt/ros/humble/setup.bash</span><br><span class="line">source ~/ws_livox/install/setup.bash</span><br><span class="line"></span><br><span class="line">python3 ~/uf_tools/livox_custom_to_pointcloud2.py</span><br></pre></td></tr></table></figure>
+<p>正常输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Converting /livox/lidar CustomMsg -&gt;</span><br><span class="line">/livox/lidar_points PointCloud2</span><br></pre></td></tr></table></figure>
+<h4 id="终端2：启动-Ultra-Fusion"><a href="#终端2：启动-Ultra-Fusion" class="headerlink" title="终端2：启动 Ultra-Fusion"></a>终端2：启动 Ultra-Fusion</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source /opt/ros/humble/setup.bash</span><br><span class="line"></span><br><span class="line">which uf_node</span><br></pre></td></tr></table></figure>
+<p>应得到：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/uf_node</span><br></pre></td></tr></table></figure>
+<p>然后执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~/ultrafusion_output</span><br><span class="line"></span><br><span class="line">uf_node /你的绝对路径/uf_m3dgr_ros2_lio.yaml</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uf_node ~/Ultra-Fusion/config/m3dgr/uf_m3dgr_ros2_lio.yaml</span><br></pre></td></tr></table></figure>
+<p>官方 ROS2 版本使用的就是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uf_node 配置文件.yaml</span><br></pre></td></tr></table></figure>
+<p>这种启动方式，不需要 <code>ros2 launch</code>。</p>
+<h4 id="终端3：启动-RViz2"><a href="#终端3：启动-RViz2" class="headerlink" title="终端3：启动 RViz2"></a>终端3：启动 RViz2</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source /opt/ros/humble/setup.bash</span><br><span class="line"></span><br><span class="line">rviz2 -d /opt/ultrafusion/rviz/lio_ros2.rviz</span><br></pre></td></tr></table></figure>
+<h4 id="终端4：最后播放-bag"><a href="#终端4：最后播放-bag" class="headerlink" title="终端4：最后播放 bag"></a>终端4：最后播放 bag</h4><p>先进入 bag 所在目录，确认其结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /你的bag路径/rosbag2_2026_07_03-16_05_12</span><br></pre></td></tr></table></figure>
+<p>通常应包含：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">metadata.yaml</span><br><span class="line">rosbag2_2026_07_03-16_05_12_0.db3</span><br></pre></td></tr></table></figure>
+<p>播放目录，而不是只写文件名：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">source /opt/ros/humble/setup.bash</span><br><span class="line">source ~/ws_livox/install/setup.bash</span><br><span class="line"></span><br><span class="line">ros2 bag play /你的bag路径/rosbag2_2026_07_03-16_05_12 --clock </span><br></pre></td></tr></table></figure>
+<p>Rosbag2 可以播放包含 <code>metadata.yaml</code> 和数据库文件的 bag 目录。</p>
+<p>第一次测试不要加速，保持一倍速。</p>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215413541.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215413541.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260712215413541"></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>Tmux终端使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">sudo apt install -y tmux</span><br></pre></td></tr></table></figure>
+<h3 id="tmux-快捷键汇总表（按功能分类）"><a href="#tmux-快捷键汇总表（按功能分类）" class="headerlink" title="tmux 快捷键汇总表（按功能分类）"></a>tmux 快捷键汇总表（按功能分类）</h3><h4 id="一、会话（Session）操作快捷键"><a href="#一、会话（Session）操作快捷键" class="headerlink" title="一、会话（Session）操作快捷键"></a>一、会话（Session）操作快捷键</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+b d</td>
+<td>分离当前会话，后台保留运行</td>
+</tr>
+<tr>
+<td>Ctrl+b s</td>
+<td>列出所有会话，可切换选择</td>
+</tr>
+<tr>
+<td>Ctrl+b $</td>
+<td>重命名当前会话</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="二、窗口（Window）操作快捷键"><a href="#二、窗口（Window）操作快捷键" class="headerlink" title="二、窗口（Window）操作快捷键"></a>二、窗口（Window）操作快捷键</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+b c</td>
+<td>创建新窗口，状态栏会同步显示多窗口信息</td>
+</tr>
+<tr>
+<td>Ctrl+b p</td>
+<td>按状态栏顺序，切换到上一个窗口</td>
+</tr>
+<tr>
+<td>Ctrl+b n</td>
+<td>切换到下一个窗口</td>
+</tr>
+<tr>
+<td>Ctrl+b</td>
+<td>快速切换到指定编号的窗口</td>
+</tr>
+<tr>
+<td>Ctrl+b w</td>
+<td>弹出窗口列表，按上下键选择切换</td>
+</tr>
+<tr>
+<td>Ctrl+b ,</td>
+<td>重命名当前窗口</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="三、窗格（Pane）操作快捷键"><a href="#三、窗格（Pane）操作快捷键" class="headerlink" title="三、窗格（Pane）操作快捷键"></a>三、窗格（Pane）操作快捷键</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+b %</td>
+<td>垂直划分，生成左右两个窗格</td>
+</tr>
+<tr>
+<td>Ctrl+b “</td>
+<td>水平划分，生成上下两个窗格</td>
+</tr>
+<tr>
+<td>Ctrl+b</td>
+<td>按方向键，将光标切换到对应方向的其他窗格</td>
+</tr>
+<tr>
+<td>Ctrl+b ;</td>
+<td>光标切换到上一个窗格</td>
+</tr>
+<tr>
+<td>Ctrl+b o</td>
+<td>光标循环切换到下一个窗格</td>
+</tr>
+<tr>
+<td>Ctrl+b x</td>
+<td>关闭当前窗格</td>
+</tr>
+<tr>
+<td>Ctrl+b !</td>
+<td>将当前窗格拆分为独立的新窗口</td>
+</tr>
+<tr>
+<td>Ctrl+b z</td>
+<td>切换当前窗格的全屏/还原状态</td>
+</tr>
+<tr>
+<td>Ctrl+b q</td>
+<td>显示所有窗格的编号</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img src="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215424085.png" class="lazyload placeholder" data-srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/image-20260712215424085.png" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" alt="image-20260712215424085"></p>
 
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/SLAM/" class="">
+              SLAM
+            </a>
+          
+            <a href="/tags/Docker/" class="">
+              Docker
+            </a>
+          
+            <a href="/tags/WSL2/" class="">
+              WSL2
+            </a>
+          
+        </div>
         
       </div>
       
@@ -669,7 +1080,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/about/index.html" target="_blank" title="关于我">https://yuchanghui.top/about/index.html</a>
+    <a href="/2026/07/12/Ultra-Fusion算法Docker部署/" target="_blank" title="Ultra_Fusion算法Docker部署">https://yuchanghui.top/2026/07/12/Ultra-Fusion算法Docker部署/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -688,6 +1099,23 @@
 
 
 
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/3.jpeg" class="lazyload placeholder" data-srcset="/medias/3.jpeg" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif" src="" alt="">
+    </div>
+    <a href="/2026/05/28/Pxhawk-Jeston-Board%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E5%8F%8AROS2%E9%80%9A%E4%BF%A1/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">Pxhawk-Jeston-Board使用教程及ROS2通信</div>
+      </div>
+      <!-- <div class="content">
+        硬件连接Pixhawk 和 Jetson 板块必须分别通过各自的电源端口供电。套件附带的电源模块支持 2S-12S 电池
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -984,339 +1412,30 @@
   <div class="layout_sticky">    
     
       
-        
-    <section class="widget side_category">
-      
-  <header>
-    
-      <a style="color: " href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-      <div class='content'>
-        <ul class="entry navigation">
-          
-            <li><a class="flat-box"
-              title="/categories/AI/" href="/categories/AI/"
-              id="categoriesAI"
-              ><div class='name'>AI</div><div class='badge'>(4)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/Control/" href="/categories/Control/"
-              id="categoriesControl"
-              ><div class='name'>Control</div><div class='badge'>(3)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/Control/Canopen/" href="/categories/Control/Canopen/"
-              id="categoriesControlCanopen"
-              ><div class='name'>Canopen</div><div class='badge'>(1)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/Control/RS485/" href="/categories/Control/RS485/"
-              id="categoriesControlRS485"
-              ><div class='name'>RS485</div><div class='badge'>(2)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/HEXO/" href="/categories/HEXO/"
-              id="categoriesHEXO"
-              ><div class='name'>HEXO</div><div class='badge'>(5)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/Linux/" href="/categories/Linux/"
-              id="categoriesLinux"
-              ><div class='name'>Linux</div><div class='badge'>(34)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/Linux/ROS/" href="/categories/Linux/ROS/"
-              id="categoriesLinuxROS"
-              ><div class='name'>ROS</div><div class='badge'>(24)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/Linux/Ubuntu/" href="/categories/Linux/Ubuntu/"
-              id="categoriesLinuxUbuntu"
-              ><div class='name'>Ubuntu</div><div class='badge'>(9)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/Linux/WSL/" href="/categories/Linux/WSL/"
-              id="categoriesLinuxWSL"
-              ><div class='name'>WSL</div><div class='badge'>(1)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/Others/" href="/categories/Others/"
-              id="categoriesOthers"
-              ><div class='name'>Others</div><div class='badge'>(11)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/SLAM/" href="/categories/SLAM/"
-              id="categoriesSLAM"
-              ><div class='name'>SLAM</div><div class='badge'>(2)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"
-              id="categoriesE58D95E78987E69CBA"
-              ><div class='name'>单片机</div><div class='badge'>(30)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/ESP32/" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/ESP32/"
-              id="categoriesE58D95E78987E69CBAESP32"
-              ><div class='name'>ESP32</div><div class='badge'>(1)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/Openmv/" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/Openmv/"
-              id="categoriesE58D95E78987E69CBAOpenmv"
-              ><div class='name'>Openmv</div><div class='badge'>(1)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/RaspberryPi/" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/RaspberryPi/"
-              id="categoriesE58D95E78987E69CBARaspberryPi"
-              ><div class='name'>RaspberryPi</div><div class='badge'>(2)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/" href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/STM32/"
-              id="categoriesE58D95E78987E69CBASTM32"
-              ><div class='name'>STM32</div><div class='badge'>(26)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E6%9C%BA%E6%A2%B0/" href="/categories/%E6%9C%BA%E6%A2%B0/"
-              id="categoriesE69CBAE6A2B0"
-              ><div class='name'>机械</div><div class='badge'>(5)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/%E6%9C%BA%E6%A2%B0/Simulation/" href="/categories/%E6%9C%BA%E6%A2%B0/Simulation/"
-              id="categoriesE69CBAE6A2B0Simulation"
-              ><div class='name'>Simulation</div><div class='badge'>(4)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/%E6%9C%BA%E6%A2%B0/Solidworks/" href="/categories/%E6%9C%BA%E6%A2%B0/Solidworks/"
-              id="categoriesE69CBAE6A2B0Solidworks"
-              ><div class='name'>Solidworks</div><div class='badge'>(1)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"
-              id="categoriesE7A88BE5BA8FE8AEBEE8AEA1"
-              ><div class='name'>程序设计</div><div class='badge'>(14)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/C-C/" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/C-C/"
-              id="categoriesE7A88BE5BA8FE8AEBEE8AEA1C-C"
-              ><div class='name'>C/C++</div><div class='badge'>(7)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Matlab/" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Matlab/"
-              id="categoriesE7A88BE5BA8FE8AEBEE8AEA1Matlab"
-              ><div class='name'>Matlab</div><div class='badge'>(4)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Python/" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Python/"
-              id="categoriesE7A88BE5BA8FE8AEBEE8AEA1Python"
-              ><div class='name'>Python</div><div class='badge'>(3)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/" href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/"
-              id="categoriesE8A786E8A789E5A484E79086"
-              ><div class='name'>视觉处理</div><div class='badge'>(14)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/" href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Opencv/"
-              id="categoriesE8A786E8A789E5A484E79086Opencv"
-              ><div class='name'>Opencv</div><div class='badge'>(7)</div></a></li>
-          
-            <li><a class="flat-box child"
-              title="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Pytorch/" href="/categories/%E8%A7%86%E8%A7%89%E5%A4%84%E7%90%86/Pytorch/"
-              id="categoriesE8A786E8A789E5A484E79086Pytorch"
-              ><div class='name'>Pytorch</div><div class='badge'>(7)</div></a></li>
-          
-        </ul>
-      </div>
-    </section>
-  
-  
-      
-      
-        
-<section class="widget side_tagcloud">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-    <a href="/tags/AI/" style="font-size: 16.5px; color: #888">AI</a> <a href="/tags/C-C/" style="font-size: 22.33px; color: #606060">C/C++</a> <a href="/tags/CLion/" style="font-size: 14.83px; color: #939393">CLion</a> <a href="/tags/CMake/" style="font-size: 14.83px; color: #939393">CMake</a> <a href="/tags/Canopen/" style="font-size: 14px; color: #999">Canopen</a> <a href="/tags/ClaudeCode/" style="font-size: 14.83px; color: #939393">ClaudeCode</a> <a href="/tags/Docker/" style="font-size: 14px; color: #999">Docker</a> <a href="/tags/ESP32/" style="font-size: 14px; color: #999">ESP32</a> <a href="/tags/Git/" style="font-size: 14.83px; color: #939393">Git</a> <a href="/tags/JestonNano/" style="font-size: 14.83px; color: #939393">JestonNano</a> <a href="/tags/Json/" style="font-size: 14px; color: #999">Json</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/Matlab/" style="font-size: 17.33px; color: #828282">Matlab</a> <a href="/tags/Micropython/" style="font-size: 14px; color: #999">Micropython</a> <a href="/tags/Modbus/" style="font-size: 14.83px; color: #939393">Modbus</a> <a href="/tags/Obsidian/" style="font-size: 15.67px; color: #8e8e8e">Obsidian</a> <a href="/tags/OpenClaw/" style="font-size: 14px; color: #999">OpenClaw</a> <a href="/tags/Opencv/" style="font-size: 19px; color: #777">Opencv</a> <a href="/tags/Openmv/" style="font-size: 14px; color: #999">Openmv</a> <a href="/tags/PicGo/" style="font-size: 14.83px; color: #939393">PicGo</a> <a href="/tags/Printer/" style="font-size: 14px; color: #999">Printer</a> <a href="/tags/Pyqt5/" style="font-size: 14px; color: #999">Pyqt5</a> <a href="/tags/Pytorch/" style="font-size: 19px; color: #777">Pytorch</a> <a href="/tags/ROS/" style="font-size: 20.67px; color: #6c6c6c">ROS</a> <a href="/tags/ROS2/" style="font-size: 15.67px; color: #8e8e8e">ROS2</a> <a href="/tags/RS485/" style="font-size: 14.83px; color: #939393">RS485</a> <a href="/tags/RaspberryPi/" style="font-size: 14.83px; color: #939393">RaspberryPi</a> <a href="/tags/SLAM/" style="font-size: 14.83px; color: #939393">SLAM</a> <a href="/tags/STM32/" style="font-size: 21.5px; color: #666">STM32</a> <a href="/tags/Simulation/" style="font-size: 16.5px; color: #888">Simulation</a> <a href="/tags/Solidworks/" style="font-size: 18.17px; color: #7d7d7d">Solidworks</a> <a href="/tags/Ubuntu/" style="font-size: 23.17px; color: #5b5b5b">Ubuntu</a> <a href="/tags/VMware/" style="font-size: 16.5px; color: #888">VMware</a> <a href="/tags/VSCode/" style="font-size: 14.83px; color: #939393">VSCode</a> <a href="/tags/WSL/" style="font-size: 14px; color: #999">WSL</a> <a href="/tags/WSL2/" style="font-size: 14px; color: #999">WSL2</a> <a href="/tags/hexo/" style="font-size: 17.33px; color: #828282">hexo</a> <a href="/tags/python/" style="font-size: 19.83px; color: #717171">python</a>
-    </div>
-</section>
-
-  
-      
-      
-      
-      <section class="widget side_webinfo">
+<section class="widget side_toc">
   
   <header>
     
-      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class='name' style="color: ">站点信息</span>
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
     
   </header>
 
 
   <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>122 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2020/01/01'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Sun Jul 12 2026 21:55:04 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2026-07-12 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2026-07-12 日';
-          }
-        </script>
-        
-      
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows%E5%AE%89%E8%A3%85WSL2"><span class="toc-text">windows安装WSL2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-text">手动安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BDUbuntu%E7%89%88%E6%9C%AC"><span class="toc-text">官网下载Ubuntu版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80wsl"><span class="toc-text">打开wsl</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%82%E8%BD%BD%E7%9B%AE%E5%BD%95"><span class="toc-text">挂载目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E8%BF%9E%E6%8E%A5wsl2"><span class="toc-text">docker连接wsl2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDdocker-desktop"><span class="toc-text">下载docker desktop</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vscode%E8%BF%9E%E6%8E%A5wsl2"><span class="toc-text">vscode连接wsl2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E9%83%A8%E7%BD%B2%E7%AE%97%E6%B3%95"><span class="toc-text">docker部署算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Ultra-Fusion"><span class="toc-text">安装Ultra-Fusion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8rosbag2-%E2%94%9C%E2%94%80-livox-imu-sensor-msgs-msg-Imu-%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%90-%E2%94%94%E2%94%80-livox-lidar-livox-ros-driver2-msg-CustomMsg-%E2%94%82-%E2%86%93-%E8%BD%AC%E6%8D%A2%E8%8A%82%E7%82%B9-%E2%94%82-livox-lidar-points-PointCloud2-%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%A4-%E2%86%93-Ultra-Fusion-LIO"><span class="toc-text">启动容器rosbag2  ├─ &#x2F;livox&#x2F;imu   sensor_msgs&#x2F;msg&#x2F;Imu ───────────────┐  └─ &#x2F;livox&#x2F;lidar livox_ros_driver2&#x2F;msg&#x2F;CustomMsg    │                          ↓ 转换节点                   │               &#x2F;livox&#x2F;lidar_points PointCloud2 ───────┤                                                      ↓                                               Ultra-Fusion LIO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85ROS2%E7%9B%B8%E5%85%B3%E4%BE%9D%E8%B5%96"><span class="toc-text">安装ROS2相关依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Livox%E9%A9%B1%E5%8A%A8"><span class="toc-text">安装Livox驱动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8F%8A%E8%BD%AC%E6%8D%A2"><span class="toc-text">数据及转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%AE%97%E6%B3%95"><span class="toc-text">运行算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF1%EF%BC%9A%E5%90%AF%E5%8A%A8%E6%B6%88%E6%81%AF%E8%BD%AC%E6%8D%A2%E8%8A%82%E7%82%B9"><span class="toc-text">终端1：启动消息转换节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF2%EF%BC%9A%E5%90%AF%E5%8A%A8-Ultra-Fusion"><span class="toc-text">终端2：启动 Ultra-Fusion</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF3%EF%BC%9A%E5%90%AF%E5%8A%A8-RViz2"><span class="toc-text">终端3：启动 RViz2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF4%EF%BC%9A%E6%9C%80%E5%90%8E%E6%92%AD%E6%94%BE-bag"><span class="toc-text">终端4：最后播放 bag</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tmux-%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%B1%87%E6%80%BB%E8%A1%A8%EF%BC%88%E6%8C%89%E5%8A%9F%E8%83%BD%E5%88%86%E7%B1%BB%EF%BC%89"><span class="toc-text">tmux 快捷键汇总表（按功能分类）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BC%9A%E8%AF%9D%EF%BC%88Session%EF%BC%89%E6%93%8D%E4%BD%9C%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">一、会话（Session）操作快捷键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%AA%97%E5%8F%A3%EF%BC%88Window%EF%BC%89%E6%93%8D%E4%BD%9C%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">二、窗口（Window）操作快捷键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%AA%97%E6%A0%BC%EF%BC%88Pane%EF%BC%89%E6%93%8D%E4%BD%9C%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">三、窗格（Pane）操作快捷键</span></a></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
     </div>
   </div>
 </section>
-      
-  
-    <div class="widget testLove" id="testLove" style="order: -1;background: #fff">
-      <header>
-        
-          <a style="color: #d63130" href='/love/'><i class="fas fa-heart fa-fw" aria-hidden="true"></i><span class='name'>恋爱墙</span></a>
-        
-      </header>
-      <div class="content">
-        <div style="text-align: center;">
-  <img src="/medias/love_1.jpg"
-    style="width: 50px;height: 50px;vertical-align: -20px;border-radius: 50%;margin-right: 5px;margin-bottom: 5px;-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);border: 2px solid #fff;" />
-  <svg viewbox="0 0 1024 1024" style="margin-left: 5px;margin-right: 5px;" version="1.0" width="15" height="15"
-    class="my-face">
-    <path
-      d="M863.597631 513.574282l-271.33965-140.213484L729.783667 81.926656c3.583731-7.87141 7.167462-15.742819 7.167462-25.214109C736.887134 25.226908 708.345275 0.012799 672.635953 0.012799a63.611229 63.611229 0 0 0-39.293053 12.607055c-1.791866 1.59988-3.519736 3.19976-5.311602 3.19976L147.87531 418.925381a55.547834 55.547834 0 0 0-19.646527 47.356448c1.791866 17.278704 14.27093 33.021523 32.125591 42.492813l271.33965 141.749369L292.504463 945.221908c-12.479064 25.214109-1.791866 53.563983 23.166262 69.306802 10.751194 6.335525 23.230258 9.47129 35.709322 9.47129 16.062795 0 32.125591-4.735645 44.604655-15.742819l480.091993-403.297753a55.547834 55.547834 0 0 0 19.646526-47.228458 61.243407 61.243407 0 0 0-32.12559-44.156688z"
-      fill="#515151" />
-  </svg>
-  <img src="/medias/love_2.jpg"
-    style="width: 50px;height: 50px;vertical-align: -20px;border-radius: 50%;margin-left: 5px;margin-bottom: 5px;-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);box-shadow: 1px 1px 1px rgba(0,0,0,.1), 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.1);border: 2px solid #fff;" /><br />
-  <span id="htmer_time"></span>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
 </div>
-<script>
-function setTime() {
-  var create_time = Math.round(new Date(2026, 3, 10, 0, 0, 0).getTime() / 1000);
-  var timestamp = Math.round(new Date().getTime() / 1000);
-  var currentTime = secondToDate(timestamp - create_time);
-  var currentTimeHtml = currentTime[0] + " 年 " + currentTime[1] + " 天 " + currentTime[2] + " 时 " + currentTime[3] + " 分 " + currentTime[4] + " 秒";
-  var el = document.getElementById("htmer_time");
-  if (el) el.innerHTML = currentTimeHtml;
-}
-function secondToDate(second) {
-  if (!second) return 0;
-  var time = new Array(0, 0, 0, 0, 0);
-  if (second >= 365 * 24 * 3600) { time[0] = parseInt(second / (365 * 24 * 3600)); second %= 365 * 24 * 3600; }
-  if (second >= 24 * 3600) { time[1] = parseInt(second / (24 * 3600)); second %= 24 * 3600; }
-  if (second >= 3600) { time[2] = parseInt(second / 3600); second %= 3600; }
-  if (second >= 60) { time[3] = parseInt(second / 60); second %= 60; }
-  if (second > 0) time[4] = second;
-  return time;
-}
-setInterval(setTime, 1000);
-</script>
 
-      </div>
-  </div>
-  
-
+      
     
   </div>
 </aside>
