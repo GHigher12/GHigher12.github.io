@@ -3922,7 +3922,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   color: #69dda6;
 }
 .footprint-card-title strong {
-  font-size: 15px;
+  font-size: 17px;
 }
 .footprint-card-title button {
   margin-left: auto;
@@ -3930,7 +3930,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   color: #6d8495;
   background: transparent;
   cursor: pointer;
-  font-size: 11px;
+  font-size: 13px;
 }
 .footprint-summary {
   padding: 22px;
@@ -3952,7 +3952,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
 }
 .footprint-mini-world span {
   color: #748b98;
-  font-size: 11px;
+  font-size: 13px;
 }
 .footprint-continent-list {
   border-top: 1px solid rgba(87,118,135,0.12);
@@ -3971,11 +3971,11 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   background-color: var(--dot);
 }
 .footprint-continent-list strong {
-  font-size: 13px;
+  font-size: 15px;
 }
 .footprint-continent-list em {
   color: #7e909a;
-  font-size: 11px;
+  font-size: 13px;
   font-style: normal;
 }
 .footprint-city-block {
@@ -3987,7 +3987,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   display: block;
   margin-bottom: 8px;
   color: #546d7c;
-  font-size: 11px;
+  font-size: 13px;
 }
 .darkModel .footprint-city-title {
   color: #b8cbda;
@@ -4006,8 +4006,8 @@ pre:hover::-webkit-scrollbar-thumb:hover,
 }
 .footprint-city-list button {
   min-width: 0;
-  height: 27px;
-  padding: 0 5px;
+  height: 30px;
+  padding: 0 6px;
   border: 1px solid rgba(84,139,162,0.15);
   border-radius: 8px;
   display: flex;
@@ -4017,7 +4017,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   color: #4f6878;
   background-color: rgba(235,247,250,0.7);
   cursor: pointer;
-  font-size: 10px;
+  font-size: 11px;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -4042,7 +4042,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   margin: 10px 0 0;
   text-align: center;
   color: #6e8290;
-  font-size: 11px;
+  font-size: 13px;
 }
 .footprint-stage {
   position: relative;
@@ -4139,7 +4139,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
 .footprint-data-grid strong {
   display: block;
   color: #24384c;
-  font-size: 20px;
+  font-size: 25px;
 }
 .darkModel .footprint-data-grid strong {
   color: #79e2a9;
@@ -4148,7 +4148,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   display: block;
   margin-top: 4px;
   color: #8697a3;
-  font-size: 9px;
+  font-size: 11px;
 }
 .footprint-stories {
   padding: 20px;
@@ -4190,12 +4190,12 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   white-space: nowrap;
 }
 .footprint-story-list strong {
-  font-size: 11px;
+  font-size: 13px;
 }
 .footprint-story-list small {
   margin-top: 5px;
   color: #81929e;
-  font-size: 9px;
+  font-size: 11px;
 }
 .footprint-rail {
   position: fixed;
@@ -4478,10 +4478,10 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   font-size: 24px;
 }
 .footprint-photo-placeholder strong {
-  font-size: 12px;
+  font-size: 15px;
 }
 .footprint-photo-placeholder span {
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.5;
 }
 @media (min-width: 1101px) {
@@ -4501,8 +4501,8 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   .footprint-side {
     position: absolute;
     z-index: 4;
-    top: 80px;
-    width: 228px;
+    top: 68px;
+    width: 286px;
   }
   .footprint-summary {
     left: max(18px, calc((100vw - 1440px) / 2 + 18px));
@@ -4524,7 +4524,8 @@ pre:hover::-webkit-scrollbar-thumb:hover,
     transform-origin: center;
   }
   .footprint-globe-controls {
-    right: 24%;
+    z-index: 6;
+    right: calc(max(18px, (100vw - 1440px) / 2 + 18px) + 306px);
     top: 102px;
   }
   .footprint-metrics {
@@ -5601,10 +5602,21 @@ body:has(.love-space-page) #navHeader {
 .dashboard-timeline-list {
   position: relative;
   margin-top: 16px;
-  padding-top: 14px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
+  padding: 14px 0 9px;
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: #ed9ab2 transparent;
+}
+.dashboard-timeline-list::-webkit-scrollbar {
+  height: 6px;
+}
+.dashboard-timeline-list::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #ed9ab2;
 }
 .dashboard-timeline-list::before {
   content: '';
@@ -5620,9 +5632,11 @@ body:has(.love-space-page) #navHeader {
 }
 .dashboard-timeline-list article {
   position: relative;
+  flex: 0 0 260px;
   min-width: 0;
   min-height: 78px;
   padding: 10px 58px 8px 0;
+  scroll-snap-align: start;
 }
 .dashboard-timeline-list article > i {
   position: absolute;
@@ -5905,23 +5919,34 @@ body:has(.love-space-page) #navHeader {
   columns: 4 210px;
   column-gap: 12px;
 }
-.love-album-grid button {
+.love-album-manage {
+  margin-bottom: 12px;
+  padding: 8px;
+  border: 1px solid #f0dfe4;
+  border-radius: 16px;
+  break-inside: avoid;
+  background-color: rgba(255,255,255,0.82);
+}
+.darkModel .love-album-manage {
+  border-color: rgba(193,153,222,0.15);
+  background-color: #0f1c36;
+}
+.love-album-manage > [data-photo] {
   position: relative;
   width: 100%;
-  margin-bottom: 12px;
   padding: 0;
   border: 0;
-  border-radius: 14px;
+  border-radius: 12px;
+  display: block;
   overflow: hidden;
-  break-inside: avoid;
   cursor: pointer;
   background: transparent;
 }
-.love-album-grid img {
+.love-album-manage img {
   width: 100%;
   display: block;
 }
-.love-album-grid span {
+.love-album-manage > [data-photo] > span {
   position: absolute;
   left: 9px;
   bottom: 8px;
@@ -5929,7 +5954,14 @@ body:has(.love-space-page) #navHeader {
   border-radius: 7px;
   color: #fff;
   background-color: rgba(24,16,22,0.58);
-  font-size: 9px;
+  font-size: 11px;
+}
+.love-album-manage .love-record-actions {
+  margin-top: 8px;
+}
+.love-album-manage .love-record-actions button {
+  width: auto;
+  margin: 0;
 }
 .love-timeline-full {
   position: relative;
@@ -5960,7 +5992,8 @@ body:has(.love-space-page) #navHeader {
   padding-top: 18px;
   color: #df6385;
   text-align: right;
-  font-size: 10px;
+  font-size: 13px;
+  font-weight: 600;
 }
 .love-timeline-full article > i {
   position: relative;
@@ -5996,23 +6029,30 @@ body:has(.love-space-page) #navHeader {
 }
 .timeline-card small {
   color: #e25e83;
-  font-size: 8px;
+  font-size: 12px;
+  font-weight: 600;
 }
 .timeline-card h3 {
-  margin: 5px 0;
-  font-size: 14px;
+  margin: 7px 0;
+  font-size: 18px;
+  line-height: 1.35;
 }
 .timeline-card p {
   margin: 0;
   color: #7c6d74;
-  font-size: 10px;
-  line-height: 1.65;
+  font-size: 14px;
+  line-height: 1.7;
 }
 .darkModel .timeline-card p {
   color: #b9afc1;
 }
 .timeline-card .love-record-actions {
   margin-top: 12px;
+}
+.timeline-card .love-record-actions button {
+  min-height: 32px;
+  padding: 0 12px;
+  font-size: 12px;
 }
 .love-record-list {
   display: grid;
@@ -6667,6 +6707,12 @@ body:has(.love-space-page) #navHeader {
     height: 150px;
     margin: 0 0 10px;
     float: none;
+  }
+  .timeline-card h3 {
+    font-size: 17px;
+  }
+  .timeline-card p {
+    font-size: 13px;
   }
   .love-settings-form {
     grid-template-columns: 1fr;
