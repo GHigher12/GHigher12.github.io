@@ -794,6 +794,12 @@
 
     function searchSection() { if (currentSection !== 'home') renderSection(currentSection, sectionSearch.value); }
 
+    function handleRecordSubmit(event) {
+      saveRecord(event).catch(function (error) {
+        if (formStatus) formStatus.textContent = error && error.message ? error.message : '保存失败，请稍后重试。';
+      });
+    }
+
     function handleSettingsSubmit(event) {
       var form = event.target.closest('#love-settings-form');
       if (!form) return;
@@ -811,7 +817,7 @@
     root.addEventListener('click', handleRootClick);
     root.addEventListener('submit', handleSettingsSubmit);
     root.addEventListener('change', handleImageSelection);
-    recordForm.addEventListener('submit', saveRecord);
+    recordForm.addEventListener('submit', handleRecordSubmit);
     dialogClose.addEventListener('click', closeDialog);
     sectionSearch.addEventListener('input', searchSection);
     sectionAdd.addEventListener('click', function () { openDialog(currentSection); });
@@ -838,7 +844,7 @@
       root.removeEventListener('click', handleRootClick);
       root.removeEventListener('submit', handleSettingsSubmit);
       root.removeEventListener('change', handleImageSelection);
-      recordForm.removeEventListener('submit', saveRecord);
+      recordForm.removeEventListener('submit', handleRecordSubmit);
       dialogClose.removeEventListener('click', closeDialog);
       sectionSearch.removeEventListener('input', searchSection);
       cropAspect.removeEventListener('change', handleCropAspect);

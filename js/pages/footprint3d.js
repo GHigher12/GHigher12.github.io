@@ -100,32 +100,34 @@
         canvas.width = canvas.height = 96;
         var context = canvas.getContext('2d');
         var isBeijing = trip.city === '北京';
-        if (isBeijing) {
-          var glow = context.createRadialGradient(48, 48, 1, 48, 48, 42);
-          glow.addColorStop(0, 'rgba(255,255,255,1)');
-          glow.addColorStop(.16, 'rgba(220,241,255,.95)');
-          glow.addColorStop(.48, 'rgba(116,190,255,.34)');
-          glow.addColorStop(1, 'rgba(116,190,255,0)');
-          context.fillStyle = glow; context.fillRect(0, 0, 96, 96);
-          context.save(); context.translate(48, 48); context.fillStyle = '#fff';
-          context.beginPath();
-          for (var point = 0; point < 8; point += 1) {
-            var radius = point % 2 === 0 ? 19 : 4.5;
-            var angle = -Math.PI / 2 + point * Math.PI / 4;
-            var x = Math.cos(angle) * radius, y = Math.sin(angle) * radius;
-            if (point === 0) context.moveTo(x, y); else context.lineTo(x, y);
-          }
-          context.closePath(); context.fill(); context.restore();
-        } else {
-          context.strokeStyle = 'rgba(255,255,255,.98)'; context.lineWidth = 6;
-          context.beginPath(); context.arc(48, 48, 27, 0, Math.PI * 2); context.stroke();
-          context.fillStyle = '#fff'; context.beginPath(); context.arc(48, 48, 7, 0, Math.PI * 2); context.fill();
+        var glow = context.createRadialGradient(48, 48, 1, 48, 48, 42);
+        glow.addColorStop(0, 'rgba(255,255,255,1)');
+        glow.addColorStop(.14, 'rgba(237,248,255,.98)');
+        glow.addColorStop(.42, 'rgba(148,211,255,.42)');
+        glow.addColorStop(1, 'rgba(116,190,255,0)');
+        context.fillStyle = glow;
+        context.fillRect(0, 0, 96, 96);
+        context.save();
+        context.translate(48, 48);
+        context.fillStyle = '#fff';
+        context.beginPath();
+        for (var point = 0; point < 8; point += 1) {
+          var radius = point % 2 === 0 ? (isBeijing ? 18 : 15) : 3.5;
+          var angle = -Math.PI / 2 + point * Math.PI / 4;
+          var x = Math.cos(angle) * radius, y = Math.sin(angle) * radius;
+          if (point === 0) context.moveTo(x, y); else context.lineTo(x, y);
         }
+        context.closePath();
+        context.fill();
+        context.restore();
         var material = new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(canvas), transparent: true, depthWrite: false });
         var sprite = new THREE.Sprite(material);
-        sprite.scale.set(isBeijing ? 7.2 : 4.4, isBeijing ? 7.2 : 4.4, 1);
+        var baseScale = isBeijing ? 6.6 : 4.2;
+        sprite.scale.set(baseScale, baseScale, 1);
         sprite.userData.trip = trip;
-        if (isBeijing) twinkleMarkers.push(sprite);
+        sprite.userData.baseScale = baseScale;
+        sprite.userData.phase = String(trip.city || '').split('').reduce(function (sum, char) { return sum + char.charCodeAt(0); }, 0) * .37;
+        twinkleMarkers.push(sprite);
         return sprite;
       }
 
@@ -210,10 +212,11 @@
       function animate() {
         animationId = requestAnimationFrame(animate);
         if (controls.autoRotate) globeGroup.rotation.y += .0018 * controls.autoRotateSpeed;
-        var pulse = .58 + (Math.sin(performance.now() * .0045) + 1) * .21;
+        var now = performance.now();
         twinkleMarkers.forEach(function (marker) {
+          var pulse = .58 + (Math.sin(now * .0038 + marker.userData.phase) + 1) * .2;
           marker.material.opacity = pulse;
-          var scale = 6.3 + pulse * 1.5;
+          var scale = marker.userData.baseScale * (.9 + pulse * .18);
           marker.scale.set(scale, scale, 1);
         });
         renderer.render(scene, camera);
@@ -419,6 +422,12 @@
       openTrip(trip);
     }
 
+    function handleTripSubmit(event) {
+      saveTrip(event).catch(function (error) {
+        gpsStatus.textContent = error && error.message ? error.message : '保存失败，请稍后重试。';
+      });
+    }
+
     rotateButton.addEventListener('click', toggleRotate);
     resetButton.addEventListener('click', resetView);
     zoomInButton.addEventListener('click', function () { changeZoom(-0.3); });
@@ -430,7 +439,7 @@
     detailClose.addEventListener('click', closeDetail);
     dialogClose.addEventListener('click', closeDialog);
     photoInput.addEventListener('change', readGps);
-    form.addEventListener('submit', saveTrip);
+    form.addEventListener('submit', handleTripSubmit);
 
     var resizeObserver = new ResizeObserver(function () {
       globe.width(Math.max(320, container.clientWidth)).height(Math.max(420, container.clientHeight));
@@ -454,7 +463,7 @@
       detailClose.removeEventListener('click', closeDetail);
       dialogClose.removeEventListener('click', closeDialog);
       photoInput.removeEventListener('change', readGps);
-      form.removeEventListener('submit', saveTrip);
+      form.removeEventListener('submit', handleTripSubmit);
       if (typeof globe._destructor === 'function') globe._destructor();
       container.innerHTML = '';
     };

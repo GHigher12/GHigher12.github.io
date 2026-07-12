@@ -78,12 +78,12 @@
   }
 
   function navigate(url) {
-    var anchor = document.createElement('a');
-    anchor.href = url;
-    anchor.style.display = 'none';
-    document.body.appendChild(anchor);
-    anchor.click();
-    anchor.remove();
+    var target = new URL(url, window.location.href);
+    if (target.origin === window.location.origin && window.pjax && typeof window.pjax.loadUrl === 'function') {
+      window.pjax.loadUrl(target.href);
+      return;
+    }
+    window.location.href = target.href;
   }
 
   window.BambooPageRuntime = {
