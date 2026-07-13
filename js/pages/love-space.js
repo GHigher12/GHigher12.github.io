@@ -899,15 +899,20 @@
       showApp();
     }
 
-    async function showApp() {
+    function showApp() {
       lockView.hidden = true;
       app.hidden = false;
       var hour = new Date().getHours();
       root.querySelector('#love-greeting').textContent = hour < 11 ? '早上好' : hour < 18 ? '下午好' : '晚上好';
-      await resolveTripCoordinates(state.trips);
       updateDashboard();
       startElapsedClock();
-      requestAnimationFrame(function () { initMap('love-dashboard-map', state.trips); });
+      Promise.race([
+        resolveTripCoordinates(state.trips),
+        new Promise(function (resolve) { window.setTimeout(resolve, 3500); })
+      ]).then(function () {
+        updateDashboard();
+        requestAnimationFrame(function () { initMap('love-dashboard-map', state.trips); });
+      });
     }
 
     function relock() {
