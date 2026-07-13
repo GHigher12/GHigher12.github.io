@@ -429,7 +429,7 @@
       var today = new Date().toISOString().slice(0, 10);
       var fields = '';
       if (currentAddType === 'tasks') fields = field('title', '想一起完成的事情', 'text', 'required placeholder="例如：一起去看海 🌊" value="' + escapeHtml(editingItem ? editingItem.title : '') + '"') + '<label>分类<select name="category">' + selectOptions(['日常', '旅行', '成长', '未来'], editingItem ? editingItem.category : '日常') + '</select></label>' + taskEmojiPicker(editingItem ? editingItem.emoji : '💗');
-      else if (currentAddType === 'trips') fields = field('city', '旅行地点', 'text', 'required value="' + escapeHtml(editingItem ? editingItem.city : '') + '"') + field('date', '旅行日期', 'date', 'required value="' + escapeHtml(editingItem ? editingItem.date : today) + '"') + '<div class="form-row">' + field('lat', '纬度', 'number', 'step="any" required value="' + escapeHtml(editingItem ? editingItem.lat : '') + '"') + field('lng', '经度', 'number', 'step="any" required value="' + escapeHtml(editingItem ? editingItem.lng : '') + '"') + '</div><label>照片<input name="photo" type="file" accept="image/*"><small>' + (editingItem && editingItem.photo ? '不重新选择将保留现有照片' : '可上传旅行照片') + '</small></label><label>旅行故事<textarea name="story" rows="4" required>' + escapeHtml(editingItem ? editingItem.story : '') + '</textarea></label><p class="love-gps-status" data-love-gps></p>';
+      else if (currentAddType === 'trips') fields = field('city', '旅行地点', 'text', 'required placeholder="输入城市或景点后自动定位" value="' + escapeHtml(editingItem ? editingItem.city : '') + '"') + field('date', '旅行日期', 'date', 'required value="' + escapeHtml(editingItem ? editingItem.date : today) + '"') + '<input name="lat" type="hidden" value="' + escapeHtml(editingItem ? editingItem.lat : '') + '"><input name="lng" type="hidden" value="' + escapeHtml(editingItem ? editingItem.lng : '') + '"><label>照片<input name="photo" type="file" accept="image/*"><small>' + (editingItem && editingItem.photo ? '不重新选择将保留现有照片' : '可上传旅行照片') + '</small></label><label>旅行故事<textarea name="story" rows="4" required>' + escapeHtml(editingItem ? editingItem.story : '') + '</textarea></label><p class="love-gps-status" data-love-gps></p>';
       else if (currentAddType === 'album') fields = '<label>照片<input name="photo" type="file" accept="image/*"' + (editingItem ? '' : ' required') + '><small>' + (editingItem ? '重新选择图片可再次裁剪；不选择则保留原图' : '选择后将自动打开裁剪器') + '</small></label>';
       else if (currentAddType === 'timeline') fields = field('title', '回忆标题', 'text', 'required value="' + escapeHtml(editingItem ? editingItem.title : '') + '"') + field('date', '发生日期', 'date', 'required value="' + escapeHtml(editingItem ? editingItem.date : today) + '"') + field('mood', '心情标签', 'text', 'placeholder="开心、浪漫、感动" value="' + escapeHtml(editingItem ? editingItem.mood : '') + '"') + '<label>回忆照片<input name="photo" type="file" accept="image/*"><small>' + (editingItem && editingItem.photo ? '不重新选择将保留现有照片' : '可选') + '</small></label><label>回忆故事<textarea name="text" rows="4" required>' + escapeHtml(editingItem ? editingItem.text : '') + '</textarea></label>';
       else if (currentAddType === 'diaries') fields = field('title', '日记标题', 'text', 'required') + field('date', '日期', 'date', 'required value="' + today + '"') + field('mood', '今天的心情', 'text', 'placeholder="甜蜜"') + '<label>日记内容<textarea name="content" rows="6" required></textarea></label>';
@@ -503,6 +503,35 @@
         });
       } catch (error) {
         if (requestId === geocodeRequestId) status.textContent = '自动定位失败，请检查网络或手动填写经纬度。';
+      }
+    }
+
+    async function resolveTripCoordinates(trips) {
+      var missing = (trips || []).filter(function (trip) {
+        return !isFinite(Number(trip.lat)) || !isFinite(Number(trip.lng));
+      });
+      if (!missing.length) return;
+      try {
+        var AMap = await loadAMapApi();
+        await new Promise(function (resolve) {
+          AMap.plugin('AMap.Geocoder', function () {
+            var geocoder = new AMap.Geocoder({ city: '全国' });
+            Promise.all(missing.map(function (trip) {
+              return new Promise(function (done) {
+                geocoder.getLocation(trip.city, function (resultStatus, result) {
+                  var geocode = resultStatus === 'complete' && result.geocodes && result.geocodes[0];
+                  if (geocode && geocode.location) {
+                    trip.lng = Number(geocode.location.lng);
+                    trip.lat = Number(geocode.location.lat);
+                  }
+                  done();
+                });
+              });
+            })).then(resolve);
+          });
+        });
+      } catch (error) {
+        console.warn('小窝旅行地点自动定位失败', error);
       }
     }
 
@@ -657,6 +686,15 @@
     async function saveRecord(event) {
       event.preventDefault();
       var data = new FormData(recordForm);
+      if (currentAddType === 'trips' && (!isFinite(Number(data.get('lat'))) || !isFinite(Number(data.get('lng'))) || !String(data.get('lat')).trim() || !String(data.get('lng')).trim())) {
+        var pendingTripLocation = { city: String(data.get('city') || '').trim() };
+        await resolveTripCoordinates([pendingTripLocation]);
+        if (!isFinite(Number(pendingTripLocation.lat)) || !isFinite(Number(pendingTripLocation.lng))) {
+          throw new Error('无法定位该地点，请输入更完整的城市或景点名称。');
+        }
+        data.set('lat', pendingTripLocation.lat);
+        data.set('lng', pendingTripLocation.lng);
+      }
       var id = currentAddType + '-' + Date.now();
       var item;
       if (currentAddType === 'task-checkin') {
@@ -826,7 +864,9 @@
         element.innerHTML = '';
         var map = new window.AMap.Map(element, { zoom: id === 'love-dashboard-map' ? 3.7 : 4.3, center: [105, 35], resizeEnable: true, mapStyle: document.body.classList.contains('darkModel') ? 'amap://styles/darkblue' : 'amap://styles/whitesmoke' });
         maps.push(map);
-        trips.forEach(function (trip) {
+        trips.filter(function (trip) {
+          return isFinite(Number(trip.lat)) && isFinite(Number(trip.lng));
+        }).forEach(function (trip) {
           var marker = new window.AMap.Marker({ position: [trip.lng, trip.lat], title: trip.city, anchor: 'bottom-center' });
           marker.setMap(map);
         });
@@ -859,11 +899,12 @@
       showApp();
     }
 
-    function showApp() {
+    async function showApp() {
       lockView.hidden = true;
       app.hidden = false;
       var hour = new Date().getHours();
       root.querySelector('#love-greeting').textContent = hour < 11 ? '早上好' : hour < 18 ? '下午好' : '晚上好';
+      await resolveTripCoordinates(state.trips);
       updateDashboard();
       startElapsedClock();
       requestAnimationFrame(function () { initMap('love-dashboard-map', state.trips); });
