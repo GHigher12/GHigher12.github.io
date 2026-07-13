@@ -11,6 +11,15 @@
     var maps = [];
     var elapsedTimer = null;
     var geocodeRequestId = 0;
+    var tripCoordinatePromise = null;
+    var knownCityCoordinates = {
+      '北京': [39.9042, 116.4074], '天津': [39.1333, 117.2000], '上海': [31.2304, 121.4737],
+      '淄博': [36.8131, 118.0548], '临沂': [35.1047, 118.3564], '香港': [22.3193, 114.1694],
+      '广州': [23.1291, 113.2644], '深圳': [22.5431, 114.0579], '杭州': [30.2741, 120.1551],
+      '日照': [35.4164, 119.5269], '威海': [37.5131, 122.1204], '烟台': [37.4638, 121.4479],
+      '济南': [36.6512, 117.1201], '廊坊': [39.5380, 116.6838], '德州': [37.4367, 116.3595],
+      '青岛': [36.0671, 120.3826], '沈阳': [41.8057, 123.4315], '菏泽': [35.2338, 115.4807]
+    };
 
     var lockView = root.querySelector('#love-lock');
     var app = root.querySelector('#love-app');
@@ -341,7 +350,10 @@
       } else if (section === 'trips') {
         var trips = state.trips.filter(function (item) { return !query || item.city.toLowerCase().indexOf(query) !== -1 || item.story.toLowerCase().indexOf(query) !== -1; });
         html = '<div class="love-travel-layout"><div class="love-map love-map-large" id="love-trips-map"><span><i class="fas fa-map-marked-alt"></i> 正在加载旅行地图</span></div><div class="love-trip-cards">' + trips.map(function (trip) {
-          return '<article><img src="' + escapeHtml(tripLandmarkPhoto(trip)) + '" alt="' + escapeHtml(trip.city) + '标志性景点"><div><small>' + escapeHtml(trip.date) + '</small><h3>' + escapeHtml(trip.city) + '</h3><p>' + escapeHtml(trip.story) + '</p><span><i class="fas fa-map-marker-alt"></i> ' + Number(trip.lat).toFixed(3) + ', ' + Number(trip.lng).toFixed(3) + '</span>' + recordActions('trips', trip.id) + '</div></article>';
+          var coordinateCopy = hasValidCoordinates(trip)
+            ? Number(trip.lat).toFixed(3) + ', ' + Number(trip.lng).toFixed(3)
+            : (trip._geocodeFailed ? '高德暂未定位到该地点' : '正在通过高德地图定位…');
+          return '<article><img src="' + escapeHtml(tripLandmarkPhoto(trip)) + '" alt="' + escapeHtml(trip.city) + '标志性景点"><div><small>' + escapeHtml(trip.date) + '</small><h3>' + escapeHtml(trip.city) + '</h3><p>' + escapeHtml(trip.story) + '</p><span><i class="fas fa-map-marker-alt"></i> ' + coordinateCopy + '</span>' + recordActions('trips', trip.id) + '</div></article>';
         }).join('') + '</div></div>';
       } else if (section === 'album') {
         var media = state.media.filter(function (item) { return !query || (item.caption || '').toLowerCase().indexOf(query) !== -1 || (item.place || '').toLowerCase().indexOf(query) !== -1; });
@@ -385,7 +397,10 @@
       nav.querySelectorAll('[data-love-section]').forEach(function (button) { button.classList.toggle('is-active', button.dataset.loveSection === section); });
       sectionSearch.value = '';
       if (section === 'home') showHome();
-      else renderSection(section);
+      else {
+        renderSection(section);
+        if (section === 'trips') refreshTripCoordinates();
+      }
     }
 
     function field(name, label, type, extra) {
@@ -477,6 +492,55 @@
       return window.AMap;
     }
 
+    function hasValidCoordinates(trip) {
+      if (!trip || trip.lat === null || trip.lng === null || trip.lat === undefined || trip.lng === undefined) return false;
+      if (String(trip.lat).trim() === '' || String(trip.lng).trim() === '') return false;
+      var lat = Number(trip.lat);
+      var lng = Number(trip.lng);
+      return isFinite(lat) && isFinite(lng) && lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180;
+    }
+
+    function loadAMapGeocoder(AMap) {
+      return new Promise(function (resolve, reject) {
+        var settled = false;
+        var timer = window.setTimeout(function () {
+          if (!settled) { settled = true; reject(new Error('高德地理编码组件加载超时')); }
+        }, 8000);
+        try {
+          AMap.plugin('AMap.Geocoder', function () {
+            if (settled) return;
+            settled = true;
+            window.clearTimeout(timer);
+            resolve(new AMap.Geocoder({ city: '全国' }));
+          });
+        } catch (error) {
+          window.clearTimeout(timer);
+          reject(error);
+        }
+      });
+    }
+
+    function geocodeAddress(geocoder, address) {
+      return new Promise(function (resolve) {
+        var settled = false;
+        var timer = window.setTimeout(function () {
+          if (!settled) { settled = true; resolve(null); }
+        }, 2500);
+        try {
+          geocoder.getLocation(address, function (resultStatus, result) {
+            if (settled) return;
+            settled = true;
+            window.clearTimeout(timer);
+            var geocode = resultStatus === 'complete' && result && result.geocodes && result.geocodes[0];
+            resolve(geocode && geocode.location ? geocode : null);
+          });
+        } catch (error) {
+          window.clearTimeout(timer);
+          resolve(null);
+        }
+      });
+    }
+
     async function geocodeDialogCity() {
       if (currentAddType !== 'trips') return;
       var cityInput = recordForm.elements.city;
@@ -508,31 +572,50 @@
 
     async function resolveTripCoordinates(trips) {
       var missing = (trips || []).filter(function (trip) {
-        return !isFinite(Number(trip.lat)) || !isFinite(Number(trip.lng));
+        return !hasValidCoordinates(trip);
       });
-      if (!missing.length) return;
+      if (!missing.length) return 0;
       try {
         var AMap = await loadAMapApi();
-        await new Promise(function (resolve) {
-          AMap.plugin('AMap.Geocoder', function () {
-            var geocoder = new AMap.Geocoder({ city: '全国' });
-            Promise.all(missing.map(function (trip) {
-              return new Promise(function (done) {
-                geocoder.getLocation(trip.city, function (resultStatus, result) {
-                  var geocode = resultStatus === 'complete' && result.geocodes && result.geocodes[0];
-                  if (geocode && geocode.location) {
-                    trip.lng = Number(geocode.location.lng);
-                    trip.lat = Number(geocode.location.lat);
-                  }
-                  done();
-                });
-              });
-            })).then(resolve);
-          });
+        var geocoder = await loadAMapGeocoder(AMap);
+        var results = await Promise.all(missing.map(function (trip) { return geocodeAddress(geocoder, trip.city); }));
+        var resolvedCount = 0;
+        results.forEach(function (geocode, index) {
+          var trip = missing[index];
+          var normalizedCity = String(trip.city || '').trim().replace(/(市|地区|特别行政区)$/u, '');
+          var fallback = knownCityCoordinates[normalizedCity];
+          trip._geocodeFailed = !geocode && !fallback;
+          if (geocode) {
+            trip.lng = Number(geocode.location.lng);
+            trip.lat = Number(geocode.location.lat);
+          } else if (fallback) {
+            trip.lat = fallback[0];
+            trip.lng = fallback[1];
+          } else return;
+          delete trip._geocodeFailed;
+          resolvedCount += 1;
         });
+        return resolvedCount;
       } catch (error) {
         console.warn('小窝旅行地点自动定位失败', error);
+        return 0;
       }
+    }
+
+    function refreshTripCoordinates() {
+      if (!tripCoordinatePromise) {
+        tripCoordinatePromise = resolveTripCoordinates(state.trips).then(function (resolvedCount) {
+          if (resolvedCount > 0) saveState();
+          return resolvedCount;
+        }).finally(function () { tripCoordinatePromise = null; });
+      }
+      return tripCoordinatePromise.then(function (resolvedCount) {
+        destroyMaps();
+        updateDashboard();
+        if (currentSection === 'trips') renderSection('trips', sectionSearch.value);
+        else if (currentSection === 'home') requestAnimationFrame(function () { initMap('love-dashboard-map', state.trips); });
+        return resolvedCount;
+      });
     }
 
     function imageToDataUrl(file) {
@@ -865,12 +948,12 @@
         var map = new window.AMap.Map(element, { zoom: id === 'love-dashboard-map' ? 3.7 : 4.3, center: [105, 35], resizeEnable: true, mapStyle: document.body.classList.contains('darkModel') ? 'amap://styles/darkblue' : 'amap://styles/whitesmoke' });
         maps.push(map);
         trips.filter(function (trip) {
-          return isFinite(Number(trip.lat)) && isFinite(Number(trip.lng));
+          return hasValidCoordinates(trip);
         }).forEach(function (trip) {
           var marker = new window.AMap.Marker({ position: [trip.lng, trip.lat], title: trip.city, anchor: 'bottom-center' });
           marker.setMap(map);
         });
-        if (trips.length) map.setFitView();
+        if (trips.some(hasValidCoordinates)) map.setFitView();
       } catch (error) {
         element.dataset.mapReady = 'false';
         element.innerHTML = '<span><i class="fas fa-map-marked-alt"></i> 地图暂时无法加载</span>';
@@ -907,7 +990,7 @@
       updateDashboard();
       startElapsedClock();
       Promise.race([
-        resolveTripCoordinates(state.trips),
+        refreshTripCoordinates(),
         new Promise(function (resolve) { window.setTimeout(resolve, 3500); })
       ]).then(function () {
         updateDashboard();

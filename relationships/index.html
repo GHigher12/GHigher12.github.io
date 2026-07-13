@@ -805,6 +805,13 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                id: 'Openmv',
+                name: 'Openmv',
+                symbolSize: 11,
+                value: 1
+            },
+        
+            {
                 id: 'python',
                 name: 'python',
                 symbolSize: 28,
@@ -819,31 +826,10 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'Openmv',
-                name: 'Openmv',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
                 id: 'ROS2',
                 name: 'ROS2',
                 symbolSize: 13,
                 value: 3
-            },
-        
-            {
-                id: 'Pytorch',
-                name: 'Pytorch',
-                symbolSize: 16,
-                value: 7
-            },
-        
-            {
-                id: 'Pyqt5',
-                name: 'Pyqt5',
-                symbolSize: 11,
-                value: 1
             },
         
             {
@@ -858,6 +844,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Modbus',
                 symbolSize: 12,
                 value: 2
+            },
+        
+            {
+                id: 'Pytorch',
+                name: 'Pytorch',
+                symbolSize: 16,
+                value: 7
+            },
+        
+            {
+                id: 'Pyqt5',
+                name: 'Pyqt5',
+                symbolSize: 11,
+                value: 1
             },
         
             {
@@ -1044,20 +1044,20 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'python',
-                target: 'Opencv',
-                value: 7,
+                source: 'Openmv',
+                target: 'python',
+                value: 1,
                 lineStyle: {
-                    width: 7
+                    width: 1
                 }
             },
         
             {
                 source: 'python',
-                target: 'Openmv',
-                value: 1,
+                target: 'Opencv',
+                value: 7,
                 lineStyle: {
-                    width: 1
+                    width: 7
                 }
             },
         
@@ -1090,33 +1090,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
             {
                 source: 'python',
-                target: 'Pytorch',
-                value: 7,
-                lineStyle: {
-                    width: 7
-                }
-            },
-        
-            {
-                source: 'python',
-                target: 'Pyqt5',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'Pytorch',
-                target: 'Pyqt5',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'python',
                 target: 'RS485',
                 value: 1,
                 lineStyle: {
@@ -1139,6 +1112,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 value: 2,
                 lineStyle: {
                     width: 2
+                }
+            },
+        
+            {
+                source: 'python',
+                target: 'Pytorch',
+                value: 7,
+                lineStyle: {
+                    width: 7
+                }
+            },
+        
+            {
+                source: 'python',
+                target: 'Pyqt5',
+                value: 1,
+                lineStyle: {
+                    width: 1
+                }
+            },
+        
+            {
+                source: 'Pytorch',
+                target: 'Pyqt5',
+                value: 1,
+                lineStyle: {
+                    width: 1
                 }
             },
         
@@ -2330,20 +2330,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
