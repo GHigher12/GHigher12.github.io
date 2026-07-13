@@ -16,6 +16,36 @@
     try { storedTrips = JSON.parse(localStorage.getItem('bambooFootprintTrips') || '[]'); } catch (error) {}
     payload.trips = payload.trips.concat(storedTrips);
 
+    async function resolveMissingCoordinates(trips) {
+      var missing = (trips || []).filter(function (trip) { return !isFinite(Number(trip.lat)) || !isFinite(Number(trip.lng)); });
+      if (!missing.length || !root.dataset.amapKey) return;
+      try {
+        window._AMapSecurityConfig = { securityJsCode: root.dataset.amapSecurity || '' };
+        await window.BambooPageRuntime.loadScript('https://webapi.amap.com/maps?v=2.0&key=' + encodeURIComponent(root.dataset.amapKey), 'AMap');
+        await new Promise(function (resolve) {
+          window.AMap.plugin('AMap.Geocoder', function () {
+            var geocoder = new window.AMap.Geocoder({ city: '全国' });
+            Promise.all(missing.map(function (trip) {
+              return new Promise(function (done) {
+                geocoder.getLocation([trip.country, trip.city].filter(Boolean).join(''), function (status, result) {
+                  var geocode = status === 'complete' && result.geocodes && result.geocodes[0];
+                  if (geocode && geocode.location) {
+                    trip.lat = Number(geocode.location.lat);
+                    trip.lng = Number(geocode.location.lng);
+                  }
+                  done();
+                });
+              });
+            })).then(resolve);
+          });
+        });
+      } catch (error) {
+        console.warn('足迹城市自动定位失败', error);
+      }
+    }
+
+    await resolveMissingCoordinates(payload.trips);
+
     var rotateButton = root.querySelector('#globe-rotate');
     var resetButton = root.querySelector('#globe-reset');
     var zoomInButton = root.querySelector('#globe-zoom-in');
@@ -143,7 +173,9 @@
         clearGroup(markerGroup);
         markerMeshes = [];
         twinkleMarkers = [];
-        (nextTrips || []).forEach(function (trip) {
+        (nextTrips || []).filter(function (trip) {
+          return isFinite(Number(trip.lat)) && isFinite(Number(trip.lng));
+        }).forEach(function (trip) {
           var position = toVector(trip.lat, trip.lng, 103);
           var marker = createMarkerSprite(trip);
           marker.position.copy(position);

@@ -10,6 +10,7 @@
     var activeRecordId = null;
     var maps = [];
     var elapsedTimer = null;
+    var geocodeRequestId = 0;
 
     var lockView = root.querySelector('#love-lock');
     var app = root.querySelector('#love-app');
@@ -69,7 +70,8 @@
     ];
 
     var defaultState = {
-      version: 5,
+      version: 6,
+      sourceRevision: '',
       profile: { startDate: '2026-04-10', metDate: '2026-04-10', nameA: '我', nameB: '你' },
       tasks: taskTitles.map(function (title, index) { return { id: 'task-' + index, title: title, category: index < 20 ? '日常' : index < 50 ? '旅行' : '未来', done: index < 4, date: index < 4 ? '2026-06-' + String(12 + index).padStart(2, '0') : '', location: '', note: '', photo: '', emoji: '' }; }),
       trips: [
@@ -102,14 +104,62 @@
       { id: 'trip-tianjin', city: '\u5929\u6d25', date: '', lat: 39.1333, lng: 117.2000, story: '\u7167\u7247\u4f4d\u7f6e\u5df2\u9884\u7559\uff0c\u7b49\u5f85\u4e0a\u4f20\u5171\u540c\u65c5\u884c\u56de\u5fc6\u3002', photo: '/medias/love/tianjin-eye.jpg' }
     ];
 
+    var markdownDataNode = root.querySelector('#love-markdown-data');
+    if (markdownDataNode) {
+      try {
+        var markdownData = JSON.parse(markdownDataNode.textContent || '{}');
+        defaultState.sourceRevision = markdownData.__revision || '';
+        if (markdownData.profile) defaultState.profile = Object.assign({}, defaultState.profile, markdownData.profile);
+        if (Array.isArray(markdownData.tasks)) {
+          defaultState.tasks = markdownData.tasks.map(function (task, index) {
+            return Object.assign({
+              id: 'task-' + index,
+              title: '',
+              category: index < 20 ? '日常' : index < 50 ? '旅行' : '未来',
+              done: false,
+              date: '',
+              location: '',
+              note: '',
+              photo: '',
+              emoji: ''
+            }, task);
+          });
+        }
+        if (Array.isArray(markdownData.trips)) defaultState.trips = markdownData.trips;
+        if (Array.isArray(markdownData.timeline)) defaultState.timeline = markdownData.timeline;
+        if (Array.isArray(markdownData.media)) {
+          defaultState.media = markdownData.media.map(function (item, index) {
+            if (typeof item === 'string') {
+              return { id: 'media-' + index, url: item, caption: '', date: '', place: '' };
+            }
+            return Object.assign({ id: 'media-' + index, url: '', caption: '', date: '', place: '' }, item);
+          }).filter(function (item) { return !!item.url; });
+        }
+      } catch (error) {
+        console.error('小窝 Markdown 数据读取失败', error);
+      }
+    }
+
     function cloneDefaults() { return JSON.parse(JSON.stringify(defaultState)); }
 
     function loadState() {
       try {
         var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
         if (!saved) return cloneDefaults();
+        if ((saved.sourceRevision || '') !== (defaultState.sourceRevision || '')) {
+          var refreshedState = cloneDefaults();
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(refreshedState));
+          return refreshedState;
+        }
         var nextState = Object.assign(cloneDefaults(), saved, { profile: Object.assign({}, defaultState.profile, saved.profile || {}) });
-        var approvedCities = ['\u5317\u4eac', '\u5929\u6d25'];
+        var approvedCities = defaultState.trips.map(function (trip) { return trip.city; });
+        if (!saved.version || saved.version < 6) {
+          nextState.tasks = cloneDefaults().tasks;
+          nextState.trips = cloneDefaults().trips;
+          nextState.timeline = cloneDefaults().timeline;
+          nextState.media = cloneDefaults().media;
+          nextState.version = 6;
+        }
         if (!saved.version || saved.version < 5) {
           nextState.trips = cloneDefaults().trips;
           nextState.version = 5;
@@ -380,7 +430,7 @@
       var fields = '';
       if (currentAddType === 'tasks') fields = field('title', '想一起完成的事情', 'text', 'required placeholder="例如：一起去看海 🌊" value="' + escapeHtml(editingItem ? editingItem.title : '') + '"') + '<label>分类<select name="category">' + selectOptions(['日常', '旅行', '成长', '未来'], editingItem ? editingItem.category : '日常') + '</select></label>' + taskEmojiPicker(editingItem ? editingItem.emoji : '💗');
       else if (currentAddType === 'trips') fields = field('city', '旅行地点', 'text', 'required value="' + escapeHtml(editingItem ? editingItem.city : '') + '"') + field('date', '旅行日期', 'date', 'required value="' + escapeHtml(editingItem ? editingItem.date : today) + '"') + '<div class="form-row">' + field('lat', '纬度', 'number', 'step="any" required value="' + escapeHtml(editingItem ? editingItem.lat : '') + '"') + field('lng', '经度', 'number', 'step="any" required value="' + escapeHtml(editingItem ? editingItem.lng : '') + '"') + '</div><label>照片<input name="photo" type="file" accept="image/*"><small>' + (editingItem && editingItem.photo ? '不重新选择将保留现有照片' : '可上传旅行照片') + '</small></label><label>旅行故事<textarea name="story" rows="4" required>' + escapeHtml(editingItem ? editingItem.story : '') + '</textarea></label><p class="love-gps-status" data-love-gps></p>';
-      else if (currentAddType === 'album') fields = '<label>照片<input name="photo" type="file" accept="image/*"' + (editingItem ? '' : ' required') + '><small>' + (editingItem ? '重新选择图片可再次裁剪；不选择则保留原图' : '选择后将自动打开裁剪器') + '</small></label>' + field('caption', '照片名称', 'text', 'required value="' + escapeHtml(editingItem ? editingItem.caption : '') + '"') + field('date', '拍摄日期', 'date', 'value="' + escapeHtml(editingItem ? editingItem.date : today) + '"') + field('place', '拍摄地点', 'text', 'value="' + escapeHtml(editingItem ? editingItem.place : '') + '"');
+      else if (currentAddType === 'album') fields = '<label>照片<input name="photo" type="file" accept="image/*"' + (editingItem ? '' : ' required') + '><small>' + (editingItem ? '重新选择图片可再次裁剪；不选择则保留原图' : '选择后将自动打开裁剪器') + '</small></label>';
       else if (currentAddType === 'timeline') fields = field('title', '回忆标题', 'text', 'required value="' + escapeHtml(editingItem ? editingItem.title : '') + '"') + field('date', '发生日期', 'date', 'required value="' + escapeHtml(editingItem ? editingItem.date : today) + '"') + field('mood', '心情标签', 'text', 'placeholder="开心、浪漫、感动" value="' + escapeHtml(editingItem ? editingItem.mood : '') + '"') + '<label>回忆照片<input name="photo" type="file" accept="image/*"><small>' + (editingItem && editingItem.photo ? '不重新选择将保留现有照片' : '可选') + '</small></label><label>回忆故事<textarea name="text" rows="4" required>' + escapeHtml(editingItem ? editingItem.text : '') + '</textarea></label>';
       else if (currentAddType === 'diaries') fields = field('title', '日记标题', 'text', 'required') + field('date', '日期', 'date', 'required value="' + today + '"') + field('mood', '今天的心情', 'text', 'placeholder="甜蜜"') + '<label>日记内容<textarea name="content" rows="6" required></textarea></label>';
       else if (currentAddType === 'anniversaries') fields = field('title', '纪念日名称', 'text', 'required') + field('date', '日期', 'date', 'required');
@@ -390,6 +440,11 @@
       dialogFields.innerHTML = fields;
       var photo = recordForm.elements.photo;
       if (photo && currentAddType === 'trips') photo.addEventListener('change', readDialogGps, { once: true });
+      var cityInput = recordForm.elements.city;
+      if (cityInput && currentAddType === 'trips') {
+        cityInput.addEventListener('change', geocodeDialogCity);
+        cityInput.addEventListener('blur', geocodeDialogCity);
+      }
       if (typeof dialog.showModal === 'function') dialog.showModal(); else dialog.setAttribute('open', '');
     }
 
@@ -411,6 +466,44 @@
           status.textContent = '已读取照片位置。';
         } else status.textContent = '照片没有 GPS，请手动填写。';
       } catch (error) { status.textContent = '未能读取 GPS，请手动填写。'; }
+    }
+
+    async function loadAMapApi() {
+      if (window.AMap) return window.AMap;
+      var key = root.dataset.amapKey;
+      if (!key) throw new Error('未配置高德地图 Key');
+      window._AMapSecurityConfig = { securityJsCode: root.dataset.amapSecurity || '' };
+      await window.BambooPageRuntime.loadScript('https://webapi.amap.com/maps?v=2.0&key=' + encodeURIComponent(key), 'AMap');
+      return window.AMap;
+    }
+
+    async function geocodeDialogCity() {
+      if (currentAddType !== 'trips') return;
+      var cityInput = recordForm.elements.city;
+      var status = dialogFields.querySelector('[data-love-gps]');
+      var address = cityInput && cityInput.value.trim();
+      if (!address || !status) return;
+      var requestId = ++geocodeRequestId;
+      status.textContent = '正在根据地点获取经纬度…';
+      try {
+        var AMap = await loadAMapApi();
+        AMap.plugin('AMap.Geocoder', function () {
+          var geocoder = new AMap.Geocoder({ city: '全国' });
+          geocoder.getLocation(address, function (resultStatus, result) {
+            if (requestId !== geocodeRequestId) return;
+            var geocode = resultStatus === 'complete' && result.geocodes && result.geocodes[0];
+            if (!geocode || !geocode.location) {
+              status.textContent = '没有找到该地点，请输入更完整的城市或景点名称。';
+              return;
+            }
+            recordForm.elements.lng.value = Number(geocode.location.lng).toFixed(6);
+            recordForm.elements.lat.value = Number(geocode.location.lat).toFixed(6);
+            status.textContent = '已定位：' + (geocode.formattedAddress || address) + '，坐标仍可手动修改。';
+          });
+        });
+      } catch (error) {
+        if (requestId === geocodeRequestId) status.textContent = '自动定位失败，请检查网络或手动填写经纬度。';
+      }
     }
 
     function imageToDataUrl(file) {
@@ -605,7 +698,7 @@
           if (editedTimelinePhoto) existing.photo = editedTimelinePhoto;
         } else {
           var editedAlbumPhoto = await croppedImageFromInput(recordForm.elements.photo);
-          existing.caption = data.get('caption'); existing.date = data.get('date'); existing.place = data.get('place');
+          existing.caption = existing.caption || ''; existing.date = existing.date || ''; existing.place = existing.place || '';
           if (editedAlbumPhoto) existing.url = editedAlbumPhoto;
         }
         if (saveState()) {
@@ -620,7 +713,7 @@
         item = { id: id, city: data.get('city'), date: data.get('date'), lat: Number(data.get('lat')), lng: Number(data.get('lng')), story: data.get('story'), photo: tripPhoto };
         if (tripPhoto) state.media.unshift({ id: 'media-' + Date.now(), url: tripPhoto, caption: data.get('city') + '旅行', date: data.get('date'), place: data.get('city') });
       } else if (currentAddType === 'album') {
-        item = { id: id, url: await croppedImageFromInput(recordForm.elements.photo), caption: data.get('caption'), date: data.get('date'), place: data.get('place') };
+        item = { id: id, url: await croppedImageFromInput(recordForm.elements.photo), caption: '', date: '', place: '' };
       } else if (currentAddType === 'timeline') {
         item = { id: id, title: data.get('title'), date: data.get('date'), mood: data.get('mood'), text: data.get('text'), photo: await croppedImageFromInput(recordForm.elements.photo) };
       }
