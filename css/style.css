@@ -6037,7 +6037,7 @@ body:has(.love-space-page) #navHeader {
 }
 .timeline-card small {
   color: #e25e83;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
 }
 .timeline-card h3 {
@@ -6048,7 +6048,7 @@ body:has(.love-space-page) #navHeader {
 .timeline-card p {
   margin: 0;
   color: #7c6d74;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
 }
 .darkModel .timeline-card p {
