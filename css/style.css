@@ -5916,15 +5916,17 @@ body:has(.love-space-page) #navHeader {
   margin-top: 8px;
 }
 .love-album-grid {
-  columns: 4 210px;
-  column-gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 14px;
+  align-items: stretch;
 }
 .love-album-manage {
-  margin-bottom: 12px;
+  min-width: 0;
+  margin: 0;
   padding: 8px;
   border: 1px solid #f0dfe4;
   border-radius: 16px;
-  break-inside: avoid;
   background-color: rgba(255,255,255,0.82);
 }
 .darkModel .love-album-manage {
@@ -5934,17 +5936,23 @@ body:has(.love-space-page) #navHeader {
 .love-album-manage > [data-photo] {
   position: relative;
   width: 100%;
+  aspect-ratio: 4/3;
   padding: 0;
   border: 0;
   border-radius: 12px;
   display: block;
   overflow: hidden;
   cursor: pointer;
-  background: transparent;
+  background-color: #f5f1f3;
+}
+.darkModel .love-album-manage > [data-photo] {
+  background-color: #081328;
 }
 .love-album-manage img {
   width: 100%;
+  height: 100%;
   display: block;
+  object-fit: contain;
 }
 .love-album-manage > [data-photo] > span {
   position: absolute;
@@ -6680,7 +6688,8 @@ body:has(.love-space-page) #navHeader {
     height: 92px;
   }
   .love-album-grid {
-    columns: 2 145px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
   .love-timeline-full::before {
     left: 8px;
