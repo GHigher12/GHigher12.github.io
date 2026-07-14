@@ -295,7 +295,7 @@
     }
 
     function recordActions(type, id) {
-      return '<div class="love-record-actions"><button type="button" data-record-edit="' + escapeHtml(id) + '" data-record-type="' + type + '"><i class="fas fa-pen"></i> 修改</button><button type="button" class="is-delete" data-record-delete="' + escapeHtml(id) + '" data-record-type="' + type + '"><i class="fas fa-trash-alt"></i> 删除</button></div>';
+      return '';
     }
 
     function taskManageCard(task) {
