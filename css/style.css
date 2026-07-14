@@ -5658,14 +5658,14 @@ body:has(.love-space-page) #navHeader {
 }
 .dashboard-timeline-list small {
   color: #e76e8f;
-  font-size: 10px;
+  font-size: 12px;
 }
 .dashboard-timeline-list strong {
   margin-top: 4px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 12px;
+  font-size: 14px;
 }
 .dashboard-timeline-list p {
   margin: 4px 0;
@@ -5673,7 +5673,7 @@ body:has(.love-space-page) #navHeader {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 11px;
+  font-size: 12px;
 }
 .darkModel .dashboard-timeline-list p {
   color: #beb4c5;
