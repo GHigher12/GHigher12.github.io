@@ -167,18 +167,6 @@
       return '/medias/love/alpine-lake.png';
     }
 
-    function daysBetween(from, to) {
-      return Math.max(0, Math.floor((to.getTime() - from.getTime()) / 86400000));
-    }
-
-    function nextAnniversaryDays(dateString) {
-      var start = new Date(dateString + 'T00:00:00');
-      var now = new Date();
-      var next = new Date(now.getFullYear(), start.getMonth(), start.getDate());
-      if (next < new Date(now.getFullYear(), now.getMonth(), now.getDate())) next.setFullYear(next.getFullYear() + 1);
-      return { days: Math.ceil((next.getTime() - now.getTime()) / 86400000), date: next };
-    }
-
     function updateDashboard() {
       var now = new Date();
       var completed = state.tasks.filter(function (task) { return task.done; }).length;
@@ -248,17 +236,6 @@
     var sectionMeta = {
       tasks: ['100件小事', '新增一件小事'], trips: ['旅行记录', '新增旅行'], timeline: ['回忆时间轴', '新增节点'], album: ['照片相册', '上传照片'], settings: ['空间设置', '编辑资料']
     };
-
-    function toggleTask(id) {
-      var task = state.tasks.find(function (item) { return item.id === id; });
-      if (!task) return;
-      task.done = !task.done;
-      if (task.done && !task.date) task.date = new Date().toISOString().slice(0, 10);
-      if (saveState()) {
-        updateDashboard();
-        if (currentSection === 'tasks') renderSection('tasks', sectionSearch.value);
-      }
-    }
 
     function renderSection(section, query) {
       currentSection = section;

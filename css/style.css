@@ -6307,15 +6307,45 @@ body:has(.love-space-page) #navHeader {
 .love-lightbox > button {
   position: absolute;
   z-index: 2;
+  border: 0;
+  color: #fff;
+  background-color: rgba(10,8,10,0.68);
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+}
+.love-lightbox .love-lightbox-close {
   right: 10px;
   top: 10px;
   width: 38px;
   height: 38px;
-  border: 0;
   border-radius: 50%;
-  color: #fff;
-  background-color: rgba(10,8,10,0.64);
-  cursor: pointer;
+}
+.love-lightbox .love-lightbox-nav {
+  top: 50%;
+  min-width: 92px;
+  height: 46px;
+  padding: 0 15px;
+  border-radius: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transform: translateY(-50%);
+  font-size: 13px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.love-lightbox .love-lightbox-nav:hover {
+  background-color: rgba(232,91,135,0.9);
+  transform: translateY(-50%) scale(1.04);
+}
+.love-lightbox .love-lightbox-nav.is-prev {
+  left: 14px;
+}
+.love-lightbox .love-lightbox-nav.is-next {
+  right: 14px;
+}
+.love-lightbox .love-lightbox-nav[hidden] {
+  display: none;
 }
 .love-crop-dialog {
   width: calc(100vw - 28px);
@@ -6690,6 +6720,21 @@ body:has(.love-space-page) #navHeader {
   .love-album-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
+  }
+  .love-lightbox .love-lightbox-nav {
+    min-width: 42px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+  }
+  .love-lightbox .love-lightbox-nav span {
+    display: none;
+  }
+  .love-lightbox .love-lightbox-nav.is-prev {
+    left: 8px;
+  }
+  .love-lightbox .love-lightbox-nav.is-next {
+    right: 8px;
   }
   .love-timeline-full::before {
     left: 8px;
