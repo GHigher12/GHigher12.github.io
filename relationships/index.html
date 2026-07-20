@@ -721,6 +721,13 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                id: 'ClaudeCode',
+                name: 'ClaudeCode',
+                symbolSize: 12,
+                value: 2
+            },
+        
+            {
                 id: 'ESP32',
                 name: 'ESP32',
                 symbolSize: 11,
@@ -732,13 +739,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Micropython',
                 symbolSize: 11,
                 value: 1
-            },
-        
-            {
-                id: 'ClaudeCode',
-                name: 'ClaudeCode',
-                symbolSize: 12,
-                value: 2
             },
         
             {
@@ -777,17 +777,17 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'Markdown',
-                name: 'Markdown',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
                 id: 'Matlab',
                 name: 'Matlab',
                 symbolSize: 14,
                 value: 5
+            },
+        
+            {
+                id: 'Markdown',
+                name: 'Markdown',
+                symbolSize: 11,
+                value: 1
             },
         
             {
@@ -833,20 +833,6 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'RS485',
-                name: 'RS485',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
-                id: 'Modbus',
-                name: 'Modbus',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
                 id: 'Pytorch',
                 name: 'Pytorch',
                 symbolSize: 16,
@@ -858,6 +844,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Pyqt5',
                 symbolSize: 11,
                 value: 1
+            },
+        
+            {
+                id: 'RS485',
+                name: 'RS485',
+                symbolSize: 12,
+                value: 2
+            },
+        
+            {
+                id: 'Modbus',
+                name: 'Modbus',
+                symbolSize: 12,
+                value: 2
             },
         
             {
@@ -972,20 +972,20 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'ESP32',
-                target: 'Micropython',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
                 source: 'AI',
                 target: 'ClaudeCode',
                 value: 2,
                 lineStyle: {
                     width: 2
+                }
+            },
+        
+            {
+                source: 'ESP32',
+                target: 'Micropython',
+                value: 1,
+                lineStyle: {
+                    width: 1
                 }
             },
         
@@ -1090,33 +1090,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
             {
                 source: 'python',
-                target: 'RS485',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'python',
-                target: 'Modbus',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'RS485',
-                target: 'Modbus',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
-                source: 'python',
                 target: 'Pytorch',
                 value: 7,
                 lineStyle: {
@@ -1139,6 +1112,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 value: 1,
                 lineStyle: {
                     width: 1
+                }
+            },
+        
+            {
+                source: 'python',
+                target: 'RS485',
+                value: 1,
+                lineStyle: {
+                    width: 1
+                }
+            },
+        
+            {
+                source: 'python',
+                target: 'Modbus',
+                value: 1,
+                lineStyle: {
+                    width: 1
+                }
+            },
+        
+            {
+                source: 'RS485',
+                target: 'Modbus',
+                value: 2,
+                lineStyle: {
+                    width: 2
                 }
             },
         
