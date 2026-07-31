@@ -5632,10 +5632,10 @@ body:has(.love-space-page) #navHeader {
 }
 .dashboard-timeline-list article {
   position: relative;
-  flex: 0 0 260px;
+  flex: 0 0 230px;
   min-width: 0;
   min-height: 78px;
-  padding: 10px 58px 8px 0;
+  padding: 10px 86px 8px 0;
   scroll-snap-align: start;
 }
 .dashboard-timeline-list article > i {
@@ -5680,7 +5680,7 @@ body:has(.love-space-page) #navHeader {
 }
 .dashboard-timeline-list img {
   position: absolute;
-  right: 0;
+  left: 142px;
   top: 8px;
   width: 50px;
   height: 46px;

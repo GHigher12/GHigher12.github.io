@@ -60,7 +60,7 @@
     var defaultState = {
       version: 7,
       sourceRevision: '',
-      profile: { startDate: '2026-04-10', metDate: '2026-04-10', nameA: '我', nameB: '你' },
+      profile: { startDate: '2026-04-11', metDate: '2026-04-11', nameA: '我', nameB: '你' },
       tasks: [],
       trips: [],
       media: [],
