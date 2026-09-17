@@ -714,20 +714,6 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'CMake',
-                name: 'CMake',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
-                id: 'ClaudeCode',
-                name: 'ClaudeCode',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
                 id: 'ESP32',
                 name: 'ESP32',
                 symbolSize: 11,
@@ -749,10 +735,10 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'hexo',
-                name: 'hexo',
-                symbolSize: 14,
-                value: 5
+                id: 'ClaudeCode',
+                name: 'ClaudeCode',
+                symbolSize: 12,
+                value: 2
             },
         
             {
@@ -784,6 +770,13 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                id: 'CMake',
+                name: 'CMake',
+                symbolSize: 12,
+                value: 2
+            },
+        
+            {
                 id: 'Matlab',
                 name: 'Matlab',
                 symbolSize: 14,
@@ -795,13 +788,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Obsidian',
                 symbolSize: 13,
                 value: 3
-            },
-        
-            {
-                id: 'OpenClaw',
-                name: 'OpenClaw',
-                symbolSize: 11,
-                value: 1
             },
         
             {
@@ -826,15 +812,8 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'Pytorch',
-                name: 'Pytorch',
-                symbolSize: 16,
-                value: 7
-            },
-        
-            {
-                id: 'Pyqt5',
-                name: 'Pyqt5',
+                id: 'OpenClaw',
+                name: 'OpenClaw',
                 symbolSize: 11,
                 value: 1
             },
@@ -861,6 +840,20 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                id: 'Pytorch',
+                name: 'Pytorch',
+                symbolSize: 16,
+                value: 7
+            },
+        
+            {
+                id: 'Pyqt5',
+                name: 'Pyqt5',
+                symbolSize: 11,
+                value: 1
+            },
+        
+            {
                 id: 'ROS',
                 name: 'ROS',
                 symbolSize: 29,
@@ -879,6 +872,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'RaspberryPi',
                 symbolSize: 12,
                 value: 2
+            },
+        
+            {
+                id: 'hexo',
+                name: 'hexo',
+                symbolSize: 14,
+                value: 5
             },
         
             {
@@ -931,8 +931,8 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'Printer',
-                name: 'Printer',
+                id: 'WSL',
+                name: 'WSL',
                 symbolSize: 11,
                 value: 1
             },
@@ -945,15 +945,15 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'WSL',
-                name: 'WSL',
+                id: 'Canopen',
+                name: 'Canopen',
                 symbolSize: 11,
                 value: 1
             },
         
             {
-                id: 'Canopen',
-                name: 'Canopen',
+                id: 'Printer',
+                name: 'Printer',
                 symbolSize: 11,
                 value: 1
             },
@@ -972,20 +972,20 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'AI',
-                target: 'ClaudeCode',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
                 source: 'ESP32',
                 target: 'Micropython',
                 value: 1,
                 lineStyle: {
                     width: 1
+                }
+            },
+        
+            {
+                source: 'AI',
+                target: 'ClaudeCode',
+                value: 2,
+                lineStyle: {
+                    width: 2
                 }
             },
         
@@ -1035,15 +1035,6 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'AI',
-                target: 'OpenClaw',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
                 source: 'Openmv',
                 target: 'python',
                 value: 1,
@@ -1062,26 +1053,8 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'python',
-                target: 'Pytorch',
-                value: 7,
-                lineStyle: {
-                    width: 7
-                }
-            },
-        
-            {
-                source: 'python',
-                target: 'Pyqt5',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'Pytorch',
-                target: 'Pyqt5',
+                source: 'AI',
+                target: 'OpenClaw',
                 value: 1,
                 lineStyle: {
                     width: 1
@@ -1139,6 +1112,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 value: 2,
                 lineStyle: {
                     width: 2
+                }
+            },
+        
+            {
+                source: 'python',
+                target: 'Pytorch',
+                value: 7,
+                lineStyle: {
+                    width: 7
+                }
+            },
+        
+            {
+                source: 'python',
+                target: 'Pyqt5',
+                value: 1,
+                lineStyle: {
+                    width: 1
+                }
+            },
+        
+            {
+                source: 'Pytorch',
+                target: 'Pyqt5',
+                value: 1,
+                lineStyle: {
+                    width: 1
                 }
             },
         
@@ -1368,15 +1368,6 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'Solidworks',
-                target: 'Simulation',
-                value: 4,
-                lineStyle: {
-                    width: 4
-                }
-            },
-        
-            {
                 source: 'Linux',
                 target: 'WSL',
                 value: 1,
@@ -1391,6 +1382,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 value: 1,
                 lineStyle: {
                     width: 1
+                }
+            },
+        
+            {
+                source: 'Solidworks',
+                target: 'Simulation',
+                value: 4,
+                lineStyle: {
+                    width: 4
                 }
             },
         
