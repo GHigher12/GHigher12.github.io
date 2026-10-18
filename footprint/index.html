@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="/css/animate.min.css">
 
   
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css?v=20261018-memory.css">
 
   
   
@@ -601,150 +601,113 @@
 </header>
         <!-- 内容区域 -->
         
-
-<section class="footprint-dashboard" data-bamboo-page="footprint3d" data-amap-key="efd44563dbc891638a93dee5267405c7" data-amap-security="3846cca32b8101acafa198c204b3ceb8">
+<section class="footprint-dashboard" data-bamboo-page="footprint3d">
   <div class="footprint-backdrop" aria-hidden="true"></div>
-
-  <nav class="footprint-rail" aria-label="足迹功能">
-    <a href="#footprint-globe" class="is-active" title="地球"><i class="fas fa-globe-asia"></i><span>地球</span></a>
-    <button type="button" id="footprint-focus" title="查看全部足迹"><i class="fas fa-map-marker-alt"></i><span>足迹</span></button>
-    <button type="button" id="footprint-add" title="添加旅行照片"><i class="fas fa-images"></i><span>相册</span></button>
-    <a href="/love/" title="情侣旅行"><i class="fas fa-heart"></i><span>双人</span></a>
-  </nav>
-
   <div class="footprint-grid">
     <aside class="footprint-card footprint-summary">
-      <div class="footprint-card-title"><i class="fas fa-globe-asia"></i><strong>我的足迹</strong></div>
-      <div class="footprint-mini-world" aria-hidden="true"><i class="fas fa-globe"></i><span>18 个足迹点正在发光</span></div>
-      <div class="footprint-continent-list">
-        
-          <div><span class="continent-dot" style="--dot:#6ed5a8"></span><strong>亚洲</strong><em>18 个城市</em></div>
-        
-      </div>
+      <div class="footprint-card-title"><i class="fas fa-globe-asia"></i><h1>我的足迹</h1><button type="button" id="footprint-view-all">查看全部 <i class="fas fa-angle-right"></i></button></div>
+      <div class="footprint-mini-world"><i class="fas fa-map-marked-alt" aria-hidden="true"></i><div><strong>24</strong><b>个</b></div><p>足迹已点亮的城市</p></div>
+      <div class="footprint-selected-region"><i class="fas fa-map-marker-alt"></i><strong id="footprint-region-name">全部</strong><span id="footprint-region-count">24 个城市</span></div>
       <div class="footprint-city-block">
-        <strong class="footprint-city-title"><i class="fas fa-map-marker-alt"></i> 去过的城市</strong>
+        <h2><i class="fas fa-map"></i> 去过的城市</h2>
         <div class="footprint-city-list">
           
-            <button type="button" data-trip-id="zibo" title="查看 淄博 足迹"><span></span>淄博</button>
+            <button type="button" data-trip-id="zibo" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>淄博</button>
           
-            <button type="button" data-trip-id="shanghai" title="查看 上海 足迹"><span></span>上海</button>
+            <button type="button" data-trip-id="shanghai" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>上海</button>
           
-            <button type="button" data-trip-id="linyi" title="查看 临沂 足迹"><span></span>临沂</button>
+            <button type="button" data-trip-id="linyi" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>临沂</button>
           
-            <button type="button" data-trip-id="beijing" title="查看 北京 足迹"><span></span>北京</button>
+            <button type="button" data-trip-id="beijing" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>北京</button>
           
-            <button type="button" data-trip-id="tianjin" title="查看 天津 足迹"><span></span>天津</button>
+            <button type="button" data-trip-id="tianjin" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>天津</button>
           
-            <button type="button" data-trip-id="hongkong" title="查看 香港 足迹"><span></span>香港</button>
+            <button type="button" data-trip-id="hongkong" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>香港</button>
           
-            <button type="button" data-trip-id="guangzhou" title="查看 广州 足迹"><span></span>广州</button>
+            <button type="button" data-trip-id="guangzhou" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>广州</button>
           
-            <button type="button" data-trip-id="shenzhen" title="查看 深圳 足迹"><span></span>深圳</button>
+            <button type="button" data-trip-id="shenzhen" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>深圳</button>
           
-            <button type="button" data-trip-id="hangzhou" title="查看 杭州 足迹"><span></span>杭州</button>
+            <button type="button" data-trip-id="hangzhou" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>杭州</button>
           
-            <button type="button" data-trip-id="rizhao" title="查看 日照 足迹"><span></span>日照</button>
+            <button type="button" data-trip-id="rizhao" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>日照</button>
           
-            <button type="button" data-trip-id="weihai" title="查看 威海 足迹"><span></span>威海</button>
+            <button type="button" data-trip-id="weihai" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>威海</button>
           
-            <button type="button" data-trip-id="yantai" title="查看 烟台 足迹"><span></span>烟台</button>
+            <button type="button" data-trip-id="yantai" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>烟台</button>
           
-            <button type="button" data-trip-id="jinan" title="查看 济南 足迹"><span></span>济南</button>
+            <button type="button" data-trip-id="jinan" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>济南</button>
           
-            <button type="button" data-trip-id="langfang" title="查看 廊坊 足迹"><span></span>廊坊</button>
+            <button type="button" data-trip-id="langfang" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>廊坊</button>
           
-            <button type="button" data-trip-id="dezhou" title="查看 德州 足迹"><span></span>德州</button>
+            <button type="button" data-trip-id="dezhou" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>德州</button>
           
-            <button type="button" data-trip-id="qingdao" title="查看 青岛 足迹"><span></span>青岛</button>
+            <button type="button" data-trip-id="qingdao" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>青岛</button>
           
-            <button type="button" data-trip-id="shenyang" title="查看 沈阳 足迹"><span></span>沈阳</button>
+            <button type="button" data-trip-id="shenyang" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>沈阳</button>
           
-            <button type="button" data-trip-id="heze" title="查看 菏泽 足迹"><span></span>菏泽</button>
+            <button type="button" data-trip-id="heze" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>菏泽</button>
+          
+            <button type="button" data-trip-id="nanchang" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>南昌</button>
+          
+            <button type="button" data-trip-id="shangrao" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>上饶</button>
+          
+            <button type="button" data-trip-id="jingdezhen" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>景德镇</button>
+          
+            <button type="button" data-trip-id="jiujiang" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>九江</button>
+          
+            <button type="button" data-trip-id="wuhan" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>武汉</button>
+          
+            <button type="button" data-trip-id="shijiazhuang" data-region="亚洲" aria-pressed="false"><i class="fas fa-map-marker-alt"></i>石家庄</button>
           
         </div>
       </div>
-      <p class="footprint-note">足迹点亮世界的每一个角落</p>
+      <p class="footprint-note"><i class="fas fa-quote-left"></i> 足迹点亮世界的每一个角落</p>
     </aside>
-
     <main class="footprint-stage" id="footprint-globe">
-      <div id="travel-globe" aria-label="可旋转和缩放的三维旅行地球"></div>
-      <div class="footprint-stage-title">
-        <span>TRAVEL AROUND THE WORLD</span>
-        <h1>把走过的路，留在星球上</h1>
-      </div>
+      <div id="travel-globe" aria-label="可拖动旋转和缩放的三维旅行地球"></div>
       <div class="footprint-globe-controls">
-        <button type="button" id="globe-rotate" class="is-active" aria-pressed="true" title="自动旋转"><i class="fas fa-sync-alt"></i></button>
-        <button type="button" id="globe-reset" title="重置视角"><i class="fas fa-crosshairs"></i></button>
-        <button type="button" id="globe-zoom-in" title="放大"><i class="fas fa-search-plus"></i></button>
-        <button type="button" id="globe-zoom-out" title="缩小"><i class="fas fa-search-minus"></i></button>
+        <button type="button" id="globe-rotate" aria-pressed="false" title="自动旋转" aria-label="自动旋转"><i class="fas fa-sync-alt"></i></button>
+        <button type="button" id="globe-reset" title="重置视角" aria-label="重置视角"><i class="fas fa-crosshairs"></i></button>
+        <button type="button" id="globe-zoom-in" title="放大" aria-label="放大"><i class="fas fa-search-plus"></i></button>
+        <button type="button" id="globe-zoom-out" title="缩小" aria-label="缩小"><i class="fas fa-search-minus"></i></button>
       </div>
-      <p class="footprint-gesture"><i class="fas fa-hand-pointer"></i> 拖动旋转地球，滚轮或双指缩放</p>
+      <p class="footprint-gesture" id="footprint-selection" aria-live="polite">拖动旋转地球 · 滚轮或双指缩放</p>
     </main>
-
-    <aside class="footprint-side">
-      <section class="footprint-card footprint-data-card">
-        <div class="footprint-card-title"><i class="fas fa-chart-pie"></i><strong>旅行数据</strong></div>
-        <div class="footprint-data-grid">
-          <div><strong>1</strong><span>国家/地区</span></div>
-          <div><strong>18</strong><span>城市</span></div>
-          <div><strong>待统计</strong><span>旅行天数</span></div>
-        </div>
-      </section>
-      <section class="footprint-card footprint-stories">
-        <div class="footprint-card-title"><i class="fas fa-book-open"></i><strong>最近旅行故事</strong><button type="button" id="footprint-view-all">查看全部</button></div>
-        <div class="footprint-story-list" id="footprint-story-list">
-          
-          
-            <div class="footprint-photo-placeholder"><i class="fas fa-image"></i><strong>照片位置已预留</strong><span>上传旅行照片后，会自动显示在对应城市</span></div>
-          
-        </div>
-      </section>
+    <aside class="footprint-card footprint-regions">
+      <div class="footprint-card-title"><i class="fas fa-chart-bar"></i><h2>地区统计</h2></div>
+      <div class="footprint-region-list">
+        
+          <button type="button" data-filter-region="亚洲" style="--region-color:#ff8896" aria-pressed="false">
+            <i class="fas fa-map-marker-alt"></i><span><strong>亚洲</strong><em>24 个城市 <i class="fas fa-angle-right"></i></em><progress max="24" value="24" aria-label="亚洲城市占比"></progress></span>
+          </button>
+        
+          <button type="button" data-filter-region="欧洲" style="--region-color:#36b3ef" aria-pressed="false">
+            <i class="fas fa-map-marker-alt"></i><span><strong>欧洲</strong><em>0 个城市 <i class="fas fa-angle-right"></i></em><progress max="24" value="0" aria-label="欧洲城市占比"></progress></span>
+          </button>
+        
+          <button type="button" data-filter-region="北美洲" style="--region-color:#27c98a" aria-pressed="false">
+            <i class="fas fa-map-marker-alt"></i><span><strong>北美洲</strong><em>0 个城市 <i class="fas fa-angle-right"></i></em><progress max="24" value="0" aria-label="北美洲城市占比"></progress></span>
+          </button>
+        
+          <button type="button" data-filter-region="大洋洲" style="--region-color:#ffbc67" aria-pressed="false">
+            <i class="fas fa-map-marker-alt"></i><span><strong>大洋洲</strong><em>0 个城市 <i class="fas fa-angle-right"></i></em><progress max="24" value="0" aria-label="大洋洲城市占比"></progress></span>
+          </button>
+        
+          <button type="button" data-filter-region="其他地区" style="--region-color:#a36aee" aria-pressed="false">
+            <i class="fas fa-map-marker-alt"></i><span><strong>其他地区</strong><em>0 个城市 <i class="fas fa-angle-right"></i></em><progress max="24" value="0" aria-label="其他地区城市占比"></progress></span>
+          </button>
+        
+      </div>
+      <div class="footprint-overview"><h2><i class="fas fa-globe-asia"></i> 总览</h2><div class="footprint-data-grid">
+        <div><strong>1</strong><span>国家/地区</span></div>
+        <div><strong>24</strong><span>城市</span></div>
+        <div><strong>1</strong><span>大洲/地区</span></div>
+      </div></div>
     </aside>
   </div>
-
-  <footer class="footprint-metrics">
-    <div><i class="fas fa-plane"></i><span><small>总里程</small><strong>待统计</strong></span></div>
-    <div><i class="fas fa-shoe-prints"></i><span><small>足迹点</small><strong id="footprint-count">18 个</strong></span></div>
-    <div><i class="fas fa-map"></i><span><small>国家/地区</small><strong>1 个</strong></span></div>
-    <div><i class="fas fa-camera"></i><span><small>照片</small><strong id="footprint-photo-count">0 张</strong></span></div>
-    <div><i class="fas fa-calendar-alt"></i><span><small>旅行天数</small><strong>待统计 天</strong></span></div>
-    <div><i class="fas fa-heart"></i><span><small>最爱的地方</small><strong>待发现</strong></span></div>
-  </footer>
-
-  <aside class="footprint-detail" id="footprint-detail" aria-live="polite" aria-hidden="true">
-    <button type="button" class="footprint-detail-close" id="footprint-detail-close" aria-label="关闭"><i class="fas fa-times"></i></button>
-    " class="lazyload placeholder" data-srcset="" srcset="https://ghigher-picture-bed.oss-cn-qingdao.aliyuncs.com/img_for_typora/ccc8fe0b96d1c40e3fc24ccbd984dff0.gif<img id="footprint-detail-image" src="" alt="">
-    <div>
-      <small id="footprint-detail-date"></small>
-      <h2 id="footprint-detail-title"></h2>
-      <p id="footprint-detail-story"></p>
-      <span id="footprint-detail-location"></span>
-    </div>
-  </aside>
-
-  <dialog class="footprint-dialog" id="footprint-dialog">
-    <form method="dialog" id="footprint-form">
-      <button type="button" class="dialog-close" data-dialog-close aria-label="关闭"><i class="fas fa-times"></i></button>
-      <p class="panel-eyebrow">ADD A NEW MEMORY</p>
-      <h2>添加旅行照片</h2>
-      <p class="dialog-help">选择照片后会尝试读取 GPS；没有位置信息时可以手动填写经纬度。</p>
-      <label>旅行照片<input type="file" name="photo" accept="image/*" required></label>
-      <div class="form-row">
-        <label>城市<input name="city" required placeholder="例如：青岛"></label>
-        <label>旅行日期<input name="date" type="date" required></label>
-      </div>
-      <div class="form-row">
-        <label>纬度<input name="lat" type="number" step="any" required placeholder="36.067"></label>
-        <label>经度<input name="lng" type="number" step="any" required placeholder="120.382"></label>
-      </div>
-      <label>旅行故事<textarea name="story" rows="3" placeholder="写下一段值得记住的故事"></textarea></label>
-      <p class="gps-status" id="footprint-gps-status"></p>
-      <button class="dialog-primary" type="submit"><i class="fas fa-map-pin"></i> 保存足迹</button>
-    </form>
-  </dialog>
-
-  <p class="footprint-page-error" data-page-error></p>
-  <script id="footprint3d-data" type="application/json">{"trips":[{"id":"zibo","city":"淄博","country":"中国","date":"","title":"淄博","story":"","photo":"","lat":36.82,"lng":118.05},{"id":"shanghai","city":"上海","country":"中国","date":"","title":"上海","story":"","photo":"","lat":31.23,"lng":121.49},{"id":"linyi","city":"临沂","country":"中国","date":"","title":"临沂","story":"","photo":"","lat":35.1,"lng":118.35},{"id":"beijing","city":"北京","country":"中国","date":"","title":"北京","story":"","photo":"","lat":39.91,"lng":116.4},{"id":"tianjin","city":"天津","country":"中国","date":"","title":"天津","story":"","photo":"","lat":39.1,"lng":117.2},{"id":"hongkong","city":"香港","country":"中国","date":"","title":"香港","story":"","photo":"","lat":22.28,"lng":114.17},{"id":"guangzhou","city":"广州","country":"中国","date":"","title":"广州","story":"","photo":"","lat":23.11,"lng":113.3},{"id":"shenzhen","city":"深圳","country":"中国","date":"","title":"深圳","story":"","photo":"","lat":22.54,"lng":114.06},{"id":"hangzhou","city":"杭州","country":"中国","date":"","title":"杭州","story":"","photo":"","lat":30.2,"lng":120.21},{"id":"rizhao","city":"日照","country":"中国","date":"","title":"日照","story":"","photo":"","lat":35.42,"lng":119.53},{"id":"weihai","city":"威海","country":"中国","date":"","title":"威海","story":"","photo":"","lat":37.51,"lng":122.12},{"id":"yantai","city":"烟台","country":"中国","date":"","title":"烟台","story":"","photo":"","lat":37.46,"lng":121.45},{"id":"jinan","city":"济南","country":"中国","date":"","title":"济南","story":"","photo":"","lat":36.67,"lng":117},{"id":"langfang","city":"廊坊","country":"中国","date":"","title":"廊坊","story":"","photo":"","lat":39.54,"lng":116.68},{"id":"dezhou","city":"德州","country":"中国","date":"","title":"德州","story":"","photo":"","lat":37.44,"lng":116.36},{"id":"qingdao","city":"青岛","country":"中国","date":"","title":"青岛","story":"","photo":"","lat":36.07,"lng":120.38},{"id":"shenyang","city":"沈阳","country":"中国","date":"","title":"沈阳","story":"","photo":"","lat":41.8,"lng":123.43},{"id":"heze","city":"菏泽","country":"中国","date":"","title":"菏泽","story":"","photo":"","lat":34.83,"lng":115.54}],"routes":[]}</script>
+  <p class="footprint-page-error" data-page-error role="status"></p>
+  <script id="footprint3d-data" type="application/json">{"trips":[{"id":"zibo","city":"淄博","country":"中国","lat":36.82,"lng":118.05,"continent":"亚洲"},{"id":"shanghai","city":"上海","country":"中国","lat":31.23,"lng":121.49,"continent":"亚洲"},{"id":"linyi","city":"临沂","country":"中国","lat":35.1,"lng":118.35,"continent":"亚洲"},{"id":"beijing","city":"北京","country":"中国","lat":39.91,"lng":116.4,"continent":"亚洲"},{"id":"tianjin","city":"天津","country":"中国","lat":39.1,"lng":117.2,"continent":"亚洲"},{"id":"hongkong","city":"香港","country":"中国","lat":22.28,"lng":114.17,"continent":"亚洲"},{"id":"guangzhou","city":"广州","country":"中国","lat":23.11,"lng":113.3,"continent":"亚洲"},{"id":"shenzhen","city":"深圳","country":"中国","lat":22.54,"lng":114.06,"continent":"亚洲"},{"id":"hangzhou","city":"杭州","country":"中国","lat":30.2,"lng":120.21,"continent":"亚洲"},{"id":"rizhao","city":"日照","country":"中国","lat":35.42,"lng":119.53,"continent":"亚洲"},{"id":"weihai","city":"威海","country":"中国","lat":37.51,"lng":122.12,"continent":"亚洲"},{"id":"yantai","city":"烟台","country":"中国","lat":37.46,"lng":121.45,"continent":"亚洲"},{"id":"jinan","city":"济南","country":"中国","lat":36.67,"lng":117,"continent":"亚洲"},{"id":"langfang","city":"廊坊","country":"中国","lat":39.54,"lng":116.68,"continent":"亚洲"},{"id":"dezhou","city":"德州","country":"中国","lat":37.44,"lng":116.36,"continent":"亚洲"},{"id":"qingdao","city":"青岛","country":"中国","lat":36.07,"lng":120.38,"continent":"亚洲"},{"id":"shenyang","city":"沈阳","country":"中国","lat":41.8,"lng":123.43,"continent":"亚洲"},{"id":"heze","city":"菏泽","country":"中国","lat":34.83,"lng":115.54,"continent":"亚洲"},{"id":"nanchang","city":"南昌","country":"中国","continent":"亚洲"},{"id":"shangrao","city":"上饶","country":"中国","continent":"亚洲"},{"id":"jingdezhen","city":"景德镇","country":"中国","continent":"亚洲"},{"id":"jiujiang","city":"九江","country":"中国","continent":"亚洲"},{"id":"wuhan","city":"武汉","country":"中国","continent":"亚洲"},{"id":"shijiazhuang","city":"石家庄","country":"中国","continent":"亚洲"}],"regions":[{"name":"亚洲","color":"#ff8896","count":24},{"name":"欧洲","color":"#36b3ef","count":0},{"name":"北美洲","color":"#27c98a","count":0},{"name":"大洋洲","color":"#ffbc67","count":0},{"name":"南美洲","color":"#eb8c65","count":0},{"name":"非洲","color":"#dfb540","count":0},{"name":"其他地区","color":"#a36aee","count":0}]}</script>
 </section>
 
       </main>
@@ -1085,10 +1048,10 @@
 
     <script src="/js/utils/index.js"></script>
     <script src="/js/app.js"></script>
-    <script src="/js/pages/runtime.js"></script>
+    <script src="/js/pages/runtime.js?v=20261018-memory"></script>
     <script src="/js/pages/graph3d.js"></script>
-    <script src="/js/pages/footprint3d.js"></script>
-    <script src="/js/pages/love-space.js"></script>
+    <script src="/js/pages/footprint3d.js?v=20261018-memory"></script>
+    <script src="/js/pages/love-space.js?v=20261018-memory"></script>
     
     <!-- 文章目录所需js -->
 <!-- <link href="/js/tocbot/tocbot.css" rel="stylesheet">

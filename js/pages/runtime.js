@@ -4,6 +4,9 @@
   var registry = {};
   var activeName = null;
   var activeCleanup = null;
+  var activeRoot = null;
+  var mounting = false;
+  var mountGeneration = 0;
   var loadingScripts = {};
 
   function loadScript(src, globalName) {
@@ -34,11 +37,14 @@
   }
 
   function unmount() {
+    mountGeneration += 1;
     if (typeof activeCleanup === 'function') {
       try { activeCleanup(); } catch (error) { console.warn('[BambooPage] cleanup failed', error); }
     }
     activeCleanup = null;
     activeName = null;
+    activeRoot = null;
+    mounting = false;
   }
 
   function syncHeaderOffset() {
@@ -55,15 +61,23 @@
     }
 
     var name = root.getAttribute('data-bamboo-page');
-    if (activeName === name && activeCleanup) return;
+    if (activeName === name && activeRoot === root && (activeCleanup || mounting)) return;
     unmount();
     activeName = name;
+    activeRoot = root;
 
     if (!registry[name]) return;
+    mounting = true;
+    var generation = mountGeneration;
     Promise.resolve(registry[name](root)).then(function (cleanup) {
-      if (activeName === name) activeCleanup = typeof cleanup === 'function' ? cleanup : function () {};
+      if (mountGeneration === generation && activeRoot === root) {
+        mounting = false;
+        activeCleanup = typeof cleanup === 'function' ? cleanup : function () {};
+      }
       else if (typeof cleanup === 'function') cleanup();
     }).catch(function (error) {
+      if (mountGeneration !== generation || activeRoot !== root) return;
+      mounting = false;
       console.error('[BambooPage] mount failed', error);
       root.classList.add('page-load-error');
       var message = root.querySelector('[data-page-error]');

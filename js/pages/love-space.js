@@ -178,13 +178,21 @@
       root.querySelector('#love-stat-tasks').textContent = completed + ' / 100';
       root.querySelector('#dashboard-task-progress').textContent = '已完成 ' + completed + '/100';
       root.querySelector('#dashboard-task-bar').style.width = Math.min(100, completed) + '%';
+      root.querySelector('#dashboard-task-percent').textContent = Math.min(100, completed) + '%';
 
       root.querySelector('#dashboard-task-list').innerHTML = state.tasks.slice(0, 4).map(taskCard).join('');
       root.querySelector('#dashboard-trip-strip').innerHTML = state.trips.slice(0, 4).map(function (trip) {
         var photo = tripLandmarkPhoto(trip);
         return '<button type="button" data-photo="' + escapeHtml(photo) + '" data-caption="' + escapeHtml(trip.city + ' · ' + trip.date) + '"><img src="' + escapeHtml(photo) + '" alt="' + escapeHtml(trip.city) + '标志性景点"><span><strong>' + escapeHtml(trip.city) + '</strong><small>' + escapeHtml(trip.date) + '</small></span></button>';
       }).join('');
-      root.querySelector('#dashboard-photo-grid').innerHTML = state.media.slice(0, 5).map(photoCard).join('');
+      if (state.trips.length) {
+        var tripCover = root.querySelector('#love-trip-cover-image');
+        tripCover.removeAttribute('srcset');
+        tripCover.src = tripLandmarkPhoto(state.trips[0]);
+      }
+      root.querySelector('#dashboard-photo-grid').innerHTML = state.media.slice(0, 2).map(function (item) {
+        return '<button type="button" data-photo="' + escapeHtml(item.url) + '" data-caption="' + escapeHtml(item.caption || '我们的回忆') + '"><img src="' + escapeHtml(item.url) + '" alt="' + escapeHtml(item.caption || '我们的回忆') + '"><span><strong><i class="fas fa-map-marker-alt"></i> ' + escapeHtml(item.caption || '我们的回忆') + '</strong><small>' + escapeHtml([item.place, item.date].filter(Boolean).join(' · ') || '一起收藏的美好时刻') + '</small></span></button>';
+      }).join('');
       root.querySelector('#dashboard-timeline-list').innerHTML = state.timeline.slice().reverse().map(function (item) {
         return '<article><i></i><div><small>' + escapeHtml(item.date) + '</small><strong>' + escapeHtml(item.title) + '</strong><p>' + escapeHtml(item.text) + '</p></div><img src="' + escapeHtml(item.photo || '/medias/love/couple-sunset.png') + '" alt="' + escapeHtml(item.title) + '"></article>';
       }).join('');
@@ -252,12 +260,13 @@
         var done = state.tasks.filter(function (item) { return item.done; }).length;
         html = '<div class="love-section-summary"><div><span>共同进度</span><strong>' + done + ' / 100</strong></div><div class="love-progress"><span style="width:' + done + '%"></span></div></div><div class="love-task-grid">' + tasks.map(taskManageCard).join('') + '</div>';
       } else if (section === 'trips') {
-        var trips = state.trips.filter(function (item) { return !query || item.city.toLowerCase().indexOf(query) !== -1 || item.story.toLowerCase().indexOf(query) !== -1; });
-        html = '<div class="love-travel-layout"><div class="love-map love-map-large" id="love-trips-map"><span><i class="fas fa-map-marked-alt"></i> 正在加载旅行地图</span></div><div class="love-trip-cards">' + trips.map(function (trip) {
+        var trips = state.trips.filter(function (item) { return !query || item.city.toLowerCase().indexOf(query) !== -1 || (item.story || '').toLowerCase().indexOf(query) !== -1; });
+        var unresolved = trips.filter(function (trip) { return !hasValidCoordinates(trip); }).length;
+        html = (unresolved ? '<div class="love-map-status" role="status">还有 ' + unresolved + ' 个地点待定位；地图只显示已确认坐标。<button type="button" data-retry-geocode>重新定位</button></div>' : '') + '<div class="love-travel-layout"><div class="love-map love-map-large" id="love-trips-map"><span><i class="fas fa-map-marked-alt"></i> 正在加载旅行地图</span></div><div class="love-trip-cards">' + trips.map(function (trip) {
           var coordinateCopy = hasValidCoordinates(trip)
             ? Number(trip.lat).toFixed(3) + ', ' + Number(trip.lng).toFixed(3)
             : (trip._geocodeFailed ? '高德暂未定位到该地点' : '正在通过高德地图定位…');
-          return '<article><img src="' + escapeHtml(tripLandmarkPhoto(trip)) + '" alt="' + escapeHtml(trip.city) + '标志性景点"><div><small>' + escapeHtml(trip.date) + '</small><h3>' + escapeHtml(trip.city) + '</h3><p>' + escapeHtml(trip.story) + '</p><span><i class="fas fa-map-marker-alt"></i> ' + coordinateCopy + '</span></div></article>';
+          return '<article><button type="button" class="love-trip-focus" data-focus-trip="' + escapeHtml(trip.id) + '" aria-label="在地图上查看' + escapeHtml(trip.city) + '"><img src="' + escapeHtml(tripLandmarkPhoto(trip)) + '" alt="' + escapeHtml(trip.city) + '标志性景点"><div><small>' + escapeHtml(trip.date) + '</small><h3>' + escapeHtml(trip.city) + '</h3><p>' + escapeHtml(trip.story) + '</p><span><i class="fas fa-map-marker-alt"></i> ' + coordinateCopy + '</span></div></button></article>';
         }).join('') + '</div></div>';
       } else if (section === 'album') {
         var media = state.media.filter(function (item) { return !query || (item.caption || '').toLowerCase().indexOf(query) !== -1 || (item.place || '').toLowerCase().indexOf(query) !== -1; });
@@ -269,8 +278,9 @@
       } else if (section === 'settings') {
         html = '<form class="love-settings-form" id="love-settings-form"><div class="love-settings-card"><h2>重要日期</h2><label>恋爱开始日期<input type="date" name="startDate" value="' + escapeHtml(state.profile.startDate) + '"></label><label>相识日期<input type="date" name="metDate" value="' + escapeHtml(state.profile.metDate) + '"></label><button type="submit" class="love-primary-button">保存设置</button></div><div class="love-settings-card"><h2>隐私与数据</h2><p>当前预览数据保存在本机浏览器中，不会上传到博客静态文件。</p><button type="button" data-export-love><i class="fas fa-download"></i> 导出备份</button><button type="button" data-reset-love class="danger"><i class="fas fa-trash-alt"></i> 恢复示例数据</button></div></form>';
       }
+      destroyMaps();
       sectionContent.innerHTML = html || '<div class="love-empty">还没有记录，点击右上角添加第一条。</div>';
-      if (section === 'trips') requestAnimationFrame(function () { initMap('love-trips-map', state.trips); });
+      if (section === 'trips') requestAnimationFrame(function () { initMap('love-trips-map', trips); });
     }
 
     function showHome() {
@@ -286,6 +296,7 @@
     function activateSection(section) {
       nav.querySelectorAll('[data-love-section]').forEach(function (button) { button.classList.toggle('is-active', button.dataset.loveSection === section); });
       sectionSearch.value = '';
+      destroyMaps();
       if (section === 'home') showHome();
       else {
         renderSection(section);
@@ -347,8 +358,8 @@
           recordForm.elements.lat.value = gps.latitude.toFixed(6);
           recordForm.elements.lng.value = gps.longitude.toFixed(6);
           status.textContent = '已读取照片位置。';
-        } else status.textContent = '照片没有 GPS，请手动填写。';
-      } catch (error) { status.textContent = '未能读取 GPS，请手动填写。'; }
+        } else status.textContent = '照片没有 GPS，将根据填写的城市自动定位。';
+      } catch (error) { status.textContent = '未能读取 GPS，将根据填写的城市自动定位。'; }
     }
 
     async function loadAMapApi() {
@@ -356,7 +367,10 @@
       var key = root.dataset.amapKey;
       if (!key) throw new Error('未配置高德地图 Key');
       window._AMapSecurityConfig = { securityJsCode: root.dataset.amapSecurity || '' };
-      await window.BambooPageRuntime.loadScript('https://webapi.amap.com/maps?v=2.0&key=' + encodeURIComponent(key), 'AMap');
+      await Promise.race([
+        window.BambooPageRuntime.loadScript('https://webapi.amap.com/maps?v=2.0&key=' + encodeURIComponent(key) + '&plugin=AMap.Geocoder,AMap.DistrictSearch', 'AMap'),
+        new Promise(function (_, reject) { window.setTimeout(function () { reject(new Error('高德地图加载超时')); }, 10000); })
+      ]);
       return window.AMap;
     }
 
@@ -368,45 +382,84 @@
       return isFinite(lat) && isFinite(lng) && lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180;
     }
 
-    function loadAMapGeocoder(AMap) {
-      return new Promise(function (resolve, reject) {
-        var settled = false;
-        var timer = window.setTimeout(function () {
-          if (!settled) { settled = true; reject(new Error('高德地理编码组件加载超时')); }
-        }, 8000);
-        try {
-          AMap.plugin('AMap.Geocoder', function () {
-            if (settled) return;
-            settled = true;
-            window.clearTimeout(timer);
-            resolve(new AMap.Geocoder({ city: '全国' }));
+    var coordinateCache = {};
+    var locatorPromise = null;
+    var cityIndexPromise = null;
+    var disposed = false;
+    try { coordinateCache = JSON.parse(localStorage.getItem('bambooCityCoordinates:v1') || '{}'); } catch (error) {}
+
+    function loadCityLocator() {
+      if (!locatorPromise) {
+        locatorPromise = loadAMapApi().then(function (AMap) {
+          return new Promise(function (resolve, reject) {
+            var timer = window.setTimeout(function () { reject(new Error('高德定位组件加载超时')); }, 8000);
+            function ready() {
+              window.clearTimeout(timer);
+              try { resolve({ geocoder: new AMap.Geocoder({ city: '全国' }), district: new AMap.DistrictSearch({ level: 'city', subdistrict: 0, extensions: 'base' }) }); }
+              catch (error) { reject(error); }
+            }
+            if (AMap.Geocoder && AMap.DistrictSearch) ready();
+            else AMap.plugin(['AMap.Geocoder', 'AMap.DistrictSearch'], ready);
           });
-        } catch (error) {
+        }).catch(function (error) { locatorPromise = null; throw error; });
+      }
+      return locatorPromise;
+    }
+
+    function locationRequest(service, method, address, pick) {
+      return new Promise(function (resolve) {
+        var settled = false;
+        function finish(value) {
+          if (settled) return;
+          settled = true;
           window.clearTimeout(timer);
-          reject(error);
+          resolve(value);
         }
+        var timer = window.setTimeout(function () { finish(null); }, 6000);
+        try {
+          service[method](address, function (status, result) {
+            if (status !== 'complete') console.warn('高德地点查询失败', address, status, result && (result.info || result.message || result));
+            finish(status === 'complete' && result ? pick(result) : null);
+          });
+        } catch (error) { finish(null); }
       });
     }
 
-    function geocodeAddress(geocoder, address) {
-      return new Promise(function (resolve) {
-        var settled = false;
-        var timer = window.setTimeout(function () {
-          if (!settled) { settled = true; resolve(null); }
-        }, 2500);
-        try {
-          geocoder.getLocation(address, function (resultStatus, result) {
-            if (settled) return;
-            settled = true;
-            window.clearTimeout(timer);
-            var geocode = resultStatus === 'complete' && result && result.geocodes && result.geocodes[0];
-            resolve(geocode && geocode.location ? geocode : null);
-          });
-        } catch (error) {
-          window.clearTimeout(timer);
-          resolve(null);
-        }
+    async function locateCity(address) {
+      address = String(address || '').trim();
+      if (!address) return null;
+      if (hasValidCoordinates(coordinateCache[address])) return coordinateCache[address];
+      if (!cityIndexPromise) {
+        cityIndexPromise = fetch('/js/data/amap-city-centers.json').then(function (response) {
+          if (!response.ok) throw new Error('城市缓存加载失败');
+          return response.json();
+        }).then(function (data) { return data.cities || {}; }).catch(function () { cityIndexPromise = null; return {}; });
+      }
+      var cityIndex = await cityIndexPromise;
+      var cityName = Object.keys(cityIndex).find(function (name) {
+        return name === address || name.replace(/(市|地区|特别行政区)$/u, '') === address;
       });
+      if (cityName) return cityIndex[cityName];
+      var locator = await loadCityLocator();
+      var match = await locationRequest(locator.geocoder, 'getLocation', address, function (result) {
+        var item = result.geocodes && result.geocodes[0];
+        return item && item.location;
+      });
+      if (!match) {
+        match = await locationRequest(locator.district, 'search', address, function (result) {
+          var normalized = address.replace(/(市|地区|特别行政区)$/u, '');
+          var district = (result.districtList || []).find(function (item) {
+            return String(item.name).replace(/(市|地区|特别行政区)$/u, '') === normalized;
+          });
+          return district && district.center;
+        });
+      }
+      if (!match) return null;
+      var point = { lat: Number(match.lat), lng: Number(match.lng) };
+      if (!hasValidCoordinates(point)) return null;
+      coordinateCache[address] = point;
+      try { localStorage.setItem('bambooCityCoordinates:v1', JSON.stringify(coordinateCache)); } catch (error) {}
+      return point;
     }
 
     async function geocodeDialogCity() {
@@ -414,76 +467,54 @@
       var cityInput = recordForm.elements.city;
       var status = dialogFields.querySelector('[data-love-gps]');
       var address = cityInput && cityInput.value.trim();
-      if (!address || !status) return;
       var requestId = ++geocodeRequestId;
-      status.textContent = '正在根据地点获取经纬度…';
+      recordForm.elements.lat.value = '';
+      recordForm.elements.lng.value = '';
+      if (!address || !status) return;
+      status.textContent = '正在通过高德地图定位…';
       try {
-        var AMap = await loadAMapApi();
-        AMap.plugin('AMap.Geocoder', function () {
-          var geocoder = new AMap.Geocoder({ city: '全国' });
-          geocoder.getLocation(address, function (resultStatus, result) {
-            if (requestId !== geocodeRequestId) return;
-            var geocode = resultStatus === 'complete' && result.geocodes && result.geocodes[0];
-            if (!geocode || !geocode.location) {
-              status.textContent = '没有找到该地点，请输入更完整的城市或景点名称。';
-              return;
-            }
-            recordForm.elements.lng.value = Number(geocode.location.lng).toFixed(6);
-            recordForm.elements.lat.value = Number(geocode.location.lat).toFixed(6);
-            status.textContent = '已定位：' + (geocode.formattedAddress || address) + '，坐标仍可手动修改。';
-          });
-        });
+        var point = await locateCity(address);
+        if (requestId !== geocodeRequestId || !status.isConnected) return;
+        if (!point) { status.textContent = '没有找到该地点，请输入完整城市或景点名称后重试。'; return; }
+        recordForm.elements.lat.value = point.lat;
+        recordForm.elements.lng.value = point.lng;
+        status.textContent = '已定位：' + address + '（' + point.lat.toFixed(4) + ', ' + point.lng.toFixed(4) + '）';
       } catch (error) {
-        if (requestId === geocodeRequestId) status.textContent = '自动定位失败，请检查网络或手动填写经纬度。';
+        if (requestId === geocodeRequestId) status.textContent = '高德定位暂不可用，请检查网络及地图 Key 配置后重试。';
       }
     }
 
     async function resolveTripCoordinates(trips) {
-      var missing = (trips || []).filter(function (trip) {
-        return !hasValidCoordinates(trip);
-      });
-      if (!missing.length) return 0;
-      try {
-        var AMap = await loadAMapApi();
-        var geocoder = await loadAMapGeocoder(AMap);
-        var results = await Promise.all(missing.map(function (trip) { return geocodeAddress(geocoder, trip.city); }));
-        var resolvedCount = 0;
-        results.forEach(function (geocode, index) {
-          var trip = missing[index];
-          var normalizedCity = String(trip.city || '').trim().replace(/(市|地区|特别行政区)$/u, '');
-          var fallback = knownCityCoordinates[normalizedCity];
-          trip._geocodeFailed = !geocode && !fallback;
-          if (geocode) {
-            trip.lng = Number(geocode.location.lng);
-            trip.lat = Number(geocode.location.lat);
-          } else if (fallback) {
-            trip.lat = fallback[0];
-            trip.lng = fallback[1];
-          } else return;
-          delete trip._geocodeFailed;
-          resolvedCount += 1;
-        });
-        return resolvedCount;
-      } catch (error) {
-        console.warn('小窝旅行地点自动定位失败', error);
-        return 0;
+      var missing = (trips || []).filter(function (trip) { return !hasValidCoordinates(trip); });
+      var next = 0;
+      var resolvedCount = 0;
+      async function worker() {
+        while (next < missing.length && !disposed) {
+          var trip = missing[next++];
+          try {
+            var point = await locateCity(trip.city);
+            if (!point) { trip._geocodeFailed = true; continue; }
+            trip.lat = point.lat;
+            trip.lng = point.lng;
+            delete trip._geocodeFailed;
+            resolvedCount++;
+          } catch (error) { trip._geocodeFailed = true; console.warn('高德定位服务不可用', error.message); }
+        }
       }
+      await Promise.all([worker(), worker()]);
+      return resolvedCount;
     }
 
     function refreshTripCoordinates() {
-      if (!tripCoordinatePromise) {
-        tripCoordinatePromise = resolveTripCoordinates(state.trips).then(function (resolvedCount) {
-          if (resolvedCount > 0) saveState();
-          return resolvedCount;
-        }).finally(function () { tripCoordinatePromise = null; });
-      }
-      return tripCoordinatePromise.then(function (resolvedCount) {
-        destroyMaps();
+      if (tripCoordinatePromise) return tripCoordinatePromise;
+      tripCoordinatePromise = resolveTripCoordinates(state.trips).then(function (resolvedCount) {
+        if (disposed) return resolvedCount;
+        if (resolvedCount > 0) saveState();
         updateDashboard();
         if (currentSection === 'trips') renderSection('trips', sectionSearch.value);
-        else if (currentSection === 'home') requestAnimationFrame(function () { initMap('love-dashboard-map', state.trips); });
         return resolvedCount;
-      });
+      }).finally(function () { tripCoordinatePromise = null; });
+      return tripCoordinatePromise;
     }
 
     function imageToDataUrl(file) {
@@ -726,6 +757,17 @@
       if (navButton) return activateSection(navButton.dataset.loveSection);
       var openSection = event.target.closest('[data-open-section]');
       if (openSection) return activateSection(openSection.dataset.openSection);
+      var retry = event.target.closest('[data-retry-geocode]');
+      if (retry) { retry.disabled = true; retry.textContent = '正在定位…'; return refreshTripCoordinates(); }
+      var tripButton = event.target.closest('[data-focus-trip]');
+      if (tripButton) {
+        var selectedTrip = state.trips.find(function (item) { return item.id === tripButton.dataset.focusTrip; });
+        if (selectedTrip && hasValidCoordinates(selectedTrip) && maps.length) {
+          maps[maps.length - 1].setZoomAndCenter(10, [selectedTrip.lng, selectedTrip.lat]);
+          root.querySelectorAll('[data-focus-trip]').forEach(function (button) { button.classList.toggle('is-active', button === tripButton); });
+        }
+        return;
+      }
       var addType = event.target.closest('[data-add-type]');
       if (addType) return openDialog(addType.dataset.addType);
       var taskEmoji = event.target.closest('[data-task-emoji]');
@@ -774,14 +816,15 @@
       element.dataset.mapReady = 'true';
       window._AMapSecurityConfig = { securityJsCode: root.dataset.amapSecurity || '' };
       try {
-        await window.BambooPageRuntime.loadScript('https://webapi.amap.com/maps?v=2.0&key=' + encodeURIComponent(key), 'AMap');
+        await loadAMapApi();
+        if (disposed || !element.isConnected) return;
         element.innerHTML = '';
         var map = new window.AMap.Map(element, { zoom: id === 'love-dashboard-map' ? 3.7 : 4.3, center: [105, 35], resizeEnable: true, mapStyle: document.body.classList.contains('darkModel') ? 'amap://styles/darkblue' : 'amap://styles/whitesmoke' });
         maps.push(map);
         trips.filter(function (trip) {
           return hasValidCoordinates(trip);
         }).forEach(function (trip) {
-          var marker = new window.AMap.Marker({ position: [trip.lng, trip.lat], title: trip.city, anchor: 'bottom-center' });
+          var marker = new window.AMap.Marker({ position: [trip.lng, trip.lat], title: trip.city, anchor: 'bottom-center', label: { content: escapeHtml(trip.city), direction: 'top' } });
           marker.setMap(map);
         });
         if (trips.some(hasValidCoordinates)) map.setFitView();
@@ -890,6 +933,7 @@
     else { lockView.hidden = false; app.hidden = true; }
 
     return function () {
+      disposed = true;
       destroyMaps();
       if (elapsedTimer) window.clearInterval(elapsedTimer);
       lockForm.removeEventListener('submit', unlock);

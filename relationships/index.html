@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="/css/animate.min.css">
 
   
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css?v=20261018-memory.css">
 
   
   
@@ -714,6 +714,20 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                id: 'CMake',
+                name: 'CMake',
+                symbolSize: 12,
+                value: 2
+            },
+        
+            {
+                id: 'ClaudeCode',
+                name: 'ClaudeCode',
+                symbolSize: 12,
+                value: 2
+            },
+        
+            {
                 id: 'ESP32',
                 name: 'ESP32',
                 symbolSize: 11,
@@ -735,10 +749,10 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'ClaudeCode',
-                name: 'ClaudeCode',
-                symbolSize: 12,
-                value: 2
+                id: 'hexo',
+                name: 'hexo',
+                symbolSize: 14,
+                value: 5
             },
         
             {
@@ -770,13 +784,6 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'CMake',
-                name: 'CMake',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
                 id: 'Matlab',
                 name: 'Matlab',
                 symbolSize: 14,
@@ -788,6 +795,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Obsidian',
                 symbolSize: 13,
                 value: 3
+            },
+        
+            {
+                id: 'OpenClaw',
+                name: 'OpenClaw',
+                symbolSize: 11,
+                value: 1
             },
         
             {
@@ -812,31 +826,10 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                id: 'OpenClaw',
-                name: 'OpenClaw',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
                 id: 'ROS2',
                 name: 'ROS2',
                 symbolSize: 13,
                 value: 3
-            },
-        
-            {
-                id: 'RS485',
-                name: 'RS485',
-                symbolSize: 12,
-                value: 2
-            },
-        
-            {
-                id: 'Modbus',
-                name: 'Modbus',
-                symbolSize: 12,
-                value: 2
             },
         
             {
@@ -851,6 +844,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Pyqt5',
                 symbolSize: 11,
                 value: 1
+            },
+        
+            {
+                id: 'RS485',
+                name: 'RS485',
+                symbolSize: 12,
+                value: 2
+            },
+        
+            {
+                id: 'Modbus',
+                name: 'Modbus',
+                symbolSize: 12,
+                value: 2
             },
         
             {
@@ -872,13 +879,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'RaspberryPi',
                 symbolSize: 12,
                 value: 2
-            },
-        
-            {
-                id: 'hexo',
-                name: 'hexo',
-                symbolSize: 14,
-                value: 5
             },
         
             {
@@ -938,6 +938,13 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                id: 'Printer',
+                name: 'Printer',
+                symbolSize: 11,
+                value: 1
+            },
+        
+            {
                 id: 'Simulation',
                 name: 'Simulation',
                 symbolSize: 14,
@@ -947,13 +954,6 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 id: 'Canopen',
                 name: 'Canopen',
-                symbolSize: 11,
-                value: 1
-            },
-        
-            {
-                id: 'Printer',
-                name: 'Printer',
                 symbolSize: 11,
                 value: 1
             },
@@ -972,20 +972,20 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'ESP32',
-                target: 'Micropython',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
                 source: 'AI',
                 target: 'ClaudeCode',
                 value: 2,
                 lineStyle: {
                     width: 2
+                }
+            },
+        
+            {
+                source: 'ESP32',
+                target: 'Micropython',
+                value: 1,
+                lineStyle: {
+                    width: 1
                 }
             },
         
@@ -1035,6 +1035,15 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
+                source: 'AI',
+                target: 'OpenClaw',
+                value: 1,
+                lineStyle: {
+                    width: 1
+                }
+            },
+        
+            {
                 source: 'Openmv',
                 target: 'python',
                 value: 1,
@@ -1049,15 +1058,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 value: 7,
                 lineStyle: {
                     width: 7
-                }
-            },
-        
-            {
-                source: 'AI',
-                target: 'OpenClaw',
-                value: 1,
-                lineStyle: {
-                    width: 1
                 }
             },
         
@@ -1090,33 +1090,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
             {
                 source: 'python',
-                target: 'RS485',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'python',
-                target: 'Modbus',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
-                source: 'RS485',
-                target: 'Modbus',
-                value: 2,
-                lineStyle: {
-                    width: 2
-                }
-            },
-        
-            {
-                source: 'python',
                 target: 'Pytorch',
                 value: 7,
                 lineStyle: {
@@ -1139,6 +1112,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 value: 1,
                 lineStyle: {
                     width: 1
+                }
+            },
+        
+            {
+                source: 'python',
+                target: 'RS485',
+                value: 1,
+                lineStyle: {
+                    width: 1
+                }
+            },
+        
+            {
+                source: 'python',
+                target: 'Modbus',
+                value: 1,
+                lineStyle: {
+                    width: 1
+                }
+            },
+        
+            {
+                source: 'RS485',
+                target: 'Modbus',
+                value: 2,
+                lineStyle: {
+                    width: 2
                 }
             },
         
@@ -1296,15 +1296,6 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         
             {
-                source: 'STM32',
-                target: 'python',
-                value: 1,
-                lineStyle: {
-                    width: 1
-                }
-            },
-        
-            {
                 source: 'Linux',
                 target: 'VSCode',
                 value: 1,
@@ -1343,6 +1334,15 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 source: 'VSCode',
                 target: 'Json',
+                value: 1,
+                lineStyle: {
+                    width: 1
+                }
+            },
+        
+            {
+                source: 'STM32',
+                target: 'python',
                 value: 1,
                 lineStyle: {
                     width: 1
@@ -1808,10 +1808,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <script src="/js/utils/index.js"></script>
     <script src="/js/app.js"></script>
-    <script src="/js/pages/runtime.js"></script>
+    <script src="/js/pages/runtime.js?v=20261018-memory"></script>
     <script src="/js/pages/graph3d.js"></script>
-    <script src="/js/pages/footprint3d.js"></script>
-    <script src="/js/pages/love-space.js"></script>
+    <script src="/js/pages/footprint3d.js?v=20261018-memory"></script>
+    <script src="/js/pages/love-space.js?v=20261018-memory"></script>
     
     <!-- 文章目录所需js -->
 <!-- <link href="/js/tocbot/tocbot.css" rel="stylesheet">
